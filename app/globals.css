@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000000;
+  --foreground: #f5f5f5;
+  --cursor-default: url("/cursors/default.svg") 6 3, auto;
+  --cursor-pointer: url("/cursors/pointer.svg") 6 3, pointer;
+  --mekark-red: #ed1c24;
+  --mekark-white: #f5f5f5;
+  --mekark-silver: #bbbbbb;
+  --mekark-gray: #9a9a9a;
+  --mekark-alto: #e0e0e0;
+  --crimson-100: rgba(219, 28, 34, 0.2);
+  --crimson-200: rgba(219, 28, 34, 0.05);
+  --red-100: #e9000e;
+  --red-200: #e40015;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-mekark-red: var(--mekark-red);
+  --color-mekark-white: var(--mekark-white);
+  --color-mekark-silver: var(--mekark-silver);
+  --color-mekark-gray: var(--mekark-gray);
+  --color-mekark-alto: var(--mekark-alto);
+  --color-crimson-100: var(--crimson-100);
+  --color-crimson-200: var(--crimson-200);
+  --color-red-100: var(--red-100);
+  --color-red-200: var(--red-200);
+  --font-sans: var(--font-manrope);
+  --font-mono: var(--font-geist-mono);
+  --font-inter: var(--font-inter-family), system-ui, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-manrope), system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (pointer: fine) {
+  html {
+    cursor: var(--cursor-default);
+  }
+
+  a,
+  button,
+  summary,
+  label[for],
+  select,
+  [role="button"],
+  [role="link"],
+  [role="menuitem"],
+  [role="tab"],
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  input[type="checkbox"],
+  input[type="radio"],
+  .cursor-pointer {
+    cursor: var(--cursor-pointer);
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="search"],
+  input[type="password"],
+  input[type="url"],
+  input[type="number"],
+  textarea,
+  [contenteditable="true"] {
+    cursor: text;
+  }
+
+  :disabled,
+  [disabled],
+  [aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+}

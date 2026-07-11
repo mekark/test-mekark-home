@@ -1,5 +1,6 @@
 "use client";
 
+import type { MouseEvent } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/motion/AnimatedSection";
@@ -14,6 +15,15 @@ import {
   staggerContainer,
 } from "@/lib/motion-variants";
 
+function scrollToEnquiry(event: MouseEvent<HTMLAnchorElement>) {
+  event.preventDefault();
+
+  const target = document.getElementById("enquiry");
+  if (!target) return;
+
+  target.scrollIntoView({ behavior: "smooth", block: "start" });
+  window.history.pushState(null, "", "#enquiry");
+}
 const VIDEO_CARDS = [
   {
     src: "/images/hero/video-1.png",
@@ -207,28 +217,61 @@ export function HeroSection() {
                   viewport={{ once: true }}
                 >
                   <motion.a
-                    href="#consultation"
+                    href="#enquiry"
+                    onClick={scrollToEnquiry}
                     variants={scaleIn}
                     whileHover={{
                       scale: 1.04,
                       boxShadow: "0 0 30px rgba(237,28,36,0.4)",
                     }}
                     whileTap={{ scale: 0.98 }}
-                    className="flex w-full items-center justify-center rounded-[14px] bg-[#ed1c24] px-5 py-3 text-center text-sm font-semibold leading-[21px] text-white shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-4px_rgba(0,0,0,0.1)] sm:w-auto"
+                    className="group flex w-full items-center justify-center gap-0 rounded-[14px] bg-[#ed1c24] px-5 py-3 text-center text-sm font-semibold leading-[21px] text-white shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-4px_rgba(0,0,0,0.1)] transition-[gap] duration-300 hover:gap-2 sm:w-auto"
                   >
                     Get Free Industrial Consultation
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      aria-hidden
+                      className="size-0 shrink-0 opacity-0 transition-all duration-300 group-hover:size-4 group-hover:opacity-100"
+                    >
+                      <path
+                        d="M3.5 8h9M8.5 4l4 4-4 4"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
                   </motion.a>
                   <motion.a
-                    href="#proposal"
+                    href="tel:+919790924754"
                     variants={scaleIn}
                     whileHover={{
                       scale: 1.04,
                       backgroundColor: "rgba(255,255,255,0.12)",
                     }}
                     whileTap={{ scale: 0.98 }}
-                    className="flex w-full items-center justify-center rounded-[14px] border border-white/52 bg-[rgba(90,90,90,0.1)] px-5 py-3 text-center text-sm font-semibold leading-[21px] text-[#e0e0e0] backdrop-blur-[6px] shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-4px_rgba(0,0,0,0.1)] sm:w-auto sm:px-[21px] sm:py-[13px]"
+                    className="group flex w-full items-center justify-center gap-0 rounded-[14px] border border-white/52 bg-[rgba(90,90,90,0.1)] px-5 py-3 text-center text-sm font-semibold leading-[21px] text-[#e0e0e0] backdrop-blur-[6px] shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-4px_rgba(0,0,0,0.1)] transition-[gap] duration-300 hover:gap-2 sm:w-auto sm:px-[21px] sm:py-[13px]"
                   >
-                    Request Project Proposal
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      aria-hidden
+                      className="size-0 shrink-0 opacity-0 transition-all duration-300 group-hover:size-4 group-hover:opacity-100"
+                    >
+                      <path
+                        d="M17.5 14.25v2.5a1.67 1.67 0 0 1-1.8 1.67 16.6 16.6 0 0 1-7.2-2.57 16.4 16.4 0 0 1-5.01-5.01A16.6 16.6 0 0 1 1 5.3 1.67 1.67 0 0 1 2.67 3.5h2.5a1.67 1.67 0 0 1 1.67 1.43 10.6 10.6 0 0 0 .58 2.32 1.67 1.67 0 0 1-.38 1.75l-1.42 1.42a13.33 13.33 0 0 0 5.01 5.01l1.42-1.42a1.67 1.67 0 0 1 1.75-.38 10.6 10.6 0 0 0 2.32.58 1.67 1.67 0 0 1 1.43 1.67Z"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    Talk to Our Expert
                   </motion.a>
                 </motion.div>
               </div>

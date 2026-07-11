@@ -1,10 +1,12 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { AnimatedSection } from "@/components/motion/AnimatedSection";
+import { CountUp } from "@/components/motion/CountUp";
 import {
   dotGridPop,
   dotGridStagger,
@@ -26,22 +28,26 @@ const VIEWPORT = { once: true, margin: "-80px" as const };
 
 const STATS = [
   {
-    value: "6 Lakh+",
+    value: 6,
+    suffix: " Lakh+",
     lines: ["Sq.Ft Manufacturing", "Facility"],
     icon: "/images/engineering/icons/facility.svg",
   },
   {
-    value: "18+",
+    value: 18,
+    suffix: "+",
     lines: ["Years of", "Experience"],
     icon: "/images/engineering/icons/experience.svg",
   },
   {
-    value: "450+",
+    value: 450,
+    suffix: "+",
     lines: ["Projects", "Delivered"],
     icon: "/images/engineering/icons/projects.svg",
   },
   {
-    value: "98%",
+    value: 98,
+    suffix: "%",
     lines: ["On-Time Delivery", "Rate"],
     icon: "/images/engineering/icons/delivery.svg",
   },
@@ -139,6 +145,9 @@ function StatCard({
   showDivider: boolean;
   index: number;
 }) {
+  const ref = useRef<HTMLParagraphElement>(null);
+  const isInView = useInView(ref, VIEWPORT);
+
   return (
     <motion.div
       variants={scaleIn}
@@ -151,8 +160,17 @@ function StatCard({
       <StatIconCircle src={stat.icon} alt={stat.lines.join(" ")} />
       <div className="z-[1] flex shrink-0 flex-col items-start gap-[3.5px]">
         <div className="flex flex-col items-start self-stretch">
-          <p className="relative text-[28px] font-extrabold leading-[28px] tracking-[-0.76px] text-[#0a0a0a] sm:text-[32px] sm:leading-[32px] lg:text-[38px] lg:leading-[38px]">
-            {stat.value}
+          <p
+            ref={ref}
+            className="relative text-[28px] font-extrabold leading-[28px] tracking-[-0.76px] text-[#0a0a0a] tabular-nums sm:text-[32px] sm:leading-[32px] lg:text-[38px] lg:leading-[38px]"
+          >
+            <CountUp
+              value={stat.value}
+              suffix={stat.suffix}
+              start={isInView}
+              delay={0.15 + index * 0.1}
+              duration={1.7}
+            />
           </p>
         </div>
         <div className="flex flex-col items-start self-stretch text-[11px] font-semibold uppercase leading-[15.95px] tracking-[1.54px] text-[#6b6b6b]">
@@ -374,7 +392,7 @@ export function EngineeringNumbersSection() {
               >
                 {STATS.map((stat, index) => (
                   <StatCard
-                    key={stat.value}
+                    key={`${stat.value}${stat.suffix}`}
                     stat={stat}
                     showDivider={index > 0}
                     index={index}

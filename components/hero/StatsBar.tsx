@@ -34,7 +34,7 @@ const RED_BAR_WIDTH = "calc(78.21vw - (100vw - 100%) / 2)";
 function StatItem({ label }: { label: string }) {
   return (
     <div data-stat className="flex shrink-0 items-center gap-2 sm:gap-2.5">
-      <span className="size-1.5 shrink-0 rounded-full bg-[#c4161c]" />
+      <span className="size-1.5 shrink-0 rounded-full bg-black" />
       <span className="whitespace-nowrap text-xs font-medium leading-5 tracking-wide text-white sm:text-sm">
         {label}
       </span>

@@ -259,7 +259,7 @@ export function EnquirySection() {
   }
 
   return (
-    <section className="relative w-full overflow-hidden">
+    <section id="enquiry" className="relative w-full scroll-mt-8 overflow-hidden">
       <div className="absolute inset-0">
         <Image
           src="/images/enquiry/background.png"

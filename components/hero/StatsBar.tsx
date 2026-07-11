@@ -3,8 +3,9 @@
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import AutoScroll from "embla-carousel-auto-scroll";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useSyncExternalStore } from "react";
 import gsap from "gsap";
+import type { EmblaCarouselType } from "embla-carousel";
 
 const STATS = [
   "40,000 Tons Annual Capacity",
@@ -81,6 +82,27 @@ function StatsTrackShell({
   );
 }
 
+function useEmblaSelectedIndex(emblaApi: EmblaCarouselType | undefined) {
+  const subscribe = useCallback(
+    (onStoreChange: () => void) => {
+      if (!emblaApi) return () => {};
+      emblaApi.on("select", onStoreChange);
+      emblaApi.on("reInit", onStoreChange);
+      return () => {
+        emblaApi.off("select", onStoreChange);
+        emblaApi.off("reInit", onStoreChange);
+      };
+    },
+    [emblaApi],
+  );
+
+  return useSyncExternalStore(
+    subscribe,
+    () => emblaApi?.selectedScrollSnap() ?? 0,
+    () => 0,
+  );
+}
+
 /** Mobile / tablet — swipeable autoplay carousel (left → right) */
 function StatsCarouselMobile({
   barRef,
@@ -89,8 +111,6 @@ function StatsCarouselMobile({
   barRef: React.RefObject<HTMLDivElement | null>;
   trackRef: React.RefObject<HTMLDivElement | null>;
 }) {
-  const [selectedIndex, setSelectedIndex] = useState(0);
-
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, align: "start" },
     [
@@ -102,21 +122,7 @@ function StatsCarouselMobile({
     ],
   );
 
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-  }, [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    onSelect();
-    emblaApi.on("select", onSelect);
-    emblaApi.on("reInit", onSelect);
-    return () => {
-      emblaApi.off("select", onSelect);
-      emblaApi.off("reInit", onSelect);
-    };
-  }, [emblaApi, onSelect]);
+  const selectedIndex = useEmblaSelectedIndex(emblaApi);
 
   return (
     <div className="lg:hidden">

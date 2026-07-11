@@ -54,6 +54,7 @@ const WORKFLOW_STEPS = [
     icon: "/images/precision-engineering/icon-analyse.svg",
     iconSize: 52,
     benefit: ["Fabrication accuracy from", "Day 1"],
+    isLast: false,
   },
   {
     number: "02",
@@ -61,6 +62,7 @@ const WORKFLOW_STEPS = [
     icon: "/images/precision-engineering/icon-model.svg",
     iconSize: 48,
     benefit: ["Clash-free structural", "execution"],
+    isLast: false,
   },
   {
     number: "03",

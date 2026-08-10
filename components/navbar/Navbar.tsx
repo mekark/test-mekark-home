@@ -570,7 +570,6 @@ export function Navbar() {
         animate={{
           backgroundColor: barActive ? "rgba(0,0,0,0.72)" : "rgba(0,0,0,0)",
           backdropFilter: barActive ? "blur(16px)" : "blur(0px)",
-          WebkitBackdropFilter: barActive ? "blur(16px)" : "blur(0px)",
           boxShadow: barActive
             ? "0 1px 0 rgba(255,255,255,0.06)"
             : "0 0px 0px rgba(0,0,0,0)",

@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Inter, Manrope, Montserrat } from "next/font/google";
+import {
+  Geist,
+  Inter,
+  Manrope,
+  Montserrat,
+  Montserrat_Alternates,
+} from "next/font/google";
 import { ArrowTop } from "@/components/ui/ArrowTop";
 import { Navbar } from "@/components/navbar/Navbar";
 import "./globals.css";
@@ -7,7 +13,7 @@ import "./globals.css";
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "800"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 const inter = Inter({
@@ -21,6 +27,12 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   style: ["italic"],
   weight: ["400"],
+});
+
+const montserratAlternates = Montserrat_Alternates({
+  variable: "--font-montserrat-alternates",
+  subsets: ["latin"],
+  weight: ["800"],
 });
 
 const geistMono = Geist({
@@ -46,7 +58,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${manrope.variable} ${inter.variable} ${montserrat.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${manrope.variable} ${inter.variable} ${montserrat.variable} ${montserratAlternates.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Navbar />

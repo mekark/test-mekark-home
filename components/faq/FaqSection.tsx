@@ -20,32 +20,53 @@ const FAQ_ITEMS = [
   {
     question: "What defines Mekark's EPC approach?",
     answer:
-      "An integrated engineering-led model combining design, procurement, fabrication, and execution under one system, eliminating coordination gaps and ensuring single-point accountability across every phase.",
+      "An integrated, engineering-led model combining design, procurement, fabrication, and execution under one system, eliminating coordination gaps and ensuring single-point accountability across every phase of the project.",
   },
   {
     question: "How is structural performance ensured in large-span buildings?",
     answer:
-      "Advanced structural analysis using STAAD.Pro and Tekla, combined with in-house fabrication precision, ensures load paths, connections, and deflection limits are validated before steel reaches site.",
+      "Every large-span structure is engineered using advanced structural analysis and load-modelling techniques to ensure stability, wind and seismic resistance, and long-term durability, validated against relevant industrial building codes before fabrication begins.",
   },
   {
     question: "Why choose a single EPC partner?",
     answer:
-      "One partner removes vendor handoff friction, locks accountability across design and construction, and delivers faster timelines with fewer change orders and misaligned deliverables.",
+      "A single EPC partner removes the communication gaps that occur when design, procurement, and construction are handled by separate vendors. This translates into faster decision-making, fewer cost overruns, tighter timelines, and one accountable point of contact from concept to commissioning.",
   },
   {
     question: "How does Mekark ensure lifecycle durability?",
     answer:
-      "Structures are engineered for expansion, operational stress, and long-term load stability — with material selection, corrosion protection, and connection detailing built for decades of industrial use.",
+      "We design for performance beyond handover, factoring in material longevity, maintenance efficiency, and operational wear from day one. This lifecycle-first approach reduces long-term maintenance costs and extends the operational life of every facility we build.",
   },
   {
     question: "Can Mekark handle large-scale industrial projects?",
     answer:
-      "Yes. With 450+ projects delivered, 6 lakh+ sq.ft manufacturing capacity, and 40K tons annual fabrication throughput, Mekark is built for large-scale industrial and infrastructure execution.",
+      "Yes. With X+ delivered projects and 18+ years of industrial construction experience, Mekark has the engineering depth, fabrication capacity, and project management systems to execute large-scale, multi-phase industrial developments reliably.",
   },
   {
     question: "How is factory-level quality maintained?",
     answer:
-      "Controlled in-house fabrication, CNC-driven cutting, weld inspection protocols, and stage-gate QA checkpoints ensure every member meets industrial-grade tolerances before dispatch.",
+      "Through standardised fabrication processes, in-house quality checkpoints, and rigorous material and weld testing at every production stage, ensuring consistent quality whether a component is fabricated on-site or off-site.",
+  },
+  {
+    question: "What industries does Mekark specialise in?",
+    answer:
+      "Mekark serves a wide range of industrial sectors, including manufacturing, warehousing and logistics, food processing, heavy engineering, and industrial infrastructure projects that require precision-engineered, scalable facilities.",
+  },
+  {
+    question:
+      "What is the typical timeline for an industrial construction project?",
+    answer:
+      "Timelines vary by project scope and complexity, but our integrated EPC model, where design, procurement, and execution run in parallel rather than sequentially, significantly compresses delivery schedules compared to traditional multi-vendor construction.",
+  },
+  {
+    question: "Does Mekark offer post-construction and maintenance support?",
+    answer:
+      "Yes. Our engagement doesn't end at handover. We offer post-construction support and maintenance guidance to ensure your facility continues to perform at its designed operational efficiency well into its lifecycle.",
+  },
+  {
+    question: "How does Mekark ensure safety and compliance on-site?",
+    answer:
+      "All projects follow strict industrial safety protocols and comply with relevant national construction and structural codes. Our on-site teams conduct regular safety audits and quality inspections throughout every phase of execution.",
   },
 ] as const;
 

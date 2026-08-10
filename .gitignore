@@ -24,6 +24,9 @@
 .DS_Store
 *.pem
 
+# local hero source backups (not for deploy)
+/assets/hero-originals/
+
 # debug
 npm-debug.log*
 yarn-debug.log*

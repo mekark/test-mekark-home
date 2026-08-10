@@ -23,61 +23,62 @@ const INDUSTRIES = [
     title: "Manufacturing Industry",
     description:
       "Scalable infrastructure for high-volume production and assembly.",
-    image: "/images/industries/01-manufacturing.png",
+    image: "/images/industries/01-manufacturing-v2.png",
   },
   {
     number: "02",
     title: "Logistics & Warehousing",
     description:
       "High-capacity facilities for storage and distribution networks.",
-    image: "/images/industries/02-logistics.png",
+    image: "/images/industries/02-logistics-v2.png",
   },
   {
     number: "03",
     title: "Food Processing Industry",
     description: "Hygienic and temperature-controlled building solutions.",
-    image: "/images/industries/03-food-processing.png",
+    image: "/images/industries/03-food-processing-v2.png",
   },
   {
     number: "04",
-    title: "Automotive Sector",
-    description: "Robust structures for manufacturing and component units.",
-    image: "/images/industries/04-automotive.png",
+    title: "Road & Civil Construction",
+    description:
+      "Integrated civil and structural works for roads, bridges, and large-scale ground infrastructure.",
+    image: "/images/industries/04-road-civil-v2.png",
   },
   {
     number: "05",
     title: "Pharmaceutical Industry",
     description:
       "Compliance-driven infrastructure for controlled environments.",
-    image: "/images/industries/05-pharmaceutical.png",
+    image: "/images/industries/05-pharmaceutical-v2.png",
   },
   {
     number: "06",
     title: "Industrial & Infrastructure",
     description:
       "Large-scale steel solutions for major infrastructure projects.",
-    image: "/images/industries/06.png",
+    image: "/images/industries/06-industrial-v2.png",
   },
   {
     number: "07",
     title: "Clean Rooms",
     description:
       "Contamination-controlled environments engineered for critical industries.",
-    image: "/images/industries/06-industrial.png",
+    image: "/images/industries/07-clean-rooms-v2.png",
   },
   {
     number: "08",
     title: "Data Centers",
     description:
       "Mission-critical infrastructure designed for high uptime and secure operations.",
-    image: "/images/industries/08-data-centers.png",
+    image: "/images/industries/08-data-centers-v2.png",
   },
   {
     number: "09",
     title: "Energy & Renewables",
     description:
       "Sustainable industrial solutions for solar, wind, battery storage, and clean energy facilities.",
-    image: "/images/industries/09.png",
+    image: "/images/industries/09-energy-renewables-v2.png",
     wide: true,
     imageHeight: 220,
   },
@@ -86,14 +87,8 @@ const INDUSTRIES = [
     title: "Pipeline Infrastructure",
     description:
       "Structural solutions for pipeline networks, process piping, and industrial fluid transport.",
-    image: "/images/industries/10.png",
-  },
-  {
-    number: "11",
-    title: "Road & Civil Construction",
-    description:
-      "Integrated civil and structural works for roads, bridges, and large-scale ground infrastructure.",
-    image: "/images/industries/11.png",
+    image: "/images/industries/10-pipeline-v2.png",
+    wide: true,
   },
 ] as const;
 
@@ -208,9 +203,10 @@ export function IndustriesSection() {
               variants={fadeUp}
               className="max-w-[440px] text-[17px] leading-[1.7] text-[#4f4f4f] sm:text-[19px]"
             >
-              From heavy industrial plants to high-precision facilities, we
-              deliver engineering-led construction solutions across diverse
-              sectors.
+              From heavy industrial plants to high-precision manufacturing
+              facilities, Mekark delivers engineering-led EPC solutions across
+              diverse industrial sectors, built for performance, scale, and long
+              term reliability.
             </motion.p>
           </div>
         </motion.div>

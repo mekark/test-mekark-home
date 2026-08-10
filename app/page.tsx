@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { AboutMekarkSection } from "@/components/about/AboutMekarkSection";
 import { EngineeringNumbersSection } from "@/components/engineering/EngineeringNumbersSection";
 import { HeroSection } from "@/components/hero/HeroSection";
@@ -11,8 +12,11 @@ import { MekarkBlogsSection } from "@/components/blogs/MekarkBlogsSection";
 import { EnquirySection } from "@/components/enquiry/EnquirySection";
 import { FooterSection } from "@/components/footer/FooterSection";
 import { CompletedProjectsSection } from "@/components/completed-projects/CompletedProjectsSection";
+import { CompletedProjectsListingSection } from "@/components/completed-projects-listing/CompletedProjectsListingSection";
 import { ManufacturingFactoriesSection } from "@/components/manufacturing-factories/ManufacturingFactoriesSection";
 import { PrecisionDrivenEngineeringSection } from "@/components/precision-engineering/PrecisionDrivenEngineeringSection";
+import { TrustedSectorsSection } from "@/components/trusted-sectors/TrustedSectorsSection";
+import { TestimonialsSection } from "@/components/testimonials/TestimonialsSection";
 
 export default function Home() {
   return (
@@ -27,10 +31,15 @@ export default function Home() {
       <PrecisionDrivenEngineeringSection />
       <ManufacturingFactoriesSection />
       <CompletedProjectsSection />
-      <AchievementsTestimonialsSection />
-      <FaqSection />
+      <CompletedProjectsListingSection />
+      <TrustedSectorsSection />
       <MekarkBlogsSection />
-      <EnquirySection />
+      <TestimonialsSection />
+      {/* <AchievementsTestimonialsSection /> */}
+      <FaqSection />
+      <Suspense fallback={null}>
+        <EnquirySection />
+      </Suspense>
       <FooterSection />
     </div>
   );

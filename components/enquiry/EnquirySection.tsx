@@ -1,9 +1,10 @@
 "use client";
 
-import { type FormEvent, type ReactNode, useState } from "react";
+import { type FormEvent, type ReactNode, useEffect, useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
+import { ENQUIRY_INDUSTRY_BY_SLUG } from "@/components/navbar/nav-data";
 import {
   enquiryCopyItem,
   enquiryCopyReveal,
@@ -16,8 +17,8 @@ import {
 const VIEWPORT = { once: true, margin: "-80px" as const };
 
 const HIGHLIGHTS = [
-  "450+ industrial projects delivered",
-  "15+ years of structural expertise",
+  "X+ industrial projects delivered",
+  "18+ years of structural expertise",
   "98% on-time project execution",
 ] as const;
 
@@ -185,6 +186,7 @@ type SubmitStatus = "idle" | "submitting" | "error";
 
 export function EnquirySection() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [projectArea, setProjectArea] = useState<string>(PROJECT_AREAS[0]);
   const [industryType, setIndustryType] = useState<string>(INDUSTRY_TYPES[0]);
   const [projectTimeline, setProjectTimeline] = useState<string>(
@@ -194,8 +196,47 @@ export function EnquirySection() {
     PROJECT_BUDGETS[0],
   );
   const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>("idle");
   const [submitMessage, setSubmitMessage] = useState("");
+
+  // Prefill from Find your solution redirect: /?industry=…&service=…#enquiry
+  useEffect(() => {
+    const industrySlug = searchParams.get("industry");
+    const industryLabel = searchParams.get("industryLabel");
+    const serviceLabel = searchParams.get("serviceLabel");
+
+    if (industrySlug) {
+      const mapped =
+        ENQUIRY_INDUSTRY_BY_SLUG[industrySlug] ??
+        INDUSTRY_TYPES.find(
+          (option) =>
+            option.toLowerCase() === (industryLabel ?? "").toLowerCase(),
+        );
+      if (mapped && INDUSTRY_TYPES.includes(mapped as (typeof INDUSTRY_TYPES)[number])) {
+        setIndustryType(mapped);
+      }
+    }
+
+    if (industryLabel || serviceLabel) {
+      const parts = [
+        industryLabel ? `Industry: ${industryLabel}` : null,
+        serviceLabel ? `Service: ${serviceLabel}` : null,
+      ].filter(Boolean);
+      setMessage((current) =>
+        current.trim() ? current : `${parts.join(" · ")}.`,
+      );
+    }
+
+    if (industrySlug || serviceLabel) {
+      requestAnimationFrame(() => {
+        document.getElementById("enquiry")?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      });
+    }
+  }, [searchParams]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -259,10 +300,13 @@ export function EnquirySection() {
   }
 
   return (
-    <section id="enquiry" className="relative w-full scroll-mt-8 overflow-hidden">
+    <section
+      id="enquiry"
+      className="relative w-full scroll-mt-28 overflow-hidden bg-[#0a0a0a]"
+    >
       <div className="absolute inset-0">
         <Image
-          src="/images/enquiry/background.png"
+          src="/images/enquiry/homeabout 1.png"
           alt=""
           fill
           className="object-cover object-center"
@@ -270,7 +314,11 @@ export function EnquirySection() {
           priority={false}
         />
         <div
-          className="absolute inset-0 bg-gradient-to-r from-[rgba(14,14,15,0.55)] via-[rgba(14,14,15,0.35)] to-[rgba(22,22,24,0)]"
+          className="absolute inset-0 bg-[rgba(10,10,10,0.65)]"
+          aria-hidden
+        />
+        <div
+          className="absolute inset-y-0 left-0 w-full max-w-[min(100%,680px)] bg-gradient-to-r from-black to-transparent"
           aria-hidden
         />
       </div>
@@ -280,48 +328,48 @@ export function EnquirySection() {
         initial="hidden"
         whileInView="visible"
         viewport={VIEWPORT}
-        className="relative mx-auto flex min-h-[560px] w-full max-w-[1440px] flex-col items-center gap-12 px-5 py-14 sm:px-8 lg:min-h-[670px] lg:flex-row lg:items-start lg:justify-between lg:gap-10 lg:px-20 lg:py-20"
+        className="relative mx-auto flex min-h-[560px] w-full max-w-[1440px] flex-col items-center gap-12 px-5 py-14 sm:px-8 lg:min-h-[678px] lg:flex-row lg:items-center lg:justify-between lg:gap-10 lg:px-[72px] lg:py-16 xl:px-20"
       >
         <motion.div
           variants={enquiryCopyReveal}
-          className="w-full max-w-[520px] shrink-0 lg:max-w-[434px] lg:pt-10"
+          className="w-full max-w-[580px] shrink-0 lg:max-w-[520px]"
         >
           <motion.p
             variants={enquiryCopyItem}
-            className="text-[11px] font-extrabold uppercase tracking-[2.8px] text-white/70"
+            className="text-[15px] font-extrabold uppercase leading-[22px] tracking-[3.73px] text-[#e40015]"
           >
             Start Your Project
           </motion.p>
 
           <motion.h2
             variants={enquiryCopyItem}
-            className="mt-3 text-[clamp(1.75rem,4vw,2.8rem)] font-extrabold leading-[1.08] tracking-[-1.12px] text-white lg:text-[44px] lg:leading-[48px]"
+            className="mt-[15px] text-[clamp(2rem,4.2vw,3.73rem)] font-extrabold leading-[1.08] tracking-[-1.5px] text-white lg:leading-[64.5px]"
           >
             Let&apos;s Build Your Next Industrial Project.
           </motion.h2>
 
           <motion.p
             variants={enquiryCopyItem}
-            className="mt-3 max-w-[384px] text-[15px] leading-[26px] text-white/80"
+            className="mt-4 max-w-[512px] text-[clamp(1rem,1.4vw,1.267rem)] leading-[1.75] text-white/80"
           >
             Partner with Mekark for high-quality, fast-track, and cost-efficient
-            industrial building solutions.
+            industrial construction solutions.
           </motion.p>
 
           <motion.ul
             variants={enquiryHighlightStagger}
-            className="mt-6 flex flex-col gap-4"
+            className="mt-8 flex flex-col gap-[21px]"
           >
             {HIGHLIGHTS.map((item) => (
               <motion.li
                 key={item}
                 variants={enquiryHighlightItem}
-                className="flex items-center gap-3"
+                className="flex items-center gap-4"
               >
-                <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-[#ed2024]">
+                <span className="flex size-[27px] shrink-0 items-center justify-center rounded-full bg-[#ed2024]">
                   <CheckIcon />
                 </span>
-                <span className="text-sm font-semibold text-white/90">
+                <span className="text-[clamp(0.95rem,1.3vw,1.175rem)] font-semibold leading-[1.5] text-white/90">
                   {item}
                 </span>
               </motion.li>
@@ -436,6 +484,8 @@ export function EnquirySection() {
                     <textarea
                       name="message"
                       rows={3}
+                      value={message}
+                      onChange={(event) => setMessage(event.target.value)}
                       placeholder="Describe your project — type, usage, timeline…"
                       className={`${INPUT_CLASS} min-h-[80px] resize-none leading-[19.5px]`}
                     />

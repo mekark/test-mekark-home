@@ -3,8 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { NAV_ITEMS, type NavItem } from "@/components/navbar/nav-data";
+import { FindYourSolutionPanel } from "@/components/navbar/FindYourSolutionPanel";
+import {
+  NAV_ITEMS,
+  type NavItem,
+  type SolutionOption,
+} from "@/components/navbar/nav-data";
 import {
   navbarDropdownItemReveal,
   navbarDropdownItemsStagger,
@@ -138,10 +144,40 @@ function NavLinkMotion({
   );
 }
 
+function DropdownLink({ href, label }: { href: string; label: string }) {
+  return (
+    <motion.li variants={navbarDropdownItemReveal} className="group/link">
+      <Link
+        href={href}
+        className="relative flex items-center gap-3 overflow-hidden px-3 py-2.5 pl-4 transition-colors"
+      >
+        <span
+          aria-hidden
+          className="h-1 w-1 shrink-0 rounded-full bg-white/25 transition-all duration-200 group-hover/link:bg-mekark-red"
+        />
+        <span className="font-[family-name:var(--font-manrope)] text-[13px] leading-snug font-medium tracking-wide text-white/75 transition-colors duration-200 group-hover/link:text-mekark-white">
+          {label}
+        </span>
+      </Link>
+    </motion.li>
+  );
+}
+
 function DesktopDropdown({ item }: { item: NavItem }) {
   const [open, setOpen] = useState(false);
   const children = item.children ?? [];
-  const columns = dropdownColumns(children.length);
+  const sections = item.sections ?? [];
+  const totalLinks =
+    children.length +
+    sections.reduce((sum, section) => sum + section.children.length, 0);
+  const columns = dropdownColumns(totalLinks);
+
+  const panelWidth =
+    columns === 3
+      ? "w-[min(92vw,640px)]"
+      : columns === 2
+        ? "w-[min(92vw,420px)]"
+        : "w-[min(92vw,260px)]";
 
   return (
     <motion.div
@@ -156,39 +192,50 @@ function DesktopDropdown({ item }: { item: NavItem }) {
         }
       }}
     >
-      <motion.button
+      <button
         type="button"
-        className="relative flex items-center gap-1.5 px-3 py-2 text-[13px] font-medium tracking-wide text-mekark-white/90"
+        className={`relative flex items-center gap-1.5 px-2.5 py-2 font-[family-name:var(--font-manrope)] text-[12.5px] font-medium tracking-[0.04em] transition-colors duration-200 [text-shadow:0_1px_10px_rgba(0,0,0,0.55)] lg:px-3 ${
+          open ? "text-mekark-red" : "text-white/92 hover:text-mekark-red"
+        }`}
         aria-haspopup="true"
         aria-expanded={open}
-        whileHover={{ color: "#ed1c24" }}
-        transition={{ duration: 0.2 }}
       >
         {item.label}
         <ChevronDownIcon open={open} />
-      </motion.button>
+        <span
+          aria-hidden
+          className={`absolute inset-x-2.5 -bottom-0.5 h-px origin-left bg-mekark-red transition-transform duration-200 lg:inset-x-3 ${
+            open ? "scale-x-100" : "scale-x-0"
+          }`}
+        />
+      </button>
 
       <AnimatePresence>
         {open && (
           <motion.div
-            className="absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3"
+            className="absolute left-0 top-full z-50 translate-x-3 pt-4"
             initial="hidden"
             animate="visible"
             exit="exit"
             variants={navbarDropdownPanel}
           >
+            <div
+              aria-hidden
+              className="absolute left-6 top-2.5 z-10 size-2.5 rotate-45 border-l border-t border-white/12 bg-[#0c0c0c]/92"
+            />
             <motion.div
-              className={`min-w-[220px] rounded-xl border border-white/10 bg-[#0a0a0a]/95 p-2 shadow-[0_24px_48px_rgba(0,0,0,0.45)] backdrop-blur-xl ${
-                columns === 3
-                  ? "w-[min(92vw,720px)]"
-                  : columns === 2
-                    ? "w-[min(92vw,480px)]"
-                    : "w-[min(92vw,280px)]"
-              }`}
+              className={`relative overflow-hidden rounded-sm border border-white/12 bg-[#0c0c0c]/92 p-3 pl-4 shadow-[0_28px_64px_rgba(0,0,0,0.55)] backdrop-blur-2xl sm:p-3.5 sm:pl-5 ${panelWidth}`}
               variants={navbarDropdownItemsStagger}
               initial="hidden"
               animate="visible"
             >
+              <div
+                aria-hidden
+                className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-mekark-red to-transparent"
+              />
+              <p className="mb-2.5 px-1 font-[family-name:var(--font-manrope)] text-[10px] font-semibold tracking-[0.22em] text-white/40 uppercase">
+                {item.label}
+              </p>
               <ul
                 className={
                   columns > 1
@@ -197,23 +244,153 @@ function DesktopDropdown({ item }: { item: NavItem }) {
                 }
               >
                 {children.map((child) => (
-                  <motion.li key={child.href} variants={navbarDropdownItemReveal}>
-                    <motion.div whileHover={{ x: 4 }} transition={{ duration: 0.18 }}>
-                      <Link
-                        href={child.href}
-                        className="block rounded-lg px-3 py-2.5 text-[13px] leading-snug text-mekark-white/85 transition-colors hover:bg-white/5 hover:text-mekark-red"
-                      >
-                        {child.label}
-                      </Link>
-                    </motion.div>
-                  </motion.li>
+                  <DropdownLink
+                    key={child.href}
+                    href={child.href}
+                    label={child.label}
+                  />
                 ))}
               </ul>
+              {sections.map((section) => (
+                <div
+                  key={section.label}
+                  className="mt-3 border-t border-white/8 pt-3"
+                >
+                  <div className="mb-1.5 flex items-center gap-2 px-1">
+                    <span aria-hidden className="h-px w-4 bg-mekark-red" />
+                    <p className="font-[family-name:var(--font-manrope)] text-[10px] font-semibold tracking-[0.18em] text-mekark-red/80 uppercase">
+                      {section.label}
+                    </p>
+                  </div>
+                  <ul className="grid grid-cols-2 gap-0.5 lg:grid-cols-3">
+                    {section.children.map((child) => (
+                      <DropdownLink
+                        key={child.href}
+                        href={child.href}
+                        label={child.label}
+                      />
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
     </motion.div>
+  );
+}
+
+function MobileDropdownLink({
+  href,
+  label,
+  onNavigate,
+}: {
+  href: string;
+  label: string;
+  onNavigate: () => void;
+}) {
+  return (
+    <motion.li variants={navbarDropdownItemReveal} className="group/link">
+      <Link
+        href={href}
+        onClick={onNavigate}
+        className="relative flex min-h-11 items-center gap-3 px-3 py-3"
+      >
+        <span
+          aria-hidden
+          className="h-1 w-1 shrink-0 rounded-full bg-white/25 group-hover/link:bg-mekark-red"
+        />
+        <span className="font-[family-name:var(--font-manrope)] text-[14px] text-mekark-silver transition-colors group-hover/link:text-mekark-white">
+          {label}
+        </span>
+      </Link>
+    </motion.li>
+  );
+}
+
+function FindSolutionButton({
+  open,
+  onClick,
+  short,
+  fullWidth,
+}: {
+  open: boolean;
+  onClick: () => void;
+  short?: boolean;
+  fullWidth?: boolean;
+}) {
+  return (
+    <motion.button
+      type="button"
+      onClick={onClick}
+      aria-expanded={open}
+      whileHover={{ scale: fullWidth ? 1.01 : 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      className={`group relative overflow-hidden rounded-sm font-[family-name:var(--font-manrope)] text-[12px] font-semibold tracking-[0.04em] transition-shadow duration-300 ${
+        fullWidth ? "w-full" : ""
+      } ${
+        open
+          ? "bg-mekark-red text-white shadow-[0_8px_24px_rgba(237,28,36,0.45)]"
+          : "bg-white text-[#0a0a0a] shadow-[0_4px_16px_rgba(0,0,0,0.25)] hover:shadow-[0_8px_28px_rgba(237,28,36,0.35)]"
+      }`}
+    >
+      <span
+        aria-hidden
+        className={`absolute inset-y-0 left-0 w-1 transition-colors ${
+          open ? "bg-white/40" : "bg-mekark-red"
+        }`}
+      />
+      <span className="relative flex items-center gap-2 px-4 py-2.5 pl-5">
+        <span
+          aria-hidden
+          className={`flex size-5 items-center justify-center rounded-full transition-colors ${
+            open ? "bg-white/20 text-white" : "bg-mekark-red/10 text-mekark-red"
+          }`}
+        >
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
+            <circle
+              cx="5"
+              cy="5"
+              r="3.25"
+              stroke="currentColor"
+              strokeWidth="1.4"
+            />
+            <path
+              d="M7.5 7.5L10 10"
+              stroke="currentColor"
+              strokeWidth="1.4"
+              strokeLinecap="round"
+            />
+          </svg>
+        </span>
+        <span>{short ? "Find solution" : "Find your solution"}</span>
+        <svg
+          width="12"
+          height="12"
+          viewBox="0 0 12 12"
+          fill="none"
+          aria-hidden
+          className={`transition-transform duration-300 ${
+            open ? "rotate-90" : "group-hover:translate-x-0.5"
+          }`}
+        >
+          <path
+            d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </span>
+      {!open && (
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-0 translate-x-[-120%] bg-gradient-to-r from-transparent via-mekark-red/10 to-transparent transition-transform duration-500 group-hover:translate-x-[120%]"
+        />
+      )}
+    </motion.button>
   );
 }
 
@@ -229,7 +406,7 @@ function MobileNavItem({
   onNavigate: () => void;
 }) {
   const isOpen = openLabel === item.label;
-  const hasChildren = Boolean(item.children?.length);
+  const hasChildren = Boolean(item.children?.length || item.sections?.length);
 
   if (!hasChildren && item.href) {
     const external = isExternalHref(item.href);
@@ -265,7 +442,7 @@ function MobileNavItem({
       </motion.button>
 
       <AnimatePresence initial={false}>
-        {isOpen && item.children && (
+        {isOpen && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
@@ -273,26 +450,48 @@ function MobileNavItem({
             transition={{ duration: 0.28, ease: EASE }}
             className="overflow-hidden bg-white/[0.03]"
           >
-            <motion.ul
-              className="space-y-0.5 px-3 pb-3 pt-1"
+            <motion.div
+              className="space-y-2 px-3 pb-3 pt-1"
               variants={navbarDropdownItemsStagger}
               initial="hidden"
               animate="visible"
             >
-              {item.children.map((child) => (
-                <motion.li key={child.href} variants={navbarDropdownItemReveal}>
-                  <motion.div whileTap={{ scale: 0.98 }}>
-                    <Link
+              {item.children && item.children.length > 0 && (
+                <ul className="space-y-0.5">
+                  {item.children.map((child) => (
+                    <MobileDropdownLink
+                      key={child.href}
                       href={child.href}
-                      onClick={onNavigate}
-                      className="block min-h-11 rounded-lg px-3 py-3 text-[14px] text-mekark-silver transition-colors hover:bg-white/5 hover:text-mekark-red"
-                    >
-                      {child.label}
-                    </Link>
-                  </motion.div>
-                </motion.li>
+                      label={child.label}
+                      onNavigate={onNavigate}
+                    />
+                  ))}
+                </ul>
+              )}
+              {item.sections?.map((section) => (
+                <div
+                  key={section.label}
+                  className="mt-1 border-t border-white/8 pt-2"
+                >
+                  <div className="mb-1 flex items-center gap-2 px-3">
+                    <span aria-hidden className="h-px w-4 bg-mekark-red" />
+                    <p className="font-[family-name:var(--font-manrope)] text-[10px] font-semibold tracking-[0.18em] text-mekark-red/80 uppercase">
+                      {section.label}
+                    </p>
+                  </div>
+                  <ul className="space-y-0.5">
+                    {section.children.map((child) => (
+                      <MobileDropdownLink
+                        key={child.href}
+                        href={child.href}
+                        label={child.label}
+                        onNavigate={onNavigate}
+                      />
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </motion.ul>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -301,9 +500,14 @@ function MobileNavItem({
 }
 
 export function Navbar() {
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const [findOpen, setFindOpen] = useState(false);
+  const [findStep, setFindStep] = useState<1 | 2>(1);
+  const [industry, setIndustry] = useState<SolutionOption | null>(null);
+  const [service, setService] = useState<SolutionOption | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -313,16 +517,47 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    document.body.style.overflow = mobileOpen || findOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
-  }, [mobileOpen]);
+  }, [mobileOpen, findOpen]);
+
+  useEffect(() => {
+    if (!findOpen) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") closeFind();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [findOpen]);
 
   const closeMobile = () => {
     setMobileOpen(false);
     setMobileExpanded(null);
   };
+
+  const closeFind = () => {
+    setFindOpen(false);
+    setFindStep(1);
+    setIndustry(null);
+    setService(null);
+  };
+
+  const openFind = () => {
+    closeMobile();
+    setFindOpen(true);
+    setFindStep(1);
+    setIndustry(null);
+    setService(null);
+  };
+
+  const redirectToSolution = (href: string) => {
+    closeFind();
+    router.push(href);
+  };
+
+  const barActive = scrolled || mobileOpen || findOpen;
 
   return (
     <motion.header
@@ -333,27 +568,24 @@ export function Navbar() {
     >
       <motion.div
         animate={{
-          backgroundColor:
-            scrolled || mobileOpen ? "rgba(0,0,0,0.9)" : "rgba(0,0,0,0)",
-          boxShadow:
-            scrolled || mobileOpen
-              ? "0 8px 32px rgba(0,0,0,0.35)"
-              : "0 0px 0px rgba(0,0,0,0)",
-          borderBottomColor:
-            scrolled || mobileOpen ? "rgba(255,255,255,0.1)" : "rgba(255,255,255,0)",
+          backgroundColor: barActive ? "rgba(0,0,0,0.72)" : "rgba(0,0,0,0)",
+          backdropFilter: barActive ? "blur(16px)" : "blur(0px)",
+          WebkitBackdropFilter: barActive ? "blur(16px)" : "blur(0px)",
+          boxShadow: barActive
+            ? "0 1px 0 rgba(255,255,255,0.06)"
+            : "0 0px 0px rgba(0,0,0,0)",
+          borderBottomColor: barActive
+            ? "rgba(255,255,255,0.08)"
+            : "rgba(255,255,255,0)",
         }}
-        transition={{ duration: 0.3, ease: EASE }}
-        className={`border-b backdrop-blur-xl ${
-          scrolled || mobileOpen
-            ? "backdrop-blur-xl"
-            : "bg-gradient-to-b from-black/70 to-transparent backdrop-blur-[2px]"
-        }`}
+        transition={{ duration: 0.35, ease: EASE }}
+        className="border-b"
       >
-        <div className="mx-auto flex h-[72px] max-w-[1440px] items-center justify-between gap-6 px-4 sm:h-[80px] sm:px-6 lg:px-10">
-          <motion.div variants={navbarLogoReveal} initial="hidden" animate="visible">
+        <div className="flex h-[76px] w-full items-center justify-between gap-8 px-5 sm:h-[88px] sm:px-8 lg:px-10 xl:px-14">
+          <motion.div variants={navbarLogoReveal} initial="hidden" animate="visible" className="shrink-0">
             <Link
               href="/"
-              className="relative flex shrink-0 items-center"
+              className="relative flex shrink-0 items-center drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)]"
               aria-label="Mekark home"
               onClick={closeMobile}
             >
@@ -365,58 +597,75 @@ export function Navbar() {
                 <Image
                   src="/images/LogoMekark.png"
                   alt="Mekark"
-                  width={148}
-                  height={40}
+                  width={220}
+                  height={60}
                   priority
-                  className="h-8 w-auto sm:h-9"
+                  className="h-11 w-auto sm:h-12 lg:h-[52px]"
                 />
               </motion.div>
             </Link>
           </motion.div>
 
           <motion.nav
-            className="hidden items-center gap-0.5 xl:flex"
+            className="ml-auto hidden items-center justify-end gap-0.5 xl:flex"
             aria-label="Main navigation"
             variants={navbarItemsStagger}
             initial="hidden"
             animate="visible"
           >
             {NAV_ITEMS.map((item) =>
-              item.children?.length ? (
+              item.children?.length || item.sections?.length ? (
                 <DesktopDropdown key={item.label} item={item} />
               ) : (
                 <motion.div key={item.label} variants={navbarItemReveal}>
                   <NavLinkMotion
                     href={item.href ?? "/"}
-                    className="block px-3 py-2 text-[13px] font-medium tracking-wide text-mekark-white/90 transition-colors hover:text-mekark-red"
+                    className="block px-2.5 py-2 font-[family-name:var(--font-manrope)] text-[12.5px] font-medium tracking-[0.04em] text-white/92 transition-colors [text-shadow:0_1px_10px_rgba(0,0,0,0.55)] hover:text-mekark-red lg:px-3"
                   >
                     {item.label}
                   </NavLinkMotion>
                 </motion.div>
               ),
             )}
+
+            <motion.div variants={navbarItemReveal} className="ml-4">
+              <FindSolutionButton
+                open={findOpen}
+                onClick={() => (findOpen ? closeFind() : openFind())}
+              />
+            </motion.div>
           </motion.nav>
 
-          <motion.button
-            type="button"
-            className="flex size-11 min-h-11 min-w-11 items-center justify-center rounded-lg text-mekark-white xl:hidden"
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
-            aria-expanded={mobileOpen}
-            whileHover={{ backgroundColor: "rgba(255,255,255,0.1)" }}
-            whileTap={{ scale: 0.92 }}
-            onClick={() => {
-              setMobileOpen((open) => !open);
-              setMobileExpanded(null);
-            }}
-          >
-            <AnimatePresence mode="wait" initial={false}>
-              {mobileOpen ? (
-                <CloseIcon key="close" />
-              ) : (
-                <MenuIcon key="menu" />
-              )}
-            </AnimatePresence>
-          </motion.button>
+          <div className="ml-auto flex items-center gap-2 xl:hidden">
+            <div className="hidden sm:block">
+              <FindSolutionButton
+                open={findOpen}
+                short
+                onClick={() => (findOpen ? closeFind() : openFind())}
+              />
+            </div>
+            <motion.button
+              type="button"
+              className="flex size-11 min-h-11 min-w-11 items-center justify-center rounded-md text-mekark-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileOpen}
+              whileHover={{ backgroundColor: "rgba(255,255,255,0.08)" }}
+              whileTap={{ scale: 0.92 }}
+              onClick={() => {
+                setFindOpen(false);
+                setMobileOpen((open) => !open);
+                setMobileExpanded(null);
+              }}
+            >
+              <AnimatePresence mode="wait" initial={false}>
+                {mobileOpen ? (
+                  <CloseIcon key="close" />
+                ) : (
+                  <MenuIcon key="menu" />
+                )}
+              </AnimatePresence>
+            </motion.button>
+          </div>
         </div>
 
         <AnimatePresence>
@@ -426,15 +675,18 @@ export function Navbar() {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="overflow-hidden border-t border-white/10 bg-black/95 backdrop-blur-xl xl:hidden"
+              className="overflow-hidden border-t border-white/10 bg-black/92 backdrop-blur-xl xl:hidden"
               aria-label="Mobile navigation"
             >
               <motion.div
-                className="max-h-[calc(100dvh-72px)] overflow-y-auto sm:max-h-[calc(100dvh-80px)]"
+                className="max-h-[calc(100dvh-76px)] overflow-y-auto sm:max-h-[calc(100dvh-88px)]"
                 variants={navbarMobileItemsStagger}
                 initial="hidden"
                 animate="visible"
               >
+                <motion.div variants={navbarMobileItemReveal} className="border-b border-white/8 px-5 py-4 sm:hidden">
+                  <FindSolutionButton open={findOpen} onClick={openFind} fullWidth />
+                </motion.div>
                 {NAV_ITEMS.map((item) => (
                   <MobileNavItem
                     key={item.label}
@@ -453,6 +705,43 @@ export function Navbar() {
           )}
         </AnimatePresence>
       </motion.div>
+
+      <div className="absolute inset-x-0 top-full">
+        <AnimatePresence>
+          {findOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.22, ease: EASE }}
+            >
+              <FindYourSolutionPanel
+                step={findStep}
+                industry={industry}
+                service={service}
+                onSelectIndustry={(option) => {
+                  setIndustry(option);
+                  setService(null);
+                  setFindStep(2);
+                }}
+                onSelectService={(option) => setService(option)}
+                onBack={() => {
+                  setFindStep(1);
+                  setService(null);
+                }}
+                onClose={closeFind}
+                onRedirect={redirectToSolution}
+              />
+              <button
+                type="button"
+                aria-label="Close find your solution"
+                className="block h-[40vh] w-full cursor-default bg-gradient-to-b from-black/45 via-black/25 to-transparent"
+                onClick={closeFind}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </motion.header>
   );
 }

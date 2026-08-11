@@ -289,6 +289,15 @@ export const aboutBuildingReveal: Variants = {
   },
 };
 
+export const aboutCalloutReveal: Variants = {
+  hidden: { opacity: 0, x: -40 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.55 },
+  },
+};
+
 export const aboutDotGridStagger: Variants = {
   hidden: {},
   visible: {
@@ -729,71 +738,112 @@ export const partnerFlowSkylineFloat: Variants = {
   },
 };
 
-/* ── One Partner — Elastic drop + spotlight hover ── */
+/* ── One Partner — Structural Lock-In ── */
 
-export function partnerCardElasticDrop(index: number): Variants {
+export const partnerLockHeaderStagger: Variants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.1, delayChildren: 0.08 },
+  },
+};
+
+export const partnerLockWordReveal: Variants = {
+  hidden: { opacity: 0, y: 42, clipPath: "inset(100% 0 0 0)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    clipPath: "inset(0% 0 0 0)",
+    transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+export const partnerLockRuleDraw: Variants = {
+  hidden: { scaleX: 0, opacity: 0 },
+  visible: {
+    scaleX: 1,
+    opacity: 1,
+    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: 0.08 },
+  },
+};
+
+export const partnerLockSubtitle: Variants = {
+  hidden: { opacity: 0, y: 28, filter: "blur(8px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+export const partnerLockGridStagger: Variants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.1, delayChildren: 0.18 },
+  },
+};
+
+export function partnerLockCardAssemble(index: number): Variants {
+  const fromCenter = index - 2;
+
   return {
     hidden: {
       opacity: 0,
-      y: -120,
-      scale: 0.86,
-      rotate: (index - 2) * 2.5,
+      y: 72,
+      x: fromCenter * 18,
+      scale: 0.9,
+      rotateX: 12,
+      filter: "blur(6px)",
+      transformPerspective: 900,
     },
     visible: {
       opacity: 1,
       y: 0,
+      x: 0,
       scale: 1,
-      rotate: 0,
+      rotateX: 0,
+      filter: "blur(0px)",
       transition: {
-        type: "spring",
-        stiffness: 260,
-        damping: 15,
-        mass: 0.8,
-        delay: index * 0.07,
+        duration: 0.85,
+        ease: [0.16, 1, 0.3, 1],
+        delay: index * 0.06,
         when: "beforeChildren",
-        staggerChildren: 0.07,
-        delayChildren: 0.22,
+        staggerChildren: 0.06,
+        delayChildren: 0.18,
       },
     },
   };
 }
 
-export const partnerCardCurtainUp: Variants = {
-  hidden: { y: "0%" },
+export const partnerLockContentStack: Variants = {
+  hidden: {},
   visible: {
-    y: "-102%",
-    transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: 0.12 },
+    transition: { staggerChildren: 0.07, delayChildren: 0.05 },
   },
 };
 
-export const partnerCardFrameDraw: Variants = {
-  hidden: { opacity: 0 },
+export const partnerLockIconPop: Variants = {
+  hidden: { opacity: 0, scale: 0.35, y: 16 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.05, delayChildren: 0.05 },
+    scale: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 420, damping: 16 },
   },
 };
 
-export const partnerCardFrameLineH: Variants = {
-  hidden: { scaleX: 0, opacity: 0 },
+export const partnerLockStamp: Variants = {
+  hidden: { opacity: 0, y: -12, letterSpacing: "0.35em" },
   visible: {
-    scaleX: 1,
     opacity: 1,
-    transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] },
+    y: 0,
+    letterSpacing: "1.3px",
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
   },
 };
 
-export const partnerCardFrameLineV: Variants = {
-  hidden: { scaleY: 0, opacity: 0 },
-  visible: {
-    scaleY: 1,
-    opacity: 1,
-    transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] },
-  },
-};
-
-export const partnerCardContentFade: Variants = {
-  hidden: { opacity: 0, y: 14 },
+export const partnerLockTextRise: Variants = {
+  hidden: { opacity: 0, y: 16 },
   visible: {
     opacity: 1,
     y: 0,
@@ -801,19 +851,72 @@ export const partnerCardContentFade: Variants = {
   },
 };
 
-export const partnerCardContentStack: Variants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.07, delayChildren: 0.38 },
-  },
-};
-
-export const partnerCardBottomSnap: Variants = {
+export const partnerLockBarSnap: Variants = {
   hidden: { scaleX: 0, opacity: 0 },
   visible: {
     scaleX: 1,
     opacity: 1,
-    transition: { type: "spring", stiffness: 500, damping: 22, delay: 0.1 },
+    transition: { type: "spring", stiffness: 480, damping: 20, delay: 0.04 },
+  },
+};
+
+export const partnerLockBottomDraw: Variants = {
+  hidden: { scaleX: 0, opacity: 0 },
+  visible: {
+    scaleX: 1,
+    opacity: 1,
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.12 },
+  },
+};
+
+export const partnerLockBannerWipe: Variants = {
+  hidden: {
+    opacity: 0,
+    clipPath: "inset(0 100% 0 0)",
+    x: -24,
+  },
+  visible: {
+    opacity: 1,
+    clipPath: "inset(0 0% 0 0)",
+    x: 0,
+    transition: {
+      duration: 0.95,
+      ease: [0.22, 1, 0.36, 1],
+      when: "beforeChildren",
+      staggerChildren: 0.12,
+      delayChildren: 0.28,
+    },
+  },
+};
+
+export const partnerLockShieldDrop: Variants = {
+  hidden: { opacity: 0, y: -28, scale: 0.6, rotate: -18 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    rotate: 0,
+    transition: { type: "spring", stiffness: 380, damping: 14 },
+  },
+};
+
+export const partnerLockBannerText: Variants = {
+  hidden: { opacity: 0, x: 28, filter: "blur(6px)" },
+  visible: {
+    opacity: 1,
+    x: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+export const partnerLockSkylineDrift: Variants = {
+  hidden: { opacity: 0, x: 80, scale: 1.08 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: { duration: 1.15, ease: [0.16, 1, 0.3, 1], delay: 0.15 },
   },
 };
 

@@ -14,49 +14,58 @@ const VIEWPORT = { once: true, margin: "-80px" as const };
 
 const PROJECTS = [
   {
-    title: "VK International Corporation",
+    title: "Air Vision",
     type: "Manufacturing Unit",
     location: "Chennai",
+    image: "/images/completed-projects-listing/air-vision.png",
   },
   {
-    title: "Jivita Lifesciences",
+    title: "French village food court",
     type: "Manufacturing Unit",
     location: "Chennai",
+    image: "/images/completed-projects-listing/french-village-food-court.png",
   },
   {
-    title: "Indus Edible oil & Beverages",
+    title: "Jaguar showroom",
     type: "Manufacturing Unit",
     location: "Chennai",
+    image: "/images/completed-projects-listing/jaguar-showroom.png",
   },
   {
-    title: "SSN",
+    title: "MIPL",
     type: "Commercial",
     location: "Tirunelveli",
+    image: "/images/completed-projects-listing/mipl.png",
   },
   {
-    title: "Aarush Manufacturing Pvt Ltd",
+    title: "PKM Factory",
     type: "Manufacturing Unit",
     location: "Oragadam, Chennai",
+    image: "/images/completed-projects-listing/pkm-factory.png",
   },
   {
-    title: "Sai Constructions",
+    title: "Solo paints",
     type: "Warehouse",
     location: "Oragadam, Chennai",
+    image: "/images/completed-projects-listing/solo-paints.png",
   },
   {
-    title: "Shri Shelters",
+    title: "SOP",
     type: "Auditorium",
     location: "Chennai",
+    image: "/images/completed-projects-listing/sop.png",
   },
   {
-    title: "Sri Maruthi Logistics",
+    title: "TAAC School",
     type: "Warehouse",
     location: "Chennai",
+    image: "/images/completed-projects-listing/taac-school.png",
   },
   {
-    title: "Johnson Electric",
+    title: "Topaz market and food street",
     type: "Mezzanine",
     location: "Chennai",
+    image: "/images/completed-projects-listing/topaz-market-and-food-street.png",
   },
 ] as const;
 
@@ -99,10 +108,10 @@ function ProjectListingCard({
     >
       <div className="relative mx-3 mt-3 aspect-[531/409] overflow-hidden rounded-[20px] sm:mx-3.5 sm:mt-3.5">
         <Image
-          src="/images/completed-projects-listing/project-card.png"
+          src={project.image}
           alt={project.title}
           fill
-          className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
+          className="object-cover object-bottom transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 420px"
         />
         <div

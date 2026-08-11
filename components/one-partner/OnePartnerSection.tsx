@@ -12,23 +12,22 @@ import {
   type MotionValue,
 } from "framer-motion";
 import {
-  partnerCardBottomSnap,
-  partnerCardContentFade,
-  partnerCardContentStack,
-  partnerCardCurtainUp,
-  partnerCardElasticDrop,
-  partnerCardFrameDraw,
-  partnerCardFrameLineH,
-  partnerCardFrameLineV,
-  partnerFlowBannerIris,
-  partnerFlowBannerWords,
-  partnerFlowBarSnap,
-  partnerFlowRulePulse,
-  partnerFlowShieldBounce,
-  partnerFlowSkylineFloat,
-  partnerFlowSubtitleSlide,
-  partnerFlowWordFlip,
-  partnerFlowWordsStagger,
+  partnerLockBannerText,
+  partnerLockBannerWipe,
+  partnerLockBarSnap,
+  partnerLockBottomDraw,
+  partnerLockCardAssemble,
+  partnerLockContentStack,
+  partnerLockGridStagger,
+  partnerLockHeaderStagger,
+  partnerLockIconPop,
+  partnerLockRuleDraw,
+  partnerLockShieldDrop,
+  partnerLockSkylineDrift,
+  partnerLockStamp,
+  partnerLockSubtitle,
+  partnerLockTextRise,
+  partnerLockWordReveal,
 } from "@/lib/motion-variants";
 
 const VIEWPORT = { once: true, margin: "-80px" as const };
@@ -105,17 +104,35 @@ function ConnectorPulse() {
   return (
     <div
       ref={ref}
-      className="pointer-events-none absolute left-[5%] right-[4%] top-[164px] hidden h-0.5 overflow-hidden rounded-full bg-[#e4141c]/25 xl:block"
+      className="pointer-events-none absolute left-[5%] right-[4%] top-[164px] hidden h-0.5 overflow-hidden rounded-full bg-[#e4141c]/20 xl:block"
       aria-hidden
     >
       <motion.div
-        className="absolute inset-0 origin-left bg-[#e4141c]/70"
+        className="absolute inset-0 origin-left bg-[#e4141c]/55"
         initial={{ scaleX: 0 }}
         animate={inView ? { scaleX: 1 } : { scaleX: 0 }}
-        transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: 0.55 }}
+        transition={{ duration: 1.05, ease: [0.22, 1, 0.36, 1], delay: 0.45 }}
       />
+      {[0, 1, 2, 3, 4].map((i) => (
+        <motion.span
+          key={i}
+          className="absolute top-1/2 size-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#e4141c]"
+          style={{ left: `${i * 25}%` }}
+          initial={{ scale: 0, opacity: 0 }}
+          animate={
+            inView
+              ? { scale: [0, 1.35, 1], opacity: 1 }
+              : { scale: 0, opacity: 0 }
+          }
+          transition={{
+            duration: 0.55,
+            ease: [0.22, 1, 0.36, 1],
+            delay: 0.55 + i * 0.12,
+          }}
+        />
+      ))}
       <motion.div
-        className="absolute top-1/2 size-2.5 -translate-y-1/2 rounded-full bg-[#e4141c] shadow-[0_0_10px_rgba(228,20,28,0.8)]"
+        className="absolute top-1/2 h-[3px] w-8 -translate-y-1/2 rounded-full bg-[#e4141c] shadow-[0_0_12px_rgba(228,20,28,0.7)]"
         initial={{ left: "0%", opacity: 0 }}
         animate={
           inView
@@ -126,11 +143,11 @@ function ConnectorPulse() {
             : { left: "0%", opacity: 0 }
         }
         transition={{
-          duration: 2.4,
+          duration: 2.8,
           ease: "easeInOut",
-          delay: 1.2,
+          delay: 1.1,
           repeat: Infinity,
-          repeatDelay: 1.8,
+          repeatDelay: 2,
         }}
       />
     </div>
@@ -152,22 +169,28 @@ function BenefitCard({
     ? [...benefit.title]
     : [benefit.title];
 
-  const mouseX = useMotionValue(50);
-  const mouseY = useMotionValue(30);
+  const mouseX = useMotionValue(0.5);
+  const mouseY = useMotionValue(0.5);
   const hoverLift = useMotionValue(0);
-  const spotlight = useTransform(
+
+  const rotateXRaw = useTransform(mouseY, [0, 1], [7, -7]);
+  const rotateYRaw = useTransform(mouseX, [0, 1], [-8, 8]);
+  const rotateX = useSpring(rotateXRaw, { stiffness: 280, damping: 22 });
+  const rotateY = useSpring(rotateYRaw, { stiffness: 280, damping: 22 });
+
+  const glow = useTransform(
     [mouseX, mouseY],
     ([x, y]: number[]) =>
-      `radial-gradient(ellipse 200px 160px at ${x}% ${y}%, rgba(237,32,36,0.11), transparent 72%)`,
+      `radial-gradient(circle 180px at ${x * 100}% ${y * 100}%, rgba(237,32,36,0.14), transparent 70%)`,
   );
 
   const cardParallax = useTransform(
     scrollYProgress,
     [0, 1],
-    [index * 5, -index * 5],
+    [index * 4, -index * 4],
   );
   const cardY = useSpring(cardParallax, { stiffness: 120, damping: 28 });
-  const liftY = useSpring(hoverLift, { stiffness: 400, damping: 26 });
+  const liftY = useSpring(hoverLift, { stiffness: 380, damping: 24 });
   const combinedY = useTransform(
     [cardY, liftY],
     ([parallax, lift]: number[]) => parallax + lift,
@@ -177,90 +200,51 @@ function BenefitCard({
     const el = cardRef.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
-    mouseX.set(((event.clientX - rect.left) / rect.width) * 100);
-    mouseY.set(((event.clientY - rect.top) / rect.height) * 100);
+    mouseX.set((event.clientX - rect.left) / rect.width);
+    mouseY.set((event.clientY - rect.top) / rect.height);
+  };
+
+  const resetTilt = () => {
+    mouseX.set(0.5);
+    mouseY.set(0.5);
   };
 
   return (
     <motion.article
       ref={cardRef}
-      variants={partnerCardElasticDrop(index)}
-      initial="hidden"
-      whileInView="visible"
-      viewport={VIEWPORT}
+      variants={partnerLockCardAssemble(index)}
       onMouseMove={handlePointerMove}
       onMouseEnter={() => {
         setHovered(true);
-        hoverLift.set(-6);
+        hoverLift.set(-10);
       }}
       onMouseLeave={() => {
         setHovered(false);
         hoverLift.set(0);
+        resetTilt();
       }}
-      animate={{ scale: hovered ? 1.035 : 1 }}
-      transition={{ type: "spring", stiffness: 380, damping: 24 }}
       style={{
         y: combinedY,
+        rotateX,
+        rotateY,
+        transformPerspective: 900,
+        transformStyle: "preserve-3d",
         boxShadow: hovered
-          ? "0px 28px 52px rgba(0,0,0,0.11), 0px 0px 0px 1px rgba(237,32,36,0.18)"
+          ? "0px 32px 56px rgba(0,0,0,0.12), 0px 0px 0px 1px rgba(237,32,36,0.22)"
           : CARD_SHADOW,
       }}
+      animate={{ scale: hovered ? 1.03 : 1 }}
+      transition={{ type: "spring", stiffness: 360, damping: 24 }}
       className="group relative flex min-h-[325px] w-[242px] shrink-0 snap-start flex-col overflow-hidden rounded-[18px] border border-[#dedede] bg-white/90 sm:w-[260px] md:w-[280px] xl:w-full xl:shrink xl:min-w-0 xl:flex-1"
     >
-      {/* red curtain reveal on enter */}
-      <motion.div
-        variants={partnerCardCurtainUp}
-        className="pointer-events-none absolute inset-0 z-30 rounded-[18px] bg-[#ed2024]"
-        aria-hidden
-      />
-
-      {/* blueprint frame draw on enter */}
-      <motion.div
-        variants={partnerCardFrameDraw}
-        className="pointer-events-none absolute inset-0 z-[1]"
-        aria-hidden
-      >
-        <motion.span
-          variants={partnerCardFrameLineH}
-          className="absolute inset-x-0 top-0 h-px origin-left bg-[#ed2024]/40"
-        />
-        <motion.span
-          variants={partnerCardFrameLineH}
-          className="absolute inset-x-0 bottom-0 h-px origin-right bg-[#ed2024]/40"
-        />
-        <motion.span
-          variants={partnerCardFrameLineV}
-          className="absolute bottom-0 left-0 top-0 w-px origin-top bg-[#ed2024]/40"
-        />
-        <motion.span
-          variants={partnerCardFrameLineV}
-          className="absolute bottom-0 right-0 top-0 w-px origin-bottom bg-[#ed2024]/40"
-        />
-      </motion.div>
-
-      {/* cursor spotlight on hover */}
       <motion.div
         className="pointer-events-none absolute inset-0 z-[2] rounded-[18px]"
-        style={{ background: spotlight }}
+        style={{ background: glow }}
         animate={{ opacity: hovered ? 1 : 0 }}
-        transition={{ duration: 0.25 }}
+        transition={{ duration: 0.3 }}
         aria-hidden
       />
 
-      {/* scan line on hover */}
-      <motion.div
-        className="pointer-events-none absolute inset-x-4 z-[3] h-px bg-[#ed2024]/70 shadow-[0_0_10px_rgba(237,32,36,0.5)]"
-        initial={false}
-        animate={
-          hovered
-            ? { top: ["8%", "92%"], opacity: [0, 1, 1, 0] }
-            : { top: "8%", opacity: 0 }
-        }
-        transition={{ duration: 0.85, ease: "easeInOut" }}
-        aria-hidden
-      />
-
-      {/* top accent slides in on hover */}
       <motion.div
         className="absolute inset-x-0 top-0 z-[4] h-[3px] origin-left bg-[#ed2024]"
         initial={false}
@@ -270,46 +254,52 @@ function BenefitCard({
       />
 
       <motion.div
-        variants={partnerCardContentStack}
+        variants={partnerLockContentStack}
         className="relative z-10 flex h-full flex-col px-8 pb-[51px] pt-[26px] backdrop-blur-[2px]"
       >
         <motion.div
-          variants={partnerCardContentFade}
-          animate={{ y: hovered ? -6 : 0 }}
-          transition={{ type: "spring", stiffness: 400, damping: 22 }}
+          variants={partnerLockIconPop}
+          animate={{
+            y: hovered ? [-2, -8, -2] : 0,
+            scale: hovered ? 1.06 : 1,
+          }}
+          transition={
+            hovered
+              ? {
+                  y: {
+                    duration: 2.2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  },
+                  scale: { type: "spring", stiffness: 360, damping: 18 },
+                }
+              : { type: "spring", stiffness: 360, damping: 22 }
+          }
           className="relative flex size-[77px] shrink-0 items-center justify-center rounded-full border border-[#eee] shadow-[0px_10px_9px_rgba(0,0,0,0.06),inset_0px_0px_17px_rgba(0,0,0,0.04)]"
           style={{ backgroundImage: ICON_CIRCLE_BG }}
         >
-          <motion.div
-            animate={{ rotate: hovered ? 360 : 0, scale: hovered ? 1.08 : 1 }}
-            transition={{
-              rotate: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
-              scale: { type: "spring", stiffness: 400, damping: 18 },
-            }}
-          >
-            <Image
-              src={benefit.icon}
-              alt=""
-              width={benefit.iconSize}
-              height={benefit.iconSize}
-              aria-hidden
-            />
-          </motion.div>
+          <Image
+            src={benefit.icon}
+            alt=""
+            width={benefit.iconSize}
+            height={benefit.iconSize}
+            aria-hidden
+          />
         </motion.div>
 
         <motion.div
           className="mt-[15px] flex flex-col gap-2"
-          animate={{ y: hovered ? -3 : 0 }}
-          transition={{ type: "spring", stiffness: 400, damping: 24 }}
+          animate={{ y: hovered ? -4 : 0 }}
+          transition={{ type: "spring", stiffness: 380, damping: 24 }}
         >
           <motion.p
-            variants={partnerCardContentFade}
+            variants={partnerLockStamp}
             className="text-xs font-bold uppercase tracking-[1.3px] text-[#e00d15]"
           >
             {benefit.category}
           </motion.p>
           <motion.h3
-            variants={partnerCardContentFade}
+            variants={partnerLockTextRise}
             className="text-lg font-bold leading-6 tracking-[-0.5px] text-[#111]"
           >
             {titleLines.map((line) => (
@@ -319,27 +309,29 @@ function BenefitCard({
             ))}
           </motion.h3>
           <motion.div
-            variants={partnerFlowBarSnap}
+            variants={partnerLockBarSnap}
             className="mt-1 h-0.5 w-[26px] origin-left bg-[#e00d15]"
+            animate={{ width: hovered ? 42 : 26 }}
+            transition={{ type: "spring", stiffness: 400, damping: 22 }}
             aria-hidden
           />
         </motion.div>
 
         <motion.p
-          variants={partnerCardContentFade}
-          animate={{ y: hovered ? -2 : 0, opacity: hovered ? 1 : 0.92 }}
-          transition={{ duration: 0.3 }}
+          variants={partnerLockTextRise}
+          animate={{ y: hovered ? -2 : 0, opacity: hovered ? 1 : 0.9 }}
+          transition={{ duration: 0.28 }}
           className="mt-auto pt-4 text-xs leading-[19px] text-[#4c4c4c]"
         >
           {benefit.description}
         </motion.p>
 
         <motion.div
-          variants={partnerCardBottomSnap}
+          variants={partnerLockBottomDraw}
           animate={{
-            scaleX: hovered ? 1.04 : 1,
+            scaleX: hovered ? 1.05 : 1,
             boxShadow: hovered
-              ? "0 -6px 20px rgba(226,14,22,0.35)"
+              ? "0 -8px 22px rgba(226,14,22,0.4)"
               : "0 0 0 rgba(0,0,0,0)",
           }}
           className="absolute inset-x-0 bottom-0 h-1 origin-center bg-[#e20e16]"
@@ -363,12 +355,12 @@ export function OnePartnerSection() {
     offset: ["start end", "end start"],
   });
 
-  const bgY = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
-  const bgScale = useTransform(scrollYProgress, [0, 0.5, 1], [1.06, 1, 1.04]);
+  const bgY = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
+  const bgScale = useTransform(scrollYProgress, [0, 0.5, 1], [1.05, 1, 1.03]);
   const bgYSpring = useSpring(bgY, { stiffness: 90, damping: 26 });
   const bgScaleSpring = useSpring(bgScale, { stiffness: 90, damping: 26 });
 
-  const headlineY = useTransform(scrollYProgress, [0, 1], [30, -30]);
+  const headlineY = useTransform(scrollYProgress, [0, 1], [24, -24]);
   const headlineYSpring = useSpring(headlineY, { stiffness: 100, damping: 30 });
 
   return (
@@ -393,23 +385,24 @@ export function OnePartnerSection() {
 
       <div className="relative mx-auto w-full max-w-[1440px] px-5 py-14 sm:px-8 lg:px-20 lg:py-20">
         <motion.div style={{ y: headlineYSpring }} className="flex flex-col gap-6">
-          <div className="flex flex-col gap-6">
+          <motion.div
+            variants={partnerLockHeaderStagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={VIEWPORT}
+            className="flex flex-col gap-6"
+          >
             <motion.h2
-              variants={partnerFlowWordsStagger}
-              initial="hidden"
-              whileInView="visible"
-              viewport={VIEWPORT}
+              variants={partnerLockHeaderStagger}
               className="max-w-[580px] text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold leading-[1.05] tracking-[-0.84px] text-[#080808] lg:text-[40px]"
-              style={{ transformPerspective: 800 }}
             >
               {HEADLINE_WORDS.map((word, i) => (
                 <motion.span
                   key={word.text}
-                  variants={partnerFlowWordFlip}
-                  className={`mr-[0.28em] inline-block origin-bottom ${
+                  variants={partnerLockWordReveal}
+                  className={`mr-[0.28em] inline-block ${
                     word.accent ? "text-[#d40810]" : ""
                   }`}
-                  style={{ transformPerspective: 800 }}
                 >
                   {word.text}
                   {i === 3 ? " " : ""}
@@ -418,30 +411,30 @@ export function OnePartnerSection() {
             </motion.h2>
 
             <motion.div
-              variants={partnerFlowRulePulse}
-              initial="hidden"
-              whileInView="visible"
-              viewport={VIEWPORT}
+              variants={partnerLockRuleDraw}
               className="h-[3px] w-14 origin-left rounded-sm bg-[#ed2024]"
               aria-hidden
             />
 
             <motion.p
-              variants={partnerFlowSubtitleSlide}
-              initial="hidden"
-              whileInView="visible"
-              viewport={VIEWPORT}
+              variants={partnerLockSubtitle}
               className="max-w-[560px] text-lg leading-[29px] text-[#656565] sm:text-xl"
             >
               Eliminating the friction of multiple vendors. We consolidate
               responsibility for absolute performance certainty.
             </motion.p>
-          </div>
+          </motion.div>
 
           <div className="relative pt-5">
             <ConnectorPulse />
 
-            <div className="-mx-5 flex gap-[17px] overflow-x-auto px-5 pb-2 snap-x snap-mandatory scrollbar-none sm:mx-0 sm:px-0 xl:mx-0 xl:grid xl:grid-cols-5 xl:overflow-visible xl:px-0">
+            <motion.div
+              variants={partnerLockGridStagger}
+              initial="hidden"
+              whileInView="visible"
+              viewport={VIEWPORT}
+              className="-mx-5 flex gap-[17px] overflow-x-auto px-5 pb-2 snap-x snap-mandatory scrollbar-none sm:mx-0 sm:px-0 xl:mx-0 xl:grid xl:grid-cols-5 xl:overflow-visible xl:px-0"
+            >
               {BENEFITS.map((benefit, index) => (
                 <BenefitCard
                   key={benefit.category}
@@ -450,11 +443,11 @@ export function OnePartnerSection() {
                   scrollYProgress={scrollYProgress}
                 />
               ))}
-            </div>
+            </motion.div>
           </div>
 
           <motion.div
-            variants={partnerFlowBannerIris}
+            variants={partnerLockBannerWipe}
             initial="hidden"
             whileInView="visible"
             viewport={VIEWPORT}
@@ -469,9 +462,18 @@ export function OnePartnerSection() {
               aria-hidden
             />
 
+            <motion.div
+              className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white/20 to-transparent"
+              initial={{ x: "-100%", opacity: 0 }}
+              whileInView={{ x: "320%", opacity: [0, 0.7, 0] }}
+              viewport={VIEWPORT}
+              transition={{ duration: 1.4, ease: "easeInOut", delay: 0.7 }}
+              aria-hidden
+            />
+
             <div className="relative flex min-h-[104px] items-center gap-6 px-6 py-5 sm:gap-8 sm:px-12 lg:px-[52px]">
               <motion.div
-                variants={partnerFlowShieldBounce}
+                variants={partnerLockShieldDrop}
                 className="flex size-[70px] shrink-0 items-center justify-center rounded-full border border-white"
               >
                 <Image
@@ -484,7 +486,7 @@ export function OnePartnerSection() {
               </motion.div>
 
               <motion.p
-                variants={partnerFlowBannerWords}
+                variants={partnerLockBannerText}
                 className="relative z-10 max-w-[769px] text-xl font-medium leading-normal tracking-[-0.76px] text-white sm:text-[25px]"
               >
                 Single accountability.{" "}
@@ -492,7 +494,7 @@ export function OnePartnerSection() {
               </motion.p>
 
               <motion.div
-                variants={partnerFlowSkylineFloat}
+                variants={partnerLockSkylineDrift}
                 className="pointer-events-none absolute -right-5 -top-12 hidden h-[206px] w-[675px] lg:block"
               >
                 <Image

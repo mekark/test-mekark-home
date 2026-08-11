@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   aboutBuildingReveal,
+  aboutCalloutReveal,
   aboutContainerStagger,
   aboutHeadlineChunk,
   aboutHeadlineStagger,
@@ -66,7 +67,7 @@ const STATS = [
 function StatIcon({ src, alt }: { src: string; alt: string }) {
   return (
     <div
-      className="relative isolate flex size-16 shrink-0 items-center justify-center rounded-full sm:size-20 lg:size-[4.5rem] xl:size-24"
+      className="relative isolate flex size-14 shrink-0 items-center justify-center rounded-full sm:size-20 lg:size-[72px] xl:size-24"
       style={{
         background:
           "radial-gradient(95.52% 95.52% at 35% 30%, rgba(255,255,255,0.05), rgba(244,244,244,0.05))",
@@ -76,7 +77,7 @@ function StatIcon({ src, alt }: { src: string; alt: string }) {
         className="pointer-events-none absolute inset-0 z-0 rounded-full bg-transparent shadow-[0px_1.33px_0px_rgba(255,255,255,0.1)_inset,0px_10.67px_24px_-10.67px_rgba(0,0,0,0.12),0px_2.67px_5.33px_rgba(0,0,0,0.04)]"
         aria-hidden
       />
-      <div className="relative z-[1] size-7 sm:size-8 lg:size-7 xl:size-8">
+      <div className="relative z-[1] size-6 sm:size-8">
         <Image src={src} alt={alt} fill className="object-contain" sizes="32px" />
       </div>
     </div>
@@ -86,7 +87,7 @@ function StatIcon({ src, alt }: { src: string; alt: string }) {
 export function AboutMekarkSection() {
   return (
     <section className="relative w-full overflow-hidden bg-white font-[family-name:var(--font-manrope)] text-[#555]">
-      <div className="relative mx-auto flex w-full max-w-[1740px] flex-col items-center gap-8 px-4 py-12 sm:gap-10 sm:px-8 sm:py-16 lg:px-[107px] lg:py-[85px]">
+      <div className="relative mx-auto flex w-full max-w-[1740px] flex-col items-center gap-10 px-4 py-12 sm:gap-12 sm:px-8 sm:py-16 lg:gap-14 lg:px-[107px] lg:py-[85px]">
         {/* Hero row: image + copy — Figma 3327:9333 */}
         <div className="flex w-full flex-col items-center gap-10 lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
           {/* Image card */}
@@ -119,7 +120,7 @@ export function AboutMekarkSection() {
 
             {/* Bottom gradient */}
             <div
-              className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[40%] bg-gradient-to-b from-transparent to-black to-[78%]"
+              className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[41%] bg-gradient-to-b from-transparent to-black to-[78%]"
               aria-hidden
             />
 
@@ -129,34 +130,32 @@ export function AboutMekarkSection() {
               aria-hidden
             />
 
-            {/* Enterprise callout */}
-            <div className="absolute bottom-6 left-4 z-[3] max-w-[min(90%,430px)] sm:bottom-10 sm:left-[54px]">
-              <p className="text-base leading-[37px] text-[#bbb] sm:text-[21.33px]">
-                For enterprise clients, this means one thing:
-              </p>
-              <div
-                className="mt-0 inline-flex items-center py-[10px] pl-4 pr-5 sm:pl-5 sm:pr-6"
-                style={{
-                  background:
-                    "linear-gradient(90deg, rgba(228,0,21,0.54) 42.66%, rgba(8,8,8,0.54))",
-                }}
+            {/* Bottom overlays: callout + years badge */}
+            <div className="absolute inset-x-0 bottom-0 z-[3] flex items-end gap-0">
+              <motion.div
+                className="mb-0 ml-3 box-border flex min-h-[48px] min-w-0 flex-1 flex-col items-start justify-center bg-[linear-gradient(90deg,rgba(8,8,8,0.54)_0%,rgba(228,0,21,0.54)_42.66%)] py-2 pl-3 pr-3 sm:mb-[49px] sm:ml-auto sm:mr-0 sm:min-h-[60px] sm:max-w-[413px] sm:flex-none sm:py-2.5 sm:pl-5 sm:pr-6"
+                variants={aboutCalloutReveal}
+                initial="hidden"
+                whileInView="visible"
+                viewport={VIEWPORT}
               >
-                <p className="text-xs font-bold tracking-[1.23px] text-[#f5f5f5] sm:text-[15.33px]">
-                  predictable delivery, engineered with certainty
+                <p className="text-[10px] font-bold leading-snug tracking-[0.8px] text-[#f5f5f5] sm:text-[15.33px] sm:leading-normal sm:tracking-[1.23px]">
+                  EPC Contractor for Industries,
+                  <br />
+                  Commercial &amp; Institutional Projects
+                </p>
+              </motion.div>
+
+              <div className="flex shrink-0 flex-col items-center rounded-br-[20px] bg-[#c4161c] px-4 py-3 text-center sm:rounded-br-[26.67px] sm:px-8 sm:py-6">
+                <p className="text-[28px] font-extrabold leading-none text-[#f5f5f5] sm:text-[48px] sm:leading-[48px]">
+                  18+
+                </p>
+                <p className="mt-0.5 text-[9px] font-bold capitalize tracking-[1px] text-[rgba(245,245,245,0.8)] sm:mt-1 sm:text-[13.33px] sm:tracking-[1.33px]">
+                  Years Of
+                  <br />
+                  Excellence
                 </p>
               </div>
-            </div>
-
-            {/* 18+ Years badge */}
-            <div className="absolute bottom-0 right-0 z-[3] flex flex-col items-center bg-[#c4161c] px-6 py-4 text-center sm:px-8 sm:py-6">
-              <p className="text-4xl font-extrabold leading-none text-[#f5f5f5] sm:text-[48px] sm:leading-[48px]">
-                18+
-              </p>
-              <p className="mt-1 text-[11px] font-bold capitalize tracking-[1.33px] text-[rgba(245,245,245,0.8)] sm:text-[13.33px]">
-                Years of
-                <br />
-                Excellence
-              </p>
             </div>
           </motion.div>
 
@@ -170,7 +169,7 @@ export function AboutMekarkSection() {
           >
             <motion.h2
               variants={aboutHeadlineStagger}
-              className="text-[32px] font-extrabold leading-tight text-[#121212] sm:text-[42px] sm:leading-[64px] lg:text-[53.33px] lg:leading-[81.33px]"
+              className="text-[28px] font-extrabold leading-tight text-[#121212] sm:text-[42px] sm:leading-[64px] lg:text-[53.33px] lg:leading-[81.33px]"
             >
               <motion.span variants={aboutHeadlineChunk} className="inline">
                 <span className="uppercase">- A</span>
@@ -199,6 +198,17 @@ export function AboutMekarkSection() {
               large-span structural systems and turnkey industrial plants, every
               Mekark project is designed for lifecycle performance, not just
               construction milestones.
+            </motion.p>
+
+            <motion.p
+              variants={aboutParagraphReveal}
+              className="text-base leading-[28px] text-[#555] sm:text-[21.33px] sm:leading-[37.33px]"
+            >
+              Our integrated approach brings design, procurement, fabrication,
+              and execution together under a single accountable system, reducing
+              delays, eliminating coordination gaps, and delivering industrial,
+              commercial, and institutional assets that stay efficient for
+              decades.
             </motion.p>
 
             <motion.blockquote
@@ -232,17 +242,17 @@ export function AboutMekarkSection() {
 
         {/* Stats grid — Figma 3327:9362 */}
         <motion.div
-          className="box-border flex w-full flex-col items-stretch justify-center gap-[10.7px] rounded-3xl border-[1.3px] border-solid border-[rgba(255,255,255,0.8)] bg-[#0e0e0e] px-0 py-6 shadow-[0px_0px_20.27px_rgba(0,0,0,0.05)] backdrop-blur-[13.33px] sm:py-8 lg:flex-row lg:items-stretch lg:gap-0 lg:py-6 xl:py-10"
+          className="box-border flex w-full flex-col items-stretch justify-center gap-3 rounded-3xl border-[1.3px] border-solid border-[rgba(255,255,255,0.8)] bg-[#0e0e0e] px-1 py-8 shadow-[0px_0px_20.27px_rgba(0,0,0,0.05)] backdrop-blur-[13.33px] sm:py-10 lg:flex-row lg:items-stretch lg:gap-0 lg:py-[41px]"
           variants={aboutStatsStagger}
           initial="hidden"
           whileInView="visible"
-          viewport={VIEWPORT}
+          viewport={{ once: true, amount: 0.25 }}
         >
           {STATS.map((stat, index) => (
             <motion.div
               key={stat.value}
               variants={aboutStatReveal}
-              className={`relative isolate flex min-w-0 flex-1 items-center gap-4 rounded-2xl px-5 py-3 sm:gap-5 sm:px-6 sm:py-4 lg:gap-3 lg:px-4 lg:py-3 xl:gap-[29.3px] xl:px-8 xl:py-[18.7px] ${
+              className={`relative isolate flex min-w-0 flex-1 items-center gap-4 rounded-2xl px-5 py-4 sm:gap-6 sm:px-7 sm:py-5 lg:gap-5 lg:px-6 lg:py-[18px] xl:gap-[29px] xl:px-8 ${
                 index > 0
                   ? "border-[rgba(214,214,214,0.25)] lg:border-l-[1.3px] lg:border-solid"
                   : ""
@@ -250,16 +260,16 @@ export function AboutMekarkSection() {
             >
               <StatIcon src={stat.icon} alt={stat.iconAlt} />
               <div className="z-[1] flex min-w-0 flex-col items-start gap-[4.6px]">
-                <p className="font-[family-name:var(--font-montserrat-alternates)] text-[36px] font-extrabold leading-none tracking-[-1.01px] text-white sm:text-[42px] sm:leading-none lg:text-[32px] xl:text-[50.67px] xl:leading-[50.67px]">
+                <p className="whitespace-nowrap font-[family-name:var(--font-montserrat-alternates)] text-[28px] font-extrabold leading-none tracking-[-1.01px] text-white sm:text-[42px] sm:leading-none lg:text-[36px] xl:text-[50.67px] xl:leading-[50.67px]">
                   {stat.value}
                 </p>
-                <p className="text-xs font-semibold uppercase leading-[18px] tracking-[1.6px] text-[#6b6b6b] sm:text-sm sm:leading-5 lg:text-[11px] lg:leading-4 lg:tracking-[1.2px] xl:text-[14.67px] xl:leading-[21.27px] xl:tracking-[2.05px]">
+                <p className="text-[11px] font-semibold uppercase leading-[16px] tracking-[1.2px] text-[#6b6b6b] sm:whitespace-nowrap sm:text-sm sm:leading-5 sm:tracking-[1.6px] lg:text-[12px] lg:leading-[18px] lg:tracking-[1.4px] xl:text-[14.67px] xl:leading-[21.27px] xl:tracking-[2.05px]">
                   {stat.label}
                 </p>
               </div>
               <motion.div
                 variants={aboutStatUnderline}
-                className="absolute bottom-[-2.7px] left-1/2 z-[2] h-[2.7px] w-12 origin-left -translate-x-1/2 bg-[#ed2024] lg:left-6 lg:translate-x-0 xl:left-10"
+                className="absolute bottom-[-2.7px] left-5 z-[2] h-[2.7px] w-12 origin-left bg-[#ed2024] sm:left-7 lg:left-[158px]"
                 aria-hidden
               />
             </motion.div>

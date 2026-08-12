@@ -57,6 +57,7 @@ const SERVICE_EXTERNAL_URLS: Record<string, string> = {
   MEP: "https://new-mep-mekark.vercel.app/",
   EOT: "https://eot-crane.vercel.app/",
   Racking: "https://mekark-racking.vercel.app/",
+  "Clean Room": "https://mekark-cleanroom.vercel.app/",
 };
 
 const SERVICE_DESCRIPTIONS: Record<string, string> = {

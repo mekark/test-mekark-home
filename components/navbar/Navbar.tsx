@@ -30,6 +30,81 @@ function isExternalHref(href: string): boolean {
   return href.startsWith("http://") || href.startsWith("https://");
 }
 
+const EXTERNAL_LINK_PROPS = {
+  target: "_blank",
+  rel: "noopener noreferrer",
+} as const;
+
+function DropdownArrowIcon() {
+  return (
+    <svg
+      width="12"
+      height="12"
+      viewBox="0 0 12 12"
+      fill="none"
+      aria-hidden
+      className="shrink-0 text-mekark-red"
+    >
+      <path
+        d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function DropdownLinkContent({
+  label,
+  description,
+  compact,
+}: {
+  label: string;
+  description?: string;
+  compact?: boolean;
+}) {
+  return (
+    <>
+      <span
+        aria-hidden
+        className="absolute inset-y-2 left-0 w-0.5 origin-center scale-y-0 bg-mekark-red transition-transform duration-200 group-hover/link:scale-y-100"
+      />
+      <div className="flex items-start justify-between gap-2">
+        <span
+          className={`font-[family-name:var(--font-manrope)] font-semibold leading-snug tracking-[-0.01em] text-white/88 transition-colors duration-200 group-hover/link:text-mekark-white ${
+            compact ? "text-[13px]" : "text-[14px]"
+          }`}
+        >
+          {label}
+        </span>
+        <span
+          aria-hidden
+          className="mt-0.5 shrink-0 -translate-x-1 opacity-0 transition-all duration-200 group-hover/link:translate-x-0 group-hover/link:opacity-100"
+        >
+          <DropdownArrowIcon />
+        </span>
+      </div>
+      {description ? (
+        <span className="mt-1 block font-[family-name:var(--font-manrope)] text-[11px] leading-relaxed text-white/38 transition-colors duration-200 group-hover/link:text-white/55">
+          {description}
+        </span>
+      ) : null}
+    </>
+  );
+}
+
+function dropdownLinkClassName(description?: string, compact?: boolean) {
+  return `group/link relative block overflow-hidden rounded-sm border border-transparent transition-all duration-200 hover:border-white/10 hover:bg-white/[0.045] ${
+    description
+      ? "px-3.5 py-3 pl-[18px]"
+      : compact
+        ? "px-3 py-2.5 pl-[18px]"
+        : "px-3.5 py-3 pl-[18px]"
+  }`;
+}
+
 function ChevronDownIcon({ open }: { open?: boolean }) {
   return (
     <motion.svg
@@ -124,7 +199,7 @@ function NavLinkMotion({
       animate="rest"
     >
       {external ? (
-        <a href={href} className={className}>
+        <a href={href} className={className} {...EXTERNAL_LINK_PROPS}>
           {children}
         </a>
       ) : (
@@ -144,21 +219,39 @@ function NavLinkMotion({
   );
 }
 
-function DropdownLink({ href, label }: { href: string; label: string }) {
+function DropdownLink({
+  href,
+  label,
+  description,
+  compact,
+}: {
+  href: string;
+  label: string;
+  description?: string;
+  compact?: boolean;
+}) {
+  const external = isExternalHref(href);
+  const className = dropdownLinkClassName(description, compact);
+
   return (
-    <motion.li variants={navbarDropdownItemReveal} className="group/link">
-      <Link
-        href={href}
-        className="relative flex items-center gap-3 overflow-hidden px-3 py-2.5 pl-4 transition-colors"
-      >
-        <span
-          aria-hidden
-          className="h-1 w-1 shrink-0 rounded-full bg-white/25 transition-all duration-200 group-hover/link:bg-mekark-red"
-        />
-        <span className="font-[family-name:var(--font-manrope)] text-[13px] leading-snug font-medium tracking-wide text-white/75 transition-colors duration-200 group-hover/link:text-mekark-white">
-          {label}
-        </span>
-      </Link>
+    <motion.li variants={navbarDropdownItemReveal}>
+      {external ? (
+        <a href={href} className={className} {...EXTERNAL_LINK_PROPS}>
+          <DropdownLinkContent
+            label={label}
+            description={description}
+            compact={compact}
+          />
+        </a>
+      ) : (
+        <Link href={href} className={className}>
+          <DropdownLinkContent
+            label={label}
+            description={description}
+            compact={compact}
+          />
+        </Link>
+      )}
     </motion.li>
   );
 }
@@ -170,10 +263,16 @@ function DesktopDropdown({ item }: { item: NavItem }) {
   const totalLinks =
     children.length +
     sections.reduce((sum, section) => sum + section.children.length, 0);
-  const columns = dropdownColumns(totalLinks);
+  const hasRichContent =
+    children.some((child) => child.description) ||
+    sections.some((section) =>
+      section.children.some((child) => child.description),
+    );
+  const columns = hasRichContent ? 2 : dropdownColumns(totalLinks);
 
-  const panelWidth =
-    columns === 3
+  const panelWidth = hasRichContent
+    ? "w-[min(92vw,560px)]"
+    : columns === 3
       ? "w-[min(92vw,640px)]"
       : columns === 2
         ? "w-[min(92vw,420px)]"
@@ -224,7 +323,9 @@ function DesktopDropdown({ item }: { item: NavItem }) {
               className="absolute left-6 top-2.5 z-10 size-2.5 rotate-45 border-l border-t border-white/12 bg-[#0c0c0c]/92"
             />
             <motion.div
-              className={`relative overflow-hidden rounded-sm border border-white/12 bg-[#0c0c0c]/92 p-3 pl-4 shadow-[0_28px_64px_rgba(0,0,0,0.55)] backdrop-blur-2xl sm:p-3.5 sm:pl-5 ${panelWidth}`}
+              className={`relative overflow-hidden rounded-sm border border-white/12 bg-[#0c0c0c]/92 shadow-[0_28px_64px_rgba(0,0,0,0.55)] backdrop-blur-2xl ${
+                hasRichContent ? "p-4 sm:p-5" : "p-3 pl-4 sm:p-3.5 sm:pl-5"
+              } ${panelWidth}`}
               variants={navbarDropdownItemsStagger}
               initial="hidden"
               animate="visible"
@@ -233,14 +334,16 @@ function DesktopDropdown({ item }: { item: NavItem }) {
                 aria-hidden
                 className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-mekark-red to-transparent"
               />
-              <p className="mb-2.5 px-1 font-[family-name:var(--font-manrope)] text-[10px] font-semibold tracking-[0.22em] text-white/40 uppercase">
+              <p className="mb-3 px-1 font-[family-name:var(--font-manrope)] text-[10px] font-semibold tracking-[0.22em] text-white/40 uppercase">
                 {item.label}
               </p>
               <ul
                 className={
-                  columns > 1
-                    ? `grid gap-0.5 ${columns === 3 ? "grid-cols-3" : "grid-cols-2"}`
-                    : "flex flex-col gap-0.5"
+                  hasRichContent
+                    ? "grid grid-cols-1 gap-1.5 sm:grid-cols-2"
+                    : columns > 1
+                      ? `grid gap-1 ${columns === 3 ? "grid-cols-3" : "grid-cols-2"}`
+                      : "flex flex-col gap-1"
                 }
               >
                 {children.map((child) => (
@@ -248,26 +351,36 @@ function DesktopDropdown({ item }: { item: NavItem }) {
                     key={child.href}
                     href={child.href}
                     label={child.label}
+                    description={child.description}
+                    compact={!hasRichContent}
                   />
                 ))}
               </ul>
               {sections.map((section) => (
                 <div
                   key={section.label}
-                  className="mt-3 border-t border-white/8 pt-3"
+                  className="mt-4 border-t border-white/8 pt-4"
                 >
-                  <div className="mb-1.5 flex items-center gap-2 px-1">
+                  <div className="mb-2.5 flex items-center gap-2 px-1">
                     <span aria-hidden className="h-px w-4 bg-mekark-red" />
                     <p className="font-[family-name:var(--font-manrope)] text-[10px] font-semibold tracking-[0.18em] text-mekark-red/80 uppercase">
                       {section.label}
                     </p>
                   </div>
-                  <ul className="grid grid-cols-2 gap-0.5 lg:grid-cols-3">
+                  <ul
+                    className={
+                      hasRichContent
+                        ? "grid grid-cols-1 gap-1.5 sm:grid-cols-3"
+                        : "grid grid-cols-2 gap-1 lg:grid-cols-3"
+                    }
+                  >
                     {section.children.map((child) => (
                       <DropdownLink
                         key={child.href}
                         href={child.href}
                         label={child.label}
+                        description={child.description}
+                        compact={!hasRichContent}
                       />
                     ))}
                   </ul>
@@ -284,27 +397,33 @@ function DesktopDropdown({ item }: { item: NavItem }) {
 function MobileDropdownLink({
   href,
   label,
+  description,
   onNavigate,
 }: {
   href: string;
   label: string;
+  description?: string;
   onNavigate: () => void;
 }) {
+  const external = isExternalHref(href);
+  const className = dropdownLinkClassName(description);
+
   return (
-    <motion.li variants={navbarDropdownItemReveal} className="group/link">
-      <Link
-        href={href}
-        onClick={onNavigate}
-        className="relative flex min-h-11 items-center gap-3 px-3 py-3"
-      >
-        <span
-          aria-hidden
-          className="h-1 w-1 shrink-0 rounded-full bg-white/25 group-hover/link:bg-mekark-red"
-        />
-        <span className="font-[family-name:var(--font-manrope)] text-[14px] text-mekark-silver transition-colors group-hover/link:text-mekark-white">
-          {label}
-        </span>
-      </Link>
+    <motion.li variants={navbarDropdownItemReveal}>
+      {external ? (
+        <a
+          href={href}
+          onClick={onNavigate}
+          className={className}
+          {...EXTERNAL_LINK_PROPS}
+        >
+          <DropdownLinkContent label={label} description={description} />
+        </a>
+      ) : (
+        <Link href={href} onClick={onNavigate} className={className}>
+          <DropdownLinkContent label={label} description={description} />
+        </Link>
+      )}
     </motion.li>
   );
 }
@@ -416,7 +535,12 @@ function MobileNavItem({
     return (
       <motion.div variants={navbarMobileItemReveal}>
         {external ? (
-          <a href={item.href} onClick={onNavigate} className={className}>
+          <a
+            href={item.href}
+            onClick={onNavigate}
+            className={className}
+            {...EXTERNAL_LINK_PROPS}
+          >
             {item.label}
           </a>
         ) : (
@@ -457,12 +581,13 @@ function MobileNavItem({
               animate="visible"
             >
               {item.children && item.children.length > 0 && (
-                <ul className="space-y-0.5">
+                <ul className="space-y-1">
                   {item.children.map((child) => (
                     <MobileDropdownLink
                       key={child.href}
                       href={child.href}
                       label={child.label}
+                      description={child.description}
                       onNavigate={onNavigate}
                     />
                   ))}
@@ -471,20 +596,21 @@ function MobileNavItem({
               {item.sections?.map((section) => (
                 <div
                   key={section.label}
-                  className="mt-1 border-t border-white/8 pt-2"
+                  className="mt-2 border-t border-white/8 pt-2"
                 >
-                  <div className="mb-1 flex items-center gap-2 px-3">
+                  <div className="mb-1.5 flex items-center gap-2 px-3">
                     <span aria-hidden className="h-px w-4 bg-mekark-red" />
                     <p className="font-[family-name:var(--font-manrope)] text-[10px] font-semibold tracking-[0.18em] text-mekark-red/80 uppercase">
                       {section.label}
                     </p>
                   </div>
-                  <ul className="space-y-0.5">
+                  <ul className="space-y-1">
                     {section.children.map((child) => (
                       <MobileDropdownLink
                         key={child.href}
                         href={child.href}
                         label={child.label}
+                        description={child.description}
                         onNavigate={onNavigate}
                       />
                     ))}

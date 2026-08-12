@@ -1,6 +1,7 @@
 export type NavLink = {
   label: string;
   href: string;
+  description?: string;
 };
 
 export type NavSection = {
@@ -48,6 +49,82 @@ function childLinks(basePath: string, labels: string[]): NavLink[] {
     href: `${basePath}/${slugify(label)}`,
   }));
 }
+
+const SERVICE_EXTERNAL_URLS: Record<string, string> = {
+  Civil: "https://civil-new.vercel.app/",
+  PEB: "https://peb-newpage.vercel.app/",
+  "Multi Storey": "https://new-multi-mekark.vercel.app/",
+  MEP: "https://new-mep-mekark.vercel.app/",
+  EOT: "https://eot-crane.vercel.app/",
+  Racking: "https://mekark-racking.vercel.app/",
+};
+
+const SERVICE_DESCRIPTIONS: Record<string, string> = {
+  Civil: "Turnkey civil & RCC construction for industrial projects",
+  PEB: "Design, fabrication & erection of pre-engineered buildings",
+  "Multi Storey": "Multi-storey steel structures for factories & offices",
+  MEP: "Industrial MEP design-build — HVAC, electrical & plumbing",
+  Solar: "Solar infrastructure for industrial facilities",
+  Tensile: "Tensile membrane structures & canopies",
+  EOT: "Electric overhead travelling cranes for heavy lifting",
+  Racking: "Heavy-duty pallet racking & warehouse storage systems",
+  "Clean Room":
+    "Contamination-controlled environments for precision manufacturing",
+};
+
+function serviceLinks(basePath: string, labels: string[]): NavLink[] {
+  return labels.map((label) => ({
+    label,
+    href: SERVICE_EXTERNAL_URLS[label] ?? `${basePath}/${slugify(label)}`,
+    description: SERVICE_DESCRIPTIONS[label],
+  }));
+}
+
+export type HomeService = {
+  id: string;
+  label: string;
+  title: string;
+  href: string;
+  description: string;
+  group: "core" | "extended";
+};
+
+const HOME_SERVICE_TITLES: Record<string, string> = {
+  Civil: "Civil Construction",
+  PEB: "Pre-Engineered Buildings",
+  "Multi Storey": "Multi-Storey Steel",
+  MEP: "MEP Services",
+  Solar: "Solar Infrastructure",
+  Tensile: "Tensile Structures",
+  EOT: "EOT Cranes",
+  Racking: "Racking Systems",
+  "Clean Room": "Clean Room",
+};
+
+function homeService(
+  label: string,
+  group: "core" | "extended",
+  basePath: string,
+): HomeService {
+  return {
+    id: slugify(label),
+    label,
+    title: HOME_SERVICE_TITLES[label] ?? label,
+    href: SERVICE_EXTERNAL_URLS[label] ?? `${basePath}/${slugify(label)}`,
+    description: SERVICE_DESCRIPTIONS[label],
+    group,
+  };
+}
+
+/** Full service menu for the home page — mirrors navbar Our Service. */
+export const HOME_SERVICES: HomeService[] = [
+  ...["Civil", "PEB", "Multi Storey", "MEP", "Solar", "Tensile"].map((label) =>
+    homeService(label, "core", "/services"),
+  ),
+  ...["EOT", "Racking", "Clean Room"].map((label) =>
+    homeService(label, "extended", "/services/extended"),
+  ),
+];
 
 function solutionOptions(
   basePath: string,
@@ -133,7 +210,7 @@ export const NAV_ITEMS: NavItem[] = [
   },
   {
     label: "Our Service",
-    children: childLinks("/services", [
+    children: serviceLinks("/services", [
       "Civil",
       "PEB",
       "Multi Storey",
@@ -144,7 +221,7 @@ export const NAV_ITEMS: NavItem[] = [
     sections: [
       {
         label: "Extended Service",
-        children: childLinks("/services/extended", [
+        children: serviceLinks("/services/extended", [
           "EOT",
           "Racking",
           "Clean Room",

@@ -3,6 +3,7 @@ import { AboutMekarkSection } from "@/components/about/AboutMekarkSection";
 import { EngineeringNumbersSection } from "@/components/engineering/EngineeringNumbersSection";
 import { HeroSection } from "@/components/hero/HeroSection";
 import { CoreEpcCapabilitiesSection } from "@/components/capabilities/CoreEpcCapabilitiesSection";
+import { OurServicesSection } from "@/components/services/OurServicesSection";
 import { IndustriesSection } from "@/components/industries/IndustriesSection";
 import { IndustrialInfrastructureSection } from "@/components/industrial-infrastructure/IndustrialInfrastructureSection";
 import { OnePartnerSection } from "@/components/one-partner/OnePartnerSection";
@@ -25,9 +26,10 @@ export default function Home() {
       <EngineeringNumbersSection />
       <AboutMekarkSection />
       <CoreEpcCapabilitiesSection />
+      <OurServicesSection />
       <IndustriesSection />
       <OnePartnerSection />
-      <IndustrialInfrastructureSection />
+      {/* <IndustrialInfrastructureSection /> */}
       <PrecisionDrivenEngineeringSection />
       <ManufacturingFactoriesSection />
       <CompletedProjectsSection />

@@ -92,40 +92,26 @@ export type HomeService = {
 
 const HOME_SERVICE_TITLES: Record<string, string> = {
   Civil: "Civil Construction",
-  PEB: "Pre-Engineered Buildings",
-  "Multi Storey": "Multi-Storey Steel",
+  PEB: "PEB (Pre-Engineered Buildings)",
+  "Multi Storey": "Multi-Storey Buildings",
   MEP: "MEP Services",
-  Solar: "Solar Infrastructure",
-  Tensile: "Tensile Structures",
+  Solar: "Solar Solutions",
+  Tensile: "Tensile & Fabric Structures",
   EOT: "EOT Cranes",
-  Racking: "Racking Systems",
-  "Clean Room": "Clean Room",
+  Racking: "Industrial Racking Systems",
+  "Clean Room": "Clean Room Solutions",
 };
 
-function homeService(
-  label: string,
-  group: "core" | "extended",
-  basePath: string,
-): HomeService {
+function toHomeService(link: NavLink, group: "core" | "extended"): HomeService {
   return {
-    id: slugify(label),
-    label,
-    title: HOME_SERVICE_TITLES[label] ?? label,
-    href: SERVICE_EXTERNAL_URLS[label] ?? `${basePath}/${slugify(label)}`,
-    description: SERVICE_DESCRIPTIONS[label],
+    id: slugify(link.label),
+    label: link.label,
+    title: HOME_SERVICE_TITLES[link.label] ?? link.label,
+    href: link.href,
+    description: link.description ?? SERVICE_DESCRIPTIONS[link.label] ?? "",
     group,
   };
 }
-
-/** Full service menu for the home page — mirrors navbar Our Service. */
-export const HOME_SERVICES: HomeService[] = [
-  ...["Civil", "PEB", "Multi Storey", "MEP", "Solar", "Tensile"].map((label) =>
-    homeService(label, "core", "/services"),
-  ),
-  ...["EOT", "Racking", "Clean Room"].map((label) =>
-    homeService(label, "extended", "/services/extended"),
-  ),
-];
 
 function solutionOptions(
   basePath: string,
@@ -260,4 +246,27 @@ export const NAV_ITEMS: NavItem[] = [
       "Careers",
     ]),
   },
+];
+
+const OUR_SERVICE_NAV = NAV_ITEMS.find((item) => item.label === "Our Service");
+
+/** Full service menu for the home page — always mirrors navbar Our Service. */
+export const HOME_SERVICES: HomeService[] = [
+  ...(OUR_SERVICE_NAV?.children ?? []).map((link) => toHomeService(link, "core")),
+  ...(OUR_SERVICE_NAV?.sections ?? []).flatMap((section) =>
+    section.children.map((link) => toHomeService(link, "extended")),
+  ),
+];
+
+export const HOME_SERVICE_GROUPS = [
+  {
+    id: "core" as const,
+    label: "Core Services",
+    services: HOME_SERVICES.filter((service) => service.group === "core"),
+  },
+  ...(OUR_SERVICE_NAV?.sections ?? []).map((section) => ({
+    id: "extended" as const,
+    label: section.label,
+    services: section.children.map((link) => toHomeService(link, "extended")),
+  })),
 ];

@@ -103,7 +103,10 @@ export function EngineeringNumbersSection() {
     <section className="relative w-full bg-[#f5f5f5] text-black">
       {/* Engineering in Numbers — Figma 3327:9311 */}
       <div className="relative overflow-hidden px-4 pb-12 pt-10 font-[family-name:var(--font-manrope)] sm:px-8 sm:pb-16 sm:pt-14 lg:px-[73px] lg:pb-[70px] lg:pt-[61px]">
-        <div className="pointer-events-none absolute inset-0 bg-[#f5f5f5]" aria-hidden />
+        <div
+          className="pointer-events-none absolute inset-0 bg-[#f5f5f5]"
+          aria-hidden
+        />
         <motion.div
           className="pointer-events-none absolute inset-0 opacity-40"
           initial={{ opacity: 0, scale: 1.04 }}
@@ -140,7 +143,7 @@ export function EngineeringNumbersSection() {
               variants={slideFromLeft}
               className="mt-1 text-[28px] font-bold leading-tight text-black sm:whitespace-nowrap sm:text-[40px] sm:leading-[56px] lg:text-[61.33px] lg:leading-[80px]"
             >
-              Our Engineering in Numbers
+              Annual Production Capacity{" "}
             </motion.h2>
           </AnimatedSection>
 
@@ -196,13 +199,13 @@ export function EngineeringNumbersSection() {
                 variants={slideFromRight}
                 className="flex flex-col justify-center gap-[17.6px]"
               >
-                <p className="text-xl font-bold capitalize leading-[26px] tracking-[2.77px] text-[#ed2024] sm:text-[28px]">
-                  Annual Production Capacity
-                </p>
-                <p className="max-w-[480px] text-base leading-[28px] text-[#2a2a2a] sm:text-[22px] sm:leading-[34px]">
-                  Tons of structural steel manufactured at our
-                  <br className="hidden sm:block" />
-                  fully integrated Tamil Nadu facility.
+                <p className="text-left text-[13px] leading-[20px] text-[#2a2a2a] min-[480px]:text-[14px] min-[480px]:leading-[22px] md:text-[16px] md:leading-[24px] lg:text-[30px] lg:leading-[30px]">
+                  <span className="block whitespace-nowrap">
+                    Tons of structural steel manufactured at our
+                  </span>
+                  <span className="block whitespace-nowrap">
+                    fully integrated Tamil Nadu facility.
+                  </span>
                 </p>
               </motion.div>
             </motion.div>

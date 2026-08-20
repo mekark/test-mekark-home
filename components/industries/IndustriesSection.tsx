@@ -40,7 +40,7 @@ const INDUSTRIES = [
   },
   {
     number: "04",
-    title: "Road & Civil Construction",
+    title: "Road & Infra Solutions",
     description:
       "Integrated civil and structural works for roads, bridges, and large-scale ground infrastructure.",
     image: "/images/industries/04-road-civil-v3.png",
@@ -81,7 +81,7 @@ const INDUSTRIES = [
   },
   {
     number: "10",
-    title: "School & University",
+    title: "Institutions",
     description: "Durable infrastructure for everyday academic life.",
     image: "/images/industries/10-school-university-v3.png",
   },

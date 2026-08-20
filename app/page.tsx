@@ -32,7 +32,7 @@ export default function Home() {
       {/* <IndustrialInfrastructureSection /> */}
       <PrecisionDrivenEngineeringSection />
       <ManufacturingFactoriesSection />
-      <CompletedProjectsSection />
+      {/* <CompletedProjectsSection /> */}
       <CompletedProjectsListingSection />
       <TrustedSectorsSection />
       <MekarkBlogsSection />

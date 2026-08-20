@@ -1,10 +1,13 @@
 "use client";
 
-import { type FormEvent, type ReactNode, useEffect, useState } from "react";
+import { type FormEvent, type ReactNode, useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
-import { ENQUIRY_INDUSTRY_BY_SLUG } from "@/components/navbar/nav-data";
+import {
+  ENQUIRY_INDUSTRY_BY_SLUG,
+  FIND_SERVICES,
+} from "@/components/navbar/nav-data";
 import {
   enquiryCopyItem,
   enquiryCopyReveal,
@@ -17,7 +20,7 @@ import {
 const VIEWPORT = { once: true, margin: "-80px" as const };
 
 const HIGHLIGHTS = [
-  "X+ industrial projects delivered",
+  "200+ industrial projects delivered",
   "18+ years of structural expertise",
   "98% on-time project execution",
 ] as const;
@@ -58,6 +61,67 @@ const PROJECT_BUDGETS = [
   "Above ₹5 Crores",
 ] as const;
 
+const SERVICE_TYPES = [
+  "Select service",
+  ...FIND_SERVICES.map((service) => service.label),
+] as const;
+
+function buildSolutionPrefill(
+  industryLabel: string | null,
+  serviceLabel: string | null,
+) {
+  const parts = [
+    industryLabel ? `Industry: ${industryLabel}` : null,
+    serviceLabel ? `Service: ${serviceLabel}` : null,
+  ].filter(Boolean);
+
+  return parts.length ? `${parts.join(" · ")}.` : "";
+}
+
+function withExtraOption(options: readonly string[], extra: string) {
+  if (!extra || extra === options[0] || options.includes(extra)) {
+    return options;
+  }
+
+  return [options[0], extra, ...options.slice(1)];
+}
+
+function resolveIndustryValue(
+  industrySlug: string | null,
+  industryLabel: string | null,
+) {
+  if (industryLabel) {
+    const exact = INDUSTRY_TYPES.find(
+      (option) => option.toLowerCase() === industryLabel.toLowerCase(),
+    );
+
+    if (exact && exact !== INDUSTRY_TYPES[0]) {
+      return exact;
+    }
+
+    return industryLabel;
+  }
+
+  if (industrySlug && ENQUIRY_INDUSTRY_BY_SLUG[industrySlug]) {
+    return ENQUIRY_INDUSTRY_BY_SLUG[industrySlug];
+  }
+
+  return "";
+}
+
+function resolveServiceValue(
+  serviceSlug: string | null,
+  serviceLabel: string | null,
+) {
+  const matched = FIND_SERVICES.find(
+    (option) =>
+      option.slug === serviceSlug ||
+      option.label.toLowerCase() === (serviceLabel ?? "").toLowerCase(),
+  );
+
+  return matched?.label ?? serviceLabel ?? "";
+}
+
 function normalizePhone(value: string) {
   return value.replace(/\D/g, "").slice(0, 10);
 }
@@ -96,14 +160,16 @@ function CheckIcon() {
 function FormField({
   label,
   required,
+  className,
   children,
 }: {
   label: string;
   required?: boolean;
+  className?: string;
   children: ReactNode;
 }) {
   return (
-    <div className="flex flex-col gap-[7px]">
+    <div className={`flex flex-col gap-[7px]${className ? ` ${className}` : ""}`}>
       <label className={LABEL_CLASS}>
         {label}
         {required ? " *" : ""}
@@ -187,55 +253,57 @@ type SubmitStatus = "idle" | "submitting" | "error";
 export function EnquirySection() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [projectArea, setProjectArea] = useState<string>(PROJECT_AREAS[0]);
-  const [industryType, setIndustryType] = useState<string>(INDUSTRY_TYPES[0]);
-  const [projectTimeline, setProjectTimeline] = useState<string>(
-    PROJECT_TIMELINES[0],
-  );
-  const [projectBudget, setProjectBudget] = useState<string>(
-    PROJECT_BUDGETS[0],
-  );
+  const [projectArea, setProjectArea] = useState("");
+  const [industryType, setIndustryType] = useState("");
+  const [serviceType, setServiceType] = useState("");
+  const [projectTimeline, setProjectTimeline] = useState("");
+  const [projectBudget, setProjectBudget] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>("idle");
   const [submitMessage, setSubmitMessage] = useState("");
 
+  const industryOptions = useMemo(
+    () => withExtraOption(INDUSTRY_TYPES, industryType),
+    [industryType],
+  );
+  const serviceOptions = useMemo(
+    () => withExtraOption(SERVICE_TYPES, serviceType),
+    [serviceType],
+  );
+
   // Prefill from Find your solution redirect: /?industry=…&service=…#enquiry
   useEffect(() => {
     const industrySlug = searchParams.get("industry");
     const industryLabel = searchParams.get("industryLabel");
+    const serviceSlug = searchParams.get("service");
     const serviceLabel = searchParams.get("serviceLabel");
 
-    if (industrySlug) {
-      const mapped =
-        ENQUIRY_INDUSTRY_BY_SLUG[industrySlug] ??
-        INDUSTRY_TYPES.find(
-          (option) =>
-            option.toLowerCase() === (industryLabel ?? "").toLowerCase(),
-        );
-      if (mapped && INDUSTRY_TYPES.includes(mapped as (typeof INDUSTRY_TYPES)[number])) {
-        setIndustryType(mapped);
-      }
+    if (!industrySlug && !industryLabel && !serviceSlug && !serviceLabel) {
+      return;
     }
 
-    if (industryLabel || serviceLabel) {
-      const parts = [
-        industryLabel ? `Industry: ${industryLabel}` : null,
-        serviceLabel ? `Service: ${serviceLabel}` : null,
-      ].filter(Boolean);
-      setMessage((current) =>
-        current.trim() ? current : `${parts.join(" · ")}.`,
-      );
+    const nextIndustry = resolveIndustryValue(industrySlug, industryLabel);
+    if (nextIndustry) {
+      setIndustryType(nextIndustry);
     }
 
-    if (industrySlug || serviceLabel) {
-      requestAnimationFrame(() => {
-        document.getElementById("enquiry")?.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
+    const nextService = resolveServiceValue(serviceSlug, serviceLabel);
+    if (nextService) {
+      setServiceType(nextService);
+    }
+
+    const prefill = buildSolutionPrefill(industryLabel, serviceLabel);
+    if (prefill) {
+      setMessage(prefill);
+    }
+
+    requestAnimationFrame(() => {
+      document.getElementById("enquiry")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
       });
-    }
+    });
   }, [searchParams]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -255,17 +323,25 @@ export function EnquirySection() {
       return;
     }
 
+    const industry = String(formData.get("industry") ?? "").trim();
+    const service = String(formData.get("service") ?? "").trim();
+    const details = String(formData.get("message") ?? "").trim();
+    const messageBody =
+      service && !details.toLowerCase().includes(service.toLowerCase())
+        ? [details, `Service: ${service}`].filter(Boolean).join("\n")
+        : details;
+
     const payload = {
       name: String(formData.get("name") ?? "").trim(),
       email: String(formData.get("email") ?? "").trim(),
       phone: normalizedPhone,
       company: String(formData.get("company") ?? "").trim(),
       location: String(formData.get("location") ?? "").trim(),
-      industry: String(formData.get("industry") ?? "").trim(),
+      industry,
       sqf: String(formData.get("sqft") ?? "").trim(),
       startTimeline: String(formData.get("projectTimeline") ?? "").trim(),
       budget: String(formData.get("projectBudget") ?? "").trim(),
-      message: String(formData.get("message") ?? "").trim(),
+      message: messageBody,
     };
 
     setSubmitStatus("submitting");
@@ -450,7 +526,15 @@ export function EnquirySection() {
                       required
                       value={industryType}
                       onChange={setIndustryType}
-                      options={INDUSTRY_TYPES}
+                      options={industryOptions}
+                    />
+                  </FormField>
+                  <FormField label="Service">
+                    <SelectField
+                      name="service"
+                      value={serviceType}
+                      onChange={setServiceType}
+                      options={serviceOptions}
                     />
                   </FormField>
                   <FormField label="Project Area" required>
@@ -480,7 +564,7 @@ export function EnquirySection() {
                       options={PROJECT_BUDGETS}
                     />
                   </FormField>
-                  <FormField label="Project Details">
+                  <FormField label="Project Details" className="md:col-span-2">
                     <textarea
                       name="message"
                       rows={3}

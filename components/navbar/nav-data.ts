@@ -6,6 +6,9 @@ export type NavLink = {
 
 export type NavSection = {
   label: string;
+  /** When set with no children, the section label itself is the destination */
+  href?: string;
+  description?: string;
   children: NavLink[];
 };
 
@@ -142,20 +145,20 @@ export const FIND_INDUSTRIES: SolutionOption[] = solutionOptions(
   ],
 );
 
+const CORE_SERVICE_LABELS = [
+  "Civil",
+  "PEB",
+  "Multi Storey",
+  "MEP",
+  "Solar",
+  "Tensile",
+] as const;
+
+const EXTENDED_SERVICE_LABELS = ["EOT", "Racking", "Clean Room"] as const;
+
 export const FIND_SERVICES: SolutionOption[] = [
-  ...solutionOptions("/services", [
-    "Civil",
-    "PEB",
-    "Multi Storey",
-    "MEP",
-    "Solar",
-    "Tensile",
-  ]),
-  ...solutionOptions("/services/extended", [
-    "EOT",
-    "Racking",
-    "Clean Room",
-  ]),
+  ...solutionOptions("/services", [...CORE_SERVICE_LABELS]),
+  ...solutionOptions("/services/extended", [...EXTENDED_SERVICE_LABELS]),
 ];
 
 export function buildSolutionHref(
@@ -197,22 +200,14 @@ export const NAV_ITEMS: NavItem[] = [
   },
   {
     label: "Our Service",
-    children: serviceLinks("/services", [
-      "Civil",
-      "PEB",
-      "Multi Storey",
-      "MEP",
-      "Solar",
-      "Tensile",
-    ]),
+    children: serviceLinks("/services", [...CORE_SERVICE_LABELS]),
     sections: [
       {
         label: "Extended Service",
-        children: serviceLinks("/services/extended", [
-          "EOT",
-          "Racking",
-          "Clean Room",
-        ]),
+        href: "/services/extended",
+        description:
+          "EOT cranes, industrial racking & clean room solutions",
+        children: [],
       },
     ],
   },
@@ -248,14 +243,20 @@ export const NAV_ITEMS: NavItem[] = [
   },
 ];
 
-const OUR_SERVICE_NAV = NAV_ITEMS.find((item) => item.label === "Our Service");
+const CORE_SERVICE_LINKS = serviceLinks("/services", [...CORE_SERVICE_LABELS]);
 
-/** Full service menu for the home page — always mirrors navbar Our Service. */
+const EXTENDED_SERVICE_LINKS: NavLink[] = EXTENDED_SERVICE_LABELS.map(
+  (label) => ({
+    label,
+    href: `/services/extended#${slugify(label)}`,
+    description: SERVICE_DESCRIPTIONS[label],
+  }),
+);
+
+/** Full service menu for the home page — core dropdown + extended page tabs. */
 export const HOME_SERVICES: HomeService[] = [
-  ...(OUR_SERVICE_NAV?.children ?? []).map((link) => toHomeService(link, "core")),
-  ...(OUR_SERVICE_NAV?.sections ?? []).flatMap((section) =>
-    section.children.map((link) => toHomeService(link, "extended")),
-  ),
+  ...CORE_SERVICE_LINKS.map((link) => toHomeService(link, "core")),
+  ...EXTENDED_SERVICE_LINKS.map((link) => toHomeService(link, "extended")),
 ];
 
 export const HOME_SERVICE_GROUPS = [
@@ -264,9 +265,9 @@ export const HOME_SERVICE_GROUPS = [
     label: "Core Services",
     services: HOME_SERVICES.filter((service) => service.group === "core"),
   },
-  ...(OUR_SERVICE_NAV?.sections ?? []).map((section) => ({
+  {
     id: "extended" as const,
-    label: section.label,
-    services: section.children.map((link) => toHomeService(link, "extended")),
-  })),
+    label: "Extended Service",
+    services: HOME_SERVICES.filter((service) => service.group === "extended"),
+  },
 ];

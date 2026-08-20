@@ -20,7 +20,6 @@ import {
   precEngRuleDraw,
   precEngSectionStagger,
   precEngSoftwareCard,
-  precEngSoftwareStack,
   precEngStepIcon,
   precEngStepNumber,
   precEngStepReveal,
@@ -90,6 +89,14 @@ const SOFTWARE_CARDS = [
       "Industry-standard load analysis with full code compliance for industrial structures.",
     logo: "/images/precision-engineering/staad-pro.png",
     tags: ["Seismic Analysis", "Wind Load", "Code Compliance"],
+  },
+  {
+    name: "MBS",
+    badge: "Metal Building Design",
+    description:
+      "Specialized PEB design software that optimizes steel frames for material efficiency and structural strength.",
+    logo: "/images/precision-engineering/mbs-logo.png",
+    tags: ["Cost Estimation", "Design Optimization", "BIM Export"],
   },
 ] as const;
 
@@ -196,7 +203,7 @@ function SoftwareCard({
         </motion.div>
 
         <div className="min-w-0 flex-1">
-          <div className="flex flex-wrap items-center gap-3 gap-y-2">
+          <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
             <motion.h3
               variants={precEngStepTitle}
               className="text-[17.6px] font-bold leading-[22px] text-[#111]"
@@ -213,7 +220,7 @@ function SoftwareCard({
 
           <motion.p
             variants={precEngStepTitle}
-            className="mt-2 max-w-[284px] text-[14px] leading-[23px] text-[#666]"
+            className="mt-2 max-w-[361px] text-[14px] leading-[23px] text-[#666]"
           >
             {card.description}
           </motion.p>
@@ -308,72 +315,71 @@ export function PrecisionDrivenEngineeringSection() {
           </div>
 
           <div className="grid grid-cols-1 gap-8 pt-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:gap-8">
-            <motion.div
-              variants={precEngWorkflowPanel}
-              whileHover={{
-                boxShadow: "0px 16px 32px rgba(237,28,36,0.1)",
-                transition: { duration: 0.35 },
-              }}
-              className="rounded-xl border border-[#ffd5d5] bg-white p-7 shadow-[0px_10px_17px_rgba(237,28,36,0.07)]"
-            >
-              <div className="flex flex-col gap-3 sm:flex-row sm:gap-0">
-                {WORKFLOW_STEPS.map((step) => (
-                  <WorkflowStep key={step.number} step={step} />
-                ))}
-              </div>
-
+            <div className="flex flex-col gap-3 max-lg:contents">
               <motion.div
-                variants={precEngBenefitRow}
-                className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-3"
+                variants={precEngWorkflowPanel}
+                whileHover={{
+                  boxShadow: "0px 16px 32px rgba(237,28,36,0.1)",
+                  transition: { duration: 0.35 },
+                }}
+                className="flex flex-col rounded-xl border border-[#ffd5d5] bg-white p-7 shadow-[0px_10px_17px_rgba(237,28,36,0.07)]"
               >
-                {WORKFLOW_STEPS.map((step) => (
-                  <motion.div
-                    key={step.number}
-                    variants={precEngBenefitItem}
-                    className="flex gap-3"
-                  >
-                    <motion.span
-                      variants={precEngBenefitDot}
-                      className="mt-2 size-1.5 shrink-0 rounded-full bg-[#ed1c24]"
-                      aria-hidden
-                    />
-                    <p className="text-[14px] font-semibold leading-[23px] text-[#555]">
-                      {step.benefit[0]}
-                      <br />
-                      {step.benefit[1]}
-                    </p>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </motion.div>
+                <div className="flex flex-col gap-3 sm:flex-row sm:gap-0">
+                  {WORKFLOW_STEPS.map((step) => (
+                    <WorkflowStep key={step.number} step={step} />
+                  ))}
+                </div>
 
-            <motion.div
-              variants={precEngSoftwareStack}
-              className="flex flex-col gap-4"
-            >
+                <motion.div
+                  variants={precEngBenefitRow}
+                  className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-3"
+                >
+                  {WORKFLOW_STEPS.map((step) => (
+                    <motion.div
+                      key={step.number}
+                      variants={precEngBenefitItem}
+                      className="flex gap-3"
+                    >
+                      <motion.span
+                        variants={precEngBenefitDot}
+                        className="mt-2 size-1.5 shrink-0 rounded-full bg-[#ed1c24]"
+                        aria-hidden
+                      />
+                      <p className="whitespace-nowrap text-[14.4px] font-semibold leading-[23.4px] text-[#555]">
+                        {step.benefit[0]}
+                        <br />
+                        {step.benefit[1]}
+                      </p>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </motion.div>
+
+              <motion.blockquote
+                variants={precEngQuoteReveal}
+                className="relative pl-4 max-lg:order-last"
+              >
+                <motion.span
+                  variants={precEngQuoteBorder}
+                  className="absolute bottom-0 left-0 top-0 w-0.5 origin-top bg-[#ed1c24]"
+                  aria-hidden
+                />
+                <motion.p
+                  variants={precEngQuoteText}
+                  className="text-[15.2px] font-semibold leading-[23px] text-[#555] lg:leading-[22.8px]"
+                >
+                  The result is fewer coordination gaps between engineering
+                  office, fabrication shop, and site team.
+                </motion.p>
+              </motion.blockquote>
+            </div>
+
+            <div className="flex flex-col gap-4">
               {SOFTWARE_CARDS.map((card, index) => (
                 <SoftwareCard key={card.name} card={card} index={index} />
               ))}
-            </motion.div>
+            </div>
           </div>
-
-          <motion.blockquote
-            variants={precEngQuoteReveal}
-            className="relative pl-4"
-          >
-            <motion.span
-              variants={precEngQuoteBorder}
-              className="absolute bottom-0 left-0 top-0 w-0.5 origin-top bg-[#ed1c24]"
-              aria-hidden
-            />
-            <motion.p
-              variants={precEngQuoteText}
-              className="text-[15px] font-semibold leading-[23px] text-[#555]"
-            >
-              The result is fewer coordination gaps between engineering office,
-              fabrication shop, and site team.
-            </motion.p>
-          </motion.blockquote>
         </motion.div>
       </div>
     </section>

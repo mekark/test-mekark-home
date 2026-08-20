@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { FindYourSolutionPanel } from "@/components/navbar/FindYourSolutionPanel";
 import {
@@ -361,29 +361,41 @@ function DesktopDropdown({ item }: { item: NavItem }) {
                   key={section.label}
                   className="mt-4 border-t border-white/8 pt-4"
                 >
-                  <div className="mb-2.5 flex items-center gap-2 px-1">
-                    <span aria-hidden className="h-px w-4 bg-mekark-red" />
-                    <p className="font-[family-name:var(--font-manrope)] text-[10px] font-semibold tracking-[0.18em] text-mekark-red/80 uppercase">
-                      {section.label}
-                    </p>
-                  </div>
-                  <ul
-                    className={
-                      hasRichContent
-                        ? "grid grid-cols-1 gap-1.5 sm:grid-cols-3"
-                        : "grid grid-cols-2 gap-1 lg:grid-cols-3"
-                    }
-                  >
-                    {section.children.map((child) => (
+                  {section.href && section.children.length === 0 ? (
+                    <ul>
                       <DropdownLink
-                        key={child.href}
-                        href={child.href}
-                        label={child.label}
-                        description={child.description}
-                        compact={!hasRichContent}
+                        href={section.href}
+                        label={section.label}
+                        description={section.description}
                       />
-                    ))}
-                  </ul>
+                    </ul>
+                  ) : (
+                    <>
+                      <div className="mb-2.5 flex items-center gap-2 px-1">
+                        <span aria-hidden className="h-px w-4 bg-mekark-red" />
+                        <p className="font-[family-name:var(--font-manrope)] text-[10px] font-semibold tracking-[0.18em] text-mekark-red/80 uppercase">
+                          {section.label}
+                        </p>
+                      </div>
+                      <ul
+                        className={
+                          hasRichContent
+                            ? "grid grid-cols-1 gap-1.5 sm:grid-cols-3"
+                            : "grid grid-cols-2 gap-1 lg:grid-cols-3"
+                        }
+                      >
+                        {section.children.map((child) => (
+                          <DropdownLink
+                            key={child.href}
+                            href={child.href}
+                            label={child.label}
+                            description={child.description}
+                            compact={!hasRichContent}
+                          />
+                        ))}
+                      </ul>
+                    </>
+                  )}
                 </div>
               ))}
             </motion.div>
@@ -598,23 +610,36 @@ function MobileNavItem({
                   key={section.label}
                   className="mt-2 border-t border-white/8 pt-2"
                 >
-                  <div className="mb-1.5 flex items-center gap-2 px-3">
-                    <span aria-hidden className="h-px w-4 bg-mekark-red" />
-                    <p className="font-[family-name:var(--font-manrope)] text-[10px] font-semibold tracking-[0.18em] text-mekark-red/80 uppercase">
-                      {section.label}
-                    </p>
-                  </div>
-                  <ul className="space-y-1">
-                    {section.children.map((child) => (
+                  {section.href && section.children.length === 0 ? (
+                    <ul className="space-y-1">
                       <MobileDropdownLink
-                        key={child.href}
-                        href={child.href}
-                        label={child.label}
-                        description={child.description}
+                        href={section.href}
+                        label={section.label}
+                        description={section.description}
                         onNavigate={onNavigate}
                       />
-                    ))}
-                  </ul>
+                    </ul>
+                  ) : (
+                    <>
+                      <div className="mb-1.5 flex items-center gap-2 px-3">
+                        <span aria-hidden className="h-px w-4 bg-mekark-red" />
+                        <p className="font-[family-name:var(--font-manrope)] text-[10px] font-semibold tracking-[0.18em] text-mekark-red/80 uppercase">
+                          {section.label}
+                        </p>
+                      </div>
+                      <ul className="space-y-1">
+                        {section.children.map((child) => (
+                          <MobileDropdownLink
+                            key={child.href}
+                            href={child.href}
+                            label={child.label}
+                            description={child.description}
+                            onNavigate={onNavigate}
+                          />
+                        ))}
+                      </ul>
+                    </>
+                  )}
                 </div>
               ))}
             </motion.div>
@@ -627,6 +652,7 @@ function MobileNavItem({
 
 export function Navbar() {
   const router = useRouter();
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
@@ -680,10 +706,10 @@ export function Navbar() {
 
   const redirectToSolution = (href: string) => {
     closeFind();
-    router.push(href);
+    router.push(href, { scroll: false });
   };
 
-  const barActive = scrolled || mobileOpen || findOpen;
+  const barActive = scrolled || mobileOpen || findOpen || pathname !== "/";
 
   return (
     <motion.header

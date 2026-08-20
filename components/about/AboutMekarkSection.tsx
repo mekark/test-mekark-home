@@ -1,7 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import { CountUp } from "@/components/motion/CountUp";
 import {
   aboutBuildingReveal,
   aboutCalloutReveal,
@@ -21,7 +23,8 @@ const VIEWPORT = { once: true, margin: "-80px" as const };
 
 const STATS = [
   {
-    value: "X Lakh+",
+    countTo: 70,
+    suffix: " Lakh+",
     label: (
       <>
         Sq.Ft Manufacturing
@@ -33,13 +36,15 @@ const STATS = [
     iconAlt: "Manufacturing facility",
   },
   {
-    value: "18+",
+    countTo: 18,
+    suffix: "+",
     label: "Years of Experience",
     icon: "/images/about/icon-medal.svg",
     iconAlt: "Years of experience",
   },
   {
-    value: "X+",
+    countTo: 200,
+    suffix: "+",
     label: (
       <>
         Projects
@@ -51,7 +56,8 @@ const STATS = [
     iconAlt: "Projects delivered",
   },
   {
-    value: "98%",
+    countTo: 98,
+    suffix: "%",
     label: (
       <>
         On-Time Delivery
@@ -67,7 +73,7 @@ const STATS = [
 function StatIcon({ src, alt }: { src: string; alt: string }) {
   return (
     <div
-      className="relative isolate flex size-14 shrink-0 items-center justify-center rounded-full sm:size-20 lg:size-[72px] xl:size-24"
+      className="relative isolate flex size-14 shrink-0 items-center justify-center rounded-full sm:size-20 lg:size-24"
       style={{
         background:
           "radial-gradient(95.52% 95.52% at 35% 30%, rgba(255,255,255,0.05), rgba(244,244,244,0.05))",
@@ -78,13 +84,21 @@ function StatIcon({ src, alt }: { src: string; alt: string }) {
         aria-hidden
       />
       <div className="relative z-[1] size-6 sm:size-8">
-        <Image src={src} alt={alt} fill className="object-contain" sizes="32px" />
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className="object-contain"
+          sizes="32px"
+        />
       </div>
     </div>
   );
 }
 
 export function AboutMekarkSection() {
+  const statsRef = useRef<HTMLDivElement>(null);
+  const statsInView = useInView(statsRef, { once: true, amount: 0.25 });
   return (
     <section className="relative w-full overflow-hidden bg-white font-[family-name:var(--font-manrope)] text-[#555]">
       <div className="relative mx-auto flex w-full max-w-[1740px] flex-col items-center gap-10 px-4 py-12 sm:gap-12 sm:px-8 sm:py-16 lg:gap-14 lg:px-[107px] lg:py-[85px]">
@@ -140,7 +154,7 @@ export function AboutMekarkSection() {
                 viewport={VIEWPORT}
               >
                 <p className="text-[10px] font-bold leading-snug tracking-[0.8px] text-[#f5f5f5] sm:text-[15.33px] sm:leading-normal sm:tracking-[1.23px]">
-                  EPC Contractor for Industries,
+                  EPC Solution providers for Industries
                   <br />
                   Commercial &amp; Institutional Projects
                 </p>
@@ -182,7 +196,7 @@ export function AboutMekarkSection() {
               variants={aboutParagraphReveal}
               className="text-base leading-[28px] text-[#555] sm:text-[21.33px] sm:leading-[37.33px]"
             >
-              With 18+ years of engineering excellence and X+ successfully
+              With 18+ years of engineering excellence and 200+ successfully
               delivered projects, Mekark is a trusted industrial EPC
               (Engineering, Procurement, and Construction) company specialising
               in facilities that demand precision, scalability, and operational
@@ -193,18 +207,19 @@ export function AboutMekarkSection() {
               variants={aboutParagraphReveal}
               className="text-base leading-[28px] text-[#555] sm:text-[21.33px] sm:leading-[37.33px]"
             >
-              We don&apos;t just build industrial infrastructure; we engineer it
-              to perform. From pre-engineered buildings and factory shells to
-              large-span structural systems and turnkey industrial plants, every
-              Mekark project is designed for lifecycle performance, not just
-              construction milestones.
+              We don't just construct industrial buildings we design them to
+              perform for years, not just get finished on time. From
+              ready-to-assemble steel buildings and factory shells to large
+              open-span structures and turnkey plants, every Mekark project is
+              built to work well over its entire lifetime. It's not just about
+              hitting construction deadlines it's about lasting performance.
             </motion.p>
 
             <motion.p
               variants={aboutParagraphReveal}
               className="text-base leading-[28px] text-[#555] sm:text-[21.33px] sm:leading-[37.33px]"
             >
-              Our integrated approach brings design, procurement, fabrication,
+              Our integrated approach brings design, procurement, production,
               and execution together under a single accountable system, reducing
               delays, eliminating coordination gaps, and delivering industrial,
               commercial, and institutional assets that stay efficient for
@@ -242,7 +257,8 @@ export function AboutMekarkSection() {
 
         {/* Stats grid — Figma 3327:9362 */}
         <motion.div
-          className="box-border flex w-full flex-col items-stretch justify-center gap-3 rounded-3xl border-[1.3px] border-solid border-[rgba(255,255,255,0.8)] bg-[#0e0e0e] px-1 py-8 shadow-[0px_0px_20.27px_rgba(0,0,0,0.05)] backdrop-blur-[13.33px] sm:py-10 lg:flex-row lg:items-stretch lg:gap-0 lg:py-[41px]"
+          ref={statsRef}
+          className="box-border flex w-full flex-col items-stretch justify-center gap-3 rounded-4xl border-[1.3px] border-solid border-[rgba(255,255,255,0.8)] bg-[#0e0e0e] px-[1.3px] py-8 shadow-[0px_0px_20.27px_rgba(0,0,0,0.05)] backdrop-blur-[13.33px] sm:grid sm:grid-cols-2 sm:gap-[10.67px] sm:py-10 lg:flex lg:flex-row lg:items-start lg:gap-[14.67px] lg:py-[41px]"
           variants={aboutStatsStagger}
           initial="hidden"
           whileInView="visible"
@@ -250,26 +266,32 @@ export function AboutMekarkSection() {
         >
           {STATS.map((stat, index) => (
             <motion.div
-              key={stat.value}
+              key={stat.iconAlt}
               variants={aboutStatReveal}
-              className={`relative isolate flex min-w-0 flex-1 items-center gap-4 rounded-2xl px-5 py-4 sm:gap-6 sm:px-7 sm:py-5 lg:gap-5 lg:px-6 lg:py-[18px] xl:gap-[29px] xl:px-8 ${
+              className={`relative isolate flex min-w-0 items-center gap-6 rounded-2xl px-8 py-[18.67px] sm:gap-[29.33px] lg:min-w-px lg:flex-[1_0_0] ${
                 index > 0
-                  ? "border-[rgba(214,214,214,0.25)] lg:border-l-[1.3px] lg:border-solid"
+                  ? "border-[rgba(214,214,214,0.25)] lg:border-l-[1.3px] lg:border-solid lg:pl-[33.33px]"
                   : ""
               }`}
             >
               <StatIcon src={stat.icon} alt={stat.iconAlt} />
-              <div className="z-[1] flex min-w-0 flex-col items-start gap-[4.6px]">
-                <p className="whitespace-nowrap font-[family-name:var(--font-montserrat-alternates)] text-[28px] font-extrabold leading-none tracking-[-1.01px] text-white sm:text-[42px] sm:leading-none lg:text-[36px] xl:text-[50.67px] xl:leading-[50.67px]">
-                  {stat.value}
+              <div className="z-[1] flex shrink-0 flex-col items-start gap-[4.6px]">
+                <p className="whitespace-nowrap font-[family-name:var(--font-montserrat-alternates)] text-[28px] font-bold leading-none tracking-[-1.01px] text-white tabular-nums sm:text-[42px] sm:leading-none lg:text-[40px] xl:text-[44.67px] xl:leading-[50.67px]">
+                  <CountUp
+                    value={stat.countTo}
+                    suffix={stat.suffix}
+                    start={statsInView}
+                    delay={0.35 + index * 0.18}
+                    duration={1.7}
+                  />
                 </p>
-                <p className="text-[11px] font-semibold uppercase leading-[16px] tracking-[1.2px] text-[#6b6b6b] sm:whitespace-nowrap sm:text-sm sm:leading-5 sm:tracking-[1.6px] lg:text-[12px] lg:leading-[18px] lg:tracking-[1.4px] xl:text-[14.67px] xl:leading-[21.27px] xl:tracking-[2.05px]">
+                <p className="text-[11px] font-semibold uppercase leading-[16px] tracking-[1.2px] text-[#6b6b6b] sm:text-sm sm:leading-[21.27px] sm:tracking-[1.6px] lg:text-[13px] lg:tracking-[1.6px] xl:text-[14.67px] xl:leading-[21.27px] xl:tracking-[2.05px]">
                   {stat.label}
                 </p>
               </div>
               <motion.div
                 variants={aboutStatUnderline}
-                className="absolute bottom-[-2.7px] left-5 z-[2] h-[2.7px] w-12 origin-left bg-[#ed2024] sm:left-7 lg:left-[158px]"
+                className="absolute bottom-[-2.7px] left-[112px] z-[2] h-[2.67px] w-12 origin-left bg-[#ed2024] sm:left-[157px]"
                 aria-hidden
               />
             </motion.div>

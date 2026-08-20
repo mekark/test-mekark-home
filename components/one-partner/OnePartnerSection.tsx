@@ -32,18 +32,14 @@ import {
 
 const VIEWPORT = { once: true, margin: "-80px" as const };
 
-const CARD_SHADOW = "0px 22.734px 39.785px 0px rgba(0,0,0,0.08)";
+const CARD_SHADOW = "0px 30.312px 53.047px 0px rgba(0,0,0,0.08)";
 
 const ICON_CIRCLE_BG =
   "linear-gradient(145deg, rgb(247, 247, 247) 0%, rgb(255, 255, 255) 100%)";
 
 const HEADLINE_WORDS = [
-  { text: "What", accent: false },
-  { text: "You", accent: false },
-  { text: "Get", accent: false },
-  { text: "With", accent: false },
-  { text: "One", accent: true },
-  { text: "Partner", accent: true },
+  { text: "Why", accent: false },
+  { text: "Mekark?", accent: true },
 ] as const;
 
 const BENEFITS = [
@@ -53,7 +49,7 @@ const BENEFITS = [
     description:
       "Seamless transition from architectural vision to onground structural reality.",
     icon: "/images/one-partner/icon-box.svg",
-    iconSize: 30,
+    iconSize: 40,
   },
   {
     category: "Financials",
@@ -61,15 +57,15 @@ const BENEFITS = [
     description:
       "Locked-in budgets with minimal variation through advanced material quantification.",
     icon: "/images/one-partner/icon-calculator.svg",
-    iconSize: 30,
+    iconSize: 40,
   },
   {
     category: "Speed",
     title: ["Accelerated Project", "Delivery"],
     description:
-      "30–40% faster delivery timelines versus conventional construction methods.",
+      "50% faster delivery timelines versus conventional construction methods.",
     icon: "/images/one-partner/icon-gauge.svg",
-    iconSize: 27,
+    iconSize: 36,
   },
   {
     category: "Simplicity",
@@ -77,7 +73,7 @@ const BENEFITS = [
     description:
       "One partner eliminates multi-vendor friction and misaligned project handoffs.",
     icon: "/images/one-partner/icon-handshake.svg",
-    iconSize: 30,
+    iconSize: 40,
   },
   {
     category: "Accountability",
@@ -85,7 +81,7 @@ const BENEFITS = [
     description:
       "Every structure is designed for expansion, operational stress, and long-term load stability.",
     icon: "/images/one-partner/icon-shield-check.svg",
-    iconSize: 30,
+    iconSize: 40,
   },
 ];
 
@@ -104,7 +100,7 @@ function ConnectorPulse() {
   return (
     <div
       ref={ref}
-      className="pointer-events-none absolute left-[5%] right-[4%] top-[164px] hidden h-0.5 overflow-hidden rounded-full bg-[#e4141c]/20 xl:block"
+      className="pointer-events-none absolute left-[5%] right-[4%] top-[226px] hidden h-0.5 overflow-hidden rounded-full bg-[#e4141c]/20 xl:block"
       aria-hidden
     >
       <motion.div
@@ -235,10 +231,10 @@ function BenefitCard({
       }}
       animate={{ scale: hovered ? 1.03 : 1 }}
       transition={{ type: "spring", stiffness: 360, damping: 24 }}
-      className="group relative flex min-h-[325px] w-[242px] shrink-0 snap-start flex-col overflow-hidden rounded-[18px] border border-[#dedede] bg-white/90 sm:w-[260px] md:w-[280px] xl:w-full xl:shrink xl:min-w-0 xl:flex-1"
+      className="group relative flex min-h-[325px] w-[242px] shrink-0 snap-start flex-col overflow-hidden rounded-[18px] border border-[#dedede] bg-white/90 sm:w-[260px] md:w-[280px] xl:h-[452px] xl:min-h-[452px] xl:w-full xl:min-w-0 xl:flex-1 xl:rounded-[24px]"
     >
       <motion.div
-        className="pointer-events-none absolute inset-0 z-[2] rounded-[18px]"
+        className="pointer-events-none absolute inset-0 z-[2] rounded-[18px] xl:rounded-[24px]"
         style={{ background: glow }}
         animate={{ opacity: hovered ? 1 : 0 }}
         transition={{ duration: 0.3 }}
@@ -255,7 +251,7 @@ function BenefitCard({
 
       <motion.div
         variants={partnerLockContentStack}
-        className="relative z-10 flex h-full flex-col px-8 pb-[51px] pt-[26px] backdrop-blur-[2px]"
+        className="relative z-10 flex h-full flex-col px-8 pb-[51px] pt-[26px] backdrop-blur-[2px] xl:px-[42px] xl:pb-[68px] xl:pt-[35px]"
       >
         <motion.div
           variants={partnerLockIconPop}
@@ -275,7 +271,7 @@ function BenefitCard({
                 }
               : { type: "spring", stiffness: 360, damping: 22 }
           }
-          className="relative flex size-[77px] shrink-0 items-center justify-center rounded-full border border-[#eee] shadow-[0px_10px_9px_rgba(0,0,0,0.06),inset_0px_0px_17px_rgba(0,0,0,0.04)]"
+          className="relative flex size-[77px] shrink-0 items-center justify-center rounded-full border border-[#eee] shadow-[0px_10px_9px_rgba(0,0,0,0.06),inset_0px_0px_17px_rgba(0,0,0,0.04)] xl:size-[103px] xl:shadow-[0px_13.391px_12.275px_rgba(0,0,0,0.06),inset_0px_0px_22px_rgba(0,0,0,0.04)]"
           style={{ backgroundImage: ICON_CIRCLE_BG }}
         >
           <Image
@@ -294,13 +290,13 @@ function BenefitCard({
         >
           <motion.p
             variants={partnerLockStamp}
-            className="text-xs font-bold uppercase tracking-[1.3px] text-[#e00d15]"
+            className="text-xs font-bold uppercase tracking-[1.3px] text-[#e00d15] xl:text-base xl:tracking-[2.5px]"
           >
             {benefit.category}
           </motion.p>
           <motion.h3
             variants={partnerLockTextRise}
-            className="text-lg font-bold leading-6 tracking-[-0.5px] text-[#111]"
+            className="text-lg font-bold leading-6 tracking-[-0.5px] text-[#111] xl:text-2xl xl:leading-8 xl:tracking-[-0.76px]"
           >
             {titleLines.map((line) => (
               <span key={line} className="block">
@@ -310,8 +306,8 @@ function BenefitCard({
           </motion.h3>
           <motion.div
             variants={partnerLockBarSnap}
-            className="mt-1 h-0.5 w-[26px] origin-left bg-[#e00d15]"
-            animate={{ width: hovered ? 42 : 26 }}
+            className="mt-1 h-0.5 w-[26px] origin-left bg-[#e00d15] xl:h-[2.5px] xl:w-[35px]"
+            animate={{ width: hovered ? 56 : 26 }}
             transition={{ type: "spring", stiffness: 400, damping: 22 }}
             aria-hidden
           />
@@ -321,7 +317,7 @@ function BenefitCard({
           variants={partnerLockTextRise}
           animate={{ y: hovered ? -2 : 0, opacity: hovered ? 1 : 0.9 }}
           transition={{ duration: 0.28 }}
-          className="mt-auto pt-4 text-xs leading-[19px] text-[#4c4c4c]"
+          className="mt-auto pt-4 text-xs leading-[19px] text-[#4c4c4c] xl:text-base xl:leading-[25.33px]"
         >
           {benefit.description}
         </motion.p>
@@ -334,7 +330,7 @@ function BenefitCard({
               ? "0 -8px 22px rgba(226,14,22,0.4)"
               : "0 0 0 rgba(0,0,0,0)",
           }}
-          className="absolute inset-x-0 bottom-0 h-1 origin-center bg-[#e20e16]"
+          className="absolute inset-x-0 bottom-0 h-1 origin-center bg-[#e20e16] xl:h-[5px]"
           aria-hidden
         />
 
@@ -366,7 +362,7 @@ export function OnePartnerSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full overflow-hidden border-b border-black/10 bg-white text-[#111]"
+      className="relative w-full overflow-hidden border-b border-black/10 bg-white font-[family-name:var(--font-manrope)] text-[#111] lg:min-h-[1081px]"
     >
       <motion.div
         className="pointer-events-none absolute inset-0 will-change-transform"
@@ -383,20 +379,23 @@ export function OnePartnerSection() {
         />
       </motion.div>
 
-      <div className="relative mx-auto w-full max-w-[1440px] px-5 py-14 sm:px-8 lg:px-20 lg:py-20">
-        <motion.div style={{ y: headlineYSpring }} className="flex flex-col gap-6">
+      <div className="relative mx-auto flex min-h-0 w-full max-w-[1920px] flex-col px-5 py-14 sm:px-8 lg:min-h-[1081px] lg:justify-center lg:px-[107px] lg:py-[59px]">
+        <motion.div
+          style={{ y: headlineYSpring }}
+          className="flex w-full flex-col gap-6 lg:gap-8"
+        >
           <motion.div
             variants={partnerLockHeaderStagger}
             initial="hidden"
             whileInView="visible"
             viewport={VIEWPORT}
-            className="flex flex-col gap-6"
+            className="flex flex-col gap-6 lg:gap-8"
           >
             <motion.h2
               variants={partnerLockHeaderStagger}
-              className="max-w-[580px] text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold leading-[1.05] tracking-[-0.84px] text-[#080808] lg:text-[40px]"
+              className="max-w-[773px] text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold leading-[1.05] tracking-[-0.84px] text-[#080808] lg:text-[53.33px] lg:tracking-[-1.12px]"
             >
-              {HEADLINE_WORDS.map((word, i) => (
+              {HEADLINE_WORDS.map((word) => (
                 <motion.span
                   key={word.text}
                   variants={partnerLockWordReveal}
@@ -405,27 +404,27 @@ export function OnePartnerSection() {
                   }`}
                 >
                   {word.text}
-                  {i === 3 ? " " : ""}
                 </motion.span>
               ))}
             </motion.h2>
 
             <motion.div
               variants={partnerLockRuleDraw}
-              className="h-[3px] w-14 origin-left rounded-sm bg-[#ed2024]"
+              className="h-[3px] w-14 origin-left rounded-sm bg-[#ed2024] lg:h-1 lg:w-[75px] lg:rounded-[2.67px]"
               aria-hidden
             />
 
             <motion.p
               variants={partnerLockSubtitle}
-              className="max-w-[560px] text-lg leading-[29px] text-[#656565] sm:text-xl"
+              className="max-w-[1144px] font-[family-name:var(--font-manrope)] text-[18px] leading-[28px] text-[#656565] sm:text-[22px] sm:leading-[32px] lg:text-[26.67px] lg:leading-[38.67px]"
             >
-              Eliminating the friction of multiple vendors. We consolidate
-              responsibility for absolute performance certainty.
+              As a complete turnkey provider, we eliminate the friction of
+              multiple vendors, consolidating responsibility into a single point
+              of accountability for absolute performance certainty.
             </motion.p>
           </motion.div>
 
-          <div className="relative pt-5">
+          <div className="relative pt-5 lg:pb-6 lg:pt-[29px]">
             <ConnectorPulse />
 
             <motion.div
@@ -433,7 +432,7 @@ export function OnePartnerSection() {
               initial="hidden"
               whileInView="visible"
               viewport={VIEWPORT}
-              className="-mx-5 flex gap-[17px] overflow-x-auto px-5 pb-2 snap-x snap-mandatory scrollbar-none sm:mx-0 sm:px-0 xl:mx-0 xl:grid xl:grid-cols-5 xl:overflow-visible xl:px-0"
+              className="-mx-5 flex gap-[17px] overflow-x-auto px-5 pb-2 snap-x snap-mandatory scrollbar-none sm:mx-0 sm:px-0 xl:mx-0 xl:grid xl:grid-cols-5 xl:gap-[23px] xl:overflow-visible xl:px-0"
             >
               {BENEFITS.map((benefit, index) => (
                 <BenefitCard
@@ -451,14 +450,14 @@ export function OnePartnerSection() {
             initial="hidden"
             whileInView="visible"
             viewport={VIEWPORT}
-            className="relative mt-2 overflow-hidden rounded-[11px] border border-[#ddd] shadow-[0px_17px_38px_rgba(0,0,0,0.06)]"
+            className="relative mt-2 overflow-hidden rounded-[11px] border border-[#ddd] shadow-[0px_17px_38px_rgba(0,0,0,0.06)] lg:mt-1 lg:h-[139px] lg:rounded-[15px] lg:shadow-[0px_22.734px_50.521px_rgba(0,0,0,0.06)]"
             style={{
               backgroundImage:
                 "linear-gradient(90deg, rgb(215, 10, 16) 0%, rgb(166, 4, 6) 100%)",
             }}
           >
             <div
-              className="absolute bottom-0 left-0 top-0 w-[9px] bg-black"
+              className="absolute bottom-0 left-0 top-0 w-[9px] bg-black lg:w-[13px]"
               aria-hidden
             />
 
@@ -471,23 +470,23 @@ export function OnePartnerSection() {
               aria-hidden
             />
 
-            <div className="relative flex min-h-[104px] items-center gap-6 px-6 py-5 sm:gap-8 sm:px-12 lg:px-[52px]">
+            <div className="relative flex min-h-[104px] items-center gap-6 px-6 py-5 sm:gap-8 sm:px-12 lg:h-full lg:min-h-[139px] lg:gap-8 lg:px-[69px] lg:py-0">
               <motion.div
                 variants={partnerLockShieldDrop}
-                className="flex size-[70px] shrink-0 items-center justify-center rounded-full border border-white"
+                className="flex size-[70px] shrink-0 items-center justify-center rounded-full border border-white lg:size-[93px]"
               >
                 <Image
                   src="/images/one-partner/banner-shield.svg"
                   alt=""
-                  width={36}
-                  height={36}
+                  width={48}
+                  height={48}
                   aria-hidden
                 />
               </motion.div>
 
               <motion.p
                 variants={partnerLockBannerText}
-                className="relative z-10 max-w-[769px] text-xl font-medium leading-normal tracking-[-0.76px] text-white sm:text-[25px]"
+                className="relative z-10 max-w-[769px] text-xl font-medium leading-normal tracking-[-0.76px] text-white sm:text-[25px] lg:max-w-[1025px] lg:text-[33.33px] lg:tracking-[-1.01px]"
               >
                 Single accountability.{" "}
                 <span className="font-bold">Complete project ownership.</span>
@@ -495,14 +494,14 @@ export function OnePartnerSection() {
 
               <motion.div
                 variants={partnerLockSkylineDrift}
-                className="pointer-events-none absolute -right-5 -top-12 hidden h-[206px] w-[675px] lg:block"
+                className="pointer-events-none absolute -right-5 -top-12 hidden h-[206px] w-[675px] lg:-right-7 lg:-top-16 lg:block lg:h-[275px] lg:w-[902px]"
               >
                 <Image
                   src="/images/one-partner/banner-skyline.png"
                   alt=""
                   fill
                   className="object-cover object-right"
-                  sizes="675px"
+                  sizes="902px"
                   aria-hidden
                 />
               </motion.div>

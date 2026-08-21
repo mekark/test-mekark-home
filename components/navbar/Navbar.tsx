@@ -886,7 +886,7 @@ export function Navbar() {
               <button
                 type="button"
                 aria-label="Close find your solution"
-                className="block h-[40vh] w-full cursor-default bg-gradient-to-b from-black/45 via-black/25 to-transparent"
+                className="hidden h-[40vh] w-full cursor-default bg-gradient-to-b from-black/45 via-black/25 to-transparent lg:block"
                 onClick={closeFind}
               />
             </motion.div>

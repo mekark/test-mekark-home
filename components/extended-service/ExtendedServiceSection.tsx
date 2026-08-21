@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
@@ -10,150 +10,238 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 
 type ServiceId = "eot" | "racking" | "clean-room";
 
+type FaqEntry = {
+  question: string;
+  answer: string;
+};
+
 type ExtendedOffering = {
   id: ServiceId;
   index: string;
   name: string;
   eyebrow: string;
   title: string;
-  intro: ReactNode;
   paragraphs: string[];
   image: string;
   imageAlt: string;
+  faqs: FaqEntry[];
 };
+
+const PAGE_INTRO =
+  "From heavy-duty EOT cranes to cleanroom facilities and industrial racking systems, Mekark delivers integrated material handling, storage, and controlled-environment solutions engineered for precision, safety, and continuous performance. Serving manufacturing plants, warehouses, and industrial units across Tamil Nadu, Karnataka, Andhra Pradesh, Telangana, and Kerala.";
 
 const SERVICES: ExtendedOffering[] = [
   {
     id: "eot",
     index: "01",
     name: "EOT Crane",
-    eyebrow: "Material Handling",
+    eyebrow: "End-to-End Industrial Systems",
     title: "EOT Crane",
-    intro: (
-      <>
-        South India&apos;s trusted{" "}
-        <span className="font-semibold">EOT crane service providers</span>,
-        Mekark delivers{" "}
-        <span className="font-semibold">electric overhead travelling cranes</span>{" "}
-        engineered for heavy-duty{" "}
-        <span className="font-semibold">industrial material handling</span>{" "}
-        across Tamil Nadu, Karnataka, Andhra Pradesh, Telangana, and Kerala —
-        precision-built, safety-certified, and designed for continuous load.
-      </>
-    ),
     paragraphs: [
-      "As a leading EOT crane service providers in South India, Mekark designs, fabricates, installs, and commissions electric overhead travelling cranes tailored to your facility's load capacity, span, and operational demands — ensuring maximum efficiency and long-term structural reliability.",
+      "As a leading EOT crane service providers in South India, Mekark designs, fabricates, installs, and commissions electric overhead travelling cranes tailored to your facility's load capacity, span, and operational demands ensuring maximum efficiency and long-term structural reliability.",
       "Every EOT crane is custom-engineered around your load requirements, bay dimensions, and duty cycle, meeting IS 3177 and IS 807 safety standards with certified interlocks, overload protection, and AMC support across South India.",
     ],
     image: "/images/extended-service/eot-blended.png",
     imageAlt:
       "Electric overhead travelling crane hoist, trolley and hook assembly",
+    faqs: [
+      {
+        question: "What is an EOT crane and how does it work?",
+        answer:
+          "An Electric Overhead Travelling (EOT) crane is a motorised hoist that runs on rails fixed to the building structure. The bridge travels the length of the bay, the trolley moves across the span, and the hoist lifts the load — giving three-axis material handling without occupying floor space.",
+      },
+      {
+        question: "What load capacities do Mekark's EOT cranes support?",
+        answer:
+          "Mekark engineers EOT cranes around your facility's duty cycle and peak load, from light workshop duties through heavy-duty industrial lifts. Capacity, span, and lift height are specified together so the crane, rails, and supporting structure work as one system.",
+      },
+      {
+        question: "How long does it take to install an EOT crane?",
+        answer:
+          "Installation time depends on capacity, span, and whether the building already has crane girders and rails. Fabrication proceeds in parallel with site preparation; erection, alignment, load testing, and commissioning follow once the runway is ready.",
+      },
+      {
+        question: "Are Mekark's EOT cranes compliant with safety standards?",
+        answer:
+          "Yes. Every crane is designed and executed to IS 3177 and IS 807, with certified interlocks, overload protection, limit switches, and documented load testing before handover.",
+      },
+      {
+        question:
+          "Can an existing overhead crane be upgraded instead of replaced?",
+        answer:
+          "In many cases, yes. We assess the existing hoist, trolley, girders, and runway, then upgrade capacity, controls, or safety systems where the structure allows — avoiding a full replacement when the frame is still sound.",
+      },
+      {
+        question: "What maintenance does an EOT crane require?",
+        answer:
+          "Regular inspection of wire ropes, brakes, limit switches, wheels, and electrical systems, plus lubrication and load-path checks. Mekark offers AMC support across South India so duty-cycle wear is caught before it affects uptime.",
+      },
+      {
+        question:
+          "How is the right EOT crane capacity determined for my facility?",
+        answer:
+          "Capacity is set from your heaviest load, lift height, span, duty class, and how often the crane will run. We also check bay geometry and building structure so the crane rating matches both operations and the supporting frame.",
+      },
+      {
+        question: "Does Mekark provide EOT cranes for outdoor applications?",
+        answer:
+          "Yes. Outdoor and gantry configurations can be specified with weather-protected electrics, suitable coatings, and duty ratings for open-yard or semi-open industrial use.",
+      },
+      {
+        question: "What industries commonly use EOT cranes?",
+        answer:
+          "Manufacturing, heavy engineering, steel and fabrication, automotive, warehousing, power, and process plants use EOT cranes wherever repetitive overhead lifting is part of the production flow.",
+      },
+      {
+        question:
+          "Does Mekark supply and install EOT cranes across South India?",
+        answer:
+          "Yes. Mekark designs, fabricates, installs, and commissions EOT cranes across Tamil Nadu, Karnataka, Andhra Pradesh, Telangana, and Kerala, with AMC support after handover.",
+      },
+    ],
   },
   {
     id: "racking",
     index: "02",
     name: "Racking",
-    eyebrow: "Storage Systems",
-    title: "Industrial Racking",
-    intro: (
-      <>
-        Mekark delivers{" "}
-        <span className="font-semibold">heavy-duty industrial racking</span>{" "}
-        engineered for{" "}
-        <span className="font-semibold">high-density warehouse storage</span>{" "}
-        across South India — pallet racking, cantilever, and custom layouts
-        built for load safety, aisle efficiency, and long-term operational
-        reliability.
-      </>
-    ),
+    eyebrow: "End-to-End Industrial Systems",
+    title: "Racking",
     paragraphs: [
       "As a leading pallet racking system service providers in South India, Mekark designs, fabricates, and installs heavy-duty industrial storage racks tailored to your facility's load capacity, storage density, and material handling requirements from Selective and Double Deep to Drive-In, Cantilever, and Mezzanine racking.",
       "Every racking system meets IS 807 and MHE code specifications for load rating and seismic bracing, with CNC-fabricated precision and AMC support across South India ensuring your industrial storage racks stay safe and stable for years.",
     ],
-    image: "/images/services/racking.png",
+    image: "/images/extended-service/racking-blended.png",
     imageAlt: "Heavy-duty industrial pallet racking in a warehouse aisle",
+    faqs: [
+      {
+        question: "What is heavy duty industrial racking and how does it work?",
+        answer:
+          "Heavy-duty industrial racking is a steel storage frame that carries palletised or long loads in organised bays. Uprights and beams take the load, aisles give forklift access, and the layout is engineered around your SKU mix, bay height, and handling equipment so density and safety work together.",
+      },
+      {
+        question:
+          "Who is Mekark and what heavy-duty racking services do they offer?",
+        answer:
+          "Mekark designs, fabricates, and installs industrial racking as part of its South India EPC offering. Scope covers Selective, Double Deep, Drive-In, Cantilever, and Mezzanine systems, from layout engineering through erection and AMC support.",
+      },
+      {
+        question:
+          "What load capacities do Mekark's pallet racking systems support?",
+        answer:
+          "Capacity is specified per beam pair and per bay from your pallet weight, stacking height, and handling method. Each system is load-rated to the facility's duty, with seismic bracing and beam-upright connections sized to IS 807 and MHE code requirements.",
+      },
+      {
+        question: "How long does it take to install an industrial racking system?",
+        answer:
+          "Installation time depends on bay count, height, and whether the floor and building are ready. Fabrication runs in parallel with site preparation; erection, alignment, and load signage follow once the slab and access are clear.",
+      },
+      {
+        question:
+          "Are Mekark's heavy-duty racking systems compliant with safety standards?",
+        answer:
+          "Yes. Systems are designed and executed to IS 807 and MHE code specifications for load rating, beam deflection, and seismic bracing, with CNC-fabricated members and documented checks through fabrication and installation.",
+      },
+      {
+        question:
+          "Can existing warehouse racking be reconfigured or expanded instead of replaced?",
+        answer:
+          "In many cases, yes. We assess the existing uprights, beams, floor loads, and aisle geometry, then add bays, change beam levels, or extend the layout where the structure still meets the required rating.",
+      },
+      {
+        question:
+          "How is the right heavy-duty racking system determined for my facility?",
+        answer:
+          "Selection follows your SKU profile, pallet size, throughput, forklift type, and available clear height. From that we specify Selective, Double Deep, Drive-In, Cantilever, or Mezzanine so storage density matches how goods actually move.",
+      },
+      {
+        question:
+          "Does Mekark provide racking systems for cold storage applications?",
+        answer:
+          "Yes. Cold-store racking is specified for low-temperature duty, with coatings, member sizing, and layouts coordinated with insulated envelopes, flooring, and the required temperature band.",
+      },
+      {
+        question: "Which industries commonly use heavy-duty industrial racking?",
+        answer:
+          "Logistics and warehousing, manufacturing, automotive, FMCG, pharma, food and beverage, and 3PL operations use heavy-duty racking wherever palletised or long-goods storage needs engineered load safety.",
+      },
+      {
+        question:
+          "Does Mekark supply and install pallet racking systems across South India?",
+        answer:
+          "Yes. Mekark supplies and installs pallet racking across Tamil Nadu, Karnataka, Andhra Pradesh, Telangana, and Kerala, with AMC support after handover.",
+      },
+    ],
   },
   {
     id: "clean-room",
     index: "03",
     name: "Clean Room",
-    eyebrow: "Controlled Environments",
+    eyebrow: "End-to-End Industrial Systems",
     title: "Clean Room",
-    intro: (
-      <>
-        Mekark builds{" "}
-        <span className="font-semibold">contamination-controlled clean rooms</span>{" "}
-        for precision manufacturing across South India — modular envelopes,
-        HVAC, and finishes engineered to the{" "}
-        <span className="font-semibold">ISO classification</span> your process
-        demands.
-      </>
-    ),
     paragraphs: [
-      "From pharma and electronics to food and precision assembly, we design and execute clean room infrastructure as an integrated package — partitions, flooring, air handling, and pressure regimes coordinated with the parent building.",
-      "Each facility is planned around your process flow, personnel movement, and cleanliness class, with validated HVAC performance and turnkey execution across South India.",
+      "As a leading clean room service provider in South India, Mekark designs, fabricates, and installs modular clean rooms, from Cleanroom HVAC Systems to Pharmaceutical and Electronics/Semiconductor Clean Rooms, along with STP, WTP, and ETP systems for complete facility compliance.",
+      "Every system meets ISO 14644, GMP, and WHO-GMP standards, with factory-fabricated precision and AMC support across South India ensuring your controlled environments and treatment plants stay compliant for years.",
     ],
-    image: "/images/services/clean-room.png",
+    image: "/images/extended-service/clean-room.png",
     imageAlt: "Modular contamination-controlled clean room interior",
+    faqs: [
+      {
+        question: "What is a clean room and how does it work?",
+        answer:
+          "A clean room is a sealed, controlled envelope where air, pressure, and surfaces are managed to limit particles. HVAC, filters, and finishes work together so the room stays at the ISO class your process needs.",
+      },
+      {
+        question: "What cleanliness classes do Mekark's clean rooms support?",
+        answer:
+          "We design modular clean rooms to the ISO 14644 class specified for your process, from less stringent manufacturing areas through tighter pharmaceutical and electronics grades, with HVAC and pressure regimes matched to that class.",
+      },
+      {
+        question: "Are Mekark's clean rooms compliant with regulatory standards?",
+        answer:
+          "Yes. Systems are designed and executed to ISO 14644, GMP, and WHO-GMP requirements, with factory-fabricated precision and documented checks through fabrication, installation, and handover.",
+      },
+      {
+        question: "What industries commonly use clean room systems?",
+        answer:
+          "Pharma, electronics and semiconductor, food, medical devices, and precision assembly use clean rooms wherever contamination control is part of the process.",
+      },
+      {
+        question:
+          "Does Mekark provide STP, WTP, and ETP solutions along with clean room services?",
+        answer:
+          "Yes. STP, WTP, and ETP systems are offered with clean room work so process water and effluent sit under the same facility package and compliance path.",
+      },
+      {
+        question: "What is the difference between STP, WTP, and ETP?",
+        answer:
+          "WTP treats incoming water for process or utility use. STP treats sewage and domestic wastewater. ETP treats industrial effluent before discharge or reuse. Each plant is sized to the load and the consent limits of the site.",
+      },
+      {
+        question:
+          "Are Mekark's STP, WTP, and ETP systems compliant with pollution control regulations?",
+        answer:
+          "Yes. Treatment systems are designed to applicable pollution-control and discharge norms for the site, coordinated with the parent facility so water and effluent remain within consented limits.",
+      },
+      {
+        question:
+          "Can existing clean rooms or treatment systems be reconfigured or expanded instead of replaced?",
+        answer:
+          "In many cases, yes. We assess the existing envelope, HVAC, and plant capacity, then extend bays, upgrade filtration, or add treatment trains where the base system can still meet the required class and load.",
+      },
+      {
+        question: "What does Mekark's AMC (Annual Maintenance Contract) include?",
+        answer:
+          "AMC covers scheduled inspection, filter and plant checks, and upkeep of clean room HVAC and treatment systems so controlled environments stay within class and plants stay compliant across South India.",
+      },
+      {
+        question:
+          "Does Mekark supply and install clean room systems across South India?",
+        answer:
+          "Yes. Mekark designs, fabricates, and installs modular clean rooms and allied STP, WTP, and ETP systems across Tamil Nadu, Karnataka, Andhra Pradesh, Telangana, and Kerala, with AMC support after handover.",
+      },
+    ],
   },
 ];
-
-const FAQ_ITEMS = [
-  {
-    question: "What is a pre-engineered warehouse building and how does it work?",
-    answer:
-      "A pre-engineered warehouse is a steel building whose primary members are designed, fabricated, and coded off-site, then erected on a prepared foundation. This factory-controlled process shortens site time, improves quality, and allows clear spans tailored to storage, production, or logistics layouts.",
-  },
-  {
-    question:
-      "Who is the best pre-engineered warehouse manufacturer in South India?",
-    answer:
-      "The right partner is one that owns design, fabrication, and erection under a single EPC system. Mekark delivers PEB warehouses across Tamil Nadu, Karnataka, Andhra Pradesh, Telangana, and Kerala with in-house engineering and project control from concept to handover.",
-  },
-  {
-    question:
-      "How long does it take to construct a pre-engineered warehouse in South India?",
-    answer:
-      "Timelines depend on span, area, and finishes, but PEB programmes typically run in parallel — design, procurement, and fabrication overlap so site erection is compressed versus conventional RCC construction.",
-  },
-  {
-    question:
-      "How much does it cost to build a factory warehouse shed in South India?",
-    answer:
-      "Cost is driven by built-up area, crane loads, insulation, flooring, and MEP scope. Share your plot, usage, and capacity requirements and Mekark will issue an engineered proposal rather than a generic per-sq.ft rate.",
-  },
-  {
-    question: "Do you provide turnkey EPC solutions for warehouses?",
-    answer:
-      "Yes. Mekark executes warehouses as a single-point EPC package covering civil, PEB structure, EOT cranes, racking, MEP, and allied infrastructure so coordination sits with one accountable team.",
-  },
-  {
-    question: "Can Mekark design and erect cold storage steel structures?",
-    answer:
-      "Yes. We engineer insulated PEB envelopes, flooring, and door systems for cold and controlled-temperature storage, coordinated with refrigeration vendors and the required temperature bands.",
-  },
-  {
-    question:
-      "Can existing warehouses be reconfigured or expanded instead of rebuilt?",
-    answer:
-      "In many cases, yes. We assess the existing frame, foundations, and crane rails, then design bay extensions, mezzanines, or racking upgrades that add capacity without a full rebuild.",
-  },
-  {
-    question: "Which parts of South India does Mekark execute projects in?",
-    answer:
-      "Mekark executes industrial projects across Tamil Nadu, Karnataka, Andhra Pradesh, Telangana, and Kerala, with design and fabrication anchored in Chennai.",
-  },
-  {
-    question: "What industries does Mekark service?",
-    answer:
-      "We serve logistics and warehousing, manufacturing, automotive, pharma, food and beverage, electronics, data centres, and allied industrial sectors that need engineered steel infrastructure.",
-  },
-  {
-    question: "Is the construction of the warehouse at Mekark IS compliant?",
-    answer:
-      "Yes. Structures are designed and executed to applicable Indian Standards, including IS 800, IS 875, and, where EOT cranes are specified, IS 3177 and IS 807, with documented quality checks through fabrication and erection.",
-  },
-] as const;
 
 function isServiceId(value: string): value is ServiceId {
   return SERVICES.some((service) => service.id === value);
@@ -162,10 +250,55 @@ function isServiceId(value: string): value is ServiceId {
 function ServiceSwitcher({
   activeId,
   onSelect,
+  compact = false,
 }: {
   activeId: ServiceId;
   onSelect: (id: ServiceId) => void;
+  compact?: boolean;
 }) {
+  if (compact) {
+    return (
+      <div className="flex w-full rounded-[18px] bg-[#d91a20] px-1 py-2.5">
+        {SERVICES.map((service) => {
+          const active = service.id === activeId;
+
+          return (
+            <button
+              key={service.id}
+              type="button"
+              onClick={() => onSelect(service.id)}
+              aria-pressed={active}
+              className="relative flex min-w-0 flex-1 flex-col items-center gap-1 px-1 py-2"
+            >
+              {active ? (
+                <span
+                  aria-hidden
+                  className="absolute bottom-1 left-1/2 h-[2px] w-8 -translate-x-1/2 bg-white"
+                />
+              ) : null}
+              <span
+                className={`font-[family-name:var(--font-manrope)] text-[11px] leading-none ${
+                  active ? "font-medium text-white" : "font-normal text-[#ee7c7c]"
+                }`}
+              >
+                {service.index}
+              </span>
+              <span
+                className={`max-w-full truncate font-[family-name:var(--font-manrope)] leading-none ${
+                  active
+                    ? "text-[13px] font-medium text-white sm:text-[16px]"
+                    : "text-[12px] font-normal text-[#ee7c7c] sm:text-[15px]"
+                }`}
+              >
+                {service.name}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+    );
+  }
+
   return (
     <div className="flex w-full flex-col rounded-[24px] bg-[#d91a20] py-10 sm:py-[60px] lg:w-[376px] lg:shrink-0">
       <div className="flex w-full flex-col gap-8 sm:gap-[40px]">
@@ -218,7 +351,7 @@ function FaqItem({
   open,
   onToggle,
 }: {
-  item: (typeof FAQ_ITEMS)[number];
+  item: FaqEntry;
   index: number;
   open: boolean;
   onToggle: () => void;
@@ -228,24 +361,24 @@ function FaqItem({
   const buttonId = `extended-faq-button-${index}`;
 
   return (
-    <div className="w-full rounded-[21px] border border-[#e3e4e7] bg-white">
+    <div className="w-full rounded-[18px] border border-[#e3e4e7] bg-[#fefefe]">
       <button
         id={buttonId}
         type="button"
         aria-expanded={open}
         aria-controls={panelId}
         onClick={onToggle}
-        className="flex w-full items-start justify-between gap-4 px-[26px] py-[22px] text-left"
+        className="flex min-h-[58px] w-full items-center justify-between gap-4 px-[26px] py-[18px] text-left"
       >
-        <span className="flex min-w-0 items-start gap-3">
-          <span className="mt-1 shrink-0 font-[family-name:var(--font-manrope)] text-[16px] font-bold leading-[17px] text-[#e60f1a]">
+        <span className="flex min-w-0 items-center gap-[17px]">
+          <span className="w-[22px] shrink-0 font-[family-name:var(--font-manrope)] text-[16px] font-bold leading-[17px] tracking-[-0.47px] text-[#e60f1a]">
             {number}
           </span>
-          <span className="font-[family-name:var(--font-manrope)] text-[16px] font-medium leading-[27px] tracking-[-0.47px] text-[#101116] sm:text-[18px]">
+          <span className="font-[family-name:var(--font-manrope)] text-[16px] font-medium leading-[27px] text-[#1e1e1e] sm:text-[18px]">
             {item.question}
           </span>
         </span>
-        <span className="relative mt-1.5 size-[17px] shrink-0 overflow-clip">
+        <span className="relative size-[17px] shrink-0 overflow-clip">
           <img
             src="/images/extended-service/faq-chevron.svg"
             alt=""
@@ -270,7 +403,7 @@ function FaqItem({
             transition={{ duration: 0.28, ease: EASE }}
             className="overflow-hidden"
           >
-            <p className="px-[26px] pb-6 pl-[54px] font-[family-name:var(--font-manrope)] text-[15px] leading-[26px] text-[#555]">
+            <p className="px-[26px] pb-6 pl-[65px] font-[family-name:var(--font-manrope)] text-[15px] leading-[26px] text-[#555]">
               {item.answer}
             </p>
           </motion.div>
@@ -283,6 +416,7 @@ function FaqItem({
 export function ExtendedServiceSection() {
   const [activeId, setActiveId] = useState<ServiceId>("eot");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const applyHash = () => {
@@ -297,22 +431,26 @@ export function ExtendedServiceSection() {
 
   const selectService = (id: ServiceId) => {
     setActiveId(id);
+    setOpenFaq(null);
     window.history.replaceState(null, "", `/services/extended#${id}`);
+
+    if (window.matchMedia("(max-width: 1023px)").matches) {
+      contentRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   const active = SERVICES.find((service) => service.id === activeId) ?? SERVICES[0];
-  const leftFaqs = FAQ_ITEMS.slice(0, 5);
-  const rightFaqs = FAQ_ITEMS.slice(5);
+  const hasBakedFade = active.id === "racking";
 
   return (
     <div className="bg-white font-[family-name:var(--font-manrope)] text-[#17171b]">
-      <section className="overflow-x-hidden bg-[#f6f6f6] pt-[108px] sm:pt-[128px]">
-        <div className="mx-auto w-full max-w-[1740px] px-5 pb-16 sm:px-8 lg:px-[80px] lg:pb-[80px]">
+      <section className="flex flex-col bg-[#f6f6f6] pt-[108px] sm:pt-[128px] lg:h-dvh lg:overflow-hidden">
+        <div className="mx-auto flex min-h-0 w-full max-w-[1740px] flex-1 flex-col px-5 pb-10 sm:px-8 lg:px-[80px] lg:pb-8">
           <motion.header
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
-            className="flex max-w-[1590px] flex-col gap-2.5"
+            className="flex max-w-[1590px] shrink-0 flex-col gap-2.5"
           >
             <motion.h1
               variants={fadeUp}
@@ -322,15 +460,25 @@ export function ExtendedServiceSection() {
             </motion.h1>
             <motion.p
               variants={fadeUp}
-              className="max-w-[1590px] text-[clamp(1.05rem,2vw,26px)] font-light leading-normal text-[#17171b]"
+              className="max-w-[1757px] text-[15px] font-light leading-normal text-[#17171b] sm:text-[18px] lg:text-[22px]"
             >
-              {active.intro}
+              {PAGE_INTRO}
             </motion.p>
           </motion.header>
 
-          <div className="mt-10 flex flex-col gap-8 lg:mt-[56px] lg:flex-row lg:items-start lg:gap-10 xl:gap-[70px]">
-            <div className="flex w-full flex-col gap-5 lg:w-[376px] lg:shrink-0">
-              <ServiceSwitcher activeId={activeId} onSelect={selectService} />
+          <div className="sticky top-[76px] z-20 -mx-5 mt-6 bg-[#f6f6f6] px-5 py-2 sm:top-[88px] sm:-mx-8 sm:px-8 lg:hidden">
+            <ServiceSwitcher
+              compact
+              activeId={activeId}
+              onSelect={selectService}
+            />
+          </div>
+
+          <div className="relative mt-6 flex min-h-0 flex-1 flex-col gap-8 lg:mt-[40px] lg:flex-row lg:items-stretch lg:gap-10 xl:gap-[70px]">
+            <div className="flex w-full shrink-0 flex-col gap-5 lg:w-[376px]">
+              <div className="hidden lg:block">
+                <ServiceSwitcher activeId={activeId} onSelect={selectService} />
+              </div>
 
               <Link
                 href="#enquiry"
@@ -349,29 +497,14 @@ export function ExtendedServiceSection() {
               </Link>
             </div>
 
-            <div className="relative min-w-0 flex-1 xl:min-h-[486px]">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={active.id}
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -12 }}
-                  transition={{ duration: 0.28, ease: EASE }}
-                  className="relative z-10 flex max-w-[625px] flex-col gap-5"
-                >
-                  <p className="text-[14px] font-bold uppercase leading-normal text-[#e50818]">
-                    {active.eyebrow}
-                  </p>
-                  <h2 className="text-[clamp(1.75rem,3vw,40px)] font-medium leading-normal text-[#17171b]">
-                    {active.title}
-                  </h2>
-                  <p className="text-[22px] font-normal leading-normal whitespace-pre-wrap text-[#555]">
-                    {active.paragraphs.join("\n\n")}
-                  </p>
-                </motion.div>
-              </AnimatePresence>
-
-              <div className="relative mt-8 h-[260px] w-full sm:h-[380px] xl:absolute xl:inset-y-0 xl:left-[42%] xl:right-[-80px] xl:mt-0 xl:h-auto">
+            <div
+              className="pointer-events-none absolute top-0 z-0 hidden h-full xl:block"
+              style={{
+                right: "calc((100vw - 100%) / -2)",
+                width: hasBakedFade ? "min(50vw, 800px)" : "min(46vw, 760px)",
+              }}
+            >
+              <div className="relative h-full min-h-[520px] w-full">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={active.image}
@@ -386,8 +519,62 @@ export function ExtendedServiceSection() {
                       alt={active.imageAlt}
                       fill
                       priority={active.id === "eot"}
-                      className="object-cover object-[70%_center] xl:object-contain xl:object-right"
-                      sizes="(max-width: 1280px) 100vw, 55vw"
+                      className={
+                        hasBakedFade
+                          ? "object-contain object-right object-top"
+                          : "object-cover object-right object-top"
+                      }
+                      sizes="50vw"
+                    />
+                    {hasBakedFade ? null : (
+                      <div
+                        aria-hidden
+                        className="pointer-events-none absolute inset-0"
+                        style={{
+                          backgroundImage:
+                            "linear-gradient(90deg, #f6f6f6 0%, rgba(246,246,246,0.92) 12%, rgba(246,246,246,0.4) 32%, rgba(246,246,246,0) 52%)",
+                        }}
+                      />
+                    )}
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </div>
+
+            <div
+              ref={contentRef}
+              className="relative z-10 min-h-0 min-w-0 flex-1 scroll-mt-[168px] sm:scroll-mt-[188px] lg:scroll-mt-0"
+            >
+              <div className="relative z-10 h-auto overflow-visible lg:h-full lg:overflow-y-auto lg:overscroll-contain [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+                <div className="flex min-h-full flex-col justify-between">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={active.id}
+                      initial={{ opacity: 0, y: 16 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -12 }}
+                      transition={{ duration: 0.28, ease: EASE }}
+                      className="flex max-w-[625px] flex-col gap-5"
+                    >
+                      <p className="text-[14px] font-bold uppercase leading-normal text-[#e50818]">
+                        {active.eyebrow}
+                      </p>
+                      <h2 className="text-[clamp(1.75rem,3vw,40px)] font-medium leading-normal text-[#17171b]">
+                        {active.title}
+                      </h2>
+                      <p className="text-[16px] font-normal leading-normal whitespace-pre-wrap text-[#555] sm:text-[18px] lg:text-[22px]">
+                        {active.paragraphs.join("\n\n")}
+                      </p>
+                    </motion.div>
+                  </AnimatePresence>
+
+                  <div className="relative mt-8 h-[260px] w-full sm:h-[380px] xl:hidden">
+                    <Image
+                      src={active.image}
+                      alt={active.imageAlt}
+                      fill
+                      className="object-cover object-[70%_center]"
+                      sizes="100vw"
                     />
                     <div
                       aria-hidden
@@ -397,51 +584,40 @@ export function ExtendedServiceSection() {
                           "linear-gradient(90deg, #f6f6f6 0%, rgba(246,246,246,0.96) 16%, rgba(246,246,246,0.45) 38%, rgba(246,246,246,0) 58%), linear-gradient(180deg, rgba(246,246,246,0) 62%, rgba(246,246,246,0.7) 82%, #f6f6f6 100%)",
                       }}
                     />
+                  </div>
+
+                  <h2 className="mt-16 text-[clamp(1.75rem,3vw,40px)] font-bold tracking-[-1.33px] text-[#111] lg:mt-auto lg:pt-16 lg:leading-[65px]">
+                    Frequently Asked Questions
+                  </h2>
+                </div>
+
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={`${active.id}-faq`}
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -12 }}
+                    transition={{ duration: 0.28, ease: EASE }}
+                    className={`mt-5 flex w-full flex-col gap-5 pb-6 ${
+                      active.id === "racking" ? "max-w-[640px]" : "max-w-[701px]"
+                    }`}
+                  >
+                    {active.faqs.map((item, index) => (
+                      <FaqItem
+                        key={item.question}
+                        item={item}
+                        index={index}
+                        open={openFaq === index}
+                        onToggle={() =>
+                          setOpenFaq((current) =>
+                            current === index ? null : index,
+                          )
+                        }
+                      />
+                    ))}
                   </motion.div>
                 </AnimatePresence>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white">
-        <div className="mx-auto flex w-full max-w-[1740px] flex-col items-center gap-10 px-5 py-14 sm:px-8 lg:gap-[68px] lg:px-[80px] lg:py-[50px]">
-          <h2 className="text-center text-[clamp(1.75rem,4vw,53px)] font-bold tracking-[-1.33px] text-[#111] lg:leading-[65px]">
-            Frequently Asked Questions
-          </h2>
-
-          <div className="grid w-full grid-cols-1 gap-[13px] lg:grid-cols-2 lg:gap-10">
-            <div className="flex flex-col gap-[13px]">
-              {leftFaqs.map((item, index) => (
-                <FaqItem
-                  key={item.question}
-                  item={item}
-                  index={index}
-                  open={openFaq === index}
-                  onToggle={() =>
-                    setOpenFaq((current) => (current === index ? null : index))
-                  }
-                />
-              ))}
-            </div>
-            <div className="flex flex-col gap-[13px]">
-              {rightFaqs.map((item, index) => {
-                const actualIndex = index + 5;
-                return (
-                  <FaqItem
-                    key={item.question}
-                    item={item}
-                    index={actualIndex}
-                    open={openFaq === actualIndex}
-                    onToggle={() =>
-                      setOpenFaq((current) =>
-                        current === actualIndex ? null : actualIndex,
-                      )
-                    }
-                  />
-                );
-              })}
             </div>
           </div>
         </div>

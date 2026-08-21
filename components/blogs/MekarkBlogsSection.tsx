@@ -13,6 +13,8 @@ import {
   blogSectionStagger,
 } from "@/lib/motion-variants";
 
+const BLOG_URL = "https://blog.mekark.com/";
+
 const VIEWPORT = { once: true, margin: "-80px" as const };
 
 /** First row + peek of second row (matches Figma fade) */
@@ -78,7 +80,10 @@ function BlogCard({
   index: number;
 }) {
   return (
-    <motion.article
+    <motion.a
+      href={BLOG_URL}
+      target="_blank"
+      rel="noopener noreferrer"
       variants={blogCardReveal(index)}
       whileHover={{
         y: -4,
@@ -114,7 +119,7 @@ function BlogCard({
           {post.excerpt}
         </p>
       </div>
-    </motion.article>
+    </motion.a>
   );
 }
 

@@ -3,16 +3,23 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { NAV_ITEMS, type NavItem } from "@/components/navbar/nav-data";
 import { fadeUp, staggerContainer } from "@/lib/motion-variants";
 
 const VIEWPORT = { once: true, margin: "-80px" as const };
 
-const CORPORATE_LINKS = [
-  { label: "About Us", href: "#" },
-  { label: "Global Locations", href: "#" },
-  { label: "HSE Standards", href: "#" },
-  { label: "Career", href: "#" },
-] as const;
+function isExternalHref(href: string): boolean {
+  return href.startsWith("http://") || href.startsWith("https://");
+}
+
+function navItemHref(item: NavItem): string {
+  return item.href ?? item.children?.[0]?.href ?? "/";
+}
+
+const MENU_LINKS = NAV_ITEMS.map((item) => ({
+  label: item.label,
+  href: navItemHref(item),
+}));
 
 const LEGAL_LINKS = [
   { label: "Privacy Policy", href: "#" },
@@ -223,16 +230,30 @@ function FooterLinkColumn({
         {title}
       </p>
       <ul className="flex flex-col gap-3">
-        {links.map((link) => (
-          <li key={link.label}>
-            <Link
-              href={link.href}
-              className="text-sm text-white/55 transition-colors hover:text-white/85"
-            >
-              {link.label}
-            </Link>
-          </li>
-        ))}
+        {links.map((link) => {
+          const className =
+            "text-sm text-white/55 transition-colors hover:text-white/85";
+          const external = isExternalHref(link.href);
+
+          return (
+            <li key={link.label}>
+              {external ? (
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={className}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link href={link.href} className={className}>
+                  {link.label}
+                </Link>
+              )}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
@@ -240,7 +261,7 @@ function FooterLinkColumn({
 
 function FloatingActions() {
   return (
-    <div className="pointer-events-none fixed bottom-6 right-5 z-40 flex flex-col gap-3 sm:bottom-8 sm:right-8">
+    <div className="pointer-events-none fixed bottom-[108px] right-5 z-40 flex flex-col gap-3 sm:bottom-[116px] sm:right-8">
       <a
         href="tel:+919790924754"
         aria-label="Call Mekark"
@@ -360,10 +381,20 @@ export function FooterSection() {
               variants={fadeUp}
               className="flex flex-col gap-8 sm:flex-row sm:gap-16 lg:gap-20 lg:pt-1"
             >
-              <FooterLinkColumn title="Corporate" links={CORPORATE_LINKS} />
+              <FooterLinkColumn title="Menu" links={MENU_LINKS} />
               <FooterLinkColumn title="Legal" links={LEGAL_LINKS} />
             </motion.div>
           </div>
+
+          <motion.div
+            variants={fadeUp}
+            className="mt-12 border-t border-white/10 pt-6 sm:mt-16 lg:mt-20"
+          >
+            <p className="text-center text-xs leading-5 tracking-wide text-white/40 sm:text-sm">
+              © {new Date().getFullYear()} Mekark Structure India Private
+              Limited. All rights reserved.
+            </p>
+          </motion.div>
         </motion.div>
       </footer>
 

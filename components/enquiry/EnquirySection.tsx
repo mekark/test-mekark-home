@@ -2,7 +2,7 @@
 
 import { type FormEvent, type ReactNode, useEffect, useMemo, useState } from "react";
 import Image from "next/image";
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import {
   ENQUIRY_INDUSTRY_BY_SLUG,
@@ -252,6 +252,7 @@ type SubmitStatus = "idle" | "submitting" | "error";
 
 export function EnquirySection() {
   const router = useRouter();
+  const pathname = usePathname();
   const searchParams = useSearchParams();
   const [projectArea, setProjectArea] = useState("");
   const [industryType, setIndustryType] = useState("");
@@ -272,12 +273,15 @@ export function EnquirySection() {
     [serviceType],
   );
 
+  const queryString = searchParams.toString();
+
   // Prefill from Find your solution redirect: /?industry=…&service=…#enquiry
   useEffect(() => {
-    const industrySlug = searchParams.get("industry");
-    const industryLabel = searchParams.get("industryLabel");
-    const serviceSlug = searchParams.get("service");
-    const serviceLabel = searchParams.get("serviceLabel");
+    const params = new URLSearchParams(queryString);
+    const industrySlug = params.get("industry");
+    const industryLabel = params.get("industryLabel");
+    const serviceSlug = params.get("service");
+    const serviceLabel = params.get("serviceLabel");
 
     if (!industrySlug && !industryLabel && !serviceSlug && !serviceLabel) {
       return;
@@ -298,13 +302,15 @@ export function EnquirySection() {
       setMessage(prefill);
     }
 
+    router.replace(`${pathname}#enquiry`, { scroll: false });
+
     requestAnimationFrame(() => {
       document.getElementById("enquiry")?.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
     });
-  }, [searchParams]);
+  }, [pathname, router, queryString]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();

@@ -151,6 +151,7 @@ function WorkflowStep({
           alt=""
           width={step.iconSize}
           height={step.iconSize}
+          className="h-auto w-auto"
           aria-hidden
         />
       </motion.div>

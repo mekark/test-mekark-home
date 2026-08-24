@@ -49,19 +49,11 @@ function parseEnquiryPayload(body: unknown): EnquiryFormPayload | null {
   const budget = typeof data.budget === "string" ? data.budget.trim() : "";
   const message = typeof data.message === "string" ? data.message.trim() : "";
 
-  if (
-    !name ||
-    !email ||
-    !phone ||
-    !industry ||
-    !sqf ||
-    !startTimeline ||
-    !budget
-  ) {
+  if (!name || !phone || !industry || !sqf || !startTimeline || !budget) {
     return null;
   }
 
-  if (!isValidEmail(email)) {
+  if (email && !isValidEmail(email)) {
     return null;
   }
 

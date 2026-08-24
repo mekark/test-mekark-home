@@ -239,6 +239,7 @@ export const NAV_ITEMS: NavItem[] = [
       "Blog",
       "Testimonials",
       "Careers",
+      "Contact Us",
     ]),
   },
 ];

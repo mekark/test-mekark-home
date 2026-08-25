@@ -235,12 +235,10 @@ export const NAV_ITEMS: NavItem[] = [
   },
   {
     label: "Resources",
-    children: childLinks("/resources", [
-      "Blog",
-      "Testimonials",
-      "Careers",
-      "Contact Us",
-    ]),
+    children: [
+      { label: "Blog", href: "https://blog.mekark.com/" },
+      ...childLinks("/resources", ["Testimonials", "Careers", "Contact Us"]),
+    ],
   },
 ];
 

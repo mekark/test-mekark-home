@@ -188,56 +188,56 @@ const SERVICES: ExtendedOffering[] = [
       {
         question: "What is a clean room and how does it work?",
         answer:
-          "A clean room is a sealed, controlled envelope where air, pressure, and surfaces are managed to limit particles. HVAC, filters, and finishes work together so the room stays at the ISO class your process needs.",
+          "A clean room is a controlled, contamination-free environment engineered to maintain low levels of airborne particulates, using HEPA filtration, controlled air changes, and pressure differentials. Mekark's modular clean room systems are designed to protect sensitive products and processes across pharmaceutical, electronics, and industrial applications.",
       },
       {
         question: "What cleanliness classes do Mekark's clean rooms support?",
         answer:
-          "We design modular clean rooms to the ISO 14644 class specified for your process, from less stringent manufacturing areas through tighter pharmaceutical and electronics grades, with HVAC and pressure regimes matched to that class.",
+          "Mekark designs and manufactures modular clean rooms across a wide range of ISO cleanliness classes, from ISO Class 5 to ISO Class 8, tailored to your facility's process requirements, particulate control needs, and regulatory compliance standards.",
       },
       {
         question: "Are Mekark's clean rooms compliant with regulatory standards?",
         answer:
-          "Yes. Systems are designed and executed to ISO 14644, GMP, and WHO-GMP requirements, with factory-fabricated precision and documented checks through fabrication, installation, and handover.",
+          "Yes. All Mekark clean room systems are engineered in full compliance with ISO 14644, GMP, and WHO-GMP standards, incorporating validated air change rates, pressure differentials, and HEPA filtration to ensure consistent contamination control and regulatory compliance.",
       },
       {
         question: "What industries commonly use clean room systems?",
         answer:
-          "Pharma, electronics and semiconductor, food, medical devices, and precision assembly use clean rooms wherever contamination control is part of the process.",
+          "Clean rooms are widely used across pharmaceutical, biotechnology, electronics, semiconductor, healthcare, food processing, cosmetics, and aerospace industries — anywhere airborne particle control and contamination-free environments are operationally critical.",
       },
       {
         question:
           "Does Mekark provide STP, WTP, and ETP solutions along with clean room services?",
         answer:
-          "Yes. STP, WTP, and ETP systems are offered with clean room work so process water and effluent sit under the same facility package and compliance path.",
+          "Yes. Alongside clean room systems, Mekark offers turnkey design, fabrication, and installation of Sewage Treatment Plants (STP), Water Treatment Plants (WTP), and Effluent Treatment Plants (ETP) — delivering integrated infrastructure for facilities requiring both contamination control and water/wastewater management across South India.",
       },
       {
         question: "What is the difference between STP, WTP, and ETP?",
         answer:
-          "WTP treats incoming water for process or utility use. STP treats sewage and domestic wastewater. ETP treats industrial effluent before discharge or reuse. Each plant is sized to the load and the consent limits of the site.",
+          "A Sewage Treatment Plant (STP) treats domestic sewage for safe disposal or reuse; a Water Treatment Plant (WTP) purifies raw water for industrial or drinking use; and an Effluent Treatment Plant (ETP) treats industrial wastewater and effluent before discharge or recycling — each playing a distinct role in water and wastewater management.",
       },
       {
         question:
           "Are Mekark's STP, WTP, and ETP systems compliant with pollution control regulations?",
         answer:
-          "Yes. Treatment systems are designed to applicable pollution-control and discharge norms for the site, coordinated with the parent facility so water and effluent remain within consented limits.",
+          "Yes. Mekark's Sewage Treatment Plant, Water Treatment Plant, and Effluent Treatment Plant systems are engineered to comply with CPCB (Central Pollution Control Board) norms and applicable state pollution control board regulations, ensuring safe discharge, resource recovery, and environmental compliance.",
       },
       {
         question:
           "Can existing clean rooms or treatment systems be reconfigured or expanded instead of replaced?",
         answer:
-          "In many cases, yes. We assess the existing envelope, HVAC, and plant capacity, then extend bays, upgrade filtration, or add treatment trains where the base system can still meet the required class and load.",
+          "Yes. Mekark offers modification, reconfiguration, and expansion services for modular clean rooms, HVAC systems, and STP/WTP/ETP infrastructure — helping facilities extend usable life, improve capacity, and enhance contamination control or treatment efficiency without full replacement.",
       },
       {
         question: "What does Mekark's AMC (Annual Maintenance Contract) include?",
         answer:
-          "AMC covers scheduled inspection, filter and plant checks, and upkeep of clean room HVAC and treatment systems so controlled environments stay within class and plants stay compliant across South India.",
+          "Mekark's AMC covers scheduled preventive maintenance, HEPA filter checks and replacement, airflow and pressure differential validation, HVAC servicing, and performance testing for clean rooms — along with routine inspection, servicing, and compliance checks for STP, WTP, and ETP systems — ensuring your systems remain safe, efficient, and audit-ready throughout the year.",
       },
       {
         question:
-          "Does Mekark supply and install clean room systems across South India?",
+          "Does Mekark supply and install clean room and water treatment systems across South India?",
         answer:
-          "Yes. Mekark designs, fabricates, and installs modular clean rooms and allied STP, WTP, and ETP systems across Tamil Nadu, Karnataka, Andhra Pradesh, Telangana, and Kerala, with AMC support after handover.",
+          "Yes. Mekark manufactures, supplies, and installs modular clean room systems, Sewage Treatment Plants, Water Treatment Plants, and Effluent Treatment Plants across Tamil Nadu, Karnataka, Andhra Pradesh, Telangana, and Kerala, with on-site installation and AMC (Annual Maintenance Contract) support throughout Chennai, Coimbatore, Bengaluru, Hyderabad, and Kochi.",
       },
     ],
   },

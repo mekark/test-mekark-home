@@ -10,9 +10,9 @@ import {
   logoRowReveal,
   notchDrop,
   pulseDot,
+  fadeUp,
   scaleIn,
   slideFromLeft,
-  slideFromRight,
   staggerContainer,
 } from "@/lib/motion-variants";
 
@@ -102,13 +102,13 @@ export function EngineeringNumbersSection() {
   return (
     <section className="relative w-full bg-[#f5f5f5] text-black">
       {/* Engineering in Numbers — Figma 3327:9311 */}
-      <div className="relative overflow-hidden px-4 pb-12 pt-10 font-[family-name:var(--font-manrope)] sm:px-8 sm:pb-16 sm:pt-14 lg:px-[73px] lg:pb-[70px] lg:pt-[61px]">
+      <div className="relative px-4 pb-12 pt-10 font-[family-name:var(--font-manrope)] sm:px-8 sm:pb-16 sm:pt-14 lg:px-[73px] lg:pb-[70px] lg:pt-[61px]">
         <div
-          className="pointer-events-none absolute inset-0 bg-[#f5f5f5]"
+          className="pointer-events-none absolute inset-0 overflow-hidden bg-[#f5f5f5]"
           aria-hidden
         />
         <motion.div
-          className="pointer-events-none absolute inset-0 opacity-40"
+          className="pointer-events-none absolute inset-0 overflow-hidden opacity-40"
           initial={{ opacity: 0, scale: 1.04 }}
           whileInView={{ opacity: 0.4, scale: 1 }}
           viewport={VIEWPORT}
@@ -147,7 +147,7 @@ export function EngineeringNumbersSection() {
             </motion.h2>
           </AnimatedSection>
 
-          <div className="mt-6 flex flex-col items-center gap-8 lg:mt-8 lg:flex-row lg:items-center lg:gap-8 xl:gap-12">
+          <div className="mt-6 flex min-w-0 flex-col items-center gap-8 lg:mt-8 lg:flex-row lg:items-center lg:gap-8 xl:gap-12">
             <motion.div
               className="relative z-10 w-full min-w-0 flex-1 lg:max-w-[1020px]"
               initial={{ opacity: 0, y: 40 }}
@@ -174,11 +174,11 @@ export function EngineeringNumbersSection() {
             </motion.div>
 
             <motion.div
-              className="flex w-full shrink-0 gap-[22px] lg:w-auto lg:max-w-[520px] lg:translate-y-8"
+              className="flex w-full min-w-0 max-w-full gap-[22px] lg:w-auto lg:max-w-none lg:shrink-0 lg:translate-y-8"
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
-              viewport={VIEWPORT}
+              viewport={{ once: true, amount: 0.2 }}
             >
               <motion.div
                 variants={drawVertical}
@@ -196,14 +196,15 @@ export function EngineeringNumbersSection() {
                 </motion.span>
               </motion.div>
               <motion.div
-                variants={slideFromRight}
-                className="flex flex-col justify-center gap-[17.6px]"
+                variants={fadeUp}
+                className="flex min-w-0 flex-1 flex-col justify-center gap-[17.6px] lg:min-w-max lg:flex-none"
               >
-                <p className="text-left text-[13px] leading-[20px] text-[#2a2a2a] min-[480px]:text-[14px] min-[480px]:leading-[22px] md:text-[16px] md:leading-[24px] lg:text-[30px] lg:leading-[30px]">
-                  <span className="block whitespace-nowrap">
+                <p className="text-left text-[13px] leading-[20px] text-[#2a2a2a] min-[480px]:text-[14px] min-[480px]:leading-[22px] md:text-[16px] md:leading-[24px] lg:text-[28px] lg:leading-[34px]">
+                  <span className="lg:block lg:whitespace-nowrap">
                     Tons of structural steel manufactured at our
                   </span>
-                  <span className="block whitespace-nowrap">
+                  <span className="lg:hidden"> </span>
+                  <span className="lg:block lg:whitespace-nowrap">
                     fully integrated Tamil Nadu facility.
                   </span>
                 </p>

@@ -35,6 +35,7 @@ const PROJECT_AREAS = [
 
 const INDUSTRY_TYPES = [
   "Select industry type",
+  "Institutional — Auditoriums & Stadiums",
   "Warehouse & Logistics",
   "Factories, Industries & Plants",
   "Manufacturing",

@@ -1,0 +1,235 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { fadeUp, staggerContainer } from "@/lib/motion-variants";
+import { CultureBackground } from "@/components/about/life-at-mekark/CultureBackground";
+import { CollageGrid } from "@/components/about/life-at-mekark/CollageGrid";
+
+const VIEWPORT = { once: true, margin: "-90px" as const };
+const IMG = "/images/about/life-at-mekark";
+
+const CULTURE_VALUES = [
+  {
+    title: "People First",
+    copy: "Great work starts with great people. We create a supportive culture where everyone feels valued and empowered.",
+    icon: `${IMG}/icon-people-first.svg`,
+    borderColor: "border-[#dba014]",
+  },
+  {
+    title: "Build & Learn",
+    copy: "Every project is a chance to explore, experiment, and learn. We turn challenges into opportunities to grow and build better.",
+    icon: `${IMG}/icon-build-learn.svg`,
+    borderColor: "border-[#1475db]",
+  },
+  {
+    title: "Own Your Impact",
+    copy: "Take ownership, make bold decisions, and turn your ideas into action. At Mekark, every contribution has the power to make a difference.",
+    icon: `${IMG}/icon-own-impact.svg`,
+    borderColor: "border-[#2a9f1d]",
+  },
+  {
+    title: "Celebrate Together",
+    copy: "Every win matters at Mekark. We celebrate the little moments, big milestones, and everything we achieve together.",
+    icon: `${IMG}/icon-celebrate.svg`,
+    borderColor: "border-[#c31b7d]",
+  },
+] as const;
+
+function SectionHeading({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="mx-auto flex max-w-[850px] flex-col items-center gap-2.5 text-center">
+      <h2 className="font-[family-name:var(--font-manrope)] text-[clamp(1.75rem,3.5vw,40px)] font-bold leading-[1.4] text-[#1a1a1a]">
+        {title}
+      </h2>
+      <p className="font-[family-name:var(--font-manrope)] text-[clamp(1rem,1.4vw,18px)] leading-normal text-[#191919]">
+        {children}
+      </p>
+    </div>
+  );
+}
+
+function VideoCard({
+  src,
+  alt,
+  label,
+}: {
+  src: string;
+  alt: string;
+  label: string;
+}) {
+  return (
+    <motion.div variants={fadeUp} className="group relative overflow-hidden rounded-[25px] bg-[#d9d9d9]">
+      <div className="relative aspect-[594/657] w-full">
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+        <button
+          type="button"
+          aria-label={label}
+          className="absolute inset-0 flex items-center justify-center bg-black/10 transition-colors hover:bg-black/20"
+        >
+          <span className="relative size-[min(22vw,120px)]">
+            <Image src={`${IMG}/play-icon.svg`} alt="" fill aria-hidden />
+          </span>
+        </button>
+      </div>
+    </motion.div>
+  );
+}
+
+export function LifeAtMekarkPage() {
+  return (
+    <main className="overflow-hidden bg-white text-[#191919]">
+      {/* Hero */}
+      <section className="relative isolate pt-[76px] sm:pt-[88px]">
+        <div className="mx-auto max-w-[850px] px-5 pb-8 pt-10 text-center sm:px-8 sm:pb-10 sm:pt-14 lg:px-10">
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            animate="visible"
+            className="flex flex-col items-center gap-2.5"
+          >
+            <motion.h1
+              variants={fadeUp}
+              className="font-[family-name:var(--font-manrope)] text-[clamp(1.85rem,4vw,40px)] font-bold leading-[1.4] text-[#1a1a1a]"
+            >
+              Life at Mekark
+            </motion.h1>
+            <motion.p variants={fadeUp} className="font-[family-name:var(--font-manrope)] text-[clamp(1rem,1.4vw,18px)] leading-normal text-[#191919]">
+              Behind Every Project, a Team That Believes in It
+              <br className="hidden sm:inline" />
+              <span className="sm:ml-1">
+                A glimpse into the people, moments, and everyday hustle that make
+                Mekark what it is.
+              </span>
+            </motion.p>
+          </motion.div>
+        </div>
+
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={VIEWPORT}
+          className="mx-auto px-5 pb-16 sm:px-8 lg:px-10 lg:pb-24"
+        >
+          <CollageGrid />
+        </motion.div>
+      </section>
+
+      {/* @Mekark */}
+      <section className="bg-white px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={VIEWPORT}
+          className="mx-auto max-w-[1280px]"
+        >
+          <motion.div variants={fadeUp} className="mb-10 sm:mb-14">
+            <SectionHeading title="@Mekark">
+              Follow our journey beyond the workplace, explore team moments,
+              celebrations, milestones, and everyday life at Mekark across our
+              social media channels.
+            </SectionHeading>
+          </motion.div>
+
+          <div className="grid gap-6 md:grid-cols-2 md:gap-8">
+            <VideoCard
+              src={`${IMG}/video-1.png`}
+              alt="Team member walking through the Mekark office"
+              label="Play Mekark social video 1"
+            />
+            <VideoCard
+              src={`${IMG}/video-2.png`}
+              alt="Team member working at a desk in the Mekark office"
+              label="Play Mekark social video 2"
+            />
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Culture */}
+      <section className="relative overflow-hidden bg-white px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
+        <CultureBackground />
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={VIEWPORT}
+          className="relative z-10 mx-auto max-w-[1370px]"
+        >
+          <motion.div variants={fadeUp} className="mb-10 sm:mb-14">
+            <SectionHeading title="What Makes Our Culture Special?">
+              More than a workplace, Mekark is where people and ideas come
+              together.
+              <br className="hidden sm:inline" />
+              We grow, create, and celebrate together.
+            </SectionHeading>
+          </motion.div>
+
+          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4 xl:gap-[60px]">
+            {CULTURE_VALUES.map((value) => (
+              <motion.article
+                key={value.title}
+                variants={fadeUp}
+                className={`flex flex-col gap-2.5 rounded-[25px] border-l-4 bg-[#f4f4f4] p-5 shadow-[-2px_2px_3px_rgba(30,30,30,0.15)] ${value.borderColor}`}
+              >
+                <div className="relative size-[50px] shrink-0 overflow-hidden">
+                  <Image
+                    src={value.icon}
+                    alt=""
+                    fill
+                    aria-hidden
+                    className="object-contain"
+                  />
+                </div>
+                <div className="flex flex-col gap-2.5">
+                  <h3 className="font-[family-name:var(--font-manrope)] text-lg font-semibold text-[#3c3938]">
+                    {value.title}
+                  </h3>
+                  <p className="font-[family-name:var(--font-manrope)] text-base leading-normal text-[#555]">
+                    {value.copy}
+                  </p>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+
+          <motion.div
+            variants={fadeUp}
+            className="mt-14 flex justify-center sm:mt-16 lg:mt-20"
+          >
+            <Link
+              href="/resources/careers"
+              className="group inline-flex items-center gap-2.5 rounded-[10px] bg-[#ed1c24] px-[50px] py-[15px] font-[family-name:var(--font-manrope)] text-[clamp(1.125rem,2vw,24px)] font-bold text-white shadow-[-2px_2px_3px_rgba(237,28,36,0.15)] transition-transform hover:-translate-y-0.5"
+            >
+              Work With Us
+              <span className="relative size-10 shrink-0 overflow-hidden">
+                <Image
+                  src={`${IMG}/arrow-icon.svg`}
+                  alt=""
+                  fill
+                  aria-hidden
+                  className="object-contain"
+                />
+              </span>
+            </Link>
+          </motion.div>
+        </motion.div>
+      </section>
+    </main>
+  );
+}

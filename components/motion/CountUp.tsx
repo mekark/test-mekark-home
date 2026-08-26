@@ -11,6 +11,7 @@ type CountUpProps = {
   delay?: number;
   start: boolean;
   className?: string;
+  useGrouping?: boolean;
 };
 
 export function CountUp({
@@ -21,6 +22,7 @@ export function CountUp({
   delay = 0,
   start,
   className,
+  useGrouping = false,
 }: CountUpProps) {
   const [count, setCount] = useState(0);
   const hasAnimated = useRef(false);
@@ -46,7 +48,7 @@ export function CountUp({
       aria-label={`${prefix}${value}${suffix}`}
     >
       {prefix}
-      {count}
+      {useGrouping ? count.toLocaleString("en-US") : count}
       {suffix}
     </span>
   );

@@ -289,6 +289,36 @@ export const aboutBuildingReveal: Variants = {
   },
 };
 
+export const historyJourneyBgReveal: Variants = {
+  hidden: {
+    opacity: 0,
+    x: -72,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.25 },
+  },
+};
+
+export function historyJourneyLayerReveal(index: number): Variants {
+  return {
+    hidden: {
+      opacity: 0,
+      y: 32,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.9,
+        ease: [0.16, 1, 0.3, 1],
+        delay: 0.12 + index * 0.16,
+      },
+    },
+  };
+}
+
 export const aboutCalloutReveal: Variants = {
   hidden: { opacity: 0, x: -40 },
   visible: {

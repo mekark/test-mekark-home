@@ -187,11 +187,29 @@ export const ENQUIRY_INDUSTRY_BY_SLUG: Record<string, string> = {
   "data-center": "Datacentre",
 };
 
+const ABOUT_DESCRIPTIONS: Record<string, string> = {
+  "Our History":
+    "From a small fabrication unit in 1998 to a 1500+ member EPC turnkey provider.",
+  "Life at Mekark":
+    "A glimpse into the people, moments, and everyday hustle that make Mekark what it is.",
+  Certifications: "Quality, safety, and environmental standards we uphold.",
+  Safety: "Workplace safety excellence and ISO-certified systems.",
+  "R&D": "Innovation and engineering research driving better builds.",
+};
+
+function aboutLinks(basePath: string, labels: string[]): NavLink[] {
+  return labels.map((label) => ({
+    label,
+    href: `${basePath}/${slugify(label)}`,
+    description: ABOUT_DESCRIPTIONS[label],
+  }));
+}
+
 export const NAV_ITEMS: NavItem[] = [
   {
     label: "About Us",
-    children: childLinks("/about", [
-      "Our history",
+    children: aboutLinks("/about", [
+      "Our History",
       "Life at Mekark",
       "Certifications",
       "Safety",

@@ -74,6 +74,8 @@ const SERVICE_DESCRIPTIONS: Record<string, string> = {
   Racking: "Heavy-duty pallet racking & warehouse storage systems",
   "Clean Room":
     "Contamination-controlled environments for precision manufacturing",
+  "Cold Storage":
+    "PUF-insulated cold storage facilities for food, pharma & cold chain",
 };
 
 function serviceLinks(basePath: string, labels: string[]): NavLink[] {
@@ -103,6 +105,7 @@ const HOME_SERVICE_TITLES: Record<string, string> = {
   EOT: "EOT Cranes",
   Racking: "Industrial Racking Systems",
   "Clean Room": "Clean Room Solutions",
+  "Cold Storage": "Cold Storage Facility Construction",
 };
 
 function toHomeService(link: NavLink, group: "core" | "extended"): HomeService {
@@ -154,7 +157,12 @@ const CORE_SERVICE_LABELS = [
   "Tensile",
 ] as const;
 
-const EXTENDED_SERVICE_LABELS = ["EOT", "Racking", "Clean Room"] as const;
+const EXTENDED_SERVICE_LABELS = [
+  "EOT",
+  "Racking",
+  "Clean Room",
+  "Cold Storage",
+] as const;
 
 export const FIND_SERVICES: SolutionOption[] = [
   ...solutionOptions("/services", [...CORE_SERVICE_LABELS]),
@@ -224,7 +232,7 @@ export const NAV_ITEMS: NavItem[] = [
         label: "Extended Service",
         href: "/services/extended",
         description:
-          "EOT cranes, industrial racking & clean room solutions",
+          "EOT cranes, racking, clean room & cold storage solutions",
         children: [],
       },
     ],

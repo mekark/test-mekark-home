@@ -5,6 +5,10 @@ import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { fadeUp, staggerContainer } from "@/lib/motion-variants";
 
+const DEFAULT_HEADING = "Built Safe, Built Right";
+const DEFAULT_DESCRIPTION =
+  "Strong structures start with strong safety practices, non-negotiable at every stage of every project.";
+
 const CERTIFICATES = [
   {
     src: "/images/about/safety/Certi1.png",
@@ -27,11 +31,11 @@ const CERTIFICATES = [
     heroAlt: "Construction worker in high-visibility gear holding a hard hat",
   },
   {
-    src: "/images/about/safety/Certi3.png",
+    src: "/images/about/safety/Quality.png",
     alt: "ISO 9001:2015 Certificate of Registration for MEKARK Structures India Pvt. Ltd.",
     label: "ISO 9001:2015",
     className:
-      "object-contain object-center origin-top-left scale-[0.93] object-left-top sm:translate-x-20 lg:translate-x-32",
+      "object-contain object-center origin-top-left scale-[0.93] object-left-top sm:translate-x-0 lg:translate-x-2",
     hero: "/images/about/safety/hero-3.jpg",
     heroClassName: "object-cover object-[center_35%] sm:object-[58%_center]",
     heroAlt: "Construction site at golden hour with a tower crane over an unfinished building",
@@ -40,6 +44,9 @@ const CERTIFICATES = [
     overlayClassName:
       "top-[30%] bottom-[-16%] right-[11%] w-[min(52%,52rem)] lg:top-[34%] lg:bottom-[-18%] lg:right-[15%] lg:w-[min(48%,50rem)]",
     overlayImageClassName: "object-contain object-center-bottom",
+    heading: "Built Right, Every Single Time",
+    description:
+      "Consistent quality standards, non-negotiable at every stage of every project.",
   },
   {
     src: "/images/about/safety/Environmental.png",
@@ -47,14 +54,13 @@ const CERTIFICATES = [
     label: "ISO 14001:2015",
     className:
       "object-contain object-center max-sm:origin-center max-sm:scale-[1.48] sm:origin-top-left sm:scale-[0.97] sm:object-left-top sm:-translate-x-10 lg:-translate-x-6",
-    hero: "/images/about/safety/hero-4.jpg",
-    heroClassName: "object-cover object-[center_32%] sm:object-[72%_center]",
-    heroAlt: "Sunlit forest with soft green bokeh in the background",
-    overlay: "/images/about/safety/hero-4-globe.png",
-    overlayAlt: "Hand cradling a globe with a green sprout growing from the top",
-    overlayClassName:
-      "top-[20%] bottom-[-8%] right-[14%] w-[min(50%,48rem)] lg:top-[22%] lg:bottom-[-10%] lg:right-[18%] lg:w-[min(46%,44rem)]",
-    overlayImageClassName: "object-contain object-right-bottom",
+    hero: "/images/about/safety/hero-4.png",
+    heroClassName: "object-cover object-right",
+    heroAlt: "Hand cradling a globe with a green sprout growing from the top against a sunlit forest",
+    heroUnoptimized: true,
+    heading: "Built Responsibly, Built to Last",
+    description:
+      "Sustainable construction practices, non-negotiable at every stage of every project.",
   },
 ] as const;
 
@@ -218,6 +224,11 @@ export function SafetyPage() {
 
   const slideAnimation = reduceMotion ? undefined : slideVariants;
   const mobileAnimation = reduceMotion ? undefined : mobileSlideVariants;
+  const activeCert = CERTIFICATES[active];
+  const activeHeading =
+    "heading" in activeCert ? activeCert.heading : DEFAULT_HEADING;
+  const activeDescription =
+    "description" in activeCert ? activeCert.description : DEFAULT_DESCRIPTION;
 
   return (
     <section
@@ -240,6 +251,10 @@ export function SafetyPage() {
                 alt={CERTIFICATES[active].heroAlt}
                 fill
                 priority={active === 0}
+                unoptimized={
+                  "heroUnoptimized" in CERTIFICATES[active] &&
+                  Boolean(CERTIFICATES[active].heroUnoptimized)
+                }
                 className={CERTIFICATES[active].heroClassName}
                 sizes="100vw"
               />
@@ -268,13 +283,17 @@ export function SafetyPage() {
                   src={CERTIFICATES[active].overlay}
                   alt={CERTIFICATES[active].overlayAlt}
                   fill
+                unoptimized={
+                  "overlayUnoptimized" in CERTIFICATES[active] &&
+                  Boolean(CERTIFICATES[active].overlayUnoptimized)
+                }
                   className={
                     "overlayImageClassName" in CERTIFICATES[active] &&
                     CERTIFICATES[active].overlayImageClassName
                       ? CERTIFICATES[active].overlayImageClassName
                       : "object-contain object-right-bottom"
                   }
-                  sizes="50vw"
+                  sizes="565px"
                 />
               </motion.div>
             </AnimatePresence>
@@ -296,19 +315,30 @@ export function SafetyPage() {
             >
               Certifications
             </motion.p>
-            <motion.h1
-              variants={fadeUp}
-              className="font-[family-name:var(--font-manrope)] text-[1.65rem] font-bold leading-[1.12] tracking-[-0.5px] text-black sm:w-max sm:max-w-none sm:whitespace-nowrap sm:text-[clamp(1.35rem,3.2vw,60px)] sm:leading-[1.1] sm:tracking-[-1px]"
-            >
-              Built Safe, Built Right
-            </motion.h1>
-            <motion.p
-              variants={fadeUp}
-              className="mx-auto mt-2 max-w-[677px] font-[family-name:var(--font-manrope)] text-[0.92rem] font-medium leading-[1.45] text-[#515151] sm:mx-0 sm:mt-0 sm:text-[clamp(0.95rem,1.25vw,22px)] sm:leading-[1.36]"
-            >
-              Strong structures start with strong safety practices, non-negotiable
-              at every stage of every project.
-            </motion.p>
+            <AnimatePresence mode="wait">
+              <motion.h1
+                key={activeHeading}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: reduceMotion ? 0.15 : 0.3 }}
+                className="font-[family-name:var(--font-manrope)] text-[1.65rem] font-bold leading-[1.12] tracking-[-0.5px] text-black sm:w-max sm:max-w-none sm:whitespace-nowrap sm:text-[clamp(1.35rem,3.2vw,60px)] sm:leading-[1.1] sm:tracking-[-1px]"
+              >
+                {activeHeading}
+              </motion.h1>
+            </AnimatePresence>
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={activeDescription}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: reduceMotion ? 0.15 : 0.3 }}
+                className="mx-auto mt-2 max-w-[677px] font-[family-name:var(--font-manrope)] text-[0.92rem] font-medium leading-[1.45] text-[#515151] sm:mx-0 sm:mt-0 sm:text-[clamp(0.95rem,1.25vw,22px)] sm:leading-[1.36]"
+              >
+                {activeDescription}
+              </motion.p>
+            </AnimatePresence>
           </div>
 
           <motion.div

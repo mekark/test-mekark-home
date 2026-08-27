@@ -7,7 +7,7 @@ import { FooterSection } from "@/components/footer/FooterSection";
 export const metadata: Metadata = {
   title: "Extended Service — Mekark",
   description:
-    "Mekark extended services covering EOT cranes, industrial racking, and clean room infrastructure across South India.",
+    "Mekark extended services covering EOT cranes, industrial racking, clean room, and cold storage infrastructure across South India.",
 };
 
 export default function ExtendedServicePage() {

@@ -8,7 +8,7 @@ import { fadeUp, staggerContainer } from "@/lib/motion-variants";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-type ServiceId = "eot" | "racking" | "clean-room";
+type ServiceId = "eot" | "racking" | "clean-room" | "cold-storage";
 
 type FaqEntry = {
   question: string;
@@ -28,7 +28,7 @@ type ExtendedOffering = {
 };
 
 const PAGE_INTRO =
-  "From heavy-duty EOT cranes to cleanroom facilities and industrial racking systems, Mekark delivers integrated material handling, storage, and controlled-environment solutions engineered for precision, safety, and continuous performance. Serving manufacturing plants, warehouses, and industrial units across Tamil Nadu, Karnataka, Andhra Pradesh, Telangana, and Kerala.";
+  "From heavy-duty EOT cranes to cleanroom facilities, cold storage units, and industrial racking systems, Mekark delivers integrated material handling, storage, and controlled-environment solutions engineered for precision, safety, and continuous performance. Serving manufacturing plants, warehouses, cold chain facilities, and industrial units across Tamil Nadu, Karnataka, Andhra Pradesh, Telangana, and Kerala.";
 
 const SERVICES: ExtendedOffering[] = [
   {
@@ -241,6 +241,82 @@ const SERVICES: ExtendedOffering[] = [
       },
     ],
   },
+  {
+    id: "cold-storage",
+    index: "04",
+    name: "Cold Storage",
+    eyebrow: "End-to-End Industrial Systems",
+    title: "Cold Storage Facility Construction",
+    paragraphs: [
+      "As a leading cold storage facility construction company in South India, Mekark designs, fabricates, and builds insulated cold storage units tailored to your product type, temperature range, and storage capacity, from Blast Freezers and Chillers to Multi-Temperature Cold Rooms, PUF Panel Insulated Storage, and Modular Cold Storage systems.",
+      "Every cold storage facility is built with PUF-insulated panels for optimal thermal efficiency, fire-retardant material specifications, and refrigeration systems engineered for consistent temperature control, with AMC support across South India to keep your cold chain infrastructure reliable and compliant for years.",
+    ],
+    image: "/images/extended-service/cold-storage-blended.png",
+    imageAlt:
+      "Insulated cold storage facility with PUF panel sliding door and refrigeration unit",
+    faqs: [
+      {
+        question:
+          "Does Mekark design and build cold storage facilities across South India?",
+        answer:
+          "Yes, Mekark designs, fabricates, and constructs cold storage facilities across Tamil Nadu, Karnataka, Andhra Pradesh, Telangana, and Kerala for food, pharma, and industrial cold chain requirements.",
+      },
+      {
+        question:
+          "What temperature ranges can Mekark's cold storage facilities support?",
+        answer:
+          "We build facilities across chiller (0°C to 8°C), freezer (-18°C to -25°C), and blast freezing (-30°C and below) ranges, including multi-temperature zone facilities within a single unit.",
+      },
+      {
+        question:
+          "What insulation is used in Mekark's cold storage construction?",
+        answer:
+          "We use PUF (Polyurethane Foam) insulated panels, engineered for thermal efficiency, fire-retardant performance, and long-term structural stability.",
+      },
+      {
+        question:
+          "Can Mekark build multi-temperature cold storage within one facility?",
+        answer:
+          "Yes, we design multi-chamber cold storage units with independent temperature zones to store different product categories in a single facility.",
+      },
+      {
+        question:
+          "Does Mekark provide cold storage for pharmaceutical and food industries?",
+        answer:
+          "Yes, we build cold storage facilities compliant with food safety and pharma cold chain storage requirements, including FSSAI-aligned specifications where applicable.",
+      },
+      {
+        question:
+          "What is the typical construction timeline for a cold storage facility?",
+        answer:
+          "Depending on capacity and complexity, most cold storage facilities are delivered in 8–16 weeks from design approval, with in-house fabrication reducing delays.",
+      },
+      {
+        question:
+          "Does Mekark handle the refrigeration and MEP systems for cold storage, or only the civil structure?",
+        answer:
+          "Mekark provides turnkey cold storage solutions, structural construction, PUF panel insulation, and integrated refrigeration and MEP systems under one contract.",
+      },
+      {
+        question:
+          "Can existing warehouses be converted into cold storage facilities?",
+        answer:
+          "Yes, we offer retrofit and conversion solutions for existing warehouses, adding insulation, refrigeration systems, and structural modifications as needed.",
+      },
+      {
+        question:
+          "Does Mekark offer AMC support for cold storage facilities after construction?",
+        answer:
+          "Yes, we provide AMC (Annual Maintenance Contract) support across South India to ensure consistent temperature performance and facility reliability.",
+      },
+      {
+        question:
+          "What industries use Mekark's cold storage facility construction services?",
+        answer:
+          "Our cold storage facilities serve food processing, dairy, pharmaceuticals, seafood/meat processing, agriculture/agri-exports, and cold chain logistics providers.",
+      },
+    ],
+  },
 ];
 
 function isServiceId(value: string): value is ServiceId {
@@ -440,7 +516,8 @@ export function ExtendedServiceSection() {
   };
 
   const active = SERVICES.find((service) => service.id === activeId) ?? SERVICES[0];
-  const hasBakedFade = active.id === "racking";
+  const hasBakedFade =
+    active.id === "racking" || active.id === "cold-storage";
 
   return (
     <div className="bg-white font-[family-name:var(--font-manrope)] text-[#17171b]">
@@ -559,7 +636,7 @@ export function ExtendedServiceSection() {
                       <p className="text-[14px] font-bold uppercase leading-normal text-[#e50818]">
                         {active.eyebrow}
                       </p>
-                      <h2 className="text-[clamp(1.75rem,3vw,40px)] font-medium leading-normal text-[#17171b]">
+                      <h2 className="whitespace-nowrap text-[clamp(1.75rem,3vw,40px)] font-medium leading-normal text-[#17171b]">
                         {active.title}
                       </h2>
                       <p className="text-[16px] font-normal leading-normal whitespace-pre-wrap text-[#555] sm:text-[18px] lg:text-[22px]">

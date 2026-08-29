@@ -13,6 +13,7 @@ import {
   fadeUp,
   staggerContainer,
 } from "@/lib/motion-variants";
+import mdPortraitPhoto from "@/public/images/about/history/md-portrait-photo.png";
 
 const VIEWPORT = { once: true, margin: "-90px" as const };
 
@@ -149,26 +150,13 @@ export function OurHistoryPage() {
 
         <div className="relative mx-auto hidden w-full max-w-[1916px] sm:block sm:aspect-[802/160]">
           <Image
-            src="/images/about/history/hero-bg.png"
-            alt=""
+            src="/images/about/history/18%20Years.png"
+            alt="18+ years of experience"
             fill
             className="object-contain object-bottom"
             sizes="100vw"
             priority
-            aria-hidden
           />
-          <div className="pointer-events-none absolute inset-0" aria-hidden>
-            <div className="absolute bottom-13.5 left-1/2 h-[72.5%] w-[29.9%] -translate-x-1/2">
-              <Image
-                src="/images/about/history/13.png"
-                alt="18+ years of experience"
-                fill
-                className="object-contain object-bottom"
-                sizes="240px"
-                priority
-              />
-            </div>
-          </div>
         </div>
       </section>
 
@@ -230,14 +218,13 @@ export function OurHistoryPage() {
             initial="hidden"
             whileInView="visible"
             viewport={VIEWPORT}
-            className="relative"
+            className="relative w-full max-w-[440px]"
           >
-            <div className="relative aspect-[440/376] overflow-hidden bg-[#f0f0f0]">
+            <div className="relative w-full overflow-hidden rounded-[20px]">
               <Image
-                src="/images/about/history/md-portrait.png"
+                src={mdPortraitPhoto}
                 alt="D. Aquin Janvel, Managing Director of Mekark Pvt Ltd"
-                fill
-                className="object-cover"
+                className="h-auto w-full"
                 sizes="(max-width: 1024px) 100vw, 440px"
               />
             </div>

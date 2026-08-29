@@ -2,8 +2,109 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useInView,
+  useReducedMotion,
+} from "framer-motion";
 import { fadeUp, staggerContainer } from "@/lib/motion-variants";
+
+const FIVE_S_POINTS = [
+  {
+    number: "01",
+    title: "Sort",
+    description:
+      "Remove unnecessary items from the work area to reduce hazards and improve focus.",
+  },
+  {
+    number: "02",
+    title: "Set in Order",
+    description:
+      "Organize tools, materials, and safety gear for quick access and safer movement.",
+  },
+  {
+    number: "03",
+    title: "Shine",
+    description:
+      "Keep the site clean and inspect spaces regularly to prevent accidents.",
+  },
+  {
+    number: "04",
+    title: "Standardize",
+    description:
+      "Apply consistent procedures, markings, and safety checks across every zone.",
+  },
+  {
+    number: "05",
+    title: "Sustain",
+    description:
+      "Build daily discipline through training, audits, and continuous safety awareness.",
+  },
+] as const;
+
+const ASSOCIATE_PARTNERS = [
+  {
+    src: "/images/about/safety/partners/madras-chamber.png",
+    alt: "Madras Chamber of Commerce logo",
+    label: "Madras Chamber of Commerce",
+  },
+  {
+    src: "/images/about/safety/partners/sicci.png",
+    alt: "SICCI logo",
+    label: "SICCI (South Indian Chamber of Commerce & Industry)",
+  },
+  {
+    src: "/images/about/safety/partners/indo-french.png",
+    alt: "Indo-French Chamber of Commerce and Industry logo",
+    label: "Indo-French Chamber of Commerce & Industry",
+  },
+  {
+    src: "/images/about/safety/partners/indo-german.png",
+    alt: "Indo-German Chamber of Commerce logo",
+    label: "Indo-German Chamber of Commerce",
+  },
+  {
+    src: "/images/about/safety/partners/tamil-chamber.png",
+    alt: "Tamil Chamber of Commerce logo",
+    label: "Tamil Chamber of Commerce",
+  },
+  {
+    src: "/images/about/safety/partners/ficci.png",
+    alt: "FICCI logo",
+    label: "FICCI (Federation of Indo-Chamber of Commerce & Industry)",
+  },
+  {
+    src: "/images/about/safety/partners/indo-american.png",
+    alt: "Indo-American Chamber of Commerce logo",
+    label: "Indo-American Chamber of Commerce",
+  },
+  {
+    src: "/images/about/safety/partners/hindustan-chamber.png",
+    alt: "Hindustan Chamber of Commerce logo",
+    label: "Hindustan Chamber of Commerce",
+  },
+  {
+    src: "/images/about/safety/partners/iod.png",
+    alt: "Institute of Directors logo",
+    label: "IOD (Institute of Directors)",
+  },
+  {
+    src: "/images/about/safety/partners/rai.png",
+    alt: "Retailers Association of India logo",
+    label: "Retail Association of India (RAI)",
+  },
+  {
+    src: "/images/about/safety/partners/indo-japanese.png",
+    alt: "Indo-Japanese Association logo",
+    label: "Indo-Japanese Association (IJA)",
+  },
+  {
+    src: "/images/about/safety/partners/tn-chamber.png",
+    alt: "Tamil Nadu Chamber of Commerce and Industry logo",
+    label: "Tamil Nadu Chamber of Commerce & Industry (TN Chamber / TNCCI)",
+  },
+] as const;
 
 const DEFAULT_HEADING = "Built Safe, Built Right";
 const DEFAULT_DESCRIPTION =
@@ -111,7 +212,207 @@ const mobileSlideVariants = {
   }),
 };
 
-export function SafetyPage() {
+function SafetyFiveSPointsSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const inView = useInView(sectionRef, { once: true, amount: 0.15 });
+
+  return (
+    <section
+      ref={sectionRef}
+      className="relative isolate overflow-hidden bg-[#f7f7f7]"
+      style={{
+        backgroundImage:
+          "radial-gradient(ellipse 1190px 620px at 50% 52%, #fdfdfd 0%, #f7f7f7 38%, #f0f0f0 70%, #ebebeb 100%)",
+      }}
+    >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute right-0 top-0 hidden h-[min(50vw,427px)] w-[min(48vw,932px)] opacity-10 sm:block"
+      >
+        <Image
+          src="/images/about/safety/5s/background-watermark.png"
+          alt=""
+          fill
+          className="object-cover object-left-top"
+          sizes="932px"
+        />
+      </div>
+
+      <div className="relative mx-auto flex w-full max-w-[1740px] flex-col gap-10 px-4 py-14 sm:gap-12 sm:px-8 sm:py-16 lg:gap-14 lg:px-[clamp(2rem,7vw,8.35rem)] lg:py-[clamp(3.5rem,5vw,5.5rem)]">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          className="relative z-[1] flex max-w-[735px] flex-col gap-2.5"
+        >
+          <motion.div
+            variants={fadeUp}
+            className="h-[7px] w-[min(111px,28vw)] rounded-[3px] bg-[#e50818]"
+            aria-hidden
+          />
+          <motion.h2
+            variants={fadeUp}
+            className="font-[family-name:var(--font-manrope)] text-[clamp(2rem,4.2vw,3.75rem)] font-extrabold leading-[1.1] tracking-[-1.32px] text-[#0b0a0a]"
+          >
+            5S Safety Points
+          </motion.h2>
+          <motion.p
+            variants={fadeUp}
+            className="max-w-[735px] font-[family-name:var(--font-manrope)] text-[clamp(1rem,1.45vw,1.375rem)] font-medium leading-[1.56] tracking-[0.046px] text-[#65686b]"
+          >
+            Applying 5S every day helps us maintain safe, efficient, and
+            organized project environments.
+          </motion.p>
+        </motion.div>
+
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 [-ms-overflow-style:none] [scrollbar-width:none] sm:-mx-0 sm:px-0 lg:grid lg:grid-cols-5 lg:gap-[17px] lg:overflow-visible lg:pb-0 [&::-webkit-scrollbar]:hidden"
+        >
+          {FIVE_S_POINTS.map((point) => (
+            <motion.article
+              key={point.number}
+              variants={fadeUp}
+              className="relative flex w-[min(82vw,316px)] shrink-0 snap-center flex-col items-center justify-center rounded-[14px] px-6 py-10 text-center shadow-[0_12px_26px_rgba(22,22,22,0.05),0_3px_8px_rgba(22,22,22,0.04)] lg:w-auto lg:min-h-[510px] lg:px-5 lg:py-12"
+              style={{
+                backgroundImage:
+                  "linear-gradient(180deg, #fefefe 0%, #fafafa 42%, #f4f4f4 78%, #f1f1f1 100%)",
+              }}
+            >
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 rounded-[inherit] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.7)]"
+              />
+              <p className="font-[family-name:var(--font-manrope)] text-[clamp(2.5rem,4vw,3rem)] font-bold leading-none tracking-[0.24px] text-[#e50818]">
+                {point.number}
+              </p>
+              <h3 className="mt-3 font-[family-name:var(--font-manrope)] text-[clamp(1.5rem,2.2vw,2rem)] font-bold leading-tight tracking-[-0.26px] text-[#141719]">
+                {point.title}
+              </h3>
+              <div
+                aria-hidden
+                className="mt-4 h-[3.5px] w-[34px] rounded-[2px] bg-[#e50818]"
+              />
+              <p className="mt-4 max-w-[232px] font-[family-name:var(--font-manrope)] text-[clamp(1rem,1.2vw,1.25rem)] font-medium leading-[1.48] tracking-[0.04px] text-[#5f6161]">
+                {point.description}
+              </p>
+            </motion.article>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function SafetyAssociatePartnersSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const inView = useInView(sectionRef, { once: true, amount: 0.12 });
+
+  return (
+    <section
+      ref={sectionRef}
+      className="relative isolate overflow-hidden bg-[#f5f6f8]"
+      style={{
+        backgroundImage:
+          "linear-gradient(90deg, rgba(14,17,22,0.043) 1.8%, transparent 1.8%), linear-gradient(180deg, rgba(14,17,22,0.043) 1.8%, transparent 1.8%)",
+      }}
+    >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-[6%] top-[-18%] h-[min(52vw,798px)] w-[min(56vw,1190px)] opacity-100"
+        style={{
+          backgroundImage:
+            "radial-gradient(ellipse at center, rgba(225,42,43,0.075) 0%, rgba(225,42,43,0) 72%)",
+        }}
+      />
+
+      <div className="relative mx-auto w-full max-w-[1740px] px-4 py-14 sm:px-8 sm:py-16 lg:px-[clamp(2rem,7vw,8.35rem)] lg:py-[clamp(3.5rem,5vw,5.5rem)]">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          className="flex flex-col gap-8 sm:gap-10 lg:gap-12"
+        >
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
+            <motion.div
+              variants={fadeUp}
+              className="relative flex max-w-[735px] flex-col gap-[13px] pl-[26px]"
+            >
+              <div
+                aria-hidden
+                className="absolute bottom-[-3px] left-0 top-[-7px] w-[7px] rounded-[3px] bg-[#e50818]"
+              />
+              <p className="font-[family-name:var(--font-manrope)] text-[12.5px] font-semibold uppercase tracking-[0.28em] text-[#7a828c]">
+                In collaboration with
+              </p>
+              <h2 className="font-[family-name:var(--font-manrope)] text-[clamp(2rem,4.2vw,3.75rem)] font-extrabold leading-[1.13] tracking-[-1.11px] text-[#0e1116]">
+                Associate Partners
+              </h2>
+            </motion.div>
+
+            <motion.div
+              variants={fadeUp}
+              className="flex shrink-0 flex-col items-start gap-1.5 sm:items-end sm:pt-8"
+            >
+              <p className="font-[family-name:var(--font-manrope)] text-[clamp(1.75rem,2.8vw,2.5rem)] font-extrabold leading-none text-[#0e1116] sm:text-right">
+                {ASSOCIATE_PARTNERS.length}
+              </p>
+              <p className="font-[family-name:var(--font-manrope)] text-[11.5px] font-medium uppercase tracking-[0.2em] text-[#7a828c] sm:text-right">
+                Institutional bodies
+              </p>
+            </motion.div>
+          </div>
+
+          <motion.div
+            variants={fadeUp}
+            aria-hidden
+            className="h-px w-full bg-[#e2e5ea] sm:mx-auto sm:max-w-[calc(100%-8rem)] lg:max-w-[calc(100%-15rem)]"
+          />
+
+          <motion.ul
+            variants={staggerContainer}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            className="grid grid-cols-1 gap-x-5 gap-y-8 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-4 lg:gap-x-[18px] lg:gap-y-12"
+          >
+            {ASSOCIATE_PARTNERS.map((partner) => (
+              <motion.li
+                key={partner.src}
+                variants={fadeUp}
+                className="flex flex-col gap-3.5"
+              >
+                <div className="flex items-center justify-center rounded-[20px] border border-[#e2e5ea] bg-white px-4 py-[27px] shadow-[0_1px_0_rgba(14,17,22,0.02)]">
+                  <div className="relative h-[57px] w-[145px] max-w-full opacity-95">
+                    <Image
+                      src={partner.src}
+                      alt={partner.alt}
+                      fill
+                      className="object-contain object-center"
+                      sizes="145px"
+                    />
+                  </div>
+                </div>
+                <div className="flex items-start gap-[9px]">
+                  <span
+                    aria-hidden
+                    className="mt-[7px] size-[6px] shrink-0 rounded-[3px] bg-[#e2e5ea]"
+                  />
+                  <p className="font-[family-name:var(--font-manrope)] text-[13.6px] font-medium leading-[1.45] text-[#4c525b]">
+                    {partner.label}
+                  </p>
+                </div>
+              </motion.li>
+            ))}
+          </motion.ul>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function SafetyCertificationsSection() {
   const reduceMotion = useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
   const scrollerRef = useRef<HTMLDivElement>(null);
@@ -447,5 +748,15 @@ export function SafetyPage() {
         </motion.div>
       </div>
     </section>
+  );
+}
+
+export function SafetyPage() {
+  return (
+    <>
+      <SafetyCertificationsSection />
+      <SafetyFiveSPointsSection />
+      <SafetyAssociatePartnersSection />
+    </>
   );
 }

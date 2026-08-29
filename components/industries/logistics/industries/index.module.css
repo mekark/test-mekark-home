@@ -1,0 +1,229 @@
+.industriesWeServe {
+  	width: 100%;
+  	position: relative;
+  	background-color: #ffefef;
+  	overflow: hidden;
+  	padding: 2.60417vw 4.16667vw 3.95833vw;
+  	box-sizing: border-box;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	flex-shrink: 0;
+  	text-align: center;
+  	font-size: 0.9375vw;
+  	color: #111;
+  	font-family: Manrope;
+}
+.industrialWarehouseConstructParent {
+  	width: 62.9167vw;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	gap: 0.41667vw;
+  	font-size: 2.08333vw;
+  	margin-bottom: 2.5vw;
+}
+.industrialWarehouseConstruct {
+  	position: relative;
+  	letter-spacing: -0.06927vw;
+  	line-height: 3.4026vw;
+}
+.ourPreEngineeredWarehouse {
+  	align-self: stretch;
+  	position: relative;
+  	font-size: 1.14583vw;
+  	color: #6e6e6e;
+}
+.frameParent {
+  	width: 100%;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: stretch;
+  	gap: 1.5625vw;
+  	text-align: left;
+  	color: #000;
+  	margin-bottom: 1.5625vw;
+}
+.frameGroup {
+  	align-self: stretch;
+  	display: grid;
+  	grid-template-columns: repeat(4, minmax(0, 1fr));
+  	align-items: stretch;
+  	gap: 1.25vw;
+}
+.rectangleParent {
+  	box-shadow: -0.10417vw 0.10417vw 0.3125vw rgba(30, 30, 30, 0.1);
+  	border-radius: 0.83333vw;
+  	background-color: #fff;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	padding: 1.04167vw 1.04167vw 2.1875vw;
+  	gap: 1.04167vw;
+  	height: 100%;
+  	box-sizing: border-box;
+}
+.frameChild {
+  	width: 100%;
+  	height: 13.125vw;
+  	position: relative;
+  	border-radius: 0.41667vw;
+  	object-fit: cover;
+  	flex-shrink: 0;
+}
+.fmcgRetailParent {
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	gap: 0.41667vw;
+}
+.fmcgRetail {
+  	position: relative;
+  	line-height: 1.30208vw;
+  	font-weight: 600;
+}
+.distributionWarehouseBuildin {
+  	width: 100%;
+  	position: relative;
+  	font-size: 0.83333vw;
+  	color: #656565;
+  	display: flex;
+  	align-items: center;
+}
+.rectangleContainer {
+  	box-shadow: -0.10417vw 0.10417vw 0.3125vw rgba(30, 30, 30, 0.1);
+  	border-radius: 0.83333vw;
+  	background-color: #fff;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	padding: 1.04167vw;
+  	gap: 1.04167vw;
+  	height: 100%;
+  	box-sizing: border-box;
+}
+.multiTenantLogisticsFacilit {
+  	width: 100%;
+  	position: relative;
+  	font-size: 0.83333vw;
+  	color: #656565;
+  	white-space: pre-wrap;
+  	display: flex;
+  	align-items: center;
+}
+.overlayborder {
+  	border-radius: 4.63542vw;
+  	background-color: #fff;
+  	border: 0.02604vw solid rgba(228, 0, 21, 0.5);
+  	box-sizing: border-box;
+  	width: 100%;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	padding: 1.25vw 1.66667vw;
+  	color: #6e6e6e;
+}
+.strongEveryContainer {
+  	width: 100%;
+  	position: relative;
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	flex-shrink: 0;
+  	white-space: nowrap;
+}
+.strongEveryContainer2 {
+  	width: 100%;
+}
+.southIndia {
+  	color: #f01d23;
+}
+.span {
+  	color: #000;
+}
+
+@media (max-width: 1200px) {
+  	.industriesWeServe {
+    		padding: 40px 24px 48px;
+    		font-size: 16px;
+  	}
+  	.industrialWarehouseConstructParent {
+    		width: 100%;
+    		font-size: 32px;
+    		margin-bottom: 32px;
+  	}
+  	.industrialWarehouseConstruct {
+    		letter-spacing: -1px;
+    		line-height: 40px;
+  	}
+  	.ourPreEngineeredWarehouse {
+    		font-size: 16px;
+  	}
+  	.frameParent {
+    		gap: 24px;
+    		margin-bottom: 24px;
+  	}
+  	.frameGroup {
+    		grid-template-columns: repeat(2, minmax(0, 1fr));
+    		gap: 24px;
+  	}
+  	.rectangleParent,
+  	.rectangleContainer {
+    		padding: 16px;
+    		gap: 16px;
+    		border-radius: 16px;
+    		box-shadow: -2px 2px 6px rgba(30, 30, 30, 0.1);
+  	}
+  	.frameChild {
+    		height: 200px;
+    		border-radius: 8px;
+  	}
+  	.fmcgRetail {
+    		line-height: 24px;
+    		font-size: 16px;
+  	}
+  	.distributionWarehouseBuildin,
+  	.multiTenantLogisticsFacilit {
+    		font-size: 14px;
+  	}
+  	.overlayborder {
+    		border-radius: 24px;
+    		padding: 20px 24px;
+    		border-width: 0.5px;
+  	}
+  	.strongEveryContainer {
+    		white-space: normal;
+    		font-size: 14px;
+    		line-height: 22px;
+  	}
+}
+
+@media (max-width: 768px) {
+  	.industriesWeServe {
+    		padding: 32px 16px 40px;
+  	}
+  	.industrialWarehouseConstructParent {
+    		font-size: 26px;
+    		margin-bottom: 24px;
+  	}
+  	.industrialWarehouseConstruct {
+    		line-height: 34px;
+  	}
+  	.ourPreEngineeredWarehouse {
+    		font-size: 14px;
+  	}
+  	.frameGroup {
+    		grid-template-columns: 1fr;
+  	}
+  	.frameChild {
+    		height: 180px;
+  	}
+  	.overlayborder {
+    		padding: 16px;
+    		border-radius: 16px;
+  	}
+  	.strongEveryContainer {
+    		font-size: 13px;
+    		line-height: 20px;
+  	}
+}

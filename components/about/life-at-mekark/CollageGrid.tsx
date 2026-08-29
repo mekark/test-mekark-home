@@ -11,25 +11,26 @@ const ORIGIN_X = 320;
 const ORIGIN_Y = 291;
 
 type CollageItem = {
-  src: string;
+  src?: string;
   alt: string;
   x: number;
   y: number;
   w: number;
   h: number;
   rounded?: string;
-  crop?: "figma-8";
+  imgClassName?: string;
 };
 
 const COLLAGE: CollageItem[] = [
   {
     src: `${IMG}/collage-1.png`,
-    alt: "Team members collaborating in a modern office",
+    alt: "Team members creating a floral rangoli together",
     x: 320,
     y: 291,
     w: 369.94,
     h: 292.11,
     rounded: "rounded-tl-[15px]",
+    imgClassName: "absolute top-[0.08%] left-[-7.28%] h-full w-[140.3%] max-w-none object-cover",
   },
   {
     src: `${IMG}/collage-2.png`,
@@ -38,6 +39,7 @@ const COLLAGE: CollageItem[] = [
     y: 365,
     w: 297.72,
     h: 331.44,
+    imgClassName: "absolute top-[0.07%] left-[-29.13%] h-full w-[148.43%] max-w-none object-cover",
   },
   {
     src: `${IMG}/collage-3.png`,
@@ -46,10 +48,10 @@ const COLLAGE: CollageItem[] = [
     y: 418,
     w: 152.47,
     h: 259.22,
+    imgClassName: "absolute top-[-31.85%] left-[-31.34%] h-[185.06%] w-[141.49%] max-w-none object-cover",
   },
   {
-    src: `${IMG}/collage-4.png`,
-    alt: "Office workspace with team members",
+    alt: "Office workspace placeholder",
     x: 1161.13,
     y: 391,
     w: 191,
@@ -63,6 +65,7 @@ const COLLAGE: CollageItem[] = [
     w: 256.8,
     h: 214.27,
     rounded: "rounded-tr-[25px]",
+    imgClassName: "absolute top-[-18.9%] left-[-80.47%] h-[137.27%] w-[254.68%] max-w-none object-cover",
   },
   {
     src: `${IMG}/collage-6.png`,
@@ -71,6 +74,7 @@ const COLLAGE: CollageItem[] = [
     y: 704,
     w: 297.7,
     h: 197.41,
+    imgClassName: "absolute top-[0.11%] left-[-27.49%] h-full w-[146.78%] max-w-none object-cover",
   },
   {
     src: `${IMG}/collage-7.png`,
@@ -81,18 +85,15 @@ const COLLAGE: CollageItem[] = [
     h: 240,
   },
   {
-    src: `${IMG}/collage-8.png`,
-    alt: "Team members in a collaborative session",
+    alt: "Team members placeholder",
     x: 320,
     y: 590,
     w: 186,
     h: 286,
     rounded: "rounded-bl-[25px]",
-    crop: "figma-8",
   },
   {
-    src: `${IMG}/collage-9.png`,
-    alt: "Colleagues sharing ideas at work",
+    alt: "Colleagues sharing ideas placeholder",
     x: 512,
     y: 590,
     w: 177,
@@ -119,9 +120,9 @@ export function CollageGrid() {
       className="relative mx-auto w-full max-w-[1296px]"
       style={{ aspectRatio: `${COLLAGE_WIDTH} / ${COLLAGE_HEIGHT}` }}
     >
-      {COLLAGE.map((item) => (
+      {COLLAGE.map((item, index) => (
         <div
-          key={item.src}
+          key={`${item.alt}-${index}`}
           className={`absolute overflow-hidden bg-[#d7d7d7] ${item.rounded ?? ""}`}
           style={{
             left: pct(item.x - ORIGIN_X, COLLAGE_WIDTH),
@@ -130,22 +131,23 @@ export function CollageGrid() {
             height: pct(item.h, COLLAGE_HEIGHT),
           }}
         >
-          {item.crop === "figma-8" ? (
-            <img
-              src={item.src}
-              alt={item.alt}
-              draggable={false}
-              className="absolute top-[-0.15%] left-[-130.7%] h-full w-[230.44%] max-w-none object-cover"
-            />
-          ) : (
-            <Image
-              src={item.src}
-              alt={item.alt}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 50vw, 30vw"
-            />
-          )}
+          {item.src &&
+            (item.imgClassName ? (
+              <img
+                src={item.src}
+                alt={item.alt}
+                draggable={false}
+                className={item.imgClassName}
+              />
+            ) : (
+              <Image
+                src={item.src}
+                alt={item.alt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 50vw, 30vw"
+              />
+            ))}
         </div>
       ))}
     </div>

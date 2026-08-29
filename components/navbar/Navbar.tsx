@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import { useNavigationLoading } from "@/components/ui/NavigationLoadingProvider";
 import { AnimatePresence, motion } from "framer-motion";
 import { FindYourSolutionPanel } from "@/components/navbar/FindYourSolutionPanel";
 import {
@@ -653,6 +654,7 @@ function MobileNavItem({
 export function Navbar() {
   const router = useRouter();
   const pathname = usePathname();
+  const { startNavigation } = useNavigationLoading();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
@@ -706,6 +708,7 @@ export function Navbar() {
 
   const redirectToSolution = (href: string) => {
     closeFind();
+    startNavigation();
     router.push(href, { scroll: false });
   };
 

@@ -1,0 +1,233 @@
+.frameParent {
+	width: 100%;
+	position: relative;
+	background-color: #fff;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 4.8594vw 5.5573vw;
+	box-sizing: border-box;
+	text-align: left;
+	font-size: 2.7776vw;
+	color: #111;
+	font-family: Manrope, sans-serif;
+}
+.frameGroup {
+	align-self: stretch;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 3.474vw;
+}
+.titleWrapper {
+	width: 67.9167vw;
+	height: 3.401vw;
+	position: relative;
+}
+.frequentlyAskedQuestions {
+	position: absolute;
+	top: 0px;
+	left: calc(50% - 33.9583vw);
+	letter-spacing: -0.0693vw;
+	line-height: 3.4026vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 67.9167vw;
+	font-weight: 700;
+}
+.columns {
+	width: 88.8906vw;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 2.0833vw;
+	font-size: 0.8333vw;
+	color: #e60f1a;
+	font-family: Montserrat, sans-serif;
+}
+.column {
+	width: 41.1823vw;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.6927vw;
+}
+.item {
+	align-self: stretch;
+	min-height: 5.3021vw;
+	border-radius: 1.0823vw;
+	background-color: #fff;
+	border: 0.0541vw solid #e3e4e7;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	padding: 0 1.2969vw;
+}
+.itemOpen {
+	justify-content: flex-start;
+}
+.itemOpen .itemButton {
+	min-height: 0;
+	padding: 0.9375vw 0 0.3125vw;
+}
+.itemButton {
+	align-self: stretch;
+	display: flex;
+	align-items: center;
+	min-height: 5.3021vw;
+	padding: 0;
+	gap: 0.8646vw;
+	width: 100%;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	text-align: left;
+	font: inherit;
+	color: inherit;
+}
+.number {
+	letter-spacing: -0.0245vw;
+	line-height: 1.3891vw;
+	font-weight: 700;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+}
+.question {
+	flex: 1;
+	font-size: 0.9724vw;
+	letter-spacing: -0.0245vw;
+	line-height: 1.3891vw;
+	font-weight: 500;
+	font-family: Manrope, sans-serif;
+	color: #101116;
+	display: flex;
+	align-items: center;
+}
+.component1 {
+	height: 0.8646vw;
+	width: 0.8646vw;
+	position: relative;
+	overflow: hidden;
+	flex-shrink: 0;
+}
+.vectorIcon {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+}
+.answerWrap {
+	width: 100%;
+	padding: 0 0 1.0417vw 1.8vw;
+	box-sizing: border-box;
+}
+.answer {
+	margin: 0;
+	font-size: 0.8333vw;
+	line-height: 1.3542vw;
+	letter-spacing: -0.0104vw;
+	font-weight: 400;
+	font-family: Manrope, sans-serif;
+	color: #53555b;
+}
+
+@media (max-width: 1199px) {
+	.frameParent {
+		padding: 3.5rem 1.5rem;
+		font-size: 2rem;
+	}
+	.frameGroup {
+		gap: 2rem;
+	}
+	.titleWrapper {
+		width: 100%;
+		height: auto;
+	}
+	.frequentlyAskedQuestions {
+		position: relative;
+		top: auto;
+		left: auto;
+		width: 100%;
+		font-size: 1.85rem;
+		line-height: 1.25;
+		letter-spacing: -0.03rem;
+	}
+	.columns {
+		width: 100%;
+		gap: 1rem;
+		font-size: 0.95rem;
+	}
+	.column {
+		width: 50%;
+		gap: 0.75rem;
+	}
+	.item {
+		min-height: 4.25rem;
+		border-radius: 1rem;
+		border-width: 1px;
+		padding: 0 1rem;
+	}
+	.itemButton {
+		min-height: 4.25rem;
+		gap: 0.65rem;
+	}
+	.itemOpen .itemButton {
+		padding: 0.85rem 0 0.35rem;
+	}
+	.number {
+		line-height: 1.3;
+		font-size: 0.95rem;
+	}
+	.question {
+		font-size: 0.95rem;
+		line-height: 1.35;
+		letter-spacing: 0;
+	}
+	.component1 {
+		width: 0.85rem;
+		height: 0.85rem;
+	}
+	.answerWrap {
+		padding: 0 0 0.95rem 1.7rem;
+	}
+	.answer {
+		font-size: 0.85rem;
+		line-height: 1.5;
+		letter-spacing: 0;
+	}
+}
+
+@media (max-width: 767px) {
+	.frameParent {
+		padding: 2.5rem 1.15rem 3rem;
+	}
+	.frequentlyAskedQuestions {
+		font-size: 1.45rem;
+	}
+	.columns {
+		flex-direction: column;
+		gap: 0.7rem;
+	}
+	.column {
+		width: 100%;
+		gap: 0.7rem;
+	}
+	.item,
+	.itemButton {
+		min-height: 3.75rem;
+	}
+	.question {
+		font-size: 0.9rem;
+	}
+	.answer {
+		font-size: 0.82rem;
+	}
+}

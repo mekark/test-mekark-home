@@ -1,0 +1,137 @@
+.section {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	background-color: #fff;
+	font-family: var(--font-manrope), Arial, Helvetica, sans-serif;
+	color: #111;
+	padding: clamp(64px, 7vw, 107px) var(--section-padding-x-right) clamp(48px, 6vw, 80px) var(--section-padding-x);
+	box-sizing: border-box;
+}
+
+.bg {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+	pointer-events: none;
+}
+
+.bgImage {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: min(50%, 400px);
+	object-fit: cover;
+	object-position: top center;
+	opacity: 0.95;
+}
+
+.inner {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: clamp(36px, 4vw, 67px);
+	max-width: 1706px;
+	margin: 0 auto;
+}
+
+.title {
+	margin: 0;
+	max-width: 940px;
+	text-align: center;
+	font-size: clamp(26px, 2.8vw, 53px);
+	letter-spacing: -0.04em;
+	line-height: 1.2;
+	font-weight: 800;
+}
+
+.grid {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(6, minmax(0, 1fr));
+	gap: clamp(20px, 2vw, 30px);
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: clamp(16px, 1.8vw, 34px);
+	min-width: 0;
+}
+
+.cardImage {
+	width: 100%;
+	aspect-ratio: 1;
+	height: auto;
+	border-radius: clamp(12px, 1.2vw, 21px);
+	object-fit: cover;
+	display: block;
+}
+
+.cardText {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+}
+
+.cardTitle {
+	margin: 0;
+	font-size: clamp(15px, 1.05vw, 19px);
+	line-height: 1.25;
+	font-weight: 700;
+	color: #3c3938;
+}
+
+.cardBody {
+	margin: 0;
+	font-size: clamp(13px, 0.95vw, 16px);
+	line-height: 1.4;
+	color: #555;
+}
+
+/* Tablet: 3 columns */
+@media (max-width: 1100px) {
+	.grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 28px 20px;
+	}
+}
+
+/* Mobile: 2 columns */
+@media (max-width: 640px) {
+	.section {
+		padding: 48px var(--section-padding-x-right) 40px var(--section-padding-x);
+	}
+
+	.title {
+		font-size: 26px;
+	}
+
+	.grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 24px 14px;
+	}
+
+	.card {
+		gap: 14px;
+	}
+
+	.cardTitle {
+		font-size: 15px;
+	}
+
+	.cardBody {
+		font-size: 13px;
+	}
+}
+
+@media (max-width: 400px) {
+	.grid {
+		grid-template-columns: 1fr;
+	}
+}

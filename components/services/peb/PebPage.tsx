@@ -1,0 +1,23 @@
+"use client";
+
+import BuildCTA from "@/components/services/peb/BuildCTA";
+import EndToEndPEB from "@/components/services/peb/EndToEndPEB";
+import FAQ from "@/components/services/peb/FAQ";
+import Hero from "@/components/services/peb/Hero";
+import OurPEBSolutions from "@/components/services/peb/OurPEBSolutions";
+import TrustedSectors from "@/components/services/peb/TrustedSectors";
+import WhyChooseMekark from "@/components/services/peb/WhyChooseMekark";
+
+export function PebPage() {
+  return (
+    <main className="peb-service-page m-0 flex w-full flex-col bg-white p-0">
+      <Hero />
+      <EndToEndPEB />
+      <WhyChooseMekark />
+      <OurPEBSolutions />
+      <TrustedSectors />
+      <FAQ />
+      <BuildCTA />
+    </main>
+  );
+}

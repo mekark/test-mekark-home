@@ -8,6 +8,7 @@ import {
   Montserrat_Alternates,
 } from "next/font/google";
 import { ArrowTop } from "@/components/ui/ArrowTop";
+import { NavigationLoadingProvider } from "@/components/ui/NavigationLoadingProvider";
 import { Navbar } from "@/components/navbar/Navbar";
 import "./globals.css";
 
@@ -26,8 +27,7 @@ const inter = Inter({
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
-  style: ["italic"],
-  weight: ["400"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 const montserratAlternates = Montserrat_Alternates({
@@ -90,9 +90,11 @@ export default function RootLayout({
             }}
           />
         </noscript>
-        <Navbar />
-        {children}
-        <ArrowTop />
+        <NavigationLoadingProvider>
+          <Navbar />
+          {children}
+          <ArrowTop />
+        </NavigationLoadingProvider>
         <Script id="tawk-to" strategy="afterInteractive">
           {`
             var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();

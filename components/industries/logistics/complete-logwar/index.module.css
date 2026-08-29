@@ -1,0 +1,409 @@
+.completeEotCraneSolutionsWrapper {
+  	width: 100%;
+  	position: relative;
+  	background-color: #f6f6f6;
+  	padding: 4.16667vw;
+  	box-sizing: border-box;
+  	text-align: left;
+  	font-size: 0.9375vw;
+  	color: #000;
+  	font-family: Manrope;
+}
+.completeEotCraneSolutions {
+  	width: 100%;
+  	display: flex;
+  	justify-content: flex-start;
+  	align-items: stretch;
+  	gap: 0px;
+  	position: relative;
+}
+.leftStickyOuter {
+  	width: 40.2604vw;
+  	flex-shrink: 0;
+  	display: flex;
+  	flex-direction: column;
+  	padding-top: 9.89583vw;
+  	box-sizing: border-box;
+}
+.leftSticky {
+  	position: sticky;
+  	top: 5.20833vw;
+  	display: flex;
+  	flex-direction: column;
+  	gap: 1.25vw;
+}
+.completeWarehousing {
+  	position: relative;
+  	letter-spacing: -0.05208vw;
+  	line-height: 3.125vw;
+  	font-size: 2.39583vw;
+  	display: block;
+  	width: 100%;
+}
+.asAFullService {
+  	position: relative;
+  	font-size: 0.9375vw;
+  	font-weight: 300;
+  	line-height: 1.45833vw;
+  	display: block;
+  	width: 90%;
+}
+.rightScrollable {
+  	flex-shrink: 0;
+  	width: 53.3333vw;
+  	max-width: 100%;
+}
+.frameParent {
+  	position: relative;
+  	width: 100%;
+  	height: 64.1146vw;
+}
+.vectorParent {
+  	position: absolute;
+  	top: 4.0625vw;
+  	left: 0px;
+  	width: 20.6771vw;
+  	height: 60.0521vw;
+}
+.timelineGraphic {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	width: 100%;
+  	height: 100%;
+}
+.frameGroup {
+  	position: absolute;
+  	top: 0px;
+  	left: 3.80208vw;
+  	width: 49.5313vw;
+  	height: 64.1146vw;
+}
+.frameContainer {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	border-radius: 1.04167vw;
+  	background-color: #fff;
+  	border: 0.0625vw solid #c0c0c0;
+  	box-sizing: border-box;
+  	width: 38.5417vw;
+  	height: 10.0521vw;
+  	overflow: hidden;
+}
+.industrialWarehouseShedsParent {
+  	position: absolute;
+  	top: 2.86458vw;
+  	left: 18.4896vw;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	gap: 0.41667vw;
+}
+.industrialWarehouseSheds {
+  	position: relative;
+  	font-weight: 600;
+}
+.columnFreeBuildingsBuilt {
+  	width: 18.28125vw;
+  	position: relative;
+  	font-size: 0.83333vw;
+  	display: flex;
+  	align-items: center;
+}
+.frameIcon {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	width: 16.8073vw;
+  	height: 10.0833vw;
+  	object-fit: cover;
+}
+.frameIconWrapper {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	width: 16.8073vw;
+  	height: 10.0833vw;
+  	overflow: hidden;
+}
+.frameIconCold {
+  	position: absolute;
+  	top: -78.32%;
+  	left: -0.05%;
+  	width: 100%;
+  	height: 178.39%;
+  	max-width: none;
+}
+.frameIconMulti {
+  	position: absolute;
+  	top: -23.67%;
+  	left: 0.05%;
+  	width: 100%;
+  	height: 166.36%;
+  	max-width: none;
+}
+.frameIconLogistics {
+  	position: absolute;
+  	top: -67.19%;
+  	left: -0.01%;
+  	width: 100%;
+  	height: 167.04%;
+  	max-width: none;
+}
+.frameDiv {
+  	position: absolute;
+  	top: 27.03125vw;
+  	left: 0px;
+  	border-radius: 1.04167vw;
+  	background-color: #fff;
+  	border: 0.0625vw solid #c0c0c0;
+  	box-sizing: border-box;
+  	width: 38.5417vw;
+  	height: 10.0521vw;
+  	overflow: hidden;
+}
+.coldStorageStructuresParent {
+  	position: absolute;
+  	top: calc(50% - 2.01510vw);
+  	left: 18.4896vw;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	gap: 0.41667vw;
+}
+.frameParent2 {
+  	position: absolute;
+  	top: 54.0104vw;
+  	left: 0px;
+  	border-radius: 1.04167vw;
+  	background-color: #fff;
+  	border: 0.0625vw solid #c0c0c0;
+  	box-sizing: border-box;
+  	width: 38.6458vw;
+  	height: 10.0521vw;
+  	overflow: hidden;
+}
+.multiStoreyWarehousesParent {
+  	position: absolute;
+  	top: calc(50% - 1.97344vw);
+  	left: 18.4896vw;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	gap: 0.41667vw;
+}
+.frameParent3 {
+  	position: absolute;
+  	top: 13.4896vw;
+  	left: 10.9896vw;
+  	border-radius: 1.04167vw;
+  	background-color: #fff;
+  	border: 0.0625vw solid #c0c0c0;
+  	box-sizing: border-box;
+  	width: 38.5417vw;
+  	height: 10.0521vw;
+  	overflow: hidden;
+}
+.distributionCentresParent {
+  	position: absolute;
+  	top: calc(50% - 1.99740vw);
+  	left: 18.53125vw;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	gap: 0.41667vw;
+}
+.frameParent4 {
+  	position: absolute;
+  	top: 40.5208vw;
+  	left: 10.9896vw;
+  	border-radius: 1.04167vw;
+  	background-color: #fff;
+  	border: 0.0625vw solid #c0c0c0;
+  	box-sizing: border-box;
+  	width: 38.5417vw;
+  	height: 10.0521vw;
+  	overflow: hidden;
+}
+.logisticsParksAndMultiBayParent {
+  	position: absolute;
+  	top: calc(50% - 1.98125vw);
+  	left: 18.53125vw;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	gap: 0.41667vw;
+}
+.overlayborder {
+  	position: relative;
+  	margin: 3.33333vw auto 0;
+  	border-radius: 2.08333vw;
+  	background-color: rgba(228, 0, 21, 0.05);
+  	border: 0.02604vw solid rgba(228, 0, 21, 0.5);
+  	box-sizing: border-box;
+  	width: 100%;
+  	max-width: 91.6667vw;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	padding: 1.25vw 1.66667vw;
+  	color: #e40015;
+}
+.strongEveryContainer {
+  	width: 100%;
+  	position: relative;
+  	line-height: 1.2375vw;
+  	display: flex;
+  	align-items: center;
+  	font-size: 0.90125vw;
+  	white-space: nowrap;
+}
+.strongEveryContainer2 {
+  	width: 100%;
+}
+.everyEotCrane {
+  	line-height: 1.2375vw;
+}
+.aroundYourLoadRequirements {
+  	line-height: 1.2375vw;
+  	color: #4c4c4c;
+}
+.span {
+  	color: #8b91a0;
+  	line-height: 1.2375vw;
+}
+
+@media (max-width: 1200px) {
+  	.completeEotCraneSolutions {
+    		flex-direction: column;
+    		gap: 40px;
+  	}
+  	.leftStickyOuter {
+    		width: 100%;
+    		padding-top: 0px;
+  	}
+  	.leftSticky {
+    		position: static;
+  	}
+  	.completeWarehousing {
+    		font-size: 32px;
+    		line-height: 40px;
+  	}
+  	.asAFullService {
+    		font-size: 16px;
+    		line-height: 24px;
+  	}
+  	.rightScrollable {
+    		width: 100%;
+  	}
+  	.frameParent {
+    		width: 100%;
+    		height: auto;
+  	}
+  	.vectorParent {
+    		display: none;
+  	}
+  	.frameGroup {
+    		position: relative;
+    		top: auto;
+    		left: auto;
+    		width: 100%;
+    		height: auto;
+    		display: grid;
+    		grid-template-columns: repeat(2, 1fr);
+    		gap: 24px;
+  	}
+  	.frameContainer,
+  	.frameDiv,
+  	.frameParent2,
+  	.frameParent3,
+  	.frameParent4 {
+    		position: relative;
+    		top: auto;
+    		left: auto;
+    		width: 100%;
+    		height: auto;
+    		display: flex;
+    		flex-direction: column;
+  	}
+  	.frameIcon,
+  	.frameIconWrapper {
+    		position: relative;
+    		top: auto;
+    		left: auto;
+    		width: 100%;
+    		height: 200px;
+    		order: -1;
+  	}
+  	.frameIconCold,
+  	.frameIconMulti,
+  	.frameIconLogistics {
+    		position: relative;
+    		top: auto;
+    		left: auto;
+    		width: 100%;
+    		height: 100%;
+    		object-fit: cover;
+  	}
+  	.industrialWarehouseShedsParent,
+  	.coldStorageStructuresParent,
+  	.multiStoreyWarehousesParent,
+  	.distributionCentresParent,
+  	.logisticsParksAndMultiBayParent {
+    		position: relative;
+    		top: auto;
+    		left: auto;
+    		width: 100%;
+    		padding: 24px;
+    		box-sizing: border-box;
+  	}
+  	.columnFreeBuildingsBuilt {
+    		width: 100%;
+  	}
+  	.overlayborder {
+    		max-width: 100%;
+  	}
+  	.strongEveryContainer {
+    		white-space: normal;
+    		font-size: 14px;
+  	}
+  	.strongEveryContainer,
+  	.everyEotCrane,
+  	.aroundYourLoadRequirements,
+  	.span {
+    		line-height: 20px;
+  	}
+}
+
+@media (max-width: 768px) {
+  	.completeEotCraneSolutionsWrapper {
+    		padding: 32px 16px;
+  	}
+  	.completeWarehousing {
+    		font-size: 26px;
+    		line-height: 34px;
+  	}
+  	.asAFullService {
+    		font-size: 14px;
+    		line-height: 22px;
+  	}
+  	.frameGroup {
+    		grid-template-columns: 1fr;
+  	}
+  	.overlayborder {
+    		padding: 16px;
+  	}
+  	.strongEveryContainer {
+    		white-space: normal;
+    		font-size: 13px;
+  	}
+  	.industrialWarehouseSheds {
+    		font-size: 16px;
+    		line-height: 24px;
+  	}
+  	.columnFreeBuildingsBuilt {
+    		font-size: 14px;
+    		line-height: 20px;
+  	}
+}

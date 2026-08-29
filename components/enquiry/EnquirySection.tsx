@@ -4,6 +4,7 @@ import { type FormEvent, type ReactNode, useEffect, useMemo, useState } from "re
 import Image from "next/image";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
+import { useNavigationLoading } from "@/components/ui/NavigationLoadingProvider";
 import {
   ENQUIRY_INDUSTRY_BY_SLUG,
   FIND_SERVICES,
@@ -253,6 +254,7 @@ type SubmitStatus = "idle" | "submitting" | "error";
 
 export function EnquirySection() {
   const router = useRouter();
+  const { startNavigation } = useNavigationLoading();
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [projectArea, setProjectArea] = useState("");
@@ -373,6 +375,7 @@ export function EnquirySection() {
         return;
       }
 
+      startNavigation();
       router.push("/thank-you");
     } catch {
       setSubmitStatus("error");

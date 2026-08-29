@@ -1,0 +1,155 @@
+.rectangleParent {
+	width: 100%;
+	height: 35.2083vw;
+	position: relative;
+	background-color: #e6e6e6;
+	overflow: hidden;
+	flex-shrink: 0;
+	text-align: left;
+	font-size: 2.7083vw;
+	color: #111;
+	font-family: Manrope, sans-serif;
+}
+.frameChild {
+	position: absolute;
+	top: -0.0172vw;
+	left: 0px;
+	background: linear-gradient(269.25deg, #fff, rgba(255, 255, 255, 0));
+	width: 100vw;
+	height: 48.401vw;
+	flex-shrink: 0;
+}
+.div {
+	position: absolute;
+	top: -8.0729vw;
+	left: 68.6339vw;
+	width: 31.3542vw;
+	height: 39.1667vw;
+	flex-shrink: 0;
+}
+.endToEndCommercialSolarSoParent {
+	position: absolute;
+	top: 7.4828vw;
+	left: 10.6771vw;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.9375vw;
+	flex-shrink: 0;
+}
+.endToEndCommercialSolarContainer {
+	width: 39.7917vw;
+	position: relative;
+	display: flex;
+	align-items: center;
+	font-weight: 600;
+}
+.endToEndCommercialSolarContainer2 {
+	width: 100%;
+}
+.underOneRoof {
+	color: #e50818;
+}
+.mekarkIsALeadingCommercialParent {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 1.5917vw;
+	font-size: 0.9475vw;
+	color: #444242;
+}
+.mekarkIsA {
+	width: 37.7083vw;
+	position: relative;
+	display: inline-block;
+	font-weight: 200;
+}
+.solarEte1 {
+	position: absolute;
+	right: 4.1667vw;
+	bottom: 0.5036vw;
+	width: 47.2917vw;
+	height: 31.4063vw;
+	object-fit: cover;
+	flex-shrink: 0;
+}
+
+@media (max-width: 1199px) {
+	.rectangleParent {
+		height: auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 2rem;
+		padding: 4rem 2.5rem 2rem;
+	}
+	.frameChild {
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+	.div {
+		display: none;
+	}
+	.endToEndCommercialSolarSoParent {
+		position: relative;
+		top: auto;
+		left: auto;
+		width: 48%;
+		z-index: 1;
+		gap: 1rem;
+	}
+	.endToEndCommercialSolarContainer {
+		width: 100%;
+		font-size: 2rem;
+		line-height: 1.25;
+	}
+	.mekarkIsALeadingCommercialParent {
+		gap: 1.1rem;
+		font-size: 0.95rem;
+	}
+	.mekarkIsA {
+		width: 100%;
+		line-height: 1.55;
+	}
+	.mekarkIsA br {
+		display: none;
+	}
+	.solarEte1 {
+		position: relative;
+		right: auto;
+		bottom: auto;
+		width: 48%;
+		height: auto;
+		max-width: 28rem;
+	}
+}
+
+@media (max-width: 767px) {
+	.rectangleParent {
+		flex-direction: column;
+		align-items: stretch;
+		padding: 3rem 1.15rem 0;
+		gap: 1.5rem;
+	}
+	.endToEndCommercialSolarSoParent {
+		width: 100%;
+		display: contents;
+	}
+	.endToEndCommercialSolarContainer {
+		order: 1;
+		font-size: 1.65rem;
+		line-height: 1.3;
+	}
+	.solarEte1 {
+		order: 2;
+		width: 100%;
+		max-width: none;
+		align-self: center;
+	}
+	.mekarkIsALeadingCommercialParent {
+		order: 3;
+		font-size: 0.9rem;
+		gap: 0.95rem;
+	}
+}

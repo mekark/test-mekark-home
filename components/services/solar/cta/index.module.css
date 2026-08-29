@@ -1,0 +1,1085 @@
+.frameParent {
+	width: 100%;
+	height: 138.5vw;
+	position: relative;
+	text-align: left;
+	font-size: 2.7083vw;
+	color: #111;
+	font-family: Manrope, sans-serif;
+}
+.sectionWrapper {
+	position: absolute;
+	bottom: 0.0172vw;
+	left: 0.0521vw;
+	background-color: #fdebeb;
+	width: 100vw;
+	height: 26.9271vw;
+	overflow: hidden;
+	text-align: center;
+	font-size: 2.0833vw;
+}
+.section {
+	position: absolute;
+	top: calc(50% - 11.224vw);
+	left: 5.5729vw;
+	box-shadow: 0px 0px 2.0833vw rgba(0, 0, 0, 0.1);
+	border-radius: 2.0833vw;
+	background-color: #fcfcfc;
+	width: 88.8542vw;
+	height: 22.3958vw;
+	flex-shrink: 0;
+}
+.trustedAcrossIndustrialContainer {
+	position: absolute;
+	top: 2.6911vw;
+	left: calc(50% - 15.8854vw);
+	line-height: 2.3609vw;
+	display: flex;
+	align-items: center;
+	width: 31.7708vw;
+	flex-shrink: 0;
+	font-weight: 600;
+}
+.trustedAcrossIndustrialContainer2 {
+	width: 100%;
+}
+.trustedAcrossIndustrial {
+	line-height: 2.3609vw;
+}
+.commercialSectors {
+	color: #e50818;
+	line-height: 2.3609vw;
+}
+.frameGroup {
+	position: absolute;
+	top: 10.8854vw;
+	left: calc(50% - 41.4411vw);
+	width: 82.9844vw;
+	height: 6.3698vw;
+	flex-shrink: 0;
+}
+.rectangleParent {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 10.3125vw;
+	height: 6.3698vw;
+}
+.frameChild {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	border-radius: 0.7781vw;
+	background-color: #fff;
+	border: 0.0677vw solid rgba(0, 0, 0, 0.05);
+	box-sizing: border-box;
+	width: 10.3125vw;
+	height: 6.3698vw;
+}
+.tata1Icon {
+	position: absolute;
+	top: 1.5276vw;
+	left: 3.0557vw;
+	width: 4.1875vw;
+	height: 3.2604vw;
+	object-fit: contain;
+}
+.rectangleGroup {
+	position: absolute;
+	top: 0px;
+	left: 12.0833vw;
+	width: 10.3125vw;
+	height: 6.3698vw;
+}
+.bosch1Icon {
+	position: absolute;
+	top: 1.1109vw;
+	left: 3.125vw;
+	width: 4.099vw;
+	height: 4.099vw;
+	object-fit: contain;
+}
+.rectangleContainer {
+	position: absolute;
+	top: 0px;
+	left: 24.2359vw;
+	width: 10.3125vw;
+	height: 6.3698vw;
+}
+.hyundai2Icon {
+	position: absolute;
+	top: 0.5557vw;
+	left: 2.5693vw;
+	width: 5.2083vw;
+	height: 5.2083vw;
+	object-fit: contain;
+}
+.frameDiv {
+	position: absolute;
+	top: 0px;
+	left: 36.3193vw;
+	width: 10.3125vw;
+	height: 6.3698vw;
+}
+.rectangleParent2 {
+	position: absolute;
+	top: 0px;
+	left: 48.4724vw;
+	width: 10.3125vw;
+	height: 6.3698vw;
+}
+.jk2Icon {
+	position: absolute;
+	top: 1.6667vw;
+	left: 2.2917vw;
+	width: 5.7656vw;
+	height: 2.9948vw;
+	object-fit: contain;
+}
+.rectangleParent3 {
+	position: absolute;
+	top: 0px;
+	left: 60.625vw;
+	width: 10.3125vw;
+	height: 6.3698vw;
+}
+.rectangleParent4 {
+	position: absolute;
+	top: 0px;
+	left: 72.7083vw;
+	width: 10.3125vw;
+	height: 6.3698vw;
+}
+.image12Icon {
+	position: absolute;
+	top: calc(50% - 1.8656vw);
+	left: calc(50% - 1.8922vw);
+	width: 3.75vw;
+	height: 3.75vw;
+	object-fit: contain;
+}
+.sectionChild {
+	position: absolute;
+	top: 19.5938vw;
+	left: 28.5349vw;
+	border-top: 0.0156vw solid #000;
+	box-sizing: border-box;
+	width: 4.9427vw;
+	height: 0.0156vw;
+	flex-shrink: 0;
+}
+.sectionItem {
+	position: absolute;
+	top: 19.5938vw;
+	left: 55.4099vw;
+	border-top: 0.0156vw solid #000;
+	box-sizing: border-box;
+	width: 4.9427vw;
+	height: 0.0156vw;
+	flex-shrink: 0;
+}
+.mdishieldTickParent {
+	position: absolute;
+	top: 18.6979vw;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	align-items: center;
+	gap: 0.349vw;
+	flex-shrink: 0;
+	font-size: 0.9724vw;
+	color: #101116;
+}
+.mdishieldTickIcon {
+	height: 1.6667vw;
+	width: 1.6667vw;
+	position: relative;
+}
+.builtOnTrust {
+	width: auto;
+	position: relative;
+	letter-spacing: 0.0693vw;
+	line-height: 1.3891vw;
+	font-weight: 300;
+	white-space: nowrap;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+.ourProjectMix {
+	position: absolute;
+	width: 100%;
+	top: 8.1771vw;
+	left: 0;
+	font-size: 0.8333vw;
+	line-height: 1.2531vw;
+	font-weight: 500;
+	color: #000;
+	text-align: center;
+	flex-shrink: 0;
+}
+.grid1Parent {
+	position: absolute;
+	top: -0.0172vw;
+	left: 0px;
+	background-color: #fff;
+	width: 100vw;
+	height: 60.1563vw;
+	overflow: hidden;
+}
+.grid1Icon {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 99.8854vw;
+	height: 11.7708vw;
+	object-fit: cover;
+	object-position: bottom;
+	opacity: 0.25;
+	transform: scaleY(-1);
+	flex-shrink: 0;
+}
+.ourCommercialSolarSolutionsWrapper {
+	position: absolute;
+	top: 5.5729vw;
+	left: calc(50% - 22.6042vw);
+	width: 45.2083vw;
+	height: 3.3854vw;
+	flex-shrink: 0;
+	text-align: center;
+}
+.ourCommercialSolar {
+	position: relative;
+	font-weight: 600;
+}
+.frameContainer {
+	position: absolute;
+	top: 11.7708vw;
+	left: calc(50% - 42.6563vw);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 2.6042vw;
+	flex-shrink: 0;
+	font-size: 0.9375vw;
+	color: #3c3938;
+	font-family: Montserrat, sans-serif;
+}
+.frameParent2 {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 2.6042vw;
+}
+.rectangleParent5 {
+	box-shadow: -0.1042vw 0.1042vw 0.3125vw rgba(21, 21, 21, 0.08);
+	border-radius: 0.8333vw;
+	background-color: #fffdfd;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 1.0417vw;
+	gap: 1.0417vw;
+}
+.rectangleIcon {
+	width: 24.6354vw;
+	height: 14.4271vw;
+	position: relative;
+	border-radius: 1.0417vw;
+	object-fit: cover;
+}
+.rooftopSolarForFactoriesAnParent {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.5208vw;
+}
+.rooftopSolarFor {
+	position: relative;
+	font-weight: 500;
+	color: #000;
+}
+.highCapacitySystemsEngineer {
+	width: 21.1979vw;
+	position: relative;
+	font-size: 0.8333vw;
+	color: #555;
+	font-weight: 300;
+	display: flex;
+	align-items: center;
+}
+.fullyIndependentPower {
+	width: 21.9792vw;
+	position: relative;
+	font-size: 0.8333vw;
+	color: #555;
+	font-weight: 300;
+	display: flex;
+	align-items: center;
+}
+.rectangleParent7 {
+	box-shadow: -0.1042vw 0.1042vw 0.3125vw rgba(21, 21, 21, 0.08);
+	border-radius: 0.8333vw;
+	background-color: #fffdfd;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 1.0417vw 1.0417vw 2.0833vw;
+	gap: 1.0417vw;
+}
+.optimizedForBusinesses {
+	width: 21.5625vw;
+	position: relative;
+	font-size: 0.8333vw;
+	color: #555;
+	font-weight: 300;
+	display: flex;
+	align-items: center;
+}
+.frameChild7 {
+	width: 24.6354vw;
+	height: 14.4271vw;
+	position: relative;
+	border-radius: 1.0417vw;
+	background-color: rgba(165, 162, 162, 0.2);
+}
+.detailedAssessmentOf {
+	width: 21.9271vw;
+	position: relative;
+	font-size: 0.8333vw;
+	color: #555;
+	font-weight: 300;
+	display: flex;
+	align-items: center;
+}
+.uninterruptedPowerSupply {
+	width: 21.0938vw;
+	position: relative;
+	font-size: 0.8333vw;
+	color: #555;
+	font-weight: 300;
+	display: flex;
+	align-items: center;
+}
+.grid1Group {
+	position: absolute;
+	top: 80.5vw;
+	left: 0px;
+	background-color: #fff;
+	width: 100vw;
+	height: 30vw;
+	overflow: hidden;
+}
+.grid1Icon2 {
+	position: absolute;
+	bottom: -21.026vw;
+	left: 0px;
+	width: 99.8854vw;
+	height: 20.349vw;
+	object-fit: cover;
+	opacity: 0.15;
+	flex-shrink: 0;
+}
+.grid1Container {
+	position: absolute;
+	width: 100%;
+	top: 3vw;
+	right: 0px;
+	left: 0px;
+	height: 22.3958vw;
+	overflow: hidden;
+	flex-shrink: 0;
+}
+.grid1Icon3 {
+	position: absolute;
+	top: 4.5vw;
+	left: 0px;
+	width: 99.8958vw;
+	height: 30vw;
+	object-fit: cover;
+	transform: scaleY(-1);
+	opacity: 0.095;
+	flex-shrink: 0;
+}
+.howWeDeliver {
+	position: absolute;
+	top: 4vw;
+	left: calc(50% - 21.5104vw);
+	flex-shrink: 0;
+}
+.frameParent5 {
+	position: absolute;
+	top: 9.8438vw;
+	left: 4.1667vw;
+	width: 91.5104vw;
+	display: flex;
+	align-items: center;
+	gap: 1.6667vw;
+	flex-shrink: 0;
+	font-size: 2.0833vw;
+	color: #f01d23;
+	font-family: Montserrat, sans-serif;
+}
+.parent {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 0.7292vw;
+}
+.div {
+	position: relative;
+	font-weight: 500;
+}
+.siteAssessmentParent {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.5208vw;
+	font-size: 0.9375vw;
+	color: #3c3938;
+}
+.siteAssessment {
+	align-self: stretch;
+	position: relative;
+	font-weight: 500;
+	color: #000;
+}
+.ourEngineersVisit {
+	width: 14.2708vw;
+	position: relative;
+	font-size: 0.8333vw;
+	line-height: 1.1109vw;
+	color: #555;
+	display: flex;
+	align-items: center;
+}
+.lineIcon {
+	height: 1.0208vw;
+	width: 1.9115vw;
+	position: relative;
+	max-height: 100%;
+}
+.group {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.7292vw;
+}
+.systemDesignAndApprovalParent {
+	align-self: stretch;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.5208vw;
+	font-size: 0.9375vw;
+	color: #3c3938;
+}
+.customSolarDesign {
+	width: 12.7083vw;
+	position: relative;
+	font-size: 0.8333vw;
+	line-height: 1.1109vw;
+	color: #555;
+	display: flex;
+	align-items: center;
+}
+.highQualityPanelsInverters {
+	width: 15vw;
+	position: relative;
+	font-size: 0.8333vw;
+	line-height: 1.1109vw;
+	color: #555;
+	display: flex;
+	align-items: center;
+}
+.onSiteInstallationWith {
+	width: 12.9688vw;
+	position: relative;
+	font-size: 0.8333vw;
+	line-height: 1.1109vw;
+	color: #555;
+	white-space: pre-wrap;
+	display: flex;
+	align-items: center;
+}
+.finalDocumentationHandover {
+	width: 12.7604vw;
+	position: relative;
+	font-size: 0.8333vw;
+	line-height: 1.1109vw;
+	color: #555;
+	display: flex;
+	align-items: center;
+}
+.sectionContainer {
+	position: absolute;
+	width: 100%;
+	top: 62vw;
+	right: 0px;
+	left: 0px;
+	background-color: #fff;
+	height: 19.5vw;
+	font-size: 2.5vw;
+	color: #fff;
+}
+.section2 {
+	position: absolute;
+	bottom: 1.2vw;
+	left: calc(50% - 44.4443vw);
+	border-radius: 2.0833vw;
+	background: linear-gradient(96.33deg, #8b0c11, #ed1d23);
+	width: 88.8906vw;
+	height: 17.9844vw;
+	overflow: visible;
+}
+.frameParent6 {
+	position: absolute;
+	top: calc(50% - 6.4922vw);
+	left: 7.6214vw;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.6vw;
+	flex-shrink: 0;
+}
+.planningASolarPowerPlantFParent {
+	align-self: stretch;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.625vw;
+}
+.planningASolarContainer {
+	width: 45vw;
+	position: relative;
+	font-size: 2.4vw;
+	line-height: 120%;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+}
+.planningASolar {
+	line-height: 120%;
+}
+.yourFactoryOr {
+	color: #000;
+	line-height: 120%;
+}
+.getAFree {
+	width: 27.0833vw;
+	position: relative;
+	font-size: 0.9724vw;
+	letter-spacing: 0.074vw;
+	line-height: 1.1833vw;
+	font-weight: 500;
+	color: #ccc6c6;
+	display: flex;
+	align-items: center;
+}
+.cta {
+	height: 3.75vw;
+	border-radius: 52.0312vw;
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1vw 1.6667vw;
+	box-sizing: border-box;
+	gap: 0.6667vw;
+	font-size: 1.0417vw;
+	color: #e5091f;
+	cursor: pointer;
+	border: none;
+	text-decoration: none;
+}
+.requestAFree {
+	position: relative;
+	line-height: 1.5vw;
+}
+.component4 {
+	height: 1.25vw;
+	width: 1.25vw;
+	position: relative;
+	overflow: hidden;
+	flex-shrink: 0;
+}
+.vectorIcon {
+	position: absolute;
+	height: 50%;
+	width: 100%;
+	top: 24.94%;
+	right: 19.06%;
+	bottom: 25.06%;
+	left: 18.71%;
+	max-width: 100%;
+	overflow: hidden;
+	max-height: 100%;
+}
+.sectionInner {
+	position: absolute;
+	top: 2.2224vw;
+	left: 6.1109vw;
+	border-right: 0.1406vw solid #fff;
+	box-sizing: border-box;
+	width: 0.1406vw;
+	height: 13.75vw;
+	flex-shrink: 0;
+	opacity: 0.3;
+}
+.layer2CopyCta1 {
+	position: absolute;
+	top: -3.5068vw;
+	right: 2.4672vw;
+	width: 47.8646vw;
+	height: 25.0521vw;
+	flex-shrink: 0;
+}
+.sectionChild2 {
+	position: absolute;
+	top: -0.0172vw;
+	right: 0.0193vw;
+	border-radius: 0px 2.0833vw 2.0833vw 0px;
+	width: 5.8333vw;
+	height: 18.0208vw;
+	flex-shrink: 0;
+	background: linear-gradient(270deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+}
+.solarCta1 {
+	position: absolute;
+	right: -0.0328vw;
+	bottom: -0.0193vw;
+	width: 40.9375vw;
+	height: 21.6146vw;
+	object-fit: cover;
+	border-radius: 0 2.0833vw 2.0833vw 0;
+	flex-shrink: 0;
+}
+
+@media (max-width: 1199px) {
+	.frameParent {
+		height: auto;
+		display: flex;
+		flex-direction: column;
+	}
+	.grid1Parent,
+	.sectionContainer,
+	.grid1Group,
+	.sectionWrapper {
+		position: relative;
+		top: auto;
+		right: auto;
+		bottom: auto;
+		left: auto;
+		width: 100%;
+		height: auto;
+	}
+	.grid1Parent {
+		order: 1;
+		padding: 3.5rem 1.5rem 2.5rem;
+	}
+	.sectionContainer {
+		order: 2;
+		padding: 0 1.5rem 2.5rem;
+	}
+	.grid1Group {
+		order: 3;
+		padding: 2.5rem 1.5rem 3.5rem;
+	}
+	.sectionWrapper {
+		order: 4;
+		padding: 2rem 1.25rem 2.5rem;
+	}
+	.grid1Icon,
+	.grid1Icon2,
+	.grid1Icon3 {
+		width: 100%;
+		height: 8rem;
+		object-fit: cover;
+	}
+	.grid1Icon3 {
+		top: 0;
+		height: 100%;
+	}
+	.ourCommercialSolarSolutionsWrapper {
+		position: relative;
+		top: auto;
+		left: auto;
+		width: 100%;
+		height: auto;
+		margin-bottom: 1.75rem;
+	}
+	.ourCommercialSolar {
+		font-size: 2rem;
+		line-height: 1.25;
+	}
+	.frameContainer {
+		position: relative;
+		top: auto;
+		left: auto;
+		width: 100%;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.25rem;
+		font-size: 1rem;
+	}
+	.frameParent2 {
+		display: contents;
+	}
+	.rectangleParent5,
+	.rectangleParent7 {
+		width: 100%;
+		padding: 0.85rem;
+		gap: 0.75rem;
+		border-radius: 0.75rem;
+	}
+	.rectangleIcon,
+	.frameChild7 {
+		width: 100%;
+		height: auto;
+		aspect-ratio: 473 / 277;
+	}
+	.highCapacitySystemsEngineer,
+	.fullyIndependentPower,
+	.optimizedForBusinesses,
+	.detailedAssessmentOf,
+	.uninterruptedPowerSupply {
+		width: 100%;
+		font-size: 0.875rem;
+		line-height: 1.4;
+	}
+	.section2 {
+		position: relative;
+		bottom: auto;
+		left: auto;
+		width: 100%;
+		height: auto;
+		min-height: 17rem;
+		overflow: hidden;
+		display: flex;
+		align-items: stretch;
+	}
+	.frameParent6 {
+		position: relative;
+		top: auto;
+		left: auto;
+		z-index: 2;
+		flex: 1 1 55%;
+		max-width: none;
+		padding: 2.35rem 1.5rem 2.15rem 2.5rem;
+		gap: 0.9rem;
+	}
+	.planningASolarContainer {
+		width: 100%;
+		font-size: 1.55rem;
+		line-height: 1.28;
+	}
+	.getAFree {
+		width: 100%;
+		font-size: 0.9rem;
+		line-height: 1.45;
+		letter-spacing: 0.02em;
+	}
+	.getAFree br {
+		display: none;
+	}
+	.cta {
+		height: auto;
+		padding: 0.85rem 1.35rem;
+		font-size: 0.95rem;
+		gap: 0.5rem;
+	}
+	.requestAFree {
+		line-height: 1.3;
+	}
+	.component4 {
+		width: 1rem;
+		height: 1rem;
+	}
+	.sectionInner {
+		top: 1.5rem;
+		left: 1.15rem;
+		height: calc(100% - 3rem);
+	}
+	.solarCta1 {
+		position: relative;
+		right: auto;
+		bottom: auto;
+		flex: 0 0 42%;
+		width: 42%;
+		height: auto;
+		min-height: 17rem;
+		object-fit: cover;
+		object-position: center right;
+		border-radius: 0 1.5rem 1.5rem 0;
+	}
+	.layer2CopyCta1,
+	.sectionChild2 {
+		display: none;
+	}
+	.grid1Container {
+		position: relative;
+		top: auto;
+		height: auto;
+		overflow: visible;
+	}
+	.howWeDeliver {
+		position: relative;
+		top: auto;
+		left: auto;
+		display: block;
+		width: 100%;
+		text-align: center;
+		font-size: 1.85rem;
+		line-height: 1.25;
+		margin-bottom: 1.75rem;
+	}
+	.frameParent5 {
+		position: relative;
+		top: auto;
+		left: auto;
+		width: 100%;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		align-items: flex-start;
+		gap: 1.5rem 1.25rem;
+		font-size: 1.75rem;
+	}
+	.parent,
+	.group,
+	.frameParent5 > .rooftopSolarForFactoriesAnParent {
+		width: calc(50% - 0.75rem);
+	}
+	.lineIcon {
+		display: none;
+	}
+	.siteAssessmentParent,
+	.systemDesignAndApprovalParent {
+		font-size: 1rem;
+		gap: 0.35rem;
+	}
+	.ourEngineersVisit,
+	.customSolarDesign,
+	.highQualityPanelsInverters,
+	.onSiteInstallationWith,
+	.finalDocumentationHandover {
+		width: 100%;
+		font-size: 0.85rem;
+		line-height: 1.4;
+	}
+	.ourEngineersVisit br,
+	.customSolarDesign br,
+	.finalDocumentationHandover br {
+		display: none;
+	}
+	.section {
+		position: relative;
+		top: auto;
+		left: auto;
+		width: 100%;
+		height: auto;
+		padding: 2rem 1.25rem 1.75rem;
+		border-radius: 1.25rem;
+	}
+	.trustedAcrossIndustrialContainer {
+		position: relative;
+		top: auto;
+		left: auto;
+		width: 100%;
+		font-size: 1.7rem;
+		line-height: 1.25;
+		justify-content: center;
+		text-align: center;
+	}
+	.ourProjectMix {
+		position: relative;
+		top: auto;
+		margin: 0.75rem 0 1.5rem;
+		font-size: 0.875rem;
+		line-height: 1.45;
+	}
+	.frameGroup {
+		position: relative;
+		top: auto;
+		left: auto;
+		width: 100%;
+		height: auto;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 0.75rem;
+	}
+	.rectangleParent,
+	.rectangleGroup,
+	.rectangleContainer,
+	.frameDiv,
+	.rectangleParent2,
+	.rectangleParent3,
+	.rectangleParent4 {
+		position: relative;
+		top: auto;
+		left: auto;
+		width: 100%;
+		height: 4.75rem;
+	}
+	.frameChild {
+		width: 100%;
+		height: 100%;
+	}
+	.tata1Icon,
+	.bosch1Icon,
+	.hyundai2Icon,
+	.jk2Icon,
+	.image12Icon {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: auto;
+		height: 55%;
+		max-width: 70%;
+	}
+	.sectionChild,
+	.sectionItem {
+		display: none;
+	}
+	.mdishieldTickParent {
+		position: relative;
+		top: auto;
+		left: auto;
+		transform: none;
+		justify-content: center;
+		margin-top: 1.35rem;
+		font-size: 0.9rem;
+		gap: 0.4rem;
+	}
+	.mdishieldTickIcon {
+		width: 1.25rem;
+		height: 1.25rem;
+	}
+	.builtOnTrust {
+		font-size: 0.9rem;
+		line-height: 1.3;
+		letter-spacing: 0.04em;
+	}
+}
+
+@media (max-width: 834px) {
+	.grid1Parent,
+	.sectionContainer,
+	.grid1Group,
+	.sectionWrapper {
+		padding-left: 1.15rem;
+		padding-right: 1.15rem;
+	}
+	.grid1Icon2,
+	.grid1Icon3 {
+		display: none;
+	}
+	.ourCommercialSolar {
+		font-size: 1.55rem;
+	}
+	.frameContainer {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+		font-size: 0.95rem;
+	}
+	.section2 {
+		min-height: 0;
+		display: flex;
+		flex-direction: column;
+	}
+	.frameParent6 {
+		max-width: none;
+		padding: 1.75rem 1.35rem 1.5rem;
+	}
+	.planningASolarContainer {
+		font-size: 1.45rem;
+	}
+	.planningASolarContainer br {
+		display: none;
+	}
+	.sectionInner {
+		display: none;
+	}
+	.solarCta1 {
+		position: relative;
+		right: auto;
+		bottom: auto;
+		flex: 0 0 auto;
+		width: 100%;
+		min-height: 0;
+		height: 12rem;
+		border-radius: 0;
+		object-position: center;
+	}
+	.cta {
+		width: 100%;
+		max-width: 17rem;
+	}
+	.howWeDeliver {
+		font-size: 1.5rem;
+		margin-bottom: 1.35rem;
+	}
+	.frameParent5 {
+		position: relative;
+		--stepper-dot-size: 1.35rem;
+		--stepper-dot-left: -1.52rem;
+		--stepper-dot-top: -0.05rem;
+		--stepper-dot-center: calc(var(--stepper-dot-left) + (var(--stepper-dot-size) / 2));
+		flex-direction: column;
+		gap: 1.65rem;
+		font-size: 1.5rem;
+		padding-left: 2rem;
+	}
+	.parent,
+	.group,
+	.frameParent5 > .rooftopSolarForFactoriesAnParent {
+		width: 100%;
+		position: relative;
+		padding-left: 0.25rem;
+	}
+	.stepItem::before {
+		content: attr(data-step);
+		position: absolute;
+		top: var(--stepper-dot-top);
+		left: var(--stepper-dot-left);
+		width: var(--stepper-dot-size);
+		height: var(--stepper-dot-size);
+		border-radius: 50%;
+		border: 1px solid #8a97b5;
+		background: #fff;
+		color: #1e3b72;
+		font-size: 0.72rem;
+		font-weight: 800;
+		line-height: var(--stepper-dot-size);
+		text-align: center;
+		z-index: 2;
+		box-shadow: 0 0 0 2px #fff;
+	}
+	.stepItem::after {
+		content: "";
+		position: absolute;
+		top: calc(var(--stepper-dot-top) + (var(--stepper-dot-size) / 2));
+		bottom: -1.825rem;
+		left: var(--stepper-dot-center);
+		width: 1px;
+		background: rgba(196, 22, 28, 0.28);
+		z-index: 1;
+	}
+	.stepItem:last-child::after {
+		display: none;
+	}
+	.stepItem .div {
+		display: none;
+	}
+	.trustedAcrossIndustrialContainer {
+		font-size: 1.4rem;
+	}
+	.frameGroup {
+		grid-template-columns: 1fr 1fr;
+	}
+	.builtOnTrust {
+		white-space: normal;
+		text-align: center;
+	}
+}

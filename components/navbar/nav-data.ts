@@ -54,10 +54,6 @@ function childLinks(basePath: string, labels: string[]): NavLink[] {
 }
 
 const SERVICE_EXTERNAL_URLS: Record<string, string> = {
-  Civil: "https://civil-new.vercel.app/",
-  PEB: "https://peb-newpage.vercel.app/",
-  "Multi Storey": "https://new-multi-mekark.vercel.app/",
-  MEP: "https://new-mep-mekark.vercel.app/",
   EOT: "https://eot-crane.vercel.app/",
   Racking: "https://mekark-racking.vercel.app/",
   "Clean Room": "https://mekark-cleanroom.vercel.app/",
@@ -200,15 +196,18 @@ const ABOUT_DESCRIPTIONS: Record<string, string> = {
     "From a small fabrication unit in 1998 to a 1500+ member EPC turnkey provider.",
   "Life at Mekark":
     "A glimpse into the people, moments, and everyday hustle that make Mekark what it is.",
-  Certifications: "Quality, safety, and environmental standards we uphold.",
-  Safety: "Workplace safety excellence and ISO-certified systems.",
+  "Safety and Certificates":
+    "Workplace safety excellence and the quality, safety, and environmental standards we uphold.",
   "R&D": "Innovation and engineering research driving better builds.",
 };
 
 function aboutLinks(basePath: string, labels: string[]): NavLink[] {
   return labels.map((label) => ({
     label,
-    href: `${basePath}/${slugify(label)}`,
+    href:
+      label === "Safety and Certificates"
+        ? `${basePath}/safety`
+        : `${basePath}/${slugify(label)}`,
     description: ABOUT_DESCRIPTIONS[label],
   }));
 }
@@ -219,8 +218,7 @@ export const NAV_ITEMS: NavItem[] = [
     children: aboutLinks("/about", [
       "Our History",
       "Life at Mekark",
-      "Certifications",
-      "Safety",
+      "Safety and Certificates",
       "R&D",
     ]),
   },

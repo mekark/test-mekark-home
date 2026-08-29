@@ -28,9 +28,116 @@
   --color-crimson-200: var(--crimson-200);
   --color-red-100: var(--red-100);
   --color-red-200: var(--red-200);
+  --color-red-300: #e9000e;
+  --color-gray-100: #111111;
+  --color-gray-200: #05070c;
+  --color-gray-300: rgba(5, 7, 12, 0.5);
+  --color-gray-400: rgba(255, 255, 255, 0.7);
+  --color-gray: #111111;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-red: #e50818;
+  --color-darkslategray: #3c3938;
+  --color-dimgray: #4b5563;
+  --color-crimson: #e31b23;
+  --color-slategray: #6b7280;
+  --color-whitesmoke: #f9f9f9;
+  --color-firebrick: #c4161c;
+  --color-gainsboro: #e6e6e6;
+  --color-ink: #05070c;
+  --color-lavenderblush: #fdebeb;
+  --color-silver: #ccc6c6;
+  --color-quote-red: #e5091f;
+  --color-card: #fcfcfc;
+  --color-hairline: rgba(0, 0, 0, 0.05);
+  --color-gainsboro-card: #d9d9d9;
+  --color-limegreen: #04b330;
+  --color-red-ribbon: #e5091f;
+  --color-gray-panel: #fcfcfc;
+  --color-gray-soft: rgba(0, 0, 0, 0.05);
+  --color-gray-tagline: #101116;
+  --color-faq-red: #e60f1a;
+  --color-faq-question: #101116;
+  --color-faq-title: #111;
+  --color-faq-border: #e3e4e7;
   --font-sans: var(--font-manrope);
   --font-mono: var(--font-geist-mono);
   --font-inter: var(--font-inter-family), system-ui, sans-serif;
+  --font-manrope: var(--font-manrope), "Manrope", ui-sans-serif, system-ui,
+    sans-serif;
+  --font-montserrat: var(--font-montserrat), "Montserrat", ui-sans-serif,
+    system-ui, sans-serif;
+  --text-num-26_67: 26.67px;
+  --text-num-10_67: 10.67px;
+  --text-num-18_67: 18.67px;
+  --text-num-80: 80px;
+  --text-num-16: 16px;
+  --leading-num-25_62: 25.62px;
+  --leading-num-97_33: 97.33px;
+  --leading-num-25_33: 25.33px;
+  --leading-num-27_18: 27.18px;
+  --leading-num-16_62: 16.62px;
+  --leading-num-26_67: 26.67px;
+  --tracking-num--4: -4px;
+  --tracking-num--0_47: -0.47px;
+  --spacing-num-13_3: 13.3px;
+  --spacing-num-26_7: 26.7px;
+  --spacing-num-1_3: 1.3px;
+  --spacing-num-110: 110px;
+  --spacing-num-92: 92px;
+  --spacing-num-84: 84px;
+  --spacing-num-80: 80px;
+  --spacing-num-4: 4px;
+  --spacing-num-18_7: 18.7px;
+  --spacing-num-5_3: 5.3px;
+  --spacing-num-0: 0px;
+  --spacing-num-257_3: 257.3px;
+  --spacing-num-421_3: 421.3px;
+  --spacing-num-165_3: 165.3px;
+  --spacing-num-274_7: 274.7px;
+  --spacing-num-106_7: 106.7px;
+  --spacing-num-122_3: 122.3px;
+  --spacing-num-16_6: 16.6px;
+  --spacing-num-24_9: 24.9px;
+  --spacing-num-20_8: 20.8px;
+  --radius-num-21_33: 21.33px;
+  --radius-num-14_94: 14.94px;
+  --radius-num-20_78: 20.78px;
+}
+
+.tensile-service-page {
+  --section-padding-x: 1.25rem;
+  --section-padding-x-right: 1.25rem;
+  line-height: normal;
+  text-align: left;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .tensile-service-page {
+    --section-padding-x: 2rem;
+    --section-padding-x-right: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .tensile-service-page {
+    --section-padding-x: 6rem;
+    --section-padding-x-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tensile-service-page {
+    --section-padding-x: 8rem;
+    --section-padding-x-right: 2rem;
+  }
+}
+
+.logistics-industry-page {
+  line-height: normal;
+  text-align: left;
+  width: 100%;
 }
 
 body {

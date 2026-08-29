@@ -1,0 +1,352 @@
+.hero {
+  	position: relative;
+  	width: 100%;
+  	min-height: min(100vh, 1048px);
+  	display: flex;
+  	flex-direction: column;
+  	background-color: #060606;
+  	overflow: hidden;
+  	font-family: var(--font-manrope), Arial, Helvetica, sans-serif;
+}
+
+.image {
+  	position: absolute;
+  	inset: 0;
+	pointer-events: none;
+}
+
+.imageChild {
+  	display: none;
+}
+
+.chatgptImageAug20202603 {
+  	position: absolute;
+  	inset: 0;
+  	width: 100%;
+  	height: 100%;
+  	object-fit: cover;
+	object-position: center 10%;
+}
+
+.imageItem {
+  	position: absolute;
+  	left: 0;
+  	right: 0;
+  	bottom: 0;
+  	height: 35%;
+  	background: linear-gradient(180deg, rgba(30, 30, 30, 0), #1e1e1e);
+	z-index: 1;
+}
+
+.content {
+  	position: relative;
+  	z-index: 2;
+  	flex: 1;
+  	display: flex;
+  	flex-direction: column;
+  	justify-content: space-between;
+  	gap: 40px;
+  	padding: calc(76px + clamp(8px, 1.5vh, 20px)) var(--section-padding-x-right) clamp(24px, 4vw, 67px) var(--section-padding-x);
+  	box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  	.content {
+  		padding-top: calc(88px + clamp(8px, 1.5vh, 20px));
+  	}
+}
+
+.text {
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	gap: clamp(14px, 2vw, 20px);
+  	max-width: 1350px;
+  	opacity: 0.95;
+  	color: #111;
+}
+
+.southIndiasTrusted {
+  	margin: 0;
+  	font-size: clamp(26px, 2.85vw, 42px);
+  	letter-spacing: -1px;
+  	line-height: 1.15;
+  	font-weight: 800;
+}
+
+.mekarkDesignsFabricates {
+  	margin: 0;
+  	max-width: 1350px;
+  	font-size: clamp(13px, 1vw, 15.5px);
+  	line-height: 1.4;
+  	font-weight: 600;
+  	color: rgba(5, 7, 12, 0.55);
+}
+
+.cta {
+  	display: flex;
+  	flex-wrap: wrap;
+  	align-items: center;
+  	gap: 12px 24px;
+  	margin-top: 4px;
+}
+
+.component5 {
+  	display: inline-flex;
+  	align-items: center;
+  	justify-content: center;
+  	box-shadow: 0px 7px 28px rgba(196, 22, 28, 0.3);
+  	border-radius: 7px;
+  	background-color: #c4161c;
+  	padding: 14px 28px;
+  	color: #fff;
+  	font-size: 16px;
+  	font-weight: 600;
+  	line-height: 1.3;
+  	cursor: pointer;
+  	text-decoration: none;
+  	border: 0;
+}
+
+.text2 {
+  	flex-shrink: 0;
+}
+
+.exploreSolutions {
+  	display: inline-flex;
+  	align-items: center;
+  	gap: 8px;
+  	padding: 12px 8px;
+  	border-radius: 5px;
+  	color: #c4161c;
+  	font-size: 16px;
+  	font-weight: 600;
+  	line-height: 1.3;
+  	cursor: pointer;
+  	text-decoration: none;
+}
+
+.viewOurProjects {
+  	flex-shrink: 0;
+}
+
+.component42 {
+  	display: inline-flex;
+  	width: 14px;
+  	height: 14px;
+  	align-items: center;
+  	justify-content: center;
+	flex-shrink: 0;
+}
+
+.vectorIcon {
+  	width: 100%;
+  	height: auto;
+}
+
+.container {
+  	display: flex;
+  	flex-wrap: wrap;
+  	align-items: stretch;
+  	justify-content: center;
+  	gap: clamp(16px, 3vw, 40px) clamp(20px, 4vw, 67px);
+  	color: #fff;
+}
+
+.stat {
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: center;
+  	gap: 6px;
+  	min-width: 120px;
+  	max-width: 200px;
+}
+
+.statWide {
+  	max-width: 240px;
+	justify-content: center;
+}
+
+.div {
+  	letter-spacing: -1px;
+  	line-height: 1.1;
+  	font-weight: 800;
+  	font-size: clamp(22px, 1.8vw, 26.67px);
+	color: #fff;
+}
+
+.span {
+	color: inherit;
+}
+
+.span2,
+.ton {
+  	color: #eb1a20;
+}
+
+.statLabel {
+  	font-size: clamp(10px, 0.85vw, 11px);
+  	letter-spacing: 1.2px;
+  	line-height: 1.25;
+  	text-transform: capitalize;
+  	font-weight: 600;
+  	color: rgba(255, 255, 255, 0.7);
+}
+
+.iso90012015Container {
+  	letter-spacing: -0.8px;
+  	line-height: 1.2;
+  	font-weight: 800;
+  	font-size: clamp(18px, 1.5vw, 24px);
+}
+
+.iso90012015 {
+  	color: #fff;
+}
+
+.span6 {
+  	color: #eb1a20;
+}
+
+.green {
+  	color: #04b330;
+}
+
+.certified {
+  	color: #ed1d23;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  	.hero {
+  		min-height: auto;
+  		aspect-ratio: auto;
+  	}
+
+  	.content {
+  		padding-bottom: 36px;
+  		gap: 48px;
+  	}
+
+  	.container {
+  		justify-content: flex-start;
+  		gap: 24px 32px;
+  	}
+
+  	.stat,
+  	.statWide {
+  		min-width: calc(33.333% - 22px);
+  		max-width: none;
+  		flex: 1 1 140px;
+  	}
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  	.hero {
+  		min-height: 120svh;
+  	}
+
+  	.imageItem {
+  		height: 45%;
+  	}
+
+  	.content {
+  		padding: calc(76px + max(0.75rem, 1.5vh)) var(--section-padding-x-right) 28px var(--section-padding-x);
+  		gap: 36px;
+  		justify-content: space-between;
+  	}
+
+  	.text {
+  		gap: 12px;
+  		max-width: 100%;
+  	}
+
+  	.southIndiasTrusted {
+  		font-size: 26px;
+  		letter-spacing: -0.6px;
+  		line-height: 1.2;
+  	}
+
+  	.mekarkDesignsFabricates {
+  		font-size: 14px;
+  		line-height: 1.45;
+  		max-width: 100%;
+  		color: rgba(5, 7, 12, 0.65);
+  	}
+
+  	.cta {
+  		flex-direction: column;
+  		align-items: center;
+  		align-self: center;
+  		width: auto;
+  		gap: 8px;
+  		margin-top: 4px;
+  	}
+
+  	.component5 {
+  		width: auto;
+  		justify-content: center;
+  		padding: 14px 56px;
+  		font-size: 15px;
+  	}
+
+  	.exploreSolutions {
+  		width: auto;
+  		justify-content: center;
+  		padding: 8px 0;
+  		font-size: 15px;
+  	}
+
+  	.container {
+  		display: grid;
+  		grid-template-columns: 1fr 1fr;
+  		gap: 18px 16px;
+  		width: 100%;
+  	}
+
+  	.stat,
+  	.statWide {
+  		min-width: 0;
+  		max-width: none;
+  		flex: none;
+  	}
+
+  	.statWide {
+  		grid-column: 1 / -1;
+  	}
+
+  	.div {
+  		font-size: 22px;
+  	}
+
+  	.statLabel {
+  		font-size: 10px;
+  		letter-spacing: 0.8px;
+  		line-height: 1.3;
+  	}
+
+  	.iso90012015Container {
+  		font-size: 18px;
+  	}
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+
+	.hero {
+		min-height: 164svh;
+	}
+  	.southIndiasTrusted {
+  		font-size: 24px;
+  	}
+
+  	.container {
+  		grid-template-columns: 1fr;
+  	}
+
+  	.statWide {
+  		grid-column: auto;
+  	}
+}

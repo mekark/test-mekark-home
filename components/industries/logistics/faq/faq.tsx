@@ -94,7 +94,7 @@ const FaqItem = ({ num, question, answer, isOpen, onToggle }: FaqItemProps) => (
 );
 
 const FAQ: NextPage = () => {
-  	const [openNum, setOpenNum] = useState<string | null>(null);
+  	const [openNum, setOpenNum] = useState<string | null>("01");
 
   	const toggle = (num: string) => {
     		setOpenNum((current) => (current === num ? null : num));

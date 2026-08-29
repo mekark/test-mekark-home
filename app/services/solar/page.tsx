@@ -1,7 +1,5 @@
-import { Suspense } from "react";
 import type { Metadata } from "next";
 import { SolarPage } from "@/components/services/solar/SolarPage";
-import { EnquirySection } from "@/components/enquiry/EnquirySection";
 import { FooterSection } from "@/components/footer/FooterSection";
 
 export const metadata: Metadata = {
@@ -14,9 +12,6 @@ export default function SolarServicePage() {
   return (
     <div className="flex flex-1 flex-col bg-white">
       <SolarPage />
-      <Suspense fallback={null}>
-        <EnquirySection />
-      </Suspense>
       <FooterSection />
     </div>
   );

@@ -1,0 +1,510 @@
+.cta {
+  background: #f6f6f6;
+  padding: 64px 0 96px;
+  font-family: var(--font-manrope), Manrope, sans-serif;
+  overflow-x: clip;
+}
+
+.ctaWide {
+  width: 100%;
+  max-width: 1760px;
+  margin: 0 auto;
+  padding: 0 24px;
+  overflow: visible;
+}
+
+.inner {
+  max-width: 1760px;
+  margin: 80px auto 0;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* Red CTA banner */
+.section {
+  position: relative;
+  width: 100%;
+  min-height: 295px;
+  overflow: hidden;
+  border-radius: 40px;
+  color: #fff;
+}
+
+.sectionBg {
+  position: absolute;
+  inset: 0;
+  border-radius: 40px;
+  background: linear-gradient(96.33deg, #f01c22, #8b0c11);
+  z-index: 0;
+}
+
+.sectionInner {
+  position: relative;
+  min-height: 295px;
+  max-width: 1760px;
+  margin: 0 auto;
+  z-index: 1;
+  overflow: visible;
+}
+
+.textParent {
+  position: absolute;
+  top: calc(50% - 110.5px);
+  left: 24.83%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 47.5%;
+  padding-left: 24px;
+  border-left: 2.7px solid rgba(0, 0, 0, 0.1);
+}
+
+.heading {
+  margin: 0;
+  max-width: 836px;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 127.1%;
+  color: #fff;
+}
+
+.body {
+  margin: 0;
+  max-width: 754px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #ccc6c6;
+}
+
+.consultationLabel {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 34.177px;
+  white-space: nowrap;
+}
+
+.consultationBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13.671px;
+  padding: 20.506px 34.177px;
+  border-radius: 57340092px;
+  background: #fff;
+  color: #0e0e0e;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.consultationBtn:hover {
+  background: #f3f3f3;
+}
+
+.ctaButton {
+  composes: consultationBtn;
+  position: absolute;
+  top: calc(50% - 39.5px);
+  right: 6.5%;
+  z-index: 2;
+  width: 391px;
+  height: 79px;
+}
+
+.ctaButton:hover {
+  background: #f3f3f3;
+}
+
+.arrowWrap {
+  position: relative;
+  width: 26.648px;
+  height: 26.648px;
+  flex-shrink: 0;
+}
+
+.arrowIcon {
+  object-fit: contain;
+}
+
+.ctaVisual {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  z-index: 2;
+  width: 380px;
+  height: 250px;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.sectionItem {
+  position: absolute;
+  top: 0;
+  left: 74px;
+  z-index: 1;
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.sectionPattern {
+  position: absolute;
+  top: 32px;
+  left: 0;
+  z-index: 0;
+  width: 240px;
+  height: auto;
+  aspect-ratio: 317 / 213;
+  object-fit: contain;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.workerImageWrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  width: 380px;
+  height: 360px;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.workerImageWrap > span {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.workerImage {
+  object-fit: contain;
+  object-position: left bottom;
+  mix-blend-mode: lighten;
+}
+
+/* Mobile CTA fallback */
+.mobileCta {
+  display: none;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+}
+
+.mobileImageWrap {
+  position: relative;
+  width: 260px;
+  height: 220px;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+
+.mobileWorkerImage {
+  mix-blend-mode: lighten;
+}
+
+.mobileHeading {
+  margin: 0;
+  font-size: clamp(1.375rem, 5vw, 2rem);
+  font-weight: 700;
+  line-height: 127.1%;
+  color: #fff;
+}
+
+.mobileBody {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ccc6c6;
+}
+
+.mobileButton {
+  composes: consultationBtn;
+  width: 100%;
+  height: 79px;
+}
+
+/* Section heading */
+.frameParent3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.whyHeading {
+  margin: 0;
+  max-width: 1100px;
+  font-size: clamp(1.75rem, 3.5vw, 50px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #111;
+  text-wrap: balance;
+}
+
+.whySubtext {
+  margin: 0;
+  max-width: 1101px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #000;
+}
+
+/* Features + background image */
+.frameParent {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+
+.imageWrapper {
+  pointer-events: none;
+  position: relative;
+  display: none;
+  flex: 1;
+  overflow: hidden;
+  background-image: url("/images/industries/automation/why-mekark/factory-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.frameChild {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    #f6f6f6 0%,
+    rgba(246, 246, 246, 0.75) 14%,
+    rgba(246, 246, 246, 0) 30%
+  );
+}
+
+.frameGroup {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr;
+  flex: 1 1 100%;
+  min-width: 0;
+}
+
+.divsvcIconParent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.divsvcIcon {
+  position: relative;
+  display: flex;
+  width: 56px;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: linear-gradient(
+    145deg,
+    rgba(196, 22, 28, 0.3) 0%,
+    rgba(196, 22, 28, 0.15) 100%
+  );
+  box-shadow:
+    0 4.314px 17.258px rgba(196, 22, 28, 0.2),
+    inset 0 1.079px 0 rgba(255, 255, 255, 0.08);
+}
+
+.featureIcon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.inHouseDesignEngineeringParent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.inHouseDesign {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #000;
+}
+
+.featureDescription {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #6e6e6e;
+}
+
+.overlay {
+  border: 0.5px solid rgba(228, 0, 21, 0.5);
+  border-radius: 40px;
+  background: rgba(228, 0, 21, 0.05);
+  padding: 24px 32px;
+  text-align: center;
+}
+
+.overlayText {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.32;
+  color: #4c4c4c;
+}
+
+.overlayHighlight {
+  font-weight: 600;
+  color: #f01d23;
+}
+
+@media (min-width: 640px) {
+  .ctaWide,
+  .inner {
+    padding: 0 40px;
+  }
+
+  .frameGroup {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cta {
+    padding: 96px 0 120px;
+  }
+
+  .ctaWide,
+  .inner {
+    padding: 0 40px;
+  }
+
+  .inner {
+    margin-top: 96px;
+    gap: 96px;
+    overflow: visible;
+  }
+
+  .sectionInner {
+    min-height: 295px;
+    padding: 0 120px 0 0;
+  }
+
+  .ctaVisual {
+    left: 55px;
+    bottom: -29;
+    width: 380px;
+    height: 250px;
+  }
+
+  .workerImageWrap {
+    width: 380px;
+    height: 360px;
+  }
+
+  .textParent {
+    position: absolute;
+    top: 50%;
+    left: 437px;
+    transform: translateY(-50%);
+    max-width: 836px;
+    padding-left: 24px;
+    grid-column: auto;
+  }
+
+  .ctaButton {
+    position: absolute;
+    top: 50%;
+    right: 120px;
+    transform: translateY(-50%);
+    width: 391px;
+    height: 79px;
+    grid-column: auto;
+  }
+
+  .whyHeading {
+    font-size: 50px;
+    max-width: none;
+    white-space: nowrap;
+  }
+
+  .frameParent3 {
+    gap: 20px;
+  }
+
+  .frameParent {
+    gap: 0;
+    overflow: visible;
+  }
+
+  .frameGroup {
+    flex: 1 1 100%;
+    max-width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 48px;
+    row-gap: 64px;
+    padding-right: 42%;
+  }
+
+  .imageWrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 58%;
+    right: 0;
+    margin-right: calc(50% - 50vw);
+    display: block;
+    flex: none;
+    width: auto;
+    min-height: 100%;
+  }
+}
+
+@media (max-width: 1023px) {
+  .sectionInner {
+    display: none;
+  }
+
+  .mobileCta {
+    display: flex;
+  }
+}
+
+@media (min-width: 1280px) {
+  .ctaWide,
+  .inner {
+    padding: 0 24px;
+    overflow: visible;
+  }
+
+  .sectionInner {
+    padding: 0 120px 0 0;
+  }
+}
+
+@media (max-width: 1279px) {
+  .heading {
+    font-size: clamp(1.5rem, 2.5vw, 2.75rem);
+  }
+
+  .consultationLabel {
+    font-size: 18px;
+    line-height: 28px;
+    white-space: normal;
+    text-align: center;
+  }
+}

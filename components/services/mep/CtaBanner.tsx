@@ -41,7 +41,7 @@ export default function CtaBanner() {
             </p>
 
             <a
-              href="#enquiry"
+              href="/#enquiry"
               className="mt-2 inline-flex w-fit items-center justify-center gap-[9.6px] rounded-full bg-white px-[24.1px] py-[14.4px] text-red-ribbon"
             >
               <b className="leading-[24.06px]">
@@ -98,7 +98,7 @@ export default function CtaBanner() {
             </div>
 
             <a
-              href="#enquiry"
+              href="/#enquiry"
               className="absolute top-[208.7px] bottom-[0.6px] left-0 flex h-[calc(100%-209.3px)] shrink-0 items-center justify-center gap-[9.6px] rounded-full bg-white px-[24.1px] py-[14.4px] box-border text-red-ribbon"
             >
               <b className="relative leading-[24.06px]">

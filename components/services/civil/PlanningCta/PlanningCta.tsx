@@ -65,7 +65,7 @@ export default function PlanningCta() {
           </div>
 
           <a
-            href="#enquiry"
+            href="/#enquiry"
             className="relative z-10 mt-6 inline-flex min-h-[48px] w-full items-center justify-center gap-2.5 rounded-full bg-white px-5 py-3.5 text-[14px] font-bold text-[#E5091F] transition-transform active:scale-[0.98] sm:mt-7 sm:w-fit sm:px-6"
           >
             Request a Free Quote
@@ -170,7 +170,7 @@ export default function PlanningCta() {
             </p>
 
             <a
-              href="#enquiry"
+              href="/#enquiry"
               className="mt-auto inline-flex w-fit items-center justify-center gap-[9.6px] rounded-full bg-white px-[24.1px] py-[14.4px] text-base font-bold leading-[24.06px] text-[#E5091F] transition-transform hover:scale-[1.03]"
             >
               Request a Free Quote

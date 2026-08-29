@@ -30,7 +30,7 @@ const Frame191: NextPage = () => {
 						Get a free consultation and project estimate from Mekark&apos;s tensile structure engineering team.
 					</p>
 
-					<a href="#enquiry" className={styles.cta}>
+					<a href="/#enquiry" className={styles.cta}>
 						<span className={styles.ctaLabel}>Request a Free Site Assessment</span>
 						<span className={styles.ctaIcon} aria-hidden>
 							<Image

@@ -1,0 +1,131 @@
+.section {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 388px;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  color: #fff;
+  font-family: var(--font-manrope), Manrope, sans-serif;
+}
+
+.backgroundImage {
+  z-index: 0;
+  object-fit: cover;
+  object-position: center 38.4%;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    #020202 0%,
+    rgba(2, 2, 2, 0.52) 100%
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  width: min(100%, 1730px);
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  text-align: center;
+}
+
+.copy {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.heading {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2rem, 3.2vw, 50px);
+  font-weight: 700;
+  line-height: 53px;
+  letter-spacing: -1px;
+}
+
+.description {
+  width: min(100%, 1263px);
+  margin: 0;
+  color: #e6e6e6;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 63px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 90px;
+  border-radius: 30px;
+  background: #ed2024;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 31.479px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.button:hover {
+  background: #d8191d;
+  transform: translateY(-1px);
+}
+
+.button:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+@media (min-width: 1440px) {
+  .heading {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    min-height: 420px;
+    padding: 48px 20px;
+  }
+
+  .content {
+    gap: 32px;
+  }
+
+  .heading {
+    font-size: clamp(1.75rem, 8vw, 2.25rem);
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 360px;
+    padding-inline: 32px;
+    font-size: 18px;
+  }
+}

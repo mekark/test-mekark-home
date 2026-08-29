@@ -1,0 +1,366 @@
+.solutionsWrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #ffefef;
+}
+
+.solutions {
+  width: 1920px;
+  height: 780px;
+  position: relative;
+  background-color: #ffefef;
+  overflow: hidden;
+  flex-shrink: 0;
+  text-align: center;
+  font-size: 18px;
+  color: #8b91a0;
+  font-family: var(--font-manrope), sans-serif;
+  transform-origin: top left;
+  padding-bottom: 56px;
+  box-sizing: border-box;
+}
+
+.whereverYoureLocatedContainer {
+  position: absolute;
+  top: 618px;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 23px;
+  text-align: center;
+  flex-shrink: 0;
+  width: max-content;
+  max-width: 1700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding-bottom: 28px;
+}
+
+.footerLine {
+  display: block;
+  white-space: nowrap;
+}
+
+.whereverYoureLocated {
+  line-height: 23px;
+  color: #8b91a0;
+}
+
+.mekarkEngineersEot {
+  color: #e40015;
+  line-height: 23px;
+  font-weight: 700;
+}
+
+.grid1Icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1917.8px;
+  height: 390.7px;
+  object-fit: cover;
+  flex-shrink: 0;
+  opacity: 0.85;
+  mix-blend-mode: multiply;
+}
+
+.frameParent {
+  position: absolute;
+  width: calc(100% - 200px);
+  top: 100px;
+  right: 100px;
+  left: 100px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 124px;
+  flex-shrink: 0;
+  text-align: left;
+  font-size: 50px;
+  color: #111;
+}
+
+.frameGroup {
+  width: 1720px;
+  height: 150px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.eotCraneSolutionsAcrossSouWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1720px;
+  height: 120px;
+}
+
+.eotCraneSolutions {
+  position: absolute;
+  top: -0.67px;
+  left: 50%;
+  transform: translateX(-50%);
+  letter-spacing: -1.33px;
+  line-height: 1.15;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 1720px;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.titleLine {
+  display: block;
+  white-space: nowrap;
+}
+
+.ourEotCranesServeDiverseIWrapper {
+  position: absolute;
+  top: 128px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: auto;
+  font-size: 18px;
+  color: #000;
+  width: max-content;
+  max-width: 1780px;
+  margin-top: 8px;
+  padding-bottom: 36px;
+}
+
+.ourEotCranes {
+  position: relative;
+  line-height: 27px;
+  display: block;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.frameContainer {
+  align-self: stretch;
+  height: 240px;
+  position: relative;
+  font-size: 18px;
+  color: #3c3938;
+  font-family: var(--font-manrope), sans-serif;
+  margin-top: 12px;
+  margin-bottom: 20px;
+}
+
+.cardItem {
+  position: absolute;
+  top: 0;
+  width: 262px;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-bottom: 20px;
+}
+
+.solutionIcon {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+
+.cardTitle {
+  line-height: 22px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+}
+
+.cardDesc {
+  font-size: 16px;
+  line-height: 21.33px;
+  color: #555;
+  white-space: normal;
+}
+
+@media (max-width: 1200px) {
+  .solutionsWrapper {
+    height: auto !important;
+  }
+
+  .solutions {
+    width: 100%;
+    height: auto;
+    transform: none !important;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    box-sizing: border-box;
+    gap: 40px;
+  }
+
+  .grid1Icon {
+    display: none;
+  }
+
+  .whereverYoureLocatedContainer {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    white-space: normal;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    margin-top: 32px;
+    padding-bottom: 32px;
+    order: 3;
+  }
+
+  .footerLine,
+  .titleLine,
+  .ourEotCranes {
+    white-space: normal;
+  }
+
+  .frameParent {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    order: 1;
+  }
+
+  .frameGroup {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .eotCraneSolutionsAcrossSouWrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .eotCraneSolutions {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    font-size: 32px;
+    line-height: 40px;
+    white-space: normal;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    letter-spacing: normal;
+    box-sizing: border-box;
+    padding: 0 4px;
+  }
+
+  .titleLine {
+    white-space: normal;
+    width: 100%;
+    text-align: center;
+  }
+
+  .ourEotCranesServeDiverseIWrapper {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .ourEotCranes {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    white-space: normal;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .frameContainer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .cardItem {
+    position: relative;
+    top: auto;
+    left: auto !important;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+
+  .cardTitle,
+  .cardDesc {
+    width: 100%;
+    white-space: normal;
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .solutions {
+    padding: 40px 16px;
+  }
+
+  .eotCraneSolutions {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .frameGroup {
+    gap: 12px;
+  }
+
+  .frameContainer {
+    gap: 16px;
+    grid-template-columns: 1fr;
+  }
+}

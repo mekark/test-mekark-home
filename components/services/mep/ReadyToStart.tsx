@@ -34,7 +34,7 @@ export default function ReadyToStart() {
 
         <div className="flex w-full shrink-0 flex-col gap-3 text-base text-red-ribbon sm:w-auto sm:min-w-[243px] sm:flex-row md:flex-col">
           <a
-            href="#enquiry"
+            href="/#enquiry"
             className="flex h-[55.3px] w-full items-center justify-center gap-[9.6px] rounded-full bg-white px-[24.1px] py-[14.4px] box-border sm:w-auto sm:min-w-[243px]"
           >
             <b className="leading-[24.06px]">Get a Free Quote</b>

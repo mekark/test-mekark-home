@@ -39,7 +39,7 @@ export default function Hero() {
             India&apos;s climate.
           </p>
           <div className={styles.cta}>
-            <a href="#enquiry" className={styles.component5}>
+            <a href="/#enquiry" className={styles.component5}>
               <span className={styles.text2}>Get a Free Quote</span>
             </a>
             <Link href="/projects/completed-projects" className={styles.exploreSolutions}>

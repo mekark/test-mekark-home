@@ -28,7 +28,7 @@ export default function Section() {
         </div>
 
         <div className={styles.actions}>
-          <a href="#enquiry" className={styles.ctaPrimary}>
+          <a href="/#enquiry" className={styles.ctaPrimary}>
             <span>Get a Free Quote</span>
             <span className={styles.ctaIcon} aria-hidden>
               <Image

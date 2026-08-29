@@ -491,7 +491,7 @@ function FaqItem({
 
 export function ExtendedServiceSection() {
   const [activeId, setActiveId] = useState<ServiceId>("eot");
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -558,7 +558,7 @@ export function ExtendedServiceSection() {
               </div>
 
               <Link
-                href="#enquiry"
+                href="/#enquiry"
                 className="inline-flex h-[62px] w-full items-center justify-center gap-3 rounded-full border-2 border-[#e50818] bg-white px-5 py-4 text-[20px] font-bold leading-[31px] text-[#e50818] transition-colors hover:bg-[#fff5f5]"
               >
                 Enquire Now

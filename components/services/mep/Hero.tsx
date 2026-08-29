@@ -100,7 +100,7 @@ export default function Hero() {
             </div>
             <div className="relative mt-2 flex flex-wrap items-center gap-3 sm:gap-4">
               <a
-                href="#enquiry"
+                href="/#enquiry"
                 className="inline-flex items-center gap-[8.7px] rounded-[6.93px] bg-firebrick px-[31.2px] py-[15.6px] text-[16px] text-white shadow-[0px_6.93px_27.72px_rgba(196,22,28,0.3)]"
               >
                 <span className="leading-[20.79px] font-semibold">
@@ -282,7 +282,7 @@ export default function Hero() {
           </div>
           <div className="relative h-[50.7px] w-[400px] text-[16px] text-white">
             <a
-              href="#enquiry"
+              href="/#enquiry"
               className="absolute top-1/2 left-0 flex -translate-y-1/2 items-center gap-[8.7px] rounded-[6.93px] bg-firebrick px-[31.2px] py-[15.6px] shadow-[0px_6.93px_27.72px_rgba(196,22,28,0.3)] shrink-0"
             >
               <span className="relative shrink-0 leading-[20.79px] font-semibold">

@@ -1,0 +1,4 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="14" y="28" width="36" height="14" rx="7" transform="rotate(-32 32 35)" stroke="#E40015" stroke-width="2.2"/>
+  <line x1="24" y1="35" x2="40" y2="35" transform="rotate(-32 32 35)" stroke="#E40015" stroke-width="2.2" stroke-linecap="round"/>
+</svg>

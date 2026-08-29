@@ -124,7 +124,7 @@ const Cta: NextPage = () => {
 								<br /> Mekark&apos;s commercial solar engineering team.
 							</div>
 						</div>
-						<a href="#enquiry" className={styles.cta}>
+						<a href="/#enquiry" className={styles.cta}>
 							<b className={styles.requestAFree}>Request a Free Quote</b>
 							<div className={styles.component4}>
 								<Image className={styles.vectorIcon} width={12} height={9} sizes="100vw" src="/images/services/solar/CTA/component-4.svg" alt="" />

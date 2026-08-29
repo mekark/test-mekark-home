@@ -55,7 +55,7 @@ export default function ReadyToBuild() {
 
         <div className="flex w-full flex-col gap-[13px] sm:w-auto sm:min-w-[243px] lg:-translate-x-16">
           <a
-            href="#enquiry"
+            href="/#enquiry"
             className="inline-flex h-[55px] w-full items-center justify-center gap-[9.6px] rounded-full bg-white px-6 text-base font-bold leading-[24px] text-quote-red transition-opacity hover:opacity-90"
           >
             Get a Free Quote

@@ -43,7 +43,7 @@ export default function FooterCta() {
         </div>
         <div className="flex w-full flex-col gap-[13.3px] md:max-w-[520px] md:flex-row">
           <a
-            href="#enquiry"
+            href="/#enquiry"
             className="inline-flex h-[55.3px] w-full items-center justify-center gap-[9.6px] rounded-full bg-white px-[24.1px] text-[15px] font-bold leading-[24.06px] text-[#E5091F] sm:text-base"
           >
             Get a Free Quote
@@ -121,7 +121,7 @@ export default function FooterCta() {
           className="absolute left-[1420px] top-1/2 flex w-[243.2px] -translate-y-1/2 flex-col items-start gap-[13.3px] text-base text-[#E5091F]"
         >
           <motion.a
-            href="#enquiry"
+            href="/#enquiry"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
             className="box-border flex h-[55.3px] w-full items-center justify-center gap-[9.6px] rounded-full bg-white px-[24.1px] py-[14.4px] font-bold leading-[24.06px] text-[#E5091F]"

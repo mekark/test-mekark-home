@@ -146,7 +146,7 @@ export default function Hero() {
           className="relative flex w-full max-w-[400px] flex-col items-stretch gap-2.5 sm:flex-row sm:items-center sm:justify-center sm:gap-3 lg:h-[50.7px] lg:gap-0 lg:text-left lg:text-[16px]"
         >
           <motion.a
-            href="#enquiry"
+            href="/#enquiry"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.2 }}

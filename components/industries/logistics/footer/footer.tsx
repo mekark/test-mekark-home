@@ -17,7 +17,7 @@ const Footer: NextPage = () => {
               							<div className={styles.tellUsYour}>Tell us your requirements: span, height, location, and timeline. As a leading pre-engineered warehouse manufacturer and trusted distribution centre builder in South India, Mekark will have a preliminary design and estimate ready within 48 hours.</div>
             						</div>
           					</div>
-          					<a href="#enquiry" className={styles.cta}>
+          					<a href="/#enquiry" className={styles.cta}>
             						<b className={styles.requestAQuote}>Request a Quote</b>
             						<div className={styles.component4}>
               							<Image className={styles.vectorIcon} src="/images/industries/logistics/footer/arrow-icon.svg" width={25} height={25} sizes="100vw" alt="" />

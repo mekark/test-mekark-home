@@ -58,7 +58,7 @@ export default function BuildCTA() {
           transition={{ duration: 0.7, ease: easeOut, delay: 0.16 }}
         >
           <motion.a
-            href="#enquiry"
+            href="/#enquiry"
             className="flex h-[clamp(2.75rem,2.882vw,3.458rem)] items-center justify-center gap-[0.601rem] rounded-full bg-white px-[1.504rem] font-[family-name:var(--font-manrope)] text-[16px] font-bold leading-[1.504rem] text-[#E5091F]"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}

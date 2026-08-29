@@ -229,7 +229,7 @@ export default function Hero() {
             transition={{ duration: 0.6, ease: easeOut, delay: 0.45 }}
           >
             <a
-              href="#enquiry"
+              href="/#enquiry"
               className="inline-flex w-full items-center justify-center rounded-[6.93px] bg-firebrick px-6 py-[13px] text-[15px] leading-[20.79px] font-semibold text-white shadow-[0px_6.93px_27.72px_rgba(196,22,28,0.3)] transition-transform duration-300 hover:scale-[1.02] sm:w-auto sm:px-[31px] sm:py-[15.6px] sm:text-base"
             >
               Get a Free Quote

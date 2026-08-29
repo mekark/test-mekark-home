@@ -12,7 +12,7 @@ const CTA: NextPage = () => {
           					<div className={styles.mekarksProjectCalendar}>{`Mekark's project calendar fills up fast. Our team will assess your requirements, recommend the right pre-engineered warehouse solution, and deliver a transparent budgetary estimate within 48 hours - no obligation, just honest expert advice. `}</div>
         				</div>
         				<div className={styles.sectionChild} />
-        				<a href="#enquiry" className={styles.cta2}>
+        				<a href="/#enquiry" className={styles.cta2}>
           					<b className={styles.talkToOur}>Talk to Our Expert</b>
           					<div className={styles.component4}>
             						<Image className={styles.vectorIcon} src="/images/industries/logistics/CTA/arrow-icon.svg" width={16.7} height={13.3} sizes="100vw" alt="" />

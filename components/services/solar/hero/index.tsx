@@ -75,7 +75,7 @@ export default function Hero() {
           commissioning, under one roof.
         </div>
         <div className={styles.cta}>
-          <a href="#enquiry" className={styles.component5}>
+          <a href="/#enquiry" className={styles.component5}>
             <div className={styles.text2}>Get a Free Quote</div>
             <div className={styles.component4} />
           </a>

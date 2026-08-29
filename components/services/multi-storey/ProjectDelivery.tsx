@@ -65,7 +65,7 @@ export default function ProjectDelivery() {
               </p>
 
               <a
-                href="#enquiry"
+                href="/#enquiry"
                 className="mt-5 inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-white px-6 py-[15px] text-[15px] font-bold leading-none text-quote-red shadow-[0_8px_24px_rgba(0,0,0,0.25)] transition-transform active:scale-[0.98]"
               >
                 Request a Free Quote
@@ -153,7 +153,7 @@ export default function ProjectDelivery() {
               </p>
 
               <a
-                href="#enquiry"
+                href="/#enquiry"
                 className="mt-6 inline-flex w-fit items-center gap-[9.6px] rounded-full bg-white px-6 py-[14px] text-base font-bold leading-[24px] text-quote-red transition-opacity hover:opacity-90"
               >
                 Request a Free Quote

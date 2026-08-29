@@ -142,7 +142,7 @@ export default function Hero() {
           custom={0.5}
         >
           <motion.a
-            href="#enquiry"
+            href="/#enquiry"
             className="inline-flex items-center justify-center rounded-[5px] bg-[#c4161c] px-[23px] py-[12px] text-[14px] font-semibold leading-none text-white shadow-[0px_5px_10px_rgba(196,22,28,0.3)] transition-colors duration-300 hover:bg-[#a81217]"
             whileHover={{ scale: 1.07 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}

@@ -447,7 +447,7 @@ export default function OurPEBSolutions() {
             </div>
 
             <a
-              href="#enquiry"
+              href="/#enquiry"
               className="mt-5 ml-4 inline-flex w-[calc(100%-1rem)] max-w-[280px] items-center justify-center gap-[9.62px] rounded-full bg-white px-6 py-[13px] font-[family-name:var(--font-manrope)] text-[15px] font-bold leading-[24px] text-[#E5091F] transition-transform hover:scale-[1.03] sm:mt-6 sm:ml-7 sm:w-fit sm:max-w-none sm:py-[14px] sm:text-[16px]"
             >
               Request a Free Quote

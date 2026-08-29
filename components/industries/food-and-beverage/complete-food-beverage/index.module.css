@@ -1,0 +1,408 @@
+.completeEotCraneSolutionsWrapper {
+  width: 100%;
+  position: relative;
+  background-color: #f6f6f6;
+  padding: 80px;
+  box-sizing: border-box;
+  text-align: left;
+  font-size: 28px;
+  color: #000;
+  font-family: var(--font-manrope), sans-serif;
+}
+
+.completeEotCraneSolutions {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0px;
+  position: relative;
+}
+
+.rightScrollable {
+  flex-shrink: 0;
+  width: 903.1px;
+  max-width: 100%;
+}
+
+.frameParentScale {
+  position: relative;
+  width: 903.1px;
+  height: 1314.3px;
+}
+
+.frameParent {
+  position: relative;
+  width: 1024px;
+  height: 1490.6px;
+  transform: scale(0.8817);
+  transform-origin: top left;
+}
+
+.timelineLine {
+  position: absolute;
+  top: 78px;
+  left: 0px;
+  width: 397.4px;
+  height: 1320.9px;
+}
+
+.frameContainer {
+  position: absolute;
+  top: 0px;
+  left: 73px;
+  border-radius: 19.12px;
+  background-color: #fff;
+  border: 1.2px solid #c0c0c0;
+  box-sizing: border-box;
+  width: 739.8px;
+  height: 193.6px;
+  overflow: hidden;
+}
+
+.frameDiv {
+  position: absolute;
+  top: 50%;
+  left: 354px;
+  width: 351.4px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.overheadSingleGirder {
+  position: relative;
+  font-size: 18px;
+  line-height: 29.88px;
+  color: #000;
+  white-space: normal;
+}
+
+.economicalOverheadCrane {
+  position: relative;
+  font-size: 16px;
+  line-height: 23px;
+  color: #000;
+  width: 351.4px;
+}
+
+.rectangleIcon {
+  position: absolute;
+  top: -1.2px;
+  left: -1.2px;
+  width: 322.7px;
+  height: 193.6px;
+  object-fit: cover;
+  border-radius: 19.12px 0 0 19.12px;
+}
+
+.rectangleParent {
+  position: absolute;
+  top: 518.69px;
+  left: 73px;
+  border-radius: 19.12px;
+  background-color: #fff;
+  border: 1.2px solid #c0c0c0;
+  box-sizing: border-box;
+  width: 739.8px;
+  height: 193.6px;
+  overflow: hidden;
+}
+
+.rectangleGroup {
+  position: absolute;
+  top: 1037.39px;
+  left: 73px;
+  border-radius: 19.12px;
+  background-color: #fff;
+  border: 1.2px solid #c0c0c0;
+  box-sizing: border-box;
+  width: 742.2px;
+  height: 193.6px;
+  overflow: hidden;
+}
+
+.rectangleContainer {
+  position: absolute;
+  top: 259.35px;
+  left: 284.2px;
+  border-radius: 19.12px;
+  background-color: #fff;
+  border: 1.2px solid #c0c0c0;
+  box-sizing: border-box;
+  width: 739.8px;
+  height: 193.6px;
+  overflow: hidden;
+}
+
+.rectangleParent2 {
+  position: absolute;
+  top: 778.04px;
+  left: 284.2px;
+  border-radius: 19.12px;
+  background-color: #fff;
+  border: 1.2px solid #c0c0c0;
+  box-sizing: border-box;
+  width: 739.8px;
+  height: 193.6px;
+  overflow: hidden;
+}
+
+.rectangleParent3 {
+  position: absolute;
+  top: 1297px;
+  left: 284.2px;
+  border-radius: 19.12px;
+  background-color: #fff;
+  border: 1.2px solid #c0c0c0;
+  box-sizing: border-box;
+  width: 739.8px;
+  height: 193.6px;
+  overflow: hidden;
+}
+
+.leftStickyOuter {
+  width: 660px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 220px;
+}
+
+.leftSticky {
+  position: sticky;
+  top: 166px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 480px;
+}
+
+.ourSolutionsHeading {
+  position: relative;
+  margin: 0;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+  font-size: 41px;
+  font-weight: 700;
+  display: block;
+  width: 100%;
+  color: #000;
+}
+
+.completeEotCrane {
+  position: relative;
+  margin: 0;
+  letter-spacing: -0.4px;
+  line-height: 1.35;
+  font-size: 26px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: #000;
+}
+
+.subtitleLine {
+  display: block;
+  white-space: nowrap;
+}
+
+.asALeading {
+  position: relative;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  max-width: 100%;
+  color: #5a5a5a;
+}
+
+.descLine {
+  display: block;
+  white-space: nowrap;
+}
+
+.overlayborder {
+  position: relative;
+  margin: 64px auto 0;
+  border-radius: 999px;
+  background-color: rgba(196, 22, 28, 0.06);
+  border: 1px solid rgba(196, 22, 28, 0.35);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 22px 64px;
+  color: #c4161c;
+}
+
+.strongEveryContainer {
+  width: 100%;
+  position: relative;
+  line-height: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  text-align: center;
+  color: #4c4c4c;
+}
+
+.bannerLine {
+  display: block;
+  white-space: nowrap;
+}
+
+.everyEotCrane {
+  line-height: 24px;
+  color: #c4161c;
+  font-weight: 700;
+}
+
+.aroundYourLoadRequirements {
+  line-height: 24px;
+  color: #4c4c4c;
+}
+
+@media (max-width: 1200px) {
+  .completeEotCraneSolutions {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .leftStickyOuter {
+    width: 100%;
+    padding-top: 40px;
+  }
+  .leftSticky {
+    position: static;
+  }
+  .rightScrollable {
+    width: 100%;
+  }
+  .frameParentScale {
+    width: 100%;
+    height: auto;
+  }
+  .frameParent {
+    width: 100%;
+    height: auto;
+    transform: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .timelineLine {
+    display: none;
+  }
+  .frameContainer,
+  .rectangleParent,
+  .rectangleGroup,
+  .rectangleContainer,
+  .rectangleParent2,
+  .rectangleParent3 {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .rectangleIcon {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    order: -1;
+    border-radius: 19.12px 19.12px 0 0;
+  }
+  .frameDiv {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    transform: none;
+    padding: 24px;
+    box-sizing: border-box;
+  }
+  .overheadSingleGirder,
+  .economicalOverheadCrane {
+    position: relative;
+    width: 100%;
+    white-space: normal;
+    top: auto;
+    left: auto;
+  }
+  .overlayborder {
+    border-radius: 24px;
+    padding: 20px 28px;
+  }
+  .strongEveryContainer {
+    font-size: 14px;
+  }
+  .descLine,
+  .bannerLine,
+  .subtitleLine {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 768px) {
+  .completeEotCraneSolutionsWrapper {
+    padding: 32px 16px;
+  }
+  .ourSolutionsHeading {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+  .completeEotCrane {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+  .subtitleLine,
+  .descLine,
+  .bannerLine {
+    white-space: normal;
+  }
+  .asALeading {
+    font-size: 13px;
+    line-height: 20px;
+    max-width: none;
+  }
+  .leftSticky {
+    gap: 12px;
+    max-width: none;
+  }
+  .frameParent {
+    grid-template-columns: 1fr;
+  }
+  .overlayborder {
+    padding: 16px;
+    border-radius: 20px;
+  }
+  .strongEveryContainer {
+    white-space: normal;
+    font-size: 13px;
+  }
+  .overheadSingleGirder {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .economicalOverheadCrane {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .rectangleIcon {
+    height: 200px;
+  }
+}

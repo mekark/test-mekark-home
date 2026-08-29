@@ -29,7 +29,7 @@ export default function SolarFooterCta() {
           </div>
         </div>
         <div className={styles.ctaParent}>
-          <a href="#enquiry" className={styles.cta}>
+          <a href="/#enquiry" className={styles.cta}>
             <b className={styles.getAFree}>Get a Free Quote</b>
             <div className={styles.component4}>
               <Image

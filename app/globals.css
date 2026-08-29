@@ -140,6 +140,52 @@
   width: 100%;
 }
 
+.textile-industry-page {
+  line-height: normal;
+  text-align: left;
+  width: 100%;
+}
+
+.electronics-industry-page {
+  line-height: normal;
+  text-align: left;
+  width: 100%;
+}
+
+.food-and-beverage-industry-page {
+  line-height: normal;
+  text-align: left;
+  width: 100%;
+}
+
+.fmcg-industry-page {
+  line-height: normal;
+  text-align: left;
+  width: 100%;
+}
+
+.pharma-industry-page {
+  line-height: normal;
+  text-align: left;
+  width: 100%;
+}
+
+.automation-industry-page,
+.data-center-industry-page {
+  line-height: normal;
+  text-align: left;
+  width: 100%;
+}
+
+.bg-textile-hero-glow {
+  background: linear-gradient(
+    90deg,
+    #060606 3.011%,
+    rgba(6, 6, 6, 0.8) 61.562%,
+    rgba(6, 6, 6, 0) 100%
+  );
+}
+
 body {
   background: var(--background);
   color: var(--foreground);

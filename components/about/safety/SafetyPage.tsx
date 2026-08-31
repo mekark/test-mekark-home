@@ -192,6 +192,7 @@ const CERTIFICATES = [
     src: "/images/about/safety/Certi1.png",
     alt: "ISO 45001:2018 Certificate of Registration for MEKARK Structures India Pvt. Ltd.",
     label: "ISO 45001:2018",
+    mobileImageClassName: "origin-center scale-[1.18]",
     className:
       "object-contain object-center max-sm:origin-center max-sm:scale-[1.42] sm:object-left-top",
     hero: "/images/about/safety/hero.jpg",
@@ -212,6 +213,7 @@ const CERTIFICATES = [
     src: "/images/about/safety/Quality.png",
     alt: "ISO 9001:2015 Certificate of Registration for MEKARK Structures India Pvt. Ltd.",
     label: "ISO 9001:2015",
+    mobileImageClassName: "origin-center scale-[1.18]",
     className:
       "object-contain object-center origin-top-left scale-[0.93] object-left-top sm:translate-x-0 lg:translate-x-2",
     hero: "/images/about/safety/hero-3.jpg",
@@ -230,6 +232,7 @@ const CERTIFICATES = [
     src: "/images/about/safety/Environmental.png",
     alt: "ISO 14001:2015 Certificate of Registration for MEKARK Structures India Pvt. Ltd.",
     label: "ISO 14001:2015",
+    mobileImageClassName: "origin-center scale-[1.18]",
     className:
       "object-contain object-center max-sm:origin-center max-sm:scale-[1.48] sm:origin-top-left sm:scale-[0.97] sm:object-left-top sm:-translate-x-10 lg:-translate-x-6",
     hero: "/images/about/safety/hero-4.png",
@@ -243,7 +246,7 @@ const CERTIFICATES = [
 ] as const;
 
 const MOBILE_CERT_IMAGE_CLASS =
-  "object-contain object-center origin-center scale-[1.45]";
+  "object-contain object-center";
 
 const MOBILE_AUTO_SCROLL_INTERVAL = 4500;
 const MOBILE_AUTO_SCROLL_PAUSE = 10000;
@@ -768,7 +771,7 @@ function SafetyCertificationsSection() {
           <motion.div
             ref={scrollerRef}
             variants={fadeUp}
-            className="relative mx-auto flex w-full min-h-0 max-w-[23rem] flex-1 flex-col sm:mx-0 sm:max-w-[56rem] sm:-ml-8 sm:min-h-[min(calc(100dvh-13rem),62rem)] lg:-ml-36 lg:max-w-[62rem]"
+            className="relative mx-auto flex w-full min-h-0 max-w-[23rem] flex-1 flex-col overflow-hidden sm:mx-0 sm:max-w-[56rem] sm:-ml-8 sm:min-h-[min(calc(100dvh-13rem),62rem)] sm:overflow-visible lg:-ml-36 lg:max-w-[62rem]"
             onTouchStart={(event) => {
               pauseAutoScroll();
               touchStartY.current = event.touches[0]?.clientY ?? 0;
@@ -782,8 +785,8 @@ function SafetyCertificationsSection() {
               else goTo(active - 1, -1);
             }}
           >
-            <div className="relative flex min-h-0 flex-1 flex-col max-sm:overflow-visible overflow-hidden rounded-[22px] border border-white/90 bg-white/95 p-3 shadow-[0_22px_50px_rgba(15,23,42,0.14)] backdrop-blur-md sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none sm:backdrop-blur-none">
-              <div className="mb-3 flex items-center justify-between gap-3 sm:hidden">
+            <div className="relative flex min-h-0 flex-1 flex-col overflow-hidden rounded-[22px] border border-white/90 bg-white/95 p-3 shadow-[0_22px_50px_rgba(15,23,42,0.14)] backdrop-blur-md sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none sm:backdrop-blur-none sm:overflow-visible">
+              <div className="mb-3 flex shrink-0 items-center justify-between gap-3 sm:hidden">
                 <span className="rounded-full bg-[#111] px-3 py-1 font-[family-name:var(--font-manrope)] text-[11px] font-bold tracking-[0.08em] text-white">
                   {String(active + 1).padStart(2, "0")} /{" "}
                   {String(CERTIFICATES.length).padStart(2, "0")}
@@ -802,7 +805,7 @@ function SafetyCertificationsSection() {
                 </AnimatePresence>
               </div>
 
-              <div className="relative min-h-[min(52dvh,26rem)] flex-1 max-sm:overflow-visible overflow-hidden sm:min-h-0">
+              <div className="relative min-h-0 flex-1 overflow-hidden sm:min-h-0">
                 <AnimatePresence initial={false} custom={direction} mode="sync">
                   <motion.div
                     key={CERTIFICATES[active].src}
@@ -817,7 +820,12 @@ function SafetyCertificationsSection() {
                       src={CERTIFICATES[active].src}
                       alt={CERTIFICATES[active].alt}
                       fill
-                      className={`${MOBILE_CERT_IMAGE_CLASS} drop-shadow-[0_16px_32px_rgba(15,23,42,0.12)]`}
+                      className={`${MOBILE_CERT_IMAGE_CLASS}${
+                        "mobileImageClassName" in activeCert &&
+                        activeCert.mobileImageClassName
+                          ? ` ${activeCert.mobileImageClassName}`
+                          : ""
+                      } drop-shadow-[0_16px_32px_rgba(15,23,42,0.12)]`}
                       sizes="85vw"
                     />
                   </motion.div>
@@ -863,9 +871,6 @@ function SafetyCertificationsSection() {
                   />
                 ))}
               </div>
-              <p className="font-[family-name:var(--font-manrope)] text-[10px] font-semibold uppercase tracking-[0.16em] text-[#888] sm:hidden">
-                Auto-advances · Swipe or tap to explore
-              </p>
             </div>
           </motion.div>
         </motion.div>

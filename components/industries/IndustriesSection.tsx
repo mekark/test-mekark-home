@@ -135,28 +135,28 @@ function IndustryCard({
         transition: { type: "spring", stiffness: 340, damping: 22 },
       }}
       style={{ boxShadow: CARD_SHADOW }}
-      className="flex flex-col overflow-hidden rounded-3xl border border-[#eee] bg-white"
+      className="flex flex-col overflow-hidden rounded-2xl border border-[#eee] bg-white sm:rounded-3xl"
     >
-      <div className="relative h-[205px] w-full shrink-0 overflow-hidden sm:h-[220px] xl:h-[273px]">
+      <div className="relative h-[120px] w-full shrink-0 overflow-hidden sm:h-[220px] xl:h-[273px]">
         <Image
           src={card.image}
           alt={card.title}
           fill
           className="object-cover"
-          sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 399px"
+          sizes="(max-width: 640px) 50vw, (max-width: 1280px) 50vw, 399px"
         />
-        <div className="absolute left-0 top-0 overflow-hidden rounded-br-[19px] bg-[#ed2024] px-5 py-3 sm:px-6 sm:py-4">
-          <span className="text-[15px] font-extrabold leading-normal text-white sm:text-xl">
+        <div className="absolute left-0 top-0 overflow-hidden rounded-br-xl bg-[#ed2024] px-3 py-1.5 sm:rounded-br-[19px] sm:px-6 sm:py-4">
+          <span className="text-xs font-extrabold leading-normal text-white sm:text-xl">
             {card.number}
           </span>
         </div>
       </div>
 
-      <div className="flex flex-col px-6 pb-7 pt-6 sm:px-[35px] sm:pb-[37px] sm:pt-[35px]">
-        <h3 className="text-lg font-extrabold leading-[1.25] tracking-[-0.4px] text-[#111] sm:text-2xl">
+      <div className="flex flex-col px-3 pb-4 pt-3 sm:px-[35px] sm:pb-[37px] sm:pt-[35px]">
+        <h3 className="text-sm font-extrabold leading-[1.25] tracking-[-0.3px] text-[#111] sm:text-2xl sm:tracking-[-0.4px]">
           {card.title}
         </h3>
-        <p className="mt-3 text-sm leading-[22px] text-[#4f4f4f] sm:mt-4 sm:text-base sm:leading-[25px]">
+        <p className="mt-2 text-[11px] leading-[16px] text-[#4f4f4f] sm:mt-4 sm:text-base sm:leading-[25px]">
           {card.description}
         </p>
       </div>
@@ -180,7 +180,7 @@ export function IndustriesSection() {
 
             <motion.h2
               variants={aboutHeadlineStagger}
-              className="whitespace-nowrap text-[clamp(1.5rem,3.5vw,3.33rem)] font-extrabold leading-[0.95] tracking-[-1.12px] text-[#111]"
+              className="text-[clamp(1.5rem,3.5vw,3.33rem)] font-extrabold leading-[0.95] tracking-[-1.12px] text-[#111] sm:whitespace-nowrap"
             >
               <motion.span variants={aboutHeadlineChunk}>
                 Engineered for Every Sector
@@ -206,7 +206,7 @@ export function IndustriesSection() {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 xl:grid-cols-4 xl:gap-[37px]">
+        <div className="grid grid-cols-2 gap-3 sm:gap-7 xl:grid-cols-4 xl:gap-[37px]">
           {INDUSTRIES.map((card) => (
             <IndustryCard key={card.number} card={card} />
           ))}

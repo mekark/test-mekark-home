@@ -1,0 +1,305 @@
+.frameParent {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 100%;
+  max-width: 44vw;
+  flex-shrink: 0;
+  margin-right: 1.5vw;
+  padding-bottom: 1vw;
+}
+
+.formShape {
+  grid-area: 1 / 1;
+  position: relative;
+  width: 100%;
+}
+
+.vectorIcon {
+  object-fit: fill;
+  filter: drop-shadow(-0.65vw 0px 0px #ed1c24);
+  pointer-events: none;
+}
+
+.frameGroup {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.background {
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+  padding: 2.2vw 4vw 1.2vw 4.5vw;
+  box-sizing: border-box;
+}
+
+.enquiryForm {
+  font-size: 1.0417vw;
+  font-weight: 800;
+  text-transform: capitalize;
+  color: #000;
+}
+
+.label {
+  margin-bottom: 1.1111vw;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7vw;
+}
+
+.formRow {
+  display: flex;
+  gap: 1vw;
+}
+
+.field {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3125vw;
+}
+
+.fieldFull {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3125vw;
+}
+
+.name {
+  font-size: 0.6418vw;
+  letter-spacing: 0.1126vw;
+  line-height: 0.8445vw;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #000;
+}
+
+.input {
+  width: 100%;
+  border-radius: 0.625vw;
+  background-color: rgba(237, 32, 36, 0.06);
+  border: 0.0518vw solid rgba(63, 63, 63, 0.1);
+  box-sizing: border-box;
+  padding: 0.5556vw 0.7292vw;
+  font-size: 0.7292vw;
+  color: #03080f;
+  font-family: inherit;
+  outline: none;
+}
+
+.input:focus {
+  border-color: rgba(237, 28, 36, 0.3);
+  box-shadow: 0 0 0 2px rgba(237, 28, 36, 0.08);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: rgba(3, 8, 15, 0.4);
+}
+
+.textarea {
+  width: 100%;
+  min-height: 3.75vw;
+  resize: vertical;
+  border-radius: 0.625vw;
+  background-color: rgba(237, 32, 36, 0.06);
+  border: 0.0518vw solid rgba(63, 63, 63, 0.1);
+  box-sizing: border-box;
+  padding: 0.5556vw 0.7292vw;
+  font-size: 0.7292vw;
+  color: #03080f;
+  font-family: inherit;
+  outline: none;
+}
+
+.textarea:focus {
+  border-color: rgba(237, 28, 36, 0.3);
+  box-shadow: 0 0 0 2px rgba(237, 28, 36, 0.08);
+}
+
+.buttonListbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.625vw;
+  background-color: rgba(237, 32, 36, 0.06);
+  border: 0.0518vw solid rgba(63, 63, 63, 0.1);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.selectArea {
+  border: none;
+  background: transparent;
+  font-size: 0.7292vw;
+  color: #03080f;
+  width: 100%;
+  min-width: 0;
+  appearance: none;
+  font-family: inherit;
+  padding: 0.5556vw 1.6vw 0.5556vw 0.7292vw;
+  cursor: pointer;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  outline: none;
+}
+
+.svgIcon4 {
+  width: 0.5677vw;
+  height: 0.3646vw;
+  flex-shrink: 0;
+  position: absolute;
+  right: 0.7292vw;
+  pointer-events: none;
+}
+
+.buttonmargin {
+  grid-area: 2 / 1;
+  position: relative;
+  z-index: 2;
+  width: 50%;
+  margin: 0.6vw auto 0;
+  justify-self: center;
+}
+
+.button {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.7292vw;
+  background-color: #ed1c24;
+  padding: 1.1vw 1.25vw;
+  box-shadow: 0px 0.4vw 1.5vw rgba(237, 28, 36, 0.35);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.requestProjectProposal {
+  font-size: 0.9583vw;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+}
+
+.errorMessage {
+  margin-bottom: 0.6vw;
+  font-size: 0.8vw;
+  font-weight: 600;
+  color: #ed1c24;
+  text-align: center;
+}
+
+@media (max-width: 1280px) {
+  .frameParent {
+    max-width: 100%;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .frameParent {
+    width: 100%;
+    padding-bottom: 0;
+  }
+
+  .vectorIcon {
+    display: none;
+  }
+
+  .background {
+    padding: 5vw;
+    background-color: #fff;
+    border-radius: 3vw;
+    box-shadow: 0 1vw 3vw rgba(0, 0, 0, 0.25);
+  }
+
+  .enquiryForm {
+    font-size: 2.6vw;
+  }
+
+  .formRow {
+    flex-direction: column;
+    gap: 3vw;
+  }
+
+  .field,
+  .fieldFull {
+    gap: 1vw;
+  }
+
+  .name {
+    font-size: 1.8vw;
+    line-height: 2.4vw;
+  }
+
+  .input,
+  .textarea,
+  .selectArea {
+    font-size: 2.2vw;
+    padding: 2vw;
+  }
+
+  .selectArea {
+    font-size: 1.8vw;
+    padding-right: 6vw;
+  }
+
+  .textarea {
+    min-height: 12vw;
+  }
+
+  .buttonmargin {
+    width: 100%;
+    margin: 4vw auto 0;
+  }
+
+  .requestProjectProposal {
+    font-size: 2.6vw;
+  }
+
+  .errorMessage {
+    font-size: 2.2vw;
+  }
+}
+
+@media (max-width: 640px) {
+  .enquiryForm {
+    font-size: 4vw;
+  }
+
+  .name {
+    font-size: 2.8vw;
+    line-height: 3.6vw;
+  }
+
+  .input,
+  .textarea,
+  .selectArea {
+    font-size: 3.4vw;
+  }
+
+  .selectArea {
+    font-size: 2.8vw;
+    padding-right: 8vw;
+  }
+
+  .requestProjectProposal {
+    font-size: 3.8vw;
+  }
+
+  .errorMessage {
+    font-size: 3.4vw;
+  }
+}

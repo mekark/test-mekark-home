@@ -25,7 +25,7 @@ const stats = [
   {
     value: (
       <>
-        70 lakh <span className="text-red-300">Sq.ft.</span>
+        70 lakh Sq.ft. <span className="text-red-300">+ Sq.ft.</span>
       </>
     ),
     label: "Manufacturing Campus",
@@ -92,8 +92,7 @@ export default function Hero() {
         <div className="relative z-[1] flex min-h-0 flex-1 flex-col px-5 pt-24 pb-[max(2rem,env(safe-area-inset-bottom))] sm:px-8 sm:pt-28">
           <div className="flex max-w-[1158px] flex-col items-start gap-3 sm:gap-4">
             <b className="relative w-full min-w-0 self-stretch text-[clamp(1.625rem,6.2vw,2.25rem)] font-bold leading-[1.15] tracking-[-0.04em] text-gray-100 drop-shadow-[0_1px_0_rgba(255,255,255,0.35)] sm:text-[36px] sm:leading-[1.2] sm:tracking-[-0.9px]">
-              Leading Industrial MEP Contractor & Turnkey MEP Contracting
-              Company
+              Leading Industrial MEP Contractor &amp; Turnkey MEP Contracting Company
             </b>
             <div className="relative mb-2 w-full min-w-0 text-[clamp(0.9375rem,3.8vw,1.0625rem)] leading-[1.5] font-semibold text-[rgba(5,7,12,0.72)] sm:mb-4 sm:text-[17px] sm:leading-[26px] lg:text-[18.67px] lg:leading-[26.67px]">
               {heroDescription}
@@ -128,7 +127,7 @@ export default function Hero() {
                   key={stat.label}
                   className={`flex min-w-0 flex-col items-start gap-1 text-left ${stat.valueClass}`}
                 >
-                  <div className="w-full break-words text-[clamp(1rem,4.4vw,1.125rem)] font-extrabold leading-[1.2] tracking-[-0.04em] [&_span]:leading-[inherit] sm:text-[22px] sm:leading-[26px] sm:tracking-[-1.11px]">
+                  <div className="w-full whitespace-nowrap text-[clamp(1rem,4.4vw,1.125rem)] font-extrabold leading-[1.2] tracking-[-0.04em] [&_span]:leading-[inherit] sm:text-[22px] sm:leading-[26px] sm:tracking-[-1.11px]">
                     {stat.value}
                   </div>
                   <div className="w-full break-words text-[clamp(0.5625rem,2.7vw,0.625rem)] font-semibold leading-[1.35] tracking-[0.04em] text-white/70 capitalize sm:text-[10.67px] sm:leading-[11.89px] sm:tracking-[1.6px]">
@@ -140,10 +139,13 @@ export default function Hero() {
             </div>
             <div className="mt-4 flex min-w-0 flex-col items-start gap-1 border-t border-white/15 pt-4 sm:mt-5 sm:pt-5">
               <div className="w-full text-left text-[clamp(1rem,4.4vw,1.125rem)] font-extrabold leading-[1.2] tracking-[-0.04em] [&_span]:leading-[inherit] sm:text-[18px] sm:leading-[22px] sm:tracking-[-0.8px]">
-                <span>ISO 9001:2015 </span>
-                <span className="text-red-200">& </span>
-                <span className="text-limegreen">Green </span>
-                <span className="text-red-100">Certified</span>
+                <span className="block">
+                  ISO 9001:2015 <span className="text-red-200">&</span>
+                </span>
+                <span className="block">
+                  <span className="text-limegreen">Green </span>
+                  <span className="text-red-100">Certified</span>
+                </span>
               </div>
             </div>
           </div>
@@ -190,91 +192,70 @@ export default function Hero() {
           />
           <div className="absolute bottom-[66.7px] left-1/2 flex -translate-x-1/2 items-center gap-[66.7px] shrink-0">
             <div className="flex h-[65.3px] w-[137.3px] shrink-0 flex-col items-start justify-center gap-[4.1px] px-num-13_3 pt-[18px] pb-[18.6px] box-border">
-              <div className="flex w-[110.7px] shrink-0 flex-col items-start">
-                <div className="relative self-stretch tracking-[-1.11px] leading-num-25_62 font-extrabold">
-                  <span className="leading-num-25_62">18</span>
-                  <span className="leading-num-25_62 text-red-200">+</span>
-                </div>
+              <div className="relative whitespace-nowrap tracking-[-1.11px] leading-num-25_62 font-extrabold">
+                <span className="leading-num-25_62">18</span>
+                <span className="leading-num-25_62 text-red-200">+</span>
               </div>
-              <div className="flex w-[110.7px] shrink-0 flex-col items-start text-[10.67px] text-gray-400">
-                <div className="relative self-stretch tracking-[1.61px] leading-[11.89px] font-semibold capitalize">
+              <div className="text-[10.67px] text-gray-400">
+                <div className="relative tracking-[1.61px] leading-[11.89px] font-semibold capitalize">
                   Years Experience
                 </div>
               </div>
             </div>
 
-            <div className="flex h-16 w-[161.3px] shrink-0 flex-col items-start justify-center gap-[4.1px] px-num-13_3 pt-[18px] pb-[18.6px] box-border text-whitesmoke">
-              <div className="flex w-[133.3px] shrink-0 flex-col items-start">
-                <div className="relative self-stretch tracking-[-1.11px] leading-num-25_62 font-extrabold">
-                  <span className="leading-num-25_62">X </span>
-                  <span className="leading-num-25_62 text-red-200">Tons</span>
-                </div>
+            <div className="flex h-16 shrink-0 flex-col items-start justify-center gap-[4.1px] px-num-13_3 pt-[18px] pb-[18.6px] box-border text-whitesmoke">
+              <div className="relative whitespace-nowrap tracking-[-1.11px] leading-num-25_62 font-extrabold">
+                <span className="leading-num-25_62">40,000 </span>
+                <span className="leading-num-25_62 text-red-200">Tons</span>
               </div>
-              <div className="flex w-[133.3px] shrink-0 flex-col items-start text-[10.67px] text-gray-400">
-                <div className="relative self-stretch tracking-[1.61px] leading-[11.89px] font-semibold capitalize">
+              <div className="text-[10.67px] text-gray-400">
+                <div className="relative tracking-[1.61px] leading-[11.89px] font-semibold capitalize">
                   Production Capacity
                 </div>
               </div>
             </div>
 
-            <div className="flex h-16 w-[177.3px] shrink-0 flex-col items-start justify-center gap-[4.3px] px-num-13_3 py-[18.5px] box-border">
-              <div className="flex w-[149.3px] shrink-0 flex-col items-start">
-                <div className="relative flex w-[138.7px] items-center tracking-[-1.11px] leading-num-25_62 font-extrabold">
-                  <span className="w-full">
-                    <span className="leading-num-25_62">X </span>
-                    <span className="leading-num-25_62 text-red-300">
-                      + Sq.ft.
-                    </span>
-                  </span>
-                </div>
+            <div className="flex h-16 shrink-0 flex-col items-start justify-center gap-[4.3px] px-num-13_3 py-[18.5px] box-border">
+              <div className="relative whitespace-nowrap tracking-[-1.11px] leading-num-25_62 font-extrabold">
+                <span className="leading-num-25_62">70 lakh Sq.ft. </span>
+                <span className="leading-num-25_62 text-red-300">+ Sq.ft.</span>
               </div>
-              <div className="flex w-[150.7px] shrink-0 flex-col items-start text-[10.67px] text-gray-400">
-                <div className="relative flex w-[150.7px] items-center tracking-[1.6px] leading-[9.57px] font-semibold capitalize">
+              <div className="text-[10.67px] text-gray-400">
+                <div className="relative tracking-[1.6px] leading-[9.57px] font-semibold capitalize">
                   Manufacturing Campus
                 </div>
               </div>
             </div>
 
-            <div className="flex h-16 w-40 shrink-0 flex-col items-start justify-center gap-[4.3px] px-num-13_3 py-[18.5px] box-border">
-              <div className="flex w-[133.3px] shrink-0 flex-col items-start">
-                <div className="relative flex w-[159.8px] shrink-0 items-center tracking-[-1.11px] leading-num-25_62 font-extrabold">
-                  <span className="w-full">
-                    <span className="leading-num-25_62">175</span>
-                    <span className="leading-num-25_62 text-red-300">
-                      + In-House
-                    </span>
-                  </span>
-                </div>
+            <div className="flex h-16 shrink-0 flex-col items-start justify-center gap-[4.3px] px-num-13_3 py-[18.5px] box-border">
+              <div className="relative whitespace-nowrap tracking-[-1.11px] leading-num-25_62 font-extrabold">
+                <span className="leading-num-25_62">175</span>
+                <span className="leading-num-25_62 text-red-300">+ In-House</span>
               </div>
-              <div className="flex w-[133.3px] shrink-0 flex-col items-start text-[10.67px] text-gray-400">
-                <div className="relative self-stretch tracking-[1.6px] leading-[9.57px] font-semibold capitalize">
+              <div className="text-[10.67px] text-gray-400">
+                <div className="relative tracking-[1.6px] leading-[9.57px] font-semibold capitalize">
                   Engineers
                 </div>
               </div>
             </div>
 
-            <div className="flex w-56 shrink-0 flex-col items-start px-num-13_3 py-[4.3px] box-border">
-              <div className="flex w-[197.3px] flex-col items-start">
-                <div className="relative flex w-[215.3px] shrink-0 items-center tracking-[-0.93px] leading-num-27_18 font-extrabold">
-                  <span className="w-full">
-                    <span className="leading-num-27_18">ISO 9001:2015 </span>
-                    <span className="leading-num-27_18 text-red-200">& </span>
-                    <span className="leading-num-27_18 text-limegreen">
-                      Green{" "}
-                    </span>
-                    <span className="leading-num-27_18 text-red-100">
-                      Certified
-                    </span>
-                  </span>
-                </div>
+            <div className="flex shrink-0 flex-col items-start px-num-13_3 py-[4.3px] box-border">
+              <div className="relative tracking-[-0.93px] leading-num-27_18 font-extrabold">
+                <span className="block leading-num-27_18">
+                  ISO 9001:2015 <span className="text-red-200">&</span>
+                </span>
+                <span className="block leading-num-27_18">
+                  <span className="text-limegreen">Green </span>
+                  <span className="text-red-100">Certified</span>
+                </span>
               </div>
             </div>
           </div>
         </div>
 
         <div className="relative z-[1] flex w-full shrink-0 flex-col items-start gap-5 pl-32 pr-[131px] pt-32 text-[48px] text-gray-100 opacity-90">
-          <b className="relative self-stretch tracking-[-1px] leading-[56px]">
-            Leading Industrial MEP Contractor & Turnkey MEP Contracting Company
+          <b className="relative self-stretch whitespace-nowrap text-[clamp(2rem,2.35vw,46px)] tracking-[-1px] leading-[56px]">
+            Leading Industrial MEP Contractor &amp; Turnkey MEP Contracting Company
           </b>
           <div className="relative flex w-full max-w-[1158px] items-center text-[18.67px] leading-[26.67px] font-semibold text-gray-300">
             {heroDescription}

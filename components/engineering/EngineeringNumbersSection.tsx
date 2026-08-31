@@ -102,7 +102,7 @@ export function EngineeringNumbersSection() {
   return (
     <section className="relative w-full bg-[#f5f5f5] text-black">
       {/* Engineering in Numbers — Figma 3327:9311 */}
-      <div className="relative px-4 pb-12 pt-10 font-[family-name:var(--font-manrope)] sm:px-8 sm:pb-16 sm:pt-14 lg:px-[73px] lg:pb-[70px] lg:pt-[61px]">
+      <div className="relative px-4 pb-8 pt-8 font-[family-name:var(--font-manrope)] sm:px-8 sm:pb-16 sm:pt-14 lg:px-[73px] lg:pb-[70px] lg:pt-[61px]">
         <div
           className="pointer-events-none absolute inset-0 overflow-hidden bg-[#f5f5f5]"
           aria-hidden
@@ -130,12 +130,12 @@ export function EngineeringNumbersSection() {
             variants={slideFromLeft}
             className="flex max-w-[721px] flex-col items-start"
           >
-            <div className="relative flex h-7 items-center">
+            <div className="relative flex h-7 min-w-0 items-center max-[350px]:h-6">
               <span
-                className="h-[2.7px] w-[53px] shrink-0 bg-[#e40015]"
+                className="h-[2.7px] w-[53px] shrink-0 bg-[#e40015] max-[350px]:w-8"
                 aria-hidden
               />
-              <p className="ml-[15px] text-xs font-semibold uppercase leading-[27.73px] tracking-[2.67px] text-[#828181] sm:whitespace-nowrap sm:text-base">
+              <p className="ml-[15px] whitespace-nowrap text-xs font-semibold uppercase leading-[27.73px] tracking-[2.67px] text-[#828181] max-[350px]:ml-2 max-[350px]:text-[9px] max-[350px]:leading-none max-[350px]:tracking-[1px] sm:text-base">
                 Scale that speaks for itself
               </p>
             </div>
@@ -147,7 +147,7 @@ export function EngineeringNumbersSection() {
             </motion.h2>
           </AnimatedSection>
 
-          <div className="mt-6 flex min-w-0 flex-col items-center gap-8 lg:mt-8 lg:flex-row lg:items-center lg:gap-8 xl:gap-12">
+          <div className="mt-4 flex min-w-0 flex-col items-center gap-4 sm:mt-6 sm:gap-6 lg:mt-8 lg:flex-row lg:items-center lg:gap-8 xl:gap-12">
             <motion.div
               className="relative z-10 w-full min-w-0 flex-1 lg:max-w-[1020px]"
               initial={{ opacity: 0, y: 40 }}
@@ -174,7 +174,7 @@ export function EngineeringNumbersSection() {
             </motion.div>
 
             <motion.div
-              className="flex w-full min-w-0 max-w-full gap-[22px] lg:w-auto lg:max-w-none lg:shrink-0 lg:translate-y-8"
+              className="flex w-full min-w-0 max-w-full gap-4 sm:gap-[22px] lg:w-auto lg:max-w-none lg:shrink-0 lg:translate-y-8"
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
@@ -182,7 +182,7 @@ export function EngineeringNumbersSection() {
             >
               <motion.div
                 variants={drawVertical}
-                className="relative flex min-h-[180px] w-[1.3px] shrink-0 origin-top self-stretch items-center justify-center lg:min-h-[240px]"
+                className="relative flex min-h-[120px] w-[1.3px] shrink-0 origin-top self-stretch items-center justify-center sm:min-h-[150px] lg:min-h-[240px]"
                 style={{
                   background:
                     "linear-gradient(180deg, rgba(214,214,214,0), #d6d6d6 20%, #d6d6d6 80%, rgba(214,214,214,0))",

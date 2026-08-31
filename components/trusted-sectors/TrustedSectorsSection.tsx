@@ -10,16 +10,6 @@ import {
 
 const VIEWPORT = { once: true, margin: "-80px" as const };
 
-const SERVICE_LOGOS = [
-  { name: "Tata", src: "/images/trusted-sectors/tata.png" },
-  { name: "D Mart", src: "/images/trusted-sectors/dmart.png" },
-  { name: "Komatsu", src: "/images/trusted-sectors/komatsu.png" },
-  { name: "Bosch", src: "/images/trusted-sectors/bosch.png" },
-  { name: "Danfoss", src: "/images/trusted-sectors/danfoss.png" },
-  { name: "TVS", src: "/images/trusted-sectors/tvs.png" },
-  { name: "Nokia", src: "/images/trusted-sectors/nokia.png" },
-] as const;
-
 const HOME_LOGOS = [
   {
     name: "Tata",
@@ -125,33 +115,6 @@ type TrustedSectorsSectionProps = {
   variant?: "home" | "services";
 };
 
-function ServiceLogoCard({
-  logo,
-}: {
-  logo: (typeof SERVICE_LOGOS)[number];
-}) {
-  return (
-    <motion.div
-      variants={scaleIn}
-      whileHover={{
-        y: -4,
-        transition: { type: "spring", stiffness: 340, damping: 22 },
-      }}
-      className="flex h-[100px] w-full items-center justify-center rounded-[15px] border border-black/5 bg-white sm:h-[110px] lg:h-[122px] lg:rounded-[14.94px]"
-    >
-      <div className="relative h-[58px] w-[80px] sm:h-[62px] sm:w-[90px] lg:h-[75px] lg:w-[100px]">
-        <Image
-          src={logo.src}
-          alt={logo.name}
-          fill
-          className="object-contain object-center"
-          sizes="100px"
-        />
-      </div>
-    </motion.div>
-  );
-}
-
 function HomeLogoCard({ logo }: { logo: HomeLogo }) {
   const isCropped = "crop" in logo && logo.crop;
 
@@ -162,9 +125,11 @@ function HomeLogoCard({ logo }: { logo: HomeLogo }) {
         y: -4,
         transition: { type: "spring", stiffness: 340, damping: 22 },
       }}
-      className="relative flex h-[92px] w-[149px] shrink-0 items-center justify-center overflow-hidden rounded-[15px] border border-black/5 bg-white lg:h-[122px] lg:w-[198px]"
+      className="relative flex h-[68px] w-full items-center justify-center overflow-hidden rounded-[10px] border border-black/5 bg-white sm:h-[92px] sm:rounded-[15px] lg:h-[122px]"
     >
-      <div className={`relative overflow-hidden ${logo.className}`}>
+      <div
+        className={`relative overflow-hidden scale-[0.62] sm:scale-100 ${logo.className}`}
+      >
         {isCropped ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -194,6 +159,7 @@ export function TrustedSectorsSection({
   variant = "home",
 }: TrustedSectorsSectionProps) {
   const isServices = variant === "services";
+  const logos = isServices ? HOME_LOGOS.slice(0, 7) : HOME_LOGOS;
 
   return (
     <section className="relative w-full bg-[#fdebeb]">
@@ -226,29 +192,18 @@ export function TrustedSectorsSection({
             Trusted Across
             <br />
             <span className="text-[#e50818]">
-            Commercial, Industrial &amp; Public Sectors
+              Industrial &amp; Commercial Sectors
             </span>
           </motion.h2>
 
-          {isServices ? (
-            <motion.div
-              variants={staggerContainer}
-              className="mt-8 grid w-full max-w-[1594px] grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 md:grid-cols-4 lg:mt-10 lg:grid-cols-7 lg:items-stretch lg:gap-[34px]"
-            >
-              {SERVICE_LOGOS.map((logo) => (
-                <ServiceLogoCard key={logo.name} logo={logo} />
-              ))}
-            </motion.div>
-          ) : (
-            <motion.div
-              variants={staggerContainer}
-              className="mt-8 flex w-full max-w-[1594px] flex-wrap items-center justify-center gap-[18px] sm:gap-[25px] lg:mt-10 lg:gap-x-[34px] lg:gap-y-[41px]"
-            >
-              {HOME_LOGOS.map((logo) => (
-                <HomeLogoCard key={logo.name} logo={logo} />
-              ))}
-            </motion.div>
-          )}
+          <motion.div
+            variants={staggerContainer}
+            className="mt-8 grid w-full max-w-[1594px] grid-cols-3 gap-2 sm:gap-4 md:grid-cols-4 lg:mt-10 lg:grid-cols-7 lg:gap-x-[34px] lg:gap-y-[41px]"
+          >
+            {logos.map((logo) => (
+              <HomeLogoCard key={logo.name} logo={logo} />
+            ))}
+          </motion.div>
 
           <motion.div
             variants={fadeUp}

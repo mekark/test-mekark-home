@@ -67,10 +67,10 @@ function parseEnquiryPayload(body: unknown): EnquiryFormPayload | null {
     phone,
     company,
     location,
-    industry,
+    industry: industry || "General Enquiry",
     sqf,
-    startTimeline,
-    budget,
+    startTimeline: startTimeline || "Not specified",
+    budget: budget || "Not specified",
     message,
   };
 }

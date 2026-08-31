@@ -91,6 +91,14 @@ const SOLUTION_CARDS: Record<string, SolutionVisual> = {
     description:
       "Contamination-controlled infrastructure for precision manufacturing.",
   },
+  "cold-storage": {
+    src: "/images/ext.png",
+    alt: "Temperature-controlled cold storage warehouse interior",
+    title: "Cold Storage",
+    description:
+      "Precision-engineered facilities for reliable, temperature-sensitive storage.",
+    objectPosition: "center",
+  },
 };
 
 function isExternalHref(href: string): boolean {
@@ -187,9 +195,14 @@ function SolutionGrid({
   services: HomeService[];
   overlay: "core" | "extended";
 }) {
+  const gridClass =
+    overlay === "extended"
+      ? "grid w-full grid-cols-1 gap-[17px] md:grid-cols-2 lg:grid-cols-4 lg:gap-[23px]"
+      : "grid w-full grid-cols-1 gap-[17px] md:grid-cols-2 lg:grid-cols-3 lg:gap-[23px]";
+
   return (
     <motion.div
-      className="grid w-full grid-cols-1 gap-[17px] md:grid-cols-2 lg:grid-cols-3 lg:gap-[23px]"
+      className={gridClass}
       variants={staggerContainer}
       initial="hidden"
       whileInView="visible"

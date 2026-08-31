@@ -269,6 +269,8 @@ export function AboutMekarkSection() {
               key={stat.iconAlt}
               variants={aboutStatReveal}
               className={`relative isolate flex min-w-0 items-center gap-6 rounded-2xl px-8 py-[18.67px] sm:gap-[29.33px] lg:min-w-px lg:flex-[1_0_0] ${
+                index === 0 ? "lg:pr-6 xl:pr-11" : ""
+              } ${
                 index > 0
                   ? "border-[rgba(214,214,214,0.25)] lg:border-l-[1.3px] lg:border-solid lg:pl-[33.33px]"
                   : ""

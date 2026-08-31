@@ -130,14 +130,14 @@ export default function Hero() {
             fill
             priority
             sizes="100vw"
-            className="h-full w-full scale-[1.04] object-cover object-[58%_46%] brightness-[1.08] contrast-[1.06] min-[390px]:object-[64%_42%] sm:object-[68%_36%]"
+            className="h-full w-full scale-[1.04] object-cover object-[58%_54%] brightness-[1.08] contrast-[1.06] min-[390px]:object-[64%_50%] sm:object-[68%_44%]"
           />
         </div>
         <div
-          className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-[min(42%,18rem)]"
+          className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-[min(48%,20rem)]"
           style={{
             backgroundImage:
-              "linear-gradient(180deg, rgba(6,6,6,0.92) 0%, rgba(6,6,6,0.55) 55%, rgba(6,6,6,0) 100%)",
+              "linear-gradient(180deg, rgba(6,6,6,0.96) 0%, rgba(6,6,6,0.72) 45%, rgba(6,6,6,0.28) 75%, rgba(6,6,6,0) 100%)",
           }}
         />
         <div
@@ -186,7 +186,7 @@ export default function Hero() {
               fill
               priority
               sizes="1920px"
-              className="object-cover object-[95%_52%]"
+              className="translate-y-[3%] object-cover object-[95%_58%]"
             />
           </motion.div>
           <div
@@ -202,7 +202,7 @@ export default function Hero() {
       <div className="relative z-10 flex min-h-0 w-full max-w-full flex-1 flex-col justify-between px-4 pb-[max(2rem,env(safe-area-inset-bottom))] pt-24 sm:px-8 sm:pt-28 lg:pl-32 lg:pb-[66px] lg:pt-32">
         <div className="relative flex w-full min-w-0 max-w-[620px] flex-col items-start gap-3 sm:gap-4 lg:max-w-[989px] lg:gap-5 lg:opacity-90">
           <motion.h1
-            className="w-full min-w-0 text-left font-sans text-[clamp(1.625rem,6.2vw,2.25rem)] font-bold leading-[1.15] tracking-[-0.04em] text-white sm:text-[36px] sm:leading-[1.2] sm:tracking-[-0.9px] lg:w-max lg:max-w-none lg:whitespace-nowrap lg:text-5xl lg:leading-[56px] lg:tracking-[-1px] lg:text-gray"
+            className="w-full min-w-0 text-left font-sans text-[clamp(1.625rem,6.2vw,2.25rem)] font-bold leading-[1.15] tracking-[-0.04em] text-white drop-shadow-[0_2px_16px_rgba(0,0,0,0.75)] sm:text-[36px] sm:leading-[1.2] sm:tracking-[-0.9px] lg:w-max lg:max-w-none lg:whitespace-nowrap lg:text-5xl lg:leading-[56px] lg:tracking-[-1px] lg:text-gray lg:drop-shadow-none"
             initial={reduceMotion ? false : { opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: easeOut, delay: 0.15 }}
@@ -211,7 +211,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            className="w-full min-w-0 text-[clamp(0.9375rem,3.8vw,1.0625rem)] leading-[1.5] font-semibold text-white/90 sm:text-[17px] sm:leading-[26px] lg:text-[18.67px] lg:leading-[26.67px] lg:text-gray-300"
+            className="w-full min-w-0 text-[clamp(0.9375rem,3.8vw,1.0625rem)] leading-[1.5] font-semibold text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)] sm:text-[17px] sm:leading-[26px] lg:text-[18.67px] lg:leading-[26.67px] lg:text-gray-300 lg:drop-shadow-none"
             initial={reduceMotion ? false : { opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: easeOut, delay: 0.3 }}

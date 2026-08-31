@@ -29,6 +29,12 @@ const SOLUTIONS = [
       "Contamination-controlled infrastructure for precision manufacturing.",
     image: "/images/industrial-infrastructure/clean-room-v2.jpg",
   },
+  {
+    title: "Cold Storage",
+    description:
+      "Precision-engineered facilities for reliable, temperature-sensitive storage.",
+    image: "/images/ext.png",
+  },
 ] as const;
 
 function SolutionCard({
@@ -94,7 +100,7 @@ export function IndustrialInfrastructureSection() {
           </motion.h2>
 
           <motion.div
-            className="grid w-full grid-cols-1 gap-[17px] md:grid-cols-2 lg:grid-cols-3 lg:gap-[22px]"
+            className="grid w-full grid-cols-1 gap-[17px] md:grid-cols-2 lg:grid-cols-4 lg:gap-[22px]"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"

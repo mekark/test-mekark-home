@@ -325,35 +325,32 @@ export function PrecisionDrivenEngineeringSection() {
                 }}
                 className="flex flex-col rounded-xl border border-[#ffd5d5] bg-white p-7 shadow-[0px_10px_17px_rgba(237,28,36,0.07)]"
               >
-                <div className="flex flex-col gap-3 sm:flex-row sm:gap-0">
+                <div className="flex flex-col gap-4 sm:flex-row sm:gap-0">
                   {WORKFLOW_STEPS.map((step) => (
-                    <WorkflowStep key={step.number} step={step} />
+                    <div
+                      key={step.number}
+                      className="flex flex-1 flex-col sm:min-w-0"
+                    >
+                      <WorkflowStep step={step} />
+
+                      <motion.div
+                        variants={precEngBenefitItem}
+                        className="mt-3 flex gap-3 px-1 sm:mt-7 sm:justify-center sm:px-3"
+                      >
+                        <motion.span
+                          variants={precEngBenefitDot}
+                          className="mt-2 size-1.5 shrink-0 rounded-full bg-[#ed1c24]"
+                          aria-hidden
+                        />
+                        <p className="text-[14.4px] font-semibold leading-[23.4px] text-[#555] sm:whitespace-nowrap">
+                          {step.benefit[0]}
+                          <br />
+                          {step.benefit[1]}
+                        </p>
+                      </motion.div>
+                    </div>
                   ))}
                 </div>
-
-                <motion.div
-                  variants={precEngBenefitRow}
-                  className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-3"
-                >
-                  {WORKFLOW_STEPS.map((step) => (
-                    <motion.div
-                      key={step.number}
-                      variants={precEngBenefitItem}
-                      className="flex gap-3"
-                    >
-                      <motion.span
-                        variants={precEngBenefitDot}
-                        className="mt-2 size-1.5 shrink-0 rounded-full bg-[#ed1c24]"
-                        aria-hidden
-                      />
-                      <p className="whitespace-nowrap text-[14.4px] font-semibold leading-[23.4px] text-[#555]">
-                        {step.benefit[0]}
-                        <br />
-                        {step.benefit[1]}
-                      </p>
-                    </motion.div>
-                  ))}
-                </motion.div>
               </motion.div>
 
               <motion.blockquote

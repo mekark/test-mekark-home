@@ -71,31 +71,33 @@ function CapabilityCard({
   icon,
 }: (typeof CAPABILITIES)[number]) {
   return (
-    <article className="flex w-[min(100%,329px)] shrink-0 flex-col sm:w-[329px]">
-      <div className="relative flex size-[90px] items-center justify-center overflow-clip sm:size-[113px]">
-        <div
-          className="absolute inset-0 rounded-[18px] bg-[#fdebeb] opacity-35 sm:rounded-[22.67px]"
-          aria-hidden
-        />
-        <div className="relative size-[48px] overflow-clip sm:size-[60px]">
-          <Image
-            src={icon}
-            alt=""
-            fill
-            className="object-contain"
-            sizes="60px"
+    <article className="group flex w-[min(100%,329px)] shrink-0 flex-col sm:w-[329px]">
+      <div className="flex h-full flex-col rounded-[24px] px-6 pb-8 pt-8 transition-colors duration-300 ease-out group-hover:bg-[#f5f5f5] sm:px-8">
+        <div className="relative flex size-[90px] shrink-0 items-center justify-center overflow-clip sm:size-[113px]">
+          <div
+            className="absolute inset-0 rounded-[18px] bg-[#fdebeb] opacity-55 transition-opacity duration-300 group-hover:opacity-100 sm:rounded-[22.67px] sm:opacity-35"
             aria-hidden
           />
+          <div className="relative size-[48px] overflow-clip sm:size-[60px]">
+            <Image
+              src={icon}
+              alt=""
+              fill
+              className="object-contain"
+              sizes="60px"
+              aria-hidden
+            />
+          </div>
         </div>
-      </div>
 
-      <div className="mt-[45px] flex flex-col gap-[13.3px] px-[10.7px] pb-6 pt-[17.3px]">
-        <h3 className="text-[20px] font-bold leading-[26px] text-[#0f0f0f] sm:text-2xl sm:leading-[30px]">
-          {title}
-        </h3>
-        <p className="text-base font-light leading-[25px] text-[#0f0f0f]">
-          {description}
-        </p>
+        <div className="mt-4 flex flex-col gap-[13.3px] sm:mt-6">
+          <h3 className="text-[20px] font-bold leading-[26px] text-[#0f0f0f] sm:text-2xl sm:leading-[30px]">
+            {title}
+          </h3>
+          <p className="text-base font-light leading-[25px] text-[#0f0f0f]">
+            {description}
+          </p>
+        </div>
       </div>
     </article>
   );

@@ -17,6 +17,7 @@ import {
   enquiryHighlightStagger,
   enquirySectionStagger,
 } from "@/lib/motion-variants";
+import styles from "./enquiry-form.module.css";
 
 const VIEWPORT = { once: true, margin: "-80px" as const };
 
@@ -28,10 +29,10 @@ const HIGHLIGHTS = [
 
 const PROJECT_AREAS = [
   "Select area",
-  "10,000 - 20,000 sq.ft",
-  "20,000 - 30,000 sq.ft",
-  "30,000 - 50,000 sq.ft",
-  "Above 50,000 sq.ft",
+  "Under 5,000 sq ft",
+  "5,000 – 20,000 sq ft",
+  "20,000 – 50,000 sq ft",
+  "50,000+ sq ft",
 ] as const;
 
 const INDUSTRY_TYPES = [
@@ -67,18 +68,6 @@ const SERVICE_TYPES = [
   "Select service",
   ...FIND_SERVICES.map((service) => service.label),
 ] as const;
-
-function buildSolutionPrefill(
-  industryLabel: string | null,
-  serviceLabel: string | null,
-) {
-  const parts = [
-    industryLabel ? `Industry: ${industryLabel}` : null,
-    serviceLabel ? `Service: ${serviceLabel}` : null,
-  ].filter(Boolean);
-
-  return parts.length ? `${parts.join(" · ")}.` : "";
-}
 
 function withExtraOption(options: readonly string[], extra: string) {
   if (!extra || extra === options[0] || options.includes(extra)) {
@@ -124,39 +113,24 @@ function resolveServiceValue(
   return matched?.label ?? serviceLabel ?? "";
 }
 
+function buildSolutionPrefill(
+  industryLabel: string | null,
+  serviceLabel: string | null,
+) {
+  const parts = [
+    industryLabel ? `Industry: ${industryLabel}` : null,
+    serviceLabel ? `Service: ${serviceLabel}` : null,
+  ].filter(Boolean);
+
+  return parts.length ? `${parts.join(" · ")}.` : "";
+}
+
 function normalizePhone(value: string) {
   return value.replace(/\D/g, "").slice(0, 10);
 }
 
 function isValidPhone(phone: string) {
   return /^\d{10}$/.test(phone);
-}
-
-const INPUT_CLASS =
-  "w-full rounded-[12px] border border-[rgba(63,63,63,0.1)] bg-[rgba(237,32,36,0.06)] px-[15px] py-3 text-[13px] leading-normal text-[#03080f] outline-none transition-[border-color,box-shadow] placeholder:text-[#03080f]/45 focus:border-[#ed1c24]/30 focus:ring-2 focus:ring-[#ed1c24]/10";
-
-const LABEL_CLASS =
-  "text-[11px] font-extrabold uppercase tracking-[1.93px] text-black/50 leading-[14.5px]";
-
-function CheckIcon() {
-  return (
-    <svg
-      width="10"
-      height="8"
-      viewBox="0 0 10 8"
-      fill="none"
-      aria-hidden
-      className="shrink-0"
-    >
-      <path
-        d="M1 4L3.5 6.5L9 1"
-        stroke="white"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
 }
 
 function FormField({
@@ -171,34 +145,11 @@ function FormField({
   children: ReactNode;
 }) {
   return (
-    <div className={`flex flex-col gap-[7px]${className ? ` ${className}` : ""}`}>
-      <label className={LABEL_CLASS}>
+    <div className={className ?? styles.field}>
+      <label className={styles.name}>
         {label}
         {required ? " *" : ""}
       </label>
-      {children}
-    </div>
-  );
-}
-
-function EnquiryFormCard({ children }: { children: ReactNode }) {
-  const redClip = "polygon(0 0, 100% 0, 85% 100%, 0 100%)";
-
-  return (
-    <div className="relative w-full overflow-hidden rounded-[20px] bg-white shadow-[0px_8px_32px_rgba(0,0,0,0.12)]">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-[88px]"
-      >
-        <div
-          className="absolute inset-0 bg-gradient-to-r from-[#c41218] to-[#ed2024]"
-          style={{ clipPath: redClip }}
-        />
-        <div
-          className="absolute inset-0 bg-gradient-to-r from-transparent to-black/[0.08]"
-          style={{ clipPath: redClip }}
-        />
-      </div>
       {children}
     </div>
   );
@@ -210,23 +161,26 @@ function SelectField({
   onChange,
   options,
   required,
+  id,
 }: {
   name: string;
   value: string;
   onChange: (value: string) => void;
   options: readonly string[];
   required?: boolean;
+  id: string;
 }) {
   const placeholder = options[0];
 
   return (
-    <div className="relative">
+    <div className={styles.buttonListbox}>
       <select
+        id={id}
         name={name}
         required={required}
         value={value}
         onChange={(event) => onChange(event.target.value)}
-        className={`${INPUT_CLASS} appearance-none pr-10`}
+        className={styles.selectArea}
       >
         {options.map((option) => (
           <option
@@ -239,12 +193,12 @@ function SelectField({
         ))}
       </select>
       <Image
-        src="/images/enquiry/icon-chevron.svg"
+        className={styles.svgIcon4}
+        src="/images/enquiry/SVG-chevron.svg"
+        width={11}
+        height={7}
         alt=""
-        width={10}
-        height={6}
         aria-hidden
-        className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 opacity-40"
       />
     </div>
   );
@@ -278,7 +232,6 @@ export function EnquirySection() {
 
   const queryString = searchParams.toString();
 
-  // Prefill from Find your solution redirect: /?industry=…&service=…#enquiry
   useEffect(() => {
     const params = new URLSearchParams(queryString);
     const industrySlug = params.get("industry");
@@ -301,6 +254,7 @@ export function EnquirySection() {
     }
 
     const prefill = buildSolutionPrefill(industryLabel, serviceLabel);
+
     if (prefill) {
       setMessage(prefill);
     }
@@ -388,9 +342,17 @@ export function EnquirySection() {
   return (
     <section
       id="enquiry"
-      className="relative w-full scroll-mt-28 overflow-hidden bg-[#0a0a0a]"
+      className="relative w-full scroll-mt-28 overflow-hidden bg-[#0a0a0a] font-[family-name:var(--font-manrope)]"
     >
       <div className="absolute inset-0">
+        <Image
+          src="/images/enquiry/div.absolute.png"
+          alt=""
+          fill
+          className="object-cover opacity-50"
+          sizes="100vw"
+          priority={false}
+        />
         <Image
           src="/images/enquiry/homeabout 1.png"
           alt=""
@@ -399,12 +361,9 @@ export function EnquirySection() {
           sizes="100vw"
           priority={false}
         />
+        <div className="absolute inset-0 bg-[rgba(10,10,10,0.65)]" aria-hidden />
         <div
-          className="absolute inset-0 bg-[rgba(10,10,10,0.65)]"
-          aria-hidden
-        />
-        <div
-          className="absolute inset-y-0 left-0 w-full max-w-[min(100%,680px)] bg-gradient-to-r from-black to-transparent"
+          className="absolute inset-0 bg-[linear-gradient(90deg,#000_0%,rgba(16,16,16,0)_55%)]"
           aria-hidden
         />
       </div>
@@ -414,29 +373,29 @@ export function EnquirySection() {
         initial="hidden"
         whileInView="visible"
         viewport={VIEWPORT}
-        className="relative mx-auto flex min-h-[560px] w-full max-w-[1440px] flex-col items-center gap-12 px-5 py-14 sm:px-8 lg:min-h-[678px] lg:flex-row lg:items-center lg:justify-between lg:gap-10 lg:px-[72px] lg:py-16 xl:px-20"
+        className="relative z-[1] mx-auto flex w-full max-w-[1920px] flex-col items-center justify-between gap-10 px-5 py-12 sm:px-8 lg:min-h-[25vw] lg:flex-row lg:items-center lg:gap-[3.75vw] lg:px-[4.1667vw] lg:py-[2.8vw] lg:pb-[1.6vw]"
       >
         <motion.div
           variants={enquiryCopyReveal}
-          className="w-full max-w-[580px] shrink-0 lg:max-w-[520px]"
+          className="w-full shrink-0 lg:w-[30.1389vw] lg:pl-[2.0833vw]"
         >
           <motion.p
             variants={enquiryCopyItem}
-            className="text-[15px] font-extrabold uppercase leading-[22px] tracking-[3.73px] text-[#e40015]"
+            className="text-[15px] font-extrabold uppercase leading-[22px] tracking-[3.73px] text-[#e40015] lg:text-[0.7778vw] lg:leading-[1.1667vw] lg:tracking-[0.1944vw]"
           >
             Start Your Project
           </motion.p>
 
           <motion.h2
             variants={enquiryCopyItem}
-            className="mt-[15px] text-[clamp(2rem,4.2vw,3.73rem)] font-extrabold leading-[1.08] tracking-[-1.5px] text-white lg:leading-[64.5px]"
+            className="mt-3 text-[clamp(2rem,4.2vw,3.73rem)] font-extrabold leading-[1.08] tracking-[-1.5px] text-white lg:mt-[0.7917vw] lg:text-[3.1111vw] lg:leading-[3.3597vw] lg:tracking-[-0.0778vw]"
           >
             Let&apos;s Build Your Next Industrial Project.
           </motion.h2>
 
           <motion.p
             variants={enquiryCopyItem}
-            className="mt-4 max-w-[512px] text-[clamp(1rem,1.4vw,1.267rem)] leading-[1.75] text-white/80"
+            className="mt-3 max-w-[512px] text-[clamp(1rem,1.4vw,1.267rem)] leading-[1.75] text-white/80 lg:mt-[0.7917vw] lg:max-w-[26.6667vw] lg:text-[1.0556vw] lg:leading-[1.8472vw]"
           >
             Partner with Mekark for high-quality, fast-track, and cost-efficient
             industrial construction solutions.
@@ -444,18 +403,25 @@ export function EnquirySection() {
 
           <motion.ul
             variants={enquiryHighlightStagger}
-            className="mt-8 flex flex-col gap-[21px]"
+            className="mt-6 flex flex-col gap-4 lg:mt-[2vw] lg:gap-[1.1111vw]"
           >
             {HIGHLIGHTS.map((item) => (
               <motion.li
                 key={item}
                 variants={enquiryHighlightItem}
-                className="flex items-center gap-4"
+                className="flex items-center gap-4 lg:gap-[0.8333vw]"
               >
-                <span className="flex size-[27px] shrink-0 items-center justify-center rounded-full bg-[#ed2024]">
-                  <CheckIcon />
+                <span className="flex size-[27px] shrink-0 items-center justify-center rounded-full bg-[#ed2024] lg:size-[1.3889vw]">
+                  <Image
+                    src="/images/enquiry/SVG.svg"
+                    alt=""
+                    width={14}
+                    height={11}
+                    className="h-[10px] w-[13px] lg:h-[0.5573vw] lg:w-[0.6927vw]"
+                    aria-hidden
+                  />
                 </span>
-                <span className="text-[clamp(0.95rem,1.3vw,1.175rem)] font-semibold leading-[1.5] text-white/90">
+                <span className="text-[clamp(0.95rem,1.3vw,1.175rem)] font-semibold leading-[1.5] text-white/90 lg:text-[0.9792vw] lg:leading-[1.4667vw]">
                   {item}
                 </span>
               </motion.li>
@@ -465,27 +431,37 @@ export function EnquirySection() {
 
         <motion.div
           variants={enquiryFormReveal}
-          className="relative w-full max-w-[807px] shrink-0"
+          className={`${styles.frameParent} w-full`}
         >
-          <div className="relative w-full lg:pb-[72px]">
-            <EnquiryFormCard>
+          <div className={styles.formShape}>
+            <Image
+              className={styles.vectorIcon}
+              src="/images/enquiry/Vector.png"
+              fill
+              sizes="(max-width: 1024px) 0px, 44vw"
+              alt=""
+              aria-hidden
+            />
+
+            <div className={styles.frameGroup}>
+              <div className={styles.background}>
               <form
                 id="enquiry-form"
                 onSubmit={handleSubmit}
-                className="relative flex flex-col pl-14 pr-5 pt-8 pb-8 sm:pl-[96px] sm:pr-7 sm:pt-9 sm:pb-9 lg:pl-[102px] lg:pr-8 lg:pt-10 lg:pb-10"
+                className={styles.form}
               >
-                <h3 className="text-xl font-extrabold capitalize leading-none text-black">
-                  Enquiry Form
-                </h3>
+                <div className={styles.label}>
+                  <div className={styles.enquiryForm}>Enquiry Form</div>
+                </div>
 
-                <div className="mt-6 grid grid-cols-1 gap-[17px] md:grid-cols-2 md:gap-x-6">
+                <div className={styles.formRow}>
                   <FormField label="Name" required>
                     <input
                       type="text"
                       name="name"
                       required
                       placeholder="Your full name"
-                      className={INPUT_CLASS}
+                      className={styles.input}
                     />
                   </FormField>
                   <FormField label="Email" required>
@@ -494,9 +470,12 @@ export function EnquirySection() {
                       name="email"
                       required
                       placeholder="you@company.com"
-                      className={INPUT_CLASS}
+                      className={styles.input}
                     />
                   </FormField>
+                </div>
+
+                <div className={styles.formRow}>
                   <FormField label="Phone" required>
                     <input
                       type="tel"
@@ -510,8 +489,8 @@ export function EnquirySection() {
                       onChange={(event) =>
                         setPhone(normalizePhone(event.target.value))
                       }
-                      placeholder="10-digit mobile number"
-                      className={INPUT_CLASS}
+                      placeholder="+91 98XXX XXXXX"
+                      className={styles.input}
                     />
                   </FormField>
                   <FormField label="Company">
@@ -519,19 +498,23 @@ export function EnquirySection() {
                       type="text"
                       name="company"
                       placeholder="Company name"
-                      className={INPUT_CLASS}
+                      className={styles.input}
                     />
                   </FormField>
+                </div>
+
+                <div className={styles.formRow}>
                   <FormField label="Location">
                     <input
                       type="text"
                       name="location"
                       placeholder="City / District"
-                      className={INPUT_CLASS}
+                      className={styles.input}
                     />
                   </FormField>
                   <FormField label="Industry Type" required>
                     <SelectField
+                      id="enquiry-industry"
                       name="industry"
                       required
                       value={industryType}
@@ -539,8 +522,12 @@ export function EnquirySection() {
                       options={industryOptions}
                     />
                   </FormField>
+                </div>
+
+                <div className={styles.formRow}>
                   <FormField label="Service">
                     <SelectField
+                      id="enquiry-service"
                       name="service"
                       value={serviceType}
                       onChange={setServiceType}
@@ -549,6 +536,7 @@ export function EnquirySection() {
                   </FormField>
                   <FormField label="Project Area" required>
                     <SelectField
+                      id="enquiry-area"
                       name="sqft"
                       required
                       value={projectArea}
@@ -556,8 +544,12 @@ export function EnquirySection() {
                       options={PROJECT_AREAS}
                     />
                   </FormField>
+                </div>
+
+                <div className={styles.formRow}>
                   <FormField label="Project Start Timeline" required>
                     <SelectField
+                      id="enquiry-timeline"
                       name="projectTimeline"
                       required
                       value={projectTimeline}
@@ -567,6 +559,7 @@ export function EnquirySection() {
                   </FormField>
                   <FormField label="Project Budget" required>
                     <SelectField
+                      id="enquiry-budget"
                       name="projectBudget"
                       required
                       value={projectBudget}
@@ -574,26 +567,26 @@ export function EnquirySection() {
                       options={PROJECT_BUDGETS}
                     />
                   </FormField>
-                  <FormField label="Project Details" className="md:col-span-2">
-                    <textarea
-                      name="message"
-                      rows={3}
-                      value={message}
-                      onChange={(event) => setMessage(event.target.value)}
-                      placeholder="Describe your project — type, usage, timeline…"
-                      className={`${INPUT_CLASS} min-h-[80px] resize-none leading-[19.5px]`}
-                    />
-                  </FormField>
                 </div>
-            </form>
-          </EnquiryFormCard>
 
-          <div className="mt-4 flex flex-col items-center gap-3 lg:absolute lg:bottom-0 lg:left-[calc(50%+24px)] lg:mt-0 lg:w-[379px] lg:-translate-x-1/2">
+                <FormField label="Project Details" className={styles.fieldFull}>
+                  <textarea
+                    name="message"
+                    rows={3}
+                    value={message}
+                    onChange={(event) => setMessage(event.target.value)}
+                    placeholder="Describe your project — type, usage, timeline…"
+                    className={styles.textarea}
+                  />
+                </FormField>
+              </form>
+            </div>
+          </div>
+          </div>
+
+          <div className={styles.buttonmargin}>
             {submitMessage ? (
-              <p
-                role="alert"
-                className="w-full text-center text-sm font-semibold text-[#ed1c24]"
-              >
+              <p role="alert" className={styles.errorMessage}>
                 {submitMessage}
               </p>
             ) : null}
@@ -601,13 +594,14 @@ export function EnquirySection() {
               type="submit"
               form="enquiry-form"
               disabled={submitStatus === "submitting"}
-              className="w-full rounded-[14px] bg-[#ed1c24] px-6 py-4 text-base font-extrabold text-white shadow-[0px_8px_16px_rgba(237,28,36,0.35)] transition-transform hover:scale-[1.01] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:scale-100"
+              className={styles.button}
             >
-              {submitStatus === "submitting"
-                ? "Submitting..."
-                : "Request Project Proposal"}
+              <div className={styles.requestProjectProposal}>
+                {submitStatus === "submitting"
+                  ? "Submitting..."
+                  : "Request Project Proposal"}
+              </div>
             </button>
-          </div>
           </div>
         </motion.div>
       </motion.div>

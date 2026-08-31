@@ -122,9 +122,12 @@ export default function WhyChooseMekark() {
             <span>Why Industrial Clients </span>
             <span className="text-red">Choose Mekark</span>
           </b>
-          <p className="mx-auto mt-4 max-w-[1063px] text-[15px] leading-[24px] font-medium tracking-[0.5px] text-[#05070c] sm:text-num-18_67 sm:leading-[26.67px] sm:tracking-[1.33px]">
-            Mekark pairs in-house design-build capability with the execution
-            discipline many generic contractors lack.
+          <p className="service-section-description mt-4">
+            <span>
+              Mekark pairs in-house design-build capability with the execution
+              discipline
+            </span>
+            <span>many generic contractors lack.</span>
           </p>
         </div>
 

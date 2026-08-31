@@ -12,19 +12,6 @@ export default function CtaBanner() {
           }}
         >
           <div className="relative z-[1] flex w-full flex-col gap-4 px-6 py-8 sm:px-10 sm:py-10">
-            <div className="flex items-center gap-3">
-              <Image
-                className="h-[19.4px] w-[24.1px] shrink-0"
-                src="/images/services/mep/cta-banner/bars.svg"
-                width={24}
-                height={19}
-                alt=""
-              />
-              <b className="tracking-[1.2px] leading-none capitalize">
-                Planning <span className="lowercase">a</span>
-              </b>
-            </div>
-
             <h2 className="text-[28px] leading-[1.15] font-extrabold text-white sm:text-5xl sm:leading-[50.52px]">
               <span className="leading-[inherit]">
                 Factory, Warehouse, or
@@ -114,24 +101,6 @@ export default function CtaBanner() {
                 />
               </span>
             </a>
-
-            <div className="absolute top-0 left-0 h-[26.5px] w-40 shrink-0">
-              <b className="absolute top-0 left-[calc(50%-51.13px)] flex h-[26.5px] w-[131.1px] items-center tracking-[1.2px] leading-[52.93px]">
-                <span className="w-full">
-                  <span className="leading-[52.93px] capitalize">
-                    Planning{" "}
-                  </span>
-                  <span className="leading-[52.93px] lowercase">a</span>
-                </span>
-              </b>
-              <Image
-                className="absolute top-[2.91px] left-0 h-[19.4px] w-[24.1px]"
-                src="/images/services/mep/cta-banner/bars.svg"
-                width={24}
-                height={19}
-                alt=""
-              />
-            </div>
           </div>
 
           <div className="absolute top-[42.67px] left-[117.33px] h-[264px] w-[2.7px] shrink-0 border-r-[2.7px] border-solid border-white box-border" />

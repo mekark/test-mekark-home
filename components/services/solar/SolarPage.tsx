@@ -3,6 +3,7 @@ import EndToEnd from "@/components/services/solar/end-to-end";
 import Faq from "@/components/services/solar/faq";
 import SolarFooterCta from "@/components/services/solar/footer";
 import Hero from "@/components/services/solar/hero";
+import SolarHowWeDeliver from "@/components/services/solar/SolarHowWeDeliver";
 import Why from "@/components/services/solar/why";
 import { TrustedSectorsSection } from "@/components/trusted-sectors/TrustedSectorsSection";
 
@@ -12,6 +13,7 @@ export function SolarPage() {
       <Hero />
       <EndToEnd />
       <Cta />
+      <SolarHowWeDeliver />
       <Why />
       <TrustedSectorsSection variant="services" />
       <Faq />

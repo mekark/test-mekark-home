@@ -194,12 +194,15 @@ export default function WhyChooseMekark() {
             <span className="text-[#111111]">Why Industrial Clients </span>
             <span className="text-[#E50818]">Choose Mekark</span>
           </h2>
-          <p className="mx-auto mt-2 max-w-[1139px] font-[family-name:var(--font-manrope)] text-[clamp(0.875rem,0.972vw,1.167rem)] font-medium leading-[1.45] tracking-[0.04em] text-[#05070C] sm:mt-1 sm:leading-[clamp(1.25rem,1.389vw,1.667rem)] sm:tracking-[0.06em] lg:w-[90.37%] lg:tracking-[1.33px]">
-            As a trusted steel building contractor and industrial construction
-            company,
-            <br className="hidden sm:block" />
-            Mekark brings manufacturing capacity and engineering depth that most
-            contractors don&apos;t have in-house.
+          <p className="service-section-description mt-2 sm:mt-1">
+            <span>
+              As a trusted steel building contractor and industrial construction
+              company,
+            </span>
+            <span>
+              Mekark brings manufacturing capacity and engineering depth that most
+              contractors don&apos;t have in-house.
+            </span>
           </p>
         </motion.header>
 

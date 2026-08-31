@@ -692,6 +692,16 @@
 	flex-shrink: 0;
 }
 
+.solarSolutionsDesktop {
+	display: none;
+}
+
+@media (min-width: 1024px) {
+	.solarSolutionsDesktop {
+		display: block;
+	}
+}
+
 @media (max-width: 1199px) {
 	.frameParent {
 		height: auto;

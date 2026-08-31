@@ -160,9 +160,15 @@ export default function WhyChooseMekark() {
               Why Industrial Clients{" "}
               <span className="text-red">Choose Mekark</span>
             </h2>
-            <p className="mx-auto mt-3 max-w-[340px] text-[14px] leading-[22px] font-medium text-ink/80">
-              Manufacturing capacity and engineering depth most contractors
-              don&apos;t have in-house.
+            <p className="service-section-description mt-3">
+              <span>
+                As a trusted steel building contractor and industrial construction
+                company,
+              </span>
+              <span>
+                Mekark brings manufacturing capacity and engineering depth that
+                most contractors don&apos;t have in-house.
+              </span>
             </p>
           </motion.div>
         </div>
@@ -224,12 +230,15 @@ export default function WhyChooseMekark() {
             Why Industrial Clients{" "}
             <span className="text-red">Choose Mekark</span>
           </h2>
-          <p className="mx-auto mt-2 max-w-[1139px] text-[18.67px] leading-[26.67px] font-medium tracking-[1.33px] text-ink">
-            As a trusted steel building contractor and industrial construction
-            company,
-            <br />
-            Mekark brings manufacturing capacity and engineering depth that most
-            contractors don&apos;t have in-house.
+          <p className="service-section-description mt-2">
+            <span>
+              As a trusted steel building contractor and industrial construction
+              company,
+            </span>
+            <span>
+              Mekark brings manufacturing capacity and engineering depth that most
+              contractors don&apos;t have in-house.
+            </span>
           </p>
         </motion.div>
 

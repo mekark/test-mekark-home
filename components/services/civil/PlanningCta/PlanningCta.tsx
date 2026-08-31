@@ -35,21 +35,6 @@ export default function PlanningCta() {
               aria-hidden
             />
 
-            <div className="mb-3 flex items-center gap-2">
-              <span className="relative h-[15px] w-[18px] shrink-0">
-                <Image
-                  src="/images/services/civil/cta/planning-icon.svg"
-                  alt=""
-                  fill
-                  className="object-contain"
-                  sizes="18px"
-                />
-              </span>
-              <p className="text-[12px] font-bold capitalize tracking-[1.2px] text-[#CCC6C6]">
-                Planning <span className="lowercase">a</span>
-              </p>
-            </div>
-
             <h2
               id="civil-quote-title"
               className="text-[24px] font-extrabold leading-[1.15] text-white sm:text-[32px] sm:leading-[1.1]"
@@ -142,22 +127,7 @@ export default function PlanningCta() {
 
           {/* Copy block — Figma 2488:5967 */}
           <div className="absolute left-[8.59%] top-[11.88%] flex h-[76.63%] w-[32.42%] min-w-0 flex-col">
-            <div className="mb-1 flex items-center gap-2">
-              <span className="relative h-[19.4px] w-[24.1px] shrink-0">
-                <Image
-                  src="/images/services/civil/cta/planning-icon.svg"
-                  alt=""
-                  fill
-                  className="object-contain"
-                  sizes="24px"
-                />
-              </span>
-              <p className="text-base font-bold capitalize tracking-[1.2px] text-[#CCC6C6]">
-                Planning <span className="lowercase">a</span>
-              </p>
-            </div>
-
-            <h2 className="mt-1 w-[138%] max-w-none text-[clamp(28px,2.8vw,48px)] font-extrabold leading-[1.05] text-white xl:text-[48px] xl:leading-[50.52px]">
+            <h2 className="w-[138%] max-w-none text-[clamp(28px,2.8vw,48px)] font-extrabold leading-[1.05] text-white xl:text-[48px] xl:leading-[50.52px]">
               Factory, Commercial Building,
               <br />
               or <span className="text-black">Industrial Building?</span>

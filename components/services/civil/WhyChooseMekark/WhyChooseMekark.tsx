@@ -16,7 +16,7 @@ const mobileParagraphs = [
 
 export default function WhyChooseMekark() {
   return (
-    <section className="relative h-auto w-full shrink-0 overflow-hidden text-left font-inter text-[18.67px] text-black [background:linear-gradient(269.25deg,#fff,rgba(255,255,255,0)),linear-gradient(#e6e6e6,#e6e6e6)] lg:h-[820px]">
+    <section className="relative h-auto w-full shrink-0 overflow-hidden text-left font-manrope text-num-18_67 font-normal text-black [background:linear-gradient(269.25deg,#fff,rgba(255,255,255,0)),linear-gradient(#e6e6e6,#e6e6e6)] lg:h-[820px]">
       {/* Mobile / tablet — styles only; same content as desktop */}
       <div className="relative z-10 lg:hidden">
         {/* Blueprint atmosphere */}
@@ -99,7 +99,7 @@ export default function WhyChooseMekark() {
                 key={index}
                 variants={fadeUp}
                 transition={{ duration: 0.45, ease: "easeOut" }}
-                className={`border-l-2 border-[rgba(204,16,32,0.4)] pl-4 text-[14px] leading-[22px] text-[#111] sm:pl-5 sm:text-[17px] sm:leading-[26px] ${
+                className={`font-manrope text-[14px] font-normal leading-[22px] text-black sm:text-[17px] sm:leading-[26px] lg:text-num-18_67 ${
                   index < mobileParagraphs.length - 1 ? "mb-5 sm:mb-6" : ""
                 }`}
               >
@@ -138,7 +138,7 @@ export default function WhyChooseMekark() {
           <motion.p
             variants={fadeUp}
             transition={{ duration: 0.55, ease: "easeOut" }}
-            className="absolute top-[172px] left-[2.67px] inline-block w-[686px] leading-[26px]"
+            className="absolute top-[172px] left-[2.67px] inline-block w-[686px] font-manrope text-num-18_67 font-normal leading-[26px] text-black"
           >
             Mekark is among the premier civil construction companies and RCC
             contractors based out of Chennai, offering you resilient,
@@ -149,7 +149,7 @@ export default function WhyChooseMekark() {
           <motion.p
             variants={fadeUp}
             transition={{ duration: 0.55, ease: "easeOut" }}
-            className="absolute top-[296px] left-[2.67px] inline-block w-[692px] leading-[26px]"
+            className="absolute top-[296px] left-[2.67px] inline-block w-[692px] font-manrope text-num-18_67 font-normal leading-[26px] text-black"
           >
             As a turnkey civil construction contractor, we manage the full
             project lifecycle: site assessment, structural design, RCC
@@ -163,7 +163,7 @@ export default function WhyChooseMekark() {
           <motion.p
             variants={fadeUp}
             transition={{ duration: 0.55, ease: "easeOut" }}
-            className="absolute top-[472px] left-[2.67px] inline-block w-[699px] leading-[26px]"
+            className="absolute top-[472px] left-[2.67px] inline-block w-[699px] font-manrope text-num-18_67 font-normal leading-[26px] text-black"
           >
             For your requirements of a civil construction company for commercial
             RCC construction, factory civil contractor or structural civil

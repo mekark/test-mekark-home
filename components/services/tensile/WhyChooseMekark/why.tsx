@@ -79,8 +79,13 @@ const WhyChooseMekark: NextPage = () => {
 					<span className={styles.titleAccent}>Choose Mekark</span>
 					<span className={styles.titleMuted}> for Tensile Structures</span>
 				</h2>
-				<p className={styles.subtitle}>
-					As a trusted tensile structure contractor serving South India, Mekark brings in-house engineering and fabrication capability that most tensile contractors outsource.
+				<p className={`${styles.subtitle} service-section-description`}>
+					<span>
+						As a trusted tensile structure contractor serving South India, Mekark brings
+					</span>
+					<span>
+						in-house engineering and fabrication capability that most tensile contractors outsource.
+					</span>
 				</p>
 			</header>
 

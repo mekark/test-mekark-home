@@ -1,0 +1,82 @@
+"use client";
+
+import Image from "next/image";
+import { motion } from "framer-motion";
+import type { CSSProperties } from "react";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 18 },
+  visible: { opacity: 1, y: 0 },
+};
+
+export type ServiceSolutionItem = {
+  title: string;
+  description: string;
+  image: string;
+  imageClassName?: string;
+  imageStyle?: CSSProperties;
+};
+
+type ServiceSolutionsMobileGridProps = {
+  title: string;
+  solutions: ServiceSolutionItem[];
+  desktopFrom?: "lg" | "xl";
+  className?: string;
+};
+
+export default function ServiceSolutionsMobileGrid({
+  title,
+  solutions,
+  desktopFrom = "lg",
+  className = "",
+}: ServiceSolutionsMobileGridProps) {
+  const hideFromDesktop = desktopFrom === "xl" ? "xl:hidden" : "lg:hidden";
+
+  return (
+    <div
+      className={`relative z-10 mx-auto flex w-full max-w-[1100px] flex-col items-center gap-10 px-5 py-14 sm:px-8 sm:py-16 ${hideFromDesktop} ${className}`}
+    >
+      <h2 className="max-w-[900px] text-center font-manrope text-[26px] font-bold tracking-[-1.33px] leading-[1.2] text-gray sm:text-[36px] sm:leading-[44px]">
+        {title}
+      </h2>
+      <motion.div
+        className="grid w-full grid-cols-1 gap-10 sm:grid-cols-2"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.15 }}
+        variants={{
+          hidden: {},
+          visible: { transition: { staggerChildren: 0.08 } },
+        }}
+      >
+        {solutions.map((item) => (
+          <motion.div
+            key={item.title}
+            variants={fadeUp}
+            transition={{ duration: 0.45, ease: "easeOut" }}
+            className="flex flex-col gap-4"
+          >
+            <div className="relative h-[200px] w-full overflow-hidden rounded-[21.33px] sm:h-[240px]">
+              <Image
+                className={`object-cover ${item.imageClassName ?? ""}`}
+                src={item.image}
+                alt={item.title}
+                fill
+                style={item.imageStyle}
+                sizes="(max-width: 640px) 100vw, 50vw"
+              />
+            </div>
+            <div>
+              <h3 className="font-montserrat text-[17px] font-bold leading-[22px] text-darkslategray sm:text-[18.67px]">
+                {item.title}
+              </h3>
+              <p className="mt-2 font-montserrat text-[14px] leading-[21px] text-dimgray sm:text-num-16 sm:leading-[21.33px]">
+                {item.description}
+              </p>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
+    </div>
+  );
+}

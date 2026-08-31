@@ -82,7 +82,7 @@ export default function Solutions() {
             {paragraphs.map((text, index) => (
               <motion.p
                 key={index}
-                className="relative w-full max-w-[724px] shrink-0 font-[family-name:var(--font-manrope)] text-[16px] font-normal leading-[24px] text-black sm:text-[18.67px] sm:leading-[26.67px]"
+                className="relative w-full max-w-[724px] shrink-0 font-manrope text-[14px] font-normal leading-[22px] text-black sm:text-[17px] sm:leading-[26px] lg:text-num-18_67"
                 initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}

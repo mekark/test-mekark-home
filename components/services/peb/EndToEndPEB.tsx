@@ -59,7 +59,7 @@ export default function EndToEndPEB() {
           </motion.h2>
 
           <motion.div
-            className="order-3 mt-6 flex max-w-[672px] flex-col gap-5 font-[family-name:var(--font-inter)] text-[clamp(0.875rem,0.972vw,1.167rem)] font-normal leading-[1.55] text-black sm:mt-[clamp(2rem,2.7vw,3.25rem)] sm:gap-[1.667rem] sm:leading-[clamp(1.25rem,1.389vw,1.667rem)] lg:order-none lg:max-w-none"
+            className="order-3 mt-6 flex max-w-[672px] flex-col gap-5 font-manrope text-[14px] font-normal leading-[22px] text-black sm:mt-[clamp(2rem,2.7vw,3.25rem)] sm:gap-[1.667rem] sm:text-[17px] sm:leading-[26px] lg:order-none lg:max-w-none lg:text-num-18_67"
             variants={stagger}
             initial="hidden"
             whileInView="visible"

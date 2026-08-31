@@ -132,7 +132,7 @@ export default function WhyClientsChooseMekark() {
           alt=""
         />
 
-        <div className="relative mx-auto max-w-[640px] px-5 pt-12 pb-14 sm:px-8 sm:pt-16 sm:pb-16">
+        <div className="relative mx-auto w-full max-w-[925px] px-5 pt-12 pb-14 sm:px-8 sm:pt-16 sm:pb-16">
           {/* Title block */}
           <motion.div
             className="text-center"
@@ -149,17 +149,24 @@ export default function WhyClientsChooseMekark() {
               transition={{ duration: 0.55, ease: "easeOut" }}
               className="text-[26px] font-bold tracking-[-1px] leading-[1.2] sm:text-[34px] sm:leading-[40px]"
             >
+
+              
               Why Industrial &amp; Commercial Clients{" "}
               <span className="text-red">Choose Mekark</span>
             </motion.h2>
             <motion.p
               variants={fadeUp}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="mx-auto mt-3 max-w-[34rem] text-[15px] font-medium leading-[22px] tracking-[0.5px] text-[#05070c] sm:mt-4 sm:text-[17px] sm:leading-[26px]"
+              className="service-section-description sm:mt-4"
             >
-              As a reliable civil construction contractor, building contractor,
-              and RCC construction company, Mekark offers structural engineering
-              expertise that many generic contractors lack.
+              <span>
+                As a reliable civil construction contractor, building contractor,
+                and RCC construction company,
+              </span>
+              <span>
+                Mekark offers structural engineering expertise that many generic
+                contractors lack.
+              </span>
             </motion.p>
           </motion.div>
 
@@ -252,15 +259,20 @@ export default function WhyClientsChooseMekark() {
               Choose Mekark
             </span>
           </motion.b>
-          <motion.div
+          <motion.p
             variants={fadeUp}
             transition={{ duration: 0.55, ease: "easeOut" }}
-            className="absolute top-[86.33px] left-1/2 flex w-[925px] max-w-full shrink-0 -translate-x-1/2 items-center justify-center text-num-18_67 font-medium tracking-[1.33px] leading-[26.67px] text-[#05070c]"
+            className="service-section-description absolute top-[86.33px] left-1/2 mt-0 h-[54px] w-[925px] max-w-full -translate-x-1/2"
           >
-            As a reliable civil construction contractor, building contractor,
-            and RCC construction company, Mekark offers structural engineering
-            expertise that many generic contractors lack.
-          </motion.div>
+            <span>
+              As a reliable civil construction contractor, building contractor,
+              and RCC construction company,
+            </span>
+            <span>
+              Mekark offers structural engineering expertise that many generic
+              contractors lack.
+            </span>
+          </motion.p>
         </motion.div>
       </div>
 

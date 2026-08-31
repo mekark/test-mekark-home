@@ -51,13 +51,7 @@
 }
 
 .subtitle {
-	margin: 0 auto;
-	max-width: 1063px;
-	font-size: clamp(13px, 2vw, 18px);
-	letter-spacing: 0.06em;
-	line-height: 1.45;
-	font-weight: 500;
-	color: #05070c;
+	margin-top: 0;
 }
 
 /* Desktop: Figma 1488 frame with overlapping center image */
@@ -274,9 +268,7 @@
 	}
 
 	.subtitle {
-		font-size: 13px;
-		letter-spacing: 0.02em;
-		line-height: 1.5;
+		margin-top: 0;
 	}
 
 	.content {

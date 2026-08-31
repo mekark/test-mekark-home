@@ -9,19 +9,8 @@ const Frame191: NextPage = () => {
 		<section className={styles.wrap}>
 			<div className={styles.banner}>
 				<div className={styles.copy}>
-					<div className={styles.eyebrow}>
-						<Image
-							className={styles.accent}
-							src="/images/services/tensile/frame191/accent-mark.svg"
-							width={24}
-							height={19}
-							alt=""
-						/>
-						<span className={styles.eyebrowText}>Planning a</span>
-					</div>
-
 					<h2 className={styles.title}>
-						<span className={styles.titleLight}>Planning a Tensile</span>
+						<span className={styles.titleLight}>Tensile</span>
 						<br />
 						<span className={styles.titleDark}>Roofing or Canopy Project?</span>
 					</h2>

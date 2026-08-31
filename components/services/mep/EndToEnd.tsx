@@ -36,7 +36,7 @@ function EndToEndIllustration({ className }: { className?: string }) {
 
 export default function EndToEnd() {
   return (
-    <section className="relative w-full shrink-0 overflow-hidden bg-gainsboro text-left font-inter text-[16px] text-black sm:text-[18.67px]">
+    <section className="relative w-full shrink-0 overflow-hidden bg-gainsboro text-left font-manrope font-normal text-black">
       <div
         className="absolute inset-0"
         style={{
@@ -56,7 +56,7 @@ export default function EndToEnd() {
 
           <EndToEndIllustration className="lg:hidden" />
 
-          <div className="flex flex-col gap-5 leading-[26.67px] lg:gap-6">
+          <div className="flex flex-col gap-5 text-[14px] font-normal leading-[22px] text-black sm:text-[17px] sm:leading-[26px] lg:gap-6 lg:text-num-18_67">
             <p>
               Mekark is a leading industrial MEP contractor based in Chennai,
               delivering reliable, code-compliant mechanical, electrical,

@@ -228,7 +228,7 @@ export function TrustedSectorsSection({
             Trusted Across
             <br />
             <span className="text-[#e50818]">
-              Industrial &amp; Commercial Sectors
+            Commercial, Industrial &amp; Public Sectors
             </span>
           </motion.h2>
 

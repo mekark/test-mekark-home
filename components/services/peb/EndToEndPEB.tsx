@@ -27,7 +27,7 @@ const paragraphs = [
     maxWidth: "max-w-[672px]",
   },
   {
-    text: "Our fully automated 70 lakh sq. ft. facility, with 40,000-ton production capacity, is one of the highest in Tamil Nadu. Every project is engineered by our X+ member in-house team using ETABS, AutoCAD, STAAD Pro, Tekla, and delivered under ISO-certified, green-certified processes.",
+    text: "Our fully automated 70 lakh sq. ft. facility, with 40,000-ton production capacity, is one of the highest in Tamil Nadu. Every project is engineered by our 175+ member in-house team using ETABS, AutoCAD, STAAD Pro, Tekla, and delivered under ISO-certified, green-certified processes.",
     maxWidth: "max-w-[653px]",
   },
 ] as const;

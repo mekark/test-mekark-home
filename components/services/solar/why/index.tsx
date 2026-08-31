@@ -79,7 +79,7 @@ const WhyChooseMekark: NextPage = () => {
 								<div className={styles.container5}>
 									<div className={styles.inHouseEngineeringTeamParent}>
 										<b className={styles.longTermSupportAnd}>In-House Engineering Team</b>
-										<div className={styles.xEngineersDesign}>{`X+ engineers design every system for structural compatibility, load requirements, and maximum energy output.`}</div>
+										<div className={styles.xEngineersDesign}>{`175+ engineers design every system for structural compatibility, load requirements, and maximum energy output.`}</div>
 									</div>
 								</div>
 							</div>

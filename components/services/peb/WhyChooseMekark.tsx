@@ -60,7 +60,7 @@ const leftBenefits: Benefit[] = [
     ),
     description: (
       <>
-        X+ engineers using ETABS,{" "}
+        175+ engineers using ETABS,{" "}
         <br className="hidden lg:inline" />
         AutoCAD, and STAAD. Pro. Tekla{" "}
         <br className="hidden lg:inline" />

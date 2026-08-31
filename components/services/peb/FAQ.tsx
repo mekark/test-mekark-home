@@ -70,7 +70,7 @@ const faqItems: FAQItem[] = [
     question:
       "Do you provide structural design and drawings, or do we need our own architect/consultant?",
     answer:
-      "Our in-house team of X+ engineers handles complete structural design and analysis, so you don’t need to source this separately. However, we’re also happy to work alongside your existing architect or consultant.",
+      "Our in-house team of 175+ engineers handles complete structural design and analysis, so you don’t need to source this separately. However, we’re also happy to work alongside your existing architect or consultant.",
   },
   {
     question: "Can PEB structures be expanded or modified in the future?",

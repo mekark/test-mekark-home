@@ -40,7 +40,7 @@ export default function Hero() {
           <div className={styles.verticalborder2}>
             <div className={styles.container3}>
               <div className={styles.x}>
-                <span className={styles.span}>{`X `}</span>
+                <span className={styles.span}>{`175 `}</span>
                 <span className={styles.span2}>+</span>
               </div>
             </div>

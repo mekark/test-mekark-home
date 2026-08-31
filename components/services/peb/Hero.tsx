@@ -67,8 +67,8 @@ const stats: Stat[] = [
     label: "Engineers",
     value: (
       <>
-        <span className="text-white">X </span>
-        <span className="text-[#e9000e]">In-House</span>
+        <span className="text-white">175</span>
+        <span className="text-[#e9000e]">+ In-House</span>
       </>
     ),
   },

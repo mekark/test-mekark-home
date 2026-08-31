@@ -35,7 +35,7 @@ const stats = [
   {
     value: (
       <>
-        X <span className="text-red-300">In-House</span>
+        175<span className="text-red-300">+ In-House</span>
       </>
     ),
     label: "Engineers",
@@ -239,9 +239,9 @@ export default function Hero() {
               <div className="flex w-[133.3px] shrink-0 flex-col items-start">
                 <div className="relative flex w-[159.8px] shrink-0 items-center tracking-[-1.11px] leading-num-25_62 font-extrabold">
                   <span className="w-full">
-                    <span className="leading-num-25_62">X </span>
+                    <span className="leading-num-25_62">175</span>
                     <span className="leading-num-25_62 text-red-300">
-                      In-House
+                      + In-House
                     </span>
                   </span>
                 </div>

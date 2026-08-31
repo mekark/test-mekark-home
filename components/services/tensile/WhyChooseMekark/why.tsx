@@ -18,7 +18,7 @@ const features = [
 	{
 		num: "03",
 		title: "In-House Engineering Team:",
-		body: "X+ engineers using ETABS, AutoCAD, and STAAD.Pro for wind-load and tension analysis on every tensile canopy and dome design.",
+		body: "175+ engineers using ETABS, AutoCAD, and STAAD.Pro for wind-load and tension analysis on every tensile canopy and dome design.",
 	},
 	{
 		num: "04",

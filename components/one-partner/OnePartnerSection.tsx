@@ -12,8 +12,6 @@ import {
   type MotionValue,
 } from "framer-motion";
 import {
-  partnerLockBannerText,
-  partnerLockBannerWipe,
   partnerLockBarSnap,
   partnerLockBottomDraw,
   partnerLockCardAssemble,
@@ -22,7 +20,6 @@ import {
   partnerLockHeaderStagger,
   partnerLockIconPop,
   partnerLockRuleDraw,
-  partnerLockShieldDrop,
   partnerLockSkylineDrift,
   partnerLockStamp,
   partnerLockSubtitle,
@@ -45,7 +42,7 @@ const HEADLINE_WORDS = [
 const BENEFITS = [
   {
     category: "Continuity",
-    title: "Design-to-Execution",
+    title: ["Design to", "Execution"],
     description:
       "Seamless transition from architectural vision to onground structural reality.",
     icon: "/images/one-partner/icon-box.svg",
@@ -231,7 +228,7 @@ function BenefitCard({
       }}
       animate={{ scale: hovered ? 1.03 : 1 }}
       transition={{ type: "spring", stiffness: 360, damping: 24 }}
-      className="group relative flex min-h-[325px] w-[242px] shrink-0 snap-start flex-col overflow-hidden rounded-[18px] border border-[#dedede] bg-white/90 sm:w-[260px] md:w-[280px] xl:h-[452px] xl:min-h-[452px] xl:w-full xl:min-w-0 xl:flex-1 xl:rounded-[24px]"
+      className="group relative flex w-[242px] shrink-0 snap-start flex-col overflow-hidden rounded-[18px] border border-[#dedede] bg-white/90 sm:w-[260px] md:w-[280px] xl:h-[452px] xl:min-h-[452px] xl:w-full xl:min-w-0 xl:flex-1 xl:rounded-[24px]"
     >
       <motion.div
         className="pointer-events-none absolute inset-0 z-[2] rounded-[18px] xl:rounded-[24px]"
@@ -251,7 +248,7 @@ function BenefitCard({
 
       <motion.div
         variants={partnerLockContentStack}
-        className="relative z-10 flex h-full flex-col px-8 pb-[51px] pt-[26px] backdrop-blur-[2px] xl:px-[42px] xl:pb-[68px] xl:pt-[35px]"
+        className="relative z-10 flex h-full flex-col px-6 pb-6 pt-5 backdrop-blur-[2px] xl:px-[42px] xl:pb-[68px] xl:pt-[35px]"
       >
         <motion.div
           variants={partnerLockIconPop}
@@ -271,7 +268,7 @@ function BenefitCard({
                 }
               : { type: "spring", stiffness: 360, damping: 22 }
           }
-          className="relative flex size-[77px] shrink-0 items-center justify-center rounded-full border border-[#eee] shadow-[0px_10px_9px_rgba(0,0,0,0.06),inset_0px_0px_17px_rgba(0,0,0,0.04)] xl:size-[103px] xl:shadow-[0px_13.391px_12.275px_rgba(0,0,0,0.06),inset_0px_0px_22px_rgba(0,0,0,0.04)]"
+          className="relative flex size-[64px] shrink-0 items-center justify-center rounded-full border border-[#eee] shadow-[0px_10px_9px_rgba(0,0,0,0.06),inset_0px_0px_17px_rgba(0,0,0,0.04)] xl:size-[103px] xl:shadow-[0px_13.391px_12.275px_rgba(0,0,0,0.06),inset_0px_0px_22px_rgba(0,0,0,0.04)]"
           style={{ backgroundImage: ICON_CIRCLE_BG }}
         >
           <Image
@@ -299,7 +296,7 @@ function BenefitCard({
             className="text-lg font-bold leading-6 tracking-[-0.5px] text-[#111] xl:text-2xl xl:leading-8 xl:tracking-[-0.76px]"
           >
             {titleLines.map((line) => (
-              <span key={line} className="block">
+              <span key={line} className="block whitespace-nowrap">
                 {line}
               </span>
             ))}
@@ -317,7 +314,7 @@ function BenefitCard({
           variants={partnerLockTextRise}
           animate={{ y: hovered ? -2 : 0, opacity: hovered ? 1 : 0.9 }}
           transition={{ duration: 0.28 }}
-          className="mt-auto pt-4 text-xs leading-[19px] text-[#4c4c4c] xl:text-base xl:leading-[25.33px]"
+          className="mt-3 text-xs leading-[19px] text-[#4c4c4c] xl:mt-auto xl:pt-4 xl:text-base xl:leading-[25.33px]"
         >
           {benefit.description}
         </motion.p>
@@ -432,7 +429,7 @@ export function OnePartnerSection() {
               initial="hidden"
               whileInView="visible"
               viewport={VIEWPORT}
-              className="-mx-5 flex gap-[17px] overflow-x-auto px-5 pb-2 snap-x snap-mandatory scrollbar-none sm:mx-0 sm:px-0 xl:mx-0 xl:grid xl:grid-cols-5 xl:gap-[23px] xl:overflow-visible xl:px-0"
+              className="-mx-5 flex gap-[17px] overflow-x-auto px-5 pb-4 snap-x snap-mandatory scrollbar-none sm:mx-0 sm:px-0 xl:mx-0 xl:grid xl:grid-cols-5 xl:gap-[23px] xl:overflow-visible xl:pb-2 xl:px-0"
             >
               {BENEFITS.map((benefit, index) => (
                 <BenefitCard
@@ -446,11 +443,11 @@ export function OnePartnerSection() {
           </div>
 
           <motion.div
-            variants={partnerLockBannerWipe}
-            initial="hidden"
-            whileInView="visible"
-            viewport={VIEWPORT}
-            className="relative mt-2 overflow-hidden rounded-[11px] border border-[#ddd] shadow-[0px_17px_38px_rgba(0,0,0,0.06)] lg:mt-1 lg:h-[139px] lg:rounded-[15px] lg:shadow-[0px_22.734px_50.521px_rgba(0,0,0,0.06)]"
+            initial={{ y: 16 }}
+            whileInView={{ y: 0 }}
+            viewport={{ once: true, amount: 0.05, margin: "0px 0px -40px 0px" }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="relative z-10 mt-6 overflow-hidden rounded-[11px] border border-[#ddd] shadow-[0px_17px_38px_rgba(0,0,0,0.06)] lg:mt-1 lg:h-[139px] lg:rounded-[15px] lg:shadow-[0px_22.734px_50.521px_rgba(0,0,0,0.06)]"
             style={{
               backgroundImage:
                 "linear-gradient(90deg, rgb(215, 10, 16) 0%, rgb(166, 4, 6) 100%)",
@@ -470,9 +467,12 @@ export function OnePartnerSection() {
               aria-hidden
             />
 
-            <div className="relative flex min-h-[104px] items-center gap-6 px-6 py-5 sm:gap-8 sm:px-12 lg:h-full lg:min-h-[139px] lg:gap-8 lg:px-[69px] lg:py-0">
+            <div className="relative flex min-h-[104px] flex-col items-start gap-4 px-6 py-5 sm:flex-row sm:items-center sm:gap-8 sm:px-12 lg:h-full lg:min-h-[139px] lg:gap-8 lg:px-[69px] lg:py-0">
               <motion.div
-                variants={partnerLockShieldDrop}
+                initial={{ scale: 0.92 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true, amount: 0.05, margin: "0px 0px -40px 0px" }}
+                transition={{ type: "spring", stiffness: 380, damping: 16, delay: 0.1 }}
                 className="flex size-[70px] shrink-0 items-center justify-center rounded-full border border-white lg:size-[93px]"
               >
                 <Image
@@ -484,13 +484,10 @@ export function OnePartnerSection() {
                 />
               </motion.div>
 
-              <motion.p
-                variants={partnerLockBannerText}
-                className="relative z-10 max-w-[769px] text-xl font-medium leading-normal tracking-[-0.76px] text-white sm:text-[25px] lg:max-w-[1025px] lg:text-[33.33px] lg:tracking-[-1.01px]"
-              >
+              <p className="relative z-10 max-w-[769px] text-xl font-medium leading-snug tracking-[-0.76px] text-white sm:text-[25px] lg:max-w-[1025px] lg:text-[33.33px] lg:leading-normal lg:tracking-[-1.01px]">
                 Single accountability.{" "}
                 <span className="font-bold">Complete project ownership.</span>
-              </motion.p>
+              </p>
 
               <motion.div
                 variants={partnerLockSkylineDrift}

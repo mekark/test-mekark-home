@@ -230,7 +230,7 @@ export function OurServicesSection() {
       id="our-solutions"
       className="relative w-full bg-[#0a0a0a] font-[family-name:var(--font-manrope)] text-white"
     >
-      <div className="relative mx-auto flex w-full max-w-[1740px] flex-col items-center gap-[80px] px-5 py-14 sm:px-8 lg:gap-[120px] lg:px-[107px] lg:py-[93px]">
+      <div className="relative mx-auto flex w-full max-w-[1740px] flex-col items-center gap-6 px-5 py-14 sm:gap-12 sm:px-8 lg:gap-[120px] lg:px-[107px] lg:py-[93px]">
         {coreServices.length > 0 ? (
           <div className="flex w-full max-w-[1481px] flex-col items-center gap-12 lg:gap-[70px]">
             <motion.h2
@@ -238,15 +238,17 @@ export function OurServicesSection() {
               initial="hidden"
               whileInView="visible"
               viewport={VIEWPORT}
-              className="text-center text-[clamp(1.75rem,3.5vw,3.33rem)] font-bold leading-[1.5] tracking-[-1.33px] lg:leading-[80px]"
+              className="flex w-full max-w-full flex-wrap justify-center gap-x-[0.3em] text-center text-[clamp(1.75rem,3.5vw,3.33rem)] font-bold leading-[1.5] tracking-[-1.33px] lg:leading-[80px]"
             >
               <motion.span
-                className="text-[#e50818]"
+                className="inline-block text-[#e50818]"
                 variants={aboutHeadlineChunk}
               >
                 Our
               </motion.span>
-              <motion.span variants={aboutHeadlineChunk}> Solutions</motion.span>
+              <motion.span className="inline-block" variants={aboutHeadlineChunk}>
+                Solutions
+              </motion.span>
             </motion.h2>
 
             <SolutionGrid services={coreServices} overlay="core" />
@@ -254,21 +256,21 @@ export function OurServicesSection() {
         ) : null}
 
         {extendedServices.length > 0 ? (
-          <div className="flex w-full max-w-[1481px] flex-col items-center gap-12 lg:gap-[70px]">
+          <div className="-mt-1 flex w-full max-w-[1481px] flex-col items-center gap-8 sm:mt-0 sm:gap-12 lg:gap-[70px]">
             <motion.h2
               variants={aboutHeadlineStagger}
               initial="hidden"
               whileInView="visible"
               viewport={VIEWPORT}
-              className="text-center text-[clamp(1.75rem,3.5vw,3.33rem)] font-bold leading-[1.5] tracking-[-1.33px] lg:leading-[80px]"
+              className="flex w-full max-w-full flex-wrap justify-center gap-x-[0.3em] text-center text-[clamp(1.75rem,3.5vw,3.33rem)] font-bold leading-[1.35] tracking-[-1.33px] sm:leading-[1.5] lg:leading-[80px]"
             >
               <motion.span
-                className="text-[#ed1c24]"
+                className="inline-block text-[#ed1c24]"
                 variants={aboutHeadlineChunk}
               >
-                Extended{" "}
+                Extended
               </motion.span>
-              <motion.span variants={aboutHeadlineChunk}>
+              <motion.span className="inline-block" variants={aboutHeadlineChunk}>
                 Infrastructure Solutions.
               </motion.span>
             </motion.h2>

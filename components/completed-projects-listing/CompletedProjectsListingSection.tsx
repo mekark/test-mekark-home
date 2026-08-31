@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   mfgCardReveal,
@@ -11,6 +12,16 @@ import {
 } from "@/lib/motion-variants";
 
 const VIEWPORT = { once: true, margin: "-80px" as const };
+
+const COMPLETED_PROJECTS_PATH = "/projects/completed-projects";
+
+/** Two rows per breakpoint: 1 col → 2, 2 col → 4, 3 col → 6 */
+function projectVisibilityClass(index: number) {
+  if (index >= 6) return "hidden";
+  if (index >= 4) return "hidden lg:block";
+  if (index >= 2) return "hidden sm:block";
+  return "";
+}
 
 const PROJECTS = [
   {
@@ -168,10 +179,25 @@ export function CompletedProjectsListingSection() {
             className="grid w-full grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6"
           >
             {PROJECTS.map((project, index) => (
-              <div key={project.title} className="group">
+              <div
+                key={project.title}
+                className={`group ${projectVisibilityClass(index)}`}
+              >
                 <ProjectListingCard project={project} index={index} />
               </div>
             ))}
+          </motion.div>
+
+          <motion.div
+            variants={mfgSubtitleReveal}
+            className="flex w-full justify-center"
+          >
+            <Link
+              href={COMPLETED_PROJECTS_PATH}
+              className="inline-flex min-h-11 items-center justify-center rounded-[9px] bg-[#ed1c24] px-6 py-3 text-sm font-bold text-white shadow-[0px_9px_13px_-3px_rgba(237,28,36,0.2),0px_3px_5px_-3px_rgba(237,28,36,0.2)] transition-transform hover:scale-[1.02] active:scale-[0.98]"
+            >
+              Show More
+            </Link>
           </motion.div>
         </motion.div>
       </div>

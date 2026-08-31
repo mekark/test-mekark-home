@@ -72,25 +72,25 @@ function CapabilityCard({
 }: (typeof CAPABILITIES)[number]) {
   return (
     <article className="group flex w-[min(100%,329px)] shrink-0 flex-col sm:w-[329px]">
-      <div className="flex h-full flex-col rounded-[24px] px-6 pb-8 pt-8 transition-colors duration-300 ease-out group-hover:bg-[#f5f5f5] sm:px-8">
-        <div className="relative flex size-[90px] shrink-0 items-center justify-center overflow-clip sm:size-[113px]">
+      <div className="flex h-full flex-col rounded-[24px] px-6 pb-6 pt-5 transition-colors duration-300 ease-out group-hover:bg-[#f5f5f5] sm:px-8 sm:pb-8 sm:pt-8">
+        <div className="relative flex size-[72px] shrink-0 items-center justify-center overflow-clip sm:size-[113px]">
           <div
-            className="absolute inset-0 rounded-[18px] bg-[#fdebeb] opacity-55 transition-opacity duration-300 group-hover:opacity-100 sm:rounded-[22.67px] sm:opacity-35"
+            className="absolute inset-0 rounded-[14px] bg-[#fdebeb] opacity-55 transition-opacity duration-300 group-hover:opacity-100 sm:rounded-[22.67px] sm:opacity-35"
             aria-hidden
           />
-          <div className="relative size-[48px] overflow-clip sm:size-[60px]">
+          <div className="relative size-[36px] overflow-clip sm:size-[60px]">
             <Image
               src={icon}
               alt=""
               fill
               className="object-contain"
-              sizes="60px"
+              sizes="(max-width: 640px) 36px, 60px"
               aria-hidden
             />
           </div>
         </div>
 
-        <div className="mt-4 flex flex-col gap-[13.3px] sm:mt-6">
+        <div className="mt-3 flex flex-col gap-[13.3px] sm:mt-6">
           <h3 className="text-[20px] font-bold leading-[26px] text-[#0f0f0f] sm:text-2xl sm:leading-[30px]">
             {title}
           </h3>
@@ -148,7 +148,7 @@ export function CoreEpcCapabilitiesSection() {
           initial="hidden"
           whileInView="visible"
           viewport={VIEWPORT}
-          className="mb-10 sm:mb-12 lg:mb-[52px]"
+          className="mb-5 sm:mb-12 lg:mb-[52px]"
         >
           <motion.h2
             variants={epcCapHeadlineWipe}
@@ -174,12 +174,12 @@ export function CoreEpcCapabilitiesSection() {
             className="overflow-hidden"
             ref={emblaRef}
           >
-            <div className="flex touch-pan-y gap-0">
+            <div className="flex touch-pan-x gap-0">
               {CAPABILITIES.map((capability) => (
                 <motion.div
                   key={capability.title}
                   variants={epcCapCardFromLeft}
-                  className="min-w-0 shrink-0 grow-0 basis-[min(100%,366.67px)] px-4 pt-[21px] pb-4"
+                  className="min-w-0 shrink-0 grow-0 basis-[min(100%,366.67px)] px-4 pb-4 pt-0 sm:pt-[21px]"
                 >
                   <CapabilityCard {...capability} />
                 </motion.div>

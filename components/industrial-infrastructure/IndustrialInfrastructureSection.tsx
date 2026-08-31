@@ -86,15 +86,15 @@ export function IndustrialInfrastructureSection() {
             initial="hidden"
             whileInView="visible"
             viewport={VIEWPORT}
-            className="text-center text-[clamp(1.75rem,3.5vw,3.33rem)] font-bold leading-[1.5] tracking-[-1.33px] lg:leading-[80px]"
+            className="flex w-full max-w-full flex-wrap justify-center gap-x-[0.3em] text-center text-[clamp(1.75rem,3.5vw,3.33rem)] font-bold leading-[1.5] tracking-[-1.33px] lg:leading-[80px]"
           >
             <motion.span
-              className="text-[#ed1c24]"
+              className="inline-block text-[#ed1c24]"
               variants={aboutHeadlineChunk}
             >
-              Extended{" "}
+              Extended
             </motion.span>
-            <motion.span variants={aboutHeadlineChunk}>
+            <motion.span className="inline-block" variants={aboutHeadlineChunk}>
               Infrastructure Solutions.
             </motion.span>
           </motion.h2>

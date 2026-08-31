@@ -157,8 +157,10 @@ export function MekarkBlogsSection() {
             variants={blogHeadlineReveal}
             className="max-w-[760px] text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold leading-tight tracking-[-1.3px] lg:text-[40px] lg:leading-[52px]"
           >
-            <span className="text-[#1a1a1a]">Stories, releases, </span>
-            <span className="text-[#ed2024]">&amp; deep dives.</span>
+            <span className="text-[#1a1a1a]">
+              Engineering insights, project updates{" "}
+            </span>
+            <span className="text-[#ed2024]">and industry stories.</span>
           </motion.h2>
         </motion.div>
 

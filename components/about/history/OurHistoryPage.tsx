@@ -119,13 +119,10 @@ export function OurHistoryPage() {
           >
             <motion.h1
               variants={aboutHeadlineStagger}
-              className="max-w-[980px] font-[family-name:var(--font-manrope)] text-[clamp(1.85rem,4.2vw,48px)] font-bold leading-[1.15] tracking-[-1px] text-[#111]"
+              className="max-w-[980px] font-[family-name:var(--font-manrope)] text-[clamp(0.9rem,4.5vw,1.85rem)] font-bold leading-[1.15] tracking-[-0.5px] text-[#111] max-sm:whitespace-nowrap sm:text-[clamp(1.85rem,4.2vw,48px)] sm:tracking-[-1px]"
             >
               <motion.span variants={aboutHeadlineChunk} className="inline">
-                We are Mekark. This is our{" "}
-              </motion.span>
-              <motion.span variants={aboutHeadlineChunk} className="inline">
-                story.
+                We are Mekark. This is our story.
               </motion.span>
             </motion.h1>
             <motion.span
@@ -148,15 +145,45 @@ export function OurHistoryPage() {
           </motion.div>
         </div>
 
-        <div className="relative mx-auto hidden w-full max-w-[1916px] sm:block sm:aspect-[802/160]">
-          <Image
-            src="/images/about/history/18%20Years.png"
-            alt="18+ years of experience"
-            fill
-            className="object-contain object-bottom"
-            sizes="100vw"
-            priority
-          />
+        {/* Mobile hero — Figma: background + centered 18+ badge */}
+        <div className="relative mx-auto w-full sm:hidden">
+          <div className="relative w-full aspect-[402/80]">
+            <Image
+              src="/images/about/history/about-hero-mobile.png"
+              alt=""
+              fill
+              className="object-cover object-center"
+              sizes="100vw"
+              priority
+              aria-hidden
+            />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="relative aspect-[71/54] h-[67%] w-auto">
+                <Image
+                  src="/images/about/history/18-plus-mobile.png"
+                  alt="18+ years of experience"
+                  fill
+                  className="object-contain"
+                  sizes="71px"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop hero */}
+        <div className="relative mx-auto hidden w-full max-w-[1916px] sm:block">
+          <div className="relative w-full aspect-[802/160]">
+            <Image
+              src="/images/about/history/18%20Years.png"
+              alt="18+ years of experience"
+              fill
+              className="object-contain object-bottom"
+              sizes="100vw"
+              priority
+            />
+          </div>
         </div>
       </section>
 
@@ -212,13 +239,23 @@ export function OurHistoryPage() {
 
       {/* Leadership */}
       <section className="border-t border-[#dedede] bg-[#f6f7f8] px-5 py-12 sm:px-8 sm:py-16 lg:px-[clamp(1.25rem,18vw,345px)] lg:py-[120px]">
-        <div className="mx-auto grid max-w-[1230px] gap-8 sm:gap-10 lg:grid-cols-[440px_minmax(0,1fr)] lg:gap-16">
+        <div className="mx-auto grid max-w-[1230px] grid-cols-1 gap-8 sm:gap-10 lg:grid-cols-[440px_minmax(0,1fr)] lg:gap-16">
+          <motion.h2
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={VIEWPORT}
+            className="order-1 font-[family-name:var(--font-manrope)] text-[clamp(1.65rem,3vw,40px)] font-semibold leading-tight tracking-[-1px] text-black lg:col-start-2 lg:row-start-1"
+          >
+            Two generations. One promise.
+          </motion.h2>
+
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={VIEWPORT}
-            className="relative w-full max-w-[440px]"
+            className="relative order-2 w-full max-w-[440px] lg:col-start-1 lg:row-start-1 lg:row-span-3"
           >
             <div className="relative w-full overflow-hidden rounded-[20px]">
               <Image
@@ -228,7 +265,7 @@ export function OurHistoryPage() {
                 sizes="(max-width: 1024px) 100vw, 440px"
               />
             </div>
-            <div className="mt-4 border-t border-[#c6c6c6] pt-4 sm:mt-5 sm:pt-5">
+            <div className="mt-4 border-t border-black/15 pt-4 sm:mt-5 sm:pt-5">
               <p className="font-[family-name:var(--font-manrope)] text-lg font-medium leading-tight text-black sm:text-[21px]">
                 D. Aquin Janvel
               </p>
@@ -238,51 +275,44 @@ export function OurHistoryPage() {
             </div>
           </motion.div>
 
-          <motion.div
-            variants={staggerContainer}
+          <motion.blockquote
+            variants={aboutQuoteReveal}
             initial="hidden"
             whileInView="visible"
             viewport={VIEWPORT}
-            className="flex flex-col gap-6 border-b border-[#e7ebf0] pb-8 sm:gap-8 sm:pb-12 lg:pb-[60px]"
+            className="relative order-3 w-full max-w-[375px] sm:pl-10 sm:pt-[13px] lg:col-start-2 lg:row-start-2"
           >
-            <motion.h2
-              variants={fadeUp}
-              className="font-[family-name:var(--font-manrope)] text-[clamp(1.65rem,3vw,40px)] font-semibold leading-tight tracking-[-1px] text-black"
+            <motion.div
+              variants={aboutQuoteIcon}
+              className="relative mb-3 h-[26px] w-[29px] sm:absolute sm:mb-0 sm:left-0 sm:top-[13px]"
+              aria-hidden
             >
-              Two generations. One promise.
-            </motion.h2>
-
-            <motion.blockquote
-              variants={aboutQuoteReveal}
-              className="relative w-full max-w-[375px] sm:pl-10 sm:pt-[13px]"
-            >
-              <motion.div
-                variants={aboutQuoteIcon}
-                className="relative mb-3 h-[26px] w-[29px] sm:absolute sm:mb-0 sm:left-0 sm:top-[13px]"
-                aria-hidden
+              <Image
+                src="/images/about/quotes-ltr.svg"
+                alt=""
+                fill
+                className="object-contain"
+                sizes="36px"
+              />
+            </motion.div>
+            <div className="relative w-full bg-[#fff3e4] p-4 sm:h-[146px] sm:p-0">
+              <p
+                className={`${robotoSlab.className} flex w-full items-center text-left text-lg font-light leading-[1.5] text-black sm:absolute sm:left-[17px] sm:top-1/2 sm:h-[90px] sm:w-[340px] sm:-translate-y-1/2 sm:text-xl sm:leading-[30px]`}
               >
-                <Image
-                  src="/images/about/quotes-ltr.svg"
-                  alt=""
-                  fill
-                  className="object-contain"
-                  sizes="36px"
-                />
-              </motion.div>
-              <div className="relative w-full bg-[#fff3e4] p-4 sm:h-[146px] sm:p-0">
-                <p
-                  className={`${robotoSlab.className} flex w-full items-center text-left text-lg font-light leading-[1.5] text-black sm:absolute sm:left-[17px] sm:top-1/2 sm:h-[90px] sm:w-[340px] sm:-translate-y-1/2 sm:text-xl sm:leading-[30px]`}
-                >
-                  We didn&apos;t just inherit a business - we inherited a
-                  responsibility to build better.
-                </p>
-              </div>
-            </motion.blockquote>
+                We didn&apos;t just inherit a business - we inherited a
+                responsibility to build better.
+              </p>
+            </div>
+          </motion.blockquote>
 
-            <motion.p
-              variants={fadeUp}
-              className="font-[family-name:var(--font-manrope)] text-base leading-[1.65] text-black sm:text-[18px] sm:leading-[1.6]"
-            >
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={VIEWPORT}
+            className="order-4 pb-8 sm:pb-12 lg:col-start-2 lg:row-start-3 lg:pb-[60px]"
+          >
+            <p className="font-[family-name:var(--font-manrope)] text-base leading-[1.65] text-black sm:text-[18px] sm:leading-[1.6]">
               Mekark exists because two generations refused to stop building. My
               father started with nothing but a workshop and a belief that
               quality work speaks for itself. I grew up watching that belief
@@ -293,7 +323,7 @@ export function OurHistoryPage() {
               results speak. What started as a handful of people in a small
               setup is today a team of over a thousand, building across South
               India and we&apos;re still just getting started.
-            </motion.p>
+            </p>
           </motion.div>
         </div>
       </section>
@@ -302,12 +332,20 @@ export function OurHistoryPage() {
       <section className="relative overflow-hidden bg-white">
         <div className="pointer-events-none absolute inset-x-0 top-6 bottom-0 sm:top-[39px]">
           <div className="relative mx-auto h-full max-w-[1911px]">
-            <div className="absolute inset-x-0 bottom-0 h-[min(68vw,619px)] sm:h-[min(52vw,619px)]">
+            <div className="absolute inset-x-0 bottom-0 h-[min(32vw,130px)] sm:h-[min(52vw,619px)]">
+              <Image
+                src="/images/about/history/journey-bg-mobile.png"
+                alt=""
+                fill
+                className="object-cover object-bottom sm:hidden"
+                sizes="100vw"
+                aria-hidden
+              />
               <Image
                 src="/images/about/history/journey-bg.png"
                 alt=""
                 fill
-                className="object-cover object-bottom"
+                className="hidden object-cover object-bottom sm:block"
                 sizes="100vw"
                 aria-hidden
               />
@@ -315,7 +353,7 @@ export function OurHistoryPage() {
           </div>
         </div>
 
-        <div className="relative z-10 mx-auto max-w-[1230px] px-5 pt-8 pb-[min(52vw,280px)] sm:px-8 sm:pt-[38px] sm:pb-[min(42vw,340px)] lg:px-10 lg:pb-[280px]">
+        <div className="relative z-10 mx-auto max-w-[1230px] px-5 pt-8 pb-[min(36vw,150px)] sm:px-8 sm:pt-[38px] sm:pb-[min(42vw,340px)] lg:px-10 lg:pb-[280px]">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -349,13 +387,13 @@ export function OurHistoryPage() {
             >
               <div className="absolute inset-x-5 top-1/2 hidden h-px -translate-y-1/2 bg-white/25 sm:inset-x-8 lg:inset-x-10 lg:block" />
 
-              <div className="grid gap-8 min-[520px]:grid-cols-2 lg:flex lg:items-stretch lg:gap-[41px]">
+              <div className="max-[519px]:flex max-[519px]:flex-col min-[520px]:grid min-[520px]:gap-8 min-[520px]:grid-cols-2 lg:flex lg:items-stretch lg:gap-[41px]">
                 {STAT_COLUMNS.map((column, columnIndex) => (
                   <div
                     key={columnIndex}
-                    className={`flex flex-col gap-8 sm:gap-10 lg:flex-1 lg:gap-[50px] ${
+                    className={`max-[519px]:contents min-[520px]:flex min-[520px]:flex-col min-[520px]:gap-8 sm:min-[520px]:gap-10 lg:flex-1 lg:gap-[50px] ${
                       columnIndex < STAT_COLUMNS.length - 1
-                        ? "border-b border-white/25 pb-8 min-[520px]:border-b-0 min-[520px]:pb-0 lg:border-r lg:border-b-0 lg:pb-0 lg:pr-[41px]"
+                        ? "lg:border-r lg:border-b-0 lg:pb-0 lg:pr-[41px]"
                         : ""
                     } ${
                       columnIndex === 2
@@ -369,14 +407,26 @@ export function OurHistoryPage() {
                           (total, col) => total + col.length,
                           0,
                         ) + statIndex;
+                      const totalStats = STAT_COLUMNS.reduce(
+                        (total, col) => total + col.length,
+                        0,
+                      );
 
                       return (
-                        <JourneyStat
+                        <div
                           key={stat.label}
-                          stat={stat}
-                          start={statsInView}
-                          delay={0.2 + flatIndex * 0.12}
-                        />
+                          className={
+                            flatIndex < totalStats - 1
+                              ? "max-[519px]:border-b max-[519px]:border-white/25 max-[519px]:py-8"
+                              : "max-[519px]:py-8"
+                          }
+                        >
+                          <JourneyStat
+                            stat={stat}
+                            start={statsInView}
+                            delay={0.2 + flatIndex * 0.12}
+                          />
+                        </div>
                       );
                     })}
                   </div>

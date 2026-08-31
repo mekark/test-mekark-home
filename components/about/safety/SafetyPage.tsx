@@ -50,6 +50,129 @@ const FIVE_S_POINTS = [
   },
 ] as const;
 
+type FiveSPoint = (typeof FIVE_S_POINTS)[number];
+
+function FiveSPointCard({ point }: { point: FiveSPoint }) {
+  return (
+    <article
+      className="relative flex h-full w-full min-w-0 flex-col items-center justify-center rounded-[14px] px-4 py-5 text-center shadow-[0_12px_26px_rgba(22,22,22,0.05),0_3px_8px_rgba(22,22,22,0.04)] sm:px-6 sm:py-10 lg:min-h-[510px] lg:px-5 lg:py-12"
+      style={{
+        backgroundImage:
+          "linear-gradient(180deg, #fefefe 0%, #fafafa 42%, #f4f4f4 78%, #f1f1f1 100%)",
+      }}
+    >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 rounded-[inherit] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.7)]"
+      />
+      <div
+        aria-hidden
+        className="mb-3 flex size-[72px] shrink-0 items-center justify-center rounded-full border-2 border-[#e50818] bg-[radial-gradient(circle_at_50%_34%,#fff_0%,#fdfdfd_62%,#f8f8f8_100%)] shadow-[0_7px_8px_rgba(20,20,20,0.07),0_1px_1.5px_rgba(20,20,20,0.05)] sm:mb-6 sm:size-[clamp(96px,22vw,145px)]"
+      >
+        <div className="relative size-8 sm:size-[clamp(40px,10vw,60px)]">
+          <Image
+            src={point.icon}
+            alt=""
+            fill
+            className="object-contain"
+            sizes="(max-width: 640px) 32px, 60px"
+          />
+        </div>
+      </div>
+      <p className="font-[family-name:var(--font-manrope)] text-[clamp(1.75rem,7vw,3rem)] font-bold leading-none tracking-[0.24px] text-[#e50818]">
+        {point.number}
+      </p>
+      <h3 className="mt-2 font-[family-name:var(--font-manrope)] text-[clamp(1.125rem,4vw,2rem)] font-bold leading-tight tracking-[-0.26px] text-[#141719] sm:mt-3">
+        {point.title}
+      </h3>
+      <div
+        aria-hidden
+        className="mt-2 h-[3.5px] w-[34px] rounded-[2px] bg-[#e50818] sm:mt-4"
+      />
+      <p className="mt-2 max-w-[232px] font-[family-name:var(--font-manrope)] text-[clamp(0.875rem,3.4vw,1.25rem)] font-medium leading-[1.4] tracking-[0.04px] text-[#5f6161] sm:mt-4 sm:leading-[1.48]">
+        {point.description}
+      </p>
+    </article>
+  );
+}
+
+function FiveSMobileCarousel() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    align: "start",
+    containScroll: "trimSnaps",
+  });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
+    return () => {
+      emblaApi.off("select", onSelect);
+      emblaApi.off("reInit", onSelect);
+    };
+  }, [emblaApi, onSelect]);
+
+  return (
+    <div className="min-[480px]:hidden">
+      <div className="relative -mx-4">
+        <div
+          ref={emblaRef}
+          className="overflow-hidden px-4"
+          aria-label="5S safety points carousel"
+        >
+          <div className="flex touch-pan-x">
+            {FIVE_S_POINTS.map((point) => (
+              <div
+                key={point.number}
+                className="min-w-0 flex-[0_0_100%] pr-3 last:pr-0"
+              >
+                <FiveSPointCard point={point} />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-y-0 left-0 z-[1] w-6 bg-gradient-to-r from-[#f7f7f7] to-transparent"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-y-0 right-0 z-[1] w-6 bg-gradient-to-l from-[#f7f7f7] to-transparent"
+        />
+      </div>
+
+      <div className="mt-3 flex flex-col items-center gap-2">
+        <div className="flex items-center justify-center gap-2">
+          {FIVE_S_POINTS.map((point, index) => (
+            <button
+              key={point.number}
+              type="button"
+              aria-label={`Go to ${point.title}`}
+              aria-current={index === selectedIndex ? "true" : undefined}
+              onClick={() => emblaApi?.scrollTo(index)}
+              className={`rounded-full transition-all duration-300 ${
+                index === selectedIndex
+                  ? "h-2 w-5 bg-[#e50818]"
+                  : "size-2 bg-[#d4d4d4]"
+              }`}
+            />
+          ))}
+        </div>
+        <p className="font-[family-name:var(--font-manrope)] text-xs font-medium text-[#8a8d91]">
+          Swipe left or right
+        </p>
+      </div>
+    </div>
+  );
+}
+
 const ASSOCIATE_PARTNERS = [
   {
     src: "/images/about/safety/partners/madras-chamber.png",
@@ -118,6 +241,64 @@ const ASSOCIATE_PARTNERS_MARQUEE = [
   ...ASSOCIATE_PARTNERS,
 ];
 
+function AssociatePartnerHoverCorners() {
+  return (
+    <>
+      <span
+        aria-hidden
+        className="pointer-events-none absolute left-[11px] top-[11px] size-[9px] border-l border-t border-[#e12a2b] opacity-0 transition-opacity duration-300 group-hover/partner:opacity-100"
+      />
+      <span
+        aria-hidden
+        className="pointer-events-none absolute right-[11px] top-[11px] size-[9px] border-r border-t border-[#e12a2b] opacity-0 transition-opacity duration-300 group-hover/partner:opacity-100"
+      />
+      <span
+        aria-hidden
+        className="pointer-events-none absolute bottom-[11px] left-[11px] size-[9px] border-b border-l border-[#e12a2b] opacity-0 transition-opacity duration-300 group-hover/partner:opacity-100"
+      />
+      <span
+        aria-hidden
+        className="pointer-events-none absolute bottom-[11px] right-[11px] size-[9px] border-b border-r border-[#e12a2b] opacity-0 transition-opacity duration-300 group-hover/partner:opacity-100"
+      />
+    </>
+  );
+}
+
+function AssociatePartnerCard({
+  partner,
+  className = "",
+}: {
+  partner: (typeof ASSOCIATE_PARTNERS)[number];
+  className?: string;
+}) {
+  return (
+    <article
+      className={`group/partner flex min-w-0 max-w-[281px] cursor-pointer flex-col gap-[14px] ${className}`}
+    >
+      <div className="relative flex h-[111px] items-center justify-center rounded-[20px] border border-[#e2e5ea] bg-white px-4 py-[27px] shadow-[0_1px_0_rgba(14,17,22,0.02)] transition-[box-shadow,transform,border-color] duration-300 group-hover/partner:-translate-y-0.5 group-hover/partner:border-[#e12a2b]/35 group-hover/partner:shadow-[0_10px_28px_rgba(14,17,22,0.08)]">
+        <Image
+          src={partner.src}
+          alt={partner.alt}
+          width={145}
+          height={57}
+          className="h-[57px] w-[145px] max-w-full object-contain object-center opacity-95 transition-opacity duration-300 group-hover/partner:opacity-100"
+          sizes="145px"
+        />
+        <AssociatePartnerHoverCorners />
+      </div>
+      <div className="flex min-w-0 items-start gap-[9px]">
+        <span
+          aria-hidden
+          className="mt-[7px] size-[6px] shrink-0 rounded-[3px] bg-[#e2e5ea] transition-colors duration-300 group-hover/partner:bg-[#e12a2b]"
+        />
+        <p className="min-w-0 font-[family-name:var(--font-manrope)] text-[13.6px] font-medium leading-[1.45] text-[#4c525b] transition-colors duration-300 group-hover/partner:text-[#0e1116]">
+          {partner.label}
+        </p>
+      </div>
+    </article>
+  );
+}
+
 function AssociatePartnersMobileCarousel() {
   const reduceMotion = useReducedMotion();
   const [emblaRef] = useEmblaCarousel(
@@ -157,24 +338,7 @@ function AssociatePartnersMobileCarousel() {
               key={`${partner.src}-${index}`}
               className="min-w-0 flex-[0_0_78%] pr-4 sm:flex-[0_0_52%] md:flex-[0_0_42%]"
             >
-              <article className="flex h-full min-h-[168px] flex-col overflow-hidden rounded-[20px] border border-[#e2e5ea] bg-white shadow-[0_12px_32px_rgba(14,17,22,0.07)]">
-                <div className="flex flex-1 items-center justify-center bg-gradient-to-b from-white to-[#f8f9fb] px-5 py-6">
-                  <div className="relative h-[46px] w-full max-w-[150px] sm:h-[52px]">
-                    <Image
-                      src={partner.src}
-                      alt={partner.alt}
-                      fill
-                      className="object-contain object-center"
-                      sizes="150px"
-                    />
-                  </div>
-                </div>
-                <div className="border-t border-[#eef0f3] px-4 py-3.5">
-                  <p className="line-clamp-3 text-center font-[family-name:var(--font-manrope)] text-[clamp(0.75rem,3.2vw,0.875rem)] font-semibold leading-[1.4] text-[#0e1116]">
-                    {partner.label}
-                  </p>
-                </div>
-              </article>
+              <AssociatePartnerCard partner={partner} className="h-full" />
             </div>
           ))}
         </div>
@@ -348,54 +512,18 @@ function SafetyFiveSPointsSection() {
           </motion.p>
         </motion.div>
 
+        <FiveSMobileCarousel />
+
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="grid grid-cols-1 gap-4 min-[480px]:grid-cols-2 lg:grid-cols-5 lg:gap-[17px]"
+          className="hidden min-[480px]:grid min-[480px]:grid-cols-2 min-[480px]:gap-4 lg:grid-cols-5 lg:gap-[17px]"
         >
           {FIVE_S_POINTS.map((point) => (
-            <motion.article
-              key={point.number}
-              variants={fadeUp}
-              className="relative flex w-full min-w-0 flex-col items-center justify-center rounded-[14px] px-5 py-8 text-center shadow-[0_12px_26px_rgba(22,22,22,0.05),0_3px_8px_rgba(22,22,22,0.04)] sm:px-6 sm:py-10 lg:min-h-[510px] lg:px-5 lg:py-12"
-              style={{
-                backgroundImage:
-                  "linear-gradient(180deg, #fefefe 0%, #fafafa 42%, #f4f4f4 78%, #f1f1f1 100%)",
-              }}
-            >
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 rounded-[inherit] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.7)]"
-              />
-              <div
-                aria-hidden
-                className="mb-5 flex size-[clamp(96px,22vw,145px)] shrink-0 items-center justify-center rounded-full border-2 border-[#e50818] bg-[radial-gradient(circle_at_50%_34%,#fff_0%,#fdfdfd_62%,#f8f8f8_100%)] shadow-[0_7px_8px_rgba(20,20,20,0.07),0_1px_1.5px_rgba(20,20,20,0.05)] sm:mb-6"
-              >
-                <div className="relative size-[clamp(40px,10vw,60px)]">
-                  <Image
-                    src={point.icon}
-                    alt=""
-                    fill
-                    className="object-contain"
-                    sizes="60px"
-                  />
-                </div>
-              </div>
-              <p className="font-[family-name:var(--font-manrope)] text-[clamp(2rem,8vw,3rem)] font-bold leading-none tracking-[0.24px] text-[#e50818]">
-                {point.number}
-              </p>
-              <h3 className="mt-2.5 font-[family-name:var(--font-manrope)] text-[clamp(1.25rem,4.5vw,2rem)] font-bold leading-tight tracking-[-0.26px] text-[#141719] sm:mt-3">
-                {point.title}
-              </h3>
-              <div
-                aria-hidden
-                className="mt-3 h-[3.5px] w-[34px] rounded-[2px] bg-[#e50818] sm:mt-4"
-              />
-              <p className="mt-3 max-w-[232px] font-[family-name:var(--font-manrope)] text-[clamp(0.9375rem,3.6vw,1.25rem)] font-medium leading-[1.48] tracking-[0.04px] text-[#5f6161] sm:mt-4">
-                {point.description}
-              </p>
-            </motion.article>
+            <motion.div key={point.number} variants={fadeUp}>
+              <FiveSPointCard point={point} />
+            </motion.div>
           ))}
         </motion.div>
       </div>
@@ -460,7 +588,7 @@ function SafetyAssociatePartnersSection() {
           </div>
 
           {/* Desktop header */}
-          <div className="hidden flex-col gap-5 sm:flex-row sm:items-start sm:justify-between sm:gap-8 lg:flex">
+          <div className="mx-auto hidden w-full max-w-[1462px] flex-col gap-5 sm:flex-row sm:items-start sm:justify-between sm:gap-8 lg:flex">
             <motion.div
               variants={fadeUp}
               className="relative flex min-w-0 max-w-[735px] flex-col gap-[13px] pl-[26px]"
@@ -493,7 +621,7 @@ function SafetyAssociatePartnersSection() {
           <motion.div
             variants={fadeUp}
             aria-hidden
-            className="hidden h-px w-full bg-[#e2e5ea] lg:block"
+            className="mx-auto hidden h-px w-full max-w-[1462px] bg-[#e2e5ea] lg:block"
           />
 
           {/* Desktop grid */}
@@ -501,34 +629,15 @@ function SafetyAssociatePartnersSection() {
             variants={staggerContainer}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            className="hidden grid-cols-3 gap-x-[18px] gap-y-12 lg:grid xl:grid-cols-4"
+            className="mx-auto hidden w-full max-w-[1462px] grid-cols-2 gap-x-8 gap-y-[34px] lg:grid xl:grid-cols-4 xl:gap-x-[113px]"
           >
             {ASSOCIATE_PARTNERS.map((partner) => (
               <motion.li
                 key={partner.src}
                 variants={fadeUp}
-                className="flex min-w-0 flex-col gap-3.5"
+                className="min-w-0"
               >
-                <div className="flex min-h-[111px] items-center justify-center rounded-[20px] border border-[#e2e5ea] bg-white px-4 py-[27px] shadow-[0_1px_0_rgba(14,17,22,0.02)]">
-                  <div className="relative h-[57px] w-full max-w-[145px] opacity-95">
-                    <Image
-                      src={partner.src}
-                      alt={partner.alt}
-                      fill
-                      className="object-contain object-center"
-                      sizes="145px"
-                    />
-                  </div>
-                </div>
-                <div className="flex min-w-0 items-start gap-[9px]">
-                  <span
-                    aria-hidden
-                    className="mt-[7px] size-[6px] shrink-0 rounded-[3px] bg-[#e2e5ea]"
-                  />
-                  <p className="min-w-0 font-[family-name:var(--font-manrope)] text-[13.6px] font-medium leading-[1.45] text-[#4c525b]">
-                    {partner.label}
-                  </p>
-                </div>
+                <AssociatePartnerCard partner={partner} />
               </motion.li>
             ))}
           </motion.ul>
@@ -749,7 +858,7 @@ function SafetyCertificationsSection() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: reduceMotion ? 0.15 : 0.3 }}
-                className="font-[family-name:var(--font-manrope)] text-[1.65rem] font-bold leading-[1.12] tracking-[-0.5px] text-black sm:w-max sm:max-w-none sm:whitespace-nowrap sm:text-[clamp(1.35rem,3.2vw,60px)] sm:leading-[1.1] sm:tracking-[-1px]"
+                className="font-[family-name:var(--font-manrope)] text-[1.65rem] font-bold leading-[1.12] tracking-[-0.5px] whitespace-nowrap text-black sm:w-max sm:max-w-none sm:text-[clamp(1.35rem,3.2vw,60px)] sm:leading-[1.1] sm:tracking-[-1px]"
               >
                 {activeHeading}
               </motion.h1>
@@ -761,7 +870,7 @@ function SafetyCertificationsSection() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: reduceMotion ? 0.15 : 0.3 }}
-                className="mx-auto mt-2 max-w-[677px] font-[family-name:var(--font-manrope)] text-[0.92rem] font-medium leading-[1.45] text-[#515151] sm:mx-0 sm:mt-0 sm:text-[clamp(0.95rem,1.25vw,22px)] sm:leading-[1.36]"
+                className="mx-auto mt-3 max-w-[677px] font-[family-name:var(--font-manrope)] text-[0.92rem] font-medium leading-[1.45] text-[#515151] sm:mx-0 sm:mt-4 sm:text-[clamp(0.95rem,1.25vw,22px)] sm:leading-[1.36] lg:mt-5"
               >
                 {activeDescription}
               </motion.p>

@@ -84,7 +84,7 @@ export function CtaBanner() {
         </motion.p>
         <motion.a
           href="/#enquiry"
-          className="inline-flex w-full items-center justify-center gap-3.5 rounded-full bg-white px-8 py-5 sm:w-fit"
+          className="inline-flex w-full max-w-full items-center justify-center gap-3 rounded-full bg-white px-5 py-4 sm:w-fit sm:gap-3.5 sm:px-8 sm:py-5"
           custom={0.3}
           variants={fadeSlideUp}
           initial="hidden"
@@ -93,7 +93,7 @@ export function CtaBanner() {
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
         >
-          <span className="text-lg font-bold text-[#0e0e0e] sm:text-[22px] sm:leading-[34px]">
+          <span className="text-balance text-center text-[15px] font-bold leading-snug text-[#0e0e0e] sm:text-left sm:text-lg sm:leading-normal md:text-[22px] md:leading-[34px]">
             Request a Free Consultation
           </span>
           <span className="relative size-[27px] shrink-0 overflow-hidden">

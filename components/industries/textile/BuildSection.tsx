@@ -48,22 +48,131 @@ const solutions = [
   },
 ];
 
-export default function BuildSection() {
-  const fadeIn = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-  };
+const fadeIn = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+};
 
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.12,
-      },
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
     },
-  };
+  },
+};
 
+function MobileBuildSolutions() {
+  return (
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-60px" }}
+      variants={staggerContainer}
+      className="md:hidden"
+    >
+      <ol className="relative m-0 flex list-none flex-col gap-5 p-0">
+        <div
+          aria-hidden
+          className="absolute top-5 bottom-5 left-5 w-px bg-gradient-to-b from-[#E40015]/50 via-[#E40015]/25 to-[#E40015]/10"
+        />
+
+        {solutions.map((solution, index) => (
+          <motion.li
+            key={solution.id}
+            variants={fadeIn}
+            className="relative flex gap-4"
+          >
+            <div className="relative z-10 flex size-10 shrink-0 items-center justify-center rounded-full bg-[#F6F6F6] shadow-[0_2px_8px_rgba(228,0,21,0.15)] ring-2 ring-[#E40015]/20">
+              <span className="font-[family-name:var(--font-manrope)] text-sm font-semibold text-[#E40015]">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+            </div>
+
+            <article className="min-w-0 flex-1 overflow-hidden rounded-[20px] border border-[#E3E4E7] bg-white shadow-[0_2px_12px_rgba(17,17,17,0.04)]">
+              <div className="relative h-[180px] w-full">
+                <Image
+                  src={solution.img}
+                  alt={solution.title}
+                  fill
+                  sizes="100vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="flex flex-col gap-2 p-4">
+                <span className="inline-flex w-fit rounded-full bg-[#FFEFEF] px-2.5 py-0.5 font-[family-name:var(--font-manrope)] text-xs font-bold text-[#F01D23]">
+                  Solution {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="font-[family-name:var(--font-manrope)] text-base font-semibold leading-snug text-black">
+                  {solution.title}
+                </h3>
+                <p className="font-[family-name:var(--font-manrope)] text-sm font-normal leading-relaxed text-[#6E6E6E]">
+                  {solution.desc}
+                </p>
+              </div>
+            </article>
+          </motion.li>
+        ))}
+      </ol>
+    </motion.div>
+  );
+}
+
+function DesktopBuildSolutions() {
+  return (
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-80px" }}
+      variants={staggerContainer}
+      className="relative hidden min-w-0 flex-1 md:block"
+    >
+      <div
+        aria-hidden
+        className="absolute bottom-[9px] left-[8px] top-[9px] w-px bg-[#E40015]"
+      />
+
+      <div className="flex flex-col gap-[66px]">
+        {solutions.map((solution) => (
+          <motion.article
+            key={solution.id}
+            variants={fadeIn}
+            className="relative flex items-start"
+          >
+            <div className="relative z-10 mt-px size-[18px] shrink-0 rounded-full border-[3.5px] border-[#E40015] bg-[#F6F6F6]" />
+            <div
+              className={`mt-[8px] h-px shrink-0 bg-[#E40015] ${
+                solution.offset ? "w-6 2xl:w-[211px]" : "w-6 2xl:w-[56px]"
+              }`}
+            />
+            <div className="flex min-h-[160px] w-full max-w-[740px] overflow-hidden rounded-[20px] border-[1.2px] border-[#C0C0C0] bg-white xl:min-h-[193px]">
+              <div className="relative min-h-[160px] w-[120px] shrink-0 self-stretch overflow-hidden sm:w-[180px] lg:w-[42%] lg:max-w-[323px] xl:min-h-[193px]">
+                <Image
+                  src={solution.img}
+                  alt={solution.title}
+                  fill
+                  sizes="(max-width: 640px) 120px, (max-width: 1024px) 180px, 323px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="flex min-w-0 flex-1 flex-col justify-center gap-2 px-4 py-4 sm:px-5 xl:py-8 xl:pl-8 xl:pr-6">
+                <h3 className="font-[family-name:var(--font-manrope)] text-base font-semibold leading-normal text-black sm:text-[18px]">
+                  {solution.title}
+                </h3>
+                <p className="font-[family-name:var(--font-manrope)] text-sm font-normal leading-normal text-[#6E6E6E] sm:text-[16px]">
+                  {solution.desc}
+                </p>
+              </div>
+            </div>
+          </motion.article>
+        ))}
+      </div>
+    </motion.div>
+  );
+}
+
+export default function BuildSection() {
   return (
     <section
       id="what-we-build"
@@ -94,54 +203,8 @@ export default function BuildSection() {
           </div>
         </motion.div>
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          variants={staggerContainer}
-          className="relative min-w-0 flex-1"
-        >
-          <div
-            aria-hidden
-            className="absolute bottom-[9px] left-[8px] top-[9px] w-px bg-[#E40015]"
-          />
-
-          <div className="flex flex-col gap-[66px]">
-            {solutions.map((solution) => (
-              <motion.article
-                key={solution.id}
-                variants={fadeIn}
-                className="relative flex items-start"
-              >
-                <div className="relative z-10 mt-px size-[18px] shrink-0 rounded-full border-[3.5px] border-[#E40015] bg-[#F6F6F6]" />
-                <div
-                  className={`mt-[8px] h-px shrink-0 bg-[#E40015] ${
-                    solution.offset ? "w-6 2xl:w-[211px]" : "w-6 2xl:w-[56px]"
-                  }`}
-                />
-                <div className="flex min-h-[160px] w-full max-w-[740px] overflow-hidden rounded-[20px] border-[1.2px] border-[#C0C0C0] bg-white xl:min-h-[193px]">
-                  <div className="relative min-h-[160px] w-[120px] shrink-0 self-stretch overflow-hidden sm:w-[180px] lg:w-[42%] lg:max-w-[323px] xl:min-h-[193px]">
-                    <Image
-                      src={solution.img}
-                      alt={solution.title}
-                      fill
-                      sizes="(max-width: 640px) 120px, (max-width: 1024px) 180px, 323px"
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="flex min-w-0 flex-1 flex-col justify-center gap-2 px-4 py-4 sm:px-5 xl:py-8 xl:pl-8 xl:pr-6">
-                    <h3 className="font-[family-name:var(--font-manrope)] text-base font-semibold leading-normal text-black sm:text-[18px]">
-                      {solution.title}
-                    </h3>
-                    <p className="font-[family-name:var(--font-manrope)] text-sm font-normal leading-normal text-[#6E6E6E] sm:text-[16px]">
-                      {solution.desc}
-                    </p>
-                  </div>
-                </div>
-              </motion.article>
-            ))}
-          </div>
-        </motion.div>
+        <MobileBuildSolutions />
+        <DesktopBuildSolutions />
       </div>
     </section>
   );

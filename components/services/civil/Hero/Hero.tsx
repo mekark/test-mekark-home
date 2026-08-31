@@ -82,7 +82,7 @@ const stats: {
 
 export default function Hero() {
   return (
-    <div className="relative flex min-h-[100svh] w-full shrink-0 flex-col overflow-hidden bg-[#060606] text-left font-sans text-white lg:h-[1048px] lg:min-h-0">
+    <div className="relative flex min-h-svh w-full shrink-0 flex-col overflow-hidden bg-[#060606] text-left font-sans text-white lg:h-[1048px] lg:min-h-0">
       {/* Background */}
       <div className="absolute inset-0 shrink-0">
         <div className="absolute inset-0 lg:bottom-[-114px] lg:left-[-72px] lg:h-[1162px] lg:w-[2064px]">
@@ -111,7 +111,7 @@ export default function Hero() {
 
       {/* Copy + CTAs */}
       <motion.div
-        className="relative z-10 mx-auto flex w-full max-w-[1278px] flex-col items-center gap-4 px-5 pt-24 text-center opacity-[0.9] sm:gap-5 sm:px-8 sm:pt-28 lg:max-w-none lg:gap-5 lg:px-8 lg:pt-32 lg:text-[48px] lg:text-gray-100"
+        className="relative z-10 mx-auto flex w-full max-w-[1278px] flex-col items-center gap-4 px-5 pt-20 text-center opacity-[0.9] sm:gap-5 sm:px-8 sm:pt-24 lg:max-w-none lg:gap-5 lg:px-8 lg:pt-28 lg:text-[48px] lg:text-gray-100"
         initial="hidden"
         animate="visible"
         variants={{
@@ -143,16 +143,16 @@ export default function Hero() {
         <motion.div
           variants={fadeUp}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="relative flex w-full max-w-[400px] flex-col items-stretch gap-2.5 sm:flex-row sm:items-center sm:justify-center sm:gap-3 lg:h-[50.7px] lg:gap-0 lg:text-left lg:text-[16px]"
+          className="relative flex w-full max-w-[400px] flex-col items-stretch gap-2.5 sm:flex-row sm:items-center sm:justify-center sm:gap-3 lg:h-[50.7px] lg:gap-0 lg:text-left lg:text-[16px] lg:text-white"
         >
           <motion.a
             href="/#enquiry"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.2 }}
-            className="inline-flex min-h-[48px] items-center justify-center gap-[8.7px] rounded-[6.93px] bg-firebrick px-6 py-3.5 text-[15px] shadow-[0px_6.93px_27.72px_rgba(196,22,28,0.3)] sm:px-[31.2px] sm:py-[15.6px] sm:text-base lg:absolute lg:top-[calc(50%-26.09px)] lg:left-0 lg:min-h-0"
+            className="inline-flex min-h-[48px] items-center justify-center gap-[8.7px] rounded-[6.93px] bg-firebrick px-6 py-3.5 text-[15px] font-semibold text-white shadow-[0px_6.93px_27.72px_rgba(196,22,28,0.3)] sm:px-[31.2px] sm:py-[15.6px] sm:text-base lg:absolute lg:top-[calc(50%-26.09px)] lg:left-0 lg:min-h-0"
           >
-            <span className="leading-[20.79px] font-semibold">
+            <span className="leading-[20.79px] font-semibold text-white">
               Get a Free Quote
             </span>
           </motion.a>
@@ -198,9 +198,9 @@ export default function Hero() {
               key={stat.label}
               variants={fadeUp}
               transition={{ duration: 0.45, ease: "easeOut" }}
-              className={`flex flex-col gap-1 lg:box-border lg:items-start lg:px-num-13_3 ${
+              className={`flex min-w-0 flex-col gap-1 lg:box-border lg:items-start lg:px-num-13_3 ${
                 isLast
-                  ? "col-span-2 items-center text-center sm:col-span-1 sm:items-start sm:text-left"
+                  ? "col-span-2 items-start text-left border-t border-white/15 pt-4 mt-2 sm:col-span-1 sm:mt-0 sm:border-0 sm:pt-0"
                   : "items-start text-left"
               }`}
             >

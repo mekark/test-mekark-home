@@ -120,7 +120,7 @@ export default function Hero() {
   const isoStat = trustItems[4];
 
   return (
-    <section className="relative flex w-full min-h-[100dvh] flex-col overflow-hidden bg-[#060606] font-sans text-white lg:min-h-[1048px]">
+    <section className="relative flex w-full min-h-svh flex-col overflow-hidden bg-[#060606] font-sans text-white lg:min-h-[1048px]">
       {/* Mobile hero — full-bleed image with responsive focal point */}
       <div className="absolute inset-0 overflow-hidden lg:hidden">
         <div className="absolute inset-0">

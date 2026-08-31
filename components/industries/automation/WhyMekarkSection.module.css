@@ -1,277 +1,192 @@
 .cta {
-  background: #f6f6f6;
-  padding: 64px 0 96px;
+  width: 100%;
+  aspect-ratio: 1920 / 1500;
+  position: relative;
+  background-color: #f6f6f6;
+  text-align: left;
+  font-size: 2.5vw;
+  color: #fff;
   font-family: var(--font-manrope), Manrope, sans-serif;
-  overflow-x: clip;
-}
-
-.ctaWide {
-  width: 100%;
-  max-width: 1760px;
-  margin: 0 auto;
-  padding: 0 24px;
   overflow: visible;
+  padding-bottom: 2.08333vw;
+  box-sizing: border-box;
 }
 
-.inner {
-  max-width: 1760px;
-  margin: 80px auto 0;
-  padding: 0 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 80px;
-}
-
-/* Red CTA banner */
 .section {
-  position: relative;
-  width: 100%;
-  min-height: 295px;
-  overflow: hidden;
-  border-radius: 40px;
-  color: #fff;
-}
-
-.sectionBg {
   position: absolute;
-  inset: 0;
-  border-radius: 40px;
+  top: 0;
+  left: calc(50% - 45.8333vw);
+  border-radius: 2.08333vw;
   background: linear-gradient(96.33deg, #f01c22, #8b0c11);
-  z-index: 0;
-}
-
-.sectionInner {
-  position: relative;
-  min-height: 295px;
-  max-width: 1760px;
-  margin: 0 auto;
-  z-index: 1;
-  overflow: visible;
-}
-
-.textParent {
-  position: absolute;
-  top: calc(50% - 110.5px);
-  left: 24.83%;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 47.5%;
-  padding-left: 24px;
-  border-left: 2.7px solid rgba(0, 0, 0, 0.1);
-}
-
-.heading {
-  margin: 0;
-  max-width: 836px;
-  font-size: 44px;
-  font-weight: 700;
-  line-height: 127.1%;
-  color: #fff;
-}
-
-.body {
-  margin: 0;
-  max-width: 754px;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.5;
-  color: #ccc6c6;
-}
-
-.consultationLabel {
-  margin: 0;
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 34.177px;
-  white-space: nowrap;
-}
-
-.consultationBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 13.671px;
-  padding: 20.506px 34.177px;
-  border-radius: 57340092px;
-  background: #fff;
-  color: #0e0e0e;
-  text-decoration: none;
-  transition: background-color 0.2s ease;
-}
-
-.consultationBtn:hover {
-  background: #f3f3f3;
-}
-
-.ctaButton {
-  composes: consultationBtn;
-  position: absolute;
-  top: calc(50% - 39.5px);
-  right: 6.5%;
-  z-index: 2;
-  width: 391px;
-  height: 79px;
-}
-
-.ctaButton:hover {
-  background: #f3f3f3;
-}
-
-.arrowWrap {
-  position: relative;
-  width: 26.648px;
-  height: 26.648px;
+  width: 91.6667vw;
+  height: 15.3646vw;
   flex-shrink: 0;
 }
 
-.arrowIcon {
-  object-fit: contain;
+.planningAWarehouseOrLogistParent {
+  position: absolute;
+  top: 1.09375vw;
+  left: 23.28125vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.52083vw;
+  flex-shrink: 0;
 }
 
-.ctaVisual {
+.planningAWarehouse {
+  width: 40.78125vw;
+  position: relative;
+  line-height: 2.63125vw;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+}
+
+.mekarksProjectCalendar {
+  width: 40.78125vw;
+  position: relative;
+  font-size: 0.9724vw;
+  letter-spacing: 0.07396vw;
+  line-height: 1.18333vw;
+  font-weight: 500;
+  color: #ccc6c6;
+}
+
+.sectionChild {
   position: absolute;
-  bottom: 0;
-  left: 16px;
-  z-index: 2;
-  width: 380px;
-  height: 250px;
-  pointer-events: none;
-  overflow: visible;
+  top: calc(50% - 4.78281vw);
+  left: 3.36823vw;
+  border-right: 0.140625vw solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  width: 0.140625vw;
+  height: 7.95313vw;
+  flex-shrink: 0;
+}
+
+.cta2 {
+  position: absolute;
+  top: calc(50% - 2.05729vw);
+  left: 67.5vw;
+  right: auto;
+  border-radius: 999px;
+  background-color: #fff;
+  width: fit-content;
+  height: 4.11458vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.06771vw 1.78125vw;
+  box-sizing: border-box;
+  gap: 0.71354vw;
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: 1.18385vw;
+  color: #0e0e0e;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cta2:hover {
+  background-color: #f3f3f3;
+}
+
+.talkToOur {
+  position: relative;
+  line-height: 1.78021vw;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.component4 {
+  height: 1.38542vw;
+  width: 1.38542vw;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.vectorIcon {
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  top: 25.05%;
+  right: 18.43%;
+  bottom: 24.95%;
+  left: 18.78%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
 }
 
 .sectionItem {
   position: absolute;
-  top: 0;
-  left: 74px;
-  z-index: 1;
-  width: 130px;
-  height: 130px;
-  object-fit: contain;
-  opacity: 0.35;
-  pointer-events: none;
-}
-
-.sectionPattern {
-  position: absolute;
-  top: 32px;
-  left: 0;
-  z-index: 0;
-  width: 240px;
-  height: auto;
-  aspect-ratio: 317 / 213;
-  object-fit: contain;
-  opacity: 0.45;
-  pointer-events: none;
-}
-
-.workerImageWrap {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-  width: 380px;
-  height: 360px;
-  overflow: visible;
-  pointer-events: none;
-}
-
-.workerImageWrap > span {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-}
-
-.workerImage {
-  object-fit: contain;
-  object-position: left bottom;
-  mix-blend-mode: lighten;
-}
-
-/* Mobile CTA fallback */
-.mobileCta {
-  display: none;
-  flex-direction: column;
-  gap: 24px;
-  padding: 24px;
-}
-
-.mobileImageWrap {
-  position: relative;
-  width: 260px;
-  height: 220px;
-  margin: 0 auto;
+  top: 1.97917vw;
+  left: 8.02083vw;
+  border-radius: 50%;
+  width: 9.375vw;
+  height: 9.375vw;
   flex-shrink: 0;
 }
 
-.mobileWorkerImage {
-  mix-blend-mode: lighten;
+.sectionInner {
+  position: absolute;
+  top: 2.65625vw;
+  left: 3.02083vw;
+  width: 16.5104vw;
+  height: 11.09375vw;
+  flex-shrink: 0;
 }
 
-.mobileHeading {
-  margin: 0;
-  font-size: clamp(1.375rem, 5vw, 2rem);
-  font-weight: 700;
-  line-height: 127.1%;
-  color: #fff;
+.eotCta1 {
+  position: absolute;
+  top: -1.45833vw;
+  left: -0.52083vw;
+  width: 25.5729vw;
+  height: 16.8229vw;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
-.mobileBody {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 500;
-  color: #ccc6c6;
+.featuresArea {
+  position: absolute;
+  top: 30.20833vw;
+  left: 0;
+  right: 0;
+  min-height: 38vw;
 }
 
-.mobileButton {
-  composes: consultationBtn;
-  width: 100%;
-  height: 79px;
-}
-
-/* Section heading */
-.frameParent3 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  text-align: center;
-}
-
-.whyHeading {
-  margin: 0;
-  max-width: 1100px;
-  font-size: clamp(1.75rem, 3.5vw, 50px);
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  color: #111;
-  text-wrap: balance;
-}
-
-.whySubtext {
-  margin: 0;
-  max-width: 1101px;
-  font-size: 18px;
-  line-height: 1.6;
-  color: #000;
-}
-
-/* Features + background image */
-.frameParent {
+.frameGroup {
   position: relative;
-  display: flex;
-  align-items: stretch;
-  gap: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, auto);
+  grid-auto-flow: column;
+  column-gap: 3.125vw;
+  row-gap: 2.5vw;
+  padding: 4.42708vw 42% 2.08333vw 4.16667vw;
+  box-sizing: border-box;
+  font-size: 0.9375vw;
+  color: #000;
+  z-index: 2;
+}
+
+.frameParent {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 58%;
+  right: 0;
+  margin-right: calc(50% - 50vw);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .imageWrapper {
-  pointer-events: none;
-  position: relative;
-  display: none;
-  flex: 1;
+  position: absolute;
+  inset: 0;
   overflow: hidden;
   background-image: url("/images/industries/automation/why-mekark/factory-bg.png");
   background-size: cover;
@@ -282,87 +197,126 @@
 .frameChild {
   position: absolute;
   inset: 0;
-  z-index: 1;
   background: linear-gradient(
     90deg,
     #f6f6f6 0%,
-    rgba(246, 246, 246, 0.75) 14%,
-    rgba(246, 246, 246, 0) 30%
+    rgba(246, 246, 246, 0) 40%
   );
-}
-
-.frameGroup {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  gap: 40px;
-  grid-template-columns: 1fr;
-  flex: 1 1 100%;
-  min-width: 0;
+  pointer-events: none;
 }
 
 .divsvcIconParent {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  align-items: flex-start;
+  gap: 0.98958vw;
 }
 
 .divsvcIcon {
-  position: relative;
-  display: flex;
-  width: 56px;
-  height: 56px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 14px;
+  width: 2.91667vw;
+  height: 2.91667vw;
+  box-shadow:
+    0px 0.224708vw 0.898958vw rgba(196, 22, 28, 0.2),
+    0px 0.056177vw 0px rgba(255, 255, 255, 0.08) inset;
+  border-radius: 0.730208vw;
   background: linear-gradient(
     145deg,
-    rgba(196, 22, 28, 0.3) 0%,
-    rgba(196, 22, 28, 0.15) 100%
+    rgba(196, 22, 28, 0.3),
+    rgba(196, 22, 28, 0.15)
   );
-  box-shadow:
-    0 4.314px 17.258px rgba(196, 22, 28, 0.2),
-    inset 0 1.079px 0 rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.featureIcon {
-  width: 26px;
-  height: 26px;
+.lucidedraftingCompassIcon {
+  width: 1.348958vw;
+  height: 1.348958vw;
+  position: relative;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
 .inHouseDesignEngineeringParent {
+  align-self: stretch;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  align-items: flex-start;
+  gap: 0.52083vw;
 }
 
 .inHouseDesign {
-  margin: 0;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1.3;
-  color: #000;
+  position: relative;
+  line-height: 1.123438vw;
+  font-weight: 600;
 }
 
-.featureDescription {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.5;
+.everyPreEngineeredWarehouse {
+  width: 100%;
+  position: relative;
+  font-size: 0.729167vw;
+  line-height: 1.4;
   color: #6e6e6e;
 }
 
+.frameParent3 {
+  position: absolute;
+  top: 21.45833vw;
+  left: 12.1875vw;
+  width: 75.625vw;
+  height: 7.1875vw;
+  flex-shrink: 0;
+  text-align: center;
+  font-size: 2.604167vw;
+  color: #111;
+}
+
+.whyWarehousesFromMekarkAreWrapper {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 37.8125vw);
+  width: 75.625vw;
+  height: 3.385417vw;
+}
+
+.whyWarehousesFrom {
+  position: absolute;
+  top: -0.034896vw;
+  left: calc(50% - 31.19792vw);
+  letter-spacing: -0.069271vw;
+  line-height: 3.402604vw;
+  white-space: nowrap;
+}
+
+.mekarkIsOne {
+  position: absolute;
+  top: 3.854167vw;
+  left: calc(50% - 23.125vw);
+  font-size: 0.9375vw;
+  line-height: 1.40625vw;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46.302083vw;
+}
+
 .overlay {
+  position: absolute;
+  top: 69.5vw;
+  left: 12.1875vw;
+  width: 75.625vw;
   border: 0.5px solid rgba(228, 0, 21, 0.5);
-  border-radius: 40px;
+  border-radius: 2.08333vw;
   background: rgba(228, 0, 21, 0.05);
-  padding: 24px 32px;
+  padding: 1.25vw 1.66667vw;
+  box-sizing: border-box;
   text-align: center;
 }
 
 .overlayText {
   margin: 0;
-  font-size: 18px;
+  font-size: 0.9375vw;
   line-height: 1.32;
   color: #4c4c4c;
 }
@@ -372,139 +326,288 @@
   color: #f01d23;
 }
 
-@media (min-width: 640px) {
-  .ctaWide,
-  .inner {
-    padding: 0 40px;
-  }
-
-  .frameGroup {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
+@media (max-width: 1200px) {
   .cta {
-    padding: 96px 0 120px;
+    aspect-ratio: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 24px 56px;
+    box-sizing: border-box;
+    font-size: 32px;
   }
 
-  .ctaWide,
-  .inner {
-    padding: 0 40px;
-  }
-
-  .inner {
-    margin-top: 96px;
-    gap: 96px;
-    overflow: visible;
-  }
-
-  .sectionInner {
-    min-height: 295px;
-    padding: 0 120px 0 0;
-  }
-
-  .ctaVisual {
-    left: 55px;
-    bottom: -29;
-    width: 380px;
-    height: 250px;
-  }
-
-  .workerImageWrap {
-    width: 380px;
-    height: 360px;
-  }
-
-  .textParent {
-    position: absolute;
-    top: 50%;
-    left: 437px;
-    transform: translateY(-50%);
-    max-width: 836px;
-    padding-left: 24px;
-    grid-column: auto;
-  }
-
-  .ctaButton {
-    position: absolute;
-    top: 50%;
-    right: 120px;
-    transform: translateY(-50%);
-    width: 391px;
-    height: 79px;
-    grid-column: auto;
-  }
-
-  .whyHeading {
-    font-size: 50px;
-    max-width: none;
-    white-space: nowrap;
-  }
-
-  .frameParent3 {
+  .section {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    order: 1;
+    border-radius: 20px;
+    padding: 28px 24px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 20px;
+    overflow: hidden;
   }
 
-  .frameParent {
-    gap: 0;
-    overflow: visible;
-  }
-
-  .frameGroup {
-    flex: 1 1 100%;
-    max-width: 100%;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    column-gap: 48px;
-    row-gap: 64px;
-    padding-right: 42%;
-  }
-
-  .imageWrapper {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 58%;
-    right: 0;
-    margin-right: calc(50% - 50vw);
-    display: block;
-    flex: none;
-    width: auto;
-    min-height: 100%;
-  }
-}
-
-@media (max-width: 1023px) {
-  .sectionInner {
+  .sectionChild,
+  .sectionItem,
+  .sectionInner,
+  .eotCta1 {
     display: none;
   }
 
-  .mobileCta {
-    display: flex;
-  }
-}
-
-@media (min-width: 1280px) {
-  .ctaWide,
-  .inner {
-    padding: 0 24px;
-    overflow: visible;
-  }
-
-  .sectionInner {
-    padding: 0 120px 0 0;
-  }
-}
-
-@media (max-width: 1279px) {
-  .heading {
-    font-size: clamp(1.5rem, 2.5vw, 2.75rem);
-  }
-
-  .consultationLabel {
-    font-size: 18px;
-    line-height: 28px;
-    white-space: normal;
+  .planningAWarehouseOrLogistParent {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    align-items: center;
     text-align: center;
+    gap: 10px;
+  }
+
+  .planningAWarehouse {
+    width: 100%;
+    font-size: 26px;
+    line-height: 34px;
+    justify-content: center;
+  }
+
+  .mekarksProjectCalendar {
+    width: 100%;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 23px;
+  }
+
+  .cta2 {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    min-height: 48px;
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+
+  .talkToOur {
+    white-space: normal;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  .component4 {
+    width: 16px;
+    height: 16px;
+  }
+
+  .frameParent3 {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    order: 2;
+    margin: 40px 0 28px;
+    font-size: 28px;
+  }
+
+  .whyWarehousesFromMekarkAreWrapper {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+  }
+
+  .whyWarehousesFrom {
+    position: relative;
+    top: auto;
+    left: auto;
+    white-space: normal;
+    letter-spacing: -0.5px;
+    line-height: 36px;
+  }
+
+  .mekarkIsOne {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    font-size: 15px;
+    line-height: 24px;
+    margin-top: 12px;
+  }
+
+  .featuresArea {
+    position: relative;
+    top: auto;
+    left: auto;
+    order: 3;
+    width: 100%;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .frameGroup {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    padding: 0;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
+    grid-auto-flow: row;
+    column-gap: 24px;
+    row-gap: 28px;
+    font-size: 16px;
+  }
+
+  .divsvcIcon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(196, 22, 28, 0.2);
+  }
+
+  .lucidedraftingCompassIcon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .inHouseDesign {
+    line-height: 22px;
+  }
+
+  .everyPreEngineeredWarehouse {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .frameParent {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    order: 4;
+    width: 100%;
+    height: 280px;
+    margin: 36px 0 0;
+    margin-right: 0;
+    pointer-events: auto;
+  }
+
+  .imageWrapper {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+  }
+
+  .frameChild {
+    display: none;
+  }
+
+  .overlay {
+    position: relative;
+    top: auto;
+    left: auto;
+    order: 5;
+    width: 100%;
+    margin-top: 36px;
+    border-radius: 24px;
+    padding: 20px 24px;
+  }
+
+  .overlayText {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta {
+    padding: 16px 16px 40px;
+    font-size: 24px;
+  }
+
+  .section {
+    padding: 20px 16px 24px;
+    border-radius: 16px;
+    gap: 16px;
+  }
+
+  .planningAWarehouse {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .mekarksProjectCalendar {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .cta2 {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 16px;
+    font-size: 15px;
+  }
+
+  .frameParent3 {
+    margin: 32px 0 20px;
+    font-size: 24px;
+  }
+
+  .whyWarehousesFrom {
+    line-height: 32px;
+  }
+
+  .mekarkIsOne {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .frameGroup {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+    font-size: 16px;
+  }
+
+  .divsvcIconParent {
+    align-items: center;
+    text-align: center;
+  }
+
+  .inHouseDesignEngineeringParent {
+    align-items: center;
+    text-align: center;
+  }
+
+  .frameParent {
+    height: 200px;
+    margin-top: 28px;
+  }
+
+  .overlay {
+    margin-top: 28px;
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .overlayText {
+    font-size: 14px;
+    line-height: 22px;
   }
 }

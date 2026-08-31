@@ -5,41 +5,41 @@ const stats = [
   {
     value: (
       <>
-        <span className="leading-num-25_62">18</span>
-        <span className="leading-num-25_62 text-red-200">+</span>
+        18<span className="text-red-200">+</span>
       </>
     ),
     label: "Years Experience",
+    mobileLabel: "Years Experience",
     valueClass: "text-white",
   },
   {
     value: (
       <>
-        <span className="leading-num-25_62">X </span>
-        <span className="leading-num-25_62 text-red-200">Tons</span>
+        40,000 <span className="text-red-200">Tons</span>
       </>
     ),
     label: "Production Capacity",
+    mobileLabel: "Prod. Capacity",
     valueClass: "text-whitesmoke",
   },
   {
     value: (
       <>
-        <span className="leading-num-25_62">X </span>
-        <span className="leading-num-25_62 text-red-300">+ Sq.ft.</span>
+        70 lakh <span className="text-red-300">Sq.ft.</span>
       </>
     ),
     label: "Manufacturing Campus",
+    mobileLabel: "Mfg. Campus",
     valueClass: "text-white",
   },
   {
     value: (
       <>
-        <span className="leading-num-25_62">X </span>
-        <span className="leading-num-25_62 text-red-300">In-House</span>
+        X <span className="text-red-300">In-House</span>
       </>
     ),
     label: "Engineers",
+    mobileLabel: "Engineers",
     valueClass: "text-white",
   },
 ] as const;
@@ -51,7 +51,7 @@ export default function Hero() {
   return (
     <>
       {/* Mobile / tablet */}
-      <section className="relative flex min-h-[640px] w-full shrink-0 flex-col overflow-hidden bg-gray-200 text-left font-manrope text-num-26_67 text-white lg:hidden">
+      <section className="relative flex min-h-svh w-full shrink-0 flex-col overflow-hidden bg-gray-200 text-left font-manrope text-white lg:hidden">
         <div className="absolute inset-0">
           <Image
             className="absolute top-[-17px] left-0 h-full min-h-[1080px] w-full max-w-none object-cover"
@@ -89,31 +89,27 @@ export default function Hero() {
           />
         </div>
 
-        <div className="relative z-[1] flex flex-1 flex-col justify-between px-5 pt-24 pb-8 sm:px-8 sm:pt-28 md:pl-24 md:pr-8">
-          <div className="flex max-w-[1158px] flex-col items-start gap-4 text-[32px] text-gray-100 sm:gap-5 sm:text-[40px]">
-            <b className="relative self-stretch tracking-[-1px] leading-[1.15] drop-shadow-[0_1px_0_rgba(255,255,255,0.35)] sm:leading-[56px]">
+        <div className="relative z-[1] flex min-h-0 flex-1 flex-col px-5 pt-24 pb-[max(2rem,env(safe-area-inset-bottom))] sm:px-8 sm:pt-28">
+          <div className="flex max-w-[1158px] flex-col items-start gap-3 sm:gap-4">
+            <b className="relative w-full min-w-0 self-stretch text-[clamp(1.625rem,6.2vw,2.25rem)] font-bold leading-[1.15] tracking-[-0.04em] text-gray-100 drop-shadow-[0_1px_0_rgba(255,255,255,0.35)] sm:text-[36px] sm:leading-[1.2] sm:tracking-[-0.9px]">
               Leading Industrial MEP Contractor & Turnkey MEP Contracting
               Company
             </b>
-            <div className="relative mb-4 w-full text-[15px] leading-[22px] font-semibold text-[rgba(5,7,12,0.72)] sm:mb-6 sm:text-[18.67px] sm:leading-[26.67px]">
+            <div className="relative mb-2 w-full min-w-0 text-[clamp(0.9375rem,3.8vw,1.0625rem)] leading-[1.5] font-semibold text-[rgba(5,7,12,0.72)] sm:mb-4 sm:text-[17px] sm:leading-[26px] lg:text-[18.67px] lg:leading-[26.67px]">
               {heroDescription}
             </div>
-            <div className="relative mt-2 flex flex-wrap items-center gap-3 sm:gap-4">
+            <div className="relative flex w-full min-w-0 flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
               <a
                 href="/#enquiry"
-                className="inline-flex items-center gap-[8.7px] rounded-[6.93px] bg-firebrick px-[31.2px] py-[15.6px] text-[16px] text-white shadow-[0px_6.93px_27.72px_rgba(196,22,28,0.3)]"
+                className="inline-flex w-full items-center justify-center gap-[8.7px] rounded-[6.93px] bg-firebrick px-6 py-[13px] text-[15px] leading-[20.79px] font-semibold text-white shadow-[0px_6.93px_27.72px_rgba(196,22,28,0.3)] sm:w-auto sm:px-[31px] sm:py-[15.6px] sm:text-base"
               >
-                <span className="leading-[20.79px] font-semibold">
-                  Get a Free Quote
-                </span>
+                <span className="font-semibold">Get a Free Quote</span>
               </a>
               <Link
                 href="/projects/completed-projects"
-                className="inline-flex items-center gap-2 rounded-[5.2px] px-4 py-3 text-[16px] text-firebrick"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-[5.2px] px-4 py-3 text-[15px] leading-[20.79px] font-semibold text-firebrick sm:w-auto sm:justify-start sm:text-base"
               >
-                <span className="leading-[20.79px] font-semibold">
-                  View Our Projects
-                </span>
+                <span className="font-semibold">View Our Projects</span>
                 <Image
                   src="/images/services/mep/hero/arrow.svg"
                   width={9}
@@ -125,26 +121,29 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="mt-10 flex flex-wrap items-end gap-x-6 gap-y-4 sm:gap-x-10">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className={`flex min-w-[120px] flex-col items-start gap-1 ${stat.valueClass}`}
-              >
-                <div className="tracking-[-1.11px] leading-num-25_62 font-extrabold">
-                  {stat.value}
+          <div className="mt-auto w-full min-w-0 pt-6 sm:pt-8">
+            <div className="grid w-full min-w-0 grid-cols-2 gap-x-3 gap-y-4 min-[390px]:gap-x-4 sm:gap-x-6 sm:gap-y-5">
+              {stats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className={`flex min-w-0 flex-col items-start gap-1 text-left ${stat.valueClass}`}
+                >
+                  <div className="w-full break-words text-[clamp(1rem,4.4vw,1.125rem)] font-extrabold leading-[1.2] tracking-[-0.04em] [&_span]:leading-[inherit] sm:text-[22px] sm:leading-[26px] sm:tracking-[-1.11px]">
+                    {stat.value}
+                  </div>
+                  <div className="w-full break-words text-[clamp(0.5625rem,2.7vw,0.625rem)] font-semibold leading-[1.35] tracking-[0.04em] text-white/70 capitalize sm:text-[10.67px] sm:leading-[11.89px] sm:tracking-[1.6px]">
+                    <span className="sm:hidden">{stat.mobileLabel}</span>
+                    <span className="hidden sm:inline">{stat.label}</span>
+                  </div>
                 </div>
-                <div className="text-[10.67px] tracking-[1.6px] leading-[11.89px] font-semibold text-gray-400 capitalize">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-            <div className="flex min-w-[180px] max-w-[240px] flex-col items-start">
-              <div className="tracking-[-0.93px] leading-num-27_18 font-extrabold">
-                <span className="leading-num-27_18">ISO 9001:2015 </span>
-                <span className="leading-num-27_18 text-red-200">& </span>
-                <span className="leading-num-27_18 text-limegreen">Green </span>
-                <span className="leading-num-27_18 text-red-100">Certified</span>
+              ))}
+            </div>
+            <div className="mt-4 flex min-w-0 flex-col items-start gap-1 border-t border-white/15 pt-4 sm:mt-5 sm:pt-5">
+              <div className="w-full text-left text-[clamp(1rem,4.4vw,1.125rem)] font-extrabold leading-[1.2] tracking-[-0.04em] [&_span]:leading-[inherit] sm:text-[18px] sm:leading-[22px] sm:tracking-[-0.8px]">
+                <span>ISO 9001:2015 </span>
+                <span className="text-red-200">& </span>
+                <span className="text-limegreen">Green </span>
+                <span className="text-red-100">Certified</span>
               </div>
             </div>
           </div>

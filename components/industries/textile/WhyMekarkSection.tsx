@@ -8,22 +8,26 @@ const features = [
   {
     title: "Industry-Specific Engineering Expertise",
     desc: "We understand load calculations, humidification, ETP, and fire standards unique to textile mills, not just another warehouse contractor.",
+    icon: "/images/industries/textile/why-mekark/cog-icon.svg",
   },
   {
     title: "Large-Scale PEB Manufacturing Capacity",
     desc: "With 40,000 MT/year PEB construction capacity across a x lakh+ sq.ft. campus and x+ engineers, we guarantee your spinning or weaving factory opens on time.",
+    icon: "/images/industries/textile/why-mekark/factory-icon.svg",
   },
   {
     title: "One-Stop Textile Construction Solution",
     desc: "From civil, structural steel, and MEP works to ETP installation and complete fit-outs, all under one roof.",
+    icon: "/images/industries/textile/why-mekark/layers-icon.svg",
   },
   {
     title: "ISO Certified & Compliance-Ready",
     desc: "All our textile factory buildings comply with the Factories Act, Fire NOC, Pollution Control Board, and Green Building norms from day one.",
+    icon: "/images/industries/textile/why-mekark/badge-check-icon.svg",
   },
 ];
 
-function FeatureIcon() {
+function FeatureIcon({ icon }: { icon: string }) {
   return (
     <div className="relative flex size-14 shrink-0 items-center justify-center rounded-[14px] shadow-[0px_4.314px_17.258px_rgba(196,22,28,0.2)]">
       <div
@@ -37,11 +41,11 @@ function FeatureIcon() {
       <div className="pointer-events-none absolute inset-0 rounded-[14px] shadow-[inset_0px_1.079px_0px_rgba(255,255,255,0.08)]" />
       <span className="relative size-[26px] shrink-0 overflow-hidden">
         <Image
-          src="/images/industries/textile/why-mekark/compass.svg"
+          src={icon}
           alt=""
           width={26}
           height={26}
-          className="size-full"
+          className="size-full object-contain"
         />
       </span>
     </div>
@@ -81,16 +85,6 @@ export default function WhyMekarkSection() {
               width={317}
               height={213}
               className="size-full"
-            />
-          </div>
-
-          <div className="relative h-[220px] w-full overflow-hidden sm:h-[260px] lg:hidden">
-            <Image
-              src="/images/industries/textile/why-mekark/cta-engineer-photo.png"
-              alt="Mekark engineer reviewing project plans on a tablet"
-              fill
-              sizes="100vw"
-              className="object-contain object-bottom"
             />
           </div>
 
@@ -190,7 +184,7 @@ export default function WhyMekarkSection() {
                 key={feature.title}
                 className="flex flex-col items-start gap-[19px]"
               >
-                <FeatureIcon />
+                <FeatureIcon icon={feature.icon} />
                 <div className="flex flex-col gap-2.5">
                   <h3 className="font-[family-name:var(--font-manrope)] text-[18px] font-semibold leading-[21.57px] text-black">
                     {feature.title}

@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import useEmblaCarousel from "embla-carousel-react";
+import AutoScroll from "embla-carousel-auto-scroll";
 import {
   AnimatePresence,
   motion,
@@ -14,30 +16,35 @@ const FIVE_S_POINTS = [
   {
     number: "01",
     title: "Sort",
+    icon: "/images/about/safety/5s/icon-sort.svg",
     description:
       "Remove unnecessary items from the work area to reduce hazards and improve focus.",
   },
   {
     number: "02",
     title: "Set in Order",
+    icon: "/images/about/safety/5s/icon-set-in-order.svg",
     description:
       "Organize tools, materials, and safety gear for quick access and safer movement.",
   },
   {
     number: "03",
     title: "Shine",
+    icon: "/images/about/safety/5s/icon-shine.svg",
     description:
       "Keep the site clean and inspect spaces regularly to prevent accidents.",
   },
   {
     number: "04",
     title: "Standardize",
+    icon: "/images/about/safety/5s/icon-standardize.svg",
     description:
       "Apply consistent procedures, markings, and safety checks across every zone.",
   },
   {
     number: "05",
     title: "Sustain",
+    icon: "/images/about/safety/5s/icon-sustain.svg",
     description:
       "Build daily discipline through training, audits, and continuous safety awareness.",
   },
@@ -106,6 +113,76 @@ const ASSOCIATE_PARTNERS = [
   },
 ] as const;
 
+const ASSOCIATE_PARTNERS_MARQUEE = [
+  ...ASSOCIATE_PARTNERS,
+  ...ASSOCIATE_PARTNERS,
+];
+
+function AssociatePartnersMobileCarousel() {
+  const reduceMotion = useReducedMotion();
+  const [emblaRef] = useEmblaCarousel(
+    { loop: true, align: "start", dragFree: true },
+    reduceMotion
+      ? []
+      : [
+          AutoScroll({
+            direction: "forward",
+            speed: 0.75,
+            startDelay: 400,
+            stopOnInteraction: false,
+            stopOnMouseEnter: true,
+          }),
+        ],
+  );
+
+  return (
+    <div className="relative -mx-4 sm:-mx-0">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 bg-gradient-to-r from-[#f5f6f8] to-transparent sm:w-10"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-gradient-to-l from-[#f5f6f8] to-transparent sm:w-10"
+      />
+
+      <div
+        ref={emblaRef}
+        className="overflow-hidden px-4 sm:px-0"
+        aria-label="Associate partners carousel"
+      >
+        <div className="flex touch-pan-y">
+          {ASSOCIATE_PARTNERS_MARQUEE.map((partner, index) => (
+            <div
+              key={`${partner.src}-${index}`}
+              className="min-w-0 flex-[0_0_78%] pr-4 sm:flex-[0_0_52%] md:flex-[0_0_42%]"
+            >
+              <article className="flex h-full min-h-[168px] flex-col overflow-hidden rounded-[20px] border border-[#e2e5ea] bg-white shadow-[0_12px_32px_rgba(14,17,22,0.07)]">
+                <div className="flex flex-1 items-center justify-center bg-gradient-to-b from-white to-[#f8f9fb] px-5 py-6">
+                  <div className="relative h-[46px] w-full max-w-[150px] sm:h-[52px]">
+                    <Image
+                      src={partner.src}
+                      alt={partner.alt}
+                      fill
+                      className="object-contain object-center"
+                      sizes="150px"
+                    />
+                  </div>
+                </div>
+                <div className="border-t border-[#eef0f3] px-4 py-3.5">
+                  <p className="line-clamp-3 text-center font-[family-name:var(--font-manrope)] text-[clamp(0.75rem,3.2vw,0.875rem)] font-semibold leading-[1.4] text-[#0e1116]">
+                    {partner.label}
+                  </p>
+                </div>
+              </article>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const DEFAULT_HEADING = "Built Safe, Built Right";
 const DEFAULT_DESCRIPTION =
   "Strong structures start with strong safety practices, non-negotiable at every stage of every project.";
@@ -164,6 +241,9 @@ const CERTIFICATES = [
       "Sustainable construction practices, non-negotiable at every stage of every project.",
   },
 ] as const;
+
+const MOBILE_CERT_IMAGE_CLASS =
+  "object-contain object-center origin-center scale-[1.45]";
 
 const MOBILE_AUTO_SCROLL_INTERVAL = 4500;
 const MOBILE_AUTO_SCROLL_PAUSE = 10000;
@@ -238,27 +318,27 @@ function SafetyFiveSPointsSection() {
         />
       </div>
 
-      <div className="relative mx-auto flex w-full max-w-[1740px] flex-col gap-10 px-4 py-14 sm:gap-12 sm:px-8 sm:py-16 lg:gap-14 lg:px-[clamp(2rem,7vw,8.35rem)] lg:py-[clamp(3.5rem,5vw,5.5rem)]">
+      <div className="relative mx-auto flex w-full max-w-[1740px] flex-col gap-8 px-4 py-12 sm:gap-10 sm:px-8 sm:py-16 lg:gap-14 lg:px-[clamp(2rem,7vw,8.35rem)] lg:py-[clamp(3.5rem,5vw,5.5rem)]">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="relative z-[1] flex max-w-[735px] flex-col gap-2.5"
+          className="relative z-[1] flex min-w-0 max-w-[735px] flex-col gap-2 sm:gap-2.5"
         >
           <motion.div
             variants={fadeUp}
-            className="h-[7px] w-[min(111px,28vw)] rounded-[3px] bg-[#e50818]"
+            className="h-[6px] w-[min(111px,28vw)] rounded-[3px] bg-[#e50818] sm:h-[7px]"
             aria-hidden
           />
           <motion.h2
             variants={fadeUp}
-            className="font-[family-name:var(--font-manrope)] text-[clamp(2rem,4.2vw,3.75rem)] font-extrabold leading-[1.1] tracking-[-1.32px] text-[#0b0a0a]"
+            className="font-[family-name:var(--font-manrope)] text-[clamp(1.75rem,6.5vw,3.75rem)] font-extrabold leading-[1.1] tracking-[-0.04em] text-[#0b0a0a] sm:tracking-[-1.32px]"
           >
             5S Safety Points
           </motion.h2>
           <motion.p
             variants={fadeUp}
-            className="max-w-[735px] font-[family-name:var(--font-manrope)] text-[clamp(1rem,1.45vw,1.375rem)] font-medium leading-[1.56] tracking-[0.046px] text-[#65686b]"
+            className="max-w-[735px] font-[family-name:var(--font-manrope)] text-[clamp(0.9375rem,3.8vw,1.375rem)] font-medium leading-[1.56] tracking-[0.046px] text-[#65686b]"
           >
             Applying 5S every day helps us maintain safe, efficient, and
             organized project environments.
@@ -269,13 +349,13 @@ function SafetyFiveSPointsSection() {
           variants={staggerContainer}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 [-ms-overflow-style:none] [scrollbar-width:none] sm:-mx-0 sm:px-0 lg:grid lg:grid-cols-5 lg:gap-[17px] lg:overflow-visible lg:pb-0 [&::-webkit-scrollbar]:hidden"
+          className="grid grid-cols-1 gap-4 min-[480px]:grid-cols-2 lg:grid-cols-5 lg:gap-[17px]"
         >
           {FIVE_S_POINTS.map((point) => (
             <motion.article
               key={point.number}
               variants={fadeUp}
-              className="relative flex w-[min(82vw,316px)] shrink-0 snap-center flex-col items-center justify-center rounded-[14px] px-6 py-10 text-center shadow-[0_12px_26px_rgba(22,22,22,0.05),0_3px_8px_rgba(22,22,22,0.04)] lg:w-auto lg:min-h-[510px] lg:px-5 lg:py-12"
+              className="relative flex w-full min-w-0 flex-col items-center justify-center rounded-[14px] px-5 py-8 text-center shadow-[0_12px_26px_rgba(22,22,22,0.05),0_3px_8px_rgba(22,22,22,0.04)] sm:px-6 sm:py-10 lg:min-h-[510px] lg:px-5 lg:py-12"
               style={{
                 backgroundImage:
                   "linear-gradient(180deg, #fefefe 0%, #fafafa 42%, #f4f4f4 78%, #f1f1f1 100%)",
@@ -285,17 +365,31 @@ function SafetyFiveSPointsSection() {
                 aria-hidden
                 className="pointer-events-none absolute inset-0 rounded-[inherit] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.7)]"
               />
-              <p className="font-[family-name:var(--font-manrope)] text-[clamp(2.5rem,4vw,3rem)] font-bold leading-none tracking-[0.24px] text-[#e50818]">
+              <div
+                aria-hidden
+                className="mb-5 flex size-[clamp(96px,22vw,145px)] shrink-0 items-center justify-center rounded-full border-2 border-[#e50818] bg-[radial-gradient(circle_at_50%_34%,#fff_0%,#fdfdfd_62%,#f8f8f8_100%)] shadow-[0_7px_8px_rgba(20,20,20,0.07),0_1px_1.5px_rgba(20,20,20,0.05)] sm:mb-6"
+              >
+                <div className="relative size-[clamp(40px,10vw,60px)]">
+                  <Image
+                    src={point.icon}
+                    alt=""
+                    fill
+                    className="object-contain"
+                    sizes="60px"
+                  />
+                </div>
+              </div>
+              <p className="font-[family-name:var(--font-manrope)] text-[clamp(2rem,8vw,3rem)] font-bold leading-none tracking-[0.24px] text-[#e50818]">
                 {point.number}
               </p>
-              <h3 className="mt-3 font-[family-name:var(--font-manrope)] text-[clamp(1.5rem,2.2vw,2rem)] font-bold leading-tight tracking-[-0.26px] text-[#141719]">
+              <h3 className="mt-2.5 font-[family-name:var(--font-manrope)] text-[clamp(1.25rem,4.5vw,2rem)] font-bold leading-tight tracking-[-0.26px] text-[#141719] sm:mt-3">
                 {point.title}
               </h3>
               <div
                 aria-hidden
-                className="mt-4 h-[3.5px] w-[34px] rounded-[2px] bg-[#e50818]"
+                className="mt-3 h-[3.5px] w-[34px] rounded-[2px] bg-[#e50818] sm:mt-4"
               />
-              <p className="mt-4 max-w-[232px] font-[family-name:var(--font-manrope)] text-[clamp(1rem,1.2vw,1.25rem)] font-medium leading-[1.48] tracking-[0.04px] text-[#5f6161]">
+              <p className="mt-3 max-w-[232px] font-[family-name:var(--font-manrope)] text-[clamp(0.9375rem,3.6vw,1.25rem)] font-medium leading-[1.48] tracking-[0.04px] text-[#5f6161] sm:mt-4">
                 {point.description}
               </p>
             </motion.article>
@@ -328,17 +422,45 @@ function SafetyAssociatePartnersSection() {
         }}
       />
 
-      <div className="relative mx-auto w-full max-w-[1740px] px-4 py-14 sm:px-8 sm:py-16 lg:px-[clamp(2rem,7vw,8.35rem)] lg:py-[clamp(3.5rem,5vw,5.5rem)]">
+      <div className="relative mx-auto w-full max-w-[1740px] px-4 py-12 sm:px-8 sm:py-16 lg:px-[clamp(2rem,7vw,8.35rem)] lg:py-[clamp(3.5rem,5vw,5.5rem)]">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           className="flex flex-col gap-8 sm:gap-10 lg:gap-12"
         >
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
+          {/* Mobile + tablet layout */}
+          <div className="flex flex-col gap-6 lg:hidden">
             <motion.div
               variants={fadeUp}
-              className="relative flex max-w-[735px] flex-col gap-[13px] pl-[26px]"
+              className="relative flex flex-col gap-2.5 pl-4"
+            >
+              <div
+                aria-hidden
+                className="absolute bottom-0 left-0 top-0 w-[4px] rounded-full bg-[#e50818]"
+              />
+              <p className="font-[family-name:var(--font-manrope)] text-[11px] font-semibold uppercase tracking-[0.24em] text-[#7a828c]">
+                In collaboration with
+              </p>
+              <h2 className="font-[family-name:var(--font-manrope)] text-[clamp(1.75rem,6.5vw,2.25rem)] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#0e1116]">
+                Associate Partners
+              </h2>
+              <p className="font-[family-name:var(--font-manrope)] text-[14px] leading-[1.5] text-[#5f6161]">
+                {ASSOCIATE_PARTNERS.length} institutional chambers and industry
+                bodies across India.
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeUp}>
+              <AssociatePartnersMobileCarousel />
+            </motion.div>
+          </div>
+
+          {/* Desktop header */}
+          <div className="hidden flex-col gap-5 sm:flex-row sm:items-start sm:justify-between sm:gap-8 lg:flex">
+            <motion.div
+              variants={fadeUp}
+              className="relative flex min-w-0 max-w-[735px] flex-col gap-[13px] pl-[26px]"
             >
               <div
                 aria-hidden
@@ -354,12 +476,12 @@ function SafetyAssociatePartnersSection() {
 
             <motion.div
               variants={fadeUp}
-              className="flex shrink-0 flex-col items-start gap-1.5 sm:items-end sm:pt-8"
+              className="flex shrink-0 flex-col items-end gap-1.5 pt-8"
             >
-              <p className="font-[family-name:var(--font-manrope)] text-[clamp(1.75rem,2.8vw,2.5rem)] font-extrabold leading-none text-[#0e1116] sm:text-right">
+              <p className="font-[family-name:var(--font-manrope)] text-[clamp(1.75rem,2.8vw,2.5rem)] font-extrabold leading-none text-[#0e1116]">
                 {ASSOCIATE_PARTNERS.length}
               </p>
-              <p className="font-[family-name:var(--font-manrope)] text-[11.5px] font-medium uppercase tracking-[0.2em] text-[#7a828c] sm:text-right">
+              <p className="font-[family-name:var(--font-manrope)] text-[11.5px] font-medium uppercase tracking-[0.2em] text-[#7a828c]">
                 Institutional bodies
               </p>
             </motion.div>
@@ -368,23 +490,24 @@ function SafetyAssociatePartnersSection() {
           <motion.div
             variants={fadeUp}
             aria-hidden
-            className="h-px w-full bg-[#e2e5ea] sm:mx-auto sm:max-w-[calc(100%-8rem)] lg:max-w-[calc(100%-15rem)]"
+            className="hidden h-px w-full bg-[#e2e5ea] lg:block"
           />
 
+          {/* Desktop grid */}
           <motion.ul
             variants={staggerContainer}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            className="grid grid-cols-1 gap-x-5 gap-y-8 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-4 lg:gap-x-[18px] lg:gap-y-12"
+            className="hidden grid-cols-3 gap-x-[18px] gap-y-12 lg:grid xl:grid-cols-4"
           >
             {ASSOCIATE_PARTNERS.map((partner) => (
               <motion.li
                 key={partner.src}
                 variants={fadeUp}
-                className="flex flex-col gap-3.5"
+                className="flex min-w-0 flex-col gap-3.5"
               >
-                <div className="flex items-center justify-center rounded-[20px] border border-[#e2e5ea] bg-white px-4 py-[27px] shadow-[0_1px_0_rgba(14,17,22,0.02)]">
-                  <div className="relative h-[57px] w-[145px] max-w-full opacity-95">
+                <div className="flex min-h-[111px] items-center justify-center rounded-[20px] border border-[#e2e5ea] bg-white px-4 py-[27px] shadow-[0_1px_0_rgba(14,17,22,0.02)]">
+                  <div className="relative h-[57px] w-full max-w-[145px] opacity-95">
                     <Image
                       src={partner.src}
                       alt={partner.alt}
@@ -394,12 +517,12 @@ function SafetyAssociatePartnersSection() {
                     />
                   </div>
                 </div>
-                <div className="flex items-start gap-[9px]">
+                <div className="flex min-w-0 items-start gap-[9px]">
                   <span
                     aria-hidden
                     className="mt-[7px] size-[6px] shrink-0 rounded-[3px] bg-[#e2e5ea]"
                   />
-                  <p className="font-[family-name:var(--font-manrope)] text-[13.6px] font-medium leading-[1.45] text-[#4c525b]">
+                  <p className="min-w-0 font-[family-name:var(--font-manrope)] text-[13.6px] font-medium leading-[1.45] text-[#4c525b]">
                     {partner.label}
                   </p>
                 </div>
@@ -694,7 +817,7 @@ function SafetyCertificationsSection() {
                       src={CERTIFICATES[active].src}
                       alt={CERTIFICATES[active].alt}
                       fill
-                      className={`${CERTIFICATES[active].className} drop-shadow-[0_16px_32px_rgba(15,23,42,0.12)]`}
+                      className={`${MOBILE_CERT_IMAGE_CLASS} drop-shadow-[0_16px_32px_rgba(15,23,42,0.12)]`}
                       sizes="85vw"
                     />
                   </motion.div>

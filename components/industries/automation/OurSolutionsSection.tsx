@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
 const CARD_HEIGHT = 193;
 const CARD_GAP = 66;
@@ -112,18 +112,24 @@ function SolutionCard({
   imageWidth,
 }: Omit<Solution, "offset">) {
   return (
-    <article className="flex h-[193px] w-full overflow-hidden rounded-[20px] border-[1.2px] border-solid border-[#c0c0c0] bg-white lg:w-[740px]">
+    <article className="flex w-full flex-col overflow-hidden rounded-[20px] border-[1.2px] border-solid border-[#c0c0c0] bg-white lg:h-[193px] lg:w-[740px] lg:flex-row">
       <div
-        className="relative h-[193px] shrink-0"
-        style={{ width: `${imageWidth}px` }}
+        className="relative h-[180px] w-full shrink-0 sm:h-[200px] lg:h-[193px] lg:w-[var(--image-width)]"
+        style={{ "--image-width": `${imageWidth}px` } as CSSProperties}
       >
-        <Image src={image} alt="" fill className="object-cover" sizes={`${imageWidth}px`} />
+        <Image
+          src={image}
+          alt=""
+          fill
+          className="object-cover"
+          sizes="(max-width: 1024px) 100vw, 323px"
+        />
       </div>
-      <div className="flex min-w-0 flex-1 flex-col justify-center gap-2 pl-[31px] pr-6">
-        <h3 className="max-w-[370px] font-[family-name:var(--font-manrope)] text-lg font-semibold leading-normal text-black">
+      <div className="flex min-w-0 flex-1 flex-col justify-center gap-2 px-4 py-4 sm:px-5 lg:pl-[31px] lg:pr-6 lg:py-0">
+        <h3 className="font-[family-name:var(--font-manrope)] text-base font-semibold leading-snug text-black sm:text-lg lg:max-w-[370px]">
           {title}
         </h3>
-        <div className="max-w-[368px] font-[family-name:var(--font-manrope)] text-base leading-normal text-[#6e6e6e]">
+        <div className="font-[family-name:var(--font-manrope)] text-sm leading-relaxed text-[#6e6e6e] sm:text-base sm:leading-normal lg:max-w-[368px]">
           {description}
         </div>
       </div>
@@ -134,13 +140,13 @@ function SolutionCard({
 function SectionHeading() {
   return (
     <div className="flex flex-col gap-2.5">
-      <h2 className="font-[family-name:var(--font-manrope)] text-[46px] font-bold leading-normal text-black">
+      <h2 className="font-[family-name:var(--font-manrope)] text-[28px] font-bold leading-tight text-black sm:text-[36px] lg:text-[46px] lg:leading-normal">
         Our Solutions
       </h2>
-      <p className="max-w-[654px] font-[family-name:var(--font-manrope)] text-[28px] font-semibold leading-normal text-black">
+      <p className="max-w-[654px] font-[family-name:var(--font-manrope)] text-xl font-semibold leading-snug text-black sm:text-2xl lg:text-[28px] lg:leading-normal">
         Complete Automation Facility Solutions, Engineered End-to-End
       </p>
-      <p className="max-w-[654px] font-[family-name:var(--font-manrope)] text-lg leading-normal text-[#6e6e6e]">
+      <p className="max-w-[654px] font-[family-name:var(--font-manrope)] text-base leading-relaxed text-[#6e6e6e] lg:text-lg lg:leading-normal">
         As a full-service, turnkey EPC automation facility construction company
         in South India, Mekark designs, fabricates, and builds precision
         manufacturing, assembly, and testing environments engineered around
@@ -156,9 +162,9 @@ export default function OurSolutionsSection() {
     solutions.length * CARD_HEIGHT + (solutions.length - 1) * CARD_GAP - CARD_HEIGHT;
 
   return (
-    <section className="bg-[#f6f6f6] px-6 py-16 sm:px-10 lg:px-20 lg:py-24">
+    <section className="bg-[#f6f6f6] px-5 py-12 sm:px-10 sm:py-16 lg:px-20 lg:py-24">
       <div className="mx-auto max-w-[1440px]">
-        <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:gap-10">
+        <div className="flex flex-col gap-8 sm:gap-12 lg:flex-row lg:items-start lg:gap-10">
           <aside className="lg:sticky lg:top-24 lg:w-[654px] lg:max-w-[42%] lg:shrink-0 lg:self-start">
             <SectionHeading />
           </aside>
@@ -187,8 +193,7 @@ export default function OurSolutionsSection() {
               </div>
 
               <div
-                className="relative flex flex-col"
-                style={{ gap: `${CARD_GAP}px` }}
+                className="relative flex flex-col gap-10 lg:gap-[66px]"
               >
                 {solutions.map((solution) => {
                   const cardLeft = getCardLeft(solution.offset);
@@ -201,7 +206,7 @@ export default function OurSolutionsSection() {
                         style={
                           {
                             "--card-left": `${cardLeft}px`,
-                          } as React.CSSProperties
+                          } as CSSProperties
                         }
                       >
                         <SolutionCard
@@ -219,8 +224,8 @@ export default function OurSolutionsSection() {
           </div>
         </div>
 
-        <div className="mx-auto mt-16 max-w-[1385px] rounded-[40px] border border-[rgba(228,0,21,0.5)] bg-[rgba(228,0,21,0.05)] px-6 py-6 text-center sm:px-8 sm:py-8">
-          <p className="font-[family-name:var(--font-manrope)] text-lg font-semibold leading-normal text-[#4c4c4c]">
+        <div className="mx-auto mt-10 max-w-[1385px] rounded-[24px] border border-[rgba(228,0,21,0.5)] bg-[rgba(228,0,21,0.05)] px-5 py-5 text-center sm:mt-16 sm:rounded-[40px] sm:px-8 sm:py-8">
+          <p className="font-[family-name:var(--font-manrope)] text-base font-semibold leading-relaxed text-[#4c4c4c] sm:text-lg sm:leading-normal">
             Every automation manufacturing facility is custom-engineered around
             your production line, equipment tolerances, and automation roadmap,
             ensuring precision output and long-term scalability for{" "}

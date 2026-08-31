@@ -167,6 +167,117 @@
   	align-items: center;
 }
 
+.desktopProcess {
+  	width: 100%;
+  	z-index: 1;
+}
+
+.desktopStepGroup {
+  	display: contents;
+}
+
+.mobileProcess {
+  	display: none;
+  	list-style: none;
+  	margin: 0;
+  	padding: 0;
+  	width: 100%;
+  	max-width: 640px;
+  	position: relative;
+  	z-index: 1;
+}
+
+.mobileProcess::before {
+  	content: "";
+  	position: absolute;
+  	top: 20px;
+  	bottom: 20px;
+  	left: 19px;
+  	width: 1px;
+  	background: linear-gradient(
+    		to bottom,
+    		rgba(240, 29, 35, 0.5),
+    		rgba(240, 29, 35, 0.25),
+    		rgba(240, 29, 35, 0.1)
+  	);
+  	pointer-events: none;
+}
+
+.mobileStep {
+  	display: flex;
+  	gap: 16px;
+  	position: relative;
+}
+
+.mobileStepWithGap {
+  	padding-bottom: 20px;
+}
+
+.mobileStepBadge {
+  	position: relative;
+  	z-index: 1;
+  	flex-shrink: 0;
+  	width: 40px;
+  	height: 40px;
+  	border-radius: 50%;
+  	background-color: #fff;
+  	box-shadow: 0 2px 8px rgba(240, 29, 35, 0.15);
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	box-sizing: border-box;
+  	outline: 2px solid rgba(240, 29, 35, 0.2);
+  	outline-offset: 0;
+}
+
+.mobileStepNumber {
+  	font-family: Montserrat, sans-serif;
+  	font-size: 14px;
+  	font-weight: 600;
+  	color: #f01d23;
+}
+
+.mobileStepCard {
+  	flex: 1;
+  	min-width: 0;
+  	border-radius: 20px;
+  	border: 1px solid #e3e4e7;
+  	background-color: #fff;
+  	padding: 16px;
+  	box-shadow: 0 2px 12px rgba(17, 17, 17, 0.04);
+  	box-sizing: border-box;
+}
+
+.mobileStepLabel {
+  	display: inline-block;
+  	border-radius: 999px;
+  	background-color: #ffefef;
+  	padding: 2px 10px;
+  	font-family: Manrope, sans-serif;
+  	font-size: 12px;
+  	font-weight: 700;
+  	color: #f01d23;
+  	margin-bottom: 8px;
+}
+
+.mobileStepTitle {
+  	margin: 0;
+  	font-family: Manrope, sans-serif;
+  	font-size: 16px;
+  	font-weight: 600;
+  	line-height: 1.35;
+  	color: #3c3938;
+}
+
+.mobileStepDescription {
+  	margin: 8px 0 0;
+  	font-family: Manrope, sans-serif;
+  	font-size: 14px;
+  	font-weight: 400;
+  	line-height: 1.6;
+  	color: #555;
+}
+
 @media (max-width: 1200px) {
   	.grid1Parent {
     		padding: 40px 24px 48px;
@@ -189,14 +300,9 @@
     		gap: 24px 20px;
     		font-size: 32px;
   	}
-  	.parent,
-  	.frameDiv,
-  	.vectorParent {
+  	.parent {
     		flex: 1 1 220px;
     		max-width: 280px;
-  	}
-  	.vectorParent {
-    		gap: 16px;
   	}
   	.frameChild {
     		width: 40px;
@@ -223,68 +329,38 @@
   	.grid1Parent {
     		width: 100%;
     		max-width: 100%;
-    		padding: 32px 20px 40px;
+    		padding: 32px 16px 40px;
     		font-size: 24px;
     		overflow: hidden;
     		box-sizing: border-box;
   	}
   	.grid1IconWrap {
-    		height: 50%;
+    		height: 180px;
   	}
   	.ourWarehouseProjectExecutioWrapper {
     		margin-bottom: 28px;
     		padding: 0 4px;
   	}
   	.ourWarehouseProjectExecutio {
+    		font-size: 24px;
     		line-height: 32px;
     		white-space: normal;
     		width: 100%;
   	}
-  	.frameParent {
-    		flex-direction: column;
-    		align-items: stretch;
-    		width: 100%;
-    		font-size: 28px;
-    		gap: 4px;
+  	.desktopProcess {
+    		display: none;
   	}
-  	.parent,
-  	.frameDiv,
-  	.vectorParent {
-    		flex: none;
-    		max-width: none;
-    		width: 100%;
-    		align-items: flex-start;
+  	.mobileProcess {
+    		display: block;
   	}
-  	.vectorParent {
-    		flex-direction: column;
-    		align-items: stretch;
-    		gap: 4px;
+  	.mobileStepCard {
+    		padding: 20px;
   	}
-  	.siteEvaluationFeasibilityParent,
-  	.designEngineeringParent,
-  	.onSiteErectionParent {
-    		width: 100%;
-    		font-size: 16px;
+  	.mobileStepTitle {
+    		font-size: 17px;
   	}
-  	.siteEvaluation,
-  	.designEngineering {
-    		width: 100%;
-  	}
-  	.geotechnicalAssessmentRegul,
-  	.structuralDesignLoad,
-  	.precisionManufacturingAt,
-  	.geotechnicalAssessmentRegul2,
-  	.snagListClearance {
-    		width: 100%;
-    		max-width: 100%;
+  	.mobileStepDescription {
     		font-size: 14px;
     		line-height: 22px;
-  	}
-  	.frameChild {
-    		transform: rotate(90deg);
-    		align-self: center;
-    		margin: 8px 0;
-    		width: 28px;
-    		height: 10px;
   	}
 }

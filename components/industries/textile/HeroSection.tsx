@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
-    <section className="relative flex min-h-[640px] items-center overflow-hidden lg:min-h-[900px]">
+    <section className="relative flex min-h-[640px] max-md:min-h-svh items-center overflow-hidden lg:min-h-[900px]">
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/industries/textile/hero/herobg.png"

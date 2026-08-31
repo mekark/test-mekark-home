@@ -581,11 +581,11 @@ function MobileNavItem({
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.28, ease: EASE }}
-            className="overflow-hidden bg-white/[0.03]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2, ease: EASE }}
+            className="bg-white/[0.03]"
           >
             <motion.div
               className="space-y-2 px-3 pb-3 pt-1"
@@ -671,11 +671,38 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = mobileOpen || findOpen ? "hidden" : "";
+    const shouldLock = mobileOpen || findOpen;
+    if (!shouldLock) return;
+
+    const scrollY = window.scrollY;
+    const { style } = document.body;
+
+    style.position = "fixed";
+    style.top = `-${scrollY}px`;
+    style.left = "0";
+    style.right = "0";
+    style.width = "100%";
+    style.overflow = "hidden";
+
     return () => {
-      document.body.style.overflow = "";
+      style.position = "";
+      style.top = "";
+      style.left = "";
+      style.right = "";
+      style.width = "";
+      style.overflow = "";
+      window.scrollTo(0, scrollY);
     };
   }, [mobileOpen, findOpen]);
+
+  useEffect(() => {
+    setMobileOpen(false);
+    setMobileExpanded(null);
+    setFindOpen(false);
+    setFindStep(1);
+    setIndustry(null);
+    setService(null);
+  }, [pathname]);
 
   useEffect(() => {
     if (!findOpen) return;
@@ -821,44 +848,44 @@ export function Navbar() {
             </motion.button>
           </div>
         </div>
+      </motion.div>
 
-        <AnimatePresence>
-          {mobileOpen && (
-            <motion.nav
-              variants={navbarMobileMenuReveal}
+      <AnimatePresence initial={false}>
+        {mobileOpen && (
+          <motion.nav
+            variants={navbarMobileMenuReveal}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="fixed inset-x-0 top-[76px] bottom-0 z-50 overflow-y-auto overscroll-contain border-t border-white/10 bg-[#0a0a0a]/96 backdrop-blur-xl xl:hidden sm:top-[88px]"
+            aria-label="Mobile navigation"
+          >
+            <motion.div
+              className="pb-[max(1rem,env(safe-area-inset-bottom))]"
+              variants={navbarMobileItemsStagger}
               initial="hidden"
               animate="visible"
-              exit="exit"
-              className="overflow-hidden border-t border-white/10 bg-black/92 backdrop-blur-xl xl:hidden"
-              aria-label="Mobile navigation"
             >
-              <motion.div
-                className="max-h-[calc(100dvh-76px)] overflow-y-auto sm:max-h-[calc(100dvh-88px)]"
-                variants={navbarMobileItemsStagger}
-                initial="hidden"
-                animate="visible"
-              >
-                <motion.div variants={navbarMobileItemReveal} className="border-b border-white/8 px-5 py-4 sm:hidden">
-                  <FindSolutionButton open={findOpen} onClick={openFind} fullWidth />
-                </motion.div>
-                {NAV_ITEMS.map((item) => (
-                  <MobileNavItem
-                    key={item.label}
-                    item={item}
-                    openLabel={mobileExpanded}
-                    onToggle={(label) =>
-                      setMobileExpanded((current) =>
-                        current === label ? null : label,
-                      )
-                    }
-                    onNavigate={closeMobile}
-                  />
-                ))}
+              <motion.div variants={navbarMobileItemReveal} className="border-b border-white/8 px-5 py-4 sm:hidden">
+                <FindSolutionButton open={findOpen} onClick={openFind} fullWidth />
               </motion.div>
-            </motion.nav>
-          )}
-        </AnimatePresence>
-      </motion.div>
+              {NAV_ITEMS.map((item) => (
+                <MobileNavItem
+                  key={item.label}
+                  item={item}
+                  openLabel={mobileExpanded}
+                  onToggle={(label) =>
+                    setMobileExpanded((current) =>
+                      current === label ? null : label,
+                    )
+                  }
+                  onNavigate={closeMobile}
+                />
+              ))}
+            </motion.div>
+          </motion.nav>
+        )}
+      </AnimatePresence>
 
       <div className="absolute inset-x-0 top-full">
         <AnimatePresence>

@@ -76,7 +76,7 @@ const stats: Stat[] = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[100dvh] w-full overflow-hidden bg-[#060606] font-[family-name:var(--font-manrope)] sm:min-h-[110dvh] lg:h-[115dvh] lg:min-h-0">
+    <section className="relative min-h-svh w-full overflow-hidden bg-[#060606] font-[family-name:var(--font-manrope)] lg:h-[115dvh] lg:min-h-0">
       {/* Background image stack */}
       <div className="absolute inset-0">
         <div className="absolute left-[-8%] top-[-1%] h-[110%] w-[110%]">
@@ -169,7 +169,7 @@ export default function Hero() {
 
       {/* Stats bar */}
       <motion.div
-        className="absolute inset-x-0 bottom-4 z-10 grid grid-cols-2 gap-x-4 gap-y-3 px-4 sm:bottom-6 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-8 sm:gap-y-4 md:bottom-[50px] md:gap-x-[50px]"
+        className="absolute inset-x-0 bottom-4 z-10 grid grid-cols-2 gap-x-3 gap-y-4 px-4 min-[390px]:gap-x-4 sm:bottom-6 sm:gap-x-6 sm:gap-y-5 md:bottom-[50px] md:flex md:flex-wrap md:items-center md:justify-center md:gap-x-[50px]"
         initial="hidden"
         animate="visible"
         variants={{
@@ -182,7 +182,7 @@ export default function Hero() {
         {stats.map((stat) => (
           <motion.div
             key={stat.label}
-            className="flex min-w-0 flex-col items-start px-1 sm:min-w-[90px] sm:px-2.5"
+            className="flex min-w-0 flex-col items-start gap-1 px-0 sm:min-w-[90px] sm:px-2.5"
             variants={{
               hidden: { opacity: 0, y: 12 },
               visible: {
@@ -192,17 +192,17 @@ export default function Hero() {
               },
             }}
           >
-            <p className="text-[16px] font-extrabold tracking-[-0.04em] sm:text-[18px] md:text-[20px]">
+            <p className="w-full text-[clamp(1rem,4.4vw,1.125rem)] font-extrabold leading-[1.2] tracking-[-0.04em] sm:text-[18px] md:text-[20px]">
               {stat.value}
             </p>
-            <p className="mt-0.5 text-[8px] font-semibold capitalize tracking-[1.2px] text-white/70 sm:text-[9px]">
+            <p className="mt-0.5 w-full text-[clamp(0.5625rem,2.7vw,0.625rem)] font-semibold capitalize leading-[1.35] tracking-[0.04em] text-white/70 sm:text-[9px] sm:tracking-[1.2px]">
               {stat.label}
             </p>
           </motion.div>
         ))}
 
         <motion.div
-          className="col-span-2 flex max-w-none flex-col items-start px-1 sm:col-span-1 sm:max-w-[180px] sm:px-2.5"
+          className="col-span-2 flex min-w-0 max-w-none flex-col items-start border-t border-white/15 px-0 pt-4 mt-1 sm:col-span-1 sm:mt-0 sm:border-0 sm:pt-0 sm:px-2.5"
           variants={{
             hidden: { opacity: 0, y: 12 },
             visible: {
@@ -212,7 +212,7 @@ export default function Hero() {
             },
           }}
         >
-          <p className="text-[14px] font-extrabold leading-tight tracking-[-0.03em] sm:text-[16px] md:text-[20px]">
+          <p className="w-full text-[clamp(1rem,4.4vw,1.125rem)] font-extrabold leading-[1.2] tracking-[-0.03em] sm:text-[16px] md:text-[20px]">
             <span className="text-white">ISO 9001:2015 </span>
             <span className="text-[#eb1a20]">&amp; </span>
             <span className="text-[#04b330]">Green </span>

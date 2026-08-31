@@ -1,7 +1,5 @@
-import { Suspense } from "react";
 import type { Metadata } from "next";
 import { OurHistoryPage } from "@/components/about/history/OurHistoryPage";
-import { EnquirySection } from "@/components/enquiry/EnquirySection";
 import { FooterSection } from "@/components/footer/FooterSection";
 
 export const metadata: Metadata = {
@@ -14,9 +12,6 @@ export default function OurHistoryRoute() {
   return (
     <div className="flex flex-1 flex-col bg-white">
       <OurHistoryPage />
-      <Suspense fallback={null}>
-        <EnquirySection />
-      </Suspense>
       <FooterSection />
     </div>
   );

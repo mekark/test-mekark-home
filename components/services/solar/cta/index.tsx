@@ -5,53 +5,6 @@ import styles from './index.module.css';
 const Cta: NextPage = () => {
 	return (
 		<div className={styles.frameParent}>
-			<div className={styles.sectionWrapper}>
-				<div className={styles.section}>
-					<b className={styles.trustedAcrossIndustrialContainer}>
-						<span className={styles.trustedAcrossIndustrialContainer2}>
-							<span className={styles.trustedAcrossIndustrial}>{`Trusted Across Industrial & `}</span>
-							<span className={styles.commercialSectors}>Commercial Sectors</span>
-						</span>
-					</b>
-					<div className={styles.frameGroup}>
-						<div className={styles.rectangleParent}>
-							<div className={styles.frameChild} />
-							<Image className={styles.tata1Icon} width={161} height={125} sizes="100vw" src="/images/services/solar/CTA/tata-1.png" alt="Tata" />
-						</div>
-						<div className={styles.rectangleGroup}>
-							<div className={styles.frameChild} />
-							<Image className={styles.bosch1Icon} width={158} height={158} sizes="100vw" src="/images/services/solar/CTA/vector-1.png" alt="Bosch" />
-						</div>
-						<div className={styles.rectangleContainer}>
-							<div className={styles.frameChild} />
-							<Image className={styles.hyundai2Icon} width={200} height={200} sizes="100vw" src="/images/services/solar/CTA/hyundai-2.png" alt="Hyundai" />
-						</div>
-						<div className={styles.frameDiv}>
-							<div className={styles.frameChild} />
-							<Image className={styles.hyundai2Icon} width={200} height={200} sizes="100vw" src="/images/services/solar/CTA/tvs-1.png" alt="TVS" />
-						</div>
-						<div className={styles.rectangleParent2}>
-							<div className={styles.frameChild} />
-							<Image className={styles.jk2Icon} width={221} height={115} sizes="100vw" src="/images/services/solar/CTA/jk-2.png" alt="JK Tyre" />
-						</div>
-						<div className={styles.rectangleParent3}>
-							<div className={styles.frameChild} />
-							<Image className={styles.hyundai2Icon} width={200} height={200} sizes="100vw" src="/images/services/solar/CTA/voltas-1.png" alt="Voltas" />
-						</div>
-						<div className={styles.rectangleParent4}>
-							<div className={styles.frameChild} />
-							<Image className={styles.image12Icon} width={144} height={144} sizes="100vw" src="/images/services/solar/CTA/image-12.png" alt="Q Med Hospital" />
-						</div>
-					</div>
-					<div className={styles.sectionChild} />
-					<div className={styles.sectionItem} />
-					<div className={styles.mdishieldTickParent}>
-						<Image className={styles.mdishieldTickIcon} width={32} height={32} sizes="100vw" src="/images/services/solar/CTA/mdi-shield-tick.svg" alt="" />
-						<div className={styles.builtOnTrust}>Built on Trust. Delivering Excellence.</div>
-					</div>
-					<div className={styles.ourProjectMix}>Our project mix spans single-floor sheds to multi-level commercial and industrial structures. </div>
-				</div>
-			</div>
 			<div className={styles.grid1Parent}>
 				<Image className={styles.grid1Icon} width={1918} height={391} sizes="100vw" src="/images/services/solar/CTA/grid-1-1.png" alt="" />
 				<div className={styles.ourCommercialSolarSolutionsWrapper}>
@@ -67,7 +20,9 @@ const Cta: NextPage = () => {
 							</div>
 						</div>
 						<div className={styles.rectangleParent5}>
-							<Image className={styles.rectangleIcon} width={473} height={277} sizes="100vw" src="/images/services/solar/CTA/rectangle-16.png" alt="Off-grid solar systems" />
+							<div className={styles.rectangleImageWrap}>
+								<Image className={styles.rectangleIconOffGrid} width={473} height={277} sizes="100vw" src="/images/services/solar/CTA/rectangle-16.png" alt="Off-grid solar systems" />
+							</div>
 							<div className={styles.rooftopSolarForFactoriesAnParent}>
 								<div className={styles.rooftopSolarFor}>Off-Grid Solar Systems</div>
 								<div className={styles.fullyIndependentPower}>Fully independent power supply for remote industrial facilities</div>
@@ -83,7 +38,9 @@ const Cta: NextPage = () => {
 							</div>
 						</div>
 						<div className={styles.rectangleParent5}>
-							<div className={styles.frameChild7} />
+							<div className={styles.rectangleImageWrap}>
+								<Image className={styles.rectangleIconAudit} width={473} height={277} sizes="100vw" src="/images/services/solar/CTA/commercial-solar-energy-audit.png" alt="Commercial solar energy audit" />
+							</div>
 							<div className={styles.rooftopSolarForFactoriesAnParent}>
 								<div className={styles.rooftopSolarFor}>Commercial Solar Energy Audit</div>
 								<div className={styles.detailedAssessmentOf}>{` Detailed assessment of your current consumption and savings potential `}</div>
@@ -99,7 +56,9 @@ const Cta: NextPage = () => {
 							</div>
 						</div>
 						<div className={styles.rectangleParent5}>
-							<div className={styles.frameChild7} />
+							<div className={styles.rectangleImageWrap}>
+								<Image className={styles.rectangleIconOnGrid} width={473} height={277} sizes="100vw" src="/images/services/solar/CTA/on-grid-net-metering.png" alt="On-grid solar with net metering" />
+							</div>
 							<div className={styles.rooftopSolarForFactoriesAnParent}>
 								<div className={styles.rooftopSolarFor}>On-Grid Solar with Net Metering</div>
 								<div className={styles.fullyIndependentPower}>{`Stay connected to the grid and reduce your electricity bill `}</div>

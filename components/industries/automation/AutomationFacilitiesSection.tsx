@@ -65,8 +65,8 @@ function FacilityImage({
   if (imageFit === "crop-left") {
     return (
       <div
-        className="relative shrink-0 overflow-hidden rounded-[21.333px]"
-        style={{ width: IMAGE_SIZE, height: IMAGE_SIZE }}
+        className="relative mx-auto aspect-square w-full max-w-[257.333px] shrink-0 overflow-hidden rounded-[21.333px] sm:mx-0"
+        style={{ width: IMAGE_SIZE, height: IMAGE_SIZE, maxWidth: "100%" }}
       >
         <Image
           src={src}
@@ -87,8 +87,8 @@ function FacilityImage({
 
   return (
     <div
-      className="relative shrink-0 overflow-hidden rounded-[21.333px]"
-      style={{ width: IMAGE_SIZE, height: IMAGE_SIZE }}
+      className="relative mx-auto aspect-square w-full max-w-[257.333px] shrink-0 overflow-hidden rounded-[21.333px] sm:mx-0"
+      style={{ width: IMAGE_SIZE, height: IMAGE_SIZE, maxWidth: "100%" }}
     >
       <Image
         src={src}
@@ -123,19 +123,16 @@ function FacilityCard({
   }[titleLayout];
 
   return (
-    <article
-      className="flex shrink-0 flex-col"
-      style={{ width: IMAGE_SIZE, maxWidth: "100%" }}
-    >
+    <article className="flex w-full max-w-[320px] shrink-0 flex-col sm:max-w-[257.333px]">
       <FacilityImage src={image} imageFit={imageFit} />
-      <div className="mt-[33.333px] flex flex-col">
+      <div className="mt-6 flex flex-col sm:mt-[33.333px]">
         <h3
-          className={`font-[family-name:var(--font-montserrat)] text-[18.667px] font-bold text-[#3c3938] ${titleClasses}`}
+          className={`font-[family-name:var(--font-montserrat)] text-base font-bold text-[#3c3938] sm:text-[18.667px] ${titleClasses}`}
         >
           {title}
         </h3>
         <p
-          className={`${descriptionMargin} font-[family-name:var(--font-montserrat)] text-base leading-[21.333px] text-[#555] ${wideDescription ? "w-[266px] max-w-[calc(100vw-48px)]" : "w-full"}`}
+          className={`${descriptionMargin} font-[family-name:var(--font-montserrat)] text-sm leading-relaxed text-[#555] sm:text-base sm:leading-[21.333px] ${wideDescription ? "w-full max-w-none" : "w-full"}`}
         >
           {description}
         </p>

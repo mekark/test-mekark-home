@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { Fragment } from "react";
 import { motion } from "framer-motion";
 
 const steps = [
@@ -36,6 +37,23 @@ const steps = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.12, delayChildren: 0.1 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as const },
+  },
+};
+
 function ProcessArrow() {
   return (
     <span className="relative hidden h-[20px] w-[66.667px] shrink-0 overflow-hidden xl:block">
@@ -47,6 +65,82 @@ function ProcessArrow() {
         className="size-full"
       />
     </span>
+  );
+}
+
+function MobileProcessTimeline() {
+  return (
+    <motion.ol
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-60px" }}
+      variants={containerVariants}
+      className="relative m-0 mx-auto w-full max-w-[640px] list-none p-0 md:hidden"
+    >
+      <div
+        aria-hidden
+        className="absolute top-5 bottom-5 left-5 w-px bg-gradient-to-b from-[#F01D23]/50 via-[#F01D23]/25 to-[#F01D23]/10"
+      />
+
+      {steps.map((step, index) => (
+        <motion.li
+          key={step.num}
+          variants={itemVariants}
+          className={`relative flex gap-4 ${index < steps.length - 1 ? "pb-5" : ""}`}
+        >
+          <div className="relative z-10 flex size-10 shrink-0 items-center justify-center rounded-full bg-white shadow-[0_2px_8px_rgba(240,29,35,0.15)] ring-2 ring-[#F01D23]/20">
+            <span className="font-[family-name:var(--font-manrope)] text-sm font-semibold text-[#F01D23]">
+              {step.num}
+            </span>
+          </div>
+
+          <article className="min-w-0 flex-1 overflow-hidden rounded-[20px] border border-[#E3E4E7] bg-white p-4 shadow-[0_2px_12px_rgba(17,17,17,0.04)]">
+            <span className="inline-flex rounded-full bg-[#FFEFEF] px-2.5 py-0.5 font-[family-name:var(--font-manrope)] text-xs font-bold text-[#F01D23]">
+              Step {step.num}
+            </span>
+            <h3 className="mt-2 font-[family-name:var(--font-manrope)] text-base font-semibold leading-snug text-[#3C3938]">
+              {step.title}
+            </h3>
+            <p className="mt-2 font-[family-name:var(--font-manrope)] text-sm font-normal leading-relaxed text-[#555555]">
+              {step.desc}
+            </p>
+          </article>
+        </motion.li>
+      ))}
+    </motion.ol>
+  );
+}
+
+function DesktopProcessSteps() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: 0.1 }}
+      className="mt-10 hidden flex-col gap-10 md:flex lg:mt-[64px] lg:flex-row lg:items-center lg:gap-7"
+    >
+      {steps.map((step, index) => (
+        <Fragment key={step.num}>
+          {index > 0 && <ProcessArrow />}
+          <div
+            className={`flex flex-col items-start gap-2.5 lg:gap-[14px] ${step.width}`}
+          >
+            <p className="font-[family-name:var(--font-manrope)] text-[32px] font-medium leading-normal text-[#F01D23] lg:text-[40px]">
+              {step.num}
+            </p>
+            <div className="flex flex-col items-start gap-2.5">
+              <h3 className="font-[family-name:var(--font-manrope)] text-[18px] font-semibold leading-normal text-[#3C3938]">
+                {step.title}
+              </h3>
+              <p className="font-[family-name:var(--font-manrope)] text-[16px] font-normal leading-[21.333px] text-[#555555]">
+                {step.desc}
+              </p>
+            </div>
+          </div>
+        </Fragment>
+      ))}
+    </motion.div>
   );
 }
 
@@ -82,34 +176,10 @@ export default function ExecutionProcessSection() {
           Our Textile Factory Execution Process
         </motion.h2>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="mt-10 flex flex-col gap-10 lg:mt-[64px] lg:flex-row lg:items-center lg:gap-7"
-        >
-          {steps.map((step, index) => (
-            <div key={step.num} className="contents">
-              {index > 0 && <ProcessArrow />}
-              <div
-                className={`flex flex-col items-start gap-2.5 lg:gap-[14px] ${step.width}`}
-              >
-                <p className="font-[family-name:var(--font-manrope)] text-[32px] font-medium leading-normal text-[#F01D23] lg:text-[40px]">
-                  {step.num}
-                </p>
-                <div className="flex flex-col items-start gap-2.5">
-                  <h3 className="font-[family-name:var(--font-manrope)] text-[18px] font-semibold leading-normal text-[#3C3938]">
-                    {step.title}
-                  </h3>
-                  <p className="font-[family-name:var(--font-manrope)] text-[16px] font-normal leading-[21.333px] text-[#555555]">
-                    {step.desc}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </motion.div>
+        <div className="mt-10 lg:mt-[64px]">
+          <MobileProcessTimeline />
+          <DesktopProcessSteps />
+        </div>
       </div>
     </section>
   );

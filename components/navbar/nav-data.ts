@@ -206,7 +206,9 @@ function aboutLinks(basePath: string, labels: string[]): NavLink[] {
     href:
       label === "Safety and Certificates"
         ? `${basePath}/safety`
-        : `${basePath}/${slugify(label)}`,
+        : label === "R&D"
+          ? `${basePath}/research-and-development`
+          : `${basePath}/${slugify(label)}`,
     description: ABOUT_DESCRIPTIONS[label],
   }));
 }

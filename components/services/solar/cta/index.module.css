@@ -289,6 +289,41 @@
 	border-radius: 1.0417vw;
 	object-fit: cover;
 }
+.rectangleImageWrap {
+	width: 24.6354vw;
+	height: 14.4271vw;
+	position: relative;
+	border-radius: 1.0417vw;
+	overflow: hidden;
+	flex-shrink: 0;
+}
+.rectangleIconOffGrid {
+	position: absolute;
+	height: 132.74%;
+	left: 0;
+	top: -16.08%;
+	width: 100%;
+	max-width: none;
+	object-fit: cover;
+}
+.rectangleIconAudit {
+	position: absolute;
+	height: 128.07%;
+	left: 0.13%;
+	top: -0.3%;
+	width: 100%;
+	max-width: none;
+	object-fit: cover;
+}
+.rectangleIconOnGrid {
+	position: absolute;
+	height: 127.98%;
+	left: 0;
+	top: -13.99%;
+	width: 100%;
+	max-width: none;
+	object-fit: cover;
+}
 .rooftopSolarForFactoriesAnParent {
 	display: flex;
 	flex-direction: column;
@@ -735,7 +770,8 @@
 		border-radius: 0.75rem;
 	}
 	.rectangleIcon,
-	.frameChild7 {
+	.frameChild7,
+	.rectangleImageWrap {
 		width: 100%;
 		height: auto;
 		aspect-ratio: 473 / 277;

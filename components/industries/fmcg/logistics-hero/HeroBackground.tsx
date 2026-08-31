@@ -23,7 +23,14 @@ export function HeroBackground() {
         />
       </motion.div>
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 md:hidden"
+        style={{
+          backgroundImage:
+            "linear-gradient(180deg, rgba(6, 6, 6, 0.88) 0%, rgba(6, 6, 6, 0.72) 55%, rgba(6, 6, 6, 0.5) 100%)",
+        }}
+      />
+      <div
+        className="absolute inset-0 hidden md:block"
         style={{
           backgroundImage:
             "linear-gradient(105.99deg, rgb(6, 6, 6) 8.58%, rgba(6, 6, 6, 0.8) 44.21%, rgba(6, 6, 6, 0) 76.38%)",

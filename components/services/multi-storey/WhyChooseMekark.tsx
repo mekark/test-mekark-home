@@ -25,7 +25,7 @@ const rightItems = [
   {
     num: "02",
     title: "Established Credentials:",
-    body: "Over X multi-storey and industrial projects completed, with a 4.7/5 customer rating.",
+    body: "Over 200+ multi-storey and industrial projects completed, with a 4.7/5 customer rating.",
   },
   {
     num: "04",
@@ -34,7 +34,7 @@ const rightItems = [
   },
   {
     num: "06",
-    title: "X+ Years of Experience:",
+    title: "18+ Years of Experience:",
     body: "From factories and warehouses to multi-storey commercial and institutional buildings.",
   },
 ] as const;

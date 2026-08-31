@@ -26,7 +26,7 @@ const FoodBeverageHeroBanner = () => {
         <div className={styles.logisticsIndustrialStructuWrapper}>
           <b className={styles.logisticsIndustrial}>
             <span className={styles.subLine}>
-              HACCP-Compliant Plants, Cold Storage     &amp;
+              HACCP-Compliant Plants, Cold Storage &amp;
             </span>
             <span className={styles.subLine}>
               Hygienic Infrastructure by Mekark

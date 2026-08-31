@@ -149,11 +149,16 @@
   background-color: #c4161c;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 1.25vw 2.5vw;
   gap: 0.692708vw;
   font-size: 1.110938vw;
   font-family: var(--font-inter), Inter, sans-serif;
+  color: #fff;
+  text-decoration: none;
+  border: 0;
   cursor: pointer;
+  box-sizing: border-box;
 }
 .text {
   position: relative;
@@ -204,7 +209,7 @@
   .titleLine,
   .subLine,
   .descLine {
-    white-space: nowrap;
+    white-space: normal;
   }
   .logisticsIndustrialStructuWrapper {
     height: auto;
@@ -238,7 +243,7 @@
   }
   .text {
     line-height: 24px;
-    white-space: nowrap;
+    white-space: normal;
   }
   .component4 {
     width: 20px;
@@ -296,11 +301,14 @@
     line-height: 22px;
   }
   .component5 {
+    width: 100%;
     padding: 14px 20px;
     min-height: 48px;
     font-size: 15px;
   }
   .text {
     line-height: 22px;
+    white-space: normal;
+    text-align: center;
   }
 }

@@ -32,8 +32,8 @@ const solutions = [
     body: "We design sprinkler grids, hydrant systems, and fire protection infrastructure sized for plant occupancy and applicable fire codes.",
   },
   {
-    image: null,
-    imageClass: "",
+    image: "/images/services/mep/industrial-solutions/mechanical-utility.png",
+    imageClass: "rounded-num-21_33 object-cover",
     absoluteImage: false,
     title: "Mechanical & Utility Works",
     body: "We deliver compressed air systems, process mechanical installations, and utility rooms engineered for continuous plant operation.",

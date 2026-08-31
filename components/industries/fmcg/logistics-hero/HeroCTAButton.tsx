@@ -8,7 +8,7 @@ export function HeroCTAButton() {
   return (
     <motion.a
       href="/#enquiry"
-      className="inline-flex w-fit self-start items-center gap-3 rounded-[10.667px] bg-[#c4161c] px-8 py-5 shadow-[0_10.667px_21.333px_rgba(196,22,28,0.3)]"
+      className="inline-flex w-full items-center justify-center gap-3 self-stretch rounded-[10.667px] bg-[#c4161c] px-6 py-4 shadow-[0_10.667px_21.333px_rgba(196,22,28,0.3)] sm:w-fit sm:self-start sm:px-8 sm:py-5"
       custom={0.6}
       variants={fadeSlideUp}
       initial="hidden"
@@ -16,7 +16,7 @@ export function HeroCTAButton() {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
-      <span className="text-lg font-semibold text-white sm:text-[21px] sm:leading-8">
+      <span className="text-center text-base font-semibold text-white sm:text-left sm:text-lg md:text-[21px] md:leading-8">
         Get a Free Consultation
       </span>
       <motion.span

@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function FooterCta() {
   return (
-    <section className="relative h-[388px] w-full overflow-hidden">
+    <section className="relative min-h-[320px] w-full overflow-hidden sm:min-h-[360px] lg:min-h-[388px]">
       <div className="pointer-events-none absolute inset-0">
         <Image
           src="/images/industries/textile/footer/foot.png"
@@ -26,13 +26,13 @@ export default function FooterCta() {
         }}
       />
 
-      <div className="relative z-10 flex h-full items-center justify-center px-5 sm:px-10">
+      <div className="relative z-10 flex min-h-[320px] items-center justify-center px-5 py-10 sm:min-h-[360px] sm:px-10 sm:py-12 lg:min-h-[388px]">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="flex w-full max-w-[1193px] flex-col items-center gap-10 text-center"
+          className="flex w-full max-w-[1193px] flex-col items-center gap-6 text-center sm:gap-10"
         >
           <div className="flex flex-col items-center gap-4">
             <h2 className="font-[family-name:var(--font-manrope)] text-[28px] font-bold leading-normal text-white sm:text-[36px] lg:text-[50px]">
@@ -47,9 +47,9 @@ export default function FooterCta() {
 
           <Link
             href="/#enquiry"
-            className="inline-flex items-center gap-3 rounded-[30px] bg-[#ED2024] px-[90px] py-4 text-[20px] font-bold leading-[31.479px] text-white transition-colors duration-200 hover:bg-[#C4161C]"
+            className="inline-flex w-full max-w-full items-center justify-center gap-3 rounded-[30px] bg-[#ED2024] px-6 py-4 text-center text-base font-bold leading-snug text-white transition-colors duration-200 hover:bg-[#C4161C] sm:w-auto sm:px-10 sm:text-lg md:px-[90px] md:text-[20px] md:leading-[31.479px]"
           >
-            Request Free Project Estimate
+            <span className="text-balance">Request Free Project Estimate</span>
             <span className="relative size-[24.544px] shrink-0 overflow-hidden">
               <Image
                 src="/images/industries/textile/footer/cta-arrow.svg"

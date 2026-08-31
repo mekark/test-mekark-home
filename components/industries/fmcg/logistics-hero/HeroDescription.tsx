@@ -6,7 +6,7 @@ import { fadeSlideUp } from "./motion";
 export function HeroDescription() {
   return (
     <motion.p
-      className="flex w-full max-w-[1015px] items-center text-left font-manrope text-2xl font-normal leading-[33.33px] text-whitesmoke"
+      className="w-full max-w-[1015px] text-left font-manrope text-sm font-normal leading-relaxed text-whitesmoke sm:text-base md:text-lg lg:text-2xl lg:leading-[33.33px]"
       custom={0.4}
       variants={fadeSlideUp}
       initial="hidden"

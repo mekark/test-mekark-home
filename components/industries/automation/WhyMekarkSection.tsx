@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import styles from "./WhyMekarkSection.module.css";
 
 type Feature = {
@@ -47,170 +46,117 @@ const features: Feature[] = [
   },
 ];
 
-function ConsultationLink({ className }: { className: string }) {
-  return (
-    <Link href="/#enquiry" className={className}>
-      <b className={styles.consultationLabel}>Request a Free Consultation</b>
-      <span className={styles.arrowWrap}>
-        <Image
-          src="/images/industries/automation/why-mekark/arrow-right-dark.svg"
-          alt=""
-          fill
-          className={styles.arrowIcon}
-          aria-hidden
-        />
-      </span>
-    </Link>
-  );
-}
-
 export default function WhyMekarkSection() {
   return (
-    <section className={styles.cta}>
-      <div className={styles.ctaWide}>
-        <div className={styles.section}>
-          <div className={styles.sectionBg} aria-hidden />
-
-          <div className={styles.ctaVisual}>
-            <Image
-              className={styles.sectionPattern}
-              src="/images/industries/automation/why-mekark/frame-pattern.svg"
-              width={240}
-              height={161}
-              alt=""
-              aria-hidden
-            />
-            <Image
-              className={styles.sectionItem}
-              src="/images/industries/automation/why-mekark/frame-grid.svg"
-              width={130}
-              height={130}
-              alt=""
-              aria-hidden
-            />
-            <div className={styles.workerImageWrap}>
-              <Image
-                className={styles.workerImage}
-                src="/images/industries/automation/why-mekark/worker.png"
-                alt="Mekark engineer in hard hat reviewing facility plans on tablet"
-                fill
-                sizes="380px"
-                priority
-              />
-            </div>
+    <section id="why-mekark" className={styles.cta}>
+      <div className={styles.section}>
+        <div className={styles.planningAWarehouseOrLogistParent}>
+          <div className={styles.planningAWarehouse}>
+            Planning an Automation Manufacturing Facility in South India?
           </div>
-
-          <div className={styles.sectionInner}>
-            <div className={styles.textParent}>
-              <h2 className={styles.heading}>
-                Planning an Automation Manufacturing Facility in South India?
-              </h2>
-              <p className={styles.body}>
-                Every week your production line isn&apos;t running is lost
-                throughput and delayed client commitments. Mekark&apos;s team
-                will assess your process requirements, ESD and vibration control
-                needs, and utility load, and deliver a transparent budgetary
-                estimate within 24 hours. No obligation, just honest expert
-                advice.
-              </p>
-            </div>
-
-            <ConsultationLink className={styles.ctaButton} />
+          <div className={styles.mekarksProjectCalendar}>
+            Every week your production line isn&apos;t running is lost throughput
+            and delayed client commitments. Mekark&apos;s team will assess your
+            process requirements, ESD and vibration control needs, and utility
+            load, and deliver a transparent budgetary estimate within 24 hours.
+            No obligation, just honest expert advice.
           </div>
+        </div>
+        <div className={styles.sectionChild} />
+        <a href="/#enquiry" className={styles.cta2}>
+          <b className={styles.talkToOur}>Request a Free Consultation</b>
+          <div className={styles.component4}>
+            <Image
+              className={styles.vectorIcon}
+              src="/images/industries/automation/why-mekark/arrow-right-dark.svg"
+              width={27}
+              height={27}
+              sizes="100vw"
+              alt=""
+            />
+          </div>
+        </a>
+        <Image
+          className={styles.sectionItem}
+          src="/images/industries/automation/why-mekark/frame-grid.svg"
+          width={180}
+          height={180}
+          sizes="100vw"
+          alt=""
+        />
+        <Image
+          className={styles.sectionInner}
+          src="/images/industries/automation/why-mekark/frame-pattern.svg"
+          width={317}
+          height={213}
+          sizes="100vw"
+          alt=""
+        />
+        <Image
+          className={styles.eotCta1}
+          src="/images/industries/automation/why-mekark/worker.png"
+          width={491}
+          height={323}
+          sizes="100vw"
+          alt="Mekark engineer reviewing automation facility plans"
+          priority
+        />
+      </div>
 
-          <div className={styles.mobileCta}>
-            <div className={styles.mobileImageWrap}>
-              <Image
-                src="/images/industries/automation/why-mekark/frame-pattern.svg"
-                alt=""
-                fill
-                style={{ objectFit: "contain", opacity: 0.8 }}
-                aria-hidden
-              />
-              <Image
-                className={styles.mobileWorkerImage}
-                src="/images/industries/automation/why-mekark/worker.png"
-                alt="Mekark engineer reviewing automation facility plans on tablet"
-                fill
-                style={{ objectFit: "cover", objectPosition: "center top" }}
-                sizes="260px"
-                priority
-              />
+      <div className={styles.frameParent3}>
+        <div className={styles.whyWarehousesFromMekarkAreWrapper}>
+          <b className={styles.whyWarehousesFrom}>
+            Why Automation Facilities from Mekark Are the Better Choice
+          </b>
+        </div>
+        <div className={styles.mekarkIsOne}>
+          Mekark is one of South India&apos;s most trusted automation
+          manufacturing facility construction companies, offering in-house design,
+          fabrication, and MEP integration under one roof, not a general
+          contractor treating your plant like a generic industrial shed.
+        </div>
+      </div>
+
+      <div className={styles.featuresArea}>
+        <div className={styles.frameGroup}>
+          {features.map((feature) => (
+            <div key={feature.title} className={styles.divsvcIconParent}>
+              <div className={styles.divsvcIcon}>
+                <Image
+                  className={styles.lucidedraftingCompassIcon}
+                  src={feature.icon}
+                  width={26}
+                  height={26}
+                  sizes="100vw"
+                  alt=""
+                />
+              </div>
+              <div className={styles.inHouseDesignEngineeringParent}>
+                <div className={styles.inHouseDesign}>{feature.title}</div>
+                <div className={styles.everyPreEngineeredWarehouse}>
+                  {feature.description}
+                </div>
+              </div>
             </div>
-            <h2 className={styles.mobileHeading}>
-              Planning an Automation Manufacturing Facility in South India?
-            </h2>
-            <p className={styles.mobileBody}>
-              Every week your production line isn&apos;t running is lost
-              throughput and delayed client commitments. Mekark&apos;s team will
-              assess your process requirements, ESD and vibration control needs,
-              and utility load, and deliver a transparent budgetary estimate
-              within 24 hours. No obligation, just honest expert advice.
-            </p>
-            <ConsultationLink className={styles.mobileButton} />
+          ))}
+        </div>
+
+        <div className={styles.frameParent}>
+          <div className={styles.imageWrapper}>
+            <div className={styles.frameChild} aria-hidden />
           </div>
         </div>
       </div>
 
-      <div className={styles.inner}>
-        <div className={styles.frameParent3}>
-          <b className={styles.whyHeading}>
-            Why Automation Facilities from Mekark Are the Better Choice
-          </b>
-          <p className={styles.whySubtext}>
-            Mekark is one of South India&apos;s most trusted automation
-            manufacturing facility construction companies, offering in-house
-            design, fabrication, and MEP integration under one roof, not a
-            general contractor treating your plant like a generic industrial
-            shed.
-          </p>
-        </div>
-
-        <div className={styles.frameParent}>
-          <div className={styles.frameGroup}>
-            {features.map((feature) => (
-              <div key={feature.title} className={styles.divsvcIconParent}>
-                <div className={styles.divsvcIcon}>
-                  <Image
-                    className={styles.featureIcon}
-                    src={feature.icon}
-                    width={26}
-                    height={26}
-                    alt=""
-                    aria-hidden
-                  />
-                </div>
-                <div className={styles.inHouseDesignEngineeringParent}>
-                  <h3 className={styles.inHouseDesign}>{feature.title}</h3>
-                  <p className={styles.featureDescription}>
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div
-            className={styles.imageWrapper}
-            role="img"
-            aria-label="Automated manufacturing facility with robotic assembly line"
-          >
-            <div className={styles.frameChild} aria-hidden />
-          </div>
-        </div>
-
-        {/* Bottom callout */}
-        <div className={styles.overlay}>
-          <p className={styles.overlayText}>
-            The difference isn&apos;t just how fast an automation plant gets
-            built,{" "}
-            <span className={styles.overlayHighlight}>
-              it&apos;s whether it protects equipment precision, uptime, and
-              your Industry 4.0 roadmap from day one
-            </span>
-            . That&apos;s the engineering standard Mekark builds to.
-          </p>
-        </div>
+      <div className={styles.overlay}>
+        <p className={styles.overlayText}>
+          The difference isn&apos;t just how fast an automation plant gets built,{" "}
+          <span className={styles.overlayHighlight}>
+            it&apos;s whether it protects equipment precision, uptime, and your
+            Industry 4.0 roadmap from day one
+          </span>
+          . That&apos;s the engineering standard Mekark builds to.
+        </p>
       </div>
     </section>
   );

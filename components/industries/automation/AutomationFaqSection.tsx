@@ -85,12 +85,12 @@ function FaqCard({
       className="group w-full rounded-[20.78px] border-[1.039px] border-[#e3e4e7] bg-white"
       open={defaultOpen}
     >
-      <summary className="flex min-h-[99.749px] cursor-pointer list-none items-center gap-5 px-[25.975px] py-[20.78px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#e60f1a] [&::-webkit-details-marker]:hidden">
-        <span className="grid min-w-0 flex-1 grid-cols-[22px_minmax(0,1fr)] items-start gap-[16.44px] tracking-[-0.4675px]">
-          <span className="pt-[5px] font-[family-name:var(--font-montserrat)] text-base font-bold leading-[16.624px] text-[#e60f1a]">
+      <summary className="flex min-h-[72px] cursor-pointer list-none items-center gap-4 px-4 py-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#e60f1a] sm:min-h-[99.749px] sm:gap-5 sm:px-[25.975px] sm:py-[20.78px] [&::-webkit-details-marker]:hidden">
+        <span className="grid min-w-0 flex-1 grid-cols-[22px_minmax(0,1fr)] items-start gap-3 tracking-[-0.4675px] sm:gap-[16.44px]">
+          <span className="pt-0.5 font-[family-name:var(--font-montserrat)] text-base font-bold leading-[16.624px] text-[#e60f1a] sm:pt-[5px]">
             {number}
           </span>
-          <span className="font-[family-name:var(--font-manrope)] text-[18.667px] font-semibold leading-[26.667px] text-[#101116]">
+          <span className="font-[family-name:var(--font-manrope)] text-base font-semibold leading-snug text-[#101116] sm:text-[18.667px] sm:leading-[26.667px]">
             {item.question}
           </span>
         </span>
@@ -106,8 +106,8 @@ function FaqCard({
         </span>
       </summary>
 
-      <div className="px-[25.975px] pb-[25.975px]">
-        <p className="pl-[38.44px] pr-[36px] font-[family-name:var(--font-manrope)] text-base leading-[26px] text-[#53555b] max-sm:pl-0 max-sm:pr-0">
+      <div className="px-4 pb-4 sm:px-[25.975px] sm:pb-[25.975px]">
+        <p className="font-[family-name:var(--font-manrope)] text-sm leading-relaxed text-[#53555b] sm:pl-[38.44px] sm:pr-[36px] sm:text-base sm:leading-[26px]">
           {item.answer}
         </p>
       </div>

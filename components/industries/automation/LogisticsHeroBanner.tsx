@@ -7,7 +7,7 @@ const easeOut = [0.22, 1, 0.36, 1] as const;
 
 export default function LogisticsHeroBanner() {
   return (
-    <section className="relative min-h-[600px] w-full overflow-hidden lg:min-h-[720px] xl:min-h-[923px]">
+    <section className="relative min-h-[640px] w-full overflow-hidden max-md:min-h-svh lg:min-h-[720px] xl:min-h-[923px]">
       <motion.div
         className="absolute inset-0"
         initial={{ scale: 1.08 }}
@@ -25,7 +25,15 @@ export default function LogisticsHeroBanner() {
       </motion.div>
 
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 md:hidden"
+        style={{
+          backgroundImage:
+            "linear-gradient(180deg, rgba(6, 6, 6, 0.88) 0%, rgba(6, 6, 6, 0.72) 55%, rgba(6, 6, 6, 0.5) 100%)",
+        }}
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0 hidden md:block"
         style={{
           backgroundImage:
             "linear-gradient(105.99deg, rgb(6, 6, 6) 8.58%, rgba(6, 6, 6, 0.8) 44.21%, rgba(6, 6, 6, 0) 76.38%)",
@@ -33,34 +41,32 @@ export default function LogisticsHeroBanner() {
         aria-hidden
       />
 
-      <div className="relative z-10 flex min-h-[600px] items-center px-6 py-16 sm:px-10 lg:min-h-[720px] lg:px-16 xl:min-h-[923px] xl:px-[100px]">
-        <div className="flex max-w-[1070px] flex-col gap-6">
+      <div className="relative z-10 mx-auto flex min-h-[640px] w-full max-w-[1920px] items-center px-5 py-16 max-md:min-h-svh sm:px-10 lg:min-h-[720px] lg:px-16 xl:min-h-[923px] xl:px-[100px]">
+        <div className="flex w-full max-w-[1070px] flex-col gap-4 sm:gap-6">
           <motion.h1
-            className="font-[family-name:var(--font-manrope)] text-[clamp(2rem,4vw,3.5rem)] font-bold leading-tight text-white"
+            className="font-[family-name:var(--font-manrope)] text-[26px] font-bold leading-[1.2] text-white sm:text-[36px] sm:leading-tight lg:text-[56px]"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: easeOut }}
           >
-            <span className="whitespace-nowrap">
-              Leading Automation Manufacturing Facility
-            </span>
-            <br />
-            Construction Company in South India
+            Leading Automation Manufacturing Facility Construction Company in
+            South India
           </motion.h1>
 
           <motion.div
-            className="self-start max-w-[820px] border-l-[10px] border-[#c4161c] bg-white px-4 py-3 sm:px-5 sm:py-4"
+            className="max-w-[820px] border-l-4 border-[#c4161c] bg-white px-3 py-2.5 sm:border-l-[6px] sm:px-4 sm:py-3 md:px-5 md:py-4 lg:border-l-[10px]"
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.55, delay: 0.2, ease: easeOut }}
           >
-            <p className="break-words font-[family-name:var(--font-manrope)] text-[clamp(1.25rem,2.5vw,36px)] font-bold leading-normal text-[#c4161c]">
-              Smart Factories, Robotics Plants & Industry 4.0-Ready Infrastructure by Mekark
+            <p className="font-[family-name:var(--font-manrope)] text-[15px] font-bold leading-[1.35] text-[#c4161c] sm:text-[22px] sm:leading-normal md:text-[30px] lg:text-[36px]">
+              Smart Factories, Robotics Plants & Industry 4.0-Ready
+              Infrastructure by Mekark
             </p>
           </motion.div>
 
           <motion.p
-            className="font-[family-name:var(--font-manrope)] text-[clamp(1rem,1.5vw,1.5rem)] leading-[1.4] text-[#f3f3f3]"
+            className="font-[family-name:var(--font-manrope)] text-sm font-normal leading-relaxed text-[#f3f3f3] sm:text-base md:text-lg lg:text-2xl lg:leading-[1.4]"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.35, ease: easeOut }}
@@ -73,7 +79,7 @@ export default function LogisticsHeroBanner() {
 
           <motion.a
             href="/#enquiry"
-            className="inline-flex w-fit items-center gap-3 rounded-[10.667px] bg-[#c4161c] px-10 py-5 text-lg font-semibold text-white shadow-[0_10.667px_21.333px_rgba(196,22,28,0.3)] transition-colors hover:bg-[#a81218]"
+            className="inline-flex w-full items-center justify-center gap-3 rounded-[10.667px] bg-[#c4161c] px-6 py-4 text-base font-semibold text-white shadow-[0_10.667px_21.333px_rgba(196,22,28,0.3)] transition-colors hover:bg-[#a81218] sm:w-fit sm:px-10 sm:py-5 sm:text-lg"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.55, ease: easeOut }}

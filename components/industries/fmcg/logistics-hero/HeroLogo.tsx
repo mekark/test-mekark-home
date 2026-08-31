@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 export function HeroLogo() {
   return (
     <motion.div
-      className="absolute left-0 top-0 z-20 w-full px-6 py-3 sm:px-12 lg:px-[100px] lg:py-4"
+      className="absolute left-0 top-0 z-20 w-full px-5 py-3 sm:px-12 lg:px-[100px] lg:py-4"
       initial={{ opacity: 0, y: -12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}

@@ -15,43 +15,47 @@ const VIEWPORT = { once: true, margin: "-80px" as const };
 const TESTIMONIALS = [
   {
     quote:
-      "Mekark delivered our manufacturing facility on schedule and exactly to specification. Their single-point accountability model meant zero finger-pointing between design and execution teams — a rare thing in industrial construction.",
-    name: "Operations Director",
-    role: "Manufacturing Sector",
+      "We are happy to share that MEKARK Structure has successfully completed our project within the committed timeline, maintaining high standards of quality. The team's dedication, responsiveness, and execution have truly impressed us.",
+    name: "Sankar Ramalingam",
+    role: "Facility Management",
+    company: "BOSCH",
+    logo: {
+      src: "/images/testimonials/logos/bosch.webp",
+      width: 260,
+      height: 85,
+      className: "h-[26px] w-auto mix-blend-multiply",
+    },
     featured: false,
   },
   {
     quote:
-      "We evaluated several EPC contractors before choosing Mekark, and their engineering-led approach made the difference. The structural quality and attention to factory-level detail were evident from foundation to finish.",
-    name: "Project Head",
-    role: "Logistics & Warehousing",
+      "From project initiation to completion, the team demonstrated exceptional professionalism, unwavering commitment, and meticulous attention to detail at every stage. The quality of workmanship has not only met but exceeded our expectations. We sincerely appreciate the effort and dedication shown throughout and extend our best wishes to MEKARK for all future endeavours.",
+    name: "Hariprasaad",
+    role: "Mgr, Real Estate & Facility",
+    company: "DANFOSS",
+    logo: {
+      src: "/images/testimonials/logos/danfoss.svg",
+      width: 126,
+      height: 55,
+      className: "h-[32px] w-auto",
+    },
     featured: true,
   },
   {
     quote:
-      "What stood out was how Mekark thought beyond construction — they designed our facility for long-term operational efficiency. Fifteen years of expertise clearly shows in how they plan for durability, not just delivery.",
-    name: "Plant Manager",
-    role: "Industrial Processing",
+      "The consistent performance and organized execution by MEKARK were truly commendable. The on-site team demonstrated excellent coordination, ensuring smooth progress and timely resolution of challenges throughout the project. Their collaborative approach and clear communication significantly contributed to the project's success. We look forward to working with MEKARK again on future assignments.",
+    name: "Srinivasan",
+    role: "Head of Projects",
+    company: "KOMATSU",
+    logo: {
+      src: "/images/testimonials/logos/komatsu.svg",
+      width: 181,
+      height: 35,
+      className: "h-[22px] w-auto",
+    },
     featured: false,
   },
 ] as const;
-
-function StarRating() {
-  return (
-    <div className="flex items-center gap-1.5" aria-label="5 out of 5 stars">
-      {Array.from({ length: 5 }).map((_, index) => (
-        <Image
-          key={index}
-          src="/images/achievements-testimonials/star-4.svg"
-          alt=""
-          width={17}
-          height={17}
-          aria-hidden
-        />
-      ))}
-    </div>
-  );
-}
 
 function TestimonialCard({
   testimonial,
@@ -75,15 +79,14 @@ function TestimonialCard({
           : "border-[#e5e0e0] bg-[#fcf9f9] text-[#111]"
       }`}
     >
-      <div className="flex items-center justify-between gap-4">
+      <div className="flex h-10 items-center">
         <Image
-          src="/images/achievements-testimonials/icon-quote.svg"
-          alt=""
-          width={32}
-          height={32}
-          aria-hidden
+          src={testimonial.logo.src}
+          alt={`${testimonial.company} logo`}
+          width={testimonial.logo.width}
+          height={testimonial.logo.height}
+          className={`${testimonial.logo.className} max-w-[130px]`}
         />
-        <StarRating />
       </div>
 
       <blockquote
@@ -152,7 +155,7 @@ export function TestimonialsSection() {
           >
             {TESTIMONIALS.map((testimonial, index) => (
               <TestimonialCard
-                key={testimonial.name}
+                key={testimonial.company}
                 testimonial={testimonial}
                 index={index}
               />

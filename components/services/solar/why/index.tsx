@@ -106,8 +106,8 @@ const WhyChooseMekark: NextPage = () => {
 								</div>
 								<div className={styles.container7}>
 									<div className={styles.xYearsOfExperienceParent}>
-										<b className={styles.turnkeySolarEpc}>{`X+ Years of Experience:`}</b>
-										<div className={styles.weHandleDesign}>From factories and warehouses to multi-storey commercial and institutional buildings.</div>
+										<b className={styles.turnkeySolarEpc}>{`18+ Years of Experience:`}</b>
+										<div className={styles.weHandleDesign}>From factories and warehouses to multi-storey commercial and institutional buildings, we turn every rooftop into a source of clean, cost-saving power.</div>
 									</div>
 								</div>
 							</div>

@@ -2,7 +2,6 @@ import { CtaSection } from "./CtaSection";
 import { HeroSection } from "./HeroSection";
 import { InternshipSection } from "./InternshipSection";
 import { IntroSection } from "./IntroSection";
-import { LifeAtMekarkSection } from "./LifeAtMekarkSection";
 import { OpeningsSection } from "./OpeningsSection";
 import { WhyJoinSection } from "./WhyJoinSection";
 
@@ -12,7 +11,6 @@ export function CareersPage() {
       <HeroSection />
       <IntroSection />
       <WhyJoinSection />
-      <LifeAtMekarkSection />
       <OpeningsSection />
       <InternshipSection />
       <CtaSection />

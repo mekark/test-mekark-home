@@ -14,7 +14,6 @@ export function SolarPage() {
       <Cta />
       <Why />
       <TrustedSectorsSection variant="services" />
-
       <Faq />
       <SolarFooterCta />
     </main>

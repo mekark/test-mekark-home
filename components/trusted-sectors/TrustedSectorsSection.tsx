@@ -13,9 +13,9 @@ const VIEWPORT = { once: true, margin: "-80px" as const };
 const SERVICE_LOGOS = [
   { name: "Tata", src: "/images/trusted-sectors/tata.png" },
   { name: "D Mart", src: "/images/trusted-sectors/dmart.png" },
-  { name: "L&T", src: "/images/trusted-sectors/l-and-t.png" },
-  { name: "Voltas", src: "/images/trusted-sectors/voltas.png" },
-  { name: "JK Tyre", src: "/images/trusted-sectors/jk-tyre.png" },
+  { name: "Komatsu", src: "/images/trusted-sectors/komatsu.png" },
+  { name: "Bosch", src: "/images/trusted-sectors/bosch.png" },
+  { name: "Danfoss", src: "/images/trusted-sectors/danfoss.png" },
   { name: "TVS", src: "/images/trusted-sectors/tvs.png" },
   { name: "Nokia", src: "/images/trusted-sectors/nokia.png" },
 ] as const;
@@ -38,24 +38,22 @@ const HOME_LOGOS = [
     crop: true,
   },
   {
-    name: "L&T",
-    src: "/images/trusted-sectors/l-and-t.png",
-    className: "size-[75px]",
-    objectFit: "contain" as const,
-  },
-  {
-    name: "Voltas",
-    src: "/images/trusted-sectors/voltas.png",
-    className: "size-[75px]",
+    name: "Komatsu",
+    src: "/images/trusted-sectors/komatsu.png",
+    className: "h-[52px] w-[107px]",
     objectFit: "cover" as const,
   },
   {
-    name: "JK Tyre",
-    src: "/images/trusted-sectors/jk-tyre.png",
-    className: "h-[43px] w-[83px]",
-    imageClassName:
-      "absolute h-[192%] w-full max-w-none object-cover left-0 top-[-41%]",
-    crop: true,
+    name: "Bosch",
+    src: "/images/trusted-sectors/bosch.png",
+    className: "h-[63px] w-[112px]",
+    objectFit: "cover" as const,
+  },
+  {
+    name: "Danfoss",
+    src: "/images/trusted-sectors/danfoss.png",
+    className: "h-[50px] w-[90px]",
+    objectFit: "cover" as const,
   },
   {
     name: "TVS",
@@ -102,10 +100,10 @@ const HOME_LOGOS = [
     crop: true,
   },
   {
-    name: "Johnson Electric",
-    src: "/images/trusted-sectors/johnson-electric.png",
-    className: "size-[75px]",
-    objectFit: "cover" as const,
+    name: "L&T",
+    src: "/images/trusted-sectors/l-and-t.png",
+    className: "h-[77px] w-[75px]",
+    objectFit: "contain" as const,
   },
   {
     name: "Agile",

@@ -35,8 +35,8 @@ const CTA = () => {
             <Image
               className={styles.vectorIcon}
               src="/images/industries/food-and-beverage/cta/arrow-icon.svg"
-              width={17}
-              height={13}
+              width={20}
+              height={16}
               sizes="100vw"
               alt=""
             />

@@ -68,7 +68,7 @@ export default function HeroSection() {
             Mekark is South India&apos;s trusted textile factory building
             contractor, constructing spinning mills, weaving sheds, garment
             factories, and dyeing & processing plants with ISO-certified PEB
-            and civil construction, backed by 12+ years of experience and 200+
+            and civil construction, backed by 18+ years of experience and 200+
             delivered projects.
           </motion.p>
 
@@ -79,17 +79,19 @@ export default function HeroSection() {
           >
             <Link
               href="/#enquiry"
-              className={`inline-flex items-center justify-center gap-[7.1px] rounded-[5.65px] bg-firebrick px-5 py-2.5 shadow-[0px_5.652px_22.61px_rgba(196,22,28,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-mekark-red hover:shadow-[0px_10.667px_28px_rgba(196,22,28,0.5)] active:translate-y-0 sm:w-fit sm:gap-[13.333px] sm:rounded-[8px] sm:px-8 sm:py-4 sm:shadow-[0px_10.667px_21.333px_rgba(196,22,28,0.3)] lg:px-16 lg:py-[29.333px] lg:text-[32px] sm:text-xl ${industryHeroMobileButtonClass}`}
+              className={`inline-flex items-center justify-center gap-[7.1px] rounded-[5.65px] bg-firebrick px-5 py-2.5 shadow-[0px_5.652px_22.61px_rgba(196,22,28,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-mekark-red hover:shadow-[0px_10.667px_28px_rgba(196,22,28,0.5)] active:translate-y-0 max-md:gap-1.5 max-md:px-4 max-md:py-2 sm:w-fit sm:gap-[13.333px] sm:rounded-[8px] sm:px-8 sm:py-4 sm:shadow-[0px_10.667px_21.333px_rgba(196,22,28,0.3)] lg:px-16 lg:py-[29.333px] lg:text-[32px] sm:text-xl ${industryHeroMobileButtonClass}`}
             >
-              <span className={industryHeroMobileButtonTextClass}>
+              <span
+                className={`${industryHeroMobileButtonTextClass} max-md:text-xs max-md:leading-[14px] max-md:font-medium`}
+              >
                 Request Free Quote
               </span>
-              <span className="relative shrink-0 overflow-hidden max-md:h-3 max-md:w-3 sm:size-5 lg:size-6">
+              <span className="relative shrink-0 overflow-hidden max-md:h-2.5 max-md:w-2.5 size-4 lg:size-[18px]">
                 <Image
                   src="/images/industries/textile/hero/arrow.svg"
                   alt=""
-                  width={12}
-                  height={12}
+                  width={18}
+                  height={18}
                   className="size-full"
                 />
               </span>

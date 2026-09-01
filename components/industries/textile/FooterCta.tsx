@@ -9,7 +9,7 @@ export default function FooterCta() {
     <section className="relative min-h-[320px] w-full overflow-hidden sm:min-h-[360px] lg:min-h-[388px]">
       <div className="pointer-events-none absolute inset-0">
         <Image
-          src="/images/industries/textile/footer/foot.png"
+          src="/images/footer/footer-bg.png"
           alt="Textile factory floor"
           fill
           priority
@@ -38,10 +38,15 @@ export default function FooterCta() {
             <h2 className="font-[family-name:var(--font-manrope)] text-[28px] font-bold leading-normal text-white sm:text-[36px] lg:text-[50px]">
               Ready to Build Your Textile Factory?
             </h2>
-            <p className="max-w-[1080px] font-[family-name:var(--font-manrope)] text-[16px] font-normal leading-normal text-[#E6E6E6] lg:text-[18px]">
-              Only a limited number of new textile construction projects are
-              onboarded each quarter. Tell us your requirements and our
-              specialist will prepare a project estimate.
+            <p className="max-w-[1080px] font-[family-name:var(--font-manrope)] text-sm font-normal leading-normal text-[#E6E6E6] sm:text-[15px] lg:text-[16px]">
+              <span className="block lg:whitespace-nowrap">
+                Only a limited number of new textile construction projects are
+                onboarded each quarter. Tell
+              </span>
+              <span className="block lg:whitespace-nowrap">
+                us your requirements and our specialist will prepare a project
+                estimate.
+              </span>
             </p>
           </div>
 

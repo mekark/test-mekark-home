@@ -95,10 +95,7 @@ function MobileProcessTimeline() {
           </div>
 
           <article className="min-w-0 flex-1 overflow-hidden rounded-[20px] border border-[#E3E4E7] bg-white p-4 shadow-[0_2px_12px_rgba(17,17,17,0.04)]">
-            <span className="inline-flex rounded-full bg-[#FFEFEF] px-2.5 py-0.5 font-[family-name:var(--font-manrope)] text-xs font-bold text-[#F01D23]">
-              Step {step.num}
-            </span>
-            <h3 className="mt-2 font-[family-name:var(--font-manrope)] text-base font-semibold leading-snug text-[#3C3938]">
+            <h3 className="font-[family-name:var(--font-manrope)] text-base font-semibold leading-snug text-[#3C3938]">
               {step.title}
             </h3>
             <p className="mt-2 font-[family-name:var(--font-manrope)] text-sm font-normal leading-relaxed text-[#555555]">

@@ -14,7 +14,7 @@ const features = [
   },
   {
     title: "Large-Scale PEB Manufacturing Capacity",
-    desc: "With 40,000 MT/year PEB construction capacity across a x lakh+ sq.ft. campus and x+ engineers, we guarantee your spinning or weaving factory opens on time.",
+    desc: "With 40,000 MT/year PEB construction capacity across a 70+ lakh sq.ft. campus and 175+ engineers, we guarantee your spinning or weaving factory opens on time.",
     icon: "/images/industries/textile/why-mekark/factory-icon.svg",
   },
   {
@@ -62,15 +62,21 @@ export default function WhyMekarkSection() {
           <IndustryMobileCtaBanner
             title={
               <>
-                Planning a Spinning Mill or Garment Factory? Your Project Slot
-                Won&apos;t Stay Open Long.
+                <span className="block">Planning a Spinning Mill or Garment Factory?</span>
+                <span className="block">Your Project Slot Won&apos;t Stay Open Long.</span>
               </>
             }
             subtitle={
               <>
-                Mekark&apos;s project calendar fills up fast. Textile manufacturers
-                who book a site consultation now lock in priority scheduling,
-                current steel pricing, and our fastest delivery timeline.
+                <span className="block">
+                  Mekark&apos;s project calendar fills up fast. Textile manufacturers
+                  who book a site
+                </span>
+                <span className="block">
+                  consultation now lock in priority scheduling, current steel pricing,
+                  and our fastest
+                </span>
+                <span className="block">delivery timeline.</span>
               </>
             }
             buttonText="Book My Free Consultation"
@@ -124,29 +130,39 @@ export default function WhyMekarkSection() {
           <div className="hidden shrink-0 lg:block lg:w-[437px]" />
 
           <div className="relative z-[11] flex min-w-0 flex-1 flex-col gap-3 text-white lg:pr-6">
-            <h2 className="max-w-[860px] font-[family-name:var(--font-manrope)] text-[22px] font-extrabold leading-[1.33] sm:text-[28px] lg:text-[38px]">
-              Planning a Spinning Mill or Garment Factory? Your Project Slot
-              Won&apos;t Stay Open Long.
+            <h2 className="max-w-[860px] font-[family-name:var(--font-manrope)] text-[22px] font-extrabold leading-[1.33] sm:text-[26px] lg:text-[34px] lg:leading-[1.27]">
+              <span className="block lg:whitespace-nowrap">
+                Planning a Spinning Mill or Garment Factory?
+              </span>
+              <span className="block lg:whitespace-nowrap">
+                Your Project Slot Won&apos;t Stay Open Long.
+              </span>
             </h2>
-            <p className="max-w-[860px] font-[family-name:var(--font-manrope)] text-sm font-medium leading-[1.22] tracking-[0.08em] text-[#CCC6C6] sm:text-base lg:text-[18.667px]">
-              Mekark&apos;s project calendar fills up fast. Textile manufacturers
-              who book a site consultation now lock in priority scheduling,
-              current steel pricing, and our fastest delivery timeline.
+            <p className="max-w-[860px] font-[family-name:var(--font-manrope)] text-sm font-medium leading-[1.22] tracking-[0.08em] text-[#CCC6C6] sm:text-base lg:text-[17px] lg:leading-normal lg:tracking-normal">
+              <span className="block lg:whitespace-nowrap">
+                Mekark&apos;s project calendar fills up fast. Textile manufacturers
+                who book a site
+              </span>
+              <span className="block lg:whitespace-nowrap">
+                consultation now lock in priority scheduling, current steel pricing,
+                and our fastest
+              </span>
+              <span className="block lg:whitespace-nowrap">delivery timeline.</span>
             </p>
           </div>
 
           <div className="relative z-[11] shrink-0 lg:pr-10 xl:pr-14">
             <Link
               href="/#enquiry"
-              className="inline-flex items-center justify-center gap-3 rounded-full bg-white px-[30px] py-5 text-base font-bold text-[#0E0E0E] transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/90 sm:text-[22px]"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-bold text-[#0E0E0E] transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/90 sm:text-[15px] lg:px-6 lg:py-3.5 lg:text-[17px]"
             >
               Book My Free Consultation
-              <span className="relative size-[27px] shrink-0 overflow-hidden">
+              <span className="relative size-5 shrink-0 overflow-hidden lg:size-[18px]">
                 <Image
                   src="/images/industries/textile/why-mekark/cta-arrow.svg"
                   alt=""
-                  width={27}
-                  height={27}
+                  width={18}
+                  height={18}
                   className="size-full"
                 />
               </span>
@@ -172,6 +188,16 @@ export default function WhyMekarkSection() {
             specifications mean costly rework.
           </p>
         </motion.div>
+
+        <div className="relative mx-5 mt-8 h-[260px] overflow-hidden rounded-[20px] sm:mx-10 sm:h-[360px] lg:hidden">
+          <Image
+            src="/images/industries/textile/why-mekark/factory.png"
+            alt="Textile mill spinning machinery with yarn cones"
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
 
         <div className="relative mt-8 lg:mt-[30px] lg:min-h-[520px]">
           <div className="pointer-events-none absolute right-0 top-0 hidden h-[520px] w-[856px] lg:block">
@@ -200,12 +226,12 @@ export default function WhyMekarkSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="relative z-10 grid grid-cols-1 gap-x-12 gap-y-10 px-5 sm:grid-cols-2 sm:px-10 lg:grid-cols-[342px_399px] lg:gap-x-[110px] lg:pl-[200px] lg:pr-8 lg:pt-[72px]"
+            className="relative z-10 grid grid-cols-1 gap-4 px-5 sm:grid-cols-2 sm:gap-5 sm:px-10 lg:grid-cols-[342px_399px] lg:gap-x-[110px] lg:gap-y-10 lg:pl-[200px] lg:pr-8 lg:pt-[72px]"
           >
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="flex flex-col items-start gap-[19px]"
+                className="flex flex-col items-start gap-[19px] rounded-[20px] border border-[#E3E4E7] bg-white p-5 shadow-[0_2px_12px_rgba(17,17,17,0.04)] sm:p-6 lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none"
               >
                 <FeatureIcon icon={feature.icon} />
                 <div className="flex flex-col gap-2.5">
@@ -219,16 +245,6 @@ export default function WhyMekarkSection() {
               </div>
             ))}
           </motion.div>
-
-          <div className="relative mx-5 mt-10 h-[260px] overflow-hidden rounded-[20px] sm:mx-10 sm:h-[360px] lg:hidden">
-            <Image
-              src="/images/industries/textile/why-mekark/factory.png"
-              alt="Textile mill spinning machinery with yarn cones"
-              fill
-              sizes="100vw"
-              className="object-cover"
-            />
-          </div>
         </div>
       </div>
     </section>

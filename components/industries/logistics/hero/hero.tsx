@@ -49,8 +49,8 @@ export default function LogisticsHero() {
             <Image
               className={styles.vectorIcon}
               src="/images/industries/logistics/hero/arrow-icon.svg"
-              width={13.3}
-              height={10.7}
+              width={20}
+              height={16}
               alt=""
             />
           </div>

@@ -55,9 +55,17 @@
   background-color: #fff;
   border: 1.2px solid #c0c0c0;
   box-sizing: border-box;
-  width: 739.8px;
+  width: 772px;
   height: 193.6px;
   overflow: hidden;
+}
+
+.frameContainer .frameDiv {
+  width: 383px;
+}
+
+.frameContainer .economicalOverheadCrane {
+  width: 383px;
 }
 
 .frameDiv {
@@ -75,15 +83,23 @@
   position: relative;
   font-size: 18px;
   line-height: 29.88px;
+  font-weight: 600;
   color: #000;
   white-space: normal;
+}
+
+.frameContainer .overheadSingleGirder,
+.rectangleContainer .overheadSingleGirder,
+.rectangleParent .overheadSingleGirder {
+  white-space: nowrap;
+  line-height: 1.25;
 }
 
 .economicalOverheadCrane {
   position: relative;
   font-size: 16px;
   line-height: 23px;
-  color: #000;
+  color: #5a5a5a;
   width: 351.4px;
 }
 
@@ -198,7 +214,7 @@
   letter-spacing: -0.4px;
   line-height: 1.35;
   font-size: 26px;
-  font-weight: 600;
+  font-weight: 500;
   display: flex;
   flex-direction: column;
   width: 100%;

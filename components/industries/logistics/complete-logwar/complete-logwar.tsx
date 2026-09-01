@@ -70,11 +70,15 @@ const CompleteEOTCraneSolutionsEngineeredEndToEnd: NextPage = () => {
       			</div>
       			<div className={styles.overlayborder}>
         				<div className={styles.strongEveryContainer}>
-          					<span className={styles.strongEveryContainer2}>
-            						<b className={styles.everyEotCrane}>Every EOT crane is custom-engineered</b>
+          					<span className={styles.bannerLine}>
+            						<b className={styles.everyEotCrane}>Every warehouse is custom-engineered</b>
             						<span className={styles.aroundYourLoadRequirements}>
-              							<span className={styles.span}>{` `}</span>
-              							<span className={styles.everyEotCrane}>around your load requirements, bay dimensions, and duty cycle — ensuring maximum efficiency and long-term structural reliability for industries across South India.</span>
+              							{' '}around your storage volume, throughput needs, and operational flow, ensuring
+            						</span>
+          					</span>
+          					<span className={styles.bannerLine}>
+            						<span className={styles.aroundYourLoadRequirements}>
+              							maximum space efficiency and long-term structural reliability for logistics operations across South India.
             						</span>
           					</span>
         				</div>

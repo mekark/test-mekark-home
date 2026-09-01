@@ -117,14 +117,23 @@ export default function CtaSection() {
       <div className="mx-auto max-w-[1920px] px-6 lg:px-20">
         <div className="xl:hidden">
           <IndustryMobileCtaBanner
-            title="Planning an Electronics Manufacturing Facility in South India?"
+            title={
+              <>
+                <span className="whitespace-nowrap">
+                  Planning an Electronics Manufacturing
+                </span>
+                <br />
+                <span className="whitespace-nowrap">Facility in South India?</span>
+              </>
+            }
             subtitle={
               <>
                 Every week your production line isn&apos;t running is lost revenue.
-                Mekark&apos;s team will assess your process requirements, cleanroom
-                class, ESD protection, utility load, and deliver a transparent
-                budgetary estimate within 24 hours. No obligation, just honest
-                expert advice.
+                Mekark&apos;s team will
+                <br />
+                assess your process requirements, cleanroom class, ESD protection,
+                utility load, and deliver a transparent budgetary estimate within
+                24 hours. No obligation, just honest expert advice.
               </>
             }
             buttonText="Request a Free Consultation"
@@ -133,22 +142,25 @@ export default function CtaSection() {
           />
         </div>
 
-        <motion.div
-          className="relative hidden overflow-hidden rounded-[24px] px-5 py-8 sm:rounded-[40px] sm:px-10 sm:py-10 lg:min-h-[295px] lg:px-0 lg:py-0 xl:block"
-          style={{
-            backgroundImage:
-              "linear-gradient(123.5deg, rgb(240, 28, 34) 6.54%, rgb(139, 12, 17) 108.89%)",
-          }}
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
-        >
+        <div className="relative hidden pt-[28px] xl:block">
+          <motion.div
+            className="relative z-[1] h-[295px] overflow-hidden rounded-[40px]"
+            style={{
+              backgroundImage:
+                "linear-gradient(123.5deg, rgb(240, 28, 34) 6.54%, rgb(139, 12, 17) 108.89%)",
+            }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
+            aria-hidden
+          />
+
           <div
-            className="pointer-events-none absolute inset-0 hidden xl:block"
+            className="pointer-events-none absolute inset-x-0 top-0 z-[2] hidden h-[323px] overflow-hidden xl:block"
             aria-hidden
           >
-            <div className="absolute left-[58px] top-[51px] h-[213px] w-[317px]">
+            <div className="absolute left-[58px] top-[79px] h-[213px] w-[317px]">
               <Image
                 src="/images/industries/electronics/cta/frame-275.svg"
                 alt=""
@@ -157,7 +169,7 @@ export default function CtaSection() {
               />
             </div>
 
-            <div className="absolute left-[154px] top-[38px] size-[180px]">
+            <div className="absolute left-[154px] top-[66px] z-[2] size-[180px]">
               <Image
                 src="/images/industries/electronics/cta/frame-76.svg"
                 alt=""
@@ -166,7 +178,7 @@ export default function CtaSection() {
               />
             </div>
 
-            <div className="absolute left-[66px] top-[calc(50%-15.5px)] flex h-[150px] w-[150px] -translate-y-1/2 rotate-90 items-center justify-center">
+            <div className="absolute left-[66px] top-[calc(147.5px+28px-15.5px)] z-[2] flex h-[150px] w-[150px] -translate-y-1/2 rotate-90 items-center justify-center">
               <Image
                 src="/images/industries/electronics/cta/decorative-line.svg"
                 alt=""
@@ -176,7 +188,7 @@ export default function CtaSection() {
               />
             </div>
 
-            <div className="absolute -left-[10px] -top-[28px] h-[323px] w-[491px] overflow-visible">
+            <div className="absolute -left-[10px] top-0 z-[3] h-[323px] w-[491px] overflow-hidden">
               <div className="absolute left-[10.55%] top-0 h-[144.52%] w-[78.89%]">
                 <Image
                   src="/images/industries/electronics/cta/engineer.png"
@@ -189,41 +201,48 @@ export default function CtaSection() {
             </div>
           </div>
 
-          <div className="relative z-10 hidden min-h-[295px] xl:block">
-            <div className="absolute left-[25.25%] top-1/2 flex w-[47.23%] max-w-[836px] -translate-y-1/2 flex-col gap-2.5">
-              <h2 className="font-manrope text-[44px] font-bold leading-[1.271] text-white">
-                Planning an Electronics Manufacturing Facility in South India?
-              </h2>
-              <p className="max-w-[788px] font-manrope text-[18px] font-medium leading-normal text-[#ccc6c6]">
-                Every week your production line isn&apos;t running is lost revenue.
-                Mekark&apos;s team will assess your process requirements, cleanroom
-                class, ESD protection, utility load, and deliver a transparent
-                budgetary estimate within 24 hours. No obligation, just honest
-                expert advice.
-              </p>
-            </div>
+          <div className="pointer-events-none absolute inset-x-0 top-[28px] z-[4] hidden h-[295px] xl:block">
+            <div className="relative h-full">
+              <div className="pointer-events-none absolute left-[25.25%] top-1/2 flex w-[47.23%] max-w-[836px] -translate-y-1/2 flex-col gap-2.5">
+                <h2 className="relative w-full max-w-[836px] text-left font-manrope text-[44px] font-bold leading-[127.1%] text-white">
+                  <span className="whitespace-nowrap">
+                    Planning an Electronics Manufacturing
+                  </span>
+                  <br />
+                  <span className="whitespace-nowrap">Facility in South India?</span>
+                </h2>
+                <p className="relative w-full max-w-[788px] text-left font-manrope text-lg font-medium leading-normal text-[#ccc6c6]">
+                  Every week your production line isn&apos;t running is lost revenue.
+                  Mekark&apos;s team will
+                  <br />
+                  assess your process requirements, cleanroom class, ESD protection,
+                  utility load, and deliver a transparent budgetary estimate within
+                  24 hours. No obligation, just honest expert advice.
+                </p>
+              </div>
 
-            <motion.a
-              href="/#enquiry"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.98 }}
-              className="absolute top-1/2 right-[6.05%] inline-flex h-[79px] w-[391px] -translate-y-1/2 items-center justify-center gap-[13.671px] rounded-full bg-white px-[34px] py-[20px]"
-            >
-              <span className="whitespace-nowrap font-manrope text-[22px] font-bold leading-[34px] text-[#0e0e0e]">
-                Request a Free Consultation
-              </span>
-              <span className="relative size-[26.648px] shrink-0 overflow-hidden">
-                <Image
-                  src="/images/industries/electronics/cta/cta-arrow.svg"
-                  alt=""
-                  fill
-                  className="object-contain"
-                  aria-hidden
-                />
-              </span>
-            </motion.a>
+              <motion.a
+                href="/#enquiry"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                className="pointer-events-auto absolute top-1/2 right-[6.05%] inline-flex h-[79px] w-[391px] -translate-y-1/2 items-center justify-center gap-[13.671px] rounded-full bg-white px-[34px] py-[20px]"
+              >
+                <span className="whitespace-nowrap font-manrope text-[22px] font-bold leading-[34px] text-[#0e0e0e]">
+                  Request a Free Consultation
+                </span>
+                <span className="relative size-[26.648px] shrink-0 overflow-hidden">
+                  <Image
+                    src="/images/industries/electronics/cta/cta-arrow.svg"
+                    alt=""
+                    fill
+                    className="object-contain"
+                    aria-hidden
+                  />
+                </span>
+              </motion.a>
+            </div>
           </div>
-        </motion.div>
+        </div>
 
         <div className="mt-20 lg:mt-32">
           <motion.header
@@ -306,19 +325,19 @@ export default function CtaSection() {
         </div>
 
         <motion.div
-          className="mx-auto mt-12 max-w-[1422px] rounded-[40px] border border-[rgba(228,0,21,0.5)] bg-[rgba(228,0,21,0.05)] px-6 py-6 text-center sm:mt-16 sm:px-10 sm:py-8 lg:mt-20 lg:px-12"
+          className="mx-auto mt-12 w-full max-w-[1422px] rounded-[40px] border border-[rgba(228,0,21,0.5)] bg-[rgba(228,0,21,0.05)] px-5 py-5 text-center sm:mt-16 sm:px-8 sm:py-6 lg:mt-20 lg:px-8 lg:py-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
         >
-          <p className="font-manrope text-base font-normal leading-[27px] text-[#4c4c4c] sm:text-lg sm:leading-[30px]">
+          <p className="font-manrope text-base font-normal leading-normal text-[#4c4c4c] sm:text-lg lg:whitespace-nowrap">
             The difference isn&apos;t just how fast an electronics facility gets
             built;{" "}
             <span className="font-semibold text-[#f01d23]">
-              it&apos;s whether it protects your yield from day one
-            </span>
-            . That&apos;s the engineering standard Mekark builds to.
+              it&apos;s whether it protects your yield from day one.
+            </span>{" "}
+            That&apos;s the engineering standard Mekark builds to.
           </p>
         </motion.div>
       </div>

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useDesignScale } from "@/lib/hooks/useDesignScale";
+import carouselStyles from "@/components/industries/shared/industryMobileFacilityCarousel.module.css";
 import styles from "./index.module.css";
 
 const DESIGN_HEIGHT = 780;
@@ -105,11 +106,11 @@ const SolutionsIcons = () => {
               </div>
             </div>
           </div>
-          <div className={styles.frameContainer}>
+          <div className={`${styles.frameContainer} ${carouselStyles.track}`}>
             {solutionCards.map((card, index) => (
               <div
                 key={card.title}
-                className={styles.cardItem}
+                className={`${styles.cardItem} ${carouselStyles.item}`}
                 style={{ left: `${index * 286}px` }}
               >
                 <div className={styles.iconWrapper}>
@@ -128,6 +129,7 @@ const SolutionsIcons = () => {
               </div>
             ))}
           </div>
+          <p className={carouselStyles.hint}>Swipe to explore all 6 facilities</p>
         </div>
       </div>
     </div>

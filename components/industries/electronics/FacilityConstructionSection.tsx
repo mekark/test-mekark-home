@@ -2,6 +2,12 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import {
+  MOBILE_FACILITY_CAROUSEL_DESKTOP,
+  MOBILE_FACILITY_CAROUSEL_HINT,
+  MOBILE_FACILITY_CAROUSEL_ITEM,
+  MOBILE_FACILITY_CAROUSEL_TRACK,
+} from "@/components/industries/shared/industryMobileFacilityCarousel";
 
 type FacilityCard = {
   title: string;
@@ -74,7 +80,7 @@ const itemVariants = {
 
 function FacilityCard({ title, description, image, imageAlt }: FacilityCard) {
   return (
-    <article className="mx-auto flex w-full max-w-[320px] flex-col gap-[35px] sm:max-w-none xl:max-w-[259px]">
+    <article className="flex w-full flex-col gap-[35px] xl:max-w-[259px]">
       <div className="relative aspect-[258.667/257.333] w-full overflow-hidden rounded-[21.333px]">
         <Image
           src={image}
@@ -98,9 +104,9 @@ function FacilityCard({ title, description, image, imageAlt }: FacilityCard) {
 
 export default function FacilityConstructionSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-[#ffefef] py-16 lg:py-24">
+    <section className="relative w-full bg-[#ffefef] py-16 lg:py-24">
       <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-[391px] opacity-15"
+        className="pointer-events-none absolute inset-x-0 top-0 h-[391px] overflow-hidden opacity-15"
         aria-hidden
       >
         <Image
@@ -131,19 +137,28 @@ export default function FacilityConstructionSection() {
           </p>
         </motion.header>
 
-        <motion.div
-          className="mx-auto grid max-w-[1706px] grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 xl:justify-items-center xl:gap-[31px]"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-        >
-          {facilities.map((facility) => (
-            <motion.div key={facility.title} variants={itemVariants} className="w-full">
-              <FacilityCard {...facility} />
-            </motion.div>
-          ))}
-        </motion.div>
+        <div className="relative mt-0">
+          <motion.div
+            className={`${MOBILE_FACILITY_CAROUSEL_TRACK} ${MOBILE_FACILITY_CAROUSEL_DESKTOP} xl:mx-auto xl:grid xl:max-w-[1706px] xl:grid-cols-6 xl:justify-items-center xl:gap-[31px]`}
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}
+          >
+            {facilities.map((facility) => (
+              <motion.div
+                key={facility.title}
+                variants={itemVariants}
+                className={`${MOBILE_FACILITY_CAROUSEL_ITEM} xl:w-full`}
+              >
+                <FacilityCard {...facility} />
+              </motion.div>
+            ))}
+          </motion.div>
+          <p className={MOBILE_FACILITY_CAROUSEL_HINT}>
+            Swipe to explore all {facilities.length} facilities
+          </p>
+        </div>
 
         <motion.p
           className="mx-auto mt-12 max-w-[1212px] text-center font-manrope text-base font-normal leading-[23px] text-[#8b91a0] sm:mt-16 sm:text-lg lg:mt-20"

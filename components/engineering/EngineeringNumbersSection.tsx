@@ -169,7 +169,7 @@ export function EngineeringNumbersSection() {
                   fetchPriority="high"
                 />
                 <p className="absolute bottom-[14%] left-1/2 z-10 w-[96%] -translate-x-1/2 text-center text-sm font-bold uppercase tracking-[2.67px] text-black opacity-75 sm:text-xl sm:leading-[27.73px]">
-                  metric ton
+                  metric ton per annum
                 </p>
               </div>
             </motion.div>

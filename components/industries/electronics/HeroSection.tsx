@@ -103,12 +103,14 @@ export default function HeroSection() {
             </div>
 
             <p
-              className={`w-full font-manrope text-[#f3f3f3] sm:max-w-none sm:text-base sm:leading-relaxed md:text-lg lg:w-[1258px] lg:text-[24px] lg:leading-[33.333px] ${industryHeroMobileDescriptionClass}`}
+              className={`w-full font-manrope font-normal text-[#f3f3f3] sm:max-w-none sm:text-base sm:leading-relaxed md:text-lg lg:relative lg:flex lg:w-[1258px] lg:items-center lg:text-left lg:text-2xl lg:leading-[33.33px] ${industryHeroMobileDescriptionClass}`}
             >
               Mekark builds turnkey clean rooms, ESD-safe assembly plants, and
-              precision electronics manufacturing facilities across Tamil Nadu,
-              Karnataka, Andhra Pradesh, Telangana, and Kerala. Engineered for
-              precision. Delivered on time.
+              precision
+              <br className="hidden lg:inline" />
+              electronics manufacturing facilities across Tamil Nadu, Karnataka,
+              Andhra Pradesh, Telangana, and Kerala. Engineered for precision.
+              Delivered on time.
             </p>
           </motion.div>
 

@@ -54,7 +54,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className={`max-w-[342px] font-[family-name:var(--font-manrope)] text-[25px] font-bold leading-[100%] text-white sm:max-w-none sm:text-5xl sm:leading-normal lg:text-[60px] ${industryHeroMobileTitleClass}`}
+            className={`max-w-[342px] font-[family-name:var(--font-manrope)] text-[25px] font-bold leading-[100%] text-white sm:max-w-none sm:text-5xl sm:leading-[1.2] lg:text-[60px] lg:leading-[1.23] ${industryHeroMobileTitleClass}`}
           >
             Leading Textile Mill & Factory Building Contractor in South India
           </motion.h1>

@@ -74,7 +74,10 @@ const CompletePharma = () => {
                 />
                 <div className={styles.frameDiv}>
                   <b className={styles.overheadSingleGirder}>
-                    Cleanroom Construction &amp; Contamination Control:
+                    <span className={styles.cardTitleLine}>
+                      Cleanroom Construction &amp; Contamination
+                    </span>
+                    <span className={styles.cardTitleLine}>Control:</span>
                   </b>
                   <div className={styles.economicalOverheadCrane}>
                     ISO-classified cleanrooms, modular wall panels, epoxy and PU

@@ -55,9 +55,17 @@
   background-color: #fff;
   border: 1.2px solid #c0c0c0;
   box-sizing: border-box;
-  width: 739.8px;
+  width: 772px;
   height: 193.6px;
   overflow: hidden;
+}
+
+.frameContainer .frameDiv {
+  width: 383px;
+}
+
+.frameContainer .economicalOverheadCrane {
+  width: 383px;
 }
 
 .frameDiv {
@@ -75,8 +83,19 @@
   position: relative;
   font-size: 18px;
   line-height: 29.88px;
+  font-weight: 600;
   color: #000;
   white-space: normal;
+}
+
+.frameContainer .overheadSingleGirder {
+  white-space: nowrap;
+  line-height: 1.25;
+}
+
+.cardTitleLine {
+  display: block;
+  white-space: nowrap;
 }
 
 .economicalOverheadCrane {
@@ -186,7 +205,7 @@
   letter-spacing: -0.5px;
   line-height: 1.15;
   font-size: 41px;
-  font-weight: 700;
+  font-weight: 600;
   display: block;
   width: 100%;
   color: #000;
@@ -198,7 +217,7 @@
   letter-spacing: -0.4px;
   line-height: 1.35;
   font-size: 26px;
-  font-weight: 600;
+  font-weight: 500;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -255,19 +274,19 @@
   font-size: 16px;
   font-weight: 600;
   text-align: center;
-  color: #333333;
+  color: #4c4c4c;
 }
 
 .bannerLine {
   display: block;
   white-space: nowrap;
   font-weight: 600;
-  color: #333333;
+  color: #4c4c4c;
 }
 
 .everyEotCrane {
   line-height: 24px;
-  color: #c4161c;
+  color: #f0353a;
   font-weight: 700;
 }
 
@@ -319,6 +338,7 @@
     height: auto;
     display: flex;
     flex-direction: column;
+    overflow: visible;
   }
   .rectangleIcon {
     position: relative;
@@ -338,6 +358,15 @@
     padding: 24px;
     box-sizing: border-box;
   }
+  .frameContainer .frameDiv,
+  .frameContainer .economicalOverheadCrane {
+    width: 100%;
+    max-width: 100%;
+  }
+  .frameContainer .overheadSingleGirder {
+    white-space: normal;
+    line-height: 1.35;
+  }
   .overheadSingleGirder,
   .economicalOverheadCrane {
     position: relative;
@@ -353,9 +382,9 @@
   .strongEveryContainer {
     font-size: 14px;
   }
-  .descLine,
   .bannerLine,
-  .subtitleLine {
+  .subtitleLine,
+  .cardTitleLine {
     white-space: normal;
   }
 }
@@ -374,13 +403,20 @@
   }
   .subtitleLine,
   .descLine,
-  .bannerLine {
+  .bannerLine,
+  .cardTitleLine {
     white-space: normal;
   }
   .asALeading {
     font-size: 13px;
     line-height: 20px;
     max-width: none;
+    display: block;
+    width: 100%;
+  }
+  .descLine {
+    display: inline;
+    white-space: normal;
   }
   .leftSticky {
     gap: 12px;
@@ -389,17 +425,29 @@
   .frameParent {
     grid-template-columns: 1fr;
   }
+  .frameDiv {
+    padding: 16px 52px 16px 16px;
+  }
   .overlayborder {
     padding: 16px;
     border-radius: 20px;
+    width: 100%;
+    max-width: 100%;
   }
   .strongEveryContainer {
+    display: block;
     white-space: normal;
     font-size: 13px;
+    line-height: 20px;
+  }
+  .bannerLine {
+    display: inline;
+    white-space: normal;
   }
   .overheadSingleGirder {
     font-size: 16px;
     line-height: 24px;
+    font-weight: 600;
   }
   .economicalOverheadCrane {
     font-size: 14px;

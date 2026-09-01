@@ -232,9 +232,8 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 22px;
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
+  display: block;
+  width: 100%;
   max-width: 100%;
   color: #5a5a5a;
 }
@@ -264,10 +263,7 @@
   width: 100%;
   position: relative;
   line-height: 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: block;
   font-size: 16px;
   text-align: center;
   color: #4c4c4c;
@@ -280,7 +276,7 @@
 
 .everyEotCrane {
   line-height: 24px;
-  color: #c4161c;
+  color: #f0353a;
   font-weight: 700;
 }
 
@@ -364,10 +360,20 @@
     padding: 20px 28px;
   }
   .strongEveryContainer {
+    display: block;
     font-size: 14px;
+    line-height: 22px;
+  }
+  .asALeading {
+    display: block;
+    width: 100%;
+    max-width: 100%;
   }
   .descLine,
-  .bannerLine,
+  .bannerLine {
+    display: inline;
+    white-space: normal;
+  }
   .subtitleLine {
     white-space: normal;
   }
@@ -394,6 +400,12 @@
     font-size: 13px;
     line-height: 20px;
     max-width: none;
+    display: block;
+    width: 100%;
+  }
+  .descLine {
+    display: inline;
+    white-space: normal;
   }
   .leftSticky {
     gap: 12px;
@@ -407,8 +419,14 @@
     border-radius: 20px;
   }
   .strongEveryContainer {
+    display: block;
     white-space: normal;
     font-size: 13px;
+    line-height: 20px;
+  }
+  .bannerLine {
+    display: inline;
+    white-space: normal;
   }
   .overheadSingleGirder {
     font-size: 16px;

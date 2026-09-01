@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 4.85938vw 5.55729vw;
+  padding: 2.5vw 5.55729vw 4.85938vw;
   box-sizing: border-box;
   text-align: left;
   font-size: 2.7776vw;
@@ -155,7 +155,7 @@
 
 @media (max-width: 1200px) {
   .faq {
-    padding: 48px 24px;
+    padding: 32px 24px 48px;
     font-size: 32px;
   }
   .frameParent {
@@ -211,7 +211,7 @@
 
 @media (max-width: 768px) {
   .faq {
-    padding: 32px 16px;
+    padding: 24px 16px 32px;
     font-size: 26px;
   }
   .frequentlyAskedQuestions {

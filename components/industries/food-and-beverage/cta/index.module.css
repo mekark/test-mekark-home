@@ -448,7 +448,7 @@
     width: 100%;
     height: auto;
     order: 2;
-    margin: 40px 0 28px;
+    margin: 40px 0 20px;
     font-size: 28px;
   }
   .whyWarehousesFrom {
@@ -480,7 +480,7 @@
     position: relative;
     top: auto;
     left: auto;
-    order: 3;
+    order: 4;
     width: 100%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: none;
@@ -513,10 +513,11 @@
     position: relative;
     top: auto;
     left: auto;
-    order: 4;
+    order: 3;
     width: 100%;
     height: 280px;
-    margin-top: 36px;
+    margin-top: 0;
+    margin-bottom: 28px;
   }
   .imageWrapper {
     position: relative;
@@ -588,8 +589,14 @@
     font-size: 15px;
   }
   .frameParent3 {
-    margin: 32px 0 20px;
+    margin: 32px 0 16px;
     font-size: 24px;
+  }
+  .frameParent {
+    order: 3;
+    height: 200px;
+    margin-top: 0;
+    margin-bottom: 24px;
   }
   .whyWarehousesFrom {
     line-height: 32px;
@@ -599,6 +606,7 @@
     line-height: 22px;
   }
   .frameGroup {
+    order: 4;
     grid-template-columns: 1fr;
     row-gap: 16px;
     font-size: 16px;
@@ -674,10 +682,6 @@
   .asATrusted .line::after,
   .preEngineeredWarehouseBuild .line::after {
     content: " ";
-  }
-  .frameParent {
-    height: 200px;
-    margin-top: 28px;
   }
   .bottomBanner {
     border-radius: 20px;

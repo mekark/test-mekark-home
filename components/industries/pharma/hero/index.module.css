@@ -115,12 +115,14 @@
   position: relative;
   font-size: 1.1583vw;
   color: #f3f3f3;
+  font-weight: 400;
 }
 .mekarkIsA {
   position: relative;
   line-height: 1.55;
   display: block;
   width: 100%;
+  font-weight: 400;
 }
 .descLine {
   display: block;
@@ -132,16 +134,24 @@
   background-color: #c4161c;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 1.25vw 2.5vw;
   gap: 0.692708vw;
-  font-size: 1.110938vw;
   font-family: var(--font-inter), Inter, sans-serif;
+  color: #fff;
+  text-decoration: none;
+  border: 0;
   cursor: pointer;
+  box-sizing: border-box;
 }
 .text {
   position: relative;
-  line-height: 1.666667vw;
-  font-weight: 600;
+  font-family: var(--font-inter), Inter, sans-serif;
+  font-weight: 500;
+  font-size: 21.33px;
+  line-height: 32px;
+  letter-spacing: 0;
+  vertical-align: middle;
 }
 .component4 {
   height: 1.30208vw;
@@ -223,13 +233,17 @@
   .component5 {
     padding: 14px 28px;
     gap: 10px;
-    font-size: 16px;
     border-radius: 8px;
     box-shadow: 0 6px 20px rgba(196, 22, 28, 0.3);
+    font-family: var(--font-inter), Inter, sans-serif;
   }
   .text {
+    font-family: var(--font-inter), Inter, sans-serif;
+    font-size: 16px;
     line-height: 24px;
-    white-space: nowrap;
+    font-weight: 500;
+    letter-spacing: 0;
+    white-space: normal;
   }
   .component4 {
     width: 20px;
@@ -294,10 +308,14 @@
     max-width: 342px;
   }
   .titleLine,
-  .subLine,
-  .descLine {
+  .subLine {
     white-space: normal;
     line-height: 100%;
+  }
+  .descLine {
+    display: inline;
+    white-space: normal;
+    line-height: 1.5;
   }
   .logisticsIndustrialStructuWrapper {
     font-size: 15px;
@@ -316,8 +334,8 @@
     line-height: 1.35;
   }
   .mekarkIsATrustedPreEngineWrapper {
-    width: 342px;
-    max-width: 342px;
+    width: 100%;
+    max-width: 100%;
     font-family: Manrope, var(--font-manrope), sans-serif;
     font-size: 11px;
     font-weight: 400;
@@ -329,12 +347,12 @@
     font-family: inherit;
     font-size: 11px;
     font-weight: 400;
-    line-height: normal;
+    line-height: 1.5;
     color: inherit;
     display: block;
     position: relative;
-    width: 342px;
-    max-width: 342px;
+    width: 100%;
+    max-width: 100%;
   }
   .component5 {
     width: auto;
@@ -346,9 +364,8 @@
     box-sizing: border-box;
     padding: 10px 20px;
     gap: 7.1px;
-    font-size: 14px;
-    font-family: Manrope, var(--font-manrope), sans-serif;
-    font-weight: 600;
+    font-family: var(--font-inter), Inter, sans-serif;
+    font-weight: 500;
     border-radius: 5.65px;
     box-shadow: 0px 5.652px 22.61px rgba(196, 22, 28, 0.3);
     min-height: auto;
@@ -358,8 +375,9 @@
     position: relative;
     font-size: 14px;
     line-height: 16.96px;
-    font-weight: 600;
-    font-family: Manrope, var(--font-manrope), sans-serif;
+    font-weight: 500;
+    font-family: var(--font-inter), Inter, sans-serif;
+    letter-spacing: 0;
     color: #fff;
     white-space: nowrap;
     text-align: left;

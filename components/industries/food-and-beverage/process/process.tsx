@@ -1,6 +1,39 @@
 import Image from "next/image";
 import styles from "./index.module.css";
 
+const STEPS = [
+  {
+    number: "01",
+    title: "Process & Feasibility Study",
+    description:
+      "Understanding your production line layout, hygiene classification, cold chain requirements, and expansion plans before design begins.",
+  },
+  {
+    number: "02",
+    title: "Design & Engineering",
+    description:
+      "Structural layout, electrical zoning, HVAC, and MEP coordination planned into a build-ready engineering package using STAAD Pro, TEKLA, and Autodesk.",
+  },
+  {
+    number: "03",
+    title: "Factory Fabrication",
+    description:
+      "Precision manufacturing at our Tamil Nadu plants, with structural steel, cladding, and cold storage panels fabricated to exact specs.",
+  },
+  {
+    number: "04",
+    title: "Civil, Structural & MEP Execution",
+    description:
+      "Food-grade flooring, steel framing, HVAC, cold storage, and utility integration executed with precision sequencing for a compliant, production-ready base.",
+  },
+  {
+    number: "05",
+    title: "Commissioning & Handover",
+    description:
+      "Testing, hygiene checks, and final commissioning completed; your food & beverage facility handed over production-ready.",
+  },
+] as const;
+
 const Process = () => {
   return (
     <div className={styles.grid1Parent}>
@@ -19,103 +52,51 @@ const Process = () => {
           Our Food &amp; Beverage Facility Project Execution Process
         </b>
       </div>
-      <div className={styles.frameParent}>
-        <div className={styles.parent}>
-          <div className={styles.div}>01</div>
-          <div className={styles.siteEvaluationFeasibilityParent}>
-            <div className={styles.siteEvaluation}>
-              Process &amp; Feasibility Study
-            </div>
-            <div className={styles.geotechnicalAssessmentRegul}>
-              Understanding your production line layout, hygiene classification,
-              cold chain requirements, and expansion plans before design begins.
-            </div>
-          </div>
-        </div>
-        <Image
-          className={styles.frameChild}
-          src="/images/industries/food-and-beverage/process/process-arrow.svg"
-          width={67}
-          height={20}
-          sizes="100vw"
-          alt=""
-        />
-        <div className={styles.parent}>
-          <div className={styles.div}>02</div>
-          <div className={styles.designEngineeringParent}>
-            <div className={styles.designEngineering}>
-              Design &amp; Engineering
-            </div>
-            <div className={styles.structuralDesignLoad}>
-              Structural layout, electrical zoning, HVAC, and MEP coordination
-              planned into a build-ready engineering package using STAAD Pro,
-              TEKLA, and Autodesk.
-            </div>
-          </div>
-        </div>
-        <Image
-          className={styles.frameChild}
-          src="/images/industries/food-and-beverage/process/process-arrow.svg"
-          width={67}
-          height={20}
-          sizes="100vw"
-          alt=""
-        />
-        <div className={styles.parent}>
-          <div className={styles.div}>03</div>
-          <div className={styles.siteEvaluationFeasibilityParent}>
-            <div className={styles.designEngineering}>Factory Fabrication</div>
-            <div className={styles.precisionManufacturingAt}>
-              Precision manufacturing at our Tamil Nadu plants, with structural
-              steel, cladding, and cold storage panels fabricated to exact
-              specs.
-            </div>
-          </div>
-        </div>
-        <Image
-          className={styles.frameChild}
-          src="/images/industries/food-and-beverage/process/process-arrow.svg"
-          width={67}
-          height={20}
-          sizes="100vw"
-          alt=""
-        />
-        <div className={styles.frameDiv}>
-          <div className={styles.div}>04</div>
-          <div className={styles.onSiteErectionParent}>
-            <div className={styles.designEngineering}>
-              Civil, Structural &amp; MEP Execution
-            </div>
-            <div className={styles.geotechnicalAssessmentRegul2}>
-              Food-grade flooring, steel framing, HVAC, cold storage, and
-              utility integration executed with precision sequencing for a
-              compliant, production-ready base.
-            </div>
-          </div>
-        </div>
-        <div className={styles.vectorParent}>
-          <Image
-            className={styles.frameChild}
-            src="/images/industries/food-and-beverage/process/process-arrow.svg"
-            width={67}
-            height={20}
-            sizes="100vw"
-            alt=""
-          />
-          <div className={styles.frameDiv}>
-            <div className={styles.div}>05</div>
-            <div className={styles.onSiteErectionParent}>
-              <div className={styles.designEngineering}>
-                Commissioning &amp; Handover
+
+      <div className={styles.desktopProcess}>
+        <div className={styles.frameParent}>
+          {STEPS.map((step, index) => (
+            <div key={step.number} className={styles.desktopStepGroup}>
+              <div className={styles.parent}>
+                <div className={styles.div}>{step.number}</div>
+                <div className={styles.siteEvaluationFeasibilityParent}>
+                  <div className={styles.siteEvaluation}>{step.title}</div>
+                  <div className={styles.geotechnicalAssessmentRegul}>
+                    {step.description}
+                  </div>
+                </div>
               </div>
-              <div className={styles.snagListClearance}>
-                Testing, hygiene checks, and final commissioning completed; your
-                food &amp; beverage facility handed over production-ready.
-              </div>
+              {index < STEPS.length - 1 ? (
+                <Image
+                  className={styles.frameChild}
+                  src="/images/industries/logistics/process/process-arrow.svg"
+                  width={66.7}
+                  height={19.6}
+                  sizes="100vw"
+                  alt=""
+                />
+              ) : null}
             </div>
-          </div>
+          ))}
         </div>
       </div>
+
+      <ol className={styles.mobileProcess}>
+        {STEPS.map((step, index) => (
+          <li
+            key={step.number}
+            className={`${styles.mobileStep} ${index < STEPS.length - 1 ? styles.mobileStepWithGap : ""}`}
+          >
+            <div className={styles.mobileStepBadge}>
+              <span className={styles.mobileStepNumber}>{step.number}</span>
+            </div>
+            <article className={styles.mobileStepCard}>
+              <h3 className={styles.mobileStepTitle}>{step.title}</h3>
+              <p className={styles.mobileStepDescription}>{step.description}</p>
+            </article>
+          </li>
+        ))}
+      </ol>
     </div>
   );
 };

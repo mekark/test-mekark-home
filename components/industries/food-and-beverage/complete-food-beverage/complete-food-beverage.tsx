@@ -15,19 +15,10 @@ const OurSolutions = () => {
               <span className={styles.subtitleLine}>Engineered End-to-End</span>
             </h3>
             <p className={styles.asALeading}>
-              <span className={styles.descLine}>
-                As a full-service, turnkey EPC food &amp; beverage facility
-                construction company in
-              </span>
-              <span className={styles.descLine}>
-                South India, Mekark designs, fabricates, and builds hygienic,
-                compliance-ready
-              </span>
-              <span className={styles.descLine}>
-                production environments tailored to your process, cleanliness
-                standards, and
-              </span>
-              <span className={styles.descLine}>utility requirements.</span>
+              As a full-service, turnkey EPC food &amp; beverage facility construction
+              company in South India, Mekark designs, fabricates, and builds hygienic,
+              compliance-ready production environments tailored to your process,
+              cleanliness standards, and utility requirements.
             </p>
           </div>
         </div>

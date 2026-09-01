@@ -32,7 +32,8 @@
   width: 40.78125vw;
   position: relative;
   line-height: 1.2;
-  font-weight: 800;
+  font-weight: 700;
+  letter-spacing: 0.05vw;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -87,23 +88,18 @@
   white-space: nowrap;
 }
 .component4 {
-  height: 1.38542vw;
-  width: 1.38542vw;
+  height: 1.5vw;
+  width: 1.5vw;
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
 }
 .vectorIcon {
   position: absolute;
-  height: 50%;
+  inset: 0;
   width: 100%;
-  top: 25.05%;
-  right: 18.43%;
-  bottom: 24.95%;
-  left: 18.78%;
-  max-width: 100%;
-  overflow: hidden;
-  max-height: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .sectionItem {
   position: absolute;
@@ -393,6 +389,8 @@
     width: 100%;
     font-size: 26px;
     line-height: 34px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
     justify-content: center;
     align-items: center;
   }
@@ -434,8 +432,8 @@
     text-align: center;
   }
   .component4 {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
   }
   .frameParent3 {
     position: relative;
@@ -444,7 +442,7 @@
     width: 100%;
     height: auto;
     order: 2;
-    margin: 40px 0 28px;
+    margin: 40px 0 20px;
     font-size: 28px;
   }
   .whyWarehousesFrom {
@@ -476,7 +474,7 @@
     position: relative;
     top: auto;
     left: auto;
-    order: 3;
+    order: 4;
     width: 100%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: none;
@@ -509,10 +507,11 @@
     position: relative;
     top: auto;
     left: auto;
-    order: 4;
+    order: 3;
     width: 100%;
     height: 280px;
-    margin-top: 36px;
+    margin-top: 0;
+    margin-bottom: 28px;
   }
   .imageWrapper {
     position: relative;
@@ -566,6 +565,8 @@
   .planningAWarehouse {
     font-size: 22px;
     line-height: 30px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
     align-items: center;
     text-align: center;
   }
@@ -581,17 +582,39 @@
     font-size: 15px;
   }
   .frameParent3 {
-    margin: 32px 0 20px;
+    margin: 32px 0 16px;
     font-size: 24px;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
   }
   .whyWarehousesFrom {
     line-height: 32px;
+    text-align: center;
   }
   .mekarkIsOne {
     font-size: 14px;
     line-height: 22px;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .mekarkIsOne .line {
+    display: inline;
+    white-space: normal;
+  }
+  .frameParent {
+    order: 3;
+    height: 200px;
+    margin-top: 0;
+    margin-bottom: 24px;
   }
   .frameGroup {
+    order: 4;
     grid-template-columns: 1fr;
     row-gap: 16px;
     font-size: 16px;
@@ -670,7 +693,6 @@
   }
   .frameParent {
     height: 200px;
-    margin-top: 28px;
   }
   .bottomBanner {
     border-radius: 20px;

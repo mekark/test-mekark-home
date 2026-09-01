@@ -2,13 +2,18 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import {
+  industryHeroMobileButtonClass,
+  industryHeroMobileButtonIconClass,
+  industryHeroMobileButtonTextClass,
+} from "@/components/industries/shared/industryHeroMobile";
 import { fadeSlideUp } from "./motion";
 
 export function HeroCTAButton() {
   return (
     <motion.a
       href="/#enquiry"
-      className="inline-flex w-full items-center justify-center gap-3 self-stretch rounded-[10.667px] bg-[#c4161c] px-6 py-4 shadow-[0_10.667px_21.333px_rgba(196,22,28,0.3)] sm:w-fit sm:self-start sm:px-8 sm:py-5"
+      className={`inline-flex items-center justify-center gap-[7.1px] rounded-[5.65px] bg-[#c4161c] px-5 py-2.5 shadow-[0px_5.652px_22.61px_rgba(196,22,28,0.3)] sm:w-fit sm:rounded-[8px] sm:px-8 sm:py-5 sm:shadow-[0_10.667px_21.333px_rgba(196,22,28,0.3)] ${industryHeroMobileButtonClass}`}
       custom={0.6}
       variants={fadeSlideUp}
       initial="hidden"
@@ -16,11 +21,11 @@ export function HeroCTAButton() {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
-      <span className="text-center text-base font-semibold text-white sm:text-left sm:text-lg md:text-[21px] md:leading-8">
+      <span className={industryHeroMobileButtonTextClass}>
         Get a Free Consultation
       </span>
       <motion.span
-        className="relative size-[21px] shrink-0 overflow-hidden"
+        className={`relative shrink-0 overflow-hidden sm:size-[21px] ${industryHeroMobileButtonIconClass}`}
         whileHover={{ x: 5 }}
         transition={{ type: "spring", stiffness: 400, damping: 20 }}
       >

@@ -13,23 +13,6 @@ import {
 const VIEWPORT = { once: true, margin: "-80px" as const };
 const PAGE_SIZE = 9;
 
-function CornerVector() {
-  return (
-    <div className="relative flex h-[50px] w-full flex-col items-start">
-      <div className="relative h-[50px] w-[50px] shrink-0 overflow-hidden">
-        <Image
-          src="/images/projects/completed/hero-corner.svg"
-          alt=""
-          width={40}
-          height={40}
-          unoptimized
-          className="absolute top-[0%] right-[20%] bottom-[20%] left-[0%] h-4/5 w-full max-h-full max-w-full overflow-hidden"
-        />
-      </div>
-    </div>
-  );
-}
-
 type ProjectCategory =
   | "commercial"
   | "residential"
@@ -58,67 +41,32 @@ const FILTERS: { id: FilterId; label: string }[] = [
 
 const PROJECTS: Project[] = [
   {
-    title: "TATA Electronic",
+    title: "EPIL",
     type: "Turnkey",
-    location: "Kolar, Karnataka",
-    image: "/images/projects/ongoing/project-card.png",
+    location: "-",
+    image: "/images/projects/ongoing/1.jpg",
     categories: ["industrial", "peb"],
+  },
+  {
+    title: "Orbitalls",
+    type: "Turnkey",
+    location: "Ulundhurpet",
+    image: "/images/projects/ongoing/2.jpg",
+    categories: ["industrial", "peb"],
+  },
+  {
+    title: "JMR Apparels",
+    type: "Apparels",
+    location: "Chennai",
+    image: "/images/projects/ongoing/3.png",
+    categories: ["industrial", "commercial"],
   },
   {
     title: "JK Tyres",
     type: "Manufacturing Unit",
     location: "Chennai",
-    image: "/images/projects/ongoing/project-card.png",
+    image: "/images/projects/ongoing/4.jpg",
     categories: ["industrial", "peb"],
-  },
-  {
-    title: "Chemplast Sanmar",
-    type: "Only civil",
-    location: "Mettur",
-    image: "/images/projects/ongoing/project-card.png",
-    categories: ["industrial", "infrastructure"],
-  },
-  {
-    title: "Orbitalls (High Glory Footwear)",
-    type: "Turnkey",
-    location: "Ulundhurpet",
-    image: "/images/projects/ongoing/project-card.png",
-    categories: ["industrial", "peb"],
-  },
-  {
-    title: "SRF Limited",
-    type: "Warehouse",
-    location: "Gummidipoondi",
-    image: "/images/projects/ongoing/project-card.png",
-    categories: ["industrial", "peb"],
-  },
-  {
-    title: "K S Enterprises. (Westside)",
-    type: "Multi-storey steel Building",
-    location: "Urapakkam",
-    image: "/images/projects/ongoing/project-card.png",
-    categories: ["commercial"],
-  },
-  {
-    title: "SHOBA Limited",
-    type: "Commercial",
-    location: "Chennai",
-    image: "/images/projects/ongoing/project-card.png",
-    categories: ["commercial"],
-  },
-  {
-    title: "Modi Trace Paper Inida",
-    type: "Industry",
-    location: "Chennai",
-    image: "/images/projects/ongoing/project-card.png",
-    categories: ["industrial"],
-  },
-  {
-    title: "SS Sridevi traders",
-    type: "Industry",
-    location: "Virudhunagar",
-    image: "/images/projects/ongoing/project-card.png",
-    categories: ["industrial"],
   },
 ];
 
@@ -302,7 +250,7 @@ export function OngoingProjectsPage() {
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
-          className="relative z-10 flex flex-col items-center px-5 pb-24 pt-10 text-center sm:pb-28"
+          className="relative z-10 flex flex-col items-center px-5 py-10 text-center"
         >
           <motion.h1
             variants={fadeUp}
@@ -310,51 +258,7 @@ export function OngoingProjectsPage() {
           >
             Ongoing Projects
           </motion.h1>
-          <motion.div
-            variants={fadeUp}
-            className="relative mt-3 h-[2px] w-[80px]"
-            aria-hidden
-          >
-            <span className="absolute top-0 left-[10px] h-[2px] w-[60px] bg-white" />
-            <span className="absolute top-0 left-[40px] h-[2px] w-[40px] bg-[#ed1c24]" />
-          </motion.div>
         </motion.div>
-
-        <button
-          type="button"
-          onClick={() =>
-            document
-              .getElementById("ongoing-projects-grid")
-              ?.scrollIntoView({ behavior: "smooth", block: "start" })
-          }
-          className="absolute bottom-0 left-1/2 z-10 -translate-x-1/2"
-          aria-label="Scroll down to discover projects"
-        >
-          <span className="relative flex items-center gap-[30px] rounded-t-[30px] bg-white px-[30px] py-3">
-            <span
-              aria-hidden
-              className="pointer-events-none absolute bottom-[-10px] left-[-39px] flex h-[50px] w-[40px] flex-col items-start"
-            >
-              <CornerVector />
-            </span>
-            <span
-              aria-hidden
-              className="pointer-events-none absolute right-[-39px] bottom-[-10px] flex h-[50px] w-[40px] -scale-x-100 flex-col items-start"
-            >
-              <CornerVector />
-            </span>
-            <span
-              className="relative h-[34px] w-[22px] shrink-0 rounded-[10px] border border-[#ddd] bg-[#f9f9f9] shadow-[0px_10px_6px_rgba(0,0,0,0.07)]"
-              aria-hidden
-            >
-              <span className="absolute top-[7px] left-1/2 size-[4px] -translate-x-1/2 rounded-[1px] bg-[#ed2024]" />
-              <span className="absolute bottom-0 left-1/2 h-[10px] w-px -translate-x-1/2 bg-[#ddd]" />
-            </span>
-            <span className="whitespace-nowrap text-[11px] leading-normal text-[#1e1e1e]">
-              Scroll Down To Discover
-            </span>
-          </span>
-        </button>
       </section>
 
       <section

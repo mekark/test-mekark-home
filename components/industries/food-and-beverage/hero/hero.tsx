@@ -4,15 +4,17 @@ import styles from "./index.module.css";
 const FoodBeverageHeroBanner = () => {
   return (
     <div className={styles.logisticsHeroBanner}>
-      <Image
-        className={styles.warehouseWithManRedHatIsIcon}
-        src="/images/industries/food-and-beverage/hero/094b340e4341865b579a5b936db8b1f86325cefd.png"
-        width={1920}
-        height={900}
-        sizes="100vw"
-        alt="Food and beverage manufacturing facility"
-        priority
-      />
+      <div className={styles.heroBgWrapper}>
+        <Image
+          className={styles.warehouseWithManRedHatIsIcon}
+          src="/images/industries/food-and-beverage/hero/094b340e4341865b579a5b936db8b1f86325cefd.png"
+          width={1920}
+          height={900}
+          sizes="100vw"
+          alt="Food and beverage manufacturing facility"
+          priority
+        />
+      </div>
       <div className={styles.divabsolute} />
       <div className={styles.div}>
         <b className={styles.leadingPreEngineeredWarehou}>
@@ -35,18 +37,10 @@ const FoodBeverageHeroBanner = () => {
         </div>
         <div className={styles.mekarkIsATrustedPreEngineWrapper}>
           <div className={styles.mekarkIsA}>
-            <span className={styles.descLine}>
-              Mekark builds turnkey food processing plants, beverage bottling
-              facilities,
-            </span>
-            <span className={styles.descLine}>
-              dairy units, and cold storage infrastructure across Tamil Nadu,
-              Karnataka, Andhra Pradesh,
-            </span>
-            <span className={styles.descLine}>
-              Telangana, and Kerala. Engineered for hygiene and delivered on
-              time.
-            </span>
+            Mekark builds turnkey food processing plants, beverage bottling
+            facilities, dairy units, and cold storage infrastructure across Tamil
+            Nadu, Karnataka, Andhra Pradesh, Telangana, and Kerala. Engineered
+            for hygiene and delivered on time.
           </div>
         </div>
         <a href="/#enquiry" className={styles.component5}>

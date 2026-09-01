@@ -1,12 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { industryHeroMobileDescriptionClass } from "@/components/industries/shared/industryHeroMobile";
 import { fadeSlideUp } from "./motion";
 
 export function HeroDescription() {
   return (
     <motion.p
-      className="w-full max-w-[1015px] text-left font-manrope text-sm font-normal leading-relaxed text-whitesmoke sm:text-base md:text-lg lg:text-2xl lg:leading-[33.33px]"
+      className={`w-full max-w-[1015px] text-left font-manrope text-whitesmoke sm:text-base sm:leading-relaxed md:text-lg lg:text-2xl lg:leading-[33.33px] ${industryHeroMobileDescriptionClass}`}
       custom={0.4}
       variants={fadeSlideUp}
       initial="hidden"

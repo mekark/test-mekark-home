@@ -37,8 +37,12 @@
   	letter-spacing: -0.05208vw;
   	line-height: 3.125vw;
   	font-size: 2.39583vw;
-  	display: block;
+  	display: flex;
+  	flex-direction: column;
   	width: 100%;
+}
+.titleLine {
+  	display: block;
 }
 .asAFullService {
   	position: relative;
@@ -76,7 +80,7 @@
   	position: absolute;
   	top: 0px;
   	left: 3.80208vw;
-  	width: 49.5313vw;
+  	width: 42.1vw;
   	height: 64.1146vw;
 }
 .frameContainer {
@@ -87,7 +91,7 @@
   	background-color: #fff;
   	border: 0.0625vw solid #c0c0c0;
   	box-sizing: border-box;
-  	width: 38.5417vw;
+  	width: 32.75vw;
   	height: 10.0521vw;
   	overflow: hidden;
 }
@@ -105,7 +109,7 @@
   	font-weight: 600;
 }
 .columnFreeBuildingsBuilt {
-  	width: 18.28125vw;
+  	width: 14.26vw;
   	position: relative;
   	font-size: 0.83333vw;
   	display: flex;
@@ -159,7 +163,7 @@
   	background-color: #fff;
   	border: 0.0625vw solid #c0c0c0;
   	box-sizing: border-box;
-  	width: 38.5417vw;
+  	width: 32.75vw;
   	height: 10.0521vw;
   	overflow: hidden;
 }
@@ -180,7 +184,7 @@
   	background-color: #fff;
   	border: 0.0625vw solid #c0c0c0;
   	box-sizing: border-box;
-  	width: 38.6458vw;
+  	width: 32.85vw;
   	height: 10.0521vw;
   	overflow: hidden;
 }
@@ -201,7 +205,7 @@
   	background-color: #fff;
   	border: 0.0625vw solid #c0c0c0;
   	box-sizing: border-box;
-  	width: 38.5417vw;
+  	width: 32.75vw;
   	height: 10.0521vw;
   	overflow: hidden;
 }
@@ -222,7 +226,7 @@
   	background-color: #fff;
   	border: 0.0625vw solid #c0c0c0;
   	box-sizing: border-box;
-  	width: 38.5417vw;
+  	width: 32.75vw;
   	height: 10.0521vw;
   	overflow: hidden;
 }
@@ -289,6 +293,9 @@
   	.completeWarehousing {
     		font-size: 32px;
     		line-height: 40px;
+  	}
+  	.titleLine {
+    		white-space: nowrap;
   	}
   	.asAFullService {
     		font-size: 16px;
@@ -381,8 +388,11 @@
     		padding: 32px 16px;
   	}
   	.completeWarehousing {
-    		font-size: 26px;
-    		line-height: 34px;
+    		font-size: 22px;
+    		line-height: 30px;
+  	}
+  	.titleLine {
+    		white-space: nowrap;
   	}
   	.asAFullService {
     		font-size: 14px;

@@ -59,9 +59,18 @@ const CTA: NextPage = () => {
           <div className={styles.planningAWarehouse}>
             Planning a Warehouse or Logistics Facility in South India?
             <br />
-            Your Slot Won&apos;t Stay Open Long.{" "}
           </div>
-          <div className={styles.mekarksProjectCalendar}>{`Mekark's project calendar fills up fast. Our team will assess your requirements, recommend the right pre-engineered warehouse solution, and deliver a transparent budgetary estimate within 48 hours - no obligation, just honest expert advice. `}</div>
+          <div className={styles.mekarksProjectCalendar}>
+            <span className={styles.subtitleLine}>
+              Slots fill up fast. Get a free site assessment, the right
+            </span>
+            <span className={styles.subtitleLine}>
+              PEB recommendation, and a transparent estimate
+            </span>
+            <span className={styles.subtitleLine}>
+              within 48 hours, no obligation.
+            </span>
+          </div>
         </div>
         <div className={styles.sectionChild} />
         <a href="/#enquiry" className={styles.cta2}>
@@ -77,30 +86,32 @@ const CTA: NextPage = () => {
             />
           </div>
         </a>
-        <Image
-          className={styles.sectionItem}
-          src="/images/industries/logistics/CTA/badge-frame.svg"
-          width={180}
-          height={180}
-          sizes="100vw"
-          alt=""
-        />
-        <Image
-          className={styles.sectionInner}
-          src="/images/industries/logistics/CTA/section-inner.svg"
-          width={317}
-          height={213}
-          sizes="100vw"
-          alt=""
-        />
-        <Image
-          className={styles.eotCta1}
-          src="/images/industries/logistics/CTA/eot-cta-worker.png"
-          width={491}
-          height={323}
-          sizes="100vw"
-          alt=""
-        />
+        <div className={styles.workerVisual}>
+          <Image
+            className={styles.sectionItem}
+            src="/images/industries/logistics/CTA/badge-frame.svg"
+            width={180}
+            height={180}
+            sizes="100vw"
+            alt=""
+          />
+          <Image
+            className={styles.sectionInner}
+            src="/images/industries/logistics/CTA/section-inner.svg"
+            width={317}
+            height={213}
+            sizes="100vw"
+            alt=""
+          />
+          <Image
+            className={styles.eotCta1}
+            src="/images/industries/logistics/CTA/eot-cta-worker.png"
+            width={491}
+            height={323}
+            sizes="(max-width: 768px) 96vw, (max-width: 1200px) 92vw, 491px"
+            alt="Mekark warehouse construction expert"
+          />
+        </div>
       </div>
       <div className={styles.frameParent}>
         <div className={styles.imageWrapper}>

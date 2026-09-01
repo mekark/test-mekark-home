@@ -44,30 +44,32 @@ const CTA = () => {
             />
           </div>
         </a>
-        <Image
-          className={styles.sectionItem}
-          src="/images/industries/pharma/cta/badge-frame.svg"
-          width={180}
-          height={180}
-          sizes="100vw"
-          alt=""
-        />
-        <Image
-          className={styles.sectionInner}
-          src="/images/industries/pharma/cta/section-inner.svg"
-          width={317}
-          height={213}
-          sizes="100vw"
-          alt=""
-        />
-        <Image
-          className={styles.eotCta1}
-          src="/images/industries/pharma/cta/eot-cta-worker.png"
-          width={491}
-          height={323}
-          sizes="100vw"
-          alt="Mekark consultant"
-        />
+        <div className={styles.workerVisual}>
+          <Image
+            className={styles.sectionItem}
+            src="/images/industries/logistics/CTA/badge-frame.svg"
+            width={180}
+            height={180}
+            sizes="100vw"
+            alt=""
+          />
+          <Image
+            className={styles.sectionInner}
+            src="/images/industries/logistics/CTA/section-inner.svg"
+            width={317}
+            height={213}
+            sizes="100vw"
+            alt=""
+          />
+          <Image
+            className={styles.eotCta1}
+            src="/images/industries/logistics/CTA/eot-cta-worker.png"
+            width={491}
+            height={323}
+            sizes="(max-width: 768px) 96vw, (max-width: 1200px) 92vw, 491px"
+            alt="Mekark consultant"
+          />
+        </div>
       </div>
 
       <div className={styles.frameParent}>

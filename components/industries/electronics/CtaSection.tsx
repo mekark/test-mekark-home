@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { IndustryMobileCtaBanner } from "@/components/industries/shared/IndustryMobileCtaBanner";
+import { logisticsCtaWorkerAssets } from "@/components/industries/shared/logisticsCtaWorkerAssets";
 
 type Feature = {
   icon: string;
@@ -113,8 +115,26 @@ export default function CtaSection() {
   return (
     <section className="w-full bg-[#f6f6f6] py-16 lg:py-24">
       <div className="mx-auto max-w-[1920px] px-6 lg:px-20">
+        <div className="xl:hidden">
+          <IndustryMobileCtaBanner
+            title="Planning an Electronics Manufacturing Facility in South India?"
+            subtitle={
+              <>
+                Every week your production line isn&apos;t running is lost revenue.
+                Mekark&apos;s team will assess your process requirements, cleanroom
+                class, ESD protection, utility load, and deliver a transparent
+                budgetary estimate within 24 hours. No obligation, just honest
+                expert advice.
+              </>
+            }
+            buttonText="Request a Free Consultation"
+            workerAlt="Mekark electronics manufacturing expert"
+            assets={logisticsCtaWorkerAssets}
+          />
+        </div>
+
         <motion.div
-          className="relative overflow-hidden rounded-[24px] px-5 py-8 sm:rounded-[40px] sm:px-10 sm:py-10 lg:min-h-[295px] lg:px-0 lg:py-0"
+          className="relative hidden overflow-hidden rounded-[24px] px-5 py-8 sm:rounded-[40px] sm:px-10 sm:py-10 lg:min-h-[295px] lg:px-0 lg:py-0 xl:block"
           style={{
             backgroundImage:
               "linear-gradient(123.5deg, rgb(240, 28, 34) 6.54%, rgb(139, 12, 17) 108.89%)",
@@ -167,41 +187,6 @@ export default function CtaSection() {
                 />
               </div>
             </div>
-          </div>
-
-          <div className="relative z-10 flex flex-col gap-6 px-0 py-2 sm:gap-8 xl:hidden">
-            <div className="flex flex-col gap-2.5">
-              <h2 className="font-manrope text-[26px] font-bold leading-tight text-white sm:text-[32px] md:text-[36px]">
-                Planning an Electronics Manufacturing Facility in South India?
-              </h2>
-              <p className="font-manrope text-base font-medium leading-relaxed text-[#ccc6c6] sm:text-lg">
-                Every week your production line isn&apos;t running is lost revenue.
-                Mekark&apos;s team will assess your process requirements, cleanroom
-                class, ESD protection, utility load, and deliver a transparent
-                budgetary estimate within 24 hours. No obligation, just honest
-                expert advice.
-              </p>
-            </div>
-
-            <motion.a
-              href="/#enquiry"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex w-full items-center justify-center gap-3.5 rounded-full bg-white px-6 py-4 sm:w-auto sm:self-start sm:px-8 sm:py-5"
-            >
-              <span className="text-center font-manrope text-base font-bold leading-normal text-[#0e0e0e] sm:text-lg md:text-[22px]">
-                Request a Free Consultation
-              </span>
-              <span className="relative size-6 shrink-0 overflow-hidden sm:size-[27px]">
-                <Image
-                  src="/images/industries/electronics/cta/cta-arrow.svg"
-                  alt=""
-                  fill
-                  className="object-contain"
-                  aria-hidden
-                />
-              </span>
-            </motion.a>
           </div>
 
           <div className="relative z-10 hidden min-h-[295px] xl:block">

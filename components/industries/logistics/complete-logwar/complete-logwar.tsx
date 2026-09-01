@@ -9,7 +9,11 @@ const CompleteEOTCraneSolutionsEngineeredEndToEnd: NextPage = () => {
       			<div className={styles.completeEotCraneSolutions}>
         				<div className={styles.leftStickyOuter}>
           					<div className={styles.leftSticky}>
-            						<b className={styles.completeWarehousing}>Complete Warehousing &<br />Logistics Solutions, Engineered<br />End-to-End</b>
+            						<b className={styles.completeWarehousing}>
+              							<span className={styles.titleLine}>Complete Warehousing &</span>
+              							<span className={styles.titleLine}>Logistics Solutions, Engineered</span>
+              							<span className={styles.titleLine}>End-to-End</span>
+            						</b>
             						<div className={styles.asAFullService}>As a full-service, turnkey EPC warehouse solution provider in South India, Mekark designs, fabricates, and erects pre-engineered steel structures tailored to your operational needs and span requirements.</div>
           					</div>
         				</div>

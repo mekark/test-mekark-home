@@ -1,0 +1,243 @@
+/* Mobile CTA banner — matches logistics warehouse mobile layout (≤1279px / xl) */
+.root {
+	display: none;
+}
+
+@media (max-width: 1279px) {
+	.root {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 16px;
+		width: 100%;
+		border-radius: 20px;
+		padding: 36px 24px 0;
+		overflow: hidden;
+		background: linear-gradient(96.33deg, #f01c22, #8b0c11);
+		box-sizing: border-box;
+	}
+
+	.textBlock {
+		position: relative;
+		width: 100%;
+		margin-top: 8px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 14px;
+		z-index: 2;
+	}
+
+	.title {
+		width: 100%;
+		font-size: 26px;
+		line-height: 34px;
+		font-weight: 800;
+		color: #fff;
+		font-family: Manrope, sans-serif;
+	}
+
+	.subtitle {
+		width: 100%;
+		margin-top: 6px;
+		font-size: 15px;
+		letter-spacing: 0;
+		line-height: 23px;
+		font-weight: 500;
+		color: #ccc6c6;
+		font-family: Manrope, sans-serif;
+	}
+
+	.subtitleLine {
+		display: block;
+	}
+
+	.button {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: auto;
+		max-width: 100%;
+		min-height: 48px;
+		padding: 12px 24px;
+		border-radius: 999px;
+		background-color: #fff;
+		gap: 0.71354vw;
+		font-size: 16px;
+		color: #0e0e0e;
+		text-decoration: none;
+		border: 0;
+		cursor: pointer;
+		z-index: 2;
+		box-sizing: border-box;
+	}
+
+	.buttonText {
+		font-weight: 700;
+		white-space: nowrap;
+		line-height: 24px;
+		text-align: center;
+		font-family: Manrope, sans-serif;
+	}
+
+	.buttonIcon {
+		width: 16px;
+		height: 16px;
+		position: relative;
+		overflow: hidden;
+		flex-shrink: 0;
+	}
+
+	.buttonIconImg {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+
+	.workerVisual {
+		position: relative;
+		align-self: center;
+		width: 92%;
+		max-width: 92%;
+		height: 220px;
+		margin: 8px 0 0;
+		pointer-events: none;
+	}
+
+	.badgeFrame {
+		position: absolute;
+		display: block;
+		top: 12%;
+		left: 50%;
+		transform: translateX(-42%);
+		width: 145px;
+		height: 145px;
+		border-radius: 50%;
+		z-index: 1;
+	}
+
+	.sectionInner {
+		position: absolute;
+		display: block;
+		top: auto;
+		bottom: 10px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 88%;
+		height: auto;
+		max-height: 72%;
+		z-index: 2;
+	}
+
+	.worker {
+		display: block;
+		position: absolute;
+		top: auto;
+		right: auto;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: auto;
+		max-width: 100%;
+		height: 220px;
+		margin: 0;
+		object-fit: contain;
+		object-position: center bottom;
+		z-index: 3;
+	}
+}
+
+@media (max-width: 768px) {
+	.root {
+		border-radius: 16px;
+		padding: 28px 16px 0;
+		gap: 14px;
+	}
+
+	.textBlock {
+		margin-top: 6px;
+	}
+
+	.title {
+		font-size: 22px;
+		line-height: 30px;
+	}
+
+	.subtitle {
+		font-size: 14px;
+		line-height: 22px;
+		margin-top: 4px;
+	}
+
+	.button {
+		width: auto;
+		max-width: 96%;
+		padding: 12px 18px;
+		font-size: 14px;
+		gap: 10px;
+	}
+
+	.workerVisual {
+		max-width: 96%;
+		height: 190px;
+		margin-top: 6px;
+	}
+
+	.worker {
+		height: 190px;
+	}
+
+	.badgeFrame {
+		width: 125px;
+		height: 125px;
+		top: 9%;
+		transform: translateX(-40%);
+	}
+}
+
+/* compactWorker — legacy; prefer standard logistics worker view */
+@media (max-width: 1279px) {
+	.root.compactWorker .workerVisual {
+		height: 150px;
+		margin-top: 4px;
+		overflow: hidden;
+	}
+
+	.root.compactWorker .worker {
+		height: 150px;
+		object-fit: cover;
+		object-position: center 28%;
+	}
+
+	.root.compactWorker .sectionInner {
+		max-height: 62%;
+		bottom: 4px;
+	}
+
+	.root.compactWorker .badgeFrame {
+		width: 105px;
+		height: 105px;
+		top: 6%;
+	}
+}
+
+@media (max-width: 768px) {
+	.root.compactWorker .workerVisual {
+		height: 118px;
+		margin-top: 2px;
+	}
+
+	.root.compactWorker .worker {
+		height: 118px;
+		object-position: center 24%;
+	}
+
+	.root.compactWorker .badgeFrame {
+		width: 88px;
+		height: 88px;
+		top: 4%;
+		transform: translateX(-38%);
+	}
+}

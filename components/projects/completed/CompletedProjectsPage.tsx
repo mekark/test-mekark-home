@@ -13,23 +13,6 @@ import {
 const VIEWPORT = { once: true, margin: "-80px" as const };
 const PAGE_SIZE = 9;
 
-function CornerVector() {
-  return (
-    <div className="relative flex h-[50px] w-full flex-col items-start">
-      <div className="relative h-[50px] w-[50px] shrink-0 overflow-hidden">
-        <Image
-          src="/images/projects/completed/hero-corner.svg"
-          alt=""
-          width={40}
-          height={40}
-          unoptimized
-          className="absolute top-[0%] right-[20%] bottom-[20%] left-[0%] h-4/5 w-full max-h-full max-w-full overflow-hidden"
-        />
-      </div>
-    </div>
-  );
-}
-
 type ProjectCategory =
   | "commercial"
   | "residential"
@@ -59,66 +42,45 @@ const FILTERS: { id: FilterId; label: string }[] = [
 const PROJECTS: Project[] = [
   {
     title: "Air Vision",
-    type: "Manufacturing Unit",
-    location: "Chennai",
+    type: "Warehouse",
+    location: "Irungattukottai",
     image: "/images/completed-projects-listing/air-vision.png",
     categories: ["industrial", "peb"],
   },
   {
-    title: "French village food court",
-    type: "Manufacturing Unit",
-    location: "Chennai",
-    image: "/images/completed-projects-listing/french-village-food-court.png",
-    categories: ["commercial"],
+    title: "Solo paints",
+    type: "Paint Manufacturing",
+    location: "Tirunelveli",
+    image: "/images/completed-projects-listing/solo-paints.png",
+    categories: ["industrial", "peb"],
   },
   {
     title: "Jaguar Showroom",
-    type: "Manufacturing Unit",
-    location: "Chennai",
+    type: "Car Showroom",
+    location: "Tiruvallur",
     image: "/images/completed-projects-listing/jaguar-showroom.png",
     categories: ["commercial"],
   },
   {
     title: "MIPL",
-    type: "Commercial",
-    location: "Tirunelveli",
-    image: "/images/completed-projects-listing/mipl.png",
-    categories: ["commercial"],
-  },
-  {
-    title: "PKM factory",
     type: "Manufacturing Unit",
-    location: "Oragadam, Chennai",
-    image: "/images/completed-projects-listing/pkm-factory.png",
-    categories: ["industrial", "peb"],
-  },
-  {
-    title: "Solo paints",
-    type: "Warehouse",
-    location: "Oragadam, Chennai",
-    image: "/images/completed-projects-listing/solo-paints.png",
-    categories: ["industrial", "peb"],
-  },
-  {
-    title: "SOP",
-    type: "Auditorium",
     location: "Chennai",
-    image: "/images/completed-projects-listing/sop.png",
-    categories: ["infrastructure"],
+    image: "/images/completed-projects-listing/mipl.png",
+    categories: ["industrial", "peb"],
   },
   {
     title: "TAAC School",
-    type: "Warehouse",
+    type: "Institution",
     location: "Chennai",
     image: "/images/completed-projects-listing/taac-school.png",
     categories: ["residential", "infrastructure"],
   },
   {
-    title: "Topaz market and food street",
-    type: "Mezzanine",
-    location: "Chennai",
-    image: "/images/completed-projects-listing/topaz-market-and-food-street.png",
-    categories: ["commercial"],
+    title: "SOP",
+    type: "Manufacturing Unit",
+    location: "Vellanur",
+    image: "/images/completed-projects-listing/sop.png",
+    categories: ["industrial", "infrastructure"],
   },
 ];
 
@@ -299,7 +261,7 @@ export function CompletedProjectsPage() {
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
-          className="relative z-10 flex flex-col items-center px-5 pb-24 pt-10 text-center sm:pb-28"
+          className="relative z-10 flex flex-col items-center px-5 py-10 text-center"
         >
           <motion.h1
             variants={fadeUp}
@@ -307,51 +269,7 @@ export function CompletedProjectsPage() {
           >
             Completed Projects
           </motion.h1>
-          <motion.div
-            variants={fadeUp}
-            className="relative mt-3 h-[2px] w-[80px]"
-            aria-hidden
-          >
-            <span className="absolute top-0 left-[10px] h-[2px] w-[60px] bg-white" />
-            <span className="absolute top-0 left-[40px] h-[2px] w-[40px] bg-[#ed1c24]" />
-          </motion.div>
         </motion.div>
-
-        <button
-          type="button"
-          onClick={() =>
-            document
-              .getElementById("completed-projects-grid")
-              ?.scrollIntoView({ behavior: "smooth", block: "start" })
-          }
-          className="absolute bottom-0 left-1/2 z-10 -translate-x-1/2"
-          aria-label="Scroll down to discover projects"
-        >
-          <span className="relative flex items-center gap-[30px] rounded-t-[30px] bg-white px-[30px] py-3">
-            <span
-              aria-hidden
-              className="pointer-events-none absolute bottom-[-10px] left-[-39px] flex h-[50px] w-[40px] flex-col items-start"
-            >
-              <CornerVector />
-            </span>
-            <span
-              aria-hidden
-              className="pointer-events-none absolute right-[-39px] bottom-[-10px] flex h-[50px] w-[40px] -scale-x-100 flex-col items-start"
-            >
-              <CornerVector />
-            </span>
-            <span
-              className="relative h-[34px] w-[22px] shrink-0 rounded-[10px] border border-[#ddd] bg-[#f9f9f9] shadow-[0px_10px_6px_rgba(0,0,0,0.07)]"
-              aria-hidden
-            >
-              <span className="absolute top-[7px] left-1/2 size-[4px] -translate-x-1/2 rounded-[1px] bg-[#ed2024]" />
-              <span className="absolute bottom-0 left-1/2 h-[10px] w-px -translate-x-1/2 bg-[#ddd]" />
-            </span>
-            <span className="whitespace-nowrap text-[11px] leading-normal text-[#1e1e1e]">
-              Scroll Down To Discover
-            </span>
-          </span>
-        </button>
       </section>
 
       <section

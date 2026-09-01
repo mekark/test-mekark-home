@@ -3,17 +3,38 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeSlideRight, fadeSlideUp } from "./motion";
+import { IndustryMobileCtaBanner } from "@/components/industries/shared/IndustryMobileCtaBanner";
+import { logisticsCtaWorkerAssets } from "@/components/industries/shared/logisticsCtaWorkerAssets";
 
 export function CtaBanner() {
   return (
-    <motion.div
-      className="relative overflow-hidden rounded-[24px] bg-gradient-to-br from-[#f01c22] to-[#8b0c11] sm:rounded-[32px] lg:h-[295px] lg:rounded-[40px]"
-      custom={0}
-      variants={fadeSlideUp}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-    >
+    <>
+      <div className="lg:hidden">
+        <IndustryMobileCtaBanner
+          title="Planning an FMCG Manufacturing Facility in South India?"
+          subtitle={
+            <>
+              Every week your production line isn&apos;t running is lost market
+              share and a delayed product launch. Mekark&apos;s team will assess
+              your process requirements, hygiene class, warehousing needs, and
+              utility load, and deliver a transparent budgetary estimate within 24
+              hours. No obligation, just honest expert advice.
+            </>
+          }
+          buttonText="Request a Free Consultation"
+          workerAlt="Mekark warehouse construction expert"
+          assets={logisticsCtaWorkerAssets}
+        />
+      </div>
+
+      <motion.div
+        className="relative hidden overflow-hidden rounded-[24px] bg-gradient-to-br from-[#f01c22] to-[#8b0c11] sm:rounded-[32px] lg:block lg:h-[295px] lg:rounded-[40px]"
+        custom={0}
+        variants={fadeSlideUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
       {/* Desktop decorative layer + engineer */}
       <div className="pointer-events-none absolute inset-0 hidden lg:block">
         <Image
@@ -54,58 +75,6 @@ export function CtaBanner() {
             />
           </div>
         </div>
-      </div>
-
-      {/* Mobile / tablet stacked layout */}
-      <div className="relative z-10 flex flex-col justify-center gap-6 px-6 py-10 sm:px-10 lg:hidden">
-        <motion.h2
-          className="text-[28px] font-bold leading-[1.27] text-white sm:text-[36px]"
-          custom={0.1}
-          variants={fadeSlideRight}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          Planning an FMCG Manufacturing Facility in South India?
-        </motion.h2>
-        <motion.p
-          className="text-base font-medium text-[#ccc6c6] sm:text-lg"
-          custom={0.2}
-          variants={fadeSlideRight}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          Every week your production line isn&apos;t running is lost market
-          share and a delayed product launch. Mekark&apos;s team will assess
-          your process requirements, hygiene class, warehousing needs, and
-          utility load, and deliver a transparent budgetary estimate within 24
-          hours. No obligation, just honest expert advice.
-        </motion.p>
-        <motion.a
-          href="/#enquiry"
-          className="inline-flex w-full max-w-full items-center justify-center gap-3 rounded-full bg-white px-5 py-4 sm:w-fit sm:gap-3.5 sm:px-8 sm:py-5"
-          custom={0.3}
-          variants={fadeSlideUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          whileHover={{ scale: 1.03 }}
-          whileTap={{ scale: 0.97 }}
-        >
-          <span className="text-balance text-center text-[15px] font-bold leading-snug text-[#0e0e0e] sm:text-left sm:text-lg sm:leading-normal md:text-[22px] md:leading-[34px]">
-            Request a Free Consultation
-          </span>
-          <span className="relative size-[27px] shrink-0 overflow-hidden">
-            <Image
-              src="/images/industries/fmcg/fmcg-facility-cta/arrow-icon.svg"
-              alt=""
-              width={27}
-              height={27}
-              className="size-full"
-            />
-          </span>
-        </motion.a>
       </div>
 
       {/* Desktop: flex centers content vertically within the 295px banner */}
@@ -156,5 +125,6 @@ export function CtaBanner() {
         </motion.a>
       </div>
     </motion.div>
+    </>
   );
 }

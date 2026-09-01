@@ -119,9 +119,7 @@
 .mekarkIsA {
   position: relative;
   line-height: 1.55;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: block;
   width: 100%;
 }
 .descLine {
@@ -241,71 +239,142 @@
 
 @media (max-width: 768px) {
   .logisticsHeroBanner {
-    min-height: 100svh;
-    padding-left: 20px;
-    padding-right: 20px;
-    font-size: 28px;
+    width: 100%;
+    height: 694px;
+    min-height: 694px;
+    max-height: 694px;
+    padding-left: 24px;
+    padding-right: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    box-sizing: border-box;
+  }
+  .heroBgWrapper {
+    top: 36%;
+    bottom: 0;
+    height: auto;
   }
   .warehouseWithManRedHatIsIcon {
     width: 100%;
     height: 100%;
-    transform: none;
-    scale: 1;
     object-fit: cover;
-    object-position: 74% 38%;
+    object-position: center 62%;
+    transform: scale(1);
+    transform-origin: center bottom;
   }
   .divabsolute {
     background: linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 0.9) 0%,
-        rgba(0, 0, 0, 0.75) 40%,
-        rgba(0, 0, 0, 0.35) 70%,
-        rgba(0, 0, 0, 0.15) 100%
-      ),
-      linear-gradient(
-        180deg,
-        rgba(6, 6, 6, 0.75) 0%,
-        rgba(6, 6, 6, 0.55) 55%,
-        rgba(6, 6, 6, 0.35) 100%
-      );
+      180deg,
+      #060606 0%,
+      #060606 26%,
+      rgba(6, 6, 6, 0.94) 40%,
+      rgba(6, 6, 6, 0.62) 54%,
+      rgba(6, 6, 6, 0.22) 68%,
+      transparent 84%
+    );
+    pointer-events: none;
   }
   .div {
+    position: relative;
+    z-index: 2;
+    width: 100%;
     max-width: none;
-    padding: 96px 0 48px;
-    gap: 14px;
+    padding: 88px 0 16px;
+    gap: 12px;
+    flex: 0 0 auto;
+    align-items: flex-start;
+    box-sizing: border-box;
   }
   .leadingPreEngineeredWarehou {
-    font-size: 28px;
-    line-height: 1.25;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 100%;
+    max-width: 342px;
   }
   .titleLine,
   .subLine,
   .descLine {
     white-space: normal;
+    line-height: 100%;
   }
   .logisticsIndustrialStructuWrapper {
-    font-size: 18px;
+    font-size: 15px;
+    height: auto;
     width: 100%;
   }
   .logisticsIndustrialStructuWrapper::before {
     width: 4px;
   }
   .logisticsIndustrial {
-    padding: 10px 14px 10px 18px;
+    position: relative;
+    top: auto;
+    left: auto;
+    width: auto;
+    padding: 8px 12px 8px 16px;
     line-height: 1.35;
   }
   .mekarkIsATrustedPreEngineWrapper {
-    font-size: 14px;
+    width: 342px;
+    max-width: 342px;
+    font-family: Manrope, var(--font-manrope), sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: normal;
+    color: #f3f3f3;
+    height: auto;
   }
   .mekarkIsA {
-    line-height: 22px;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: normal;
+    color: inherit;
+    display: block;
+    position: relative;
+    width: 342px;
+    max-width: 342px;
   }
   .component5 {
-    padding: 14px 20px;
-    min-height: 48px;
-    font-size: 15px;
+    width: auto;
+    max-width: 300px;
+    align-self: flex-start;
+    margin-top: 4px;
+    margin-left: 0;
+    margin-right: auto;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    gap: 7.1px;
+    font-size: 14px;
+    font-family: Manrope, var(--font-manrope), sans-serif;
+    font-weight: 600;
+    border-radius: 5.65px;
+    box-shadow: 0px 5.652px 22.61px rgba(196, 22, 28, 0.3);
+    min-height: auto;
+    justify-content: center;
   }
   .text {
-    line-height: 22px;
+    position: relative;
+    font-size: 14px;
+    line-height: 16.96px;
+    font-weight: 600;
+    font-family: Manrope, var(--font-manrope), sans-serif;
+    color: #fff;
+    white-space: nowrap;
+    text-align: left;
+  }
+  .component4 {
+    width: 18px;
+    height: 18px;
+  }
+  .vectorIcon {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    height: 100%;
   }
 }

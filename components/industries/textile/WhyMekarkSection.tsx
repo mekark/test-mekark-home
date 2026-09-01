@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { IndustryMobileCtaBanner } from "@/components/industries/shared/IndustryMobileCtaBanner";
+import { logisticsCtaWorkerAssets } from "@/components/industries/shared/logisticsCtaWorkerAssets";
 
 const features = [
   {
@@ -56,12 +58,33 @@ export default function WhyMekarkSection() {
   return (
     <section id="why-mekark" className="relative w-full overflow-hidden bg-[#F6F6F6] text-black">
       <div className="mx-auto w-full max-w-[1920px] px-5 pt-10 sm:px-10 lg:px-20 lg:pt-[40px]">
+        <div className="lg:hidden">
+          <IndustryMobileCtaBanner
+            title={
+              <>
+                Planning a Spinning Mill or Garment Factory? Your Project Slot
+                Won&apos;t Stay Open Long.
+              </>
+            }
+            subtitle={
+              <>
+                Mekark&apos;s project calendar fills up fast. Textile manufacturers
+                who book a site consultation now lock in priority scheduling,
+                current steel pricing, and our fastest delivery timeline.
+              </>
+            }
+            buttonText="Book My Free Consultation"
+            workerAlt="Mekark warehouse construction expert"
+            assets={logisticsCtaWorkerAssets}
+          />
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative flex min-h-[220px] flex-col gap-6 rounded-[24px] bg-[linear-gradient(123.5deg,#F01C22_6.54%,#8B0C11_108.89%)] px-5 py-8 sm:px-8 lg:h-[295px] lg:flex-row lg:items-center lg:gap-8 lg:rounded-[40px] lg:px-0 lg:py-0"
+          className="relative hidden min-h-[220px] flex-col gap-6 rounded-[24px] bg-[linear-gradient(123.5deg,#F01C22_6.54%,#8B0C11_108.89%)] px-5 py-8 sm:px-8 lg:flex lg:h-[295px] lg:flex-row lg:items-center lg:gap-8 lg:rounded-[40px] lg:px-0 lg:py-0"
         >
           <div
             aria-hidden

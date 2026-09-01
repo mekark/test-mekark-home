@@ -92,7 +92,6 @@ const Process: NextPage = () => {
               <span className={styles.mobileStepNumber}>{step.number}</span>
             </div>
             <article className={styles.mobileStepCard}>
-              <span className={styles.mobileStepLabel}>Step {step.number}</span>
               <h3 className={styles.mobileStepTitle}>{step.title}</h3>
               <p className={styles.mobileStepDescription}>{step.description}</p>
             </article>

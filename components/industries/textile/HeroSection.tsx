@@ -3,29 +3,58 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import {
+  industryHeroMobileBgWrapperClass,
+  industryHeroMobileButtonClass,
+  industryHeroMobileButtonTextClass,
+  industryHeroMobileContentPadClass,
+  industryHeroMobileContentWrapperClass,
+  industryHeroMobileDescriptionClass,
+  industryHeroMobileGradientStyle,
+  industryHeroMobileImageClass,
+  industryHeroMobileSectionClass,
+  industryHeroMobileStackClass,
+  industryHeroMobileTitleClass,
+} from "@/components/industries/shared/industryHeroMobile";
 
 export default function HeroSection() {
   return (
-    <section className="relative flex min-h-[640px] max-md:min-h-svh items-center overflow-hidden lg:min-h-[900px]">
-      <div className="absolute inset-0 z-0">
+    <section
+      className={`relative flex min-h-[640px] items-start overflow-hidden md:items-center lg:min-h-[900px] ${industryHeroMobileSectionClass}`}
+    >
+      <div
+        className={`absolute inset-0 z-0 overflow-hidden ${industryHeroMobileBgWrapperClass}`}
+      >
         <Image
           src="/images/industries/textile/hero/herobg.png"
           alt="Textile mill interior with yarn spinning machinery"
           sizes="100vw"
           fill
           priority
-          className="object-cover object-right"
+          className={`object-cover object-right ${industryHeroMobileImageClass}`}
         />
-        <div className="absolute inset-0 bg-textile-hero-glow" />
       </div>
+      <div
+        className="absolute inset-0 z-[1] md:hidden"
+        style={industryHeroMobileGradientStyle}
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0 z-[1] hidden bg-textile-hero-glow md:block"
+        aria-hidden
+      />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1920px] px-5 py-16 sm:px-10 lg:px-20 lg:py-0">
-        <div className="flex max-w-[1192px] flex-col items-start gap-[22px]">
+      <div
+        className={`relative z-10 mx-auto w-full max-w-[1920px] px-5 py-16 sm:px-10 lg:px-20 lg:py-0 ${industryHeroMobileContentPadClass} ${industryHeroMobileContentWrapperClass}`}
+      >
+        <div
+          className={`flex max-w-[1192px] flex-col items-start gap-[22px] sm:gap-[22px] ${industryHeroMobileStackClass}`}
+        >
           <motion.h1
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="font-[family-name:var(--font-manrope)] text-[32px] font-bold text-white sm:text-5xl lg:text-[60px] lg:leading-normal"
+            className={`max-w-[342px] font-[family-name:var(--font-manrope)] text-[25px] font-bold leading-[100%] text-white sm:max-w-none sm:text-5xl sm:leading-normal lg:text-[60px] ${industryHeroMobileTitleClass}`}
           >
             Leading Textile Mill & Factory Building Contractor in South India
           </motion.h1>
@@ -34,12 +63,12 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="max-w-[1090px] font-[family-name:var(--font-manrope)] text-base font-normal text-[#F3F3F3] sm:text-lg lg:text-2xl lg:leading-[33.333px]"
+            className={`max-w-[342px] font-[family-name:var(--font-manrope)] text-[#F3F3F3] sm:max-w-[1090px] sm:text-lg sm:leading-[33.333px] lg:text-2xl ${industryHeroMobileDescriptionClass}`}
           >
             Mekark is South India&apos;s trusted textile factory building
             contractor, constructing spinning mills, weaving sheds, garment
             factories, and dyeing & processing plants with ISO-certified PEB
-            and civil construction, backed by x+ years of experience and x+
+            and civil construction, backed by 12+ years of experience and 200+
             delivered projects.
           </motion.p>
 
@@ -50,15 +79,17 @@ export default function HeroSection() {
           >
             <Link
               href="/#enquiry"
-              className="inline-flex items-center justify-center gap-[13.333px] rounded-lg bg-firebrick px-8 py-4 text-base font-extrabold text-[#F8F5F2] shadow-[0px_10.667px_21.333px_rgba(196,22,28,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-mekark-red hover:shadow-[0px_10.667px_28px_rgba(196,22,28,0.5)] active:translate-y-0 sm:text-xl lg:px-16 lg:py-[29.333px] lg:text-[32px]"
+              className={`inline-flex items-center justify-center gap-[7.1px] rounded-[5.65px] bg-firebrick px-5 py-2.5 shadow-[0px_5.652px_22.61px_rgba(196,22,28,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-mekark-red hover:shadow-[0px_10.667px_28px_rgba(196,22,28,0.5)] active:translate-y-0 sm:w-fit sm:gap-[13.333px] sm:rounded-[8px] sm:px-8 sm:py-4 sm:shadow-[0px_10.667px_21.333px_rgba(196,22,28,0.3)] lg:px-16 lg:py-[29.333px] lg:text-[32px] sm:text-xl ${industryHeroMobileButtonClass}`}
             >
-              Request Free Quote
-              <span className="relative size-5 shrink-0 overflow-hidden lg:size-6">
+              <span className={industryHeroMobileButtonTextClass}>
+                Request Free Quote
+              </span>
+              <span className="relative shrink-0 overflow-hidden max-md:h-3 max-md:w-3 sm:size-5 lg:size-6">
                 <Image
                   src="/images/industries/textile/hero/arrow.svg"
                   alt=""
-                  width={24}
-                  height={24}
+                  width={12}
+                  height={12}
                   className="size-full"
                 />
               </span>

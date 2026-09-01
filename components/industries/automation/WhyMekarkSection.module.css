@@ -123,31 +123,44 @@
 
 .sectionItem {
   position: absolute;
-  top: 1.97917vw;
-  left: 8.02083vw;
+  top: 3.4775vw;
+  left: 8.50166vw;
   border-radius: 50%;
   width: 9.375vw;
   height: 9.375vw;
   flex-shrink: 0;
+  z-index: 1;
 }
 
 .sectionInner {
   position: absolute;
-  top: 2.65625vw;
-  left: 3.02083vw;
+  top: 4.20258vw;
+  left: 3.50166vw;
   width: 16.5104vw;
   height: 11.09375vw;
   flex-shrink: 0;
+  z-index: 2;
+}
+
+.workerVisual {
+  position: absolute;
+  top: -1.45833vw;
+  left: -0.52083vw;
+  width: 26.5vw;
+  height: 18.5vw;
+  flex-shrink: 0;
+  pointer-events: none;
 }
 
 .eotCta1 {
   position: absolute;
-  top: -1.45833vw;
-  left: -0.52083vw;
+  top: 0;
+  left: 0;
   width: 25.5729vw;
   height: 16.8229vw;
   object-fit: cover;
   flex-shrink: 0;
+  z-index: 3;
 }
 
 .featuresArea {
@@ -353,13 +366,6 @@
     overflow: hidden;
   }
 
-  .sectionChild,
-  .sectionItem,
-  .sectionInner,
-  .eotCta1 {
-    display: none;
-  }
-
   .planningAWarehouseOrLogistParent {
     position: relative;
     top: auto;
@@ -559,7 +565,6 @@
   }
 
   .cta2 {
-    width: 100%;
     justify-content: center;
     padding: 14px 16px;
     font-size: 15px;
@@ -611,3 +616,5 @@
     line-height: 22px;
   }
 }
+
+@import "../shared/industryCtaMobileSection.patch.css";

@@ -33,18 +33,11 @@ const PharmaceuticalHeroBanner = () => {
         </div>
         <div className={styles.mekarkIsATrustedPreEngineWrapper}>
           <div className={styles.mekarkIsA}>
-            <span className={styles.descLine}>
-              Mekark builds turnkey pharmaceutical manufacturing plants,
-              cleanroom facilities, API
-            </span>
-            <span className={styles.descLine}>
-              production units, and cold storage infrastructure across Tamil
-              Nadu, Karnataka, Andhra
-            </span>
-            <span className={styles.descLine}>
-              Pradesh, Telangana, and Kerala. Engineered for regulatory
-              compliance and delivered on time.
-            </span>
+            Mekark builds turnkey pharmaceutical manufacturing plants,
+            cleanroom facilities, API production units, and cold storage
+            infrastructure across Tamil Nadu, Karnataka, Andhra Pradesh,
+            Telangana, and Kerala. Engineered for regulatory compliance and
+            delivered on time.
           </div>
         </div>
         <a href="/#enquiry" className={styles.component5}>

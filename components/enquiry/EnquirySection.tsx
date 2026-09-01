@@ -207,6 +207,15 @@ function SelectField({
 
 type SubmitStatus = "idle" | "submitting" | "error";
 
+function scrollToEnquirySection() {
+  requestAnimationFrame(() => {
+    document.getElementById("enquiry")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  });
+}
+
 export function EnquirySection() {
   const router = useRouter();
   const { startNavigation } = useNavigationLoading();
@@ -232,6 +241,19 @@ export function EnquirySection() {
   );
 
   const queryString = searchParams.toString();
+
+  useEffect(() => {
+    const handleHashNavigation = () => {
+      if (window.location.hash === "#enquiry") {
+        scrollToEnquirySection();
+      }
+    };
+
+    handleHashNavigation();
+    window.addEventListener("hashchange", handleHashNavigation);
+
+    return () => window.removeEventListener("hashchange", handleHashNavigation);
+  }, [pathname]);
 
   useEffect(() => {
     const params = new URLSearchParams(queryString);
@@ -261,13 +283,7 @@ export function EnquirySection() {
     }
 
     router.replace(`${pathname}#enquiry`, { scroll: false });
-
-    requestAnimationFrame(() => {
-      document.getElementById("enquiry")?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    });
+    scrollToEnquirySection();
   }, [pathname, router, queryString]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {

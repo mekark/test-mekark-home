@@ -17,7 +17,7 @@ export const solarSolutions = [
     description:
       "Fully independent power supply for remote industrial facilities",
     image: "/images/services/solar/CTA/rectangle-16.png",
-    imageClassName: "object-cover object-[center_20%] scale-110",
+    imageClassName: "object-cover scale-[1.327] object-top",
   },
   {
     title: "Ground-Mounted Solar Power Plants",
@@ -29,7 +29,6 @@ export const solarSolutions = [
     description:
       "Detailed assessment of your current consumption and savings potential",
     image: "/images/services/solar/CTA/commercial-solar-energy-audit.png",
-    imageClassName: "object-cover object-top scale-110",
   },
   {
     title: "Solar and Battery Storage Systems",
@@ -41,7 +40,7 @@ export const solarSolutions = [
     title: "On-Grid Solar with Net Metering",
     description: "Stay connected to the grid and reduce your electricity bill",
     image: "/images/services/solar/CTA/on-grid-net-metering.png",
-    imageClassName: "object-cover object-[center_25%] scale-110",
+    imageClassName: "object-cover scale-[1.28] object-top",
   },
 ] as const;
 
@@ -153,16 +152,14 @@ export default function SolarSolutionsSection() {
                 </div>
               </div>
               <div className={styles.rectangleParent5}>
-                <div className={styles.rectangleImageWrap}>
-                  <Image
-                    className={styles.rectangleIconAudit}
-                    width={473}
-                    height={277}
-                    sizes="100vw"
-                    src="/images/services/solar/CTA/commercial-solar-energy-audit.png"
-                    alt="Commercial solar energy audit"
-                  />
-                </div>
+                <Image
+                  className={styles.rectangleIcon}
+                  width={473}
+                  height={277}
+                  sizes="100vw"
+                  src="/images/services/solar/CTA/commercial-solar-energy-audit.png"
+                  alt="Commercial solar energy audit"
+                />
                 <div className={styles.rooftopSolarForFactoriesAnParent}>
                   <div className={styles.rooftopSolarFor}>
                     Commercial Solar Energy Audit

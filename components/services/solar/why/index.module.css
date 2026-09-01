@@ -171,6 +171,12 @@
 .weHandleDesign {
 	align-self: stretch;
 	position: relative;
+	font-family: var(--font-montserrat), Montserrat, sans-serif;
+	font-size: 16px;
+	line-height: 25.33px;
+	font-weight: 400;
+	color: #555;
+	text-align: left;
 }
 .div3 {
 	align-self: stretch;
@@ -316,6 +322,12 @@
 	position: relative;
 	display: flex;
 	align-items: center;
+	font-family: var(--font-montserrat), Montserrat, sans-serif;
+	font-size: 16px;
+	line-height: 25.33px;
+	font-weight: 400;
+	color: #555;
+	text-align: left;
 }
 .marginalignStretch5 {
 	height: 4.7917vw;
@@ -539,6 +551,8 @@
 	.weHandleDesign,
 	.xEngineersDesign {
 		width: 100%;
+		font-size: 14px;
+		line-height: 22px;
 	}
 	.image25Parent {
 		position: relative;

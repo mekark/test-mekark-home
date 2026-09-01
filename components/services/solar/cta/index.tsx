@@ -27,8 +27,8 @@ const Cta: NextPage = () => {
 								Get a free consultation and system estimate from
 								<br /> Mekark&apos;s commercial solar engineering team.
 							</p>
-							<a href="/#enquiry" className={`mt-8 ${styles.cta}`}>
-								<b className={styles.requestAFree}>Request a Free Quote</b>
+							<a href="/#enquiry" className={`mt-6 ${styles.cta}`}>
+								<span className={styles.requestAFree}>Request a Free Quote</span>
 								<div className={styles.component4}>
 									<Image className={styles.vectorIcon} width={12} height={9} sizes="100vw" src="/images/services/solar/CTA/component-4.svg" alt="" />
 								</div>

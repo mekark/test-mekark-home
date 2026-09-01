@@ -21,7 +21,7 @@ const stagger = {
 
 const paragraphs = [
   {
-    text: "Mekark is a leading pre-engineered building (PEB) contractor and manufacturer in Chennai, delivering high-performance steel structures for industrial, commercial, and institutional projects.",
+    text: "Mekark is a leading pre-engineered building (PEB) service provider and manufacturer in Chennai, delivering high-performance steel structures for industrial, commercial, and institutional projects across Tamil Nadu, Andhra Pradesh, Karnataka, Kerala, and Telangana.",
     maxWidth: "max-w-[641px]",
   },
   {

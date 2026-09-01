@@ -1,6 +1,7 @@
 "use client";
 
 import CountUp from "@/components/services/peb/CountUp";
+import ServiceMobileHero from "@/components/services/ServiceMobileHero";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -19,20 +20,25 @@ const fadeUp = {
 const formatWithCommas = (value: number) =>
   value.toLocaleString("en-US");
 
+const heroDescription =
+  "From design to fabrication to installation, Mekark delivers turnkey industrial construction solutions for factories, warehouses, and commercial buildings, backed by 18+ years and Tamil Nadu's highest-capacity manufacturing facility.";
+
 type Stat = {
   label: string;
+  mobileLabel: string;
   value: ReactNode;
 };
 
-const stats: Stat[] = [
+const mobileStats: Stat[] = [
   {
     label: "Years Experience",
+    mobileLabel: "Years Experience",
     value: (
       <CountUp end={18} delay={0.65}>
         {(n) => (
           <>
-            <span className="text-white">{n}</span>
-            <span className="text-[#eb1a20]">+</span>
+            {n}
+            <span className="text-[#ed2024]">+</span>
           </>
         )}
       </CountUp>
@@ -40,12 +46,12 @@ const stats: Stat[] = [
   },
   {
     label: "Production Capacity",
+    mobileLabel: "Production Capacity",
     value: (
       <CountUp end={40000} delay={0.75} format={formatWithCommas}>
         {(n) => (
           <>
-            <span className="text-[#f9f9f9]">{n} </span>
-            <span className="text-[#eb1a20]">Tons</span>
+            {n} <span className="text-[#ed2024]">Tons</span>
           </>
         )}
       </CountUp>
@@ -53,12 +59,12 @@ const stats: Stat[] = [
   },
   {
     label: "Manufacturing Campus",
+    mobileLabel: "Manufacturing Campus",
     value: (
       <CountUp end={70} delay={0.85}>
         {(n) => (
           <>
-            <span className="text-white">{n} Lakhs </span>
-            <span className="text-[#e9000e]">+ Sq.ft.</span>
+            {n} Lakhs <span className="text-[#ed2024]">+ Sq.ft.</span>
           </>
         )}
       </CountUp>
@@ -66,19 +72,55 @@ const stats: Stat[] = [
   },
   {
     label: "Engineers",
+    mobileLabel: "Engineers",
     value: (
       <>
-        <span className="text-white">175</span>
-        <span className="text-[#e9000e]">+ In-House</span>
+        175 <span className="text-[#ed2024]">+ In-House</span>
       </>
     ),
   },
 ];
 
-export default function Hero() {
+const desktopStats: Stat[] = mobileStats;
+
+function MobileHero() {
   return (
-    <section className="relative min-h-svh w-full overflow-hidden bg-[#060606] font-[family-name:var(--font-manrope)] lg:h-[115dvh] lg:min-h-0">
-      {/* Background image stack */}
+    <ServiceMobileHero
+      title={
+        <>
+          South India&apos;s Leading
+          <br />
+          Pre-Engineered Building (PEB) Contractor &amp; Manufacturer
+        </>
+      }
+      description={heroDescription}
+      heroImage={{
+        src: "/images/services/peb/hero/layer.png",
+        alt: "Mekark pre-engineered building manufacturing facility",
+        objectPosition: "center center",
+      }}
+      arrowIcon="/images/services/peb/hero/arrow.svg"
+      stats={mobileStats.map((stat) => ({
+        key: stat.label,
+        value: stat.value,
+        mobileLabel: stat.mobileLabel,
+      }))}
+      certification={
+        <>
+          <span className="text-white">ISO 9001:2015 </span>
+          <span className="text-[#ed2024]">&amp;</span>
+          <span className="text-white"> </span>
+          <span className="text-[#18a34a]">Green </span>
+          <span className="text-[#ed2024]">Certified</span>
+        </>
+      }
+    />
+  );
+}
+
+function DesktopHero() {
+  return (
+    <section className="relative hidden min-h-0 w-full overflow-hidden bg-[#060606] font-[family-name:var(--font-manrope)] md:block md:h-[115dvh]">
       <div className="absolute inset-0">
         <div className="absolute left-[-8%] top-[-1%] h-[110%] w-[110%]">
           <Image
@@ -109,34 +151,33 @@ export default function Hero() {
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[33%] bg-gradient-to-b from-transparent to-[#1e1e1e]" />
       </div>
 
-      {/* Text + CTAs */}
-      <div className="relative z-10 mx-auto flex h-full w-full max-w-[1440px] flex-col items-center px-5 pt-24 pb-44 text-center sm:px-8 sm:pt-28 sm:pb-48 md:pb-40 lg:pt-32">
+      <div className="relative z-10 mx-auto flex h-full w-full max-w-[1440px] flex-col items-center px-8 pt-32 pb-40 text-center">
         <motion.h1
-          className="w-full max-w-[1100px] text-center text-[clamp(1.75rem,6.5vw,3rem)] font-bold leading-[1.15] text-[#111111] sm:text-[clamp(2rem,4.5vw,3rem)] sm:leading-[1.17]"
+          className="w-full max-w-[1100px] text-center font-manrope text-[48px] font-bold leading-[56px] tracking-[-1.92px] text-[#111111]"
           variants={fadeUp}
           initial="hidden"
           animate="visible"
           custom={0.1}
         >
-          Tamil Nadu&apos;s Leading Pre-Engineered Building (PEB) Contractor
-          &amp; Manufacturer
+          South India&apos;s Leading
+          <br />
+          <span className="whitespace-nowrap">
+            Pre-Engineered Building (PEB) Contractor &amp; Manufacturer
+          </span>
         </motion.h1>
 
         <motion.p
-          className={`mt-4 w-full max-w-[38rem] text-center text-[rgba(5,7,12,0.5)] sm:mt-[15px] sm:max-w-[1100px] ${SERVICE_BODY_TEXT_SIZES}`}
+          className={`mt-[15px] w-full max-w-[1100px] text-center text-[rgba(5,7,12,0.5)] ${SERVICE_BODY_TEXT_SIZES}`}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
           custom={0.3}
         >
-          From design to fabrication to installation, Mekark delivers turnkey
-          industrial construction solutions for factories, warehouses, and
-          commercial buildings, backed by 18+ years and Tamil Nadu&apos;s
-          highest-capacity manufacturing facility.
+          {heroDescription}
         </motion.p>
 
         <motion.div
-          className="mt-5 flex w-full max-w-sm flex-col items-stretch justify-center gap-3 sm:mt-[15px] sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:gap-4"
+          className="mt-[15px] flex flex-wrap items-center justify-center gap-4"
           variants={fadeUp}
           initial="hidden"
           animate="visible"
@@ -168,9 +209,8 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Stats bar */}
       <motion.div
-        className="absolute inset-x-0 bottom-4 z-10 grid grid-cols-2 gap-x-3 gap-y-4 px-4 min-[390px]:gap-x-4 sm:bottom-6 sm:gap-x-6 sm:gap-y-5 md:bottom-[50px] md:flex md:flex-wrap md:items-center md:justify-center md:gap-x-[50px]"
+        className="absolute inset-x-0 bottom-[50px] z-10 flex flex-wrap items-center justify-center gap-x-[50px] gap-y-5 px-8"
         initial="hidden"
         animate="visible"
         variants={{
@@ -180,10 +220,10 @@ export default function Hero() {
           },
         }}
       >
-        {stats.map((stat) => (
+        {desktopStats.map((stat) => (
           <motion.div
             key={stat.label}
-            className="flex min-w-0 flex-col items-start gap-1 px-0 sm:min-w-[90px] sm:px-2.5"
+            className="flex min-w-[90px] flex-col items-start gap-1 px-2.5"
             variants={{
               hidden: { opacity: 0, y: 12 },
               visible: {
@@ -193,17 +233,17 @@ export default function Hero() {
               },
             }}
           >
-            <p className="w-full text-[clamp(1rem,4.4vw,1.125rem)] font-extrabold leading-[1.2] tracking-[-0.04em] sm:text-[18px] md:text-[20px]">
+            <p className="w-full text-[20px] font-extrabold leading-[1.2] tracking-[-0.04em]">
               {stat.value}
             </p>
-            <p className="mt-0.5 w-full text-[clamp(0.5625rem,2.7vw,0.625rem)] font-semibold capitalize leading-[1.35] tracking-[0.04em] text-white/70 sm:text-[9px] sm:tracking-[1.2px]">
+            <p className="mt-0.5 w-full text-[9px] font-semibold capitalize leading-[1.35] tracking-[1.2px] text-white/70">
               {stat.label}
             </p>
           </motion.div>
         ))}
 
         <motion.div
-          className="col-span-2 flex min-w-0 max-w-none flex-col items-start border-t border-white/15 px-0 pt-4 mt-1 sm:col-span-1 sm:mt-0 sm:border-0 sm:pt-0 sm:px-2.5"
+          className="flex min-w-0 flex-col items-start px-2.5"
           variants={{
             hidden: { opacity: 0, y: 12 },
             visible: {
@@ -213,7 +253,7 @@ export default function Hero() {
             },
           }}
         >
-          <p className="w-full text-[clamp(1rem,4.4vw,1.125rem)] font-extrabold leading-[1.2] tracking-[-0.03em] sm:text-[16px] md:text-[20px]">
+          <p className="w-full text-[20px] font-extrabold leading-[1.2] tracking-[-0.03em]">
             <span className="text-white">ISO 9001:2015 </span>
             <span className="text-[#eb1a20]">&amp; </span>
             <span className="text-[#04b330]">Green </span>
@@ -222,5 +262,14 @@ export default function Hero() {
         </motion.div>
       </motion.div>
     </section>
+  );
+}
+
+export default function Hero() {
+  return (
+    <>
+      <MobileHero />
+      <DesktopHero />
+    </>
   );
 }

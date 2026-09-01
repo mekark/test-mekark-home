@@ -4,8 +4,9 @@ export default function ReadyToBuild() {
   return (
     <ServiceFooterCta
       id="contact"
+      compactCopy
       title="Ready to Build Faster, Smarter, Better"
-      subtitle="Talk to Mekark's structural engineering team today for a free consultation and project quote."
+      subtitle="Talk to Mekark's Multi-Storey Building expert today."
     />
   );
 }

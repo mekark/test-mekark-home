@@ -55,7 +55,7 @@ const faqs = [
   {
     question: "Do you serve locations outside Chennai?",
     answer:
-      "Yes, Mekark delivers projects across Tamil Nadu and South India.",
+      "Yes. While Mekark is headquartered in Chennai, we serve clients across Tamil Nadu, Andhra Pradesh, Karnataka, Kerala, and Telangana, with completed and ongoing multi-storey building projects in Coimbatore, Hosur, Sriperumbudur, Oragadam, Bangalore, Hyderabad, Vizag, Vijayawada, and Kochi. As a South India-focused multi-storey building construction company, our in-house structural design team and manufacturing capabilities allow us to execute multi-level industrial, commercial, and institutional structures across the region, and select projects pan-India with the same quality and turnaround standards.",
   },
 ] as const;
 
@@ -190,7 +190,7 @@ export default function FAQ() {
           viewport={{ once: true }}
           transition={{ duration: 0.55, ease: easeOut }}
         >
-          Frequently Asked Questions About Multi-Storey Building Construction
+          Frequently Asked Questions About Multi-Storey 
         </motion.h2>
 
         <div className="grid w-full grid-cols-1 gap-[13px] lg:grid-cols-2 lg:gap-10">

@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   aboutBadgeDot,
   aboutBadgeReveal,
@@ -14,64 +13,58 @@ import {
 } from "@/lib/motion-variants";
 import { SECTION_CONTAINER_CLASS } from "@/lib/sectionLayout";
 
-const BLOG_URL = "https://blog.mekark.com/";
+const BLOG_BASE_URL = "https://blog.mekark.com";
 
 const VIEWPORT = { once: true, margin: "-80px" as const };
 
-/** First row + peek of second row (matches Figma fade) */
-const COLLAPSED_HEIGHT_CLASS =
-  "max-h-[640px] sm:max-h-[520px] lg:max-h-[400px]";
-
 const BLOG_POSTS = [
   {
-    badge: "Tutorial",
-    category: "Tutorials",
-    title: ["Getting Started with Mekark Edge Nodes", "in Under 10 Minutes"],
+    href: `${BLOG_BASE_URL}/blog/peb-vs-conventional-construction-in-chennai-which-is-right-for-your-industrial-project`,
+    badge: "PEB",
+    category: "PEB",
+    title:
+      "PEB vs Conventional Construction in Chennai: Which Is Right for Your Industrial Project?",
     excerpt:
-      "A step-by-step walkthrough to deploy your first edge node, configure health checks, and route traffic…",
-    image: "/images/blogs/edge-nodes.png",
+      "The choice of construction methodology can be the difference between success and failure when it comes to meeting deadlines and budget requirements. For the factory owners, warehouse developers and industrial planning professionals in Chennai and elsewhere in Tamil Nadu, the PEB vs. conventional construction dilemma is basically about two choices: PEB or traditional brick and…",
+    image: "https://cms.mekark.com/wp-content/uploads/2026/08/HERO.png",
+    author: "admin",
+    readTime: "7m",
   },
   {
-    badge: "Case Study",
-    category: "Case Studies",
-    title: ["How Veltro Bank Scaled to 2M", "Transactions/sec with Mekark"],
+    href: `${BLOG_BASE_URL}/blog/how-peb-structures-reduce-construction-time-by-50`,
+    badge: "PEB",
+    category: "PEB",
+    title: "What is a Pre-Engineered Building (PEB)?",
     excerpt:
-      "Veltro Bank's engineering team shares how they replaced legacy middleware with Mekark pipelines —…",
-    image: "/images/blogs/veltro-bank.png",
-  },
-  {
-    badge: "Engineering",
-    category: "Engineering",
-    title: ["Inside Mekark's New Orchestration", "Engine: A Technical Deep Dive"],
-    excerpt:
-      "The orchestration engine rewrite replaced a monolithic scheduler with a distributed DAG runner.…",
-    image: "/images/blogs/orchestration-engine.png",
-  },
-  {
-    badge: "Tutorial",
-    category: "Tutorials",
-    title: ["Getting Started with Mekark Edge Nodes", "in Under 10 Minutes"],
-    excerpt:
-      "A step-by-step walkthrough to deploy your first edge node, configure health checks, and route traffic…",
-    image: "/images/blogs/edge-nodes.png",
-  },
-  {
-    badge: "Case Study",
-    category: "Case Studies",
-    title: ["How Veltro Bank Scaled to 2M", "Transactions/sec with Mekark"],
-    excerpt:
-      "Veltro Bank's engineering team shares how they replaced legacy middleware with Mekark pipelines —…",
-    image: "/images/blogs/veltro-bank.png",
-  },
-  {
-    badge: "Engineering",
-    category: "Engineering",
-    title: ["Inside Mekark's New Orchestration", "Engine: A Technical Deep Dive"],
-    excerpt:
-      "The orchestration engine rewrite replaced a monolithic scheduler with a distributed DAG runner.…",
-    image: "/images/blogs/orchestration-engine.png",
+      "Introduction If you are planning to set up a warehouse, factory, or industrial shed, you have likely heard the term Pre-Engineered Building (PEB). We, as a well-known PEB company of India, have noticed a rising trend among industries that are opting for PEB construction due to its rapidity, cost-effectiveness, and scalability. In case you wish…",
+    image: "https://cms.mekark.com/wp-content/uploads/2026/06/Banner.jpg.jpeg",
+    author: "admin",
+    readTime: "5m",
   },
 ] as const;
+
+function ReadTimeIcon() {
+  return (
+    <svg viewBox="0 0 16 16" aria-hidden="true" className="h-3 w-3">
+      <circle
+        cx="8"
+        cy="8"
+        r="5.5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.3"
+      />
+      <path
+        d="M8 4.8V8l2.2 1.3"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.3"
+      />
+    </svg>
+  );
+}
 
 function BlogCard({
   post,
@@ -82,7 +75,7 @@ function BlogCard({
 }) {
   return (
     <motion.a
-      href={BLOG_URL}
+      href={post.href}
       target="_blank"
       rel="noopener noreferrer"
       variants={blogCardReveal(index)}
@@ -92,41 +85,50 @@ function BlogCard({
       }}
       className="flex flex-col overflow-hidden rounded-[24px] border border-black/[0.08] bg-white shadow-[4px_4px_9px_0px_rgba(0,0,0,0.05)]"
     >
-      <div className="relative h-[167px] w-full shrink-0 bg-[#f3f4f6]">
+      <div className="relative h-[192px] w-full shrink-0 bg-[#f3f4f6]">
         <Image
           src={post.image}
           alt=""
           fill
           className="object-cover"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 343px"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 520px"
         />
         <span className="absolute left-2.5 top-2.5 rounded-full border border-[#ed2024]/20 bg-white/90 px-2.5 py-1 text-[10px] font-bold leading-[14px] text-[#ed2024] backdrop-blur-[3px]">
           {post.badge}
         </span>
       </div>
 
-      <div className="flex flex-col p-5">
+      <div className="flex flex-1 flex-col p-5">
         <span className="text-[10px] font-bold uppercase tracking-[0.95px] text-[#ed2024]">
           {post.category}
         </span>
         <h3 className="mt-2 text-[15px] font-bold leading-5 text-[#1a1a1a]">
-          {post.title.map((line) => (
-            <span key={line} className="block">
-              {line}
-            </span>
-          ))}
+          {post.title}
         </h3>
         <p className="mt-2 line-clamp-2 text-xs leading-5 text-[#6a6a6a]">
           {post.excerpt}
         </p>
+
+        <div className="mt-4 flex items-center justify-between border-t border-black/10 pt-3">
+          <div className="flex items-center gap-2">
+            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#fef2f2] text-[11px] font-bold text-[#ed2024]">
+              {post.author.charAt(0)}
+            </span>
+            <span className="text-xs font-semibold text-[#6a6a6a]">
+              {post.author}
+            </span>
+          </div>
+          <div className="flex items-center gap-1 text-xs text-[#8a8a8a]">
+            <ReadTimeIcon />
+            {post.readTime}
+          </div>
+        </div>
       </div>
     </motion.a>
   );
 }
 
 export function MekarkBlogsSection() {
-  const [expanded, setExpanded] = useState(false);
-
   return (
     <section className="w-full bg-[#ececec]">
       <motion.div
@@ -166,54 +168,12 @@ export function MekarkBlogsSection() {
         </motion.div>
 
         <motion.div
-          variants={blogHeadlineReveal}
-          className="relative mt-8 lg:mt-[30px]"
+          variants={blogGridStagger}
+          className="mt-8 grid grid-cols-1 gap-[30px] sm:grid-cols-2 sm:gap-x-8 lg:mt-[30px] lg:gap-x-[42px] lg:gap-y-[30px]"
         >
-          <div
-            className={`relative transition-[max-height] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-              expanded ? "max-h-none" : `overflow-hidden ${COLLAPSED_HEIGHT_CLASS}`
-            }`}
-          >
-            <motion.div
-              variants={blogGridStagger}
-              className="grid grid-cols-1 gap-[30px] sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-3 lg:gap-x-[42px] lg:gap-y-[30px]"
-            >
-              {BLOG_POSTS.map((post, index) => (
-                <BlogCard key={`${post.category}-${index}`} post={post} index={index} />
-              ))}
-            </motion.div>
-          </div>
-
-          <AnimatePresence>
-            {!expanded && (
-              <>
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.35 }}
-                  className="pointer-events-none absolute inset-x-0 bottom-0 h-[294px] bg-gradient-to-b from-transparent via-[#ececec]/80 via-[68%] to-[#ececec]"
-                  aria-hidden
-                />
-
-                <motion.div
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 8 }}
-                  transition={{ duration: 0.35 }}
-                  className="absolute inset-x-0 bottom-[70px] flex justify-center"
-                >
-                  <button
-                    type="button"
-                    onClick={() => setExpanded(true)}
-                    className="min-h-11 rounded-[9px] bg-[#ed1c24] px-6 py-3 text-sm font-bold text-white shadow-[0px_9px_13px_-3px_rgba(237,28,36,0.2),0px_3px_5px_-3px_rgba(237,28,36,0.2)] transition-transform hover:scale-[1.02] active:scale-[0.98]"
-                  >
-                    Show More
-                  </button>
-                </motion.div>
-              </>
-            )}
-          </AnimatePresence>
+          {BLOG_POSTS.map((post, index) => (
+            <BlogCard key={post.href} post={post} index={index} />
+          ))}
         </motion.div>
       </motion.div>
     </section>

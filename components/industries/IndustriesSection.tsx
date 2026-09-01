@@ -91,7 +91,9 @@ const INDUSTRIES = [
     title: "Hospitals",
     description:
       "Precision infrastructure for critical healthcare operations.",
-    image: "/images/industries/11-hospitals-v3.jpg",
+    image: "/images/industries/11-hospitals-v3.png",
+    imageClassName:
+      "object-cover scale-[1.25] object-[36%_24%]",
   },
   {
     number: "12",
@@ -124,6 +126,11 @@ function IndustryCard({
 }: {
   card: (typeof INDUSTRIES)[number];
 }) {
+  const imageClassName =
+    "imageClassName" in card && card.imageClassName
+      ? card.imageClassName
+      : "object-cover";
+
   return (
     <motion.article
       variants={scaleIn}
@@ -143,7 +150,7 @@ function IndustryCard({
           src={card.image}
           alt={card.title}
           fill
-          className="object-cover"
+          className={imageClassName}
           sizes="(max-width: 640px) 50vw, (max-width: 1280px) 50vw, 399px"
         />
         <div className="absolute left-0 top-0 overflow-hidden rounded-br-xl bg-[#ed2024] px-3 py-1.5 sm:rounded-br-[19px] sm:px-6 sm:py-4">

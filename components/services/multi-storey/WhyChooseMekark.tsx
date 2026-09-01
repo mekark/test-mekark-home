@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { SERVICE_BODY_TEXT_CLASS } from "@/components/services/serviceTypography";
+import { SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS } from "@/components/services/serviceTypography";
 
 const leftItems = [
   {
@@ -76,7 +76,7 @@ function FeatureItem({
         <b className="block font-montserrat text-[18.67px] leading-[24px] font-bold text-darkslategray">
           {title}
         </b>
-        <p className={`mt-[10px] ${SERVICE_BODY_TEXT_CLASS}`}>
+        <p className={`mt-[10px] ${SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS}`}>
           {body}
         </p>
       </div>
@@ -118,7 +118,7 @@ function MobileFeature({
         <h3 className="font-montserrat text-[16px] leading-[22px] font-bold text-darkslategray">
           {title.replace(/:$/, "")}
         </h3>
-        <p className={`mt-1.5 ${SERVICE_BODY_TEXT_CLASS}`}>
+        <p className={`mt-1.5 ${SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS}`}>
           {body}
         </p>
       </div>

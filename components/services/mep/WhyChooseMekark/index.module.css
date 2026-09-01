@@ -54,7 +54,6 @@
 	margin-top: 0;
 }
 
-/* Desktop: Figma 1488 frame with overlapping center image */
 .content {
 	position: relative;
 	z-index: 1;
@@ -87,7 +86,6 @@
 	display: none;
 }
 
-/* Number | divider | text — Figma: num ~101px, divider 27px, text ~328px → 4 lines */
 .feature {
 	display: grid;
 	grid-template-columns: auto clamp(10px, 1vw, 14px) minmax(0, 1fr);
@@ -183,7 +181,6 @@
 	object-fit: contain;
 	object-position: bottom center;
 	transform: translateY(14%);
-	/* transform: translateX(1%); */
 }
 
 @media (max-width: 1200px) {
@@ -256,7 +253,6 @@
 	}
 }
 
-/* Mobile: header → image → features 01–06 */
 @media (max-width: 900px) {
 	.section {
 		padding: 40px var(--section-padding-x-right) 48px var(--section-padding-x);

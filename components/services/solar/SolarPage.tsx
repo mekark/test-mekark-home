@@ -12,9 +12,10 @@ export function SolarPage() {
     <main className="solar-service-page flex flex-1 flex-col overflow-x-hidden bg-white">
       <Hero />
       <EndToEnd />
+      <Why />
+
       <Cta />
       <SolarHowWeDeliver />
-      <Why />
       <TrustedSectorsSection variant="services" />
       <Faq />
       <SolarFooterCta />

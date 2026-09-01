@@ -9,10 +9,9 @@ import {
 } from "@/components/services/serviceTypography";
 
 const paragraphs = [
-  "Mekark is among the premier multi-storey building manufacturers in Chennai, offering fast-track, code-compliant steel structures for industrial, commercial and institutional projects across Tamil Nadu.",
-  "As a turnkey contractor, we manage the full project lifecycle: site assessment, structural design, fabrication, erection, MEP integration, and handover, one accountable partner instead of multiple vendors. Our in-house architects and engineers use BIM-based analysis and PEB technology for a safety-conscious, quality-first approach.",
-  "Whether you need a building for corporate offices, an industrial facility, or a commercial complex, Mekark combines engineering expertise with project management discipline for robust, cost-efficient construction, including structural steel fabrication, space frame construction, and allied civil works.",
-  "Every project starts with a site-specific structural study, so column spacing, floor loading, and wind and seismic factors are accounted for before fabrication begins. We source certified structural steel and work with fabricators who follow strict tolerance standards, keeping erection accurate and reducing rework, letting us scale from a compact two-floor office to a large multi-level facility without compromising integrity or timelines.",
+  "Mekark is among the premier multi-storey building manufacturers in Chennai, offering fast-track, code-compliant steel structures for industrial, commercial, and institutional projects across Tamil Nadu, Andhra Pradesh, Karnataka, Kerala, and Telangana.",
+  "As a leading multi-storey steel structure contractor in South India, we deliver rapid, IS-code compliant multi-level buildings for clients in Chennai, Coimbatore, Bangalore, Hyderabad, Vizag, and Kochi, combining speed of construction with structural durability.",
+  "Whether you need a multi-storey building manufacturer in Tamil Nadu, a multi-storey steel structure company in Chennai, or fast-track multi-level construction across South India, Mekark brings manufacturing scale and in-house engineering precision to deliver builds faster and more efficiently than conventional construction methods.",
 ] as const;
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
@@ -82,7 +81,7 @@ export default function Solutions() {
         </div>
 
         <div className="relative z-10 order-3 px-5 pb-8 pt-6 sm:px-8 sm:pt-8 lg:w-[50%] lg:max-w-[980px] lg:px-0 lg:pb-16 lg:pt-0 lg:pl-[clamp(48px,11.7vw,224px)] lg:pr-4">
-          <div className="flex max-w-[724px] flex-col gap-5 text-left sm:gap-6 lg:gap-[22px]">
+          <div className="flex max-w-[724px] flex-col gap-5 text-left">
             {paragraphs.map((text, index) => (
               <motion.p
                 key={index}

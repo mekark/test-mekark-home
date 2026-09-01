@@ -2,7 +2,6 @@
 
 import type { NextPage } from 'next';
 import Image from "next/image";
-import { SERVICE_BODY_TEXT_CLASS } from "@/components/services/serviceTypography";
 import styles from './index.module.css';
 
 const features = [
@@ -52,7 +51,7 @@ const FeatureItem = ({
 		<span className={styles.featureDivider} aria-hidden />
 		<div className={styles.featureText}>
 			<b className={styles.featureTitle}>{title}</b>
-			<p className={SERVICE_BODY_TEXT_CLASS}>{body}</p>
+			<p className={styles.featureBody}>{body}</p>
 		</div>
 	</div>
 );

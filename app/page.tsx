@@ -31,7 +31,7 @@ export default function Home() {
       <OnePartnerSection />
       {/* <IndustrialInfrastructureSection /> */}
       <PrecisionDrivenEngineeringSection />
-      <ManufacturingFactoriesSection />
+      {/* <ManufacturingFactoriesSection /> */}
       {/* <CompletedProjectsSection /> */}
       <CompletedProjectsListingSection />
       <TrustedSectorsSection />

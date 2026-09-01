@@ -671,6 +671,21 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
+    const desktopNav = window.matchMedia("(min-width: 1024px)");
+
+    const syncMobileNav = (event?: MediaQueryListEvent) => {
+      if (event?.matches ?? desktopNav.matches) {
+        setMobileOpen(false);
+        setMobileExpanded(null);
+      }
+    };
+
+    syncMobileNav();
+    desktopNav.addEventListener("change", syncMobileNav);
+    return () => desktopNav.removeEventListener("change", syncMobileNav);
+  }, []);
+
+  useEffect(() => {
     const shouldLock = mobileOpen || findOpen;
     if (!shouldLock) return;
 
@@ -788,7 +803,7 @@ export function Navbar() {
           </motion.div>
 
           <motion.nav
-            className="ml-auto hidden items-center justify-end gap-0.5 xl:flex"
+            className="ml-auto hidden items-center justify-end gap-0.5 lg:flex"
             aria-label="Main navigation"
             variants={navbarItemsStagger}
             initial="hidden"
@@ -817,7 +832,7 @@ export function Navbar() {
             </motion.div>
           </motion.nav>
 
-          <div className="ml-auto flex items-center gap-2 xl:hidden">
+          <div className="ml-auto flex items-center gap-2 lg:hidden">
             <div className="hidden sm:block">
               <FindSolutionButton
                 open={findOpen}
@@ -857,7 +872,7 @@ export function Navbar() {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="fixed inset-x-0 top-[60px] bottom-0 z-50 overflow-y-auto overscroll-contain border-t border-white/10 bg-[#0a0a0a]/96 backdrop-blur-xl xl:hidden"
+            className="fixed inset-x-0 top-[60px] bottom-0 z-50 overflow-y-auto overscroll-contain border-t border-white/10 bg-[#0a0a0a]/96 backdrop-blur-xl lg:hidden"
             aria-label="Mobile navigation"
           >
             <motion.div

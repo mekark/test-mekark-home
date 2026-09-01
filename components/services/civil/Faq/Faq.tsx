@@ -56,7 +56,7 @@ const faqs = [
   {
     question: "Do you serve locations outside Chennai?",
     answer:
-      "Yes. While we are based in Chennai, we execute civil and RCC construction projects across Tamil Nadu and other parts of India.",
+      "Yes. While Mekark is headquartered in Chennai, we serve clients across Tamil Nadu, Andhra Pradesh, Karnataka, Kerala, and Telangana, with completed and ongoing projects in Coimbatore, Hosur, Sriperumbudur, Oragadam, Bangalore, Hyderabad, Vizag, Vijayawada, and Kochi. As a South India-focused PEB and civil construction company, our manufacturing facility and in-house engineering team allow us to execute industrial, commercial, and institutional projects across the region and select projects pan-India, with the same quality and turnaround standards.",
   },
 ] as const;
 

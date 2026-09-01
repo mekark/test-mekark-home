@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 import Image from "next/image";
-import { SERVICE_BODY_TEXT_CLASS } from "@/components/services/serviceTypography";
 import styles from './index.module.css';
 
 const WhyChooseMekark: NextPage = () => {
@@ -35,7 +34,7 @@ const WhyChooseMekark: NextPage = () => {
 								</div>
 								<div className={styles.turnkeySolarEpcParent}>
 									<b className={styles.turnkeySolarEpc}>Turnkey Solar EPC</b>
-									<div className={`${styles.weHandleDesign} ${SERVICE_BODY_TEXT_CLASS}`}>We handle design, supply, installation, and commissioning one contract, one accountable team, zero vendor coordination.</div>
+									<div className={styles.weHandleDesign}>We handle design, supply, installation, and commissioning one contract, one accountable team, zero vendor coordination.</div>
 								</div>
 							</div>
 							<div className={styles.div3}>
@@ -48,7 +47,7 @@ const WhyChooseMekark: NextPage = () => {
 								<div className={styles.container2}>
 									<div className={styles.southIndiaRegionalExpertiseParent}>
 										<b className={styles.southIndiaRegional}>South India Regional Expertise</b>
-										<div className={`${styles.weHandleDesign} ${SERVICE_BODY_TEXT_CLASS}`}>Active project experience across Tamil Nadu, Chennai, Bangalore, Hyderabad, Karnataka, and Andhra Pradesh.</div>
+										<div className={styles.weHandleDesign}>Active project experience across Tamil Nadu, Chennai, Bangalore, Hyderabad, Karnataka, and Andhra Pradesh.</div>
 									</div>
 								</div>
 							</div>
@@ -62,7 +61,7 @@ const WhyChooseMekark: NextPage = () => {
 								<div className={styles.container3}>
 									<div className={styles.longTermSupportAndAmcParent}>
 										<b className={styles.longTermSupportAnd}>Long-Term Support and AMC</b>
-										<div className={`${styles.weHandleDesign} ${SERVICE_BODY_TEXT_CLASS}`}>We stay with you after commissioning, offering Annual Maintenance Contracts, performance monitoring, and preventive servicing to protect your investment and keep your system running at peak output.</div>
+										<div className={styles.weHandleDesign}>We stay with you after commissioning, offering Annual Maintenance Contracts, performance monitoring, and preventive servicing to protect your investment and keep your system running at peak output.</div>
 									</div>
 								</div>
 							</div>
@@ -80,7 +79,7 @@ const WhyChooseMekark: NextPage = () => {
 								<div className={styles.container5}>
 									<div className={styles.inHouseEngineeringTeamParent}>
 										<b className={styles.longTermSupportAnd}>In-House Engineering Team</b>
-										<div className={`${styles.xEngineersDesign} ${SERVICE_BODY_TEXT_CLASS}`}>{`175+ engineers design every system for structural compatibility, load requirements, and maximum energy output.`}</div>
+										<div className={styles.xEngineersDesign}>{`175+ engineers design every system for structural compatibility, load requirements, and maximum energy output.`}</div>
 									</div>
 								</div>
 							</div>
@@ -94,7 +93,7 @@ const WhyChooseMekark: NextPage = () => {
 								<div className={styles.container6}>
 									<div className={styles.isoCertifiedProcessesParent}>
 										<b className={styles.turnkeySolarEpc}>ISO-Certified Processes</b>
-										<div className={`${styles.weHandleDesign} ${SERVICE_BODY_TEXT_CLASS}`}>Consistent quality, safety compliance, and documentation across every commercial solar project.</div>
+										<div className={styles.weHandleDesign}>Consistent quality, safety compliance, and documentation across every commercial solar project.</div>
 									</div>
 								</div>
 							</div>
@@ -108,7 +107,7 @@ const WhyChooseMekark: NextPage = () => {
 								<div className={styles.container7}>
 									<div className={styles.xYearsOfExperienceParent}>
 										<b className={styles.turnkeySolarEpc}>{`18+ Years of Experience:`}</b>
-										<div className={`${styles.weHandleDesign} ${SERVICE_BODY_TEXT_CLASS}`}>From factories and warehouses to multi-storey commercial and institutional buildings, we turn every rooftop into a source of clean, cost-saving power.</div>
+										<div className={styles.weHandleDesign}>From factories and warehouses to multi-storey commercial and institutional buildings, we turn every rooftop into a source of clean, cost-saving power.</div>
 									</div>
 								</div>
 							</div>

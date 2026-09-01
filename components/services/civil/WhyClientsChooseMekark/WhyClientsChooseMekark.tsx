@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SERVICE_BODY_TEXT_CLASS } from "@/components/services/serviceTypography";
+import { SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS } from "@/components/services/serviceTypography";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 18 },
@@ -70,18 +70,18 @@ function Feature({
         transition={{ duration: 0.45, ease: "easeOut" }}
         className="flex w-full items-start gap-0 text-left"
       >
-        <span className="w-[48px] shrink-0 font-montserrat text-[32px] font-black tracking-[-2px] leading-none text-[#cc1020] sm:w-[56px] sm:text-[40px]">
+        <span className="shrink-0 font-montserrat text-[32px] font-black tracking-[-2px] leading-none text-[#cc1020] sm:text-[40px]">
           {number}
         </span>
         <span
-          className="mx-3 mt-1 w-[2px] shrink-0 self-stretch rounded-full bg-[rgba(204,16,32,0.4)] sm:mx-4"
+          className="ml-1.5 mr-3 mt-1 w-[2px] shrink-0 self-stretch rounded-full bg-[rgba(204,16,32,0.4)] sm:ml-2 sm:mr-4"
           aria-hidden
         />
         <div className="min-w-0 flex-1 pt-0.5">
           <b className="block font-montserrat text-[15px] font-bold leading-[22px] text-darkslategray sm:text-[17px] sm:leading-6">
             {title}
           </b>
-          <p className={`mt-1.5 ${SERVICE_BODY_TEXT_CLASS}`}>
+          <p className={`mt-1.5 ${SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS}`}>
             {description}
           </p>
         </div>
@@ -111,7 +111,7 @@ function Feature({
         </div>
         <div className="absolute top-[34px] right-0 left-0 flex flex-col items-start">
           <div
-            className={`relative flex items-center ${descriptionWidth} ${descriptionClassName} ${SERVICE_BODY_TEXT_CLASS}`}
+            className={`relative flex items-center ${descriptionWidth} ${descriptionClassName} ${SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS}`}
           >
             {description}
           </div>

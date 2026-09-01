@@ -2,13 +2,30 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ServiceMidCtaTitle } from "@/components/services/ServiceMidCtaTitle";
+import { SERVICE_MID_CTA_TITLE_SIZE_CLASS } from "@/components/services/serviceTypography";
 import {
   ServiceMidCtaCopy,
   ServiceMidCtaLine,
 } from "@/components/services/ServiceMidCtaLine";
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
+
+function PlanningCtaTitle({ id }: { id?: string }) {
+  return (
+    <h2
+      id={id}
+      className={`w-full max-w-full font-extrabold lg:w-fit ${SERVICE_MID_CTA_TITLE_SIZE_CLASS.medium}`}
+    >
+      <span className="block text-white lg:whitespace-nowrap">
+        Planning a Factory, Commercial
+      </span>
+      <span className="block lg:whitespace-nowrap">
+        <span className="text-white">Building,</span>
+        <span className="text-black"> or Industrial Building?</span>
+      </span>
+    </h2>
+  );
+}
 
 /** Figma Frame 191 — node 2488:5965 */
 const CTA_WIDTH = 1706.67;
@@ -34,35 +51,30 @@ export default function PlanningCta() {
         transition={{ duration: 0.6, ease: easeOut }}
       >
         <div className="relative z-10 flex flex-col px-5 pt-8 pb-[200px] sm:px-8 sm:pt-10 sm:pb-[260px]">
-          <ServiceMidCtaCopy>
-            <ServiceMidCtaTitle
-              id="civil-quote-title"
-              line1="Planning a Factory, Commercial Building,"
-              line2="or Industrial Building?"
-              size="medium"
-            />
+          <ServiceMidCtaCopy className="min-w-0 w-full">
+            <PlanningCtaTitle id="civil-quote-title" />
 
             <p className="mt-3 max-w-[28rem] text-[13px] font-medium leading-[18px] tracking-[1.1px] text-[#CCC6C6] sm:text-[14px] sm:leading-[20px]">
               Get a free consultation and project blueprint from Mekark&apos;s
               civil construction and structural engineering team.
             </p>
-          </ServiceMidCtaCopy>
 
-          <a
-            href="/#enquiry"
-            className="relative z-10 mt-6 inline-flex min-h-[48px] w-full items-center justify-center gap-2.5 rounded-full bg-white px-5 py-3.5 text-[14px] font-bold text-[#E5091F] transition-transform active:scale-[0.98] sm:mt-7 sm:w-fit sm:px-6"
-          >
-            Request a Free Quote
-            <span className="relative size-[16px] shrink-0">
-              <Image
-                src="/images/services/civil/cta/arrow.svg"
-                alt=""
-                fill
-                className="object-contain"
-                sizes="16px"
-              />
-            </span>
-          </a>
+            <a
+              href="/#enquiry"
+              className="mt-6 inline-flex min-h-[40px] w-fit max-w-full items-center justify-center gap-2 rounded-full bg-white px-4 py-2.5 text-[13px] font-bold leading-[18px] text-[#E5091F] transition-transform active:scale-[0.98] sm:mt-7 sm:min-h-[44px] sm:px-5 sm:py-3 sm:text-[14px]"
+            >
+              Request a Free Quote
+              <span className="relative size-[14px] shrink-0 sm:size-[16px]">
+                <Image
+                  src="/images/services/civil/cta/arrow.svg"
+                  alt=""
+                  fill
+                  className="object-contain"
+                  sizes="18px"
+                />
+              </span>
+            </a>
+          </ServiceMidCtaCopy>
         </div>
 
         {/* Building on same gradient — no separate red layer */}
@@ -122,11 +134,7 @@ export default function PlanningCta() {
 
           {/* Copy block — Figma 2488:5967 */}
           <div className="absolute left-[8.59%] top-[11.88%] flex h-[76.63%] w-[32.42%] min-w-0 flex-col">
-            <ServiceMidCtaTitle
-              line1="Planning a Factory, Commercial Building,"
-              line2="or Industrial Building?"
-              size="medium"
-            />
+            <PlanningCtaTitle />
 
             <p className="mt-3 w-[110%] text-[clamp(14px,1.1vw,18.67px)] font-medium leading-[1.22] tracking-[1.42px] text-[#CCC6C6] xl:text-[18.67px] xl:leading-[22.72px]">
               Get a free consultation and project blueprint from

@@ -126,10 +126,21 @@ function HomeLogoCard({ logo }: { logo: HomeLogo }) {
         y: -4,
         transition: { type: "spring", stiffness: 340, damping: 22 },
       }}
-      className="relative flex h-[68px] w-full items-center justify-center overflow-hidden rounded-[10px] border border-black/5 bg-white sm:h-[92px] sm:rounded-[15px] lg:h-[122px]"
+      className="relative flex h-[72px] w-full items-center justify-center overflow-hidden rounded-[10px] border border-black/5 bg-white px-2 py-2 sm:h-[92px] sm:rounded-[15px] sm:px-3 lg:h-[122px] lg:px-0 lg:py-0"
     >
+      {/* Mobile — fit logos inside the card without cropping */}
+      <div className="relative flex h-full w-full items-center justify-center sm:hidden">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={logo.src}
+          alt={logo.name}
+          className="max-h-[44px] w-auto max-w-[92%] object-contain"
+        />
+      </div>
+
+      {/* Tablet / desktop — Figma crop positions */}
       <div
-        className={`relative overflow-hidden scale-[0.62] sm:scale-100 ${logo.className}`}
+        className={`relative hidden overflow-hidden sm:block ${logo.className}`}
       >
         {isCropped ? (
           // eslint-disable-next-line @next/next/no-img-element
@@ -180,20 +191,21 @@ export function TrustedSectorsSection({
             variants={fadeUp}
             className={
               isServices
-                ? "max-w-[1023px] text-center text-[clamp(1.75rem,4vw,2.5rem)] font-bold leading-[1.13] text-[#111] lg:text-[40px] lg:leading-[45.33px]"
+                ? "max-w-[1023px] text-center text-[clamp(1.5rem,4vw,2.5rem)] font-bold leading-[1.13] text-[#111] lg:text-[40px] lg:leading-[45.33px]"
                 : "max-w-[767px] text-center text-[clamp(1.5rem,2.8vw,1.875rem)] font-bold leading-[1.13] text-[#111] lg:text-[30px] lg:leading-[34px]"
             }
           >
             Trusted Across
             <br />
             <span className="text-[#e50818]">
-              Industrial &amp; Commercial Sectors
+              <span className="block sm:inline">Industrial &amp; Commercial</span>{" "}
+              <span className="block sm:inline">Sectors</span>
             </span>
           </motion.h2>
 
           <motion.div
             variants={staggerContainer}
-            className="mt-8 grid w-full max-w-[1594px] grid-cols-3 gap-2 sm:gap-4 md:grid-cols-4 lg:mt-10 lg:grid-cols-7 lg:gap-x-[34px] lg:gap-y-[41px]"
+            className="mt-8 grid w-full max-w-[1594px] grid-cols-3 gap-3 sm:gap-4 md:grid-cols-4 lg:mt-10 lg:grid-cols-7 lg:gap-x-[34px] lg:gap-y-[41px]"
           >
             {logos.map((logo) => (
               <HomeLogoCard key={logo.name} logo={logo} />

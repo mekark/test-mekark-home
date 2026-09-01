@@ -5,96 +5,89 @@ import {
   SERVICE_INTRO_TITLE_FIGMA_CLASS,
 } from "@/components/services/serviceTypography";
 
-function EndToEndIllustration({ className }: { className?: string }) {
-  return (
-    <div
-      className={`relative mx-auto aspect-[986/658] w-full max-w-[640px] lg:max-w-none ${className ?? ""}`}
-    >
-      <Image
-        className="absolute bottom-0 left-0 h-[40%] w-[90%] object-cover opacity-60 lg:opacity-100"
-        src="/images/services/mep/end-to-end/floor-grid.png"
-        width={1147}
-        height={341}
-        sizes="(max-width: 1024px) 90vw, 50vw"
-        alt=""
-      />
-      <Image
-        className="absolute top-0 right-0 hidden h-[70%] w-[45%] object-cover lg:block"
-        src="/images/services/mep/end-to-end/layer-14.png"
-        width={602}
-        height={752}
-        sizes="30vw"
-        alt=""
-      />
-      <Image
-        className="relative z-[1] h-full w-full object-contain object-center"
-        src="/images/services/mep/end-to-end/mep-cutaway.png"
-        width={986}
-        height={658}
-        sizes="(max-width: 1024px) 90vw, 50vw"
-        alt="MEP systems cutaway illustration"
-        priority
-      />
-    </div>
-  );
-}
+const paragraphs = [
+  {
+    text: "Mekark is a leading industrial MEP contractor based in Chennai, delivering reliable, code-compliant mechanical, electrical, plumbing, and fire-fighting systems for factories, warehouses, and manufacturing plants across Tamil Nadu, Andhra Pradesh, Karnataka, Kerala, and Telangana.",
+    maxWidth: "max-w-[641.333px]",
+  },
+  {
+    text: "As a trusted MEP contractor in South India, we work with plant owners, EPC contractors, and facility managers in Chennai, Coimbatore, Bangalore, Hyderabad, Vizag, and Kochi who need MEP systems built for real production loads, not just handover-day inspections.",
+    maxWidth: "max-w-[672px]",
+  },
+  {
+    text: "Whether you need industrial MEP contracting in Tamil Nadu, fire-fighting system installation in Chennai, or reliable MEP services across South India, Mekark combines technical expertise with hands-on execution to deliver systems that perform under actual plant operating conditions.",
+    maxWidth: "max-w-[653.333px]",
+  },
+] as const;
 
 export default function EndToEnd() {
   return (
-    <section className="relative w-full shrink-0 overflow-hidden bg-gainsboro text-left font-manrope font-normal text-black">
+    <section
+      className="relative isolate w-full overflow-hidden bg-[#E6E6E6] text-[#111111] lg:-mb-12"
+      aria-labelledby="end-to-end-mep-title"
+    >
       <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(269.25deg, #fff, rgba(255, 255, 255, 0))",
-        }}
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(266deg,#fff_0%,rgba(255,255,255,0)_100%)]"
+        aria-hidden="true"
       />
 
-      <div className="relative z-[1] mx-auto grid max-w-[1920px] grid-cols-1 items-center gap-10 px-5 py-16 sm:px-8 md:px-16 lg:grid-cols-2 lg:gap-12 lg:px-[112px] lg:py-[85px] xl:gap-16">
-        <div className="flex min-w-0 flex-col gap-6 lg:min-w-[977px] lg:gap-8">
-          <ServiceIntroTitle
-            className={SERVICE_INTRO_TITLE_FIGMA_CLASS}
-            beforeRed="End-to-End MEP Design, Build &"
-            line2Prefix="Commissioning, "
-            redPart="Under One Roof"
-          />
+      <div className="relative z-10 mx-auto flex w-full max-w-[1920px] flex-col px-5 py-8 sm:px-10 sm:py-10 lg:block lg:aspect-[1920/800] lg:overflow-hidden lg:px-0 lg:py-0">
+        {/* Copy — Figma: left 224px, title top ~85px, body top ~295px */}
+        <div className="contents lg:block lg:absolute lg:left-[11.67%] lg:top-[8%] lg:z-10 lg:w-[35%] lg:max-w-[672px]">
+          <div className="order-1 lg:order-none">
+            <ServiceIntroTitle
+              id="end-to-end-mep-title"
+              className={SERVICE_INTRO_TITLE_FIGMA_CLASS}
+              beforeRed="End-to-End MEP Design, Build &"
+              line2Prefix="Commissioning, "
+              redPart="Under One Roof"
+            />
+          </div>
 
-          <EndToEndIllustration className="lg:hidden" />
-
-          <div className={`flex flex-col gap-5 lg:gap-6 ${SERVICE_BODY_TEXT_CLASS}`}>
-            <p>
-              Mekark is a leading industrial MEP contractor based in Chennai,
-              delivering reliable, code-compliant mechanical, electrical,
-              plumbing, and fire-fighting systems for factories, warehouses, and
-              manufacturing plants across Tamil Nadu, India. We work with plant
-              owners, EPC contractors, and facility managers who need MEP
-              systems built for real production loads, not just handover-day
-              inspections.
-            </p>
-            <p>
-              As a turnkey partner, we manage the full project lifecycle design,
-              procurement, installation, testing, commissioning, and handover,
-              as one accountable team. Every system is engineered in-house
-              around your actual plant layout and process requirements, not
-              templated specifications.
-            </p>
-            <p>
-              Whether you need HVAC, electrical, plumbing, or fire-fighting
-              expertise, Mekark combines engineering capability with in-house
-              execution for safe, cost-efficient MEP work, including compressed
-              air, process utilities, and mechanical systems, so your facility
-              is operational from day one.
-            </p>
-            <p>
-              Because design and execution sit under one roof, mid-construction
-              changes get resolved without the delays of looping in a separate
-              consultant, often the difference between a project finishing on
-              schedule and one that slips.
-            </p>
+          <div
+            className={`order-3 mt-5 flex flex-col gap-5 sm:mt-6 lg:order-none lg:mt-5 lg:max-w-none lg:gap-[26px] ${SERVICE_BODY_TEXT_CLASS} lg:text-[18.67px] lg:leading-[26.67px]`}
+          >
+            {paragraphs.map(({ text, maxWidth }) => (
+              <p key={text} className={maxWidth}>
+                {text}
+              </p>
+            ))}
           </div>
         </div>
 
-        <EndToEndIllustration className="hidden lg:block" />
+        {/* Visual — matches screenshot: cutaway right, blueprint top-right, grid floor */}
+        <div
+          className="relative order-2 mt-5 aspect-[986/658] w-full sm:mt-6 lg:absolute lg:inset-0 lg:order-none lg:mt-0 lg:aspect-auto"
+          aria-hidden="true"
+        >
+          <Image
+            src="/images/services/mep/end-to-end/layer-14.png"
+            alt=""
+            width={602}
+            height={752}
+            className="pointer-events-none absolute z-0 hidden opacity-60 lg:left-[68.63%] lg:top-[-16.64%] lg:block lg:h-[80.92%] lg:w-[31.35%] lg:object-cover"
+            sizes="(max-width: 1920px) 31vw, 602px"
+          />
+
+          <Image
+            src="/images/services/mep/end-to-end/floor-grid.png"
+            alt=""
+            width={1147}
+            height={341}
+            className="pointer-events-none absolute z-[1] hidden lg:left-[43.54%] lg:top-[51.36%] lg:block lg:h-[36.73%] lg:w-[59.73%] lg:object-contain"
+            sizes="(max-width: 1920px) 60vw, 1147px"
+          />
+
+          <Image
+            src="/images/services/mep/end-to-end/mep-cutaway.png"
+            alt="MEP systems cutaway illustration"
+            width={986}
+            height={658}
+            priority
+            className="pointer-events-none absolute inset-0 z-[2] h-full w-full object-contain object-bottom lg:inset-auto lg:left-[45.14%] lg:top-[4.45%] lg:h-[75.61%] lg:w-[54.9%] lg:object-contain lg:object-right-bottom"
+            sizes="(max-width: 1023px) 92vw, (max-width: 1920px) 55vw, 986px"
+          />
+        </div>
       </div>
     </section>
   );

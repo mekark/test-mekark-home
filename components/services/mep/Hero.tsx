@@ -1,161 +1,91 @@
 import Image from "next/image";
 import Link from "next/link";
+import ServiceMobileHero from "@/components/services/ServiceMobileHero";
 import { SERVICE_BODY_TEXT_SIZES } from "@/components/services/serviceTypography";
 
-const stats = [
+const mobileStats = [
   {
+    key: "years",
     value: (
       <>
-        18<span className="text-red-200">+</span>
+        18<span className="text-[#ed2024]">+</span>
       </>
     ),
-    label: "Years Experience",
     mobileLabel: "Years Experience",
-    valueClass: "text-white",
   },
   {
+    key: "capacity",
     value: (
       <>
-        40,000 <span className="text-red-200">Tons</span>
+        40,000 <span className="text-[#ed2024]">Tons</span>
       </>
     ),
-    label: "Production Capacity",
     mobileLabel: "Prod. Capacity",
-    valueClass: "text-whitesmoke",
   },
   {
+    key: "campus",
     value: (
       <>
-        70 lakh Sq.ft. <span className="text-red-300">+ Sq.ft.</span>
+        70 lakh Sq.ft. <span className="text-[#ed2024]">+ Sq.ft.</span>
       </>
     ),
-    label: "Manufacturing Campus",
     mobileLabel: "Mfg. Campus",
-    valueClass: "text-white",
   },
   {
+    key: "engineers",
     value: (
       <>
-        175<span className="text-red-300">+ In-House</span>
+        175<span className="text-[#ed2024]">+ In-House</span>
       </>
     ),
-    label: "Engineers",
     mobileLabel: "Engineers",
-    valueClass: "text-white",
   },
 ] as const;
 
 const heroDescription =
   "Mekark delivers turnkey MEP design-build for factories, warehouses, and manufacturing plants: HVAC, electrical, plumbing, firefighting, and mechanical utilities, backed by 18+ years of experience and 200+ completed industrial MEP projects across Tamil Nadu, India.";
 
+function MobileHero() {
+  return (
+    <ServiceMobileHero
+      title={
+        <>
+          South India&apos;s Leading Industrial MEP Contractor &amp; Turnkey
+          MEP Contracting Company
+        </>
+      }
+      description={heroDescription}
+      heroImage={{
+        src: "/images/services/mep/hero/layer-1.png",
+        alt: "Industrial MEP facility",
+        objectPosition: "center 10%",
+      }}
+      arrowIcon="/images/services/mep/hero/arrow.svg"
+      stats={mobileStats.map((stat) => ({
+        key: stat.key,
+        value: stat.value,
+        mobileLabel: stat.mobileLabel,
+      }))}
+      certification={
+        <>
+          <span className="text-white">ISO 9001:2015 </span>
+          <span className="text-[#ed2024]">&amp;</span>
+          <span className="text-white"> </span>
+          <span className="text-[#18a34a]">Green </span>
+          <span className="text-[#ed2024]">Certified</span>
+        </>
+      }
+    />
+  );
+}
+
 export default function Hero() {
   return (
     <>
-      {/* Mobile / tablet */}
-      <section className="relative flex min-h-svh w-full shrink-0 flex-col overflow-hidden bg-gray-200 text-left font-manrope text-white lg:hidden">
-        <div className="absolute inset-0">
-          <Image
-            className="absolute top-[-17px] left-0 h-full min-h-[1080px] w-full max-w-none object-cover"
-            src="/images/services/mep/hero/remove-1.png"
-            width={1920}
-            height={1080}
-            sizes="100vw"
-            alt=""
-            priority
-          />
-          <div
-            className="absolute inset-x-0 top-0 h-[62%]"
-            style={{
-              background:
-                "linear-gradient(180deg, #ffc2c2 0%, rgba(255, 194, 194, 0.92) 45%, rgba(255, 255, 255, 0) 100%)",
-            }}
-          />
-          <div className="absolute top-[26%] right-0 bottom-0 left-0 overflow-hidden sm:top-[22%]">
-            <Image
-              className="absolute inset-0 h-full w-full object-cover object-[center_10%]"
-              src="/images/services/mep/hero/layer-1.png"
-              width={1920}
-              height={1080}
-              sizes="100vw"
-              alt="Industrial MEP facility"
-              priority
-            />
-          </div>
-          <div
-            className="absolute right-0 bottom-0 h-[45%] w-full"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(30, 30, 30, 0), #1e1e1e)",
-            }}
-          />
-        </div>
+      <MobileHero />
 
-        <div className="relative z-[1] flex min-h-0 flex-1 flex-col px-5 pt-24 pb-[max(2rem,env(safe-area-inset-bottom))] sm:px-8 sm:pt-28">
-          <div className="flex max-w-[1158px] flex-col items-start gap-3 sm:gap-4">
-            <b className="relative w-full min-w-0 self-stretch text-[clamp(1.625rem,6.2vw,2.25rem)] font-bold leading-[1.15] tracking-[-0.04em] text-gray-100 drop-shadow-[0_1px_0_rgba(255,255,255,0.35)] sm:text-[36px] sm:leading-[1.2] sm:tracking-[-0.9px]">
-              Leading Industrial MEP Contractor &amp; Turnkey MEP Contracting Company
-            </b>
-            <div className={`relative mb-2 w-full min-w-0 text-[rgba(5,7,12,0.72)] sm:mb-4 ${SERVICE_BODY_TEXT_SIZES}`}>
-              {heroDescription}
-            </div>
-            <div className="relative flex w-full min-w-0 flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
-              <a
-                href="/#enquiry"
-                className="inline-flex w-full items-center justify-center gap-[8.7px] rounded-[6.93px] bg-firebrick px-6 py-[13px] text-[15px] leading-[20.79px] font-semibold text-white shadow-[0px_6.93px_27.72px_rgba(196,22,28,0.3)] sm:w-auto sm:px-[31px] sm:py-[15.6px] sm:text-base"
-              >
-                <span className="font-semibold">Get a Free Quote</span>
-              </a>
-              <Link
-                href="/projects/completed-projects"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-[5.2px] px-4 py-3 text-[15px] leading-[20.79px] font-semibold text-firebrick sm:w-auto sm:justify-start sm:text-base"
-              >
-                <span className="font-semibold">View Our Projects</span>
-                <Image
-                  src="/images/services/mep/hero/arrow.svg"
-                  width={9}
-                  height={7}
-                  alt=""
-                  className="h-[7px] w-[9px]"
-                />
-              </Link>
-            </div>
-          </div>
-
-          <div className="mt-auto w-full min-w-0 pt-6 sm:pt-8">
-            <div className="grid w-full min-w-0 grid-cols-2 gap-x-3 gap-y-4 min-[390px]:gap-x-4 sm:gap-x-6 sm:gap-y-5">
-              {stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className={`flex min-w-0 flex-col items-start gap-1 text-left ${stat.valueClass}`}
-                >
-                  <div className="w-full whitespace-nowrap text-[clamp(1rem,4.4vw,1.125rem)] font-extrabold leading-[1.2] tracking-[-0.04em] [&_span]:leading-[inherit] sm:text-[22px] sm:leading-[26px] sm:tracking-[-1.11px]">
-                    {stat.value}
-                  </div>
-                  <div className="w-full break-words text-[clamp(0.5625rem,2.7vw,0.625rem)] font-semibold leading-[1.35] tracking-[0.04em] text-white/70 capitalize sm:text-[10.67px] sm:leading-[11.89px] sm:tracking-[1.6px]">
-                    <span className="sm:hidden">{stat.mobileLabel}</span>
-                    <span className="hidden sm:inline">{stat.label}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="mt-4 flex min-w-0 flex-col items-start gap-1 border-t border-white/15 pt-4 sm:mt-5 sm:pt-5">
-              <div className="w-full text-left text-[clamp(1rem,4.4vw,1.125rem)] font-extrabold leading-[1.2] tracking-[-0.04em] [&_span]:leading-[inherit] sm:text-[18px] sm:leading-[22px] sm:tracking-[-0.8px]">
-                <span className="block">
-                  ISO 9001:2015 <span className="text-red-200">&</span>
-                </span>
-                <span className="block">
-                  <span className="text-limegreen">Green </span>
-                  <span className="text-red-100">Certified</span>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Desktop — original layout */}
-      <section className="relative hidden h-[1048px] w-full shrink-0 overflow-hidden bg-gray-200 text-left font-manrope text-num-26_67 text-white lg:block">
-
+      {/* Desktop */}
+      <section className="relative hidden h-[1048px] w-full shrink-0 overflow-hidden bg-gray-200 text-left font-manrope text-num-26_67 text-white md:block">
         <div className="absolute top-[-32px] right-0 left-0 h-[1080px] w-full shrink-0">
           <Image
             className="absolute top-[-17px] left-0 h-[1080px] w-full max-w-none object-cover shrink-0"
@@ -254,9 +184,9 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="relative z-[1] flex w-full shrink-0 flex-col items-start gap-5 pl-32 pr-[131px] pt-32 text-[48px] text-gray-100 opacity-90">
-          <b className="relative self-stretch whitespace-nowrap text-[clamp(2rem,2.35vw,46px)] tracking-[-1px] leading-[56px]">
-            Leading Industrial MEP Contractor &amp; Turnkey MEP Contracting Company
+        <div className="relative z-[1] flex w-full shrink-0 flex-col items-start gap-5 pl-32 pr-[131px] pt-32 text-[40px] text-gray-100 opacity-90">
+          <b className="relative self-stretch whitespace-nowrap font-manrope text-[clamp(1.75rem,2.05vw,40px)] font-bold leading-[46px] tracking-[-0.9px] text-gray">
+            South India&apos;s Leading Industrial MEP Contractor &amp; Turnkey MEP Contracting Company
           </b>
           <div className={`relative flex w-full max-w-[1158px] items-center text-gray-300 ${SERVICE_BODY_TEXT_SIZES}`}>
             {heroDescription}

@@ -5,6 +5,14 @@ export const SERVICE_BODY_TEXT_SIZES =
 /** Standard body copy on light backgrounds (Civil WhyChooseMekark reference). */
 export const SERVICE_BODY_TEXT_CLASS = `${SERVICE_BODY_TEXT_SIZES} text-black`;
 
+/** Why Choose Mekark feature descriptions — Montserrat 16px / 25.33px / grey #555 (Figma grey/33). */
+export const SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS =
+  "font-montserrat text-base font-normal leading-num-25_33 text-[#555] text-left";
+
+/** @deprecated Use SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS */
+export const SERVICE_PEB_BENEFIT_DESCRIPTION_CLASS =
+  SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS;
+
 /** Figma intro title — 53.33px / 58.67px / -1.33px tracking (Multi-Storey reference). */
 export const SERVICE_INTRO_TITLE_FIGMA_CLASS =
   "!font-bold !text-gray !text-[26px] !leading-[32px] !tracking-[-0.8px] sm:!text-[36px] sm:!leading-[42px] sm:!tracking-[-1px] lg:!text-[53.33px] lg:!leading-[58.67px] lg:!tracking-[-1.33px] lg:max-w-[977px]";

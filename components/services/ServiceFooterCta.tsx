@@ -8,6 +8,7 @@ type ServiceFooterCtaProps = {
   id?: string;
   quoteLabel?: string;
   callLabel?: string;
+  compactCopy?: boolean;
 };
 
 export function ServiceFooterCta({
@@ -16,6 +17,7 @@ export function ServiceFooterCta({
   id,
   quoteLabel = "Get a Free Quote",
   callLabel = "Call us",
+  compactCopy = false,
 }: ServiceFooterCtaProps) {
   return (
     <section id={id} className={styles.section} aria-label={title}>
@@ -33,7 +35,13 @@ export function ServiceFooterCta({
         </div>
       </div>
       <div className={styles.frameParent}>
-        <div className={styles.readyToStartYourCommercialParent}>
+        <div
+          className={
+            compactCopy
+              ? `${styles.readyToStartYourCommercialParent} ${styles.readyToStartYourCommercialParentCompact}`
+              : styles.readyToStartYourCommercialParent
+          }
+        >
           <h2 className={styles.readyToStart}>{title}</h2>
           <p className={styles.talkToMekarks}>{subtitle}</p>
         </div>

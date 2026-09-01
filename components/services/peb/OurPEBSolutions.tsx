@@ -265,7 +265,7 @@ export default function OurPEBSolutions() {
             <img
               src="/images/services/peb/peb-solutions/Mid CTA 1.png"
               alt="Pre-engineered building under construction"
-              className="absolute left-1/2 bottom-[-10px] h-[96%] w-[132%] max-w-none -translate-x-[46%] object-cover object-[center_35%] sm:bottom-[-12px] sm:w-[110%] sm:-translate-x-[48%]"
+              className="absolute left-1/2 bottom-[18px] h-[96%] w-[132%] max-w-none -translate-x-[46%] object-cover object-[center_28%] sm:bottom-[24px] sm:w-[110%] sm:-translate-x-[48%]"
             />
           </div>
         </motion.div>
@@ -274,7 +274,7 @@ export default function OurPEBSolutions() {
           <ServiceMidCtaLine className="absolute left-[8.6%] top-[42.67px] z-[2]" />
 
           <motion.div
-            className="pointer-events-none absolute right-0 top-[-10%] hidden h-[140%] w-[56.6%] lg:block"
+            className="pointer-events-none absolute right-0 top-[-14%] hidden h-[125%] w-[56.6%] lg:block"
             aria-hidden="true"
             initial={{ opacity: 0, x: 48 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -285,7 +285,7 @@ export default function OurPEBSolutions() {
               src="/images/services/peb/peb-solutions/Mid CTA 1.png"
               alt=""
               fill
-              className="object-cover object-left"
+              className="object-cover object-[left_25%]"
               sizes="(max-width: 1920px) 57vw, 967px"
             />
           </motion.div>

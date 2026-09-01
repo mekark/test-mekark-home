@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
-import { SERVICE_BODY_TEXT_CLASS } from "@/components/services/serviceTypography";
+import { SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS } from "@/components/services/serviceTypography";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -128,16 +128,16 @@ function BenefitItem({
 }) {
   return (
     <motion.article
-      className="flex min-h-0 items-start gap-0 sm:min-h-[164px]"
+      className="flex min-h-0 items-start gap-1 sm:min-h-[164px] sm:gap-1.5 lg:gap-2"
       variants={benefitReveal}
       custom={direction}
     >
-      <p className="min-w-[3.25rem] shrink-0 font-[family-name:var(--font-montserrat)] text-[clamp(2rem,10vw,5rem)] font-black leading-none text-[#CC1020] sm:min-w-[4.5rem] sm:text-[clamp(2.75rem,4.167vw,5rem)] sm:leading-[clamp(3.25rem,5.069vw,6.083rem)] lg:min-w-[128px] lg:pr-[10px]">
+      <p className="w-fit shrink-0 font-[family-name:var(--font-montserrat)] text-[clamp(2rem,10vw,5rem)] font-black leading-none text-[#CC1020] sm:text-[clamp(2.75rem,4.167vw,5rem)] sm:leading-[clamp(3.25rem,5.069vw,6.083rem)]">
         {benefit.number}
       </p>
 
       <div
-        className="flex h-[72px] min-h-[64px] shrink-0 items-center pt-1 pl-1 pr-3 sm:h-[92px] sm:min-h-[84px] sm:pl-[5px] sm:pr-[14px] md:pr-[19px]"
+        className="flex h-[72px] min-h-[64px] shrink-0 items-center pt-1 pr-2 sm:h-[92px] sm:min-h-[84px] sm:pr-3 md:pr-4"
         aria-hidden="true"
       >
         <span className="block h-full min-h-[64px] w-[1.33px] bg-[rgba(204,16,32,0.4)] sm:min-h-[80px]" />
@@ -147,7 +147,7 @@ function BenefitItem({
         <h3 className="font-[family-name:var(--font-montserrat)] text-[clamp(0.9375rem,0.972vw,1.167rem)] font-bold leading-[1.35] text-[#3C3938] sm:leading-[1.44]">
           {benefit.title}
         </h3>
-        <p className={`mt-1.5 sm:mt-2 lg:mt-3 ${SERVICE_BODY_TEXT_CLASS}`}>
+        <p className={`mt-1.5 sm:mt-2 lg:mt-3 ${SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS}`}>
           {benefit.description}
         </p>
       </div>

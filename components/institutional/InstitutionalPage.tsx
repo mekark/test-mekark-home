@@ -115,7 +115,7 @@ function Eyebrow({ children, light = false }: { children: React.ReactNode; light
 export function InstitutionalPage() {
   return (
     <main className="overflow-hidden bg-white text-[#151515]">
-      <section className="relative isolate min-h-[760px] overflow-hidden bg-black pt-[76px] sm:pt-[88px] lg:min-h-[820px]">
+      <section className="relative isolate min-h-[760px] overflow-hidden bg-black pt-[60px] lg:min-h-[820px]">
         <Image
           src="/images/institutional/home.jpg"
           alt="Rows of seating in a modern auditorium"

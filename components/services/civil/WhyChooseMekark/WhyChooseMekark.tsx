@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { ServiceIntroTitle } from "@/components/services/ServiceIntroTitle";
+import { SERVICE_BODY_TEXT_CLASS } from "@/components/services/serviceTypography";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -34,16 +36,17 @@ export default function WhyChooseMekark() {
 
         <div className="relative mx-auto max-w-[720px]">
           <div className="px-5 pt-12 sm:px-8 sm:pt-16">
-            <motion.h2
+            <motion.div
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.55 }}
-              className="font-manrope text-[28px] font-extrabold tracking-[-1px] leading-[1.15] text-gray sm:text-[36px] sm:leading-[42px]"
             >
-              End-to-End Civil &amp; RCC Construction,{" "}
-              <span className="text-red">Under One Roof</span>
-            </motion.h2>
+              <ServiceIntroTitle
+                beforeRed="End-to-End Civil & RCC Construction, "
+                redPart="Under One Roof"
+              />
+            </motion.div>
           </div>
 
           {/* Asymmetric visual stage */}
@@ -99,7 +102,7 @@ export default function WhyChooseMekark() {
                 key={index}
                 variants={fadeUp}
                 transition={{ duration: 0.45, ease: "easeOut" }}
-                className={`font-manrope text-[14px] font-normal leading-[22px] text-black sm:text-[17px] sm:leading-[26px] lg:text-num-18_67 ${
+                className={`${SERVICE_BODY_TEXT_CLASS} ${
                   index < mobileParagraphs.length - 1 ? "mb-5 sm:mb-6" : ""
                 }`}
               >
@@ -122,23 +125,21 @@ export default function WhyChooseMekark() {
             visible: { transition: { staggerChildren: 0.12 } },
           }}
         >
-          <motion.h2
+          <motion.div
             variants={fadeUp}
             transition={{ duration: 0.55, ease: "easeOut" }}
-            className="absolute top-0 left-[calc(50%-418px)] flex w-[836px] items-center font-manrope text-[53.33px] font-bold tracking-[-1.33px] leading-[58.67px] text-gray"
           >
-            <span className="w-full">
-              <span className="leading-[58.67px]">
-                End-to-End Civil &amp; RCC Construction,{" "}
-              </span>
-              <span className="leading-[58.67px] text-red">Under One Roof</span>
-            </span>
-          </motion.h2>
+            <ServiceIntroTitle
+              className="lg:max-w-[836px]"
+              beforeRed="End-to-End Civil & RCC Construction, "
+              redPart="Under One Roof"
+            />
+          </motion.div>
 
           <motion.p
             variants={fadeUp}
             transition={{ duration: 0.55, ease: "easeOut" }}
-            className="absolute top-[172px] left-[2.67px] inline-block w-[686px] font-manrope text-num-18_67 font-normal leading-[26px] text-black"
+            className={`absolute top-[172px] left-[2.67px] inline-block w-[686px] ${SERVICE_BODY_TEXT_CLASS}`}
           >
             Mekark is among the premier civil construction companies and RCC
             contractors based out of Chennai, offering you resilient,
@@ -149,7 +150,7 @@ export default function WhyChooseMekark() {
           <motion.p
             variants={fadeUp}
             transition={{ duration: 0.55, ease: "easeOut" }}
-            className="absolute top-[296px] left-[2.67px] inline-block w-[692px] font-manrope text-num-18_67 font-normal leading-[26px] text-black"
+            className={`absolute top-[296px] left-[2.67px] inline-block w-[692px] ${SERVICE_BODY_TEXT_CLASS}`}
           >
             As a turnkey civil construction contractor, we manage the full
             project lifecycle: site assessment, structural design, RCC
@@ -163,7 +164,7 @@ export default function WhyChooseMekark() {
           <motion.p
             variants={fadeUp}
             transition={{ duration: 0.55, ease: "easeOut" }}
-            className="absolute top-[472px] left-[2.67px] inline-block w-[699px] font-manrope text-num-18_67 font-normal leading-[26px] text-black"
+            className={`absolute top-[472px] left-[2.67px] inline-block w-[699px] ${SERVICE_BODY_TEXT_CLASS}`}
           >
             For your requirements of a civil construction company for commercial
             RCC construction, factory civil contractor or structural civil

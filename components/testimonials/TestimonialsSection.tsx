@@ -9,6 +9,7 @@ import {
   testGridStagger,
   testHeadlineReveal,
 } from "@/lib/motion-variants";
+import { SECTION_CONTAINER_CLASS } from "@/lib/sectionLayout";
 
 const VIEWPORT = { once: true, margin: "-80px" as const };
 
@@ -118,7 +119,7 @@ function TestimonialCard({
 export function TestimonialsSection() {
   return (
     <section className="relative w-full border-b border-[rgba(107,13,17,0.1)] bg-[#f8f6f6]">
-      <div className="relative mx-auto w-full max-w-[1440px] px-5 py-14 sm:px-8 lg:px-20 lg:py-[70px]">
+      <div className={`${SECTION_CONTAINER_CLASS} py-14 lg:py-[70px]`}>
         <motion.div
           variants={testGridStagger}
           initial="hidden"

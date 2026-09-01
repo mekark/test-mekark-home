@@ -282,7 +282,7 @@ export function CompletedProjectsPage() {
 
   return (
     <div className="bg-white font-[family-name:var(--font-manrope)] text-[#1e1e1e]">
-      <section className="relative isolate flex min-h-[380px] items-center justify-center pt-[76px] sm:min-h-[420px] sm:pt-[88px] lg:min-h-[480px]">
+      <section className="relative isolate flex min-h-[380px] items-center justify-center pt-[60px] lg:min-h-[480px]">
         <div className="absolute inset-0 overflow-hidden">
           <Image
             src="/images/projects/completed/hero.jpg"

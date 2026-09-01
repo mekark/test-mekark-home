@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { SERVICE_BODY_TEXT_SIZES } from "@/components/services/serviceTypography";
 import styles from "./index.module.css";
 
 export default function Hero() {
@@ -29,7 +30,7 @@ export default function Hero() {
             <br />
             Manufacturer
           </h1>
-          <p className={styles.mekarkDesignsFabricates}>
+          <p className={`${styles.mekarkDesignsFabricates} ${SERVICE_BODY_TEXT_SIZES} text-[rgba(5,7,12,0.55)]`}>
             Mekark designs, fabricates, and installs high-strength PTFE and ETFE
             tensile fabric structures for stadiums, car parks, industrial sheds,
             and commercial

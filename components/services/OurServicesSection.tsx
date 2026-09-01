@@ -5,6 +5,7 @@ import Link from "next/link";
 import { type ReactNode } from "react";
 import { motion } from "framer-motion";
 import { HOME_SERVICES, type HomeService } from "@/components/navbar/nav-data";
+import { SECTION_CONTAINER_CLASS } from "@/lib/sectionLayout";
 import {
   aboutHeadlineChunk,
   aboutHeadlineStagger,
@@ -230,7 +231,7 @@ export function OurServicesSection() {
       id="our-solutions"
       className="relative w-full bg-[#0a0a0a] font-[family-name:var(--font-manrope)] text-white"
     >
-      <div className="relative mx-auto flex w-full max-w-[1740px] flex-col items-center gap-6 px-5 py-14 sm:gap-12 sm:px-8 lg:gap-[120px] lg:px-[107px] lg:py-[93px]">
+      <div className={`${SECTION_CONTAINER_CLASS} flex flex-col items-center gap-6 py-14 sm:gap-12 lg:gap-[120px] lg:py-[93px]`}>
         {coreServices.length > 0 ? (
           <div className="flex w-full max-w-[1481px] flex-col items-center gap-12 lg:gap-[70px]">
             <motion.h2

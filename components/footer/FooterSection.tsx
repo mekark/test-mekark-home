@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { NAV_ITEMS, type NavItem } from "@/components/navbar/nav-data";
 import { fadeUp, staggerContainer } from "@/lib/motion-variants";
+import { SECTION_CONTAINER_CLASS } from "@/lib/sectionLayout";
 
 const VIEWPORT = { once: true, margin: "-80px" as const };
 
@@ -301,7 +302,7 @@ export function FooterSection() {
           initial="hidden"
           whileInView="visible"
           viewport={VIEWPORT}
-          className="relative mx-auto w-full max-w-[1440px] px-5 py-14 sm:px-8 sm:py-16 lg:px-20 lg:py-20"
+          className={`${SECTION_CONTAINER_CLASS} py-14 sm:py-16 lg:py-20`}
         >
           <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
             <motion.div

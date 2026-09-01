@@ -543,7 +543,7 @@ export function ExtendedServiceSection() {
             </motion.p>
           </motion.header>
 
-          <div className="sticky top-[76px] z-20 -mx-5 mt-6 bg-[#f6f6f6] px-5 py-2 sm:top-[88px] sm:-mx-8 sm:px-8 lg:hidden">
+          <div className="sticky top-[60px] z-20 -mx-5 mt-6 bg-[#f6f6f6] px-5 py-2 sm:-mx-8 sm:px-8 lg:hidden">
             <ServiceSwitcher
               compact
               activeId={activeId}

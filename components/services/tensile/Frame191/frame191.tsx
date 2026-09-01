@@ -2,6 +2,8 @@
 
 import type { NextPage } from 'next';
 import Image from "next/image";
+import { ServiceMidCtaTitle } from "@/components/services/ServiceMidCtaTitle";
+import { ServiceMidCtaLine } from "@/components/services/ServiceMidCtaLine";
 import styles from './index.module.css';
 
 const Frame191: NextPage = () => {
@@ -9,11 +11,16 @@ const Frame191: NextPage = () => {
 		<section className={styles.wrap}>
 			<div className={styles.banner}>
 				<div className={styles.copy}>
-					<h2 className={styles.title}>
-						<span className={styles.titleLight}>Tensile</span>
-						<br />
-						<span className={styles.titleDark}>Roofing or Canopy Project?</span>
-					</h2>
+					<ServiceMidCtaLine
+						stretch
+						className="left-[clamp(20px,3.5vw,56px)] lg:inset-y-auto lg:top-1/2 lg:h-[264px] lg:-translate-y-1/2"
+					/>
+					<ServiceMidCtaTitle
+						line1="Planning a Tensile"
+						line2="Roofing or Canopy Project?"
+						size="medium"
+						className="!max-w-full"
+					/>
 
 					<p className={styles.subtitle}>
 						Get a free consultation and project estimate from Mekark&apos;s tensile structure engineering team.

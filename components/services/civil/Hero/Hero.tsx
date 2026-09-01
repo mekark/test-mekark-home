@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
+import { SERVICE_BODY_TEXT_SIZES } from "@/components/services/serviceTypography";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 16 },
@@ -132,7 +133,7 @@ export default function Hero() {
         <motion.p
           variants={fadeUp}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="max-w-[36rem] text-[14px] leading-[20px] font-semibold text-gray-300 sm:max-w-[1278px] sm:text-[17px] sm:leading-[24px] lg:text-[18.67px] lg:leading-[26.67px]"
+          className={`max-w-[36rem] text-gray-300 sm:max-w-[1278px] ${SERVICE_BODY_TEXT_SIZES}`}
         >
           Mekark delivers turnkey civil construction and RCC building solutions
           for factories, warehouses, commercial complexes, and institutional

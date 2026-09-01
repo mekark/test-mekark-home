@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
+import { SERVICE_BODY_TEXT_CLASS } from "@/components/services/serviceTypography";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -146,7 +147,7 @@ function BenefitItem({
         <h3 className="font-[family-name:var(--font-montserrat)] text-[clamp(0.9375rem,0.972vw,1.167rem)] font-bold leading-[1.35] text-[#3C3938] sm:leading-[1.44]">
           {benefit.title}
         </h3>
-        <p className="mt-1.5 font-[family-name:var(--font-montserrat)] text-[clamp(0.8125rem,0.833vw,1rem)] font-normal leading-[1.5] text-[#555555] sm:mt-2 lg:mt-3 lg:leading-[1.583]">
+        <p className={`mt-1.5 sm:mt-2 lg:mt-3 ${SERVICE_BODY_TEXT_CLASS}`}>
           {benefit.description}
         </p>
       </div>

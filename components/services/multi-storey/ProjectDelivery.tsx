@@ -2,6 +2,11 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { ServiceMidCtaTitle } from "@/components/services/ServiceMidCtaTitle";
+import {
+  ServiceMidCtaCopy,
+  ServiceMidCtaLine,
+} from "@/components/services/ServiceMidCtaLine";
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
@@ -21,22 +26,17 @@ export default function ProjectDelivery() {
         {/* Mobile — matches Civil PlanningCta (image in flow at bottom) */}
         <div className="relative mx-auto flex w-full flex-col overflow-hidden rounded-[28px] bg-[linear-gradient(118.73deg,#8B0C11_6.54%,#ED1D23_108.89%)] sm:rounded-[32px] lg:hidden">
           <div className="relative z-10 flex flex-col px-5 pt-8 pb-6 sm:px-8 sm:pt-10 sm:pb-8">
-            <div className="relative pl-4 sm:pl-5">
-              <span
-                className="pointer-events-none absolute bottom-0 left-0 top-0 w-[2.7px] bg-white"
-                aria-hidden
+            <ServiceMidCtaCopy>
+              <ServiceMidCtaTitle
+                line1="Planning a Multi-Storey Factory, Office,"
+                line2="or Commercial Building?"
+                size="long"
               />
-
-              <h2 className="text-[24px] font-extrabold leading-[1.15] text-white sm:text-[32px] sm:leading-[1.1]">
-                Multi-Storey Factory, Office, or{" "}
-                <span className="text-black">Commercial Building?</span>
-              </h2>
-
               <p className="mt-3 max-w-[28rem] text-[13px] font-medium leading-[18px] tracking-[1.1px] text-[#CCC6C6] sm:text-[14px] sm:leading-[20px]">
                 Get a free consultation and project blueprint from Mekark&apos;s
                 structural engineering team.
               </p>
-            </div>
+            </ServiceMidCtaCopy>
 
             <a
               href="/#enquiry"
@@ -103,14 +103,14 @@ export default function ProjectDelivery() {
               </div>
             </div>
 
-            <div className="pointer-events-none absolute top-[44px] bottom-[40px] left-[clamp(20px,6.2vw,119px)] z-[2] w-[2.7px] bg-white" />
+            <ServiceMidCtaLine className="absolute left-[clamp(20px,6.2vw,119px)] top-1/2 z-[2] -translate-y-1/2" />
 
             <div className="absolute inset-y-0 left-[clamp(36px,7.6vw,147px)] z-10 flex w-[min(553px,40%)] flex-col justify-center py-[41px]">
-              <h2 className="text-[48px] leading-[50.52px] font-extrabold text-white">
-                Multi-Storey Factory, Office, or{" "}
-                <span className="text-black">Commercial Building?</span>
-              </h2>
-
+              <ServiceMidCtaTitle
+                line1="Planning a Multi-Storey Factory, Office,"
+                line2="or Commercial Building?"
+                size="long"
+              />
               <p className="mt-4 max-w-[520px] text-[18.67px] leading-[22.72px] font-medium tracking-[1.42px] text-silver">
                 Get a free consultation and project blueprint from Mekark&apos;s
                 structural engineering team.

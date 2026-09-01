@@ -4,6 +4,12 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import HowWeDeliverSteps from "@/components/services/HowWeDeliverSteps";
 import ServiceSolutionsMobileGrid from "@/components/services/ServiceSolutionsMobileGrid";
+import { SERVICE_BODY_TEXT_CLASS } from "@/components/services/serviceTypography";
+import { ServiceMidCtaTitle } from "@/components/services/ServiceMidCtaTitle";
+import {
+  ServiceMidCtaCopy,
+  ServiceMidCtaLine,
+} from "@/components/services/ServiceMidCtaLine";
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
@@ -142,7 +148,7 @@ function SolutionCard({ solution }: { solution: Solution }) {
       <h3 className="mt-[clamp(1.25rem,1.8vw,2.167rem)] font-[family-name:var(--font-montserrat)] text-[clamp(0.9375rem,0.972vw,1.167rem)] font-bold leading-[1.44] text-[#3C3938]">
         {solution.title}
       </h3>
-      <p className="mt-2 font-[family-name:var(--font-montserrat)] text-[clamp(0.8125rem,0.833vw,1rem)] font-normal leading-[1.333] text-[#555555]">
+      <p className={`mt-2 ${SERVICE_BODY_TEXT_CLASS}`}>
         {solution.description}
       </p>
     </motion.article>
@@ -223,41 +229,35 @@ export default function OurPEBSolutions() {
           transition={{ duration: 0.6, ease: easeOut }}
         >
           <div className="relative z-10 flex flex-col px-5 pt-8 pb-[215px] sm:px-8 sm:pt-10 sm:pb-[275px]">
-            <div className="relative pl-4 sm:pl-5">
-              <span
-                className="pointer-events-none absolute bottom-0 left-0 top-0 w-[2.7px] bg-white"
-                aria-hidden
-              />
-
-              <h2
+            <ServiceMidCtaCopy>
+              <ServiceMidCtaTitle
                 id="peb-quote-title"
-                className="text-[24px] font-extrabold leading-[1.15] text-white sm:text-[32px] sm:leading-[1.1]"
-              >
-                Factory, Warehouse, or{" "}
-                <span className="text-black">Industrial Building?</span>
-              </h2>
+                line1="Planning a Factory, Warehouse,"
+                line2="or Industrial Building?"
+                size="short"
+              />
 
               <p className="mt-3 max-w-[28rem] text-[13px] font-medium leading-[18px] tracking-[1.1px] text-[#CCC6C6] sm:text-[14px] sm:leading-[20px]">
                 Get a free consultation and project estimate from Mekark&apos;s
                 PEB engineering team.
               </p>
-            </div>
 
-            <a
-              href="/#enquiry"
-              className="relative z-10 mt-6 inline-flex min-h-[48px] w-full items-center justify-center gap-2.5 rounded-full bg-white px-5 py-3.5 text-[14px] font-bold text-[#E5091F] transition-transform active:scale-[0.98] sm:mt-7 sm:w-fit sm:px-6"
-            >
-              Request a Free Quote
-              <span className="relative size-[16px] shrink-0">
-                <Image
-                  src="/images/services/peb/peb-solutions/cta-arrow.svg"
-                  alt=""
-                  fill
-                  className="object-contain"
-                  sizes="16px"
-                />
-              </span>
-            </a>
+              <a
+                href="/#enquiry"
+                className="relative z-10 mt-6 inline-flex min-h-[48px] w-full items-center justify-center gap-2.5 rounded-full bg-white px-5 py-3.5 text-[14px] font-bold text-[#E5091F] transition-transform active:scale-[0.98] sm:mt-7 sm:w-fit sm:px-6"
+              >
+                Request a Free Quote
+                <span className="relative size-[16px] shrink-0">
+                  <Image
+                    src="/images/services/peb/peb-solutions/cta-arrow.svg"
+                    alt=""
+                    fill
+                    className="object-contain"
+                    sizes="16px"
+                  />
+                </span>
+              </a>
+            </ServiceMidCtaCopy>
           </div>
 
           <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[185px] sm:h-[235px]">
@@ -271,6 +271,8 @@ export default function OurPEBSolutions() {
         </motion.div>
 
         <div className="relative mx-auto hidden overflow-hidden rounded-[40px] bg-[linear-gradient(118.73deg,#8B0C11_6.54%,#ED1D23_108.89%)] lg:block lg:min-h-[345px] lg:overflow-visible">
+          <ServiceMidCtaLine className="absolute left-[8.6%] top-[42.67px] z-[2]" />
+
           <motion.div
             className="pointer-events-none absolute right-0 top-[-10%] hidden h-[140%] w-[56.6%] lg:block"
             aria-hidden="true"
@@ -289,32 +291,26 @@ export default function OurPEBSolutions() {
           </motion.div>
 
           <motion.div
-            className="relative z-10 flex max-w-[580px] flex-col px-0 py-[clamp(2rem,2.14vw,2.56rem)] lg:ml-[8.6%]"
+            className="relative z-10 flex min-h-[264px] max-w-[580px] flex-col py-[clamp(2rem,2.14vw,2.56rem)] pl-7 lg:ml-[8.6%]"
             initial={{ opacity: 0, x: -36 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.75, ease: easeOut }}
           >
-            <div className="relative pl-7">
-              <span
-                className="pointer-events-none absolute bottom-0 left-0 top-0 w-[2.67px] bg-white"
-                aria-hidden="true"
-              />
+            <ServiceMidCtaTitle
+              line1="Planning a Factory, Warehouse,"
+              line2="or Industrial Building?"
+              size="short"
+            />
 
-              <h2 className="max-w-[579px] text-[clamp(2rem,2.5vw,3rem)] font-extrabold leading-[1.0525] text-white">
-                Factory, Warehouse, or{" "}
-                <span className="text-black">Industrial Building?</span>
-              </h2>
-
-              <p className="mt-4 max-w-[520px] text-[clamp(0.875rem,0.972vw,1.167rem)] font-medium leading-[1.217] tracking-[1.42px] text-[#CCC6C6]">
-                Get a free consultation and project estimate from Mekark&apos;s
-                PEB engineering team.
-              </p>
-            </div>
+            <p className="mt-4 max-w-[520px] text-[clamp(0.875rem,0.972vw,1.167rem)] font-medium leading-[1.217] tracking-[1.42px] text-[#CCC6C6]">
+              Get a free consultation and project estimate from Mekark&apos;s
+              PEB engineering team.
+            </p>
 
             <a
               href="/#enquiry"
-              className="mt-6 ml-7 inline-flex w-fit items-center justify-center gap-[9.62px] rounded-full bg-white px-6 py-[14px] text-base font-bold leading-[24px] text-[#E5091F] transition-transform hover:scale-[1.03]"
+              className="mt-8 inline-flex w-fit items-center justify-center gap-[9.62px] rounded-full bg-white px-6 py-[14px] text-base font-bold leading-[24px] text-[#E5091F] transition-transform hover:scale-[1.03]"
             >
               Request a Free Quote
               <span className="relative size-[19px] shrink-0 overflow-hidden">

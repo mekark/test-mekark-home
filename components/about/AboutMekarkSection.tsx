@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { CountUp } from "@/components/motion/CountUp";
+import { SECTION_CONTAINER_CLASS } from "@/lib/sectionLayout";
 import {
   aboutBuildingReveal,
   aboutCalloutReveal,
@@ -101,7 +102,7 @@ export function AboutMekarkSection() {
   const statsInView = useInView(statsRef, { once: true, amount: 0.25 });
   return (
     <section className="relative w-full overflow-hidden bg-white font-[family-name:var(--font-manrope)] text-[#555]">
-      <div className="relative mx-auto flex w-full max-w-[1740px] flex-col items-center gap-10 px-4 py-12 sm:gap-12 sm:px-8 sm:py-16 lg:gap-14 lg:px-[107px] lg:py-[85px]">
+      <div className={`${SECTION_CONTAINER_CLASS} flex flex-col items-center gap-10 py-12 sm:gap-12 sm:py-16 lg:gap-14 lg:py-[85px]`}>
         {/* Hero row: image + copy — Figma 3327:9333 */}
         <div className="flex w-full flex-col items-center gap-10 lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
           {/* Image card */}
@@ -147,24 +148,24 @@ export function AboutMekarkSection() {
             {/* Bottom overlays: callout + years badge */}
             <div className="absolute inset-x-0 bottom-0 z-[3] flex items-end gap-0">
               <motion.div
-                className="mb-0 ml-3 box-border flex min-h-[48px] min-w-0 flex-1 flex-col items-start justify-center bg-[linear-gradient(90deg,rgba(8,8,8,0.54)_0%,rgba(228,0,21,0.54)_42.66%)] py-2 pl-3 pr-3 sm:mb-[49px] sm:ml-auto sm:mr-0 sm:min-h-[60px] sm:max-w-[413px] sm:flex-none sm:py-2.5 sm:pl-5 sm:pr-6"
+                className="mb-0 box-border flex min-h-[44px] min-w-0 flex-1 flex-col items-center justify-center bg-[linear-gradient(90deg,rgba(8,8,8,0.54)_0%,rgba(228,0,21,0.54)_42.66%)] px-2.5 py-2 text-center sm:mb-[49px] sm:ml-auto sm:mr-0 sm:min-h-[60px] sm:max-w-[413px] sm:flex-none sm:items-start sm:py-2.5 sm:pl-5 sm:pr-6 sm:text-left"
                 variants={aboutCalloutReveal}
                 initial="hidden"
                 whileInView="visible"
                 viewport={VIEWPORT}
               >
-                <p className="text-[10px] font-bold leading-snug tracking-[0.8px] text-[#f5f5f5] sm:text-[15.33px] sm:leading-normal sm:tracking-[1.23px]">
+                <p className="text-[9px] font-bold leading-[1.35] tracking-[0.6px] text-[#f5f5f5] sm:text-[13px] sm:leading-normal sm:tracking-[1.1px]">
                   EPC Solution providers for Industries
                   <br />
                   Commercial &amp; Institutional Projects
                 </p>
               </motion.div>
 
-              <div className="flex shrink-0 flex-col items-center rounded-br-[20px] bg-[#c4161c] px-4 py-3 text-center sm:rounded-br-[26.67px] sm:px-8 sm:py-6">
-                <p className="text-[28px] font-extrabold leading-none text-[#f5f5f5] sm:text-[48px] sm:leading-[48px]">
+              <div className="flex shrink-0 flex-col items-center rounded-br-[20px] bg-[#c4161c] px-3 py-2.5 text-center sm:rounded-br-[26.67px] sm:px-8 sm:py-6">
+                <p className="text-[22px] font-extrabold leading-none text-[#f5f5f5] sm:text-[48px] sm:leading-[48px]">
                   18+
                 </p>
-                <p className="mt-0.5 text-[9px] font-bold capitalize tracking-[1px] text-[rgba(245,245,245,0.8)] sm:mt-1 sm:text-[13.33px] sm:tracking-[1.33px]">
+                <p className="mt-0.5 text-[8px] font-bold capitalize tracking-[0.8px] text-[rgba(245,245,245,0.8)] sm:mt-1 sm:text-[13.33px] sm:tracking-[1.33px]">
                   Years Of
                   <br />
                   Excellence

@@ -42,7 +42,7 @@ export function RdPage() {
       {/* Hero */}
       <section
         aria-label="Research and development"
-        className="relative w-full overflow-hidden pt-[76px] sm:pt-[88px]"
+        className="relative w-full overflow-hidden pt-[60px]"
       >
         <div className="mx-auto w-full max-w-[1920px] px-5 pb-12 pt-8 sm:px-8 sm:pb-16 sm:pt-10 lg:px-[80px] lg:pb-20 lg:pt-12">
           <motion.div

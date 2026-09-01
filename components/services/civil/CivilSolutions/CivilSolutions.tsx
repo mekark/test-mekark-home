@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { SERVICE_BODY_TEXT_CLASS } from "@/components/services/serviceTypography";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 18 },
@@ -137,7 +138,7 @@ export default function CivilSolutions() {
                 <h3 className="font-montserrat text-[17px] font-bold leading-[22px] text-darkslategray sm:text-[18.67px]">
                   {item.title}
                 </h3>
-                <p className="mt-2 font-montserrat text-[14px] leading-[21px] text-dimgray sm:text-num-16 sm:leading-[21.33px]">
+                <p className={`mt-2 ${SERVICE_BODY_TEXT_CLASS}`}>
                   {item.description}
                 </p>
               </div>
@@ -198,9 +199,9 @@ export default function CivilSolutions() {
                   </b>
                 </div>
                 <div
-                  className={`absolute right-0 left-0 flex flex-col items-start text-num-16 text-dimgray ${item.descriptionTop}`}
+                  className={`absolute right-0 left-0 flex flex-col items-start ${item.descriptionTop}`}
                 >
-                  <p className="relative flex w-[257.3px] items-center leading-[21.33px] font-normal">
+                  <p className={`relative flex w-[257.3px] items-center ${SERVICE_BODY_TEXT_CLASS}`}>
                     {item.description}
                   </p>
                 </div>

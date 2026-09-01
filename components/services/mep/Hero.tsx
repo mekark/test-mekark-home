@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { SERVICE_BODY_TEXT_SIZES } from "@/components/services/serviceTypography";
 
 const stats = [
   {
@@ -94,7 +95,7 @@ export default function Hero() {
             <b className="relative w-full min-w-0 self-stretch text-[clamp(1.625rem,6.2vw,2.25rem)] font-bold leading-[1.15] tracking-[-0.04em] text-gray-100 drop-shadow-[0_1px_0_rgba(255,255,255,0.35)] sm:text-[36px] sm:leading-[1.2] sm:tracking-[-0.9px]">
               Leading Industrial MEP Contractor &amp; Turnkey MEP Contracting Company
             </b>
-            <div className="relative mb-2 w-full min-w-0 text-[clamp(0.9375rem,3.8vw,1.0625rem)] leading-[1.5] font-semibold text-[rgba(5,7,12,0.72)] sm:mb-4 sm:text-[17px] sm:leading-[26px] lg:text-[18.67px] lg:leading-[26.67px]">
+            <div className={`relative mb-2 w-full min-w-0 text-[rgba(5,7,12,0.72)] sm:mb-4 ${SERVICE_BODY_TEXT_SIZES}`}>
               {heroDescription}
             </div>
             <div className="relative flex w-full min-w-0 flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
@@ -257,7 +258,7 @@ export default function Hero() {
           <b className="relative self-stretch whitespace-nowrap text-[clamp(2rem,2.35vw,46px)] tracking-[-1px] leading-[56px]">
             Leading Industrial MEP Contractor &amp; Turnkey MEP Contracting Company
           </b>
-          <div className="relative flex w-full max-w-[1158px] items-center text-[18.67px] leading-[26.67px] font-semibold text-gray-300">
+          <div className={`relative flex w-full max-w-[1158px] items-center text-gray-300 ${SERVICE_BODY_TEXT_SIZES}`}>
             {heroDescription}
           </div>
           <div className="relative h-[50.7px] w-[400px] text-[16px] text-white">

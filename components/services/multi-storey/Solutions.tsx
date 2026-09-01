@@ -2,6 +2,11 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { ServiceIntroTitle } from "@/components/services/ServiceIntroTitle";
+import {
+  SERVICE_BODY_TEXT_CLASS,
+  SERVICE_INTRO_TITLE_FIGMA_CLASS,
+} from "@/components/services/serviceTypography";
 
 const paragraphs = [
   "Mekark is among the premier multi-storey building manufacturers in Chennai, offering fast-track, code-compliant steel structures for industrial, commercial and institutional projects across Tamil Nadu.",
@@ -24,21 +29,20 @@ export default function Solutions() {
       />
 
       <div className="relative mx-auto flex min-h-[640px] max-w-[1920px] flex-col lg:min-h-[828px]">
-        <motion.h2
-          className="relative z-10 order-1 mb-4 max-w-[977px] px-5 pt-10 font-sans text-[clamp(1.5rem,4.8vw,3.33rem)] font-bold tracking-[-1px] leading-[1.12] text-gray sm:mb-6 sm:px-8 lg:mb-[34px] lg:w-[50%] lg:max-w-[980px] lg:px-0 lg:pt-[56px] lg:pl-[clamp(48px,11.7vw,224px)] lg:pr-4 lg:leading-[58.67px]"
+        <motion.div
+          className="relative z-10 order-1 mb-4 px-5 pt-10 sm:mb-6 sm:px-8 lg:mb-[34px] lg:w-[50%] lg:min-w-[977px] lg:max-w-[980px] lg:px-0 lg:pt-[56px] lg:pl-[clamp(48px,11.7vw,224px)] lg:pr-4"
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.55, ease: easeOut }}
         >
-          <span className="block md:whitespace-nowrap">
-            End-to-End Multi-Storey Steel Building
-          </span>
-          <span className="block md:whitespace-nowrap">
-            <span>Solutions, </span>
-            <span className="text-red">Under One Roof</span>
-          </span>
-        </motion.h2>
+          <ServiceIntroTitle
+            className={SERVICE_INTRO_TITLE_FIGMA_CLASS}
+            beforeRed="End-to-End Multi-Storey Steel Building"
+            line2Prefix="Solutions, "
+            redPart="Under One Roof"
+          />
+        </motion.div>
 
         <div className="pointer-events-none relative order-2 mx-auto -mt-1 h-[280px] w-full max-w-[520px] overflow-hidden sm:h-[360px] lg:absolute lg:inset-0 lg:mt-0 lg:h-full lg:max-w-none lg:w-full lg:overflow-hidden">
           <motion.div
@@ -82,7 +86,7 @@ export default function Solutions() {
             {paragraphs.map((text, index) => (
               <motion.p
                 key={index}
-                className="relative w-full max-w-[724px] shrink-0 font-manrope text-[14px] font-normal leading-[22px] text-black sm:text-[17px] sm:leading-[26px] lg:text-num-18_67"
+                className={`relative w-full max-w-[724px] shrink-0 ${SERVICE_BODY_TEXT_CLASS}`}
                 initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}

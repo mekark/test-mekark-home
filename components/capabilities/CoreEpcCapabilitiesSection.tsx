@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { motion } from "framer-motion";
+import { SECTION_CONTAINER_CLASS } from "@/lib/sectionLayout";
 import {
   epcCapCardFromLeft,
   epcCapEpcStamp,
@@ -142,7 +143,7 @@ export function CoreEpcCapabilitiesSection() {
 
   return (
     <section className="relative w-full overflow-hidden bg-white font-[family-name:var(--font-manrope)] text-black">
-      <div className="relative mx-auto w-full max-w-[1740px] px-4 py-14 sm:px-8 sm:py-16 lg:px-[107px] lg:py-[107px]">
+      <div className={`${SECTION_CONTAINER_CLASS} py-14 sm:py-16 lg:py-[107px]`}>
         <motion.div
           variants={epcCapHeadlineGroup}
           initial="hidden"
@@ -225,7 +226,7 @@ export function CoreEpcCapabilitiesSection() {
         </div>
 
         {scrollSnaps.length > 1 ? (
-          <div className="mt-2 flex items-center justify-center gap-1 pb-1.5">
+          <div className="mt-4 flex items-center justify-center gap-2 pb-1.5">
             {scrollSnaps.map((_, index) => (
               <button
                 key={index}
@@ -233,8 +234,10 @@ export function CoreEpcCapabilitiesSection() {
                 onClick={() => scrollTo(index)}
                 aria-label={`Go to slide ${index + 1}`}
                 aria-current={index === selectedIndex ? "true" : undefined}
-                className={`h-[15px] w-[21px] rounded-sm transition ${
-                  index === selectedIndex ? "bg-[#6b6b6b]" : "bg-[#d6d6d6]"
+                className={`rounded-full transition-all duration-300 ${
+                  index === selectedIndex
+                    ? "h-2 w-8 bg-[#e40015]"
+                    : "size-2 bg-[#d6d6d6] hover:bg-[#b8b8b8]"
                 }`}
               />
             ))}

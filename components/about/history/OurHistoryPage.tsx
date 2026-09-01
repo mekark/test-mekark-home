@@ -109,7 +109,7 @@ export function OurHistoryPage() {
   return (
     <main className="overflow-hidden bg-[#f6f7f8] text-[#151515]">
       {/* Hero */}
-      <section className="relative isolate overflow-hidden pt-[76px] sm:pt-[88px]">
+      <section className="relative isolate overflow-hidden pt-[60px]">
         <div className="mx-auto max-w-[1240px] px-5 pb-10 pt-10 text-center sm:px-8 sm:pb-14 sm:pt-14 lg:px-10 lg:pt-16">
           <motion.div
             variants={staggerContainer}

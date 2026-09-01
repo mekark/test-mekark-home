@@ -17,6 +17,7 @@ import {
   enquiryHighlightStagger,
   enquirySectionStagger,
 } from "@/lib/motion-variants";
+import { SECTION_CONTAINER_CLASS } from "@/lib/sectionLayout";
 import styles from "./enquiry-form.module.css";
 
 const VIEWPORT = { once: true, margin: "-80px" as const };
@@ -373,11 +374,11 @@ export function EnquirySection() {
         initial="hidden"
         whileInView="visible"
         viewport={VIEWPORT}
-        className="relative z-[1] mx-auto flex w-full max-w-[1920px] flex-col items-center justify-between gap-10 px-5 py-12 sm:px-8 lg:min-h-[25vw] lg:flex-row lg:items-center lg:gap-[3.75vw] lg:px-[4.1667vw] lg:py-[2.8vw] lg:pb-[1.6vw]"
+        className={`${SECTION_CONTAINER_CLASS} relative z-[1] flex flex-col items-center justify-between gap-8 py-12 lg:min-h-[25vw] lg:flex-row lg:items-start lg:gap-[3.75vw] lg:pt-[2.6vw] lg:pb-[1.6vw]`}
       >
         <motion.div
           variants={enquiryCopyReveal}
-          className="w-full shrink-0 lg:w-[30.1389vw] lg:pl-[2.0833vw]"
+          className="w-full shrink-0 lg:w-[30.1389vw] lg:pl-[2.0833vw] lg:pt-[1.5vw]"
         >
           <motion.p
             variants={enquiryCopyItem}
@@ -388,14 +389,17 @@ export function EnquirySection() {
 
           <motion.h2
             variants={enquiryCopyItem}
-            className="mt-3 text-[clamp(2rem,4.2vw,3.73rem)] font-extrabold leading-[1.08] tracking-[-1.5px] text-white lg:mt-[0.7917vw] lg:text-[3.1111vw] lg:leading-[3.3597vw] lg:tracking-[-0.0778vw]"
+            className="mt-2 text-[clamp(2rem,4.2vw,3.73rem)] font-extrabold leading-[1.08] tracking-[-1.5px] text-white lg:mt-[0.5556vw] lg:text-[3.1111vw] lg:leading-[3.3597vw] lg:tracking-[-0.0778vw]"
           >
-            Let&apos;s Build Your Next Industrial Project.
+            <span className="block lg:whitespace-nowrap">
+              Let&apos;s Build Your Next
+            </span>
+            <span className="block">Industrial Project.</span>
           </motion.h2>
 
           <motion.p
             variants={enquiryCopyItem}
-            className="mt-3 max-w-[512px] text-[clamp(1rem,1.4vw,1.267rem)] leading-[1.75] text-white/80 lg:mt-[0.7917vw] lg:max-w-[26.6667vw] lg:text-[1.0556vw] lg:leading-[1.8472vw]"
+            className="mt-2 max-w-[512px] text-[clamp(1rem,1.4vw,1.267rem)] leading-[1.75] text-white/80 lg:mt-[0.5556vw] lg:max-w-[26.6667vw] lg:text-[1.0556vw] lg:leading-[1.8472vw]"
           >
             Partner with Mekark for high-quality, fast-track, and cost-efficient
             industrial construction solutions.
@@ -403,7 +407,7 @@ export function EnquirySection() {
 
           <motion.ul
             variants={enquiryHighlightStagger}
-            className="mt-6 flex flex-col gap-4 lg:mt-[2vw] lg:gap-[1.1111vw]"
+            className="mt-4 flex flex-col gap-3 lg:mt-[1.25vw] lg:gap-[0.8333vw]"
           >
             {HIGHLIGHTS.map((item) => (
               <motion.li

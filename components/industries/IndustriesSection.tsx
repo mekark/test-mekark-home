@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { SECTION_CONTAINER_CLASS } from "@/lib/sectionLayout";
 import {
   aboutBadgeDot,
   aboutBadgeReveal,
@@ -111,8 +112,8 @@ function SectionBadge() {
         className="relative size-[9.4px] rounded-full bg-[#e40015]"
         aria-hidden
       />
-      <span className="font-medium capitalize leading-[18.8px] tracking-[0.7px]">
-        What we do
+      <span className="font-medium leading-[18.8px] tracking-[0.7px]">
+        What We Do
       </span>
     </motion.div>
   );
@@ -167,42 +168,45 @@ function IndustryCard({
 export function IndustriesSection() {
   return (
     <section className="relative w-full border-b border-black/10 bg-white font-[family-name:var(--font-manrope)] text-[#111]">
-      <div className="relative mx-auto w-full max-w-[1740px] px-5 py-14 sm:px-8 lg:px-[107px] lg:py-[107px]">
+      <div className={`${SECTION_CONTAINER_CLASS} py-14 lg:py-[107px]`}>
         <motion.div
-          className="mb-12 flex flex-col gap-10 lg:mb-[67px] lg:flex-row lg:items-center lg:justify-between lg:gap-16"
+          className="mb-12 lg:mb-[67px]"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={VIEWPORT}
         >
-          <div className="flex shrink-0 flex-col gap-[29px]">
-            <SectionBadge />
+          <div className="grid grid-cols-1 gap-x-0 gap-y-8 lg:grid-cols-[auto_minmax(0,1fr)] lg:grid-rows-[auto_auto] lg:items-start lg:gap-x-10 lg:gap-y-[22px] xl:gap-x-12">
+            <div className="lg:col-start-1 lg:row-start-1">
+              <SectionBadge />
+            </div>
 
             <motion.h2
               variants={aboutHeadlineStagger}
-              className="text-[clamp(1.5rem,3.5vw,3.33rem)] font-extrabold leading-[0.95] tracking-[-1.12px] text-[#111] sm:whitespace-nowrap"
+              className="max-w-none overflow-visible text-[clamp(1.75rem,3.5vw,3.33rem)] font-extrabold leading-[1.05] tracking-[-1.12px] text-[#111] lg:col-start-1 lg:row-start-2 lg:-mt-5 lg:text-[53.33px] lg:leading-[56px]"
             >
-              <motion.span variants={aboutHeadlineChunk}>
+              <motion.span variants={aboutHeadlineChunk} className="block lg:whitespace-nowrap">
                 Engineered for Every Sector
               </motion.span>
             </motion.h2>
-          </div>
 
-          <div className="flex items-start gap-8 lg:gap-10">
-            <motion.div
-              variants={drawVertical}
-              className="hidden h-[140px] w-[1.3px] shrink-0 origin-top bg-[#dedede] lg:block lg:h-[187px]"
-              aria-hidden
-            />
-            <motion.p
-              variants={fadeUp}
-              className="max-w-[560px] text-[17px] leading-[1.7] text-[#4f4f4f] sm:text-xl lg:text-2xl"
-            >
-              From heavy industrial plants to high-precision manufacturing
-              facilities, Mekark delivers engineering-led EPC solutions across
-              diverse industrial sectors, built for performance, scale, and long
-              term reliability
-            </motion.p>
+            <div className="flex min-w-0 max-w-[980px] items-start gap-10 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:justify-self-end">
+              <motion.div
+                variants={drawVertical}
+                style={{ originY: 0 }}
+                className="hidden h-[186.7px] w-[1.3px] shrink-0 origin-top bg-[#dedede] lg:block"
+                aria-hidden
+              />
+              <motion.p
+                variants={fadeUp}
+                className="min-w-0 w-full max-w-[938.7px] pt-0 text-left text-lg leading-[170%] text-[#4f4f4f] sm:text-xl lg:pt-[calc(186.7px/2-62.68px)] lg:text-2xl"
+              >
+                From heavy industrial plants to high-precision manufacturing
+                facilities, Mekark delivers engineering-led EPC solutions across
+                diverse industrial sectors, built for performance, scale, and long
+                term reliability
+              </motion.p>
+            </div>
           </div>
         </motion.div>
 

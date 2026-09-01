@@ -12,6 +12,7 @@ import {
   blogHeadlineReveal,
   blogSectionStagger,
 } from "@/lib/motion-variants";
+import { SECTION_CONTAINER_CLASS } from "@/lib/sectionLayout";
 
 const BLOG_URL = "https://blog.mekark.com/";
 
@@ -133,7 +134,7 @@ export function MekarkBlogsSection() {
         initial="hidden"
         whileInView="visible"
         viewport={VIEWPORT}
-        className="relative mx-auto w-full max-w-[1280px] px-5 py-12 sm:px-8 lg:px-20 lg:py-[70px]"
+        className={`${SECTION_CONTAINER_CLASS} py-12 lg:py-[70px]`}
       >
         <motion.div
           variants={blogHeaderReveal}

@@ -762,7 +762,7 @@ export function Navbar() {
         transition={{ duration: 0.35, ease: EASE }}
         className="border-b"
       >
-        <div className="flex h-[76px] w-full items-center justify-between gap-8 px-5 sm:h-[88px] sm:px-8 lg:px-10 xl:px-14">
+        <div className="flex h-[60px] w-full items-center justify-between gap-8 px-5 sm:px-8 lg:px-10 xl:px-14">
           <motion.div variants={navbarLogoReveal} initial="hidden" animate="visible" className="shrink-0">
             <Link
               href="/"
@@ -781,7 +781,7 @@ export function Navbar() {
                   width={220}
                   height={60}
                   priority
-                  className="h-11 w-auto sm:h-12 lg:h-[52px]"
+                  className="h-10 w-auto sm:h-10 lg:h-11"
                 />
               </motion.div>
             </Link>
@@ -857,7 +857,7 @@ export function Navbar() {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="fixed inset-x-0 top-[76px] bottom-0 z-50 overflow-y-auto overscroll-contain border-t border-white/10 bg-[#0a0a0a]/96 backdrop-blur-xl xl:hidden sm:top-[88px]"
+            className="fixed inset-x-0 top-[60px] bottom-0 z-50 overflow-y-auto overscroll-contain border-t border-white/10 bg-[#0a0a0a]/96 backdrop-blur-xl xl:hidden"
             aria-label="Mobile navigation"
           >
             <motion.div

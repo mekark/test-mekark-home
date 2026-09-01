@@ -21,7 +21,7 @@ import { TestimonialsSection } from "@/components/testimonials/TestimonialsSecti
 
 export default function Home() {
   return (
-    <div className="flex flex-1 flex-col bg-black">
+    <div className="flex flex-1 flex-col overflow-x-clip bg-black">
       <HeroSection />
       <EngineeringNumbersSection />
       <AboutMekarkSection />

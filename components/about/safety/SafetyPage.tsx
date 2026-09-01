@@ -771,7 +771,7 @@ function SafetyCertificationsSection() {
       ref={sectionRef}
       className="relative isolate h-[100dvh] overflow-hidden bg-[#f7f7f7] sm:bg-white"
     >
-      <div className="absolute inset-0 pt-[76px] sm:pt-[88px]">
+      <div className="absolute inset-0 pt-[60px]">
         <div className="relative h-full w-full">
           <AnimatePresence initial={false} mode="sync">
             <motion.div
@@ -837,7 +837,7 @@ function SafetyCertificationsSection() {
         </div>
       </div>
 
-      <div className="relative z-10 flex h-full flex-col px-4 pb-3 pt-[calc(76px+0.65rem)] sm:px-8 sm:pb-4 sm:pt-[calc(88px+1rem)] lg:max-w-[min(72vw,66rem)] lg:pl-[clamp(1.25rem,8vw,10rem)] lg:pr-6 lg:pt-[calc(88px+0.85rem)] lg:pb-4">
+      <div className="relative z-10 flex h-full flex-col px-4 pb-3 pt-[calc(60px+0.65rem)] sm:px-8 sm:pb-4 sm:pt-[calc(60px+1rem)] lg:max-w-[min(72vw,66rem)] lg:pl-[clamp(1.25rem,8vw,10rem)] lg:pr-6 lg:pt-[calc(60px+0.85rem)] lg:pb-4">
         <motion.div
           variants={staggerContainer}
           initial="hidden"

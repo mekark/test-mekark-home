@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { SERVICE_BODY_TEXT_SIZES } from "@/components/services/serviceTypography";
 import styles from "./index.module.css";
 
 export default function Hero() {
@@ -68,7 +69,7 @@ export default function Hero() {
         <b className={styles.southIndiasTrusted}>
           South India&apos;s Trusted Commercial Solar Installation Contractor
         </b>
-        <div className={styles.mekarkDeliversEndToEnd}>
+        <div className={`${styles.mekarkDeliversEndToEnd} ${SERVICE_BODY_TEXT_SIZES} text-[rgba(5,7,12,0.5)]`}>
           Mekark delivers end-to-end solar power solutions for factories,
           warehouses, and industrial facilities across Tamil Nadu, Chennai,
           Bangalore, Hyderabad, Karnataka, and Andhra Pradesh, from design to

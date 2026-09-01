@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { ServiceIntroTitle } from "@/components/services/ServiceIntroTitle";
+import { SERVICE_BODY_TEXT_CLASS } from "@/components/services/serviceTypography";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -46,20 +48,22 @@ export default function EndToEndPEB() {
       <div className="relative z-10 mx-auto flex w-full max-w-[1920px] flex-col px-5 py-10 sm:px-10 sm:py-14 lg:block lg:aspect-[1920/929] lg:overflow-hidden lg:px-0 lg:py-0">
         {/* Copy — Figma: left 224, title top 85.33 */}
         <div className="contents lg:block lg:absolute lg:left-[11.67%] lg:top-[9.18%] lg:z-10 lg:w-[43.54%] lg:max-w-none">
-          <motion.h2
-            id="end-to-end-peb-title"
-            className="order-1 flex max-w-[836px] flex-col justify-center text-balance font-[family-name:var(--font-manrope)] text-[clamp(1.75rem,6vw,3.333rem)] font-bold leading-[1.2] sm:text-[clamp(2rem,2.778vw,3.333rem)] sm:leading-[clamp(2.25rem,3.056vw,3.667rem)] lg:order-none lg:max-w-none"
+          <motion.div
+            className="order-1 lg:order-none"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.6 }}
           >
-            <span className="text-[#111111]">End-to-End PEB Construction,</span>
-            <span className="text-[#E50818]">Under One Roof</span>
-          </motion.h2>
+            <ServiceIntroTitle
+              id="end-to-end-peb-title"
+              beforeRed="End-to-End PEB Construction, "
+              redPart="Under One Roof"
+            />
+          </motion.div>
 
           <motion.div
-            className="order-3 mt-6 flex max-w-[672px] flex-col gap-5 font-manrope text-[14px] font-normal leading-[22px] text-black sm:mt-[clamp(2rem,2.7vw,3.25rem)] sm:gap-[1.667rem] sm:text-[17px] sm:leading-[26px] lg:order-none lg:max-w-none lg:text-num-18_67"
+            className={`order-3 mt-6 flex max-w-[672px] flex-col gap-5 sm:mt-[clamp(2rem,2.7vw,3.25rem)] sm:gap-[1.667rem] lg:order-none lg:max-w-none ${SERVICE_BODY_TEXT_CLASS}`}
             variants={stagger}
             initial="hidden"
             whileInView="visible"

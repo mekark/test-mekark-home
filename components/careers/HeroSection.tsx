@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function HeroSection() {
   return (
-    <section className="relative h-[min(100svh,590px)] min-h-[420px] w-full overflow-hidden bg-black pt-[76px] sm:h-[678px] sm:pt-[88px]">
+    <section className="relative h-[min(100svh,590px)] min-h-[420px] w-full overflow-hidden bg-black pt-[60px] sm:h-[678px]">
       <Image
         src="/assets/careers/hero.png"
         alt="Mekark teams on site and in the office"

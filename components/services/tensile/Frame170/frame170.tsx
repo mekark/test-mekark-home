@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import ServiceSolutionsMobileGrid from "@/components/services/ServiceSolutionsMobileGrid";
+import { SERVICE_BODY_TEXT_CLASS } from "@/components/services/serviceTypography";
 
 const solutions = [
   {
@@ -90,7 +91,7 @@ export default function Frame170() {
                 <h3 className="text-[18.67px] font-bold leading-[1.25] text-[#3c3938]">
                   {item.title}
                 </h3>
-                <p className="text-base leading-[1.4] text-[#555]">{item.body}</p>
+                <p className={SERVICE_BODY_TEXT_CLASS}>{item.body}</p>
               </div>
             </motion.article>
           ))}

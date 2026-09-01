@@ -57,9 +57,6 @@
 	position: absolute;
 	top: 4.6182vw;
 	left: 3.125vw;
-	font-size: 0.9375vw;
-	font-weight: 500;
-	color: #05070c;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -172,14 +169,8 @@
 	font-family: Montserrat, sans-serif;
 }
 .weHandleDesign {
-	letter-spacing: 0.0204vw;
-	font-family: Montserrat, sans-serif;
 	align-self: stretch;
 	position: relative;
-	font-size: 0.8333vw;
-	line-height: 1.3193vw;
-	color: #6f6d6d;
-	font-weight: 100;
 }
 .div3 {
 	align-self: stretch;
@@ -323,9 +314,6 @@
 .xEngineersDesign {
 	width: 18.2292vw;
 	position: relative;
-	font-size: 0.8333vw;
-	line-height: 1.3193vw;
-	color: #555;
 	display: flex;
 	align-items: center;
 }
@@ -443,8 +431,6 @@
 		width: 100%;
 		max-width: 42rem;
 		margin: 0.85rem auto 0;
-		font-size: 0.95rem;
-		line-height: 1.55;
 	}
 	.asATrusted br {
 		display: none;
@@ -553,9 +539,6 @@
 	.weHandleDesign,
 	.xEngineersDesign {
 		width: 100%;
-		font-size: 0.82rem;
-		line-height: 1.55;
-		letter-spacing: 0.01em;
 	}
 	.image25Parent {
 		position: relative;

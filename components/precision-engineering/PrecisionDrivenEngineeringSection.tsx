@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { SECTION_CONTAINER_CLASS } from "@/lib/sectionLayout";
 import {
   precEngBenefitDot,
   precEngBenefitItem,
@@ -51,7 +52,7 @@ const WORKFLOW_STEPS = [
     number: "01",
     title: "Analyse",
     icon: "/images/precision-engineering/icon-analyse.svg",
-    iconSize: 52,
+    iconSize: 69,
     benefit: ["Fabrication accuracy from", "Day 1"],
     isLast: false,
   },
@@ -59,7 +60,7 @@ const WORKFLOW_STEPS = [
     number: "02",
     title: "Model",
     icon: "/images/precision-engineering/icon-model.svg",
-    iconSize: 48,
+    iconSize: 64,
     benefit: ["Clash-free structural", "execution"],
     isLast: false,
   },
@@ -67,7 +68,7 @@ const WORKFLOW_STEPS = [
     number: "03",
     title: "Shop Drawings",
     icon: "/images/precision-engineering/icon-shop-drawings.svg",
-    iconSize: 52,
+    iconSize: 69,
     benefit: ["Structural reliability at", "industrial scale"],
     isLast: true,
   },
@@ -104,10 +105,10 @@ function StepConnector() {
   return (
     <motion.div
       variants={precEngConnectorPulse}
-      className="absolute right-0 top-1/2 z-10 flex size-[23px] -translate-y-1/2 translate-x-1/2 items-center justify-center"
+      className="absolute right-0 top-1/2 z-10 flex size-[30px] -translate-y-1/2 translate-x-1/2 items-center justify-center"
       aria-hidden
     >
-      <div className="size-4 rotate-45 border-r border-t border-[rgba(237,28,36,0.35)] bg-[#fff9f9]" />
+      <div className="size-[21px] rotate-45 border-r-[1.33px] border-t-[1.33px] border-[rgba(237,28,36,0.35)] bg-[#fff9f9]" />
     </motion.div>
   );
 }
@@ -120,12 +121,12 @@ function WorkflowStep({
   return (
     <motion.div
       variants={precEngStepReveal}
-      className={`relative flex h-[140px] flex-1 flex-col border border-[#f2d4d4] bg-[#fff9f9] p-4 sm:h-[140px] ${
+      className={`relative flex min-h-[120px] flex-1 flex-col border border-[#f2d4d4] bg-[#fff9f9] p-4 sm:h-[186.667px] sm:p-[21px] ${
         step.number === "01"
-          ? "rounded-xl sm:rounded-none sm:rounded-l-xl sm:border-r-0"
+          ? "rounded-2xl sm:rounded-none sm:rounded-l-2xl sm:border-r-0"
           : step.isLast
-            ? "rounded-xl sm:rounded-none sm:rounded-r-xl"
-            : "rounded-xl sm:rounded-none sm:border-r-0"
+            ? "rounded-2xl sm:rounded-none sm:rounded-r-2xl"
+            : "rounded-2xl sm:rounded-none sm:border-r-0"
       }`}
     >
       {!step.isLast && (
@@ -136,14 +137,14 @@ function WorkflowStep({
 
       <motion.span
         variants={precEngStepNumber}
-        className="text-[11.5px] font-extrabold leading-[17px] text-[#ed1c24]"
+        className="text-xs font-extrabold leading-[18px] text-[#ed1c24] sm:text-[15.33px] sm:leading-[23px]"
       >
         {step.number}
       </motion.span>
 
       <motion.div
         variants={precEngStepIcon}
-        className="mt-2 flex flex-1 items-center"
+        className="mt-1.5 flex flex-1 items-center sm:mt-2"
         style={{ transformPerspective: 600 }}
       >
         <Image
@@ -151,14 +152,18 @@ function WorkflowStep({
           alt=""
           width={step.iconSize}
           height={step.iconSize}
-          className="h-auto w-auto"
+          className={`object-contain ${
+            step.iconSize === 64
+              ? "size-10 sm:size-16"
+              : "size-10 sm:size-[69px]"
+          }`}
           aria-hidden
         />
       </motion.div>
 
       <motion.h3
         variants={precEngStepTitle}
-        className="text-[19px] font-extrabold leading-[29px] text-[#111]"
+        className="text-base font-extrabold leading-6 text-[#111] sm:text-[25.6px] sm:leading-[38.4px]"
       >
         {step.title}
       </motion.h3>
@@ -181,39 +186,39 @@ function SoftwareCard({
         boxShadow: "0px 14px 28px rgba(237,28,36,0.12)",
         transition: { type: "spring", stiffness: 340, damping: 22 },
       }}
-      className="relative overflow-hidden rounded-xl bg-white p-6 pl-[26px] shadow-[0px_8px_13px_rgba(237,28,36,0.07)] sm:min-h-[166px]"
+      className="relative overflow-hidden rounded-2xl bg-white pl-6 pr-4 shadow-[0px_10.667px_17.333px_rgba(237,28,36,0.07)] sm:min-h-[221px] sm:pl-[35px] sm:pr-12 sm:pt-8 sm:pb-8"
     >
       <motion.span
         variants={precEngBorderAccent}
-        className="absolute bottom-0 left-0 top-0 w-[5px] origin-top bg-[#ed2024]"
+        className="absolute bottom-0 left-0 top-0 w-1 origin-top bg-[#ed2024] sm:w-[6.667px]"
         aria-hidden
       />
 
-      <div className="flex flex-col gap-4 sm:flex-row sm:gap-6">
+      <div className="flex flex-col gap-4 py-5 sm:flex-row sm:items-start sm:gap-0 sm:py-8">
         <motion.div
           variants={precEngLogoReveal}
-          className="relative size-20 shrink-0 overflow-hidden rounded-full"
+          className="relative mx-auto size-16 shrink-0 overflow-hidden rounded-full sm:mx-0 sm:mr-8 sm:size-[107px]"
         >
           <Image
             src={card.logo}
             alt={card.name}
             fill
             className="object-cover"
-            sizes="80px"
+            sizes="(max-width: 640px) 64px, 107px"
           />
         </motion.div>
 
         <div className="min-w-0 flex-1">
-          <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
+          <div className="flex flex-wrap items-start justify-between gap-x-3 gap-y-2">
             <motion.h3
               variants={precEngStepTitle}
-              className="text-[17.6px] font-bold leading-[22px] text-[#111]"
+              className="text-lg font-bold leading-6 text-[#111] sm:text-[23.47px] sm:leading-[29.33px]"
             >
               {card.name}
             </motion.h3>
             <motion.span
               variants={precEngTagPop}
-              className="rounded-full border border-[#ffd5d5] bg-[#ffe8e8] px-[11px] py-1 text-[10.9px] font-bold uppercase tracking-[0.54px] text-[#ed1c24]"
+              className="rounded-full border border-[#ffd5d5] bg-[#ffe8e8] px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.5px] text-[#ed1c24] sm:px-[15px] sm:py-[5px] sm:text-[14.53px] sm:tracking-[0.73px]"
             >
               {card.badge}
             </motion.span>
@@ -221,20 +226,20 @@ function SoftwareCard({
 
           <motion.p
             variants={precEngStepTitle}
-            className="mt-2 max-w-[361px] text-[14px] leading-[23px] text-[#666]"
+            className="mt-1.5 max-w-[482px] text-sm leading-relaxed text-[#666] sm:mt-2 sm:text-[18.8px] sm:leading-[30.5px]"
           >
             {card.description}
           </motion.p>
 
           <motion.div
             variants={precEngBenefitRow}
-            className="mt-3 flex flex-wrap gap-2"
+            className="mt-3 flex flex-wrap gap-2 sm:mt-4 sm:gap-[11px]"
           >
             {card.tags.map((tag) => (
               <motion.span
                 key={tag}
                 variants={precEngTagPop}
-                className="rounded-full bg-[#f5f5f5] px-3 py-1 text-[11.5px] font-semibold leading-[17px] text-[#555]"
+                className="rounded-full bg-[#f5f5f5] px-2.5 py-1 text-xs font-semibold leading-[18px] text-[#555] sm:px-4 sm:py-[5px] sm:text-[15.33px] sm:leading-[23px]"
               >
                 {tag}
               </motion.span>
@@ -248,35 +253,35 @@ function SoftwareCard({
 
 export function PrecisionDrivenEngineeringSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-[#fef4f4] text-[#111]">
-      <div className="relative mx-auto w-full max-w-[1440px] px-5 py-14 sm:px-8 lg:px-20 lg:py-[70px]">
+    <section className="relative w-full overflow-hidden bg-[#fef4f4] font-[family-name:var(--font-manrope)] text-[#111]">
+      <div className={`${SECTION_CONTAINER_CLASS} py-10 sm:py-14 lg:py-[93px]`}>
         <motion.div
-          className="flex w-full max-w-[1280px] flex-col gap-6"
+          className="flex w-full flex-col gap-8"
           variants={precEngSectionStagger}
           initial="hidden"
           whileInView="visible"
           viewport={VIEWPORT}
         >
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-[672px]">
+          <div className="flex flex-col gap-8 lg:min-h-[196px] lg:flex-row lg:items-end lg:justify-between lg:gap-10">
+            <div className="max-w-[907px] lg:flex lg:flex-col lg:gap-8">
               <motion.div variants={precEngHeadlineGroup}>
                 <motion.h2
                   variants={precEngHeadlineWord}
-                  className="text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold leading-[1.5] tracking-[-1px] lg:text-[40px] lg:leading-[60px]"
+                  className="text-[clamp(1.5rem,6vw,3.33rem)] font-bold tracking-[-0.8px] sm:tracking-[-1.33px] lg:text-[53.33px] lg:leading-[80px]"
                 >
                   <span>Precision-</span>
                   <span className="text-[#ed2024]">Driven Engineering</span>
                 </motion.h2>
                 <motion.div
                   variants={precEngRuleDraw}
-                  className="mt-0 h-[3px] w-14 origin-left rounded-sm bg-[#ed2024]"
+                  className="mt-0 h-0.5 w-12 origin-left rounded-[2.67px] bg-[#ed2024] sm:h-1 sm:w-[75px]"
                   aria-hidden
                 />
               </motion.div>
 
               <motion.p
                 variants={precEngSubtitleReveal}
-                className="mt-6 text-[17px] leading-[31px] text-[#666]"
+                className="max-w-[896px] text-[15px] leading-[1.7] text-[#666] sm:text-[17px] sm:leading-[1.8] lg:text-[23px] lg:leading-[41.5px]"
               >
                 Tekla Structures and STAAD.Pro connect design intent, structural
                 validation, detailing, and CNC-ready output before site execution
@@ -286,7 +291,7 @@ export function PrecisionDrivenEngineeringSection() {
 
             <motion.div
               variants={precEngPillRow}
-              className="flex flex-wrap gap-3"
+              className="flex flex-wrap gap-4 lg:shrink-0 lg:justify-end"
             >
               {VALUE_PILLS.map((pill) => (
                 <motion.div
@@ -296,18 +301,19 @@ export function PrecisionDrivenEngineeringSection() {
                     y: -3,
                     transition: { type: "spring", stiffness: 400, damping: 20 },
                   }}
-                  className="flex h-12 origin-left items-center gap-2 rounded-md border-l border-[rgba(237,28,36,0.25)] bg-white/55 px-4"
+                  className="flex h-12 items-center gap-2 rounded-lg border-l-[1.33px] border-[rgba(237,28,36,0.25)] bg-white/55 px-3.5 py-3 sm:h-16 sm:gap-3 sm:px-[21px] sm:py-4"
                 >
                   <motion.div variants={precEngPillIcon}>
                     <Image
                       src={pill.icon}
                       alt=""
-                      width={24}
-                      height={24}
+                      width={32}
+                      height={32}
+                      className="size-6 sm:size-8"
                       aria-hidden
                     />
                   </motion.div>
-                  <span className="text-[11.5px] font-extrabold uppercase tracking-[1.84px] text-[#ed1c24]">
+                  <span className="text-[11px] font-extrabold uppercase tracking-[1.5px] text-[#ed1c24] sm:text-[15.33px] sm:tracking-[2.46px]">
                     {pill.label}
                   </span>
                 </motion.div>
@@ -315,15 +321,15 @@ export function PrecisionDrivenEngineeringSection() {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 pt-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:gap-8">
-            <div className="flex flex-col gap-3 max-lg:contents">
+          <div className="grid grid-cols-1 items-start gap-8 pt-0 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:gap-[43px] lg:pt-8">
+            <div className="flex flex-col gap-4">
               <motion.div
                 variants={precEngWorkflowPanel}
                 whileHover={{
                   boxShadow: "0px 16px 32px rgba(237,28,36,0.1)",
                   transition: { duration: 0.35 },
                 }}
-                className="flex flex-col rounded-xl border border-[#ffd5d5] bg-white p-7 shadow-[0px_10px_17px_rgba(237,28,36,0.07)]"
+                className="self-start rounded-2xl border border-[#ffd5d5] bg-white px-4 py-4 shadow-[0px_13.333px_22.667px_rgba(237,28,36,0.07)] sm:px-9 sm:pt-9 sm:pb-6"
               >
                 <div className="flex flex-col gap-4 sm:flex-row sm:gap-0">
                   {WORKFLOW_STEPS.map((step) => (
@@ -335,14 +341,14 @@ export function PrecisionDrivenEngineeringSection() {
 
                       <motion.div
                         variants={precEngBenefitItem}
-                        className="mt-3 flex gap-3 px-1 sm:mt-7 sm:justify-center sm:px-3"
+                        className="mt-3 flex justify-center gap-4 px-1 sm:mt-4 sm:px-3"
                       >
                         <motion.span
                           variants={precEngBenefitDot}
-                          className="mt-2 size-1.5 shrink-0 rounded-full bg-[#ed1c24]"
+                          className="mt-[7px] size-1.5 shrink-0 rounded-full bg-[#ed1c24] sm:mt-[11px] sm:size-2"
                           aria-hidden
                         />
-                        <p className="text-[14.4px] font-semibold leading-[23.4px] text-[#555] sm:whitespace-nowrap">
+                        <p className="text-sm font-semibold leading-[22px] text-[#555] sm:text-[19.2px] sm:leading-[31.2px] sm:whitespace-nowrap">
                           {step.benefit[0]}
                           <br />
                           {step.benefit[1]}
@@ -355,16 +361,16 @@ export function PrecisionDrivenEngineeringSection() {
 
               <motion.blockquote
                 variants={precEngQuoteReveal}
-                className="relative pl-4 max-lg:order-last"
+                className="relative pl-4 sm:pl-[22px]"
               >
                 <motion.span
                   variants={precEngQuoteBorder}
-                  className="absolute bottom-0 left-0 top-0 w-0.5 origin-top bg-[#ed1c24]"
+                  className="absolute bottom-0 left-0 top-0 w-0.5 origin-top bg-[#ed1c24] sm:w-[2.67px]"
                   aria-hidden
                 />
                 <motion.p
                   variants={precEngQuoteText}
-                  className="text-[15.2px] font-semibold leading-[23px] text-[#555] lg:leading-[22.8px]"
+                  className="max-w-[840px] text-[15px] font-semibold leading-[23px] text-[#555] sm:text-[20.27px] sm:leading-[30.4px]"
                 >
                   The result is fewer coordination gaps between engineering
                   office, fabrication shop, and site team.
@@ -372,7 +378,7 @@ export function PrecisionDrivenEngineeringSection() {
               </motion.blockquote>
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-[21px]">
               {SOFTWARE_CARDS.map((card, index) => (
                 <SoftwareCard key={card.name} card={card} index={index} />
               ))}

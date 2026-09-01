@@ -165,7 +165,7 @@ export function FindYourSolutionPanel({
   const options = step === 1 ? FIND_INDUSTRIES : FIND_SERVICES;
 
   return (
-    <div className="relative flex max-h-[calc(100dvh-76px)] flex-col overflow-hidden sm:max-h-[calc(100dvh-88px)]">
+    <div className="relative flex max-h-[calc(100dvh-60px)] flex-col overflow-hidden">
       <div
         aria-hidden
         className="absolute inset-0 bg-[#070707]/78 backdrop-blur-[20px]"

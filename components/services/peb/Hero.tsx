@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
+import { SERVICE_BODY_TEXT_SIZES } from "@/components/services/serviceTypography";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -122,7 +123,7 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p
-          className="mt-4 w-full max-w-[38rem] text-center text-[clamp(0.9375rem,3.8vw,1.167rem)] font-semibold leading-[1.45] text-[rgba(5,7,12,0.5)] sm:mt-[15px] sm:max-w-[1100px] sm:leading-[1.43]"
+          className={`mt-4 w-full max-w-[38rem] text-center text-[rgba(5,7,12,0.5)] sm:mt-[15px] sm:max-w-[1100px] ${SERVICE_BODY_TEXT_SIZES}`}
           variants={fadeUp}
           initial="hidden"
           animate="visible"

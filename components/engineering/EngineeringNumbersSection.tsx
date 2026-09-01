@@ -5,6 +5,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
 import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/motion/AnimatedSection";
+import { SECTION_CONTAINER_CLASS } from "@/lib/sectionLayout";
 import {
   drawVertical,
   logoRowReveal,
@@ -102,7 +103,7 @@ export function EngineeringNumbersSection() {
   return (
     <section className="relative w-full bg-[#f5f5f5] text-black">
       {/* Engineering in Numbers — Figma 3327:9311 */}
-      <div className="relative px-4 pb-8 pt-8 font-[family-name:var(--font-manrope)] sm:px-8 sm:pb-16 sm:pt-14 lg:px-[73px] lg:pb-[70px] lg:pt-[61px]">
+      <div className={`${SECTION_CONTAINER_CLASS} relative pb-8 pt-8 font-[family-name:var(--font-manrope)] sm:pb-16 sm:pt-14 lg:pb-[70px] lg:pt-[61px]`}>
         <div
           className="pointer-events-none absolute inset-0 overflow-hidden bg-[#f5f5f5]"
           aria-hidden
@@ -125,7 +126,7 @@ export function EngineeringNumbersSection() {
           />
         </motion.div>
 
-        <div className="relative mx-auto max-w-[1740px]">
+        <div className="relative">
           <AnimatedSection
             variants={slideFromLeft}
             className="flex max-w-[721px] flex-col items-start"

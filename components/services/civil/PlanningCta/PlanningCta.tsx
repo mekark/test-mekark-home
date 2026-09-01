@@ -2,6 +2,11 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { ServiceMidCtaTitle } from "@/components/services/ServiceMidCtaTitle";
+import {
+  ServiceMidCtaCopy,
+  ServiceMidCtaLine,
+} from "@/components/services/ServiceMidCtaLine";
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
@@ -29,25 +34,19 @@ export default function PlanningCta() {
         transition={{ duration: 0.6, ease: easeOut }}
       >
         <div className="relative z-10 flex flex-col px-5 pt-8 pb-[200px] sm:px-8 sm:pt-10 sm:pb-[260px]">
-          <div className="relative pl-4 sm:pl-5">
-            <span
-              className="pointer-events-none absolute bottom-0 left-0 top-0 w-[2.7px] bg-white"
-              aria-hidden
-            />
-
-            <h2
+          <ServiceMidCtaCopy>
+            <ServiceMidCtaTitle
               id="civil-quote-title"
-              className="text-[24px] font-extrabold leading-[1.15] text-white sm:text-[32px] sm:leading-[1.1]"
-            >
-              Factory, Commercial Building, or{" "}
-              <span className="text-black">Industrial Building?</span>
-            </h2>
+              line1="Planning a Factory, Commercial Building,"
+              line2="or Industrial Building?"
+              size="medium"
+            />
 
             <p className="mt-3 max-w-[28rem] text-[13px] font-medium leading-[18px] tracking-[1.1px] text-[#CCC6C6] sm:text-[14px] sm:leading-[20px]">
               Get a free consultation and project blueprint from Mekark&apos;s
               civil construction and structural engineering team.
             </p>
-          </div>
+          </ServiceMidCtaCopy>
 
           <a
             href="/#enquiry"
@@ -119,19 +118,15 @@ export default function PlanningCta() {
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.75, ease: easeOut }}
         >
-          {/* Vertical divider — Figma 2488:5979 */}
-          <span
-            className="pointer-events-none absolute left-[6.87%] top-[12.36%] h-[76.45%] w-[2.7px] bg-white"
-            aria-hidden
-          />
+          <ServiceMidCtaLine className="absolute left-[6.87%] top-[42.67px] z-[2]" />
 
           {/* Copy block — Figma 2488:5967 */}
           <div className="absolute left-[8.59%] top-[11.88%] flex h-[76.63%] w-[32.42%] min-w-0 flex-col">
-            <h2 className="w-[138%] max-w-none text-[clamp(28px,2.8vw,48px)] font-extrabold leading-[1.05] text-white xl:text-[48px] xl:leading-[50.52px]">
-              Factory, Commercial Building,
-              <br />
-              or <span className="text-black">Industrial Building?</span>
-            </h2>
+            <ServiceMidCtaTitle
+              line1="Planning a Factory, Commercial Building,"
+              line2="or Industrial Building?"
+              size="medium"
+            />
 
             <p className="mt-3 w-[110%] text-[clamp(14px,1.1vw,18.67px)] font-medium leading-[1.22] tracking-[1.42px] text-[#CCC6C6] xl:text-[18.67px] xl:leading-[22.72px]">
               Get a free consultation and project blueprint from

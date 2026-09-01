@@ -1,4 +1,9 @@
 import Image from "next/image";
+import { ServiceIntroTitle } from "@/components/services/ServiceIntroTitle";
+import {
+  SERVICE_BODY_TEXT_CLASS,
+  SERVICE_INTRO_TITLE_FIGMA_CLASS,
+} from "@/components/services/serviceTypography";
 
 function EndToEndIllustration({ className }: { className?: string }) {
   return (
@@ -46,17 +51,17 @@ export default function EndToEnd() {
       />
 
       <div className="relative z-[1] mx-auto grid max-w-[1920px] grid-cols-1 items-center gap-10 px-5 py-16 sm:px-8 md:px-16 lg:grid-cols-2 lg:gap-12 lg:px-[112px] lg:py-[85px] xl:gap-16">
-        <div className="flex flex-col gap-6 lg:gap-8">
-          <b className="font-manrope text-[32px] leading-[1.15] tracking-[-1.33px] text-gray sm:text-[42px] sm:leading-[52px] lg:text-[53.33px] lg:leading-[58.67px]">
-            <span className="leading-[inherit]">
-              End-to-End MEP Design, Build & Commissioning,{" "}
-            </span>
-            <span className="leading-[inherit] text-red">Under One Roof</span>
-          </b>
+        <div className="flex min-w-0 flex-col gap-6 lg:min-w-[977px] lg:gap-8">
+          <ServiceIntroTitle
+            className={SERVICE_INTRO_TITLE_FIGMA_CLASS}
+            beforeRed="End-to-End MEP Design, Build &"
+            line2Prefix="Commissioning, "
+            redPart="Under One Roof"
+          />
 
           <EndToEndIllustration className="lg:hidden" />
 
-          <div className="flex flex-col gap-5 text-[14px] font-normal leading-[22px] text-black sm:text-[17px] sm:leading-[26px] lg:gap-6 lg:text-num-18_67">
+          <div className={`flex flex-col gap-5 lg:gap-6 ${SERVICE_BODY_TEXT_CLASS}`}>
             <p>
               Mekark is a leading industrial MEP contractor based in Chennai,
               delivering reliable, code-compliant mechanical, electrical,

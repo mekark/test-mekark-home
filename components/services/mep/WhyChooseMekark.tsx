@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { SERVICE_BODY_TEXT_CLASS } from "@/components/services/serviceTypography";
 
 const features = [
   {
@@ -54,7 +55,7 @@ function FeatureItemDesktop({
         <b className="block text-num-18_67 leading-[26px] text-darkslategray">
           {title}:
         </b>
-        <p className="mt-2 text-num-16 leading-num-25_33 text-dimgray">{body}</p>
+        <p className={`mt-2 ${SERVICE_BODY_TEXT_CLASS}`}>{body}</p>
       </div>
     </div>
   );
@@ -84,7 +85,7 @@ function FeatureItemMobile({
             {title}
           </h3>
         </div>
-        <p className="mt-2 text-[14px] leading-[21px] text-dimgray font-manrope">
+        <p className={`mt-2 ${SERVICE_BODY_TEXT_CLASS}`}>
           {body}
         </p>
       </div>

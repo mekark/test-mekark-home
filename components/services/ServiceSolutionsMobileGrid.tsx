@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import type { CSSProperties } from "react";
+import { SERVICE_BODY_TEXT_CLASS } from "@/components/services/serviceTypography";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 18 },
@@ -22,6 +23,9 @@ type ServiceSolutionsMobileGridProps = {
   solutions: ServiceSolutionItem[];
   desktopFrom?: "lg" | "xl";
   className?: string;
+  gridClassName?: string;
+  cardClassName?: string;
+  imageContainerClassName?: string;
 };
 
 export default function ServiceSolutionsMobileGrid({
@@ -29,6 +33,9 @@ export default function ServiceSolutionsMobileGrid({
   solutions,
   desktopFrom = "lg",
   className = "",
+  gridClassName = "",
+  cardClassName = "",
+  imageContainerClassName = "",
 }: ServiceSolutionsMobileGridProps) {
   const hideFromDesktop = desktopFrom === "xl" ? "xl:hidden" : "lg:hidden";
 
@@ -40,7 +47,7 @@ export default function ServiceSolutionsMobileGrid({
         {title}
       </h2>
       <motion.div
-        className="grid w-full grid-cols-1 gap-10 sm:grid-cols-2"
+        className={`grid w-full grid-cols-1 gap-10 sm:grid-cols-2 ${gridClassName}`}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.15 }}
@@ -54,9 +61,11 @@ export default function ServiceSolutionsMobileGrid({
             key={item.title}
             variants={fadeUp}
             transition={{ duration: 0.45, ease: "easeOut" }}
-            className="flex flex-col gap-4"
+            className={`flex flex-col gap-4 ${cardClassName}`}
           >
-            <div className="relative h-[200px] w-full overflow-hidden rounded-[21.33px] sm:h-[240px]">
+            <div
+              className={`relative h-[200px] w-full overflow-hidden rounded-[21.33px] sm:h-[240px] ${imageContainerClassName}`}
+            >
               <Image
                 className={`object-cover ${item.imageClassName ?? ""}`}
                 src={item.image}
@@ -70,7 +79,7 @@ export default function ServiceSolutionsMobileGrid({
               <h3 className="font-montserrat text-[17px] font-bold leading-[22px] text-darkslategray sm:text-[18.67px]">
                 {item.title}
               </h3>
-              <p className="mt-2 font-montserrat text-[14px] leading-[21px] text-dimgray sm:text-num-16 sm:leading-[21.33px]">
+              <p className={`mt-2 ${SERVICE_BODY_TEXT_CLASS}`}>
                 {item.description}
               </p>
             </div>

@@ -147,7 +147,7 @@ function ArrowIcon() {
 export default function ContactUsContent() {
   return (
     <main>
-      <section className="relative overflow-hidden bg-[#0a0a0a] pt-[76px] text-white sm:pt-[88px]">
+      <section className="relative overflow-hidden bg-[#0a0a0a] pt-[60px] text-white">
         <div className="absolute inset-0">
           <Image
             src="/images/hero/peb-poster.png"

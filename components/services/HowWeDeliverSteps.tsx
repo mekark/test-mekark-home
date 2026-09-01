@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { SERVICE_BODY_TEXT_CLASS } from "@/components/services/serviceTypography";
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
@@ -108,7 +109,7 @@ export default function HowWeDeliverSteps({
                 <h3 className="font-montserrat text-[16px] leading-[21px] font-bold text-darkslategray">
                   {step.title}
                 </h3>
-                <p className="mt-1.5 font-montserrat text-[14px] leading-[20px] text-dimgray">
+                <p className={`mt-1.5 ${SERVICE_BODY_TEXT_CLASS}`}>
                   {step.body}
                 </p>
               </div>
@@ -162,7 +163,7 @@ export default function HowWeDeliverSteps({
             <h3 className="font-montserrat text-[17px] leading-[21.33px] font-bold text-darkslategray sm:text-[18.67px]">
               {step.title}
             </h3>
-            <p className="mt-3 font-montserrat text-base leading-[21.33px] text-dimgray">
+            <p className={`mt-3 ${SERVICE_BODY_TEXT_CLASS}`}>
               {step.body}
             </p>
           </motion.div>

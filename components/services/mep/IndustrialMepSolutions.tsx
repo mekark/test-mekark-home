@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import ServiceSolutionsMobileGrid from "@/components/services/ServiceSolutionsMobileGrid";
+import { SERVICE_BODY_TEXT_CLASS } from "@/components/services/serviceTypography";
 
 const solutions = [
   {
@@ -110,7 +111,7 @@ export default function IndustrialMepSolutions() {
                 <b className="block text-num-18_67 leading-[26px] text-darkslategray font-montserrat">
                   {item.title}
                 </b>
-                <p className="mt-2 text-num-16 leading-[21.33px] text-dimgray font-montserrat">
+                <p className={`mt-2 ${SERVICE_BODY_TEXT_CLASS}`}>
                   {item.body}
                 </p>
               </div>

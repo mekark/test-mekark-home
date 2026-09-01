@@ -7,6 +7,7 @@ import {
   scaleIn,
   staggerContainer,
 } from "@/lib/motion-variants";
+import { SECTION_CONTAINER_CLASS } from "@/lib/sectionLayout";
 
 const VIEWPORT = { once: true, margin: "-80px" as const };
 
@@ -163,13 +164,7 @@ export function TrustedSectorsSection({
 
   return (
     <section className="relative w-full bg-[#fdebeb]">
-      <div
-        className={
-          isServices
-            ? "relative mx-auto w-full max-w-[1920px] px-4 py-10 sm:px-8 lg:px-[107px] lg:py-14"
-            : "relative mx-auto w-full max-w-[1440px] px-5 py-10 sm:px-8 lg:px-20 lg:py-14"
-        }
-      >
+      <div className={`${SECTION_CONTAINER_CLASS} py-10 lg:py-14`}>
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -178,7 +173,7 @@ export function TrustedSectorsSection({
           className={
             isServices
               ? "relative mx-auto flex w-full max-w-[1707px] flex-col items-center overflow-hidden rounded-[30px] bg-[#fcfcfc] px-4 py-10 shadow-[0px_0px_20px_rgba(0,0,0,0.1)] sm:px-8 lg:rounded-[40px] lg:px-10 lg:py-[42px]"
-              : "relative mx-auto flex w-full max-w-[1280px] flex-col items-center rounded-[30px] bg-[#fcfcfc] px-5 py-10 shadow-[0px_0px_15px_rgba(0,0,0,0.1)] sm:px-8 lg:rounded-[40px] lg:px-10 lg:py-[42px]"
+              : "relative mx-auto flex w-full max-w-[1280px] flex-col items-center overflow-hidden rounded-[30px] bg-[#fcfcfc] px-5 py-10 shadow-[0px_0px_15px_rgba(0,0,0,0.1)] sm:px-8 lg:rounded-[40px] lg:px-10 lg:py-[42px]"
           }
         >
           <motion.h2
@@ -207,13 +202,13 @@ export function TrustedSectorsSection({
 
           <motion.div
             variants={fadeUp}
-            className="mt-8 flex w-full max-w-[640px] items-center gap-4 lg:mt-10"
+            className="mt-8 flex w-full min-w-0 max-w-[640px] items-center justify-center gap-4 sm:justify-start lg:mt-10"
           >
             <div
-              className="h-px flex-1 bg-gradient-to-r from-transparent to-[#cfcfcf]"
+              className="hidden h-px min-w-0 flex-1 bg-gradient-to-r from-transparent to-[#cfcfcf] sm:block"
               aria-hidden
             />
-            <div className="flex shrink-0 items-center gap-[6.7px]">
+            <div className="flex min-w-0 max-w-full items-center justify-center gap-[6.7px]">
               <div className="relative size-6 shrink-0 lg:size-8">
                 <Image
                   src="/images/trusted-sectors/shield-tick.svg"
@@ -224,12 +219,12 @@ export function TrustedSectorsSection({
                   aria-hidden
                 />
               </div>
-              <p className="whitespace-nowrap text-center text-[14px] font-light leading-5 tracking-[1px] text-[#101116] lg:text-[15px] lg:tracking-[1.33px]">
+              <p className="min-w-0 text-center text-[14px] font-light leading-5 tracking-[1px] text-[#101116] sm:whitespace-nowrap lg:text-[15px] lg:tracking-[1.33px]">
                 Built on Trust. Delivering Excellence.
               </p>
             </div>
             <div
-              className="h-px flex-1 bg-gradient-to-l from-transparent to-[#cfcfcf]"
+              className="hidden h-px min-w-0 flex-1 bg-gradient-to-l from-transparent to-[#cfcfcf] sm:block"
               aria-hidden
             />
           </motion.div>

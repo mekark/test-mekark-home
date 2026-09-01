@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { SERVICE_BODY_TEXT_CLASS } from "@/components/services/serviceTypography";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 18 },
@@ -80,7 +81,7 @@ function Feature({
           <b className="block font-montserrat text-[15px] font-bold leading-[22px] text-darkslategray sm:text-[17px] sm:leading-6">
             {title}
           </b>
-          <p className="mt-1.5 font-montserrat text-[13px] font-normal leading-[20px] text-dimgray sm:text-[15px] sm:leading-[23px]">
+          <p className={`mt-1.5 ${SERVICE_BODY_TEXT_CLASS}`}>
             {description}
           </p>
         </div>
@@ -108,9 +109,9 @@ function Feature({
             {title}
           </b>
         </div>
-        <div className="absolute top-[34px] right-0 left-0 flex flex-col items-start text-num-16 text-dimgray">
+        <div className="absolute top-[34px] right-0 left-0 flex flex-col items-start">
           <div
-            className={`relative flex items-center leading-num-25_33 font-montserrat font-normal ${descriptionWidth} ${descriptionClassName}`}
+            className={`relative flex items-center ${descriptionWidth} ${descriptionClassName} ${SERVICE_BODY_TEXT_CLASS}`}
           >
             {description}
           </div>

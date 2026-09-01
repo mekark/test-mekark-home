@@ -4,6 +4,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { animate, motion, useInView, useReducedMotion } from "framer-motion";
+import { SERVICE_BODY_TEXT_SIZES } from "@/components/services/serviceTypography";
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
@@ -211,7 +212,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            className="w-full min-w-0 text-[clamp(0.9375rem,3.8vw,1.0625rem)] leading-[1.5] font-semibold text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)] sm:text-[17px] sm:leading-[26px] lg:text-[18.67px] lg:leading-[26.67px] lg:text-gray-300 lg:drop-shadow-none"
+            className={`w-full min-w-0 text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)] lg:text-gray-300 lg:drop-shadow-none ${SERVICE_BODY_TEXT_SIZES}`}
             initial={reduceMotion ? false : { opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: easeOut, delay: 0.3 }}

@@ -205,7 +205,7 @@ export function LifeAtMekarkPage() {
   return (
     <main className="overflow-hidden bg-white text-[#191919]">
       {/* Hero */}
-      <section className="relative isolate pt-[76px] sm:pt-[88px]">
+      <section className="relative isolate pt-[60px]">
         <div className="mx-auto max-w-[850px] px-5 pb-8 pt-10 text-center sm:px-8 sm:pb-10 sm:pt-14 lg:px-10">
           <motion.div
             variants={staggerContainer}

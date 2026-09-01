@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { SECTION_CONTAINER_CLASS } from "@/lib/sectionLayout";
 
 const HERO_VIDEOS = [
   {
@@ -177,7 +178,8 @@ export function HeroSection() {
         aria-hidden
       />
 
-      <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-7 sm:px-8 sm:pb-9 lg:px-12 lg:pb-10 xl:px-16 xl:pb-14">
+      <div className="absolute inset-x-0 bottom-0 z-10 pb-7 sm:pb-9 lg:pb-10 xl:pb-14">
+        <div className={SECTION_CONTAINER_CLASS}>
         <AnimatePresence mode="wait">
           <motion.div
             key={activeVideo.src}
@@ -233,6 +235,7 @@ export function HeroSection() {
               />
             );
           })}
+        </div>
         </div>
       </div>
     </section>

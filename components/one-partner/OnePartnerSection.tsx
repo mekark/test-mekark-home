@@ -11,6 +11,7 @@ import {
   useInView,
   type MotionValue,
 } from "framer-motion";
+import { SECTION_CONTAINER_CLASS } from "@/lib/sectionLayout";
 import {
   partnerLockBarSnap,
   partnerLockBottomDraw,
@@ -376,7 +377,7 @@ export function OnePartnerSection() {
         />
       </motion.div>
 
-      <div className="relative mx-auto flex min-h-0 w-full max-w-[1920px] flex-col px-5 py-14 sm:px-8 lg:min-h-[1081px] lg:justify-center lg:px-[107px] lg:py-[59px]">
+      <div className={`${SECTION_CONTAINER_CLASS} flex min-h-0 flex-col py-14 lg:min-h-[1081px] lg:justify-center lg:py-[59px]`}>
         <motion.div
           style={{ y: headlineYSpring }}
           className="flex w-full flex-col gap-6 lg:gap-8"

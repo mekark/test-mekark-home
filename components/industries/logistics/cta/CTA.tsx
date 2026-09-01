@@ -65,9 +65,11 @@ const CTA: NextPage = () => {
               Slots fill up fast. Get a free site assessment, the right
             </span>
             <span className={styles.subtitleLine}>
+              {" "}
               PEB recommendation, and a transparent estimate
             </span>
             <span className={styles.subtitleLine}>
+              {" "}
               within 48 hours, no obligation.
             </span>
           </div>

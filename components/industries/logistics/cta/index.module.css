@@ -379,17 +379,24 @@
     		top: auto;
     		left: auto;
     		width: 100%;
+    		max-width: 100%;
     		margin-top: 8px;
+    		margin-left: auto;
+    		margin-right: auto;
     		align-items: center;
     		text-align: center;
     		gap: 14px;
     		z-index: 2;
+    		box-sizing: border-box;
   	}
   	.planningAWarehouse {
     		width: 100%;
+    		max-width: 100%;
     		font-size: 26px;
     		line-height: 34px;
+    		text-align: center;
     		justify-content: center;
+    		align-items: center;
   	}
   	.mekarksProjectCalendar {
     		width: 100%;
@@ -397,7 +404,11 @@
     		font-size: 15px;
     		letter-spacing: 0;
     		line-height: 23px;
-    		gap: 2px;
+    		display: block;
+    		text-align: center;
+  	}
+  	.subtitleLine {
+    		display: inline;
   	}
   	.cta2 {
     		position: relative;
@@ -530,16 +541,23 @@
   	}
   	.planningAWarehouseOrLogistParent {
     		margin-top: 6px;
+    		margin-left: auto;
+    		margin-right: auto;
+    		align-items: center;
+    		text-align: center;
   	}
   	.planningAWarehouse {
     		font-size: 22px;
     		line-height: 30px;
+    		text-align: center;
+    		justify-content: center;
+    		align-items: center;
   	}
   	.mekarksProjectCalendar {
     		font-size: 14px;
     		line-height: 22px;
     		margin-top: 4px;
-    		gap: 2px;
+    		text-align: center;
   	}
   	.cta2 {
     		width: auto;

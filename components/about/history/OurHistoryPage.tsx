@@ -48,7 +48,7 @@ const STAT_COLUMNS = [
       unit: "MT / Annum",
       label: "Production capacity",
     },
-    { text: "PEB + CIVIL + MEP", label: "Turnkey solutions" },
+    { text: "CIVIL + PEB + MEP", label: "Turnkey solutions" },
   ],
 ] as const;
 
@@ -188,7 +188,7 @@ export function OurHistoryPage() {
       </section>
 
       {/* Video */}
-      <section className="bg-[#f6f7f8] px-5 py-10 sm:px-8 sm:py-16 lg:px-10">
+      {/* <section className="bg-[#f6f7f8] px-5 py-10 sm:px-8 sm:py-16 lg:px-10">
         <div className="mx-auto max-w-[1230px]">
           <motion.h2
             variants={fadeUp}
@@ -235,7 +235,7 @@ export function OurHistoryPage() {
             generations building Mekark together.
           </motion.p>
         </div>
-      </section>
+      </section> */}
 
       {/* Leadership */}
       <section className="border-t border-[#dedede] bg-[#f6f7f8] px-5 py-12 sm:px-8 sm:py-16 lg:px-[clamp(1.25rem,18vw,345px)] lg:py-[120px]">

@@ -5,16 +5,21 @@ import { motion } from "framer-motion";
 import { ManufacturingSolutionCard } from "./ManufacturingSolutionCard";
 import { manufacturingSolutions } from "./data";
 import { fadeSlideUp } from "./motion";
+import {
+  MOBILE_FACILITY_CAROUSEL_HINT,
+  MOBILE_FACILITY_CAROUSEL_ITEM,
+  MOBILE_FACILITY_CAROUSEL_TRACK,
+} from "@/components/industries/shared/industryMobileFacilityCarousel";
 
 export function ManufacturingSolutionsSection() {
   return (
     <section
-      className="relative overflow-hidden bg-[#ffefef] px-5 py-12 sm:px-10 sm:py-16 lg:px-12 lg:py-24 xl:px-16 2xl:px-20"
+      className="relative bg-[#ffefef] px-5 py-12 sm:px-10 sm:py-16 lg:px-12 lg:py-24 xl:px-16 2xl:px-20"
       aria-label="FMCG manufacturing facility construction across South India"
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-[391px] opacity-15"
+        className="pointer-events-none absolute inset-x-0 top-0 h-[391px] overflow-hidden opacity-15"
       >
         <Image
           src="/images/industries/fmcg/fmcg-facility-cta/solutions-grid.png"
@@ -63,12 +68,9 @@ export function ManufacturingSolutionsSection() {
         </div>
 
         <div className="sm:hidden">
-          <div className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className={MOBILE_FACILITY_CAROUSEL_TRACK}>
             {manufacturingSolutions.map((solution, index) => (
-              <div
-                key={solution.title}
-                className="w-[min(calc(100vw-2.5rem),300px)] shrink-0 snap-center"
-              >
+              <div key={solution.title} className={MOBILE_FACILITY_CAROUSEL_ITEM}>
                 <ManufacturingSolutionCard
                   solution={solution}
                   index={index}
@@ -77,7 +79,7 @@ export function ManufacturingSolutionsSection() {
               </div>
             ))}
           </div>
-          <p className="mt-3 text-center text-xs text-[#8b91a0]">
+          <p className={`${MOBILE_FACILITY_CAROUSEL_HINT} sm:!hidden`}>
             Swipe to explore all {manufacturingSolutions.length} solutions
           </p>
         </div>

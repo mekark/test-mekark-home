@@ -344,7 +344,7 @@ function ServiceSwitcher({
               type="button"
               onClick={() => onSelect(service.id)}
               aria-pressed={active}
-              className="relative flex min-w-0 flex-1 flex-col items-center gap-1 px-1 py-2"
+              className="group relative flex min-w-0 flex-1 flex-col items-center gap-1 px-1 py-2"
             >
               {active ? (
                 <span
@@ -354,7 +354,9 @@ function ServiceSwitcher({
               ) : null}
               <span
                 className={`font-[family-name:var(--font-manrope)] text-[11px] leading-none ${
-                  active ? "font-medium text-white" : "font-normal text-[#ee7c7c]"
+                  active
+                    ? "font-medium text-white"
+                    : "font-normal text-[#ee7c7c] group-hover:text-white"
                 }`}
               >
                 {service.index}
@@ -363,7 +365,7 @@ function ServiceSwitcher({
                 className={`max-w-full truncate font-[family-name:var(--font-manrope)] leading-none ${
                   active
                     ? "text-[13px] font-medium text-white sm:text-[16px]"
-                    : "text-[12px] font-normal text-[#ee7c7c] sm:text-[15px]"
+                    : "text-[12px] font-normal text-[#ee7c7c] group-hover:text-white sm:text-[15px]"
                 }`}
               >
                 {service.name}
@@ -387,7 +389,7 @@ function ServiceSwitcher({
               type="button"
               onClick={() => onSelect(service.id)}
               aria-pressed={active}
-              className="relative flex w-full items-center py-0.5 pl-10 pr-5 text-left"
+              className="group relative flex w-full items-center py-0.5 pl-10 pr-5 text-left"
             >
               {active ? (
                 <span
@@ -399,7 +401,7 @@ function ServiceSwitcher({
                 className={`w-[52px] shrink-0 font-[family-name:var(--font-manrope)] text-[20px] leading-none sm:w-[75px] ${
                   active
                     ? "font-medium text-white"
-                    : "font-normal text-[#ee7c7c]"
+                    : "font-normal text-[#ee7c7c] group-hover:text-white"
                 }`}
               >
                 {service.index}
@@ -408,7 +410,7 @@ function ServiceSwitcher({
                 className={`font-[family-name:var(--font-manrope)] leading-none ${
                   active
                     ? "text-[28px] font-medium text-white sm:text-[36px]"
-                    : "text-[22px] font-normal text-[#ee7c7c] sm:text-[30px]"
+                    : "text-[22px] font-normal text-[#ee7c7c] group-hover:text-white sm:text-[30px]"
                 }`}
               >
                 {service.name}
@@ -493,6 +495,8 @@ export function ExtendedServiceSection() {
   const [activeId, setActiveId] = useState<ServiceId>("eot");
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const contentRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
     const applyHash = () => {
@@ -505,14 +509,23 @@ export function ExtendedServiceSection() {
     return () => window.removeEventListener("hashchange", applyHash);
   }, []);
 
-  const selectService = (id: ServiceId) => {
-    setActiveId(id);
-    setOpenFaq(null);
-    window.history.replaceState(null, "", `/services/extended#${id}`);
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+
+    scrollContainerRef.current?.scrollTo({ top: 0 });
 
     if (window.matchMedia("(max-width: 1023px)").matches) {
       contentRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     }
+  }, [activeId]);
+
+  const selectService = (id: ServiceId) => {
+    setActiveId(id);
+    setOpenFaq(null);
+    window.history.replaceState(null, "", `/services/extended#${id}`);
   };
 
   const active = SERVICES.find((service) => service.id === activeId) ?? SERVICES[0];
@@ -622,7 +635,10 @@ export function ExtendedServiceSection() {
               ref={contentRef}
               className="relative z-10 min-h-0 min-w-0 flex-1 scroll-mt-[168px] sm:scroll-mt-[188px] lg:scroll-mt-0"
             >
-              <div className="relative z-10 h-auto overflow-visible lg:h-full lg:overflow-y-auto lg:overscroll-contain [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+              <div
+                ref={scrollContainerRef}
+                className="relative z-10 h-auto overflow-visible lg:h-full lg:overflow-y-auto lg:overscroll-contain [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+              >
                 <div className="flex min-h-full flex-col justify-between">
                   <AnimatePresence mode="wait">
                     <motion.div

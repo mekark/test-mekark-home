@@ -1,4 +1,10 @@
 import Image from "next/image";
+import {
+  MOBILE_FACILITY_CAROUSEL_DESKTOP,
+  MOBILE_FACILITY_CAROUSEL_HINT,
+  MOBILE_FACILITY_CAROUSEL_ITEM,
+  MOBILE_FACILITY_CAROUSEL_TRACK,
+} from "@/components/industries/shared/industryMobileFacilityCarousel";
 
 type Facility = {
   title: string;
@@ -123,7 +129,7 @@ function FacilityCard({
   }[titleLayout];
 
   return (
-    <article className="flex w-full max-w-[320px] shrink-0 flex-col sm:max-w-[257.333px]">
+    <article className="flex w-full flex-col xl:max-w-[257.333px]">
       <FacilityImage src={image} imageFit={imageFit} />
       <div className="mt-6 flex flex-col sm:mt-[33.333px]">
         <h3
@@ -144,7 +150,7 @@ function FacilityCard({
 export default function AutomationFacilitiesSection() {
   return (
     <section
-      className="relative overflow-hidden bg-[#ffefef] px-[clamp(24px,5.573vw,107px)] py-16 text-[#111] lg:min-h-[885px] lg:pt-[103px] lg:pb-[48px]"
+      className="relative bg-[#ffefef] px-[clamp(24px,5.573vw,107px)] py-16 text-[#111] lg:min-h-[885px] lg:pt-[103px] lg:pb-[48px]"
     >
       <div
         className="pointer-events-none absolute inset-x-0 overflow-hidden opacity-15"
@@ -172,12 +178,19 @@ export default function AutomationFacilitiesSection() {
           </p>
         </header>
 
-        <div className="mt-12 w-full overflow-x-auto lg:mt-[49px] min-[1920px]:overflow-visible">
-          <div className="mx-auto grid grid-cols-1 justify-items-center gap-y-12 sm:grid-cols-2 sm:gap-x-8 lg:min-h-[448px] lg:min-w-[1706px] lg:grid-cols-[repeat(6,257.333px)] lg:justify-between lg:justify-items-start lg:gap-x-0 lg:gap-y-0">
+        <div className="relative mt-12 lg:mt-[49px]">
+          <div
+            className={`${MOBILE_FACILITY_CAROUSEL_TRACK} ${MOBILE_FACILITY_CAROUSEL_DESKTOP} xl:grid xl:min-h-[448px] xl:min-w-[1706px] xl:max-w-[1706px] xl:grid-cols-[repeat(6,257.333px)] xl:justify-between xl:gap-x-0 xl:gap-y-0`}
+          >
             {facilities.map((facility) => (
-              <FacilityCard key={facility.title} {...facility} />
+              <div key={facility.title} className={MOBILE_FACILITY_CAROUSEL_ITEM}>
+                <FacilityCard {...facility} />
+              </div>
             ))}
           </div>
+          <p className={MOBILE_FACILITY_CAROUSEL_HINT}>
+            Swipe to explore all {facilities.length} facilities
+          </p>
         </div>
 
         <p className="mx-auto mt-12 max-w-[1212px] text-center font-[family-name:var(--font-manrope)] text-lg font-normal leading-[23px] text-[#8b91a0] lg:mt-[34px]">

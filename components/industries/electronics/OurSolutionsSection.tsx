@@ -129,16 +129,17 @@ export default function OurSolutionsSection() {
             </div>
           </motion.header>
 
-          <div className="relative min-w-0 flex-1">
+          <div className="relative min-w-0 flex-1 overflow-visible">
             <div
-              className="pointer-events-none absolute left-0 top-[78px] hidden h-[calc(100%-78px)] w-[397px] lg:block"
+              className="pointer-events-none absolute left-0 top-[78px] hidden h-[1321px] w-[397px] overflow-visible lg:block"
               aria-hidden
             >
               <Image
                 src="/images/industries/electronics/solutions/timeline.svg"
                 alt=""
-                fill
-                className="object-contain object-left-top"
+                width={397}
+                height={1321}
+                className="h-full w-full"
               />
             </div>
 
@@ -167,19 +168,18 @@ export default function OurSolutionsSection() {
         </div>
 
         <motion.div
-          className="mx-auto mt-12 max-w-[1200px] rounded-[40px] border border-[rgba(228,0,21,0.5)] bg-[rgba(228,0,21,0.05)] px-6 py-6 text-center sm:mt-16 sm:px-8 sm:py-8 lg:mt-20 lg:px-8 lg:py-6"
+          className="mx-auto mt-12 w-full max-w-[1385px] rounded-[40px] border border-[rgba(228,0,21,0.5)] bg-[rgba(228,0,21,0.05)] px-5 py-5 text-center sm:mt-16 sm:px-8 sm:py-6 lg:mt-20 lg:px-8 lg:py-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
         >
-          <p className="font-manrope text-base font-semibold leading-normal sm:text-lg">
-            <span className="text-[#4c4c4c]">
-              Every electronics manufacturing facility is custom-engineered
-              around your production line, cleanliness classification, and
-              utility load, ensuring consistent yield and long-term operational
-              reliability for{" "}
-            </span>
+          <p className="font-manrope text-base font-semibold leading-normal text-[#4c4c4c] sm:text-lg">
+            Every electronics manufacturing facility is custom-engineered around
+            your production line,
+            <br className="hidden sm:inline" />
+            cleanliness classification, and utility load, ensuring consistent
+            yield and long-term operational reliability for{" "}
             <span className="text-[#e50818]">
               electronics manufacturers across South India.
             </span>

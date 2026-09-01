@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title:
     "Electronics Manufacturing Facility Construction in South India | Mekark",
   description:
-    "Mekark builds turnkey clean rooms, ESD-safe assembly plants, and precision electronics manufacturing facilities across South India.",
+    "Mekark builds turnkey clean rooms, ESD-safe assembly plants, and precision electronics manufacturing facilities across Tamil Nadu, Karnataka, Andhra Pradesh, Telangana, and Kerala. Engineered for precision. Delivered on time.",
 };
 
 export default function ElectronicsIndustryPage() {

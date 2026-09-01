@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useDesignScale } from "@/lib/hooks/useDesignScale";
+import carouselStyles from "@/components/industries/shared/industryMobileFacilityCarousel.module.css";
 import styles from "./index.module.css";
 
 const DESIGN_HEIGHT = 850;
@@ -64,8 +65,8 @@ const Solutions = () => {
               </div>
             </div>
           </div>
-          <div className={styles.frameContainer}>
-            <div className={styles.rectangleParent}>
+          <div className={`${styles.frameContainer} ${carouselStyles.track}`}>
+            <div className={`${styles.rectangleParent} ${carouselStyles.item}`}>
               <Image
                 className={styles.frameChild}
                 src="/images/industries/food-and-beverage/solutions/1.jpg"
@@ -86,7 +87,7 @@ const Solutions = () => {
                 </div>
               </div>
             </div>
-            <div className={styles.rectangleGroup}>
+            <div className={`${styles.rectangleGroup} ${carouselStyles.item}`}>
               <Image
                 className={styles.frameChild}
                 src="/images/industries/food-and-beverage/solutions/2.png"
@@ -109,7 +110,7 @@ const Solutions = () => {
                 </div>
               </div>
             </div>
-            <div className={styles.rectangleContainer}>
+            <div className={`${styles.rectangleContainer} ${carouselStyles.item}`}>
               <Image
                 className={styles.frameChild}
                 src="/images/industries/food-and-beverage/solutions/3.png"
@@ -132,7 +133,7 @@ const Solutions = () => {
                 </div>
               </div>
             </div>
-            <div className={styles.frameDiv}>
+            <div className={`${styles.frameDiv} ${carouselStyles.item}`}>
               <Image
                 className={styles.frameChild}
                 src="/images/industries/food-and-beverage/solutions/4.png"
@@ -155,7 +156,7 @@ const Solutions = () => {
                 </div>
               </div>
             </div>
-            <div className={styles.rectangleParent2}>
+            <div className={`${styles.rectangleParent2} ${carouselStyles.item}`}>
               <Image
                 className={styles.frameChild2}
                 src="/images/industries/food-and-beverage/solutions/5.png"
@@ -178,7 +179,7 @@ const Solutions = () => {
                 </div>
               </div>
             </div>
-            <div className={styles.rectangleParent3}>
+            <div className={`${styles.rectangleParent3} ${carouselStyles.item}`}>
               <Image
                 className={styles.frameChild}
                 src="/images/industries/food-and-beverage/solutions/6.jpg"
@@ -202,6 +203,7 @@ const Solutions = () => {
               </div>
             </div>
           </div>
+          <p className={carouselStyles.hint}>Swipe to explore all 6 facilities</p>
         </div>
       </div>
     </div>

@@ -39,10 +39,10 @@ export default function EndToEnd() {
             <ServiceIntroTitle
               id="end-to-end-mep-title"
               className={SERVICE_INTRO_TITLE_FIGMA_CLASS_SCALED}
-              beforeRed="End-to-End MEP Design, Build &"
-              line2Prefix="Commissioning, "
+              beforeRed="End-to-End"
+              line2Prefix="MEP Design, Build & Commissioning,"
               redPart="Under One Roof"
-              scaledCanvas
+              redOnThirdLine
             />
           </div>
 

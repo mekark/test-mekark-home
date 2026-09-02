@@ -2,6 +2,10 @@
 
 import CountUp from "@/components/services/peb/CountUp";
 import ServiceMobileHero from "@/components/services/ServiceMobileHero";
+import {
+  civilMobileHeroImageDefaults,
+  civilMobileHeroLayout,
+} from "@/components/services/serviceMobileHeroCivilLayout";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -86,18 +90,24 @@ const desktopStats: Stat[] = mobileStats;
 function MobileHero() {
   return (
     <ServiceMobileHero
+      {...civilMobileHeroLayout}
       title={
         <>
-          South India&apos;s Leading
+          South India&apos;s Leading Pre-
           <br />
-          Pre-Engineered Building (PEB) Contractor &amp; Manufacturer
+          Engineered Building (PEB)
+          <br />
+          Contractor &amp; Manufacturer
         </>
       }
       description={heroDescription}
       heroImage={{
+        ...civilMobileHeroImageDefaults,
         src: "/images/services/peb/hero/layer.png",
         alt: "Mekark pre-engineered building manufacturing facility",
-        objectPosition: "center center",
+        objectPosition: "center bottom",
+        scale: 1.50,
+        translateY: "-10px",
       }}
       arrowIcon="/images/services/peb/hero/arrow.svg"
       stats={mobileStats.map((stat) => ({

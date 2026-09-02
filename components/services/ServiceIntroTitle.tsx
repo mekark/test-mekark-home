@@ -7,11 +7,9 @@ type ServiceIntroTitleProps = {
   redOnNewLine?: boolean;
   /** Gray text on line 2 before the red phrase (requires redOnNewLine). */
   line2Prefix?: string;
-  /**
-   * When true, skip PEB iMac (`xl:`) shrinks — parent uses CSS scale
-   * (Civil DesignScale) so typography stays at the 1920 Figma size.
-   */
   scaledCanvas?: boolean;
+  /** When set with line2Prefix, puts the red phrase on its own third line. */
+  redOnThirdLine?: boolean;
 };
 
 function getTitleStyles(beforeRed: string, scaledCanvas: boolean) {
@@ -69,6 +67,7 @@ export function ServiceIntroTitle({
   redOnNewLine = true,
   line2Prefix,
   scaledCanvas = false,
+  redOnThirdLine = false,
 }: ServiceIntroTitleProps) {
   const { size, width } = getTitleStyles(beforeRed, scaledCanvas);
 
@@ -79,13 +78,21 @@ export function ServiceIntroTitle({
     >
       {redOnNewLine ? (
         line2Prefix ? (
-          <>
-            <span className="block lg:whitespace-nowrap">{beforeRed.trimEnd()}</span>
-            <span className="block lg:whitespace-nowrap">
-              {line2Prefix}
-              <span className="text-red">{redPart}</span>
-            </span>
-          </>
+          redOnThirdLine ? (
+            <>
+              <span className="block lg:whitespace-nowrap">{beforeRed.trimEnd()}</span>
+              <span className="block lg:whitespace-nowrap">{line2Prefix.trimEnd()}</span>
+              <span className="block text-red lg:whitespace-nowrap">{redPart}</span>
+            </>
+          ) : (
+            <>
+              <span className="block lg:whitespace-nowrap">{beforeRed.trimEnd()}</span>
+              <span className="block lg:whitespace-nowrap">
+                {line2Prefix}
+                <span className="text-red">{redPart}</span>
+              </span>
+            </>
+          )
         ) : (
           <>
             <span>{beforeRed.trimEnd()}</span>

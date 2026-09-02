@@ -4,6 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ServiceMobileHero from "@/components/services/ServiceMobileHero";
+import {
+  civilMobileHeroImageDefaults,
+  civilMobileHeroLayout,
+} from "@/components/services/serviceMobileHeroCivilLayout";
 import { animate, motion, useInView, useReducedMotion } from "framer-motion";
 import { SERVICE_BODY_TEXT_SIZES_SCALED } from "@/components/services/serviceTypography";
 
@@ -107,12 +111,17 @@ const trustItems = [
 function MobileHero() {
   return (
     <ServiceMobileHero
+      {...civilMobileHeroLayout}
       title="South India's Leading Multi-Storey Steel Building Manufacturer"
       description={heroDescription}
       heroImage={{
-        src: "/images/services/multi-storey/hero/building-mobile.webp",
+        ...civilMobileHeroImageDefaults,
+        src: "/images/services/multi-storey/hero/building-layer.png",
         alt: "Multi-storey steel building under construction",
-        objectPosition: "64% 50%",
+        objectPosition: "center bottom",
+        scale: 1.23,
+        translateX: "-32px",
+        translateY: "-13px",
       }}
       arrowIcon="/images/services/multi-storey/hero/arrow.svg"
       stats={trustItems.slice(0, 4).map((item) => ({

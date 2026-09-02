@@ -1,7 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import ServiceMobileHero from "@/components/services/ServiceMobileHero";
-import { SERVICE_BODY_TEXT_SIZES_SCALED } from "@/components/services/serviceTypography";
+import {
+  civilMobileHeroImageDefaults,
+  civilMobileHeroLayout,
+  greyMobileHeroBottomGradient,
+} from "@/components/services/serviceMobileHeroCivilLayout";
+import {
+  SERVICE_BODY_TEXT_SIZES,
+  SERVICE_BODY_TEXT_SIZES_SCALED,
+} from "@/components/services/serviceTypography";
 
 const mobileStats = [
   {
@@ -26,7 +34,7 @@ const mobileStats = [
     key: "campus",
     value: (
       <>
-        70 lakh Sq.ft. <span className="text-[#ed2024]">+ Sq.ft.</span>
+        70 lakh <span className="text-[#ed2024]">+ Sq.ft.</span>
       </>
     ),
     mobileLabel: "Mfg. Campus",
@@ -48,17 +56,30 @@ const heroDescription =
 function MobileHero() {
   return (
     <ServiceMobileHero
+      {...civilMobileHeroLayout}
       title={
         <>
-          South India&apos;s Leading Industrial MEP Contractor &amp; Turnkey
-          MEP Contracting Company
+          South India&apos;s Leading
+          <br />
+          Industrial MEP Contractor
+          <br />
+          &amp; Turnkey MEP Contracting
+          <br />
+          Company
         </>
       }
       description={heroDescription}
       heroImage={{
+        ...civilMobileHeroImageDefaults,
         src: "/images/services/mep/hero/layer-1.png",
         alt: "Industrial MEP facility",
-        objectPosition: "center 10%",
+        objectPosition: "center bottom",
+        scale: 1.2,
+        translateX: "-10px",
+        translateY: "-8px",
+        bottomGradient: greyMobileHeroBottomGradient,
+        bottomGradientOverlayHeight: "98%",
+        bottomColor: "#252525",
       }}
       arrowIcon="/images/services/mep/hero/arrow.svg"
       stats={mobileStats.map((stat) => ({
@@ -148,7 +169,7 @@ export default function Hero() {
 
             <div className="flex h-16 shrink-0 flex-col items-start justify-center gap-[4.3px] px-num-13_3 py-[18.5px] box-border">
               <div className="relative whitespace-nowrap tracking-[-1.11px] leading-num-25_62 font-extrabold">
-                <span className="leading-num-25_62">70 lakh Sq.ft. </span>
+                <span className="leading-num-25_62">70 lakh </span>
                 <span className="leading-num-25_62 text-red-300">+ Sq.ft.</span>
               </div>
               <div className="text-[10.67px] text-gray-400">

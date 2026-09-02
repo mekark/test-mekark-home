@@ -1,7 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import ServiceMobileHero from "@/components/services/ServiceMobileHero";
-import { SERVICE_BODY_TEXT_SIZES_SCALED } from "@/components/services/serviceTypography";
+import {
+  civilMobileHeroImageDefaults,
+  civilMobileHeroLayout,
+} from "@/components/services/serviceMobileHeroCivilLayout";
+import {
+  SERVICE_BODY_TEXT_SIZES,
+  SERVICE_BODY_TEXT_SIZES_SCALED,
+} from "@/components/services/serviceTypography";
 import styles from "./index.module.css";
 
 const heroDescription =
@@ -40,12 +47,17 @@ const mobileStats = [
 function MobileHero() {
   return (
     <ServiceMobileHero
+      {...civilMobileHeroLayout}
       title="South India's Trusted Commercial Solar Installation Contractor"
       description={heroDescription}
       heroImage={{
+        ...civilMobileHeroImageDefaults,
         src: "/images/services/solar/hero/remove-the-building-2.png",
         alt: "Mekark commercial solar installation",
-        objectPosition: "center center",
+        objectPosition: "center bottom",
+        scale: 1.1,
+        translateX: "-10px",
+        translateY: "-32px",
       }}
       arrowIcon="/images/services/solar/hero/component-4.svg"
       stats={mobileStats.map((stat) => ({

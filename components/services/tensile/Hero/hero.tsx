@@ -3,7 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import ServiceMobileHero from "@/components/services/ServiceMobileHero";
-import { SERVICE_BODY_TEXT_SIZES_SCALED } from "@/components/services/serviceTypography";
+import {
+  civilMobileHeroImageDefaults,
+  civilMobileHeroLayout,
+} from "@/components/services/serviceMobileHeroCivilLayout";
+import {
+  SERVICE_BODY_TEXT_SIZES,
+  SERVICE_BODY_TEXT_SIZES_SCALED,
+} from "@/components/services/serviceTypography";
 import styles from "./index.module.css";
 
 const heroDescription =
@@ -51,19 +58,26 @@ const mobileStats = [
 function MobileHero() {
   return (
     <ServiceMobileHero
+      {...civilMobileHeroLayout}
       title={
         <>
-          South India&apos;s Trusted Tensile Structure Contractor &amp; Fabric
-          Roofing
-          <br />
-          Manufacturer
+          <span className="block">South India&apos;s Trusted</span>
+          <span className="block min-[395px]:whitespace-nowrap">
+            Tensile Structure Contractor
+          </span>
+          <span className="block min-[395px]:whitespace-nowrap">
+            &amp; Fabric Roofing Manufacturer
+          </span>
         </>
       }
       description={heroDescription}
       heroImage={{
-        src: "/images/services/tensile/hero/hero-bg.png",
+        ...civilMobileHeroImageDefaults,
+        src: "/images/tensile-hero-mv.png",
         alt: "Mekark tensile structure project",
-        objectPosition: "center 10%",
+        objectPosition: "center bottom",
+        scale: 1.2,
+        translateY: "-32px",
       }}
       arrowIcon="/images/services/tensile/hero/arrow.svg"
       stats={mobileStats.map((stat) => ({

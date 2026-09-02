@@ -2,6 +2,10 @@
 
 import CountUp from "@/components/services/civil/CountUp";
 import ServiceMobileHero from "@/components/services/ServiceMobileHero";
+import {
+  civilMobileHeroImageDefaults,
+  civilMobileHeroLayout,
+} from "@/components/services/serviceMobileHeroCivilLayout";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -93,21 +97,31 @@ const desktopStats: {
   },
 ];
 
+const CIVIL_MOBILE_BOTTOM_GRADIENT =
+  "linear-gradient(180deg, rgba(130, 100, 80, 0) 0%, rgba(130, 100, 80, 0) 22%, rgba(116, 88, 53, 0.58) 50%, rgba(116, 88, 53, 0.92) 70%, #624914 100%)";
+
 function MobileHero() {
   return (
     <ServiceMobileHero
+      {...civilMobileHeroLayout}
       title={
         <>
-          South India&apos;s Leading
-          <br />
-          Civil Construction Company &amp; RCC Contractor
+          <span className="block">South India&apos;s Leading</span>
+          <span className="block whitespace-nowrap">Civil Construction Company</span>
+          <span className="block">&amp; RCC Contractor</span>
         </>
       }
       description={heroDescription}
       heroImage={{
+        ...civilMobileHeroImageDefaults,
         src: "/images/services/civil/hero/building.png",
         alt: "Mekark civil construction project",
         objectPosition: "32% 78%",
+        scale: 1.13,
+        translateY: "-43px",
+        bottomGradient: CIVIL_MOBILE_BOTTOM_GRADIENT,
+        bottomGradientOverlayHeight: "98%",
+        bottomColor: "#624914",
       }}
       arrowIcon="/images/services/civil/hero/arrow.svg"
       stats={mainStats.map((stat) => ({

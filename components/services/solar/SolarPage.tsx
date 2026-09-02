@@ -16,7 +16,9 @@ export function SolarPage() {
       <DesignScale>
         <Hero />
         <EndToEnd />
-        <Why />
+      </DesignScale>
+      <Why />
+      <DesignScale>
         <Cta />
         <SolarHowWeDeliver />
         <TrustedSectorsSection variant="services" />

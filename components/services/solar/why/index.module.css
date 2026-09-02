@@ -21,6 +21,13 @@
 	position: relative;
 	z-index: 0;
 }
+
+@media (min-width: 1920px) {
+	.copy1Parent {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
 .copy1Icon {
 	position: absolute;
 	right: 0px;
@@ -405,7 +412,7 @@
 	flex-shrink: 0;
 }
 
-@media (max-width: 1535px) {
+@media (max-width: 1200px) {
 	.whyChooseMekark,
 	.copy1Parent {
 		height: auto;

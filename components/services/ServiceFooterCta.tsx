@@ -11,6 +11,8 @@ type ServiceFooterCtaProps = {
   compactCopy?: boolean;
   /** Fixed 1920px Figma sizes — use inside DesignScale (PEB). */
   scaledCanvas?: boolean;
+  /** Keep subtitle on one line at Mac / XL (1201px+). */
+  subtitleSingleLine?: boolean;
 };
 
 export function ServiceFooterCta({
@@ -21,6 +23,7 @@ export function ServiceFooterCta({
   callLabel = "Call us",
   compactCopy = false,
   scaledCanvas = false,
+  subtitleSingleLine = false,
 }: ServiceFooterCtaProps) {
   return (
     <section
@@ -44,12 +47,22 @@ export function ServiceFooterCta({
         <div
           className={
             compactCopy
-              ? `${styles.readyToStartYourCommercialParent} ${styles.readyToStartYourCommercialParentCompact}`
-              : styles.readyToStartYourCommercialParent
+              ? `${styles.readyToStartYourCommercialParent} ${styles.readyToStartYourCommercialParentCompact}${
+                  subtitleSingleLine ? ` ${styles.copyBlockSingleLineSubtitle}` : ""
+                }`
+              : `${styles.readyToStartYourCommercialParent}${
+                  subtitleSingleLine ? ` ${styles.copyBlockSingleLineSubtitle}` : ""
+                }`
           }
         >
           <h2 className={styles.readyToStart}>{title}</h2>
-          <p className={styles.talkToMekarks}>{subtitle}</p>
+          <p
+            className={`${styles.talkToMekarks}${
+              subtitleSingleLine ? ` ${styles.talkToMekarksSingleLine}` : ""
+            }`}
+          >
+            {subtitle}
+          </p>
         </div>
         <div className={styles.ctaParent}>
           <a href="/#enquiry" className={styles.cta}>

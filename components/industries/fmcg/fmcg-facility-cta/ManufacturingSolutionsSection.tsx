@@ -14,7 +14,7 @@ import {
 export function ManufacturingSolutionsSection() {
   return (
     <section
-      className="relative bg-[#ffefef] px-5 py-12 sm:px-10 sm:py-16 lg:px-12 lg:py-24 xl:px-16 2xl:px-20"
+      className="relative bg-[#ffefef] px-5 pb-12 pt-6 sm:px-10 sm:pb-16 sm:pt-8 lg:px-12 lg:pb-24 lg:pt-12 xl:px-16 2xl:px-20"
       aria-label="FMCG manufacturing facility construction across South India"
     >
       <div

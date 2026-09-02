@@ -29,7 +29,7 @@ export const industryHeroMobileDescriptionClass =
 
 /** Figma highlight strip — 15px red text, 4px left bar */
 export const industryHeroMobileHighlightClass =
-  "max-md:w-full max-md:border-l-[4px] max-md:px-3 max-md:py-2 max-md:[&_p]:text-[15px] max-md:[&_p]:font-bold max-md:[&_p]:leading-[1.35]";
+  "max-md:w-full max-md:border-l-[4px] max-md:px-3 max-md:py-2 max-md:[&_p]:text-[15px] max-md:[&_p]:font-bold max-md:[&_p]:leading-[1.35] max-md:[&_h2]:text-[15px] max-md:[&_h2]:font-bold max-md:[&_h2]:leading-[1.35]";
 
 /** Figma CTA — left-aligned with text column */
 export const industryHeroMobileButtonClass =

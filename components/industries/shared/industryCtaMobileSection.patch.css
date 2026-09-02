@@ -105,4 +105,71 @@
     top: 9%;
     transform: translateX(-40%);
   }
+
+  /* Shared mobile feature card row layout (pharma reference) */
+  .frameGroup {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+    font-size: 16px;
+  }
+
+  .divsvcIconParent {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 14px;
+    text-align: left;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 14px;
+    padding: 16px;
+    box-sizing: border-box;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .divsvcIconParent:hover {
+    border-color: rgba(196, 22, 28, 0.35);
+    box-shadow: 0 6px 18px rgba(196, 22, 28, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .divsvcIcon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(196, 22, 28, 0.2);
+  }
+
+  .lucidedraftingCompassIcon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .inHouseDesignEngineeringParent {
+    align-items: flex-start;
+    text-align: left;
+    flex: 1;
+    min-width: 0;
+    gap: 6px;
+  }
+
+  .inHouseDesign {
+    display: block;
+    text-align: left;
+    line-height: 22px;
+  }
+
+  .cardDesc,
+  .everyPreEngineeredWarehouse,
+  .factoryControlledFabrication,
+  .asATrusted,
+  .preEngineeredWarehouseBuild {
+    display: block;
+    text-align: left;
+    font-size: 13px;
+    line-height: 20px;
+  }
 }

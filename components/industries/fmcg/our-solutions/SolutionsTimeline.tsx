@@ -47,7 +47,7 @@ export function SolutionsTimeline() {
           }}
         >
           <motion.div
-            className="pointer-events-none absolute left-0 top-[78px] h-[1319px] w-[397px] origin-top"
+            className="pointer-events-none absolute left-0 top-[78px] h-[1328px] w-[397px] origin-top"
             variants={timelineGrow}
             initial="hidden"
             whileInView="visible"
@@ -57,7 +57,7 @@ export function SolutionsTimeline() {
               src="/images/industries/fmcg/our-solutions/timeline.svg"
               alt=""
               width={397}
-              height={1319}
+              height={1328}
               className="h-full w-full"
               aria-hidden
             />
@@ -74,28 +74,9 @@ export function SolutionsTimeline() {
         </div>
       </div>
 
-      <div className="relative flex flex-col lg:hidden">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute bottom-8 left-[15px] top-8 w-px bg-gradient-to-b from-[#e50818] via-[#e50818]/35 to-[#e50818]/10"
-        />
-
+      <div className="flex flex-col gap-7 lg:hidden">
         {solutions.map((solution, index) => (
-          <div
-            key={solution.title}
-            className={`relative pl-11 ${index < solutions.length - 1 ? "pb-7" : ""}`}
-          >
-            <div
-              aria-hidden
-              className="absolute left-0 top-6 flex size-[30px] items-center justify-center rounded-full border-2 border-[#e50818] bg-white shadow-[0_2px_8px_rgba(229,8,24,0.15)]"
-            >
-              <span className="text-[11px] font-bold tabular-nums text-[#e50818]">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-            </div>
-
-            <SolutionCard solution={solution} index={index} />
-          </div>
+          <SolutionCard key={solution.title} solution={solution} index={index} />
         ))}
       </div>
     </>

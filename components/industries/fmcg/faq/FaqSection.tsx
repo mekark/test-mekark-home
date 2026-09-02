@@ -50,7 +50,7 @@ export function FaqSection() {
 
   return (
     <section
-      className="bg-white px-6 py-16 sm:px-10 lg:px-12 xl:px-16 2xl:px-20 lg:py-24"
+      className="bg-white px-6 pb-16 pt-8 sm:px-10 sm:pt-10 lg:px-12 xl:px-16 2xl:px-20 lg:pb-24 lg:pt-12"
       aria-label="Frequently asked questions"
     >
       <div className="mx-auto flex w-full max-w-[1720px] flex-col gap-12 lg:gap-16">

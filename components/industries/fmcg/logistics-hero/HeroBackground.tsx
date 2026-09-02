@@ -16,7 +16,7 @@ export function HeroBackground() {
         className={`absolute inset-0 z-0 overflow-hidden ${industryHeroMobileBgWrapperClass}`}
       >
         <motion.div
-          className="absolute inset-0"
+          className="absolute inset-0 md:left-auto md:right-[-9%] md:w-[100%]"
           variants={backgroundZoom}
           initial="hidden"
           animate="visible"
@@ -26,7 +26,7 @@ export function HeroBackground() {
             alt="FMCG manufacturing facility at dusk"
             fill
             priority
-            className={`object-cover object-center ${industryHeroMobileImageClass}`}
+            className={`object-cover object-right ${industryHeroMobileImageClass}`}
             sizes="100vw"
           />
         </motion.div>

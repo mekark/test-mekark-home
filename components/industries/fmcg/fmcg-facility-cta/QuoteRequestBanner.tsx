@@ -11,7 +11,7 @@ export function QuoteRequestBanner() {
       aria-label="Request a quote for FMCG facility construction"
     >
       <motion.div
-        className="relative min-h-[420px] w-full sm:min-h-[388px]"
+        className="relative min-h-[388px] w-full"
         custom={0}
         variants={fadeSlideUp}
         initial="hidden"
@@ -22,8 +22,9 @@ export function QuoteRequestBanner() {
           <Image
             src="/images/industries/fmcg/fmcg-facility-cta/quote-request-banner-bg.png"
             alt=""
-            fill
-            className="object-cover object-[center_35%]"
+            width={2400}
+            height={1350}
+            className="absolute left-[0.01%] top-[-105.28%] h-[277.68%] w-full max-w-none object-cover"
             sizes="100vw"
             priority={false}
           />
@@ -34,7 +35,7 @@ export function QuoteRequestBanner() {
           className="absolute inset-0 bg-gradient-to-t from-[#020202] to-[rgba(2,2,2,0.52)]"
         />
 
-        <div className="relative z-10 mx-auto flex min-h-[420px] w-full max-w-[1730px] flex-col items-center justify-center gap-8 px-6 py-14 text-center sm:min-h-[388px] sm:gap-10 sm:px-10 lg:px-12">
+        <div className="relative z-10 mx-auto flex min-h-[388px] w-full max-w-[1730px] flex-col items-center justify-center gap-10 px-6 text-center sm:px-10 lg:px-12">
           <motion.div
             className="flex w-full flex-col items-center gap-4"
             custom={0.1}
@@ -71,7 +72,7 @@ export function QuoteRequestBanner() {
             </span>
             <span className="relative size-[25px] shrink-0 overflow-hidden">
               <Image
-                src="/images/industries/fmcg/logistics-hero/arrow-icon.svg"
+                src="/images/industries/fmcg/fmcg-facility-cta/quote-request-arrow.svg"
                 alt=""
                 width={25}
                 height={25}

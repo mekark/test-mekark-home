@@ -35,7 +35,7 @@ export function ProcessStep({ step, index, mobile = false }: ProcessStepProps) {
 
   return (
     <motion.article
-      className="flex min-w-0 flex-col gap-3.5"
+      className="flex min-w-0 flex-1 flex-col gap-3.5"
       custom={index * 0.08}
       variants={fadeSlideUp}
       initial="hidden"

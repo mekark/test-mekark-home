@@ -1,26 +1,23 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { borderGrow, fadeSlideUp } from "./motion";
+import { industryHeroMobileHighlightClass } from "@/components/industries/shared/industryHeroMobile";
+import { fadeSlideUp } from "./motion";
 
 export function HeroHighlightBox() {
   return (
     <motion.div
-      className="relative max-w-[1090px] bg-white pl-[18px] sm:pl-5"
+      className={`flex w-full max-w-[1090px] items-center border-l-4 border-[#c4161c] bg-white px-3 py-2.5 sm:border-l-[6px] sm:px-4 sm:py-3 md:min-h-[88px] lg:h-[133px] lg:border-l-[10px] lg:px-5 ${industryHeroMobileHighlightClass}`}
       custom={0.2}
       variants={fadeSlideUp}
       initial="hidden"
       animate="visible"
     >
-      <motion.div
-        className="absolute left-0 top-0 h-full w-1 origin-top bg-[#c4161c] sm:w-1.5 lg:w-[10px]"
-        variants={borderGrow}
-        initial="hidden"
-        animate="visible"
-      />
-      <p className="py-3 pr-3 text-[15px] font-bold leading-[1.35] text-[#c4161c] sm:py-5 sm:pr-5 sm:text-[22px] sm:leading-snug md:py-6 md:text-[32px] lg:text-[46px]">
-        GMP-Compliant Plants, Warehousing &amp; Hygienic Infrastructure by Mekark
-      </p>
+      <h2 className="font-manrope text-[15px] font-bold leading-[1.35] text-[#c4161c] sm:text-[22px] sm:leading-normal md:text-[30px] lg:text-[46px]">
+        GMP-Compliant Plants, Warehousing &amp;{" "}
+        <br className="hidden lg:inline" />
+        Hygienic Infrastructure by Mekark
+      </h2>
     </motion.div>
   );
 }

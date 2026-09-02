@@ -4,6 +4,14 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import type { FeatureItem } from "./data";
 import { fadeSlideUp } from "./motion";
+import {
+  industryMobileFeatureCardClass,
+  industryMobileFeatureDescriptionClass,
+  industryMobileFeatureIconGradientClass,
+  industryMobileFeatureIconWrapClass,
+  industryMobileFeatureTextWrapClass,
+  industryMobileFeatureTitleClass,
+} from "@/components/industries/shared/industryMobileFeatureCard";
 
 type FeatureCardProps = {
   feature: FeatureItem;
@@ -13,23 +21,23 @@ type FeatureCardProps = {
 export function FeatureCard({ feature, index }: FeatureCardProps) {
   return (
     <motion.article
-      className="flex flex-col gap-[19px]"
+      className={industryMobileFeatureCardClass}
       custom={index * 0.08}
       variants={fadeSlideUp}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
-      <div className="relative flex size-14 shrink-0 items-center justify-center overflow-hidden rounded-[14px] shadow-[0_4px_17px_rgba(196,22,28,0.2)]">
+      <div className={industryMobileFeatureIconWrapClass}>
         <div
           aria-hidden
-          className="absolute inset-0 rounded-[14px]"
+          className={industryMobileFeatureIconGradientClass}
           style={{
             backgroundImage:
               "linear-gradient(145deg, rgba(196, 22, 28, 0.3) 0%, rgba(196, 22, 28, 0.15) 100%)",
           }}
         />
-        <div className="relative size-[26px] overflow-hidden">
+        <div className="relative size-[22px] overflow-hidden lg:size-[26px]">
           <Image
             src={feature.icon}
             alt=""
@@ -44,12 +52,32 @@ export function FeatureCard({ feature, index }: FeatureCardProps) {
         />
       </div>
 
-      <div className="flex flex-col gap-2.5">
-        <h4 className="text-lg font-medium leading-[22px] text-black">
-          {feature.title}
+      <div className={industryMobileFeatureTextWrapClass}>
+        <h4
+          className={`${industryMobileFeatureTitleClass}${feature.titleNoWrap ? " whitespace-nowrap" : ""}`}
+        >
+          {feature.titleLines ? (
+            <>
+              <span className="whitespace-nowrap">{feature.titleLines[0]}</span>
+              <br />
+              {feature.titleLines[1]}
+            </>
+          ) : (
+            feature.title
+          )}
         </h4>
-        <p className="text-sm leading-normal text-[#6e6e6e]">
-          {feature.description}
+        <p
+          className={`${industryMobileFeatureDescriptionClass} ${feature.descriptionWidth ?? feature.descriptionMaxWidth ?? ""}`}
+        >
+          {feature.descriptionLines ? (
+            feature.descriptionLines.map((line, lineIndex) => (
+              <span key={lineIndex} className="block lg:whitespace-nowrap">
+                {line}
+              </span>
+            ))
+          ) : (
+            feature.description
+          )}
         </p>
       </div>
     </motion.article>

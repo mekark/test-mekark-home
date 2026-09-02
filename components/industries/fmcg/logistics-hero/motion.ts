@@ -18,11 +18,3 @@ export const backgroundZoom: Variants = {
     transition: { duration: 12, ease: "easeOut" },
   },
 };
-
-export const borderGrow: Variants = {
-  hidden: { scaleY: 0 },
-  visible: {
-    scaleY: 1,
-    transition: { duration: 0.5, delay: 0.35, ease: smoothEase },
-  },
-};

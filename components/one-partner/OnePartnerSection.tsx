@@ -98,7 +98,7 @@ function ConnectorPulse() {
   return (
     <div
       ref={ref}
-      className="pointer-events-none absolute left-[5%] right-[4%] top-[226px] hidden h-0.5 overflow-hidden rounded-full bg-[#e4141c]/20 xl:block"
+      className="pointer-events-none absolute left-[5%] right-[4%] top-[226px] hidden h-0.5 overflow-hidden rounded-full bg-[#e4141c]/20 2xl:block"
       aria-hidden
     >
       <motion.div
@@ -229,10 +229,10 @@ function BenefitCard({
       }}
       animate={{ scale: hovered ? 1.03 : 1 }}
       transition={{ type: "spring", stiffness: 360, damping: 24 }}
-      className="group relative flex w-[242px] shrink-0 snap-start flex-col overflow-hidden rounded-[18px] border border-[#dedede] bg-white/90 sm:w-[260px] md:w-[280px] xl:h-[452px] xl:min-h-[452px] xl:w-full xl:min-w-0 xl:flex-1 xl:rounded-[24px]"
+      className="group relative flex w-[242px] shrink-0 snap-start flex-col overflow-hidden rounded-[18px] border border-[#dedede] bg-white/90 sm:w-[260px] md:w-[280px] 2xl:h-[452px] 2xl:min-h-[452px] 2xl:w-full 2xl:min-w-0 2xl:flex-1 2xl:rounded-[24px]"
     >
       <motion.div
-        className="pointer-events-none absolute inset-0 z-[2] rounded-[18px] xl:rounded-[24px]"
+        className="pointer-events-none absolute inset-0 z-[2] rounded-[18px] 2xl:rounded-[24px]"
         style={{ background: glow }}
         animate={{ opacity: hovered ? 1 : 0 }}
         transition={{ duration: 0.3 }}
@@ -249,7 +249,7 @@ function BenefitCard({
 
       <motion.div
         variants={partnerLockContentStack}
-        className="relative z-10 flex h-full flex-col px-6 pb-6 pt-5 backdrop-blur-[2px] xl:px-[42px] xl:pb-[68px] xl:pt-[35px]"
+        className="relative z-10 flex h-full flex-col px-6 pb-6 pt-5 backdrop-blur-[2px] 2xl:px-[42px] 2xl:pb-[68px] 2xl:pt-[35px]"
       >
         <motion.div
           variants={partnerLockIconPop}
@@ -269,7 +269,7 @@ function BenefitCard({
                 }
               : { type: "spring", stiffness: 360, damping: 22 }
           }
-          className="relative flex size-[64px] shrink-0 items-center justify-center rounded-full border border-[#eee] shadow-[0px_10px_9px_rgba(0,0,0,0.06),inset_0px_0px_17px_rgba(0,0,0,0.04)] xl:size-[103px] xl:shadow-[0px_13.391px_12.275px_rgba(0,0,0,0.06),inset_0px_0px_22px_rgba(0,0,0,0.04)]"
+          className="relative flex size-[64px] shrink-0 items-center justify-center rounded-full border border-[#eee] shadow-[0px_10px_9px_rgba(0,0,0,0.06),inset_0px_0px_17px_rgba(0,0,0,0.04)] 2xl:size-[103px] 2xl:shadow-[0px_13.391px_12.275px_rgba(0,0,0,0.06),inset_0px_0px_22px_rgba(0,0,0,0.04)]"
           style={{ backgroundImage: ICON_CIRCLE_BG }}
         >
           <Image
@@ -288,23 +288,23 @@ function BenefitCard({
         >
           <motion.p
             variants={partnerLockStamp}
-            className="text-xs font-bold uppercase tracking-[1.3px] text-[#e00d15] xl:text-base xl:tracking-[2.5px]"
+            className="text-xs font-bold uppercase tracking-[1.3px] text-[#e00d15] 2xl:text-base 2xl:tracking-[2.5px]"
           >
             {benefit.category}
           </motion.p>
           <motion.h3
             variants={partnerLockTextRise}
-            className="text-lg font-bold leading-6 tracking-[-0.5px] text-[#111] xl:text-2xl xl:leading-8 xl:tracking-[-0.76px]"
+            className="text-lg font-bold leading-6 tracking-[-0.5px] text-[#111] 2xl:text-2xl 2xl:leading-8 2xl:tracking-[-0.76px]"
           >
             {titleLines.map((line) => (
-              <span key={line} className="block whitespace-nowrap">
+              <span key={line} className="block">
                 {line}
               </span>
             ))}
           </motion.h3>
           <motion.div
             variants={partnerLockBarSnap}
-            className="mt-1 h-0.5 w-[26px] origin-left bg-[#e00d15] xl:h-[2.5px] xl:w-[35px]"
+            className="mt-1 h-0.5 w-[26px] origin-left bg-[#e00d15] 2xl:h-[2.5px] 2xl:w-[35px]"
             animate={{ width: hovered ? 56 : 26 }}
             transition={{ type: "spring", stiffness: 400, damping: 22 }}
             aria-hidden
@@ -315,7 +315,7 @@ function BenefitCard({
           variants={partnerLockTextRise}
           animate={{ y: hovered ? -2 : 0, opacity: hovered ? 1 : 0.9 }}
           transition={{ duration: 0.28 }}
-          className="mt-3 text-xs leading-[19px] text-[#4c4c4c] xl:mt-auto xl:pt-4 xl:text-base xl:leading-[25.33px]"
+          className="mt-3 text-xs leading-[19px] text-[#4c4c4c] 2xl:mt-auto 2xl:pt-4 2xl:text-base 2xl:leading-[25.33px]"
         >
           {benefit.description}
         </motion.p>
@@ -328,7 +328,7 @@ function BenefitCard({
               ? "0 -8px 22px rgba(226,14,22,0.4)"
               : "0 0 0 rgba(0,0,0,0)",
           }}
-          className="absolute inset-x-0 bottom-0 h-1 origin-center bg-[#e20e16] xl:h-[5px]"
+          className="absolute inset-x-0 bottom-0 h-1 origin-center bg-[#e20e16] 2xl:h-[5px]"
           aria-hidden
         />
 
@@ -430,7 +430,7 @@ export function OnePartnerSection() {
               initial="hidden"
               whileInView="visible"
               viewport={VIEWPORT}
-              className="-mx-5 flex gap-[17px] overflow-x-auto px-5 pb-4 snap-x snap-mandatory scrollbar-none sm:mx-0 sm:px-0 xl:mx-0 xl:grid xl:grid-cols-5 xl:gap-[23px] xl:overflow-visible xl:pb-2 xl:px-0"
+              className="-mx-5 flex gap-[17px] overflow-x-auto px-5 pb-4 snap-x snap-mandatory scrollbar-none sm:mx-0 sm:px-0 2xl:mx-0 2xl:grid 2xl:grid-cols-5 2xl:gap-[23px] 2xl:overflow-visible 2xl:pb-2 2xl:px-0"
             >
               {BENEFITS.map((benefit, index) => (
                 <BenefitCard

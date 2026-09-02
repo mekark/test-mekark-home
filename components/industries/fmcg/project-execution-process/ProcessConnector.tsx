@@ -3,7 +3,7 @@ import Image from "next/image";
 export function ProcessConnector() {
   return (
     <div
-      className="relative hidden h-[24px] w-[67px] shrink-0 lg:block"
+      className="relative hidden h-[24px] w-[67px] shrink-0 2xl:block"
       aria-hidden
     >
       <Image

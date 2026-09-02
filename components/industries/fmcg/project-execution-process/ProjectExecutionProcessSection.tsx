@@ -10,7 +10,7 @@ import { ProcessStep } from "./ProcessStep";
 export function ProjectExecutionProcessSection() {
   return (
     <section
-      className="relative overflow-hidden bg-white px-5 py-12 sm:px-10 sm:py-16 lg:px-12 lg:py-24 xl:px-16 2xl:px-20"
+      className="relative overflow-hidden bg-white px-5 pb-12 pt-6 sm:px-10 sm:pb-16 sm:pt-8 lg:px-12 lg:pb-24 lg:pt-12 xl:px-16 2xl:px-20"
       aria-label="Our FMCG facility project execution process"
     >
       <div
@@ -50,7 +50,7 @@ export function ProjectExecutionProcessSection() {
           </motion.h2>
         </div>
 
-        <div className="relative flex flex-col lg:hidden">
+        <div className="relative flex flex-col 2xl:hidden">
           <div
             aria-hidden
             className="pointer-events-none absolute bottom-6 left-[15px] top-6 w-px bg-gradient-to-b from-[#f01d23] via-[#f01d23]/35 to-[#f01d23]/10"
@@ -75,9 +75,9 @@ export function ProjectExecutionProcessSection() {
           ))}
         </div>
 
-        <div className="hidden items-center gap-7 lg:flex">
+        <div className="hidden min-w-0 items-stretch gap-5 2xl:flex 2xl:gap-7">
           {processSteps.map((step, index) => (
-            <div key={step.number} className="flex min-w-0 items-center gap-7">
+            <div key={step.number} className="flex min-w-0 flex-1 items-center gap-5 2xl:gap-7">
               <ProcessStep step={step} index={index} />
               {index < processSteps.length - 1 && <ProcessConnector />}
             </div>

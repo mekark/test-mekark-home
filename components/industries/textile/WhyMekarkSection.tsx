@@ -3,6 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import {
+  industryMobileFeatureCardClass,
+  industryMobileFeatureDescriptionClass,
+  industryMobileFeatureIconGradientClass,
+  industryMobileFeatureIconWrapClass,
+  industryMobileFeatureTextWrapClass,
+  industryMobileFeatureTitleClass,
+} from "@/components/industries/shared/industryMobileFeatureCard";
 import { IndustryMobileCtaBanner } from "@/components/industries/shared/IndustryMobileCtaBanner";
 import { logisticsCtaWorkerAssets } from "@/components/industries/shared/logisticsCtaWorkerAssets";
 
@@ -31,17 +39,17 @@ const features = [
 
 function FeatureIcon({ icon }: { icon: string }) {
   return (
-    <div className="relative flex size-14 shrink-0 items-center justify-center rounded-[14px] shadow-[0px_4.314px_17.258px_rgba(196,22,28,0.2)]">
+    <div className={industryMobileFeatureIconWrapClass}>
       <div
         aria-hidden
-        className="absolute inset-0 rounded-[14px]"
+        className={industryMobileFeatureIconGradientClass}
         style={{
           backgroundImage:
             "linear-gradient(145deg, rgba(196, 22, 28, 0.3) 0%, rgba(196, 22, 28, 0.15) 100%)",
         }}
       />
-      <div className="pointer-events-none absolute inset-0 rounded-[14px] shadow-[inset_0px_1.079px_0px_rgba(255,255,255,0.08)]" />
-      <span className="relative size-[26px] shrink-0 overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 rounded-[inherit] shadow-[inset_0px_1px_0px_rgba(255,255,255,0.08)]" />
+      <span className="relative size-[22px] shrink-0 overflow-hidden lg:size-[26px]">
         <Image
           src={icon}
           alt=""
@@ -226,19 +234,16 @@ export default function WhyMekarkSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="relative z-10 grid grid-cols-1 gap-4 px-5 sm:grid-cols-2 sm:gap-5 sm:px-10 lg:grid-cols-[342px_399px] lg:gap-x-[110px] lg:gap-y-10 lg:pl-[200px] lg:pr-8 lg:pt-[72px]"
+            className="relative z-10 grid grid-cols-1 gap-4 px-5 sm:px-10 lg:grid-cols-[342px_399px] lg:gap-x-[110px] lg:gap-y-10 lg:pl-[200px] lg:pr-8 lg:pt-[72px]"
           >
             {features.map((feature) => (
-              <div
-                key={feature.title}
-                className="flex flex-col items-start gap-[19px] rounded-[20px] border border-[#E3E4E7] bg-white p-5 shadow-[0_2px_12px_rgba(17,17,17,0.04)] sm:p-6 lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none"
-              >
+              <div key={feature.title} className={industryMobileFeatureCardClass}>
                 <FeatureIcon icon={feature.icon} />
-                <div className="flex flex-col gap-2.5">
-                  <h3 className="font-[family-name:var(--font-manrope)] text-[18px] font-semibold leading-[21.57px] text-black">
+                <div className={industryMobileFeatureTextWrapClass}>
+                  <h3 className={industryMobileFeatureTitleClass}>
                     {feature.title}
                   </h3>
-                  <p className="font-[family-name:var(--font-manrope)] text-[14px] font-normal leading-normal text-[#6E6E6E]">
+                  <p className={industryMobileFeatureDescriptionClass}>
                     {feature.desc}
                   </p>
                 </div>

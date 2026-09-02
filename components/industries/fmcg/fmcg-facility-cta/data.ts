@@ -1,7 +1,12 @@
 export type FeatureItem = {
   icon: string;
   title: string;
+  titleLines?: [string, string];
+  titleNoWrap?: boolean;
   description: string;
+  descriptionLines?: string[];
+  descriptionWidth?: string;
+  descriptionMaxWidth?: string;
 };
 
 export type ManufacturingSolutionItem = {
@@ -52,19 +57,30 @@ export const manufacturingSolutions: ManufacturingSolutionItem[] = [
 export const features: FeatureItem[] = [
   {
     icon: "/images/industries/fmcg/fmcg-facility-cta/icon-pen-tool.svg",
-    title: "In House Engineering Led Design",
+    title: "In-House Engineering-Led Design",
+    titleNoWrap: true,
     description:
       "Every facility is designed using STAAD Pro, TEKLA, and Autodesk by our in-house structural engineers, MEP teams, and hygiene specialists.",
   },
   {
     icon: "/images/industries/fmcg/fmcg-facility-cta/icon-factory.svg",
-    title: "Large Scale In House Fabrication Capacity",
+    title: "Large-Scale In-House Fabrication Capacity",
+    titleLines: ["Large-Scale In-House Fabrication", "Capacity"],
+    descriptionMaxWidth: "max-w-[289px]",
     description:
       "Mekark fabricates over 3,000 MT of precision steel per month across four manufacturing plants in Tamil Nadu, with zero third-party dependency.",
   },
   {
     icon: "/images/industries/fmcg/fmcg-facility-cta/icon-map-pinned.svg",
     title: "Regional Project Execution Across South India",
+    titleLines: ["Regional Project Execution Across", "South India"],
+    descriptionWidth: "w-full lg:w-[327px]",
+    descriptionLines: [
+      "From Chennai and Coimbatore to Hosur,",
+      "Bengaluru, Hyderabad, and Kochi, our teams",
+      "deliver FMCG factory construction backed by an",
+      "integrated design-to-commissioning process.",
+    ],
     description:
       "From Chennai and Coimbatore to Hosur, Bengaluru, Hyderabad, and Kochi, our teams deliver FMCG factory construction backed by an integrated design-to-commissioning process.",
   },
@@ -77,12 +93,19 @@ export const features: FeatureItem[] = [
   {
     icon: "/images/industries/fmcg/fmcg-facility-cta/icon-repeat.svg",
     title: "True Turnkey, Zero Fragmentation",
+    titleNoWrap: true,
     description:
       "Structural steel, civil works, MEP, HVAC, warehousing, and hygienic interiors, one team, one contract, no blame-shifting between trades.",
   },
   {
     icon: "/images/industries/fmcg/fmcg-facility-cta/icon-shield-check.svg",
     title: "GMP & FSSAI-Compliant Construction Standards",
+    descriptionWidth: "w-full lg:w-[327px]",
+    descriptionLines: [
+      "Every facility is delivered to certified",
+      "hygiene and safety benchmarks, with documented",
+      "engineering before a single beam is cut.",
+    ],
     description:
       "Every facility is delivered to certified hygiene and safety benchmarks, with documented engineering before a single beam is cut.",
   },

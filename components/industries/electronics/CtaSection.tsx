@@ -4,6 +4,14 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { IndustryMobileCtaBanner } from "@/components/industries/shared/IndustryMobileCtaBanner";
 import { logisticsCtaWorkerAssets } from "@/components/industries/shared/logisticsCtaWorkerAssets";
+import {
+  industryMobileFeatureCardClass,
+  industryMobileFeatureDescriptionClass,
+  industryMobileFeatureIconGradientClass,
+  industryMobileFeatureIconWrapClass,
+  industryMobileFeatureTextWrapClass,
+  industryMobileFeatureTitleClass,
+} from "@/components/industries/shared/industryMobileFeatureCard";
 
 type Feature = {
   icon: string;
@@ -75,16 +83,16 @@ const itemVariants = {
 
 function FeatureIcon({ src }: { src: string }) {
   return (
-    <div className="relative flex size-14 shrink-0 items-center justify-center overflow-hidden rounded-[14px] shadow-[0px_4.314px_17.258px_0px_rgba(196,22,28,0.2)]">
+    <div className={industryMobileFeatureIconWrapClass}>
       <div
         aria-hidden
-        className="absolute inset-0 rounded-[14px]"
+        className={industryMobileFeatureIconGradientClass}
         style={{
           backgroundImage:
             "linear-gradient(145deg, rgba(196, 22, 28, 0.3) 0%, rgba(196, 22, 28, 0.15) 100%)",
         }}
       />
-      <span className="relative size-[26px] overflow-hidden">
+      <span className="relative size-[22px] overflow-hidden lg:size-[26px]">
         <Image src={src} alt="" fill className="object-contain" aria-hidden />
       </span>
       <div
@@ -97,15 +105,11 @@ function FeatureIcon({ src }: { src: string }) {
 
 function FeatureCard({ icon, title, description }: Feature) {
   return (
-    <article className="flex flex-col items-start gap-[19px]">
+    <article className={industryMobileFeatureCardClass}>
       <FeatureIcon src={icon} />
-      <div className="flex flex-col gap-2.5">
-        <h3 className="font-manrope text-[18px] font-semibold leading-[21.572px] text-black">
-          {title}
-        </h3>
-        <p className="font-manrope text-sm font-normal leading-normal text-[#6e6e6e]">
-          {description}
-        </p>
+      <div className={industryMobileFeatureTextWrapClass}>
+        <h3 className={industryMobileFeatureTitleClass}>{title}</h3>
+        <p className={industryMobileFeatureDescriptionClass}>{description}</p>
       </div>
     </article>
   );
@@ -260,9 +264,25 @@ export default function CtaSection() {
             </p>
           </motion.header>
 
+          <motion.div
+            className="relative mx-auto mb-8 h-[200px] w-full overflow-hidden rounded-2xl sm:mb-10 sm:h-[280px] xl:hidden"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
+          >
+            <Image
+              src="/images/industries/electronics/cta/manufacturing-floor-alt.png"
+              alt="Workers at an electronics manufacturing production line"
+              fill
+              className="object-cover object-center"
+              sizes="100vw"
+            />
+          </motion.div>
+
           <div className="flex flex-col gap-10 xl:flex-row xl:items-stretch xl:gap-12 2xl:gap-20">
             <motion.div
-              className="grid min-w-0 flex-1 grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-10 xl:hidden"
+              className="grid min-w-0 flex-1 grid-cols-1 gap-4 xl:hidden"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"

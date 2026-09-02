@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ServiceMobileHero from "@/components/services/ServiceMobileHero";
-import { SERVICE_BODY_TEXT_SIZES } from "@/components/services/serviceTypography";
+import { SERVICE_BODY_TEXT_SIZES_SCALED } from "@/components/services/serviceTypography";
 import styles from "./index.module.css";
 
 const heroDescription =
@@ -80,6 +80,7 @@ function MobileHero() {
           <span className="text-[#ed2024]">Certified</span>
         </>
       }
+      hideFrom="lg"
     />
   );
 }
@@ -89,7 +90,7 @@ export default function Hero() {
     <>
       <MobileHero />
 
-      <div className="hidden md:block">
+      <div className="hidden lg:block">
         <section className={styles.hero}>
         <div className={styles.image}>
           <div className={styles.imageChild} />
@@ -113,7 +114,7 @@ export default function Hero() {
               <br />
               Manufacturer
             </h1>
-            <p className={`${styles.mekarkDesignsFabricates} ${SERVICE_BODY_TEXT_SIZES} text-[rgba(5,7,12,0.55)]`}>
+            <p className={`${styles.mekarkDesignsFabricates} ${SERVICE_BODY_TEXT_SIZES_SCALED} text-[rgba(5,7,12,0.55)]`}>
               Mekark designs, fabricates, and installs high-strength PTFE and ETFE
               tensile fabric structures for stadiums, car parks, industrial sheds,
               and commercial

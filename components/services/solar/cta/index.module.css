@@ -1,43 +1,43 @@
 .frameParent {
 	width: 100%;
-	/* Solutions (~60vw) + CTA band (~22vw). How We Deliver is a separate section below. */
-	height: 83vw;
+	/* Solutions (~1152px) + CTA band (~422.4px). How We Deliver is a separate section below. */
+	height: 1593.6px;
 	position: relative;
 	text-align: left;
-	font-size: 2.7083vw;
+	font-size: 51.999px;
 	color: #111;
 	font-family: Manrope, sans-serif;
 }
 .sectionWrapper {
 	position: absolute;
-	bottom: 0.0172vw;
-	left: 0.0521vw;
+	bottom: 0.33px;
+	left: 1px;
 	background-color: #fdebeb;
-	width: 100vw;
-	height: 26.9271vw;
+	width: 1920px;
+	height: 517px;
 	overflow: hidden;
 	text-align: center;
-	font-size: 2.0833vw;
+	font-size: 39.999px;
 }
 .section {
 	position: absolute;
-	top: calc(50% - 11.224vw);
-	left: 5.5729vw;
-	box-shadow: 0px 0px 2.0833vw rgba(0, 0, 0, 0.1);
-	border-radius: 2.0833vw;
+	top: calc(50% - 215.501px);
+	left: 107px;
+	box-shadow: 0px 0px 39.999px rgba(0, 0, 0, 0.1);
+	border-radius: 39.999px;
 	background-color: #fcfcfc;
-	width: 88.8542vw;
-	height: 22.3958vw;
+	width: 1706.001px;
+	height: 429.999px;
 	flex-shrink: 0;
 }
 .trustedAcrossIndustrialContainer {
 	position: absolute;
-	top: 2.6911vw;
-	left: calc(50% - 15.8854vw);
-	line-height: 2.3609vw;
+	top: 51.669px;
+	left: calc(50% - 305px);
+	line-height: 45.329px;
 	display: flex;
 	align-items: center;
-	width: 31.7708vw;
+	width: 609.999px;
 	flex-shrink: 0;
 	font-weight: 600;
 }
@@ -45,162 +45,162 @@
 	width: 100%;
 }
 .trustedAcrossIndustrial {
-	line-height: 2.3609vw;
+	line-height: 45.329px;
 }
 .commercialSectors {
 	color: #e50818;
-	line-height: 2.3609vw;
+	line-height: 45.329px;
 }
 .frameGroup {
 	position: absolute;
-	top: 10.8854vw;
-	left: calc(50% - 41.4411vw);
-	width: 82.9844vw;
-	height: 6.3698vw;
+	top: 209px;
+	left: calc(50% - 795.669px);
+	width: 1593.3px;
+	height: 122.3px;
 	flex-shrink: 0;
 }
 .rectangleParent {
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	width: 10.3125vw;
-	height: 6.3698vw;
+	width: 198px;
+	height: 122.3px;
 }
 .frameChild {
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	border-radius: 0.7781vw;
+	border-radius: 14.94px;
 	background-color: #fff;
-	border: 0.0677vw solid rgba(0, 0, 0, 0.05);
+	border: 1.3px solid rgba(0, 0, 0, 0.05);
 	box-sizing: border-box;
-	width: 10.3125vw;
-	height: 6.3698vw;
+	width: 198px;
+	height: 122.3px;
 }
 .tata1Icon {
 	position: absolute;
-	top: 1.5276vw;
-	left: 3.0557vw;
-	width: 4.1875vw;
-	height: 3.2604vw;
+	top: 29.33px;
+	left: 58.669px;
+	width: 80.4px;
+	height: 62.6px;
 	object-fit: contain;
 }
 .rectangleGroup {
 	position: absolute;
 	top: 0px;
-	left: 12.0833vw;
-	width: 10.3125vw;
-	height: 6.3698vw;
+	left: 231.999px;
+	width: 198px;
+	height: 122.3px;
 }
 .bosch1Icon {
 	position: absolute;
-	top: 1.1109vw;
-	left: 3.125vw;
-	width: 4.099vw;
-	height: 4.099vw;
+	top: 21.329px;
+	left: 60px;
+	width: 78.701px;
+	height: 78.701px;
 	object-fit: contain;
 }
 .rectangleContainer {
 	position: absolute;
 	top: 0px;
-	left: 24.2359vw;
-	width: 10.3125vw;
-	height: 6.3698vw;
+	left: 465.329px;
+	width: 198px;
+	height: 122.3px;
 }
 .hyundai2Icon {
 	position: absolute;
-	top: 0.5557vw;
-	left: 2.5693vw;
-	width: 5.2083vw;
-	height: 5.2083vw;
+	top: 10.669px;
+	left: 49.331px;
+	width: 99.999px;
+	height: 99.999px;
 	object-fit: contain;
 }
 .frameDiv {
 	position: absolute;
 	top: 0px;
-	left: 36.3193vw;
-	width: 10.3125vw;
-	height: 6.3698vw;
+	left: 697.331px;
+	width: 198px;
+	height: 122.3px;
 }
 .rectangleParent2 {
 	position: absolute;
 	top: 0px;
-	left: 48.4724vw;
-	width: 10.3125vw;
-	height: 6.3698vw;
+	left: 930.67px;
+	width: 198px;
+	height: 122.3px;
 }
 .jk2Icon {
 	position: absolute;
-	top: 1.6667vw;
-	left: 2.2917vw;
-	width: 5.7656vw;
-	height: 2.9948vw;
+	top: 32.001px;
+	left: 44.001px;
+	width: 110.7px;
+	height: 57.5px;
 	object-fit: contain;
 }
 .rectangleParent3 {
 	position: absolute;
 	top: 0px;
-	left: 60.625vw;
-	width: 10.3125vw;
-	height: 6.3698vw;
+	left: 1164px;
+	width: 198px;
+	height: 122.3px;
 }
 .rectangleParent4 {
 	position: absolute;
 	top: 0px;
-	left: 72.7083vw;
-	width: 10.3125vw;
-	height: 6.3698vw;
+	left: 1395.999px;
+	width: 198px;
+	height: 122.3px;
 }
 .image12Icon {
 	position: absolute;
-	top: calc(50% - 1.8656vw);
-	left: calc(50% - 1.8922vw);
-	width: 3.75vw;
-	height: 3.75vw;
+	top: calc(50% - 35.82px);
+	left: calc(50% - 36.33px);
+	width: 72px;
+	height: 72px;
 	object-fit: contain;
 }
 .sectionChild {
 	position: absolute;
-	top: 19.5938vw;
-	left: 28.5349vw;
-	border-top: 0.0156vw solid #000;
+	top: 376.201px;
+	left: 547.87px;
+	border-top: 0.3px solid #000;
 	box-sizing: border-box;
-	width: 4.9427vw;
-	height: 0.0156vw;
+	width: 94.9px;
+	height: 0.3px;
 	flex-shrink: 0;
 }
 .sectionItem {
 	position: absolute;
-	top: 19.5938vw;
-	left: 55.4099vw;
-	border-top: 0.0156vw solid #000;
+	top: 376.201px;
+	left: 1063.87px;
+	border-top: 0.3px solid #000;
 	box-sizing: border-box;
-	width: 4.9427vw;
-	height: 0.0156vw;
+	width: 94.9px;
+	height: 0.3px;
 	flex-shrink: 0;
 }
 .mdishieldTickParent {
 	position: absolute;
-	top: 18.6979vw;
+	top: 359px;
 	left: 50%;
 	transform: translateX(-50%);
 	display: flex;
 	align-items: center;
-	gap: 0.349vw;
+	gap: 6.701px;
 	flex-shrink: 0;
-	font-size: 0.9724vw;
+	font-size: 18.67px;
 	color: #101116;
 }
 .mdishieldTickIcon {
-	height: 1.6667vw;
-	width: 1.6667vw;
+	height: 32.001px;
+	width: 32.001px;
 	position: relative;
 }
 .builtOnTrust {
 	width: auto;
 	position: relative;
-	letter-spacing: 0.0693vw;
-	line-height: 1.3891vw;
+	letter-spacing: 1.331px;
+	line-height: 26.671px;
 	font-weight: 300;
 	white-space: nowrap;
 	display: flex;
@@ -211,10 +211,10 @@
 .ourProjectMix {
 	position: absolute;
 	width: 100%;
-	top: 8.1771vw;
+	top: 157px;
 	left: 0;
-	font-size: 0.8333vw;
-	line-height: 1.2531vw;
+	font-size: 15.999px;
+	line-height: 24.06px;
 	font-weight: 500;
 	color: #000;
 	text-align: center;
@@ -222,19 +222,19 @@
 }
 .grid1Parent {
 	position: absolute;
-	top: -0.0172vw;
+	top: -0.33px;
 	left: 0px;
 	background-color: #fff;
-	width: 100vw;
-	height: 60.1563vw;
+	width: 1920px;
+	height: 1155.001px;
 	overflow: hidden;
 }
 .grid1Icon {
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	width: 99.8854vw;
-	height: 11.7708vw;
+	width: 1917.8px;
+	height: 225.999px;
 	object-fit: cover;
 	object-position: bottom;
 	opacity: 0.25;
@@ -243,10 +243,10 @@
 }
 .ourCommercialSolarSolutionsWrapper {
 	position: absolute;
-	top: 5.5729vw;
-	left: calc(50% - 22.6042vw);
-	width: 45.2083vw;
-	height: 3.3854vw;
+	top: 107px;
+	left: calc(50% - 434.001px);
+	width: 867.999px;
+	height: 65px;
 	flex-shrink: 0;
 	text-align: center;
 }
@@ -256,14 +256,14 @@
 }
 .frameContainer {
 	position: absolute;
-	top: 11.7708vw;
-	left: calc(50% - 42.6563vw);
+	top: 225.999px;
+	left: calc(50% - 819.001px);
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 2.6042vw;
+	gap: 50.001px;
 	flex-shrink: 0;
-	font-size: 0.9375vw;
+	font-size: 18px;
 	color: #3c3938;
 	font-family: Montserrat, sans-serif;
 }
@@ -271,30 +271,30 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	gap: 2.6042vw;
+	gap: 50.001px;
 }
 .rectangleParent5 {
-	box-shadow: -0.1042vw 0.1042vw 0.3125vw rgba(21, 21, 21, 0.08);
-	border-radius: 0.8333vw;
+	box-shadow: -2.001px 2.001px 6px rgba(21, 21, 21, 0.08);
+	border-radius: 15.999px;
 	background-color: #fffdfd;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	padding: 1.0417vw;
-	gap: 1.0417vw;
+	padding: 20.001px;
+	gap: 20.001px;
 }
 .rectangleIcon {
-	width: 24.6354vw;
-	height: 14.4271vw;
+	width: 473px;
+	height: 277px;
 	position: relative;
-	border-radius: 1.0417vw;
+	border-radius: 20.001px;
 	object-fit: cover;
 }
 .rectangleImageWrap {
-	width: 24.6354vw;
-	height: 14.4271vw;
+	width: 473px;
+	height: 277px;
 	position: relative;
-	border-radius: 1.0417vw;
+	border-radius: 20.001px;
 	overflow: hidden;
 	flex-shrink: 0;
 }
@@ -329,7 +329,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	gap: 0.5208vw;
+	gap: 9.999px;
 }
 .rooftopSolarFor {
 	position: relative;
@@ -337,67 +337,67 @@
 	color: #000;
 }
 .highCapacitySystemsEngineer {
-	width: 21.1979vw;
+	width: 407px;
 	position: relative;
 	display: flex;
 	align-items: center;
 }
 .fullyIndependentPower {
-	width: 21.9792vw;
+	width: 422.001px;
 	position: relative;
 	display: flex;
 	align-items: center;
 }
 .rectangleParent7 {
-	box-shadow: -0.1042vw 0.1042vw 0.3125vw rgba(21, 21, 21, 0.08);
-	border-radius: 0.8333vw;
+	box-shadow: -2.001px 2.001px 6px rgba(21, 21, 21, 0.08);
+	border-radius: 15.999px;
 	background-color: #fffdfd;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	padding: 1.0417vw 1.0417vw 2.0833vw;
-	gap: 1.0417vw;
+	padding: 20.001px 20.001px 39.999px;
+	gap: 20.001px;
 }
 .optimizedForBusinesses {
-	width: 21.5625vw;
+	width: 414px;
 	position: relative;
 	display: flex;
 	align-items: center;
 }
 .frameChild7 {
-	width: 24.6354vw;
-	height: 14.4271vw;
+	width: 473px;
+	height: 277px;
 	position: relative;
-	border-radius: 1.0417vw;
+	border-radius: 20.001px;
 	background-color: rgba(165, 162, 162, 0.2);
 }
 .detailedAssessmentOf {
-	width: 21.9271vw;
+	width: 421px;
 	position: relative;
 	display: flex;
 	align-items: center;
 }
 .uninterruptedPowerSupply {
-	width: 21.0938vw;
+	width: 405.001px;
 	position: relative;
 	display: flex;
 	align-items: center;
 }
 .grid1Group {
 	position: absolute;
-	top: 80.5vw;
+	top: 1545.6px;
 	left: 0px;
 	background-color: #fff;
-	width: 100vw;
-	height: 30vw;
+	width: 1920px;
+	height: 576px;
 	overflow: hidden;
 }
 .grid1Icon2 {
 	position: absolute;
-	bottom: -21.026vw;
+	bottom: -403.699px;
 	left: 0px;
-	width: 99.8854vw;
-	height: 20.349vw;
+	width: 1917.8px;
+	height: 390.701px;
 	object-fit: cover;
 	opacity: 0.15;
 	flex-shrink: 0;
@@ -405,19 +405,19 @@
 .grid1Container {
 	position: absolute;
 	width: 100%;
-	top: 3vw;
+	top: 57.6px;
 	right: 0px;
 	left: 0px;
-	height: 22.3958vw;
+	height: 429.999px;
 	overflow: hidden;
 	flex-shrink: 0;
 }
 .grid1Icon3 {
 	position: absolute;
-	top: 4.5vw;
+	top: 86.4px;
 	left: 0px;
-	width: 99.8958vw;
-	height: 30vw;
+	width: 1917.999px;
+	height: 576px;
 	object-fit: cover;
 	transform: scaleY(-1);
 	opacity: 0.095;
@@ -425,20 +425,20 @@
 }
 .howWeDeliver {
 	position: absolute;
-	top: 4vw;
-	left: calc(50% - 21.5104vw);
+	top: 76.8px;
+	left: calc(50% - 413px);
 	flex-shrink: 0;
 }
 .frameParent5 {
 	position: absolute;
-	top: 9.8438vw;
-	left: 4.1667vw;
-	width: 91.5104vw;
+	top: 189.001px;
+	left: 80.001px;
+	width: 1757px;
 	display: flex;
 	align-items: center;
-	gap: 1.6667vw;
+	gap: 32.001px;
 	flex-shrink: 0;
-	font-size: 2.0833vw;
+	font-size: 39.999px;
 	color: #f01d23;
 	font-family: Montserrat, sans-serif;
 }
@@ -447,7 +447,7 @@
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
-	gap: 0.7292vw;
+	gap: 14.001px;
 }
 .div {
 	position: relative;
@@ -457,8 +457,8 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	gap: 0.5208vw;
-	font-size: 0.9375vw;
+	gap: 9.999px;
+	font-size: 18px;
 	color: #3c3938;
 }
 .siteAssessment {
@@ -468,17 +468,17 @@
 	color: #000;
 }
 .ourEngineersVisit {
-	width: 14.2708vw;
+	width: 273.999px;
 	position: relative;
-	font-size: 0.8333vw;
-	line-height: 1.1109vw;
+	font-size: 15.999px;
+	line-height: 21.329px;
 	color: #555;
 	display: flex;
 	align-items: center;
 }
 .lineIcon {
-	height: 1.0208vw;
-	width: 1.9115vw;
+	height: 19.599px;
+	width: 36.701px;
 	position: relative;
 	max-height: 100%;
 }
@@ -486,50 +486,50 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	gap: 0.7292vw;
+	gap: 14.001px;
 }
 .systemDesignAndApprovalParent {
 	align-self: stretch;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	gap: 0.5208vw;
-	font-size: 0.9375vw;
+	gap: 9.999px;
+	font-size: 18px;
 	color: #3c3938;
 }
 .customSolarDesign {
-	width: 12.7083vw;
+	width: 243.999px;
 	position: relative;
-	font-size: 0.8333vw;
-	line-height: 1.1109vw;
+	font-size: 15.999px;
+	line-height: 21.329px;
 	color: #555;
 	display: flex;
 	align-items: center;
 }
 .highQualityPanelsInverters {
-	width: 15vw;
+	width: 288px;
 	position: relative;
-	font-size: 0.8333vw;
-	line-height: 1.1109vw;
+	font-size: 15.999px;
+	line-height: 21.329px;
 	color: #555;
 	display: flex;
 	align-items: center;
 }
 .onSiteInstallationWith {
-	width: 12.9688vw;
+	width: 249.001px;
 	position: relative;
-	font-size: 0.8333vw;
-	line-height: 1.1109vw;
+	font-size: 15.999px;
+	line-height: 21.329px;
 	color: #555;
 	white-space: pre-wrap;
 	display: flex;
 	align-items: center;
 }
 .finalDocumentationHandover {
-	width: 12.7604vw;
+	width: 245px;
 	position: relative;
-	font-size: 0.8333vw;
-	line-height: 1.1109vw;
+	font-size: 15.999px;
+	line-height: 21.329px;
 	color: #555;
 	display: flex;
 	align-items: center;
@@ -537,40 +537,40 @@
 .sectionContainer {
 	position: absolute;
 	width: 100%;
-	top: 62vw;
+	top: 1190.4px;
 	right: 0px;
 	left: 0px;
 	background-color: #fff;
-	height: 19.5vw;
-	font-size: 2.5vw;
+	height: 374.4px;
+	font-size: 48px;
 	color: #fff;
 }
 .section2 {
 	position: absolute;
-	bottom: 1.2vw;
-	left: calc(50% - 44.4443vw);
-	border-radius: 2.0833vw;
+	bottom: 23.04px;
+	left: calc(50% - 853.331px);
+	border-radius: 39.999px;
 	background: linear-gradient(96.33deg, #8b0c11, #ed1d23);
-	width: 88.8906vw;
-	height: 17.9844vw;
+	width: 1706.7px;
+	height: 345.3px;
 	overflow: visible;
 }
 .frameParent6 {
 	position: absolute;
-	top: calc(50% - 6.4922vw);
-	left: 7.6214vw;
+	top: calc(50% - 124.65px);
+	left: 146.331px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	flex-shrink: 0;
-	min-height: 13.75vw;
+	min-height: 264px;
 }
 .getAFree {
-	width: 45vw;
+	width: 864px;
 	position: relative;
-	font-size: 0.9724vw;
-	letter-spacing: 0.074vw;
-	line-height: 1.1833vw;
+	font-size: 18.67px;
+	letter-spacing: 1.421px;
+	line-height: 22.719px;
 	font-weight: 500;
 	color: #ccc6c6;
 	display: flex;
@@ -582,12 +582,12 @@
 	justify-content: center;
 	align-self: flex-start;
 	width: fit-content;
-	padding: clamp(10px, 0.75vw, 14px) clamp(16px, 1.25vw, 24px);
+	padding: clamp(10px, 14.4px, 14px) clamp(16px, 24px, 24px);
 	border-radius: 999px;
 	background-color: #fff;
 	box-sizing: border-box;
-	gap: clamp(6px, 0.5vw, 10px);
-	font-size: clamp(14px, 0.95vw, 16px);
+	gap: clamp(6px, 9.6px, 10px);
+	font-size: clamp(14px, 18.24px, 16px);
 	color: #e5091f;
 	cursor: pointer;
 	border: none;
@@ -599,8 +599,8 @@
 	font-weight: 700;
 }
 .component4 {
-	height: clamp(14px, 1vw, 19px);
-	width: clamp(14px, 1vw, 19px);
+	height: clamp(14px, 19.2px, 19px);
+	width: clamp(14px, 19.2px, 19px);
 	position: relative;
 	overflow: hidden;
 	flex-shrink: 0;
@@ -619,30 +619,30 @@
 }
 .layer2CopyCta1 {
 	position: absolute;
-	top: -3.5068vw;
-	right: 2.4672vw;
-	width: 47.8646vw;
-	height: 25.0521vw;
+	top: -67.331px;
+	right: 47.37px;
+	width: 919px;
+	height: 481px;
 	flex-shrink: 0;
 }
 .sectionChild2 {
 	position: absolute;
-	top: -0.0172vw;
-	right: 0.0193vw;
-	border-radius: 0px 2.0833vw 2.0833vw 0px;
-	width: 5.8333vw;
-	height: 18.0208vw;
+	top: -0.33px;
+	right: 0.371px;
+	border-radius: 0px 39.999px 39.999px 0px;
+	width: 111.999px;
+	height: 345.999px;
 	flex-shrink: 0;
 	background: linear-gradient(270deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
 }
 .solarCta1 {
 	position: absolute;
-	right: -0.0328vw;
-	bottom: -0.0193vw;
-	width: 40.9375vw;
-	height: 21.6146vw;
+	right: -0.63px;
+	bottom: -0.371px;
+	width: 786px;
+	height: 415px;
 	object-fit: cover;
-	border-radius: 0 2.0833vw 2.0833vw 0;
+	border-radius: 0 39.999px 39.999px 0;
 	flex-shrink: 0;
 }
 
@@ -656,7 +656,7 @@
 	}
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1023px) {
 	.frameParent {
 		height: auto;
 		display: flex;

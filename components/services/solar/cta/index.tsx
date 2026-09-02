@@ -22,6 +22,7 @@ const Cta: NextPage = () => {
 								line2="Your Factory or Warehouse?"
 								size="medium"
 								className="!max-w-full"
+								scaledCanvas
 							/>
 							<p className={`mt-4 ${styles.getAFree}`}>
 								Get a free consultation and system estimate from

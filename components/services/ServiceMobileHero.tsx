@@ -30,6 +30,8 @@ export type ServiceMobileHeroProps = {
   certification: ReactNode;
   enquiryHref?: string;
   projectsHref?: string;
+  /** Hide at this breakpoint and up. Use `lg` when desktop uses DesignScale (≥1024). */
+  hideFrom?: "md" | "lg";
 };
 
 const DEFAULT_ARROW = "/images/services/civil/hero/arrow.svg";
@@ -44,9 +46,12 @@ export default function ServiceMobileHero({
   certification,
   enquiryHref = "/#enquiry",
   projectsHref = "/projects/completed-projects",
+  hideFrom = "md",
 }: ServiceMobileHeroProps) {
   return (
-    <section className="relative isolate w-full overflow-hidden font-manrope md:hidden">
+    <section
+      className={`relative isolate w-full overflow-hidden font-manrope ${hideFrom === "lg" ? "lg:hidden" : "md:hidden"}`}
+    >
       {/* Background gradient — lowest layer */}
       <div
         aria-hidden

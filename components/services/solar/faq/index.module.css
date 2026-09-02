@@ -6,10 +6,10 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	padding: 4.8594vw 5.5573vw;
+	padding: 93.3px 106.7px;
 	box-sizing: border-box;
 	text-align: left;
-	font-size: 2.7776vw;
+	font-size: 53.33px;
 	color: #111;
 	font-family: Manrope, sans-serif;
 }
@@ -18,69 +18,69 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 3.474vw;
+	gap: 66.701px;
 }
 .titleWrapper {
-	width: 67.9167vw;
-	height: 3.401vw;
+	width: 1304.001px;
+	height: 65.299px;
 	position: relative;
 }
 .frequentlyAskedQuestions {
 	position: absolute;
 	top: 0px;
-	left: calc(50% - 33.9583vw);
-	letter-spacing: -0.0693vw;
-	line-height: 3.4026vw;
+	left: calc(50% - 651.999px);
+	letter-spacing: -1.331px;
+	line-height: 65.33px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 67.9167vw;
+	width: 1304.001px;
 	font-weight: 700;
 }
 .columns {
-	width: 88.8906vw;
+	width: 1706.7px;
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;
-	gap: 2.0833vw;
-	font-size: 0.8333vw;
+	gap: 39.999px;
+	font-size: 15.999px;
 	color: #e60f1a;
 	font-family: Montserrat, sans-serif;
 }
 .column {
-	width: 41.1823vw;
+	width: 790.7px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	gap: 0.6927vw;
+	gap: 13.3px;
 }
 .item {
 	align-self: stretch;
-	min-height: 5.3021vw;
-	border-radius: 1.0823vw;
+	min-height: 101.8px;
+	border-radius: 20.78px;
 	background-color: #fff;
-	border: 0.0541vw solid #e3e4e7;
+	border: 1.039px solid #e3e4e7;
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
-	padding: 0 1.2969vw;
+	padding: 0 24.9px;
 }
 .itemOpen {
 	justify-content: flex-start;
 }
 .itemOpen .itemButton {
 	min-height: 0;
-	padding: 0.9375vw 0 0.3125vw;
+	padding: 18px 0 6px;
 }
 .itemButton {
 	align-self: stretch;
 	display: flex;
 	align-items: center;
-	min-height: 5.3021vw;
+	min-height: 101.8px;
 	padding: 0;
-	gap: 0.8646vw;
+	gap: 16.6px;
 	width: 100%;
 	border: none;
 	background: transparent;
@@ -90,8 +90,8 @@
 	color: inherit;
 }
 .number {
-	letter-spacing: -0.0245vw;
-	line-height: 1.3891vw;
+	letter-spacing: -0.47px;
+	line-height: 26.671px;
 	font-weight: 700;
 	flex-shrink: 0;
 	display: flex;
@@ -99,9 +99,9 @@
 }
 .question {
 	flex: 1;
-	font-size: 0.9724vw;
-	letter-spacing: -0.0245vw;
-	line-height: 1.3891vw;
+	font-size: 18.67px;
+	letter-spacing: -0.47px;
+	line-height: 26.671px;
 	font-weight: 500;
 	font-family: Manrope, sans-serif;
 	color: #101116;
@@ -109,8 +109,8 @@
 	align-items: center;
 }
 .component1 {
-	height: 0.8646vw;
-	width: 0.8646vw;
+	height: 16.6px;
+	width: 16.6px;
 	position: relative;
 	overflow: hidden;
 	flex-shrink: 0;
@@ -126,20 +126,20 @@
 }
 .answerWrap {
 	width: 100%;
-	padding: 0 0 1.0417vw 1.8vw;
+	padding: 0 0 20.001px 34.56px;
 	box-sizing: border-box;
 }
 .answer {
 	margin: 0;
-	font-size: 0.8333vw;
-	line-height: 1.3542vw;
-	letter-spacing: -0.0104vw;
+	font-size: 15.999px;
+	line-height: 26.001px;
+	letter-spacing: -0.2px;
 	font-weight: 400;
 	font-family: Manrope, sans-serif;
 	color: #53555b;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1023px) {
 	.frameParent {
 		padding: 3.5rem 1.5rem;
 		font-size: 2rem;

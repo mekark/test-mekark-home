@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ServiceMobileHero from "@/components/services/ServiceMobileHero";
-import { SERVICE_BODY_TEXT_SIZES } from "@/components/services/serviceTypography";
+import { SERVICE_BODY_TEXT_SIZES_SCALED } from "@/components/services/serviceTypography";
 import styles from "./index.module.css";
 
 const heroDescription =
@@ -59,6 +59,7 @@ function MobileHero() {
           <span className="text-[#ed2024]">Certified</span>
         </>
       }
+      hideFrom="lg"
     />
   );
 }
@@ -68,7 +69,7 @@ export default function Hero() {
     <>
       <MobileHero />
 
-      <div className="hidden md:block">
+      <div className="hidden lg:block">
         <div className={`${styles.hero} flex flex-col`}>
         <div className={styles.image}>
           <Image
@@ -133,7 +134,7 @@ export default function Hero() {
           <b className={styles.southIndiasTrusted}>
             South India&apos;s Trusted Commercial Solar Installation Contractor
           </b>
-          <div className={`${styles.mekarkDeliversEndToEnd} ${SERVICE_BODY_TEXT_SIZES} text-[rgba(5,7,12,0.5)]`}>
+          <div className={`${styles.mekarkDeliversEndToEnd} ${SERVICE_BODY_TEXT_SIZES_SCALED} text-[rgba(5,7,12,0.5)]`}>
             {heroDescription}
           </div>
           <div className={styles.cta}>

@@ -13,13 +13,14 @@ const Frame191: NextPage = () => {
 				<div className={styles.copy}>
 					<ServiceMidCtaLine
 						stretch
-						className="left-[clamp(20px,3.5vw,56px)] lg:inset-y-auto lg:top-1/2 lg:h-[264px] lg:-translate-y-1/2"
+						className="left-[56px] lg:inset-y-auto lg:top-1/2 lg:h-[264px] lg:-translate-y-1/2"
 					/>
 					<ServiceMidCtaTitle
 						line1="Planning a Tensile"
 						line2="Roofing or Canopy Project?"
 						size="medium"
 						className="!max-w-full"
+						scaledCanvas
 					/>
 
 					<p className={styles.subtitle}>

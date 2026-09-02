@@ -171,8 +171,8 @@
 
 @media (min-width: 1024px) {
   .tensile-service-page {
-    --section-padding-x: 8rem;
-    --section-padding-x-right: 2rem;
+    --section-padding-x: 107px;
+    --section-padding-x-right: 107px;
   }
 }
 
@@ -285,12 +285,14 @@
   }
 }
 
-/* Civil / PEB / Multi-Storey / MEP DesignScale already shrinks the 1920 canvas — keep large-desktop copy size. */
+/* Civil / PEB / Multi-Storey / MEP / Solar DesignScale already shrinks the 1920 canvas — keep large-desktop copy size. */
 @media (min-width: 1280px) {
   .civil-service-page .service-section-description,
   .peb-service-page .service-section-description,
   .multi-storey-service-page .service-section-description,
-  .mep-service-page .service-section-description {
+  .mep-service-page .service-section-description,
+  .solar-service-page .service-section-description,
+  .tensile-service-page .service-section-description {
     font-size: 18.67px;
     line-height: 26px;
     letter-spacing: normal;

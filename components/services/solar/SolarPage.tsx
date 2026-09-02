@@ -1,3 +1,6 @@
+"use client";
+
+import DesignScale from "@/components/services/DesignScale";
 import Cta from "@/components/services/solar/cta";
 import EndToEnd from "@/components/services/solar/end-to-end";
 import Faq from "@/components/services/solar/faq";
@@ -10,15 +13,16 @@ import { TrustedSectorsSection } from "@/components/trusted-sectors/TrustedSecto
 export function SolarPage() {
   return (
     <main className="solar-service-page flex flex-1 flex-col overflow-x-hidden bg-white">
-      <Hero />
-      <EndToEnd />
-      <Why />
-
-      <Cta />
-      <SolarHowWeDeliver />
-      <TrustedSectorsSection variant="services" />
-      <Faq />
-      <SolarFooterCta />
+      <DesignScale>
+        <Hero />
+        <EndToEnd />
+        <Why />
+        <Cta />
+        <SolarHowWeDeliver />
+        <TrustedSectorsSection variant="services" />
+        <Faq />
+        <SolarFooterCta />
+      </DesignScale>
     </main>
   );
 }

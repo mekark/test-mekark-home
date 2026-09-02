@@ -46,13 +46,13 @@
   	flex-direction: column;
   	justify-content: space-between;
   	gap: 40px;
-  	padding: calc(60px + clamp(8px, 1.5vh, 20px)) var(--section-padding-x-right) clamp(24px, 4vw, 67px) var(--section-padding-x);
+  	padding: calc(60px + 20px) var(--section-padding-x-right) 67px var(--section-padding-x);
   	box-sizing: border-box;
 }
 
 @media (min-width: 640px) {
   	.content {
-  		padding-top: calc(60px + clamp(8px, 1.5vh, 20px));
+  		padding-top: calc(60px + 20px);
   	}
 }
 
@@ -60,7 +60,7 @@
   	display: flex;
   	flex-direction: column;
   	align-items: flex-start;
-  	gap: clamp(14px, 2vw, 20px);
+  	gap: 20px;
   	max-width: 1350px;
   	opacity: 0.95;
   	color: #111;
@@ -68,7 +68,7 @@
 
 .southIndiasTrusted {
   	margin: 0;
-  	font-size: clamp(26px, 2.85vw, 42px);
+  	font-size: 42px;
   	letter-spacing: -1px;
   	line-height: 1.15;
   	font-weight: 800;
@@ -145,7 +145,7 @@
   	flex-wrap: wrap;
   	align-items: stretch;
   	justify-content: center;
-  	gap: clamp(16px, 3vw, 40px) clamp(20px, 4vw, 67px);
+  	gap: 40px 67px;
   	color: #fff;
 }
 
@@ -168,7 +168,7 @@
   	letter-spacing: -1px;
   	line-height: 1.1;
   	font-weight: 800;
-  	font-size: clamp(22px, 1.8vw, 26.67px);
+  	font-size: 26.67px;
 	color: #fff;
 }
 
@@ -182,7 +182,7 @@
 }
 
 .statLabel {
-  	font-size: clamp(10px, 0.85vw, 11px);
+  	font-size: 11px;
   	letter-spacing: 1.2px;
   	line-height: 1.25;
   	text-transform: capitalize;
@@ -194,7 +194,7 @@
   	letter-spacing: -0.8px;
   	line-height: 1.2;
   	font-weight: 800;
-  	font-size: clamp(18px, 1.5vw, 24px);
+  	font-size: 24px;
 }
 
 .iso90012015 {
@@ -214,7 +214,7 @@
 }
 
 /* Tablet */
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   	.hero {
   		min-height: auto;
   		aspect-ratio: auto;
@@ -322,17 +322,17 @@
   	}
 
   	.div {
-  		font-size: clamp(1rem, 4.4vw, 1.375rem);
+  		font-size: 1.375rem;
   	}
 
   	.statLabel {
-  		font-size: clamp(0.5625rem, 2.7vw, 0.625rem);
+  		font-size: 0.625rem;
   		letter-spacing: 0.04em;
   		line-height: 1.35;
   	}
 
   	.iso90012015Container {
-  		font-size: clamp(1rem, 4.4vw, 1.125rem);
+  		font-size: 1.125rem;
   	}
 }
 

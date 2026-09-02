@@ -1,90 +1,90 @@
 .hero {
 	width: 100%;
-	height: 54.5833vw;
+	height: 1047.999px;
 	position: relative;
 	background-color: #060606;
 	overflow: hidden;
 	flex-shrink: 0;
 	text-align: left;
-	font-size: 1.3891vw;
+	font-size: 26.671px;
 	color: #fff;
 	font-family: Manrope, sans-serif;
 }
 .image {
 	position: absolute;
 	width: 100%;
-	top: -1.6667vw;
+	top: -32.001px;
 	right: 0px;
 	left: 0px;
-	height: 56.25vw;
+	height: 1080px;
 	flex-shrink: 0;
 }
 .removeTheBuilding1 {
 	position: absolute;
-	bottom: -0.0172vw;
+	bottom: -0.33px;
 	left: 0px;
-	width: 100.0521vw;
-	height: 54.6354vw;
+	width: 1921px;
+	height: 1049px;
 	object-fit: cover;
 	flex-shrink: 0;
 }
 .imageChild {
 	position: absolute;
-	top: 1.6667vw;
+	top: 32.001px;
 	right: 0px;
 	background: linear-gradient(180deg, #ffc2c2, rgba(255, 255, 255, 0));
-	width: 100vw;
-	height: 22.7083vw;
+	width: 1920px;
+	height: 435.999px;
 	flex-shrink: 0;
 }
 .removeTheBuilding2 {
 	position: absolute;
-	bottom: -0.0172vw;
-	left: calc(50% - 50vw);
-	width: 100.0521vw;
-	height: 54.6354vw;
+	bottom: -0.33px;
+	left: calc(50% - 960px);
+	width: 1921px;
+	height: 1049px;
 	object-fit: cover;
 	flex-shrink: 0;
 }
 .multiStoreyLayer11 {
 	position: absolute;
-	top: -1.5974vw;
-	left: -1.0417vw;
-	width: 107.0313vw;
-	height: 58.4375vw;
+	top: -30.67px;
+	left: -20.001px;
+	width: 2055.001px;
+	height: 1122px;
 	flex-shrink: 0;
 }
 .imageItem {
 	position: absolute;
 	right: 0px;
-	bottom: -0.0016vw;
+	bottom: -0.031px;
 	background: linear-gradient(180deg, rgba(30, 30, 30, 0), #1e1e1e);
-	width: 100vw;
-	height: 18.6823vw;
+	width: 1920px;
+	height: 358.7px;
 	flex-shrink: 0;
 }
 .trustBar {
 	position: absolute;
-	bottom: 3.4568vw;
-	left: calc(50% - 23.4203vw);
+	bottom: 66.371px;
+	left: calc(50% - 449.67px);
 	display: flex;
 	align-items: center;
-	gap: 3.474vw;
+	gap: 66.701px;
 	flex-shrink: 0;
 }
 .verticalborder {
-	height: 3.401vw;
-	width: 7.151vw;
+	height: 65.299px;
+	width: 137.299px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
-	padding: 0.9375vw 0.6927vw 0.9688vw;
+	padding: 18px 13.3px 18.601px;
 	box-sizing: border-box;
-	gap: 0.2135vw;
+	gap: 4.099px;
 }
 .container {
-	width: 5.7656vw;
+	width: 110.7px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -92,48 +92,48 @@
 }
 .div {
 	position: relative;
-	letter-spacing: -0.0578vw;
-	line-height: 1.3344vw;
+	letter-spacing: -1.11px;
+	line-height: 25.62px;
 	font-weight: 700;
 }
 .span {
-	line-height: 1.3344vw;
+	line-height: 25.62px;
 }
 .span2 {
 	color: #eb1a20;
-	line-height: 1.3344vw;
+	line-height: 25.62px;
 }
 .container2 {
-	width: 5.7656vw;
+	width: 110.7px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	flex-shrink: 0;
-	font-size: 0.5557vw;
+	font-size: 10.669px;
 	color: #e6e6e6;
 }
 .yearsExperience {
 	align-self: stretch;
 	position: relative;
-	letter-spacing: 0.0839vw;
-	line-height: 0.6193vw;
+	letter-spacing: 1.611px;
+	line-height: 11.891px;
 	text-transform: capitalize;
 	font-weight: 500;
 }
 .verticalborder2 {
-	height: 3.3333vw;
-	width: 8.401vw;
+	height: 63.999px;
+	width: 161.299px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
-	padding: 0.9375vw 0.6927vw 0.9688vw;
+	padding: 18px 13.3px 18.601px;
 	box-sizing: border-box;
-	gap: 0.2135vw;
+	gap: 4.099px;
 	color: #f9f9f9;
 }
 .container3 {
-	width: 6.9427vw;
+	width: 133.3px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -142,24 +142,24 @@
 .x {
 	align-self: stretch;
 	position: relative;
-	letter-spacing: -0.0578vw;
-	line-height: 1.3344vw;
+	letter-spacing: -1.11px;
+	line-height: 25.62px;
 	font-weight: 700;
 }
 .container4 {
-	width: 6.9427vw;
+	width: 133.3px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	flex-shrink: 0;
-	font-size: 0.5557vw;
+	font-size: 10.669px;
 	color: #e6e6e6;
 }
 .inHouseEngineers {
-	width: 8.4375vw;
+	width: 162px;
 	position: relative;
-	letter-spacing: 0.0839vw;
-	line-height: 0.6193vw;
+	letter-spacing: 1.611px;
+	line-height: 11.891px;
 	text-transform: capitalize;
 	font-weight: 500;
 	display: flex;
@@ -167,72 +167,72 @@
 	flex-shrink: 0;
 }
 .verticalborder3 {
-	height: 3.3333vw;
-	width: 9.2344vw;
+	height: 63.999px;
+	width: 177.3px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
-	padding: 0.9635vw 0.6927vw;
+	padding: 18.499px 13.3px;
 	box-sizing: border-box;
-	gap: 0.224vw;
+	gap: 4.301px;
 	color: #e9000e;
 }
 .container5 {
-	width: 7.776vw;
+	width: 149.299px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	flex-shrink: 0;
 }
 .turnkey {
-	width: 7.224vw;
+	width: 138.701px;
 	position: relative;
-	letter-spacing: -0.0578vw;
-	line-height: 1.3344vw;
+	letter-spacing: -1.11px;
+	line-height: 25.62px;
 	font-weight: 700;
 	display: flex;
 	align-items: center;
 }
 .container6 {
-	width: 7.849vw;
+	width: 150.701px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	flex-shrink: 0;
-	font-size: 0.5557vw;
+	font-size: 10.669px;
 	color: #e6e6e6;
 }
 .solarEpc {
-	width: 7.849vw;
+	width: 150.701px;
 	position: relative;
-	letter-spacing: 0.0833vw;
-	line-height: 0.4984vw;
+	letter-spacing: 1.599px;
+	line-height: 9.569px;
 	text-transform: capitalize;
 	font-weight: 500;
 	display: flex;
 	align-items: center;
 }
 .container7 {
-	width: 11.6667vw;
+	width: 224.001px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	padding: 0.224vw 0.6927vw;
+	padding: 4.301px 13.3px;
 	box-sizing: border-box;
-	gap: 0.2083vw;
+	gap: 3.999px;
 }
 .container8 {
-	width: 10.276vw;
+	width: 197.299px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 }
 .iso90012015 {
-	width: 11.2135vw;
+	width: 215.299px;
 	position: relative;
-	letter-spacing: -0.0484vw;
-	line-height: 1.4156vw;
+	letter-spacing: -0.929px;
+	line-height: 27.18px;
 	font-weight: 700;
 	display: flex;
 	align-items: center;
@@ -241,72 +241,72 @@
 .certified {
 	align-self: stretch;
 	position: relative;
-	font-size: 0.5557vw;
-	letter-spacing: 0.0833vw;
-	line-height: 0.6198vw;
+	font-size: 10.669px;
+	letter-spacing: 1.599px;
+	line-height: 11.9px;
 	text-transform: capitalize;
 	font-weight: 500;
 	color: #e6e6e6;
 }
 .text {
 	position: absolute;
-	width: calc(100% - 11.1458vw);
-	top: 8vw;
-	right: 6.8229vw;
-	left: 4.3229vw;
+	width: calc(100% - 213.999px);
+	top: 153.6px;
+	right: 131px;
+	left: 83px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 1.0417vw;
+	gap: 20.001px;
 	opacity: 0.9;
 	flex-shrink: 0;
-	font-size: 2.5vw;
+	font-size: 48px;
 	color: #111;
 }
 .southIndiasTrusted {
 	align-self: stretch;
 	position: relative;
-	letter-spacing: -0.0521vw;
-	line-height: 2.9167vw;
+	letter-spacing: -1px;
+	line-height: 56.001px;
 	text-align: center;
 	font-weight: 700;
 }
 .mekarkDeliversEndToEnd {
-	width: 55.4688vw;
+	width: 1065.001px;
 	position: relative;
 	display: flex;
 	align-items: center;
 }
 .cta {
-	width: 20.8333vw;
-	height: 2.6406vw;
+	width: 399.999px;
+	height: 50.7px;
 	position: relative;
-	font-size: 0.8333vw;
+	font-size: 15.999px;
 	color: #fff;
 }
 .component5 {
 	position: absolute;
-	top: calc(50% - 1.3589vw);
+	top: calc(50% - 26.091px);
 	left: 0px;
-	box-shadow: 0px 0.361vw 1.4437vw rgba(196, 22, 28, 0.3);
-	border-radius: 0.3609vw;
+	box-shadow: 0px 6.931px 27.719px rgba(196, 22, 28, 0.3);
+	border-radius: 6.929px;
 	background-color: #c4161c;
 	display: flex;
 	align-items: center;
-	padding: 0.8125vw 1.625vw;
-	gap: 0.4531vw;
+	padding: 15.6px 31.2px;
+	gap: 8.7px;
 	flex-shrink: 0;
 	text-decoration: none;
 }
 .text2 {
 	position: relative;
-	line-height: 1.0828vw;
+	line-height: 20.79px;
 	font-weight: 500;
 	flex-shrink: 0;
 }
 .component4 {
-	height: 0.724vw;
-	width: 0.724vw;
+	height: 13.901px;
+	width: 13.901px;
 	position: relative;
 	overflow: hidden;
 	flex-shrink: 0;
@@ -314,30 +314,30 @@
 }
 .exploreSolutions {
 	position: absolute;
-	height: calc(100% - 0.026vw);
+	height: calc(100% - 0.499px);
 	top: 0px;
-	bottom: 0.026vw;
-	left: 11.3042vw;
-	border-radius: 0.2708vw;
-	width: 9.9896vw;
+	bottom: 0.499px;
+	left: 217.041px;
+	border-radius: 5.199px;
+	width: 191.8px;
 	flex-shrink: 0;
 	color: #c4161c;
 	text-decoration: none;
 }
 .viewOurProjects {
 	position: absolute;
-	top: calc(50% - 0.5542vw);
-	left: 1.1281vw;
-	line-height: 1.0828vw;
+	top: calc(50% - 10.641px);
+	left: 21.66px;
+	line-height: 20.79px;
 	font-weight: 500;
 	flex-shrink: 0;
 }
 .component42 {
 	position: absolute;
-	top: 0.8344vw;
-	left: 8.8365vw;
-	width: 0.95vw;
-	height: 0.95vw;
+	top: 16.02px;
+	left: 169.661px;
+	width: 18.24px;
+	height: 18.24px;
 	overflow: hidden;
 	flex-shrink: 0;
 }
@@ -354,7 +354,7 @@
 	max-height: 100%;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1023px) {
 	.hero {
 		display: flex;
 		flex-direction: column;
@@ -544,7 +544,7 @@
 	}
 }
 
-@media (min-width: 768px) and (max-width: 1199px) {
+@media (min-width: 768px) and (max-width: 1023px) {
 	.text {
 		padding: 7rem 2rem 11.5rem;
 	}

@@ -1,7 +1,7 @@
 .wrap {
 	width: 100%;
 	background-color: #fff;
-	padding: clamp(24px, 3vw, 40px) var(--section-padding-x-right) clamp(24px, 3vw, 40px) var(--section-padding-x);
+	padding: 40px var(--section-padding-x-right) 40px var(--section-padding-x);
 	box-sizing: border-box;
 }
 
@@ -12,8 +12,8 @@
 	align-items: stretch;
 	max-width: 1707px;
 	margin: 0 auto;
-	min-height: clamp(280px, 22vw, 345px);
-	border-radius: clamp(20px, 2.2vw, 40px);
+	min-height: 345px;
+	border-radius: 40px;
 	overflow: hidden;
 	background: linear-gradient(96.33deg, #8b0c11, #ed1d23);
 	font-family: var(--font-manrope), Arial, Helvetica, sans-serif;
@@ -26,8 +26,8 @@
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
-	gap: clamp(12px, 1.2vw, 18px);
-	padding: clamp(28px, 3vw, 48px) clamp(28px, 4vw, 64px) clamp(28px, 3vw, 48px) clamp(36px, 5vw, 100px);
+	gap: 18px;
+	padding: 48px 64px 48px 100px;
 	box-sizing: border-box;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .eyebrowText {
-	font-size: clamp(13px, 0.95vw, 16px);
+	font-size: 16px;
 	letter-spacing: 0.08em;
 	line-height: 1.2;
 	text-transform: capitalize;
@@ -54,7 +54,7 @@
 .title {
 	margin: 0;
 	max-width: 640px;
-	font-size: clamp(26px, 2.5vw, 48px);
+	font-size: 48px;
 	letter-spacing: -0.03em;
 	line-height: 1.1;
 	font-weight: 800;
@@ -71,7 +71,7 @@
 .subtitle {
 	margin: 0;
 	max-width: 520px;
-	font-size: clamp(14px, 1.05vw, 19px);
+	font-size: 19px;
 	letter-spacing: 0.04em;
 	line-height: 1.35;
 	font-weight: 500;
@@ -83,7 +83,7 @@
 	align-items: center;
 	justify-content: center;
 	gap: 10px;
-	margin-top: clamp(4px, 0.8vw, 12px);
+	margin-top: 12px;
 	padding: 14px 24px;
 	border: 0;
 	border-radius: 999px;
@@ -95,7 +95,7 @@
 }
 
 .ctaLabel {
-	font-size: clamp(14px, 0.95vw, 16px);
+	font-size: 16px;
 	line-height: 1.4;
 	font-weight: 700;
 }
@@ -137,7 +137,7 @@
 }
 
 /* Tablet */
-@media (max-width: 1100px) {
+@media (max-width: 1023px) {
 	.copy {
 		padding: 32px 28px 32px 48px;
 	}
@@ -149,7 +149,7 @@
 }
 
 /* Mobile: stack copy above image */
-@media (max-width: 900px) {
+@media (max-width: 1023px) {
 	.wrap {
 		padding: 20px 16px 28px;
 	}

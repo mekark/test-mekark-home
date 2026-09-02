@@ -26,7 +26,7 @@ const rightItems = [
   {
     num: "02",
     title: "Established Credentials:",
-    body: "Over 200+ multi-storey and industrial projects completed, with a 4.7/5 customer rating.",
+    body: "Over X multi-storey and industrial projects completed, with a 4.7/5 customer rating.",
   },
   {
     num: "04",

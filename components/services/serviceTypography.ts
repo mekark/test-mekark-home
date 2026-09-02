@@ -66,15 +66,15 @@ export const SERVICE_MID_CTA_TITLE_SIZE_CLASS: Record<
     "text-[clamp(1.1rem,3.2vw,1.35rem)] leading-[1.2] sm:text-[clamp(1.2rem,3.4vw,1.45rem)] lg:text-[clamp(1.25rem,1.9vw,2.35rem)] lg:leading-[1.2] xl:text-[clamp(1.15rem,2vw,1.9rem)] 2xl:text-[clamp(1.25rem,1.9vw,2.35rem)] 2xl:leading-[1.2]",
 };
 
-/** Mid-CTA titles inside DesignScale — large-desktop clamps only (no xl shrink). */
+/** Mid-CTA titles inside DesignScale — large-desktop sizes only (no vw / xl shrink). */
 export const SERVICE_MID_CTA_TITLE_SIZE_CLASS_SCALED: Record<
   ServiceMidCtaTitleSize,
   string
 > = {
   short:
-    "text-[clamp(1.3rem,4vw,1.5rem)] leading-[1.2] sm:text-[clamp(1.4rem,4.2vw,1.6rem)] lg:text-[clamp(1.4rem,2.05vw,2.65rem)] lg:leading-[1.2]",
+    "text-[clamp(1.3rem,4vw,1.5rem)] leading-[1.2] sm:text-[clamp(1.4rem,4.2vw,1.6rem)] lg:text-[2.65rem] lg:leading-[1.2]",
   medium:
-    "text-[clamp(1.25rem,3.7vw,1.45rem)] leading-[1.2] sm:text-[clamp(1.35rem,4vw,1.55rem)] lg:text-[clamp(1.4rem,2.15vw,2.55rem)] lg:leading-[1.2]",
+    "text-[clamp(1.25rem,3.7vw,1.45rem)] leading-[1.2] sm:text-[clamp(1.35rem,4vw,1.55rem)] lg:text-[2.55rem] lg:leading-[1.2]",
   long:
-    "text-[clamp(1.1rem,3.2vw,1.35rem)] leading-[1.2] sm:text-[clamp(1.2rem,3.4vw,1.45rem)] lg:text-[clamp(1.25rem,1.9vw,2.35rem)] lg:leading-[1.2]",
+    "text-[clamp(1.1rem,3.2vw,1.35rem)] leading-[1.2] sm:text-[clamp(1.2rem,3.4vw,1.45rem)] lg:text-[2.35rem] lg:leading-[1.2]",
 };

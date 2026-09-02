@@ -1,45 +1,45 @@
 .rectangleParent {
 	width: 100%;
-	height: 35.2083vw;
+	height: 675.999px;
 	position: relative;
 	background-color: #e6e6e6;
 	overflow: hidden;
 	flex-shrink: 0;
 	text-align: left;
-	font-size: 2.7083vw;
+	font-size: 51.999px;
 	color: #111;
 	font-family: Manrope, sans-serif;
 }
 .frameChild {
 	position: absolute;
-	top: -0.0172vw;
+	top: -0.33px;
 	left: 0px;
 	background: linear-gradient(269.25deg, #fff, rgba(255, 255, 255, 0));
-	width: 100vw;
-	height: 48.401vw;
+	width: 1920px;
+	height: 929.299px;
 	flex-shrink: 0;
 }
 .div {
 	position: absolute;
-	top: -8.0729vw;
-	left: 68.6339vw;
-	width: 31.3542vw;
-	height: 39.1667vw;
+	top: -155px;
+	left: 1317.771px;
+	width: 602.001px;
+	height: 752.001px;
 	flex-shrink: 0;
 }
 .endToEndCommercialSolarSoParent {
 	position: absolute;
-	top: 7.4828vw;
-	left: 10.6771vw;
+	top: 143.67px;
+	left: 205px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	gap: 0.9375vw;
+	gap: 18px;
 	flex-shrink: 0;
-	min-width: min(977px, 39.7917vw);
+	min-width: min(977px, 764.001px);
 }
 .endToEndCommercialSolarContainer {
-	width: 39.7917vw;
+	width: 764.001px;
 	position: relative;
 	display: block;
 	max-width: none;
@@ -60,26 +60,26 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	gap: 1.5917vw;
+	gap: 30.561px;
 	width: 100%;
-	max-width: 37.7083vw;
+	max-width: 723.999px;
 }
 .mekarkIsA {
-	width: 37.7083vw;
+	width: 723.999px;
 	position: relative;
 	display: inline-block;
 }
 .solarEte1 {
 	position: absolute;
-	right: 4.1667vw;
-	bottom: 0.5036vw;
-	width: 47.2917vw;
-	height: 31.4063vw;
+	right: 80.001px;
+	bottom: 9.669px;
+	width: 908.001px;
+	height: 603.001px;
 	object-fit: cover;
 	flex-shrink: 0;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1023px) {
 	.rectangleParent {
 		height: auto;
 		display: flex;

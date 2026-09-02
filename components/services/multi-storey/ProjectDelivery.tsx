@@ -31,6 +31,7 @@ export default function ProjectDelivery() {
                 line1="Planning a Multi-Storey Factory, Office,"
                 line2="or Commercial Building?"
                 size="long"
+                scaledCanvas
               />
               <p className="mt-3 max-w-[28rem] text-[13px] font-medium leading-[18px] tracking-[1.1px] text-[#CCC6C6] sm:text-[14px] sm:leading-[20px]">
                 Get a free consultation and project blueprint from Mekark&apos;s
@@ -110,6 +111,7 @@ export default function ProjectDelivery() {
                 line1="Planning a Multi-Storey Factory, Office,"
                 line2="or Commercial Building?"
                 size="long"
+                scaledCanvas
               />
               <p className="mt-4 max-w-[520px] text-[18.67px] leading-[22.72px] font-medium tracking-[1.42px] text-silver">
                 Get a free consultation and project blueprint from Mekark&apos;s

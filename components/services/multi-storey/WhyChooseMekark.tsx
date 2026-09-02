@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS } from "@/components/services/serviceTypography";
+import { SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS_SCALED } from "@/components/services/serviceTypography";
 
 const leftItems = [
   {
@@ -64,19 +64,17 @@ function FeatureItem({
 }) {
   return (
     <div className="relative flex min-h-[164px] w-full items-start">
-      <div className="flex min-w-[128px] shrink-0 flex-col items-start pr-[9.85px]">
-        <span className="font-montserrat text-[80px] leading-[97.33px] font-black tracking-[-4px] text-[#cc1020]">
-          {num}
-        </span>
-      </div>
-      <div className="flex h-[92px] shrink-0 flex-col items-start justify-center pt-1 pr-[18.67px] pl-[5.33px]">
+      <span className="shrink-0 pr-1 font-montserrat text-[80px] leading-[97.33px] font-black tracking-[-4px] text-[#cc1020]">
+        {num}
+      </span>
+      <div className="flex h-[92px] shrink-0 flex-col items-start justify-center pt-1 pr-[18.67px] pl-0.5">
         <div className="min-h-[80px] w-[1.33px] flex-1 bg-[rgba(204,16,32,0.4)]" />
       </div>
       <div className="min-w-0 flex-1 pt-0 lg:max-w-[328px]">
         <b className="block font-montserrat text-[18.67px] leading-[24px] font-bold text-darkslategray">
           {title}
         </b>
-        <p className={`mt-[10px] ${SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS}`}>
+        <p className={`mt-[10px] ${SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS_SCALED}`}>
           {body}
         </p>
       </div>
@@ -118,7 +116,7 @@ function MobileFeature({
         <h3 className="font-montserrat text-[16px] leading-[22px] font-bold text-darkslategray">
           {title.replace(/:$/, "")}
         </h3>
-        <p className={`mt-1.5 ${SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS}`}>
+        <p className={`mt-1.5 ${SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS_SCALED}`}>
           {body}
         </p>
       </div>
@@ -219,7 +217,7 @@ export default function WhyChooseMekark() {
       </div>
 
       {/* ─── Desktop layout (unchanged) ─── */}
-      <div className="relative z-10 mx-auto hidden w-full max-w-[1920px] lg:block lg:min-h-[1014px] lg:px-10 lg:pt-9 lg:pb-0 xl:min-h-[761px] xl:px-20 2xl:min-h-[1014px] 2xl:px-10">
+      <div className="relative z-10 mx-auto hidden w-full max-w-[1920px] lg:block lg:min-h-[1014px] lg:px-10 lg:pt-9 lg:pb-0">
         <motion.div
           className="mx-auto max-w-[1260px] text-center lg:mb-0"
           initial={{ opacity: 0, y: 18 }}
@@ -227,7 +225,7 @@ export default function WhyChooseMekark() {
           viewport={{ once: true }}
           transition={{ duration: 0.55, ease: easeOut }}
         >
-          <h2 className="text-[53.33px] leading-[81.6px] font-bold tracking-[-1.33px] text-gray-100 xl:text-[40px] xl:leading-[60px] 2xl:text-[53.33px] 2xl:leading-[81.6px]">
+          <h2 className="text-[53.33px] leading-[81.6px] font-bold tracking-[-1.33px] text-gray-100">
             Why Industrial Clients{" "}
             <span className="text-red">Choose Mekark</span>
           </h2>
@@ -245,7 +243,7 @@ export default function WhyChooseMekark() {
 
         <div className="relative mx-auto mt-[34px] w-full max-w-[1488px] lg:h-[804px]">
           <motion.div
-            className="pointer-events-none absolute top-0 left-[10%] z-0 h-[804px] w-[80%] xl:left-[312px] xl:w-[846.67px]"
+            className="pointer-events-none absolute top-0 left-[10%] z-0 h-[804px] w-[80%]"
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
@@ -261,7 +259,7 @@ export default function WhyChooseMekark() {
                 className="object-cover object-center"
               />
             </div>
-            <div className="absolute bottom-0 left-1/2 h-[88%] w-[95%] max-w-none -translate-x-1/2 xl:h-[820px] xl:w-[960px]">
+            <div className="absolute bottom-0 left-1/2 h-[88%] w-[95%] max-w-none -translate-x-1/2">
               <Image
                 src="/images/services/multi-storey/why-choose/worker.png"
                 alt=""
@@ -273,7 +271,7 @@ export default function WhyChooseMekark() {
             </div>
           </motion.div>
 
-          <div className="relative z-10 grid grid-cols-[minmax(240px,1fr)_minmax(180px,1.15fr)_minmax(240px,1fr)] gap-0 pt-[67px] xl:grid-cols-[456px_1fr_456px]">
+          <div className="relative z-10 grid grid-cols-[minmax(240px,1fr)_minmax(180px,1.15fr)_minmax(240px,1fr)] gap-0 pt-[67px]">
             <motion.div
               className="flex flex-col gap-[60.67px]"
               initial={{ opacity: 0, x: -24 }}

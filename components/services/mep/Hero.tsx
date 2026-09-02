@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ServiceMobileHero from "@/components/services/ServiceMobileHero";
-import { SERVICE_BODY_TEXT_SIZES } from "@/components/services/serviceTypography";
-import { SERVICE_HERO_HEIGHT_CLASS } from "@/lib/sectionLayout";
+import { SERVICE_BODY_TEXT_SIZES_SCALED } from "@/components/services/serviceTypography";
 
 const mobileStats = [
   {
@@ -86,7 +85,7 @@ export default function Hero() {
       <MobileHero />
 
       {/* Desktop */}
-      <section className={`relative hidden h-[1048px] w-full shrink-0 overflow-hidden bg-gray-200 text-left font-manrope text-num-26_67 text-white md:block ${SERVICE_HERO_HEIGHT_CLASS}`}>
+      <section className="relative hidden h-[1048px] w-full shrink-0 overflow-hidden bg-gray-200 text-left font-manrope text-num-26_67 text-white md:block">
         <div className="absolute top-[-32px] right-0 left-0 h-[1080px] w-full shrink-0">
           <Image
             className="absolute top-[-17px] left-0 h-[1080px] w-full max-w-none object-cover shrink-0"
@@ -98,7 +97,7 @@ export default function Hero() {
             priority
           />
           <div
-            className="absolute top-[32.33px] right-0 h-[1048px] w-full shrink-0 xl:top-6 xl:h-[786px] 2xl:top-[32.33px] 2xl:h-[1048px]"
+            className="absolute top-[32.33px] right-0 h-[1048px] w-full shrink-0"
             style={{
               background:
                 "linear-gradient(180deg, #ffc2c2, rgba(255, 255, 255, 0))",
@@ -189,7 +188,7 @@ export default function Hero() {
           <b className="relative self-stretch whitespace-nowrap font-manrope text-[clamp(1.75rem,2.05vw,40px)] font-bold leading-[46px] tracking-[-0.9px] text-gray">
             South India&apos;s Leading Industrial MEP Contractor &amp; Turnkey MEP Contracting Company
           </b>
-          <div className={`relative flex w-full max-w-[1158px] items-center text-gray-300 ${SERVICE_BODY_TEXT_SIZES}`}>
+          <div className={`relative flex w-full max-w-[1158px] items-center text-gray-300 ${SERVICE_BODY_TEXT_SIZES_SCALED}`}>
             {heroDescription}
           </div>
           <div className="relative h-[50.7px] w-[400px] text-[16px] text-white">

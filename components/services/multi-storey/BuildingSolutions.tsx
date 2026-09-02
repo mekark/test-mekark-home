@@ -5,14 +5,13 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import GridBackground from "@/components/services/multi-storey/GridBackground";
 import ServiceSolutionsMobileGrid from "@/components/services/ServiceSolutionsMobileGrid";
-import { SERVICE_BODY_TEXT_CLASS } from "@/components/services/serviceTypography";
+import { SERVICE_BODY_TEXT_CLASS_SCALED } from "@/components/services/serviceTypography";
 
 type Solution = {
   title: string;
   body: string;
   image: string;
   desktopTitle: ReactNode;
-  desktopBody: ReactNode;
 };
 
 function Line({ children }: { children: ReactNode }) {
@@ -30,13 +29,6 @@ const solutions: Solution[] = [
         <Line>Building Construction</Line>
       </>
     ),
-    desktopBody: (
-      <>
-        <Line>Structural steel buildings</Line>
-        <Line>engineered for strength, speed,</Line>
-        <Line>and scalability.</Line>
-      </>
-    ),
   },
   {
     title: "Pre-Engineered Building (PEB) Structures",
@@ -46,12 +38,6 @@ const solutions: Solution[] = [
       <>
         <Line>Pre-Engineered Building</Line>
         <Line>(PEB) Structures</Line>
-      </>
-    ),
-    desktopBody: (
-      <>
-        <Line>Faster, more cost-efficient than</Line>
-        <Line>conventional construction.</Line>
       </>
     ),
   },
@@ -65,12 +51,6 @@ const solutions: Solution[] = [
         <Line>Engineering</Line>
       </>
     ),
-    desktopBody: (
-      <>
-        <Line>Load planning and analysis</Line>
-        <Line>using BIM technology.</Line>
-      </>
-    ),
   },
   {
     title: "Industrial Buildings",
@@ -80,13 +60,6 @@ const solutions: Solution[] = [
       <>
         <Line>Industrial</Line>
         <Line>Buildings</Line>
-      </>
-    ),
-    desktopBody: (
-      <>
-        <Line>Multi-level facilities for</Line>
-        <Line>manufacturing, processing, and</Line>
-        <Line>storage.</Line>
       </>
     ),
   },
@@ -100,24 +73,12 @@ const solutions: Solution[] = [
         <Line>Institutional Buildings</Line>
       </>
     ),
-    desktopBody: (
-      <>
-        <Line>Office, retail, hospital, hotel, and</Line>
-        <Line>educational structures.</Line>
-      </>
-    ),
   },
   {
     title: "Warehouse Construction",
     body: "Multi-level logistics and storage structures on steel framing.",
     image: "/images/services/multi-storey/frame212/solutions/warehouse.jpg",
     desktopTitle: <Line>Warehouse Construction</Line>,
-    desktopBody: (
-      <>
-        <Line>Multi-level logistics and storage</Line>
-        <Line>structures on steel framing.</Line>
-      </>
-    ),
   },
   {
     title: "Foundation & Structural Framework",
@@ -129,26 +90,12 @@ const solutions: Solution[] = [
         <Line>Framework</Line>
       </>
     ),
-    desktopBody: (
-      <>
-        <Line>RCC foundation and steel</Line>
-        <Line>superstructure integration with</Line>
-        <Line>quality control.</Line>
-      </>
-    ),
   },
   {
     title: "MEP & Finishing Works",
     body: "Mechanical, electrical, plumbing, and premium finishing across all floors.",
     image: "/images/services/multi-storey/frame212/solutions/mep.jpg",
     desktopTitle: <Line>MEP &amp; Finishing Works</Line>,
-    desktopBody: (
-      <>
-        <Line>Mechanical, electrical,</Line>
-        <Line>plumbing, and premium</Line>
-        <Line>finishing across all floors.</Line>
-      </>
-    ),
   },
 ];
 
@@ -168,9 +115,9 @@ export default function BuildingSolutions() {
         }))}
       />
 
-      <div className="relative z-10 mx-auto hidden max-w-[1464px] px-5 pt-14 pb-14 sm:px-8 sm:pt-20 sm:pb-20 lg:block lg:px-[clamp(48px,12vw,229px)] lg:pt-[107px] lg:pb-[90px] xl:px-20 xl:pt-[65px] xl:pb-[65px] 2xl:px-[clamp(48px,12vw,229px)] 2xl:pt-[107px] 2xl:pb-[90px]">
+      <div className="relative z-10 mx-auto hidden max-w-[1464px] px-5 pt-14 pb-14 sm:px-8 sm:pt-20 sm:pb-20 lg:block lg:px-[clamp(48px,12vw,229px)] lg:pt-[107px] lg:pb-[90px]">
         <motion.h2
-          className="mx-auto mb-10 max-w-[868px] text-center text-[28px] leading-[1.2] font-bold tracking-[-1px] text-[#111] sm:mb-14 sm:text-[42px] sm:tracking-[-1.33px] lg:mb-[88px] lg:text-[53.33px] lg:leading-[65.33px] xl:mb-14 xl:text-[40px] xl:leading-[60px] 2xl:mb-[88px] 2xl:text-[53.33px] 2xl:leading-[65.33px]"
+          className="mx-auto mb-10 max-w-[868px] text-center text-[28px] leading-[1.2] font-bold tracking-[-1px] text-[#111] sm:mb-14 sm:text-[42px] sm:tracking-[-1.33px] lg:mb-[88px] lg:text-[53.33px] lg:leading-[65.33px]"
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -205,8 +152,8 @@ export default function BuildingSolutions() {
               <h3 className="min-h-[42.66px] font-montserrat text-[18.67px] leading-[21.33px] font-bold text-darkslategray">
                 {item.desktopTitle}
               </h3>
-              <p className={`mt-3 min-h-[63.99px] ${SERVICE_BODY_TEXT_CLASS}`}>
-                {item.desktopBody}
+              <p className={`mt-3 min-h-[63.99px] text-left ${SERVICE_BODY_TEXT_CLASS_SCALED}`}>
+                {item.body}
               </p>
             </motion.article>
           ))}

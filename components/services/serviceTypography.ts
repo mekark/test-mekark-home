@@ -46,6 +46,10 @@ export const SERVICE_PEB_BENEFIT_DESCRIPTION_CLASS =
 export const SERVICE_INTRO_TITLE_FIGMA_CLASS =
   "!font-bold !text-gray !text-[26px] !leading-[32px] !tracking-[-0.8px] sm:!text-[36px] sm:!leading-[42px] sm:!tracking-[-1px] lg:!text-[53.33px] lg:!leading-[58.67px] lg:!tracking-[-1.33px] lg:max-w-[977px] xl:!text-[40px] xl:!leading-[60px] xl:!max-w-[718px] 2xl:!text-[53.33px] 2xl:!leading-[58.67px] 2xl:!max-w-[977px]";
 
+/** Intro title inside DesignScale — large-desktop sizes only (no xl shrink). */
+export const SERVICE_INTRO_TITLE_FIGMA_CLASS_SCALED =
+  "!font-bold !text-gray !text-[26px] !leading-[32px] !tracking-[-0.8px] sm:!text-[36px] sm:!leading-[42px] sm:!tracking-[-1px] lg:!text-[53.33px] lg:!leading-[58.67px] lg:!tracking-[-1.33px] lg:max-w-[977px]";
+
 /** Mid-CTA title length — longer copy uses smaller clamp values. */
 export type ServiceMidCtaTitleSize = "short" | "medium" | "long";
 

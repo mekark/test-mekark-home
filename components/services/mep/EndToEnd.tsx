@@ -1,10 +1,10 @@
 import Image from "next/image";
 import { ServiceIntroTitle } from "@/components/services/ServiceIntroTitle";
 import {
-  SERVICE_BODY_TEXT_CLASS,
-  SERVICE_INTRO_TITLE_FIGMA_CLASS,
+  SERVICE_BODY_TEXT_CLASS_SCALED,
+  SERVICE_INTRO_TITLE_FIGMA_CLASS_SCALED,
 } from "@/components/services/serviceTypography";
-import { SERVICE_MEP_END_TO_END_ASPECT_CLASS } from "@/lib/sectionLayout";
+import { SERVICE_MEP_END_TO_END_ASPECT_CLASS_SCALED } from "@/lib/sectionLayout";
 
 const paragraphs = [
   {
@@ -32,21 +32,22 @@ export default function EndToEnd() {
         aria-hidden="true"
       />
 
-      <div className={`relative z-10 mx-auto flex w-full max-w-[1920px] flex-col px-5 py-8 sm:px-10 sm:py-10 lg:block lg:px-0 lg:py-0 ${SERVICE_MEP_END_TO_END_ASPECT_CLASS}`}>
+      <div className={`relative z-10 mx-auto flex w-full max-w-[1920px] flex-col px-5 py-8 sm:px-10 sm:py-10 lg:block lg:px-0 lg:py-0 ${SERVICE_MEP_END_TO_END_ASPECT_CLASS_SCALED}`}>
         {/* Copy — Figma: left 224px, title top ~85px, body top ~295px */}
         <div className="contents lg:block lg:absolute lg:left-[11.67%] lg:top-[8%] lg:z-10 lg:w-[35%] lg:max-w-[672px]">
           <div className="order-1 lg:order-none">
             <ServiceIntroTitle
               id="end-to-end-mep-title"
-              className={SERVICE_INTRO_TITLE_FIGMA_CLASS}
+              className={SERVICE_INTRO_TITLE_FIGMA_CLASS_SCALED}
               beforeRed="End-to-End MEP Design, Build &"
               line2Prefix="Commissioning, "
               redPart="Under One Roof"
+              scaledCanvas
             />
           </div>
 
           <div
-            className={`order-3 mt-5 flex flex-col gap-5 sm:mt-6 lg:order-none lg:mt-5 lg:max-w-none lg:gap-[26px] ${SERVICE_BODY_TEXT_CLASS} lg:text-[18.67px] lg:leading-[26.67px]`}
+            className={`order-3 mt-5 flex flex-col gap-5 sm:mt-6 lg:order-none lg:mt-5 lg:max-w-none lg:gap-[26px] ${SERVICE_BODY_TEXT_CLASS_SCALED} lg:text-[18.67px] lg:leading-[26.67px]`}
           >
             {paragraphs.map(({ text, maxWidth }) => (
               <p key={text} className={maxWidth}>

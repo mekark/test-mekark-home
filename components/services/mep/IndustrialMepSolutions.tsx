@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import ServiceSolutionsMobileGrid from "@/components/services/ServiceSolutionsMobileGrid";
-import { SERVICE_BODY_TEXT_CLASS } from "@/components/services/serviceTypography";
+import { SERVICE_BODY_TEXT_CLASS_SCALED } from "@/components/services/serviceTypography";
 
 const solutions = [
   {
@@ -73,12 +73,12 @@ export default function IndustrialMepSolutions() {
         }))}
       />
 
-      <div className="relative z-[1] mx-auto hidden max-w-[1920px] flex-col items-center gap-10 px-5 py-14 sm:px-8 md:gap-[66px] md:px-16 lg:flex lg:px-[107px] lg:py-[107px] xl:gap-10 xl:px-20 xl:py-[65px] 2xl:gap-[66px] 2xl:px-[107px] 2xl:py-[107px]">
-        <b className="max-w-[701px] text-center text-[32px] leading-[1.15] tracking-[-1.33px] sm:text-[42px] lg:text-[53.33px] lg:leading-[65.33px] xl:text-[40px] xl:leading-[60px] 2xl:text-[53.33px] 2xl:leading-[65.33px]">
+      <div className="relative z-[1] mx-auto hidden max-w-[1920px] flex-col items-center gap-10 px-5 py-14 sm:px-8 md:gap-[66px] md:px-16 lg:flex lg:gap-[66px] lg:px-[107px] lg:py-[107px]">
+        <b className="max-w-[701px] text-center text-[32px] leading-[1.15] tracking-[-1.33px] sm:text-[42px] lg:text-[53.33px] lg:leading-[65.33px]">
           Our Industrial MEP Solutions
         </b>
 
-        <div className="grid w-full grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 xl:gap-6">
+        <div className="grid w-full grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-6">
           {solutions.map((item) => (
             <div key={item.title} className="flex flex-col gap-5">
               {item.image ? (
@@ -111,7 +111,7 @@ export default function IndustrialMepSolutions() {
                 <b className="block text-num-18_67 leading-[26px] text-darkslategray font-montserrat">
                   {item.title}
                 </b>
-                <p className={`mt-2 ${SERVICE_BODY_TEXT_CLASS}`}>
+                <p className={`mt-2 ${SERVICE_BODY_TEXT_CLASS_SCALED}`}>
                   {item.body}
                 </p>
               </div>

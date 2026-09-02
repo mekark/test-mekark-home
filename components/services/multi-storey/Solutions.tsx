@@ -4,8 +4,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ServiceIntroTitle } from "@/components/services/ServiceIntroTitle";
 import {
-  SERVICE_BODY_TEXT_CLASS,
-  SERVICE_INTRO_TITLE_FIGMA_CLASS,
+  SERVICE_BODY_TEXT_CLASS_SCALED,
+  SERVICE_INTRO_TITLE_FIGMA_CLASS_SCALED,
 } from "@/components/services/serviceTypography";
 
 const paragraphs = [
@@ -36,10 +36,11 @@ export default function Solutions() {
           transition={{ duration: 0.55, ease: easeOut }}
         >
           <ServiceIntroTitle
-            className={SERVICE_INTRO_TITLE_FIGMA_CLASS}
+            className={SERVICE_INTRO_TITLE_FIGMA_CLASS_SCALED}
             beforeRed="End-to-End Multi-Storey Steel Building"
             line2Prefix="Solutions, "
             redPart="Under One Roof"
+            scaledCanvas
           />
         </motion.div>
 
@@ -85,7 +86,7 @@ export default function Solutions() {
             {paragraphs.map((text, index) => (
               <motion.p
                 key={index}
-                className={`relative w-full max-w-[724px] shrink-0 ${SERVICE_BODY_TEXT_CLASS}`}
+                className={`relative w-full max-w-[724px] shrink-0 ${SERVICE_BODY_TEXT_CLASS_SCALED}`}
                 initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}

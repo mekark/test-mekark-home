@@ -7,6 +7,7 @@ export default function ReadyToBuild() {
       compactCopy
       title="Ready to Build Faster, Smarter, Better"
       subtitle="Talk to Mekark's Multi-Storey Building expert today."
+      scaledCanvas
     />
   );
 }

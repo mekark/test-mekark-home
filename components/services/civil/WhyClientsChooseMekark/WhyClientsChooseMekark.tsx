@@ -95,11 +95,11 @@ function Feature({
       transition={{ duration: 0.45, ease: "easeOut" }}
       className="flex h-num-110 w-full items-start"
     >
-      <div className="relative shrink-0 font-montserrat text-num-80 font-black tracking-num--4 leading-num-97_33 text-[#cc1020]">
+      <div className="relative shrink-0 font-montserrat text-num-80 font-black tracking-num--4 leading-num-97_33 text-[#cc1020] pr-1">
         {number}
       </div>
       <div className="flex h-num-92 shrink-0 items-start">
-        <div className="box-border flex h-full min-h-num-84 w-num-26_7 flex-col items-start justify-center pt-num-4 pr-num-18_7 pb-0 pl-num-5_3">
+        <div className="box-border flex h-full min-h-num-84 shrink-0 flex-col items-start justify-center pt-num-4 pr-num-18_7 pb-0 pl-0.5">
           <div className="relative min-h-num-80 w-num-1_3 flex-1 bg-[rgba(204,16,32,0.4)]" />
         </div>
       </div>

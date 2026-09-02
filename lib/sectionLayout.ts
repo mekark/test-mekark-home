@@ -21,6 +21,10 @@ export const SERVICE_END_TO_END_ASPECT_CLASS_SCALED =
 export const SERVICE_MEP_END_TO_END_ASPECT_CLASS =
   "lg:aspect-[1920/800] xl:aspect-[1440/512] xl:min-h-[512px] xl:overflow-visible 2xl:aspect-[1920/800] 2xl:min-h-0 2xl:overflow-hidden";
 
+/** Large-desktop aspect only — for DesignScale canvases (MEP). */
+export const SERVICE_MEP_END_TO_END_ASPECT_CLASS_SCALED =
+  "lg:aspect-[1920/800]";
+
 export const SERVICE_WHY_CHOOSE_ASPECT_CLASS =
   "lg:aspect-[1920/1015] xl:aspect-[1440/761] xl:min-h-[761px] xl:overflow-visible 2xl:aspect-[1920/1015] 2xl:min-h-0 2xl:overflow-hidden";
 

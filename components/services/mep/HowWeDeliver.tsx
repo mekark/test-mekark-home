@@ -45,12 +45,13 @@ export default function HowWeDeliver() {
         </div>
       </div>
 
-      <div className="relative z-[1] mx-auto flex max-w-[1920px] flex-col items-center overflow-visible px-5 py-14 sm:px-8 md:px-16 lg:px-[107px] lg:py-[107px] xl:px-20 xl:py-[65px] 2xl:px-[107px] 2xl:py-[107px]">
+      <div className="relative z-[1] mx-auto flex max-w-[1920px] flex-col items-center overflow-visible px-5 py-14 sm:px-8 md:px-16 lg:px-[107px] lg:py-[107px]">
         <HowWeDeliverSteps
           title="How We Deliver Your Project"
           steps={steps}
           arrowSrc="/images/services/mep/how-we-deliver/arrow.svg"
-          desktopFrom="xl"
+          desktopFrom="lg"
+          scaledCanvas
         />
       </div>
     </section>

@@ -22,6 +22,7 @@ export default function CtaBanner() {
                 line1="Planning a Factory, Warehouse,"
                 line2="or Manufacturing Plant?"
                 size="short"
+                scaledCanvas
               />
 
               <p className="mt-4 max-w-[520px] text-[16px] leading-[22px] font-medium tracking-[1.42px] sm:text-[18.67px] sm:leading-[22.72px]">
@@ -77,6 +78,7 @@ export default function CtaBanner() {
               line2="or Manufacturing Plant?"
               size="short"
               className="lg:max-w-none"
+              scaledCanvas
             />
 
             <p className="mt-4 max-w-[520px] text-[18.67px] leading-[22.72px] font-medium tracking-[1.42px]">

@@ -73,8 +73,8 @@ export default function IndustrialMepSolutions() {
         }))}
       />
 
-      <div className="relative z-[1] mx-auto hidden max-w-[1920px] flex-col items-center gap-10 px-5 py-14 sm:px-8 md:gap-[66px] md:px-16 lg:flex lg:px-[107px] lg:py-[107px]">
-        <b className="max-w-[701px] text-center text-[32px] leading-[1.15] tracking-[-1.33px] sm:text-[42px] lg:text-[53.33px] lg:leading-[65.33px]">
+      <div className="relative z-[1] mx-auto hidden max-w-[1920px] flex-col items-center gap-10 px-5 py-14 sm:px-8 md:gap-[66px] md:px-16 lg:flex lg:px-[107px] lg:py-[107px] xl:gap-10 xl:px-20 xl:py-[65px] 2xl:gap-[66px] 2xl:px-[107px] 2xl:py-[107px]">
+        <b className="max-w-[701px] text-center text-[32px] leading-[1.15] tracking-[-1.33px] sm:text-[42px] lg:text-[53.33px] lg:leading-[65.33px] xl:text-[40px] xl:leading-[60px] 2xl:text-[53.33px] 2xl:leading-[65.33px]">
           Our Industrial MEP Solutions
         </b>
 

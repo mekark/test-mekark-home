@@ -181,10 +181,10 @@ export default function FAQ() {
   const rightColumn = faqs.slice(5);
 
   return (
-    <section className="bg-white px-5 py-12 text-gray-100 sm:px-8 sm:py-16 lg:px-[clamp(40px,5.5vw,107px)] lg:py-[93px]">
-      <div className="mx-auto flex w-full max-w-[1707px] flex-col items-center gap-8 sm:gap-12 lg:gap-[67px]">
+    <section className="bg-white px-5 py-12 text-gray-100 sm:px-8 sm:py-16 lg:px-[clamp(40px,5.5vw,107px)] lg:py-[93px] xl:px-20 xl:py-[65px] 2xl:px-[clamp(40px,5.5vw,107px)] 2xl:py-[93px]">
+      <div className="mx-auto flex w-full max-w-[1707px] flex-col items-center gap-8 sm:gap-12 lg:gap-[67px] xl:gap-10 2xl:gap-[67px]">
         <motion.h2
-          className="max-w-[1304px] text-center text-[26px] leading-[1.2] font-bold tracking-[-1px] text-[#111] sm:text-[42px] sm:tracking-[-1.33px] lg:text-[53.33px] lg:leading-[65.33px]"
+          className="max-w-[1304px] text-center text-[26px] leading-[1.2] font-bold tracking-[-1px] text-[#111] sm:text-[42px] sm:tracking-[-1.33px] lg:text-[53.33px] lg:leading-[65.33px] xl:text-[40px] xl:leading-[60px] 2xl:text-[53.33px] 2xl:leading-[65.33px]"
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

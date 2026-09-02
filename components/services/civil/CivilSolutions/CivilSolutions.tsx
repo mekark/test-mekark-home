@@ -148,16 +148,16 @@ export default function CivilSolutions() {
       </div>
 
       {/* Desktop — Figma absolute layout */}
-      <div className="absolute top-[106.67px] right-[106.63px] left-[106.67px] hidden h-[541.3px] w-[calc(100%-213.3px)] shrink-0 flex-col items-center gap-[66.7px] lg:flex">
+      <div className="absolute top-[106.67px] right-[106.63px] left-[106.67px] hidden h-[541.3px] w-[calc(100%-213.3px)] shrink-0 flex-col items-center gap-[66.7px] lg:flex xl:top-[65px] xl:right-20 xl:left-20 xl:w-[calc(100%-160px)] xl:gap-10 2xl:top-[106.67px] 2xl:right-[106.63px] 2xl:left-[106.67px] 2xl:w-[calc(100%-213.3px)] 2xl:gap-[66.7px]">
         <motion.div
-          className="relative h-[65.3px] w-[1108px]"
+          className="relative h-[65.3px] w-[1108px] xl:h-auto xl:w-full xl:max-w-[840px] 2xl:h-[65.3px] 2xl:w-[1108px] 2xl:max-w-none"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
           variants={fadeUp}
           transition={{ duration: 0.55, ease: "easeOut" }}
         >
-          <h2 className="absolute top-[0.33px] left-1/2 flex w-[963px] shrink-0 -translate-x-1/2 items-center text-center font-bold tracking-[-1.33px] leading-[65.33px]">
+          <h2 className="absolute top-[0.33px] left-1/2 flex w-[963px] shrink-0 -translate-x-1/2 items-center text-center font-bold tracking-[-1.33px] leading-[65.33px] xl:relative xl:top-0 xl:w-full xl:translate-x-0 xl:text-[40px] xl:leading-[60px] 2xl:absolute 2xl:top-[0.33px] 2xl:left-1/2 2xl:w-[963px] 2xl:-translate-x-1/2 2xl:text-[53.33px] 2xl:leading-[65.33px]">
             Our Civil Construction &amp; RCC Solutions
           </h2>
         </motion.div>

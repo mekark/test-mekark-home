@@ -42,7 +42,7 @@ const easeOut = [0.22, 1, 0.36, 1] as const;
 
 export default function Frame170() {
   return (
-    <section className="relative w-full overflow-hidden bg-white px-5 py-14 font-manrope text-[#111] sm:px-8 sm:py-16 lg:px-[clamp(48px,5.6vw,107px)] lg:py-[107px]">
+    <section className="relative w-full overflow-hidden bg-white px-5 py-14 font-manrope text-[#111] sm:px-8 sm:py-16 lg:px-[clamp(48px,5.6vw,107px)] lg:py-[107px] xl:px-20 xl:py-[65px] 2xl:px-[clamp(48px,5.6vw,107px)] 2xl:py-[107px]">
       <div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[200px] sm:h-[280px] lg:h-[390px]">
         <Image
           className="h-full w-full object-cover object-top opacity-95"
@@ -65,7 +65,7 @@ export default function Frame170() {
       />
 
       <div className="relative z-10 mx-auto hidden max-w-[1706px] flex-col items-center gap-[67px] lg:flex">
-        <h2 className="max-w-[940px] text-center text-[53.33px] font-extrabold tracking-[-0.04em] leading-[1.2]">
+        <h2 className="max-w-[940px] text-center text-[53.33px] font-extrabold tracking-[-0.04em] leading-[1.2] xl:text-[40px] xl:leading-[60px] 2xl:text-[53.33px] 2xl:leading-[1.2]">
           Our Tensile Fabric Structure Solutions
         </h2>
 

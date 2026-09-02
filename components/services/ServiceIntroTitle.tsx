@@ -14,25 +14,25 @@ function getTitleStyles(beforeRed: string) {
 
   if (len <= 32) {
     return {
-      size: "!text-[26px] sm:!text-[40px] lg:!text-[52px]",
-      width: "!max-w-[11em] lg:!max-w-[12em]",
+      size: "!text-[26px] sm:!text-[40px] lg:!text-[52px] xl:!text-[40px] 2xl:!text-[52px]",
+      width: "!max-w-[11em] lg:!max-w-[12em] xl:!max-w-[10em] 2xl:!max-w-[12em]",
     };
   }
   if (len <= 42) {
     return {
-      size: "!text-[24px] sm:!text-[36px] lg:!text-[48px]",
-      width: "!max-w-[11em] lg:!max-w-[12.5em]",
+      size: "!text-[24px] sm:!text-[36px] lg:!text-[48px] xl:!text-[36px] 2xl:!text-[48px]",
+      width: "!max-w-[11em] lg:!max-w-[12.5em] xl:!max-w-[10.5em] 2xl:!max-w-[12.5em]",
     };
   }
   if (len <= 52) {
     return {
-      size: "!text-[22px] sm:!text-[32px] lg:!text-[42px]",
-      width: "!max-w-[11.5em] lg:!max-w-[13em]",
+      size: "!text-[22px] sm:!text-[32px] lg:!text-[42px] xl:!text-[32px] 2xl:!text-[42px]",
+      width: "!max-w-[11.5em] lg:!max-w-[13em] xl:!max-w-[11em] 2xl:!max-w-[13em]",
     };
   }
   return {
-    size: "!text-[20px] sm:!text-[30px] lg:!text-[38px]",
-    width: "!max-w-[12em] lg:!max-w-[13.5em]",
+    size: "!text-[20px] sm:!text-[30px] lg:!text-[38px] xl:!text-[30px] 2xl:!text-[38px]",
+    width: "!max-w-[12em] lg:!max-w-[13.5em] xl:!max-w-[11.5em] 2xl:!max-w-[13.5em]",
   };
 }
 

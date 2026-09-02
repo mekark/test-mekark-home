@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { SERVICE_BODY_TEXT_CLASS } from "@/components/services/serviceTypography";
+import { SERVICE_SECTION_HEADLINE_CLASS } from "@/lib/sectionLayout";
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
@@ -50,7 +51,7 @@ export default function HowWeDeliverSteps({
   return (
     <>
       <motion.h2
-        className="mx-auto mb-10 text-center text-[28px] leading-[1.2] font-bold tracking-[-1px] sm:mb-12 sm:text-[42px] sm:tracking-[-1.33px] lg:mb-[53px] lg:text-[53.33px] lg:leading-[65.33px]"
+        className={`mx-auto mb-10 text-center sm:mb-12 lg:mb-[53px] xl:mb-10 2xl:mb-[53px] ${SERVICE_SECTION_HEADLINE_CLASS}`}
         initial={{ opacity: 0, y: 18 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

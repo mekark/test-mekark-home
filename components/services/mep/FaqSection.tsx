@@ -139,9 +139,9 @@ export default function FaqSection() {
   const rightColumn = faqItems.slice(5);
 
   return (
-    <section className="relative flex w-full flex-col items-start overflow-hidden bg-white px-5 py-14 box-border text-left text-faq-title font-manrope sm:px-8 md:px-16 lg:px-[106.7px] lg:py-[93.3px]">
-      <div className="flex w-full flex-col items-center gap-10 self-stretch lg:gap-[66.7px]">
-        <b className="w-full max-w-[1526px] text-center text-[28px] leading-[1.2] tracking-[-1.33px] sm:text-[40px] lg:text-[53.33px] lg:leading-[65.33px]">
+    <section className="relative flex w-full flex-col items-start overflow-hidden bg-white px-5 py-14 box-border text-left text-faq-title font-manrope sm:px-8 md:px-16 lg:px-[106.7px] lg:py-[93.3px] xl:px-20 xl:py-[65px] 2xl:px-[106.7px] 2xl:py-[93.3px]">
+      <div className="flex w-full flex-col items-center gap-10 self-stretch lg:gap-[66.7px] xl:gap-10 2xl:gap-[66.7px]">
+        <b className="w-full max-w-[1526px] text-center text-[28px] leading-[1.2] tracking-[-1.33px] sm:text-[40px] lg:text-[53.33px] lg:leading-[65.33px] xl:text-[40px] xl:leading-[60px] 2xl:text-[53.33px] 2xl:leading-[65.33px]">
           Frequently Asked Questions About Industrial MEP Contracting
         </b>
 

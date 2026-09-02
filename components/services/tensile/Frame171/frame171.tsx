@@ -33,7 +33,7 @@ const steps = [
 
 export default function Frame171() {
   return (
-    <section className="relative w-full overflow-hidden bg-white px-5 py-12 font-manrope text-[#111] sm:px-8 sm:py-16 lg:px-[clamp(48px,5.6vw,107px)] lg:py-[107px]">
+    <section className="relative w-full overflow-hidden bg-white px-5 py-12 font-manrope text-[#111] sm:px-8 sm:py-16 lg:px-[clamp(48px,5.6vw,107px)] lg:py-[107px] xl:px-20 xl:py-[65px] 2xl:px-[clamp(48px,5.6vw,107px)] 2xl:py-[107px]">
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[200px] sm:h-[280px] lg:h-[390px]">
         <Image
           className="h-full w-full object-cover object-bottom opacity-95"

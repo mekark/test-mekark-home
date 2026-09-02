@@ -39,7 +39,7 @@ export default function PlanningCta() {
   return (
     <section
       id="quote"
-      className="relative mx-auto w-full max-w-[1920px] overflow-visible bg-white px-5 py-8 sm:px-8 sm:py-10 lg:px-[80px] lg:pt-[72px] lg:pb-12 xl:px-[107px]"
+      className="relative mx-auto w-full max-w-[1920px] overflow-visible bg-white px-5 py-8 sm:px-8 sm:py-10 lg:px-[80px] lg:pt-[72px] lg:pb-12 xl:px-20 2xl:px-[107px]"
       aria-labelledby="civil-quote-title"
     >
       {/* Mobile — continuous red gradient; building blended at bottom */}

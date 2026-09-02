@@ -251,7 +251,7 @@ export default function WhyClientsChooseMekark() {
           <motion.b
             variants={fadeUp}
             transition={{ duration: 0.55, ease: "easeOut" }}
-            className="absolute top-[0.33px] left-1/2 flex w-max max-w-none shrink-0 -translate-x-1/2 items-center whitespace-nowrap tracking-[-1px] leading-[81.6px]"
+            className="absolute top-[0.33px] left-1/2 flex w-max max-w-none shrink-0 -translate-x-1/2 items-center whitespace-nowrap tracking-[-1px] leading-[81.6px] xl:text-[40px] xl:leading-[60px] 2xl:text-[53.33px] 2xl:leading-[81.6px]"
           >
             <span className="leading-[81.6px]">
               Why Industrial &amp; Commercial Clients

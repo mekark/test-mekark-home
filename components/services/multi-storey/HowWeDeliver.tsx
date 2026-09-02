@@ -38,7 +38,7 @@ const deliverySteps = [
 
 export default function HowWeDeliver() {
   return (
-    <section className="relative overflow-visible bg-white px-5 pt-14 pb-14 text-gray-100 sm:px-8 sm:pt-20 sm:pb-16 lg:px-10 lg:pt-[107px] lg:pb-[80px]">
+    <section className="relative overflow-visible bg-white px-5 pt-14 pb-14 text-gray-100 sm:px-8 sm:pt-20 sm:pb-16 lg:px-10 lg:pt-[107px] lg:pb-[80px] xl:px-20 xl:pt-[65px] xl:pb-[65px] 2xl:px-10 2xl:pt-[107px] 2xl:pb-[80px]">
       <GridBackground position="bottom" />
 
       <div className="relative z-10 mx-auto max-w-[1732px]">

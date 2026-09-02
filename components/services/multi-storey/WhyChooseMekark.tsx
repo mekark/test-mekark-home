@@ -227,7 +227,7 @@ export default function WhyChooseMekark() {
           viewport={{ once: true }}
           transition={{ duration: 0.55, ease: easeOut }}
         >
-          <h2 className="text-[53.33px] leading-[81.6px] font-bold tracking-[-1.33px] text-gray-100">
+          <h2 className="text-[53.33px] leading-[81.6px] font-bold tracking-[-1.33px] text-gray-100 xl:text-[40px] xl:leading-[60px] 2xl:text-[53.33px] 2xl:leading-[81.6px]">
             Why Industrial Clients{" "}
             <span className="text-red">Choose Mekark</span>
           </h2>

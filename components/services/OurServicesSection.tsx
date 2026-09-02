@@ -146,6 +146,11 @@ function SolutionCard({
 
   if (!visual) return null;
 
+  const cardHeightClass =
+    overlay === "extended"
+      ? "h-[250px] sm:h-[280px] xl:h-[217px] 2xl:h-[333px]"
+      : "h-[250px] sm:h-[280px] xl:h-[250px] 2xl:h-[333px]";
+
   return (
     <motion.article
       variants={scaleIn}
@@ -156,7 +161,7 @@ function SolutionCard({
     >
       <ServiceAnchor
         href={service.href}
-        className="relative block h-[250px] overflow-hidden rounded-[21px] sm:h-[280px] lg:h-[333px] xl:h-[250px] 2xl:h-[333px]"
+        className={`relative block overflow-hidden rounded-[21px] ${cardHeightClass}`}
       >
         <Image
           src={visual.src}
@@ -176,11 +181,11 @@ function SolutionCard({
           aria-hidden
         />
 
-        <div className="absolute inset-x-[28px] bottom-[28px] flex flex-col gap-[7px]">
-          <h3 className="text-xl font-bold leading-[29px] text-white sm:text-2xl">
+        <div className="absolute inset-x-[28px] bottom-[28px] flex flex-col gap-[7px] xl:inset-x-[21px] xl:bottom-[21px] xl:gap-1.5 2xl:inset-x-[28px] 2xl:bottom-[28px] 2xl:gap-[7px]">
+          <h3 className="text-xl font-bold leading-[29px] text-white sm:text-2xl xl:text-[22px] xl:leading-[22px] 2xl:text-2xl 2xl:leading-[29px]">
             {visual.title}
           </h3>
-          <p className="max-w-[433px] text-sm leading-[22px] text-[#aaa] sm:text-base sm:leading-[25px]">
+          <p className="max-w-[433px] text-sm leading-[22px] text-[#aaa] sm:text-base sm:leading-[25px] xl:max-w-[318px] xl:text-sm xl:leading-[18px] 2xl:max-w-[433px] 2xl:text-base 2xl:leading-[25px]">
             {visual.description}
           </p>
         </div>
@@ -198,8 +203,8 @@ function SolutionGrid({
 }) {
   const gridClass =
     overlay === "extended"
-      ? "grid w-full grid-cols-1 gap-[17px] md:grid-cols-2 lg:grid-cols-4 lg:gap-[23px]"
-      : "grid w-full grid-cols-1 gap-[17px] md:grid-cols-2 lg:grid-cols-3 lg:gap-[23px]";
+      ? "grid w-full grid-cols-1 gap-[17px] md:grid-cols-2 lg:grid-cols-4 xl:gap-[15px] 2xl:gap-[23px]"
+      : "grid w-full grid-cols-1 gap-[17px] md:grid-cols-2 lg:grid-cols-3 xl:gap-[17px] 2xl:gap-[23px]";
 
   return (
     <motion.div
@@ -231,6 +236,7 @@ export function OurServicesSection() {
       id="our-solutions"
       className="relative w-full bg-[#0a0a0a] font-[family-name:var(--font-manrope)] text-white"
     >
+      {/* iMac Figma 6700:7065 · large 1920 canvas */}
       <div className={`${SECTION_CONTAINER_CLASS} flex flex-col items-center gap-6 py-14 sm:gap-12 lg:gap-[120px] lg:py-[93px] xl:gap-[53px] xl:py-[70px] 2xl:gap-[120px] 2xl:py-[93px]`}>
         {coreServices.length > 0 ? (
           <div className="flex w-full max-w-[1481px] flex-col items-center gap-12 lg:gap-[70px] xl:max-w-[1110px] xl:gap-[53px] 2xl:max-w-[1481px] 2xl:gap-[70px]">
@@ -239,7 +245,7 @@ export function OurServicesSection() {
               initial="hidden"
               whileInView="visible"
               viewport={VIEWPORT}
-              className="flex w-full max-w-full flex-wrap justify-center gap-x-[0.3em] text-center text-[clamp(1.75rem,3.5vw,3.33rem)] font-bold leading-[1.5] tracking-[-1.33px] lg:leading-[80px] xl:leading-[60px] 2xl:leading-[80px]"
+              className="flex w-full max-w-full flex-wrap justify-center gap-x-[0.3em] text-center text-[clamp(1.75rem,3.5vw,3.33rem)] font-bold leading-[1.5] tracking-[-1.33px] xl:text-[40px] xl:leading-[60px] 2xl:leading-[80px]"
             >
               <motion.span
                 className="inline-block text-[#e50818]"
@@ -263,7 +269,7 @@ export function OurServicesSection() {
               initial="hidden"
               whileInView="visible"
               viewport={VIEWPORT}
-              className="flex w-full max-w-full flex-wrap justify-center gap-x-[0.3em] text-center text-[clamp(1.75rem,3.5vw,3.33rem)] font-bold leading-[1.35] tracking-[-1.33px] sm:leading-[1.5] lg:leading-[80px] xl:leading-[60px] 2xl:leading-[80px]"
+              className="flex w-full max-w-full flex-wrap justify-center gap-x-[0.3em] text-center text-[clamp(1.75rem,3.5vw,3.33rem)] font-bold leading-[1.35] tracking-[-1.33px] sm:leading-[1.5] xl:text-[40px] xl:leading-[60px] 2xl:leading-[80px]"
             >
               <motion.span
                 className="inline-block text-[#ed1c24]"

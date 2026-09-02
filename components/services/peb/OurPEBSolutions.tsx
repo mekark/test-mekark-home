@@ -189,10 +189,10 @@ export default function OurPEBSolutions() {
           }))}
         />
 
-        <div className="relative z-[1] mx-auto hidden max-w-[1920px] flex-col items-center gap-10 px-5 py-14 sm:px-8 md:gap-[66px] md:px-16 lg:flex lg:px-[107px] lg:py-[107px]">
+        <div className="relative z-[1] mx-auto hidden max-w-[1920px] flex-col items-center gap-10 px-5 py-14 sm:px-8 md:gap-[66px] md:px-16 lg:flex lg:px-[107px] lg:py-[107px] xl:gap-10 xl:px-20 xl:py-[65px] 2xl:gap-[66px] 2xl:px-[107px] 2xl:py-[107px]">
           <motion.h2
             id="peb-solutions-title"
-            className="max-w-[1147px] text-center font-manrope text-[32px] font-bold leading-[1.15] tracking-[-1.33px] text-[#111111] sm:text-[42px] lg:text-[53.33px] lg:leading-[65.33px]"
+            className="max-w-[1147px] text-center font-manrope text-[32px] font-bold leading-[1.15] tracking-[-1.33px] text-[#111111] sm:text-[42px] lg:text-[53.33px] lg:leading-[65.33px] xl:text-[40px] xl:leading-[60px] 2xl:text-[53.33px] 2xl:leading-[65.33px]"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -218,7 +218,7 @@ export default function OurPEBSolutions() {
       {/* Mid CTA — matches Civil PlanningCta mobile pattern */}
       <section
         id="quote"
-        className="relative mx-auto w-full max-w-[1920px] overflow-visible bg-white px-5 py-8 sm:px-8 sm:py-10 lg:px-[80px] lg:pt-[72px] lg:pb-12 xl:px-[107px]"
+        className="relative mx-auto w-full max-w-[1920px] overflow-visible bg-white px-5 py-8 sm:px-8 sm:py-10 lg:px-[80px] lg:pt-[72px] lg:pb-12 xl:px-20 2xl:px-[107px]"
         aria-labelledby="peb-quote-title"
       >
         <motion.div

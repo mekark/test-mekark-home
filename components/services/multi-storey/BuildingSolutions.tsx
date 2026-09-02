@@ -168,9 +168,9 @@ export default function BuildingSolutions() {
         }))}
       />
 
-      <div className="relative z-10 mx-auto hidden max-w-[1464px] px-5 pt-14 pb-14 sm:px-8 sm:pt-20 sm:pb-20 lg:block lg:px-[clamp(48px,12vw,229px)] lg:pt-[107px] lg:pb-[90px]">
+      <div className="relative z-10 mx-auto hidden max-w-[1464px] px-5 pt-14 pb-14 sm:px-8 sm:pt-20 sm:pb-20 lg:block lg:px-[clamp(48px,12vw,229px)] lg:pt-[107px] lg:pb-[90px] xl:px-20 xl:pt-[65px] xl:pb-[65px] 2xl:px-[clamp(48px,12vw,229px)] 2xl:pt-[107px] 2xl:pb-[90px]">
         <motion.h2
-          className="mx-auto mb-10 max-w-[868px] text-center text-[28px] leading-[1.2] font-bold tracking-[-1px] text-[#111] sm:mb-14 sm:text-[42px] sm:tracking-[-1.33px] lg:mb-[88px] lg:text-[53.33px] lg:leading-[65.33px]"
+          className="mx-auto mb-10 max-w-[868px] text-center text-[28px] leading-[1.2] font-bold tracking-[-1px] text-[#111] sm:mb-14 sm:text-[42px] sm:tracking-[-1.33px] lg:mb-[88px] lg:text-[53.33px] lg:leading-[65.33px] xl:mb-14 xl:text-[40px] xl:leading-[60px] 2xl:mb-[88px] 2xl:text-[53.33px] 2xl:leading-[65.33px]"
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

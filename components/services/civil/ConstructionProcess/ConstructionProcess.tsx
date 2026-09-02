@@ -35,7 +35,7 @@ export default function ConstructionProcess() {
   return (
     <section
       id="process"
-      className="relative h-auto w-full shrink-0 overflow-hidden bg-white px-5 py-16 font-manrope text-gray sm:px-8 sm:py-20 lg:px-[107px] lg:py-[107px]"
+      className="relative h-auto w-full shrink-0 overflow-hidden bg-white px-5 py-16 font-manrope text-gray sm:px-8 sm:py-20 lg:px-[107px] lg:py-[107px] xl:px-20 xl:py-[65px] 2xl:px-[107px] 2xl:py-[107px]"
       aria-label="How we deliver your civil construction project"
     >
       <div

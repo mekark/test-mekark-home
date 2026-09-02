@@ -1,12 +1,13 @@
-/* Skeleton copied from food-and-beverage complete-food-beverage — textile content/images */
+/* Skeleton from food-and-beverage complete-food-beverage — textile content/images.
+   Desktop: fluid vw (px/19.2 for 1920 canvas). No transform scale. */
 .completeEotCraneSolutionsWrapper {
 	width: 100%;
 	position: relative;
 	background-color: #f6f6f6;
-	padding: 80px;
+	padding: 4.16667vw;
 	box-sizing: border-box;
 	text-align: left;
-	font-size: 28px;
+	font-size: 1.45833vw;
 	color: #000;
 	font-family: var(--font-manrope), sans-serif;
 }
@@ -22,171 +23,171 @@
 
 .rightScrollable {
 	flex-shrink: 0;
-	width: 903.1px;
+	width: 53.3333vw;
 	max-width: 100%;
 }
 
 .frameParentScale {
 	position: relative;
-	width: 903.1px;
-	height: 1314.3px;
+	width: 100%;
+	height: 77.6354vw;
 }
 
 .frameParent {
 	position: relative;
-	width: 1024px;
-	height: 1490.6px;
-	transform: scale(0.8817);
-	transform-origin: top left;
+	width: 100%;
+	height: 77.6354vw;
 }
 
 .timelineLine {
 	position: absolute;
-	top: 78px;
+	top: 4.0625vw;
 	left: 0px;
-	width: 397.4px;
-	height: 1320.9px;
+	width: 20.6979vw;
+	height: 68.7969vw;
 }
 
 .frameContainer {
 	position: absolute;
 	top: 0px;
-	left: 73px;
-	border-radius: 19.12px;
+	left: 3.80208vw;
+	border-radius: 0.99583vw;
 	background-color: #fff;
-	border: 1.2px solid #c0c0c0;
+	border: 0.0625vw solid #c0c0c0;
 	box-sizing: border-box;
-	width: 739.8px;
-	height: 193.6px;
+	width: 38.53125vw;
+	height: 10.0833vw;
 	overflow: hidden;
 }
 
 .frameDiv {
 	position: absolute;
 	top: 50%;
-	left: 354px;
-	width: 351.4px;
+	left: 18.4375vw;
+	width: 18.30208vw;
 	transform: translateY(-50%);
 	display: flex;
 	flex-direction: column;
-	gap: 8px;
+	gap: 0.41667vw;
 }
 
 .overheadSingleGirder {
 	position: relative;
-	font-size: 18px;
-	line-height: 29.88px;
+	font-size: 0.9375vw;
+	line-height: 1.55625vw;
 	color: #000;
 	white-space: normal;
 }
 
 .economicalOverheadCrane {
 	position: relative;
-	font-size: 16px;
-	line-height: 23px;
+	font-size: 0.83333vw;
+	line-height: 1.19792vw;
 	color: #5a5a5a;
-	width: 351.4px;
+	width: 18.30208vw;
 }
 
 .rectangleIcon {
 	position: absolute;
-	top: -1.2px;
-	left: -1.2px;
-	width: 322.7px;
-	height: 193.6px;
+	top: -0.0625vw;
+	left: -0.0625vw;
+	width: 16.8073vw;
+	height: 10.0833vw;
 	object-fit: cover;
-	border-radius: 19.12px 0 0 19.12px;
+	border-radius: 0.99583vw 0 0 0.99583vw;
 }
 
 .rectangleParent {
 	position: absolute;
-	top: 518.69px;
-	left: 73px;
-	border-radius: 19.12px;
+	top: 27.0151vw;
+	left: 3.80208vw;
+	border-radius: 0.99583vw;
 	background-color: #fff;
-	border: 1.2px solid #c0c0c0;
+	border: 0.0625vw solid #c0c0c0;
 	box-sizing: border-box;
-	width: 739.8px;
-	height: 193.6px;
+	width: 38.53125vw;
+	height: 10.0833vw;
 	overflow: hidden;
 }
 
 .rectangleGroup {
 	position: absolute;
-	top: 1037.39px;
-	left: 73px;
-	border-radius: 19.12px;
+	top: 54.0318vw;
+	left: 3.80208vw;
+	border-radius: 0.99583vw;
 	background-color: #fff;
-	border: 1.2px solid #c0c0c0;
+	border: 0.0625vw solid #c0c0c0;
 	box-sizing: border-box;
-	width: 742.2px;
-	height: 193.6px;
+	width: 38.65625vw;
+	height: 10.0833vw;
 	overflow: hidden;
 }
 
 .rectangleContainer {
 	position: absolute;
-	top: 259.35px;
-	left: 284.2px;
-	border-radius: 19.12px;
+	top: 13.5078vw;
+	left: 14.80208vw;
+	border-radius: 0.99583vw;
 	background-color: #fff;
-	border: 1.2px solid #c0c0c0;
+	border: 0.0625vw solid #c0c0c0;
 	box-sizing: border-box;
-	width: 739.8px;
-	height: 193.6px;
+	width: 38.53125vw;
+	height: 10.0833vw;
 	overflow: hidden;
 }
 
 .rectangleParent2 {
 	position: absolute;
-	top: 778.04px;
-	left: 284.2px;
-	border-radius: 19.12px;
+	top: 40.5229vw;
+	left: 14.80208vw;
+	border-radius: 0.99583vw;
 	background-color: #fff;
-	border: 1.2px solid #c0c0c0;
+	border: 0.0625vw solid #c0c0c0;
 	box-sizing: border-box;
-	width: 739.8px;
-	height: 193.6px;
+	width: 38.53125vw;
+	height: 10.0833vw;
 	overflow: hidden;
 }
 
 .rectangleParent3 {
 	position: absolute;
-	top: 1297px;
-	left: 284.2px;
-	border-radius: 19.12px;
+	top: 67.5521vw;
+	left: 14.80208vw;
+	border-radius: 0.99583vw;
 	background-color: #fff;
-	border: 1.2px solid #c0c0c0;
+	border: 0.0625vw solid #c0c0c0;
 	box-sizing: border-box;
-	width: 739.8px;
-	height: 193.6px;
+	width: 38.53125vw;
+	height: 10.0833vw;
 	overflow: hidden;
 }
 
 .leftStickyOuter {
-	width: 660px;
+	/* Logistics xl proportions — 1920 canvas */
+	width: 40.2604vw;
 	flex-shrink: 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	padding-top: 220px;
+	padding-top: 9.89583vw;
+	box-sizing: border-box;
 }
 
 .leftSticky {
 	position: sticky;
-	top: 166px;
+	top: 5.20833vw;
 	display: flex;
 	flex-direction: column;
-	gap: 18px;
-	max-width: 480px;
+	gap: 1.25vw;
+	max-width: 100%;
 }
 
 .ourSolutionsHeading {
 	position: relative;
 	margin: 0;
-	letter-spacing: -0.5px;
-	line-height: 1.15;
-	font-size: 41px;
+	letter-spacing: -0.05208vw;
+	line-height: 3.125vw;
+	font-size: 2.39583vw;
 	font-weight: 700;
 	display: block;
 	width: 100%;
@@ -196,9 +197,9 @@
 .completeEotCrane {
 	position: relative;
 	margin: 0;
-	letter-spacing: -0.4px;
+	letter-spacing: -0.02083vw;
 	line-height: 1.35;
-	font-size: 26px;
+	font-size: 1.35417vw;
 	font-weight: 600;
 	display: flex;
 	flex-direction: column;
@@ -208,25 +209,24 @@
 
 .subtitleLine {
 	display: block;
-	white-space: nowrap;
+	white-space: normal;
 }
 
 .asALeading {
 	position: relative;
 	margin: 0;
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 22px;
-	display: flex;
-	flex-direction: column;
-	width: fit-content;
+	font-size: 0.9375vw;
+	font-weight: 300;
+	line-height: 1.45833vw;
+	display: block;
+	width: 90%;
 	max-width: 100%;
 	color: #5a5a5a;
 }
 
 .descLine {
-	display: block;
-	white-space: nowrap;
+	display: inline;
+	white-space: normal;
 }
 
 @media (max-width: 1200px) {
@@ -240,6 +240,7 @@
 	}
 	.leftSticky {
 		position: static;
+		max-width: none;
 	}
 	.rightScrollable {
 		width: 100%;
@@ -251,7 +252,6 @@
 	.frameParent {
 		width: 100%;
 		height: auto;
-		transform: none;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 24px;
@@ -272,6 +272,8 @@
 		height: auto;
 		display: flex;
 		flex-direction: column;
+		border-radius: 19.12px;
+		border-width: 1.2px;
 	}
 	.rectangleIcon {
 		position: relative;
@@ -291,13 +293,35 @@
 		padding: 24px;
 		box-sizing: border-box;
 	}
-	.overheadSingleGirder,
+	.overheadSingleGirder {
+		position: relative;
+		width: 100%;
+		white-space: normal;
+		top: auto;
+		left: auto;
+		font-size: 18px;
+		line-height: 29.88px;
+	}
 	.economicalOverheadCrane {
 		position: relative;
 		width: 100%;
 		white-space: normal;
 		top: auto;
 		left: auto;
+		font-size: 16px;
+		line-height: 23px;
+	}
+	.ourSolutionsHeading {
+		font-size: 41px;
+		letter-spacing: -0.5px;
+	}
+	.completeEotCrane {
+		font-size: 26px;
+		letter-spacing: -0.4px;
+	}
+	.asALeading {
+		font-size: 16px;
+		line-height: 22px;
 	}
 	.descLine,
 	.subtitleLine {

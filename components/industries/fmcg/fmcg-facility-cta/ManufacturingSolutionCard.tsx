@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import type { ManufacturingSolutionItem } from "./data";
 import { fadeSlideUp } from "./motion";
+import macStyles from "./manufacturingSolutionsMac.module.css";
 
 type ManufacturingSolutionCardProps = {
   solution: ManufacturingSolutionItem;
@@ -57,14 +58,14 @@ export function ManufacturingSolutionCard({
 
   return (
     <motion.article
-      className="flex flex-col gap-8"
+      className={`flex flex-col gap-8 ${macStyles.card}`}
       custom={index * 0.08}
       variants={fadeSlideUp}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
-      <div className="relative aspect-square w-full overflow-hidden rounded-[21px]">
+      <div className={`relative aspect-square w-full overflow-hidden rounded-[21px] ${macStyles.cardImage}`}>
         <Image
           src={solution.image}
           alt={solution.title}
@@ -74,11 +75,11 @@ export function ManufacturingSolutionCard({
         />
       </div>
 
-      <div className="flex flex-col gap-2.5">
-        <h3 className="text-lg font-bold leading-[27px] text-[#3c3938]">
+      <div className={`flex flex-col gap-2.5 ${macStyles.cardBody}`}>
+        <h3 className={`text-lg font-bold leading-[27px] text-[#3c3938] ${macStyles.cardTitle}`}>
           {solution.title}
         </h3>
-        <p className="text-base leading-[21px] text-[#555]">
+        <p className={`text-base leading-[21px] text-[#555] ${macStyles.cardDesc}`}>
           {solution.description}
         </p>
       </div>

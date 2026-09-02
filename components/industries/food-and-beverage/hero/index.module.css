@@ -325,7 +325,7 @@
     line-height: 100%;
   }
   .logisticsIndustrialStructuWrapper {
-    font-size: 15px;
+    font-size: clamp(11.5px, 3.85vw, 15px);
     height: auto;
     width: 100%;
   }

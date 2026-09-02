@@ -1,0 +1,27 @@
+/* Mac fluid range only (1201–1919). xl at 1920+ unchanged. */
+
+@media (min-width: 1201px) and (max-width: 1919px) {
+  .scope {
+    padding-top: 0 !important;
+    padding-bottom: clamp(48px, 4.166vw, 96px) !important;
+  }
+
+  .scopeInner {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .bottomBanner {
+    margin-top: clamp(32px, 3.333vw, 80px);
+    border-radius: clamp(24px, 2.083vw, 40px);
+    padding: clamp(16px, 1.25vw, 24px) clamp(20px, 2.083vw, 32px);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .bottomBannerText {
+    font-size: clamp(14px, 0.9375vw, 18px);
+    line-height: 1.45;
+    white-space: normal !important;
+  }
+}

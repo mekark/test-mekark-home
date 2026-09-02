@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeSlideUp } from "./motion";
+import macStyles from "./quoteRequestMac.module.css";
 
 export function QuoteRequestBanner() {
   return (
@@ -11,7 +12,7 @@ export function QuoteRequestBanner() {
       aria-label="Request a quote for FMCG facility construction"
     >
       <motion.div
-        className="relative min-h-[388px] w-full"
+        className={`relative min-h-[388px] w-full ${macStyles.banner}`}
         custom={0}
         variants={fadeSlideUp}
         initial="hidden"
@@ -35,7 +36,7 @@ export function QuoteRequestBanner() {
           className="absolute inset-0 bg-gradient-to-t from-[#020202] to-[rgba(2,2,2,0.52)]"
         />
 
-        <div className="relative z-10 mx-auto flex min-h-[388px] w-full max-w-[1730px] flex-col items-center justify-center gap-10 px-6 text-center sm:px-10 lg:px-12">
+        <div className={`relative z-10 mx-auto flex min-h-[388px] w-full max-w-[1730px] flex-col items-center justify-center gap-10 px-6 text-center sm:px-10 lg:px-12 ${macStyles.inner}`}>
           <motion.div
             className="flex w-full flex-col items-center gap-4"
             custom={0.1}
@@ -44,10 +45,10 @@ export function QuoteRequestBanner() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            <h2 className="max-w-[1477px] text-[28px] font-bold leading-[1.06] tracking-[-1px] text-white sm:text-[40px] lg:text-[50px] lg:leading-[53px]">
+            <h2 className={`max-w-[1477px] text-[28px] font-bold leading-[1.06] tracking-[-1px] text-white sm:text-[40px] lg:text-[50px] lg:leading-[53px] ${macStyles.title}`}>
               Ready to Start Your FMCG Manufacturing Facility Construction?
             </h2>
-            <p className="max-w-[1228px] text-base leading-[25px] text-[#e6e6e6] sm:text-lg">
+            <p className={`max-w-[1228px] text-base leading-[25px] text-[#e6e6e6] sm:text-lg ${macStyles.desc}`}>
               Let us know your process requirements: hygiene classification,
               production size, location, and timeline. As a leading FMCG
               manufacturing facility construction company and trusted warehousing
@@ -58,7 +59,7 @@ export function QuoteRequestBanner() {
 
           <motion.a
             href="/#enquiry"
-            className="inline-flex items-center justify-center gap-3 rounded-[30px] bg-[#ed2024] px-10 py-4 sm:px-[90px] sm:py-4"
+            className={`inline-flex items-center justify-center gap-3 rounded-[30px] bg-[#ed2024] px-10 py-4 sm:px-[90px] sm:py-4 ${macStyles.cta}`}
             custom={0.2}
             variants={fadeSlideUp}
             initial="hidden"

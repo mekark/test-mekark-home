@@ -45,7 +45,7 @@ const CTA = () => {
         <div className={styles.workerVisual}>
           <Image
             className={styles.sectionItem}
-            src="/images/industries/logistics/CTA/badge-frame.svg"
+            src="/images/industries/textile/why-mekark/cta-deco-76.svg"
             width={180}
             height={180}
             sizes="100vw"
@@ -53,20 +53,22 @@ const CTA = () => {
           />
           <Image
             className={styles.sectionInner}
-            src="/images/industries/logistics/CTA/section-inner.svg"
+            src="/images/industries/textile/why-mekark/cta-deco-275.svg"
             width={317}
             height={213}
             sizes="100vw"
             alt=""
           />
-          <Image
-            className={styles.eotCta1}
-            src="/images/industries/logistics/CTA/eot-cta-worker.png"
-            width={491}
-            height={323}
-            sizes="(max-width: 768px) 96vw, (max-width: 1200px) 92vw, 491px"
-            alt="Mekark consultant"
-          />
+          <div className={styles.eotCta1}>
+            <Image
+              className={styles.eotCta1Img}
+              src="/images/industries/textile/why-mekark/cta-engineer-photo.png"
+              width={491}
+              height={323}
+              sizes="(max-width: 768px) 96vw, (max-width: 1200px) 92vw, 491px"
+              alt="Mekark consultant"
+            />
+          </div>
         </div>
       </div>
 

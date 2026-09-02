@@ -55,9 +55,19 @@
     max-width: 100%;
     height: 220px;
     margin: 0;
+    overflow: hidden;
+    z-index: 3;
+  }
+
+  .eotCta1Img {
+    position: relative;
+    inset: auto;
+    left: auto;
+    width: auto;
+    max-width: 100%;
+    height: 220px;
     object-fit: contain;
     object-position: center bottom;
-    z-index: 3;
   }
 
   .planningAWarehouseOrLogistParent {
@@ -91,6 +101,14 @@
 
   .eotCta1 {
     height: 190px;
+  }
+
+  .eotCta1Img {
+    height: 190px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center bottom;
   }
 
   .workerVisual {

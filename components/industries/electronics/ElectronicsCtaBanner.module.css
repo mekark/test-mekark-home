@@ -1,0 +1,247 @@
+/* Textile mac-style banner — fluid vw (1920 canvas). xl unchanged at 1920. */
+.root {
+  position: relative;
+  width: 100%;
+  padding-top: 1.45833vw;
+  box-sizing: border-box;
+}
+
+.section {
+  position: relative;
+  margin: 0 auto;
+  border-radius: 2.08333vw;
+  background: linear-gradient(123.5deg, #f01c22 6.54%, #8b0c11 108.89%);
+  width: 100%;
+  height: 15.3646vw;
+  min-height: clamp(200px, 15.3646vw, 295px);
+  flex-shrink: 0;
+  overflow: visible;
+  z-index: 1;
+  font-family: Manrope, var(--font-manrope), sans-serif;
+  color: #fff;
+}
+
+.planningAWarehouseOrLogistParent {
+  position: absolute;
+  top: 50%;
+  left: 25.25%;
+  transform: translateY(-50%);
+  width: 47.23%;
+  max-width: 836px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.625vw;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.planningAWarehouse {
+  width: 100%;
+  position: relative;
+  margin: 0;
+  font-size: 2.291667vw;
+  line-height: 1.271;
+  font-weight: 700;
+  color: #fff;
+  display: block;
+}
+
+.titleLineFirst {
+  display: block;
+  white-space: nowrap;
+}
+
+.titleLineSecond {
+  display: block;
+  white-space: nowrap;
+}
+
+.mekarksProjectCalendar {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  margin: 0;
+  font-size: 0.9375vw;
+  letter-spacing: 0;
+  line-height: 1.35;
+  font-weight: 500;
+  color: #ccc6c6;
+  display: block;
+}
+
+.sectionChild {
+  position: absolute;
+  top: calc(50% - 3.90625vw);
+  left: 3.4375vw;
+  border-right: 0.13889vw solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  width: 0;
+  height: 7.8125vw;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.cta2 {
+  position: absolute;
+  top: 50%;
+  right: 6.05%;
+  left: auto;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  background-color: #fff;
+  width: fit-content;
+  max-width: calc(100% - 25.25% - 6.05% - 1.5625vw);
+  height: auto;
+  min-height: 3.64583vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.04167vw 1.5625vw;
+  box-sizing: border-box;
+  gap: 0.625vw;
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: 1.14583vw;
+  color: #0e0e0e;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.talkToOur {
+  position: relative;
+  line-height: normal;
+  font-weight: 700;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.component4 {
+  height: 1.388vw;
+  width: 1.388vw;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.vectorIcon {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.sectionItem {
+  position: absolute;
+  top: 1.97917vw;
+  left: 8.02083vw;
+  border-radius: 50%;
+  width: 9.375vw;
+  height: 9.375vw;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.sectionInner {
+  position: absolute;
+  top: 2.65625vw;
+  left: 3.02083vw;
+  width: 16.5104vw;
+  height: 11.09375vw;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.workerVisual {
+  position: absolute;
+  top: -1.45833vw;
+  left: -0.52083vw;
+  width: 26.5vw;
+  height: 18.5vw;
+  flex-shrink: 0;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 4;
+}
+
+.eotCta1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25.5729vw;
+  height: 16.8229vw;
+  overflow: hidden;
+  flex-shrink: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.eotCta1Img {
+  position: absolute;
+  top: 0;
+  left: 10.55%;
+  width: 78.89%;
+  height: 144.52%;
+  max-width: none;
+  object-fit: cover;
+  object-position: top center;
+}
+
+@media (min-width: 1201px) and (max-width: 1919px) {
+  .planningAWarehouseOrLogistParent {
+    left: clamp(200px, 25.25%, 380px);
+    width: clamp(240px, 42vw, 47.23%);
+    max-width: min(836px, calc(100% - 25.25% - 6.05% - clamp(220px, 20vw, 391px)));
+  }
+
+  .planningAWarehouse {
+    font-size: clamp(28px, 2.291667vw, 44px);
+  }
+
+  .titleLineFirst {
+    font-size: clamp(24px, 2.083vw, 44px);
+    letter-spacing: -0.015em;
+  }
+
+  .mekarksProjectCalendar {
+    font-size: clamp(14px, 0.9375vw, 18px);
+  }
+
+  .cta2 {
+    right: clamp(20px, 6.05%, 106px);
+    left: auto;
+    max-width: clamp(220px, 20.364583vw, 391px);
+    font-size: clamp(16px, 1.14583vw, 22px);
+    min-height: clamp(48px, 3.64583vw, 70px);
+    padding: clamp(10px, 1.04vw, 20px) clamp(16px, 1.5625vw, 30px);
+  }
+
+  .component4 {
+    width: clamp(18px, 1.388vw, 26.648px);
+    height: clamp(18px, 1.388vw, 26.648px);
+  }
+}
+
+@media (min-width: 1920px) {
+  .root {
+    padding-top: 0.52083vw;
+  }
+
+  .titleLineFirst {
+    white-space: nowrap;
+    letter-spacing: -0.01em;
+  }
+
+  .cta2 {
+    right: 2.08333vw;
+  }
+}
+
+@media (max-width: 1200px) {
+  .root {
+    display: none;
+  }
+}

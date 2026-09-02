@@ -6,16 +6,17 @@ import { processSteps } from "./data";
 import { fadeSlideUp } from "./motion";
 import { ProcessConnector } from "./ProcessConnector";
 import { ProcessStep } from "./ProcessStep";
+import macStyles from "./processMac.module.css";
 
 export function ProjectExecutionProcessSection() {
   return (
     <section
-      className="relative overflow-hidden bg-white px-5 pb-12 pt-6 sm:px-10 sm:pb-16 sm:pt-8 lg:px-12 lg:pb-24 lg:pt-12 xl:px-16 2xl:px-20"
+      className={`relative overflow-hidden bg-white px-5 pb-12 pt-6 sm:px-10 sm:pb-16 sm:pt-8 lg:px-12 lg:pb-24 lg:pt-12 xl:px-16 2xl:px-20 ${macStyles.section}`}
       aria-label="Our FMCG facility project execution process"
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-[349px] opacity-5"
+        className={`pointer-events-none absolute inset-x-0 bottom-0 h-[349px] opacity-5 ${macStyles.gridBg}`}
       >
         <Image
           src="/images/industries/fmcg/project-execution-process/grid-bg.png"
@@ -26,8 +27,8 @@ export function ProjectExecutionProcessSection() {
         />
       </div>
 
-      <div className="relative mx-auto flex w-full max-w-[1720px] flex-col gap-8 sm:gap-12 lg:gap-16">
-        <div className="mx-auto flex w-full max-w-[1086px] flex-col items-start gap-3 text-left sm:items-center sm:gap-4 sm:text-center">
+      <div className={`relative mx-auto flex w-full max-w-[1720px] flex-col gap-8 sm:gap-12 lg:gap-16 ${macStyles.sectionInner}`}>
+        <div className={`mx-auto flex w-full max-w-[1086px] flex-col items-start gap-3 text-left sm:items-center sm:gap-4 sm:text-center ${macStyles.headerBlock}`}>
           <motion.p
             className="text-xs font-semibold uppercase tracking-[0.14em] text-[#f01d23] sm:hidden"
             custom={0}
@@ -39,7 +40,7 @@ export function ProjectExecutionProcessSection() {
             How we deliver
           </motion.p>
           <motion.h2
-            className="max-w-[1086px] text-[26px] font-bold leading-tight tracking-[-0.8px] text-[#111] sm:text-[40px] sm:tracking-[-1.33px] lg:text-[53px] lg:leading-[65px]"
+            className={`max-w-[1086px] text-[26px] font-bold leading-tight tracking-[-0.8px] text-[#111] sm:text-[40px] sm:tracking-[-1.33px] lg:text-[53px] lg:leading-[65px] ${macStyles.title}`}
             custom={0}
             variants={fadeSlideUp}
             initial="hidden"
@@ -50,7 +51,7 @@ export function ProjectExecutionProcessSection() {
           </motion.h2>
         </div>
 
-        <div className="relative flex flex-col 2xl:hidden">
+        <div className="relative flex flex-col min-[1201px]:hidden">
           <div
             aria-hidden
             className="pointer-events-none absolute bottom-6 left-[15px] top-6 w-px bg-gradient-to-b from-[#f01d23] via-[#f01d23]/35 to-[#f01d23]/10"
@@ -75,9 +76,12 @@ export function ProjectExecutionProcessSection() {
           ))}
         </div>
 
-        <div className="hidden min-w-0 items-stretch gap-5 2xl:flex 2xl:gap-7">
+        <div className={`hidden min-w-0 items-stretch gap-5 min-[1201px]:flex 2xl:gap-7 ${macStyles.stepsRow}`}>
           {processSteps.map((step, index) => (
-            <div key={step.number} className="flex min-w-0 flex-1 items-center gap-5 2xl:gap-7">
+            <div
+              key={step.number}
+              className={`flex min-w-0 flex-1 items-center gap-5 2xl:gap-7 ${macStyles.stepGroup}`}
+            >
               <ProcessStep step={step} index={index} />
               {index < processSteps.length - 1 && <ProcessConnector />}
             </div>

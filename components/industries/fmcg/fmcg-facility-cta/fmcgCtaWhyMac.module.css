@@ -1,0 +1,265 @@
+/* Why Mekark — Mac layout (1201–1919). Image fill + blend (1201+). */
+
+/* Image fill right edge + blend — desktop 1201+ (Mac and XL) */
+@media (min-width: 1201px) {
+  .featuresImage {
+    overflow: visible !important;
+    margin-right: calc(
+      -1 * clamp(48px, 4.166vw, 80px) - max(0px, (100vw - 1720px) / 2)
+    ) !important;
+  }
+
+  .featuresImageMask {
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: clamp(-420px, -22.1875vw, -150px) !important;
+    right: calc(
+      -1 * clamp(48px, 4.166vw, 80px) - max(0px, (100vw - 1720px) / 2)
+    ) !important;
+    overflow: hidden !important;
+  }
+
+  .featuresImageBlend {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.35) 18%,
+      rgba(0, 0, 0, 0.75) 32%,
+      #000 48%
+    ) !important;
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.35) 18%,
+      rgba(0, 0, 0, 0.75) 32%,
+      #000 48%
+    ) !important;
+  }
+
+  .featuresImageMask :global(img) {
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    object-fit: cover !important;
+    object-position: center right !important;
+    transform: scale(1.18);
+    transform-origin: center right;
+  }
+
+  .featuresImageGrad {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: clamp(-420px, -22.1875vw, -150px);
+    right: calc(
+      -1 * clamp(48px, 4.166vw, 80px) - max(0px, (100vw - 1720px) / 2)
+    );
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+      269.61deg,
+      rgba(246, 246, 246, 0) 30.417%,
+      #f6f6f6 64.165%
+    );
+  }
+}
+
+@media (min-width: 1920px) {
+  .featuresImage {
+    min-height: 569px !important;
+    align-self: stretch !important;
+  }
+
+  .featuresImageBlend {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.25) 18%,
+      rgba(0, 0, 0, 0.65) 34%,
+      #000 52%
+    ) !important;
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.25) 18%,
+      rgba(0, 0, 0, 0.65) 34%,
+      #000 52%
+    ) !important;
+  }
+
+  .featuresImageGrad {
+    display: none;
+  }
+
+  .featuresImageMask :global(img) {
+    object-position: right bottom !important;
+    transform: scale(1.12);
+  }
+}
+
+/* Mac layout only — does not affect XL */
+@media (min-width: 1201px) and (max-width: 1919px) {
+  .sectionScope {
+    overflow-x: visible !important;
+  }
+
+  .featuresRow {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    overflow: visible !important;
+  }
+
+  .featuresGrid {
+    position: relative !important;
+    z-index: 2;
+    flex: 0 0 auto !important;
+    margin-top: clamp(24px, 2.083vw, 40px) !important;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: clamp(24px, 3.125vw, 60px) !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+
+  .featureColA {
+    width: clamp(200px, 15vw, 288px);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(28px, 4.0104vw, 77px);
+  }
+
+  .featureColB {
+    width: clamp(205px, 15.364583vw, 295px);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(24px, 2.864583vw, 55px);
+  }
+
+  .featureColC {
+    width: clamp(220px, 17.03125vw, 327px);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 1.875vw, 36px);
+  }
+
+  .featureCard :global(h4) {
+    font-size: clamp(14px, 0.9375vw, 18px) !important;
+    line-height: 1.25 !important;
+    white-space: normal !important;
+  }
+
+  .featureCard :global(p) {
+    font-size: clamp(12px, 0.729vw, 14px) !important;
+    line-height: 1.45 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .featureCard :global(p span) {
+    white-space: normal !important;
+    display: inline !important;
+  }
+
+  .featuresImage {
+    position: relative !important;
+    flex: 1 1 0 !important;
+    width: auto !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: clamp(380px, 29.6vw, 569px) !important;
+    min-width: clamp(260px, 28vw, 856px) !important;
+    align-self: stretch !important;
+    overflow: visible !important;
+    margin-left: clamp(-48px, -3.125vw, -24px) !important;
+    margin-right: -3rem !important;
+  }
+
+  .featuresImageMask {
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: clamp(-280px, -18vw, -120px) !important;
+    width: auto !important;
+    height: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .featuresImageMask :global(img) {
+    top: 0 !important;
+    right: -0.5vw !important;
+    bottom: 0 !important;
+    left: auto !important;
+    width: 82% !important;
+    height: 100% !important;
+    max-width: none !important;
+    transform: none !important;
+    transform-origin: center right !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+
+  .featuresImageGrad {
+    top: 0;
+    bottom: 0;
+    left: clamp(-280px, -18vw, -120px);
+    right: 0;
+    width: auto;
+    height: 100%;
+  }
+
+  .sectionInner {
+    overflow: visible !important;
+  }
+
+  .whyHeader h2 {
+    font-size: clamp(34px, 2.604vw, 50px) !important;
+    line-height: 1.25 !important;
+    white-space: normal !important;
+  }
+
+  .whyHeader p {
+    font-size: clamp(14px, 0.9375vw, 18px) !important;
+    line-height: 1.5 !important;
+    max-width: min(92%, 1101px) !important;
+  }
+
+  .sectionGap {
+    gap: clamp(48px, 5.729vw, 117px) !important;
+  }
+
+  .whyBlockGap {
+    gap: clamp(32px, 3.333vw, 64px) !important;
+    overflow: visible !important;
+  }
+
+  .bottomCallout {
+    margin-top: clamp(24px, 2.083vw, 40px) !important;
+    border-radius: clamp(24px, 2.083vw, 40px) !important;
+    padding: clamp(16px, 1.25vw, 24px) clamp(20px, 2.083vw, 32px) !important;
+  }
+
+  .bottomCalloutText {
+    font-size: clamp(14px, 0.9375vw, 18px) !important;
+    white-space: normal !important;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1919px) {
+  .featuresImage {
+    margin-right: -4rem !important;
+  }
+}
+
+@media (min-width: 1536px) and (max-width: 1919px) {
+  .featuresImage {
+    margin-right: -5rem !important;
+  }
+}

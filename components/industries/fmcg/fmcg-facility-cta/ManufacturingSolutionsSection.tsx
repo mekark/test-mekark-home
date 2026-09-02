@@ -10,11 +10,12 @@ import {
   MOBILE_FACILITY_CAROUSEL_ITEM,
   MOBILE_FACILITY_CAROUSEL_TRACK,
 } from "@/components/industries/shared/industryMobileFacilityCarousel";
+import macStyles from "./manufacturingSolutionsMac.module.css";
 
 export function ManufacturingSolutionsSection() {
   return (
     <section
-      className="relative bg-[#ffefef] px-5 pb-12 pt-6 sm:px-10 sm:pb-16 sm:pt-8 lg:px-12 lg:pb-24 lg:pt-12 xl:px-16 2xl:px-20"
+      className={`relative bg-[#ffefef] px-5 pb-12 pt-6 sm:px-10 sm:pb-16 sm:pt-8 lg:px-12 lg:pb-24 lg:pt-12 xl:px-16 2xl:px-20 ${macStyles.section}`}
       aria-label="FMCG manufacturing facility construction across South India"
     >
       <div
@@ -30,8 +31,8 @@ export function ManufacturingSolutionsSection() {
         />
       </div>
 
-      <div className="relative mx-auto flex w-full max-w-[1720px] flex-col gap-8 sm:gap-12 lg:gap-16">
-        <div className="mx-auto flex w-full max-w-[1452px] flex-col items-start gap-3 text-left sm:items-center sm:gap-4 sm:text-center">
+      <div className={`relative mx-auto flex w-full max-w-[1720px] flex-col gap-8 sm:gap-12 lg:gap-16 ${macStyles.sectionInner}`}>
+        <div className={`mx-auto flex w-full max-w-[1452px] flex-col items-start gap-3 text-left sm:items-center sm:gap-4 sm:text-center ${macStyles.headerBlock}`}>
           <motion.p
             className="text-xs font-semibold uppercase tracking-[0.14em] text-[#e50818] sm:hidden"
             custom={0}
@@ -43,18 +44,22 @@ export function ManufacturingSolutionsSection() {
             South India coverage
           </motion.p>
           <motion.h2
-            className="max-w-[1356px] text-[26px] font-bold leading-tight tracking-[-0.8px] text-[#111] sm:text-[40px] sm:tracking-[-1.33px] lg:text-[50px] lg:leading-[60px]"
+            className={`max-w-[1356px] text-[26px] font-bold leading-tight tracking-[-0.8px] text-[#111] sm:text-[40px] sm:tracking-[-1.33px] lg:text-[50px] lg:leading-[60px] ${macStyles.title}`}
             custom={0}
             variants={fadeSlideUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            FMCG Manufacturing Facility Construction Across South India&apos;s
-            Growth Hubs
+            <span className={macStyles.titleLineFirst}>
+              FMCG Manufacturing Facility Construction Across South{" "}
+            </span>
+            <span className={macStyles.titleLineSecond}>
+              India&apos;s Growth Hubs
+            </span>
           </motion.h2>
           <motion.p
-            className="max-w-[1273px] text-sm leading-relaxed text-black sm:text-base sm:leading-[27px] lg:text-lg"
+            className={`max-w-[1273px] text-sm leading-relaxed text-black sm:text-base sm:leading-[27px] lg:text-lg ${macStyles.subtitle}`}
             custom={0.1}
             variants={fadeSlideUp}
             initial="hidden"
@@ -84,7 +89,7 @@ export function ManufacturingSolutionsSection() {
           </p>
         </div>
 
-        <div className="hidden grid-cols-2 gap-x-8 gap-y-12 sm:grid lg:grid-cols-3 2xl:grid-cols-6">
+        <div className={`hidden grid-cols-2 gap-x-8 gap-y-12 sm:grid lg:grid-cols-3 2xl:grid-cols-6 ${macStyles.grid}`}>
           {manufacturingSolutions.map((solution, index) => (
             <ManufacturingSolutionCard
               key={solution.title}
@@ -95,7 +100,7 @@ export function ManufacturingSolutionsSection() {
         </div>
 
         <motion.p
-          className="mx-auto max-w-[1212px] text-left text-sm leading-relaxed text-[#8b91a0] sm:text-center sm:text-base sm:leading-[23px] lg:text-lg"
+          className={`mx-auto max-w-[1212px] text-left text-sm leading-relaxed text-[#8b91a0] sm:text-center sm:text-base sm:leading-[23px] lg:text-lg ${macStyles.footer}`}
           custom={0.2}
           variants={fadeSlideUp}
           initial="hidden"

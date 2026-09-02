@@ -1,9 +1,10 @@
 import Image from "next/image";
+import macStyles from "./processMac.module.css";
 
 export function ProcessConnector() {
   return (
     <div
-      className="relative hidden h-[24px] w-[67px] shrink-0 2xl:block"
+      className={`relative hidden h-[24px] w-[67px] shrink-0 min-[1201px]:block ${macStyles.connector}`}
       aria-hidden
     >
       <Image

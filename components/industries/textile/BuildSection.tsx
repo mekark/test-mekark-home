@@ -20,17 +20,10 @@ export default function BuildSection() {
 							</span>
 						</h3>
 						<p className={styles.asALeading}>
-							<span className={styles.descLine}>
-								As a full-service, turnkey EPC textile factory construction
-								company in South India,
-							</span>
-							<span className={styles.descLine}>
-								Mekark designs, fabricates, and erects pre-engineered steel
-								structures
-							</span>
-							<span className={styles.descLine}>
-								tailored to your operational needs and span requirements.
-							</span>
+							As a full-service, turnkey EPC textile factory construction
+							company in South India, Mekark designs, fabricates, and erects
+							pre-engineered steel structures tailored to your operational
+							needs and span requirements.
 						</p>
 					</div>
 				</div>

@@ -7,6 +7,7 @@
   font-size: 2.5vw;
   color: #fff;
   font-family: var(--font-manrope), Manrope, sans-serif;
+  overflow: visible;
 }
 .section {
   position: absolute;
@@ -17,6 +18,8 @@
   width: 91.6667vw;
   height: 15.3646vw;
   flex-shrink: 0;
+  overflow: visible;
+  z-index: 3;
 }
 .planningAWarehouseOrLogistParent {
   position: absolute;
@@ -108,8 +111,8 @@
 }
 .sectionItem {
   position: absolute;
-  top: 3.4775vw;
-  left: 8.50166vw;
+  top: 1.97917vw;
+  left: 8.02083vw;
   border-radius: 50%;
   width: 9.375vw;
   height: 9.375vw;
@@ -118,8 +121,8 @@
 }
 .sectionInner {
   position: absolute;
-  top: 4.20258vw;
-  left: 3.50166vw;
+  top: 2.65625vw;
+  left: 3.02083vw;
   width: 16.5104vw;
   height: 11.09375vw;
   flex-shrink: 0;
@@ -133,6 +136,8 @@
   height: 18.5vw;
   flex-shrink: 0;
   pointer-events: none;
+  overflow: visible;
+  z-index: 4;
 }
 .eotCta1 {
   position: absolute;
@@ -140,9 +145,20 @@
   left: 0;
   width: 25.5729vw;
   height: 16.8229vw;
-  object-fit: cover;
+  overflow: hidden;
   flex-shrink: 0;
   z-index: 3;
+  pointer-events: none;
+}
+.eotCta1Img {
+  position: absolute;
+  top: 0;
+  left: 10.55%;
+  width: 78.89%;
+  height: 144.52%;
+  max-width: none;
+  object-fit: cover;
+  object-position: top center;
 }
 .frameParent {
   position: absolute;
@@ -374,21 +390,86 @@
     height: auto;
     order: 1;
     border-radius: 20px;
-    padding: 28px 24px 32px;
+    padding: 36px 24px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 16px;
     overflow: hidden;
+  }
+  .sectionChild {
+    display: none;
+  }
+  .workerVisual {
+    position: relative;
+    top: auto;
+    left: auto;
+    align-self: center;
+    width: 92%;
+    max-width: 92%;
+    height: 220px;
+    margin: 8px 0 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .sectionItem {
+    display: block;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-42%);
+    width: 145px;
+    height: 145px;
+    z-index: 1;
+  }
+  .sectionInner {
+    display: block;
+    top: auto;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+    height: auto;
+    max-height: 72%;
+    z-index: 2;
+  }
+  .eotCta1 {
+    display: block;
+    position: absolute;
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    max-width: 100%;
+    height: 220px;
+    margin: 0;
+    overflow: hidden;
+    z-index: 3;
+  }
+  .eotCta1Img {
+    position: relative;
+    inset: auto;
+    left: auto;
+    width: auto;
+    max-width: 100%;
+    height: 220px;
+    object-fit: contain;
+    object-position: center bottom;
   }
   .planningAWarehouseOrLogistParent {
     position: relative;
     top: auto;
     left: auto;
     width: 100%;
+    max-width: 100%;
+    margin-top: 8px;
     align-items: center;
     text-align: center;
-    gap: 10px;
+    gap: 14px;
+    z-index: 2;
+    box-sizing: border-box;
   }
   .planningAWarehouse {
     width: 100%;
@@ -425,12 +506,14 @@
     top: auto;
     left: auto;
     right: auto;
+    transform: none;
     width: auto;
     max-width: 100%;
     height: auto;
     min-height: 48px;
     padding: 12px 24px;
     font-size: 16px;
+    z-index: 2;
   }
   .talkToOur {
     white-space: normal;
@@ -564,9 +647,33 @@
     font-size: 24px;
   }
   .section {
-    padding: 20px 16px 24px;
+    padding: 28px 16px 0;
     border-radius: 16px;
-    gap: 16px;
+    gap: 14px;
+  }
+  .planningAWarehouseOrLogistParent {
+    margin-top: 6px;
+  }
+  .workerVisual {
+    max-width: 96%;
+    height: 190px;
+    margin-top: 6px;
+  }
+  .sectionItem {
+    width: 125px;
+    height: 125px;
+    top: 9%;
+    transform: translateX(-40%);
+  }
+  .eotCta1 {
+    height: 190px;
+  }
+  .eotCta1Img {
+    height: 190px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center bottom;
   }
   .planningAWarehouse {
     font-size: 22px;

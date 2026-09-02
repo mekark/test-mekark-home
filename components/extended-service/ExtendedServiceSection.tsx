@@ -534,17 +534,18 @@ export function ExtendedServiceSection() {
 
   return (
     <div className="bg-white font-[family-name:var(--font-manrope)] text-[#17171b]">
-      <section className="flex flex-col bg-[#f6f6f6] pt-[108px] sm:pt-[128px] lg:h-dvh lg:overflow-hidden">
-        <div className="mx-auto flex min-h-0 w-full max-w-[1740px] flex-1 flex-col px-5 pb-10 sm:px-8 lg:px-[80px] lg:pb-8">
+      {/* Fixed 1920 desktop sizes — DesignScale shrinks for iMac/laptop; no xl shrinks. */}
+      <section className="relative flex flex-col bg-[#f6f6f6] pt-[108px] sm:pt-[128px] lg:h-[980px] lg:overflow-hidden">
+        <div className="relative z-10 mx-auto w-full max-w-[1740px] shrink-0 px-5 sm:px-8 lg:px-[80px]">
           <motion.header
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
-            className="flex max-w-[1590px] shrink-0 flex-col gap-2.5"
+            className="flex max-w-[1590px] flex-col gap-2.5"
           >
             <motion.h1
               variants={fadeUp}
-              className="text-[clamp(2rem,4vw,50px)] font-medium tracking-[-0.95px] text-[#17171b]"
+              className="text-[clamp(2rem,4vw,50px)] font-medium tracking-[-0.95px] text-[#17171b] lg:text-[50px]"
             >
               Extended Service
             </motion.h1>
@@ -563,8 +564,52 @@ export function ExtendedServiceSection() {
               onSelect={selectService}
             />
           </div>
+        </div>
 
-          <div className="relative mt-6 flex min-h-0 flex-1 flex-col gap-8 lg:mt-[40px] lg:flex-row lg:items-stretch lg:gap-10 xl:gap-[70px]">
+        {/* Full-width content row so the side image can pin to the canvas right edge
+            without overlapping the page intro above. */}
+        <div className="relative mt-6 flex min-h-0 flex-1 lg:mt-[40px]">
+          <div
+            className={`pointer-events-none absolute inset-y-0 right-0 z-0 hidden overflow-hidden lg:block ${
+              hasBakedFade ? "w-[820px]" : "w-[860px]"
+            }`}
+          >
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={active.image}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.28, ease: EASE }}
+                className="absolute inset-0"
+              >
+                <Image
+                  src={active.image}
+                  alt={active.imageAlt}
+                  fill
+                  priority={active.id === "eot"}
+                  className={
+                    hasBakedFade
+                      ? "object-cover object-right object-center"
+                      : "object-cover object-right object-top"
+                  }
+                  sizes="860px"
+                />
+                {hasBakedFade ? null : (
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(90deg, #f6f6f6 0%, rgba(246,246,246,0.92) 12%, rgba(246,246,246,0.4) 32%, rgba(246,246,246,0) 52%)",
+                    }}
+                  />
+                )}
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          <div className="relative z-10 mx-auto flex min-h-0 w-full max-w-[1740px] flex-1 flex-col px-5 pb-10 sm:px-8 lg:flex-row lg:items-stretch lg:gap-[70px] lg:px-[80px] lg:pb-8">
             <div className="flex w-full shrink-0 flex-col gap-5 lg:w-[376px]">
               <div className="hidden lg:block">
                 <ServiceSwitcher activeId={activeId} onSelect={selectService} />
@@ -588,50 +633,6 @@ export function ExtendedServiceSection() {
             </div>
 
             <div
-              className="pointer-events-none absolute top-0 z-0 hidden h-full xl:block"
-              style={{
-                right: "calc((100vw - 100%) / -2)",
-                width: hasBakedFade ? "min(50vw, 800px)" : "min(46vw, 760px)",
-              }}
-            >
-              <div className="relative h-full min-h-[520px] w-full">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={active.image}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.28, ease: EASE }}
-                    className="absolute inset-0"
-                  >
-                    <Image
-                      src={active.image}
-                      alt={active.imageAlt}
-                      fill
-                      priority={active.id === "eot"}
-                      className={
-                        hasBakedFade
-                          ? "object-contain object-right object-top"
-                          : "object-cover object-right object-top"
-                      }
-                      sizes="50vw"
-                    />
-                    {hasBakedFade ? null : (
-                      <div
-                        aria-hidden
-                        className="pointer-events-none absolute inset-0"
-                        style={{
-                          backgroundImage:
-                            "linear-gradient(90deg, #f6f6f6 0%, rgba(246,246,246,0.92) 12%, rgba(246,246,246,0.4) 32%, rgba(246,246,246,0) 52%)",
-                        }}
-                      />
-                    )}
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-            </div>
-
-            <div
               ref={contentRef}
               className="relative z-10 min-h-0 min-w-0 flex-1 scroll-mt-[168px] sm:scroll-mt-[188px] lg:scroll-mt-0"
             >
@@ -652,7 +653,7 @@ export function ExtendedServiceSection() {
                       <p className="text-[14px] font-bold uppercase leading-normal text-[#e50818]">
                         {active.eyebrow}
                       </p>
-                      <h2 className="whitespace-nowrap text-[clamp(1.75rem,3vw,40px)] font-medium leading-normal text-[#17171b]">
+                      <h2 className="whitespace-nowrap text-[clamp(1.75rem,3vw,40px)] font-medium leading-normal text-[#17171b] lg:text-[40px]">
                         {active.title}
                       </h2>
                       <p className="text-[16px] font-normal leading-normal whitespace-pre-wrap text-[#555] sm:text-[18px] lg:text-[22px]">
@@ -661,7 +662,7 @@ export function ExtendedServiceSection() {
                     </motion.div>
                   </AnimatePresence>
 
-                  <div className="relative mt-8 h-[260px] w-full sm:h-[380px] xl:hidden">
+                  <div className="relative mt-8 h-[260px] w-full sm:h-[380px] lg:hidden">
                     <Image
                       src={active.image}
                       alt={active.imageAlt}
@@ -679,7 +680,7 @@ export function ExtendedServiceSection() {
                     />
                   </div>
 
-                  <h2 className="mt-16 text-[clamp(1.75rem,3vw,40px)] font-bold tracking-[-1.33px] text-[#111] lg:mt-auto lg:pt-16 lg:leading-[65px]">
+                  <h2 className="mt-16 text-[clamp(1.75rem,3vw,40px)] font-bold tracking-[-1.33px] text-[#111] lg:mt-auto lg:pt-16 lg:text-[40px] lg:leading-[65px]">
                     Frequently Asked Questions
                   </h2>
                 </div>

@@ -8,7 +8,7 @@ import TextileFooterCta from "@/components/industries/textile/FooterCta";
 
 export function TextilePage() {
   return (
-    <main className="textile-industry-page flex flex-1 flex-col bg-white">
+    <main className="textile-industry-page flex flex-1 flex-col overflow-x-clip bg-white">
       <TextileHero />
       <TextileBuildSection />
       <TextileWhyMekark />

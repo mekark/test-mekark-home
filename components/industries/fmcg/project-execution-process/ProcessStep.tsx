@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import type { ProcessStepItem } from "./data";
 import { fadeSlideUp } from "./motion";
+import macStyles from "./processMac.module.css";
 
 type ProcessStepProps = {
   step: ProcessStepItem;
@@ -35,22 +36,22 @@ export function ProcessStep({ step, index, mobile = false }: ProcessStepProps) {
 
   return (
     <motion.article
-      className="flex min-w-0 flex-1 flex-col gap-3.5"
+      className={`flex min-w-0 flex-1 flex-col gap-3.5 ${macStyles.stepWrap}`}
       custom={index * 0.08}
       variants={fadeSlideUp}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
-      <p className="text-[32px] font-medium leading-none text-[#f01d23] sm:text-[40px]">
+      <p className={`text-[32px] font-medium leading-none text-[#f01d23] sm:text-[40px] ${macStyles.stepNumber}`}>
         {step.number}
       </p>
 
-      <div className="flex flex-col gap-2.5">
-        <h3 className="text-base font-semibold leading-normal text-[#3c3938] sm:text-lg">
+      <div className={`flex flex-col gap-2.5 ${macStyles.stepContent}`}>
+        <h3 className={`text-base font-semibold leading-normal text-[#3c3938] sm:text-lg ${macStyles.stepTitle}`}>
           {step.title}
         </h3>
-        <p className="text-sm leading-[21px] text-[#555] sm:text-base">
+        <p className={`text-sm leading-[21px] text-[#555] sm:text-base ${macStyles.stepDesc}`}>
           {step.description}
         </p>
       </div>

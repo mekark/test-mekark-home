@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { accordionTransition } from "./motion";
+import macStyles from "./faqMac.module.css";
 
 type FaqItemProps = {
   number: string;
@@ -34,7 +35,7 @@ export function FaqItem({
           {number}
         </span>
 
-        <span className="min-w-0 flex-1 text-base font-semibold leading-[27px] tracking-[-0.47px] text-[#101116] sm:text-lg">
+        <span className={`min-w-0 flex-1 text-base font-semibold leading-[27px] tracking-[-0.47px] text-[#101116] sm:text-lg ${macStyles.itemQuestion}`}>
           {question}
         </span>
 
@@ -65,7 +66,7 @@ export function FaqItem({
         transition={accordionTransition}
         className="overflow-hidden"
       >
-        <p className="px-6 pb-5 pl-[60px] text-base leading-[26px] text-[#53555b] sm:pl-[68px]">
+        <p className={`px-6 pb-5 pl-[60px] text-base leading-[26px] text-[#53555b] sm:pl-[68px] ${macStyles.itemAnswer}`}>
           {answer}
         </p>
       </motion.div>

@@ -1,0 +1,862 @@
+.cta {
+  width: 100%;
+  aspect-ratio: 1920 / 1350;
+  position: relative;
+  background-color: #f6f6f6;
+  text-align: left;
+  font-size: 2.5vw;
+  color: #fff;
+  font-family: var(--font-manrope), Manrope, sans-serif;
+  overflow: visible;
+}
+.section {
+  position: absolute;
+  top: 0px;
+  left: calc(50% - 45.8333vw);
+  border-radius: 2.08333vw;
+  background: linear-gradient(123.5deg, rgb(240, 28, 34) 6.54%, rgb(139, 12, 17) 108.89%);
+  width: 91.6667vw;
+  height: 15.3646vw;
+  flex-shrink: 0;
+  overflow: visible;
+  z-index: 3;
+}
+.planningAWarehouseOrLogistParent {
+  position: absolute;
+  top: 1.55vw;
+  left: 23.28125vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.52083vw;
+  flex-shrink: 0;
+}
+.planningAWarehouse {
+  width: 40.78125vw;
+  position: relative;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.05vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 2.1vw;
+}
+.mekarksProjectCalendar {
+  width: 40.78125vw;
+  position: relative;
+  font-size: 0.9vw;
+  letter-spacing: 0.04vw;
+  line-height: 1.35;
+  font-weight: 400;
+  color: #ccc6c6;
+  display: flex;
+  flex-direction: column;
+}
+.sectionChild {
+  position: absolute;
+  top: calc(50% - 4.78281vw);
+  left: 3.36823vw;
+  border-right: 0.140625vw solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  width: 0.140625vw;
+  height: 7.95313vw;
+  flex-shrink: 0;
+}
+.cta2 {
+  position: absolute;
+  top: calc(50% - 2.05729vw);
+  left: 67.5vw;
+  right: auto;
+  border-radius: 999px;
+  background-color: #fff;
+  width: fit-content;
+  height: 4.11458vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.06771vw 1.78125vw;
+  box-sizing: border-box;
+  gap: 0.71354vw;
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: 1.05vw;
+  color: #0e0e0e;
+  cursor: pointer;
+}
+.talkToOur {
+  position: relative;
+  line-height: 1.78021vw;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.component4 {
+  height: 1.55vw;
+  width: 1.55vw;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.vectorIcon {
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  top: 25.05%;
+  right: 18.43%;
+  bottom: 24.95%;
+  left: 18.78%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.sectionItem {
+  position: absolute;
+  top: 1.97917vw;
+  left: 8.02083vw;
+  border-radius: 50%;
+  width: 9.375vw;
+  height: 9.375vw;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.sectionInner {
+  position: absolute;
+  top: 2.65625vw;
+  left: 3.02083vw;
+  width: 16.5104vw;
+  height: 11.09375vw;
+  flex-shrink: 0;
+  z-index: 2;
+}
+.workerVisual {
+  position: absolute;
+  top: -1.45833vw;
+  left: -0.52083vw;
+  width: 26.5vw;
+  height: 18.5vw;
+  flex-shrink: 0;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 4;
+}
+.eotCta1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25.5729vw;
+  height: 16.8229vw;
+  overflow: hidden;
+  flex-shrink: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+.eotCta1Img {
+  position: absolute;
+  top: 0;
+  left: 10.55%;
+  width: 78.89%;
+  height: 144.52%;
+  max-width: none;
+  object-fit: cover;
+  object-position: top center;
+}
+.frameParent {
+  position: absolute;
+  top: 30.20833vw;
+  left: 55.4167vw;
+  width: 44.5833vw;
+  height: 29.7396vw;
+  flex-shrink: 0;
+}
+.imageWrapper {
+  position: absolute;
+  top: 0px;
+  left: -22.1875vw;
+  width: 66.7708vw;
+  height: 29.6354vw;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.imageIcon {
+  position: absolute;
+  right: -0.5vw;
+  bottom: 0.05208vw;
+  width: 70%;
+  height: 29.6vw;
+  object-fit: cover;
+  object-position: center center;
+  transform: scale(1.12);
+  transform-origin: center right;
+  flex-shrink: 0;
+}
+.frameChild {
+  position: absolute;
+  top: 0px;
+  left: -22.23958vw;
+  background: linear-gradient(
+    269.61deg,
+    rgba(246, 246, 246, 0) 30.417%,
+    #f6f6f6 64.165%
+  );
+  width: 62.7083vw;
+  height: 29.6354vw;
+  flex-shrink: 0;
+}
+.frameGroup {
+  position: absolute;
+  top: 34.63542vw;
+  left: 4.16667vw;
+  display: grid;
+  grid-template-columns: 17vw 17vw 20.9375vw;
+  grid-template-rows: repeat(2, auto);
+  grid-auto-flow: column;
+  column-gap: 1.8vw;
+  row-gap: 1.6vw;
+  flex-shrink: 0;
+  font-size: 0.9375vw;
+  color: #000;
+}
+.divsvcIconParent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.98958vw;
+}
+.divsvcIcon {
+  width: 2.91667vw;
+  height: 2.91667vw;
+  box-shadow:
+    0px 0.224708vw 0.898958vw rgba(196, 22, 28, 0.2),
+    0px 0.056177vw 0px rgba(255, 255, 255, 0.08) inset;
+  border-radius: 0.730208vw;
+  background: linear-gradient(
+    145deg,
+    rgba(196, 22, 28, 0.3),
+    rgba(196, 22, 28, 0.15)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lucidedraftingCompassIcon {
+  height: 1.348958vw;
+  width: 100%;
+  position: relative;
+}
+.inHouseDesignEngineeringParent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.52083vw;
+}
+.inHouseDesign {
+  position: relative;
+  line-height: 1.2;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+}
+.cardDesc {
+  width: 100%;
+  position: relative;
+  font-size: 0.729167vw;
+  line-height: 1.35;
+  color: #6e6e6e;
+  display: flex;
+  flex-direction: column;
+}
+.everyPreEngineeredWarehouse {
+  width: 100%;
+  position: relative;
+  font-size: 0.729167vw;
+  color: #6e6e6e;
+}
+.factoryControlledFabrication {
+  width: 100%;
+  position: relative;
+  font-size: 0.729167vw;
+  color: #6e6e6e;
+  display: flex;
+  align-items: center;
+}
+.asATrusted {
+  width: 100%;
+  position: relative;
+  font-size: 0.729167vw;
+  color: #6e6e6e;
+  display: flex;
+  align-items: center;
+}
+.preEngineeredWarehouseBuild {
+  width: 100%;
+  position: relative;
+  font-size: 0.729167vw;
+  color: #6e6e6e;
+  display: flex;
+  align-items: center;
+}
+.frameParent3 {
+  position: absolute;
+  top: 21.45833vw;
+  left: 4.16667vw;
+  width: 91.6667vw;
+  height: 7.1875vw;
+  flex-shrink: 0;
+  text-align: center;
+  font-size: 2.4vw;
+  color: #111;
+}
+.whyWarehousesFromMekarkAreWrapper {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+.whyWarehousesFrom {
+  position: relative;
+  letter-spacing: -0.04vw;
+  line-height: 1.2;
+  white-space: nowrap;
+  display: block;
+  text-align: center;
+  font-size: 2.4vw;
+}
+.mekarkIsOne {
+  position: absolute;
+  top: 3.854167vw;
+  left: calc(50% - 30vw);
+  font-size: 0.9375vw;
+  line-height: 1.45;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60vw;
+  text-align: center;
+}
+.line {
+  display: block;
+  white-space: nowrap;
+}
+.bottomBanner {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 63vw;
+  bottom: auto;
+  width: fit-content;
+  max-width: 82vw;
+  border-radius: 999px;
+  background-color: rgba(196, 22, 28, 0.06);
+  border: 1px solid rgba(196, 22, 28, 0.35);
+  box-sizing: border-box;
+  padding: 1.05vw 2.4vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.bottomBannerText {
+  margin: 0;
+  font-size: 0.9vw;
+  line-height: 1.4;
+  color: #4c4c4c;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.bottomBannerHighlight {
+  color: #eb4a4f;
+  font-weight: 700;
+}
+
+/* Mac fluid range (1280–1919): keep xl at 1920+, prevent feature grid overlapping image */
+@media (min-width: 1201px) and (max-width: 1919px) {
+  .frameGroup {
+    max-width: calc(55.4167vw - 4.16667vw - 2vw);
+    grid-template-columns: minmax(0, 15vw) minmax(0, 15.364583vw) minmax(0, 17.03125vw);
+    column-gap: clamp(24px, 3.125vw, 60px);
+    row-gap: clamp(18px, 1.6vw, 30.72px);
+    z-index: 2;
+  }
+  .divsvcIconParent {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .inHouseDesignEngineeringParent {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .inHouseDesign {
+    display: block;
+    font-size: clamp(13px, 0.9375vw, 18px);
+  }
+  .cardDesc {
+    font-size: clamp(11px, 0.729167vw, 14px);
+  }
+  .frameGroup .line {
+    white-space: normal;
+  }
+  .frameParent {
+    z-index: 1;
+  }
+  .frameChild {
+    width: 68vw;
+    background: linear-gradient(
+      269.61deg,
+      rgba(246, 246, 246, 0) 18%,
+      rgba(246, 246, 246, 0.85) 48%,
+      #f6f6f6 68%
+    );
+  }
+  .whyWarehousesFrom {
+    white-space: normal;
+    font-size: clamp(36px, 2.4vw, 46px);
+  }
+  .mekarkIsOne {
+    font-size: clamp(14px, 0.9375vw, 18px);
+  }
+  .mekarkIsOne .line {
+    white-space: normal;
+  }
+  .bottomBanner {
+    max-width: 90vw;
+  }
+  .bottomBannerText {
+    white-space: normal;
+    font-size: clamp(13px, 0.9vw, 17px);
+  }
+}
+
+@media (max-width: 1200px) {
+  .cta {
+    aspect-ratio: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 24px 56px;
+    box-sizing: border-box;
+    font-size: 32px;
+  }
+  .section {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    order: 1;
+    border-radius: 20px;
+    padding: 36px 24px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    overflow: hidden;
+  }
+  .sectionChild {
+    display: none;
+  }
+  .workerVisual {
+    position: relative;
+    top: auto;
+    left: auto;
+    align-self: center;
+    width: 92%;
+    max-width: 92%;
+    height: 220px;
+    margin: 8px 0 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .sectionItem {
+    display: block;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-42%);
+    width: 145px;
+    height: 145px;
+    z-index: 1;
+  }
+  .sectionInner {
+    display: block;
+    top: auto;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+    height: auto;
+    max-height: 72%;
+    z-index: 2;
+  }
+  .eotCta1 {
+    display: block;
+    position: absolute;
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    max-width: 100%;
+    height: 220px;
+    margin: 0;
+    overflow: hidden;
+    z-index: 3;
+  }
+  .eotCta1Img {
+    position: relative;
+    inset: auto;
+    left: auto;
+    width: auto;
+    max-width: 100%;
+    height: 220px;
+    object-fit: contain;
+    object-position: center bottom;
+  }
+  .planningAWarehouseOrLogistParent {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 8px;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    z-index: 2;
+    box-sizing: border-box;
+  }
+  .planningAWarehouse {
+    width: 100%;
+    font-size: 26px;
+    line-height: 34px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    justify-content: center;
+    align-items: center;
+  }
+  .mekarksProjectCalendar {
+    width: 100%;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 23px;
+    font-weight: 400;
+    display: block;
+    text-align: center;
+  }
+  .mekarksProjectCalendar .line {
+    display: inline;
+    white-space: normal;
+  }
+  .planningAWarehouse .line {
+    display: block;
+    white-space: normal;
+    text-align: center;
+  }
+  .line {
+    white-space: normal;
+  }
+  .cta2 {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    transform: none;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    min-height: 48px;
+    padding: 12px 24px;
+    font-size: 16px;
+    z-index: 2;
+  }
+  .talkToOur {
+    white-space: normal;
+    line-height: 24px;
+    text-align: center;
+  }
+  .component4 {
+    width: 18px;
+    height: 18px;
+  }
+  .frameParent3 {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    order: 2;
+    margin: 40px 0 20px;
+    font-size: 28px;
+  }
+  .whyWarehousesFrom {
+    position: relative;
+    top: auto;
+    left: auto;
+    white-space: normal;
+    letter-spacing: -0.5px;
+    line-height: 36px;
+    font-size: 28px;
+  }
+  .mekarkIsOne {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    font-size: 15px;
+    line-height: 24px;
+    margin-top: 12px;
+  }
+  .whyWarehousesFromMekarkAreWrapper {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+  }
+  .frameGroup {
+    position: relative;
+    top: auto;
+    left: auto;
+    order: 4;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
+    grid-auto-flow: row;
+    column-gap: 24px;
+    row-gap: 28px;
+    font-size: 16px;
+  }
+  .divsvcIcon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(196, 22, 28, 0.2);
+  }
+  .lucidedraftingCompassIcon {
+    height: 22px;
+  }
+  .inHouseDesign {
+    line-height: 22px;
+  }
+  .cardDesc,
+  .everyPreEngineeredWarehouse,
+  .factoryControlledFabrication,
+  .asATrusted,
+  .preEngineeredWarehouseBuild {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .frameParent {
+    position: relative;
+    top: auto;
+    left: auto;
+    order: 3;
+    width: 100%;
+    height: 280px;
+    margin-top: 0;
+    margin-bottom: 28px;
+  }
+  .imageWrapper {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: 100%;
+  }
+  .imageIcon {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+  .frameChild {
+    display: none;
+  }
+  .bottomBanner {
+    position: relative;
+    left: auto;
+    transform: none;
+    top: auto;
+    bottom: auto;
+    order: 5;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 28px;
+    border-radius: 24px;
+    padding: 18px 24px;
+  }
+  .bottomBannerText {
+    font-size: 14px;
+    line-height: 22px;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta {
+    padding: 16px 16px 40px;
+    font-size: 24px;
+  }
+  .section {
+    padding: 28px 16px 0;
+    border-radius: 16px;
+    gap: 14px;
+  }
+  .planningAWarehouseOrLogistParent {
+    margin-top: 6px;
+  }
+  .workerVisual {
+    max-width: 96%;
+    height: 190px;
+    margin-top: 6px;
+  }
+  .sectionItem {
+    width: 125px;
+    height: 125px;
+    top: 9%;
+    transform: translateX(-40%);
+  }
+  .eotCta1 {
+    height: 190px;
+  }
+  .eotCta1Img {
+    height: 190px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+  }
+  .planningAWarehouse {
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    align-items: center;
+    text-align: center;
+  }
+  .mekarksProjectCalendar {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    display: block;
+    text-align: center;
+  }
+  .cta2 {
+    justify-content: center;
+    padding: 14px 16px;
+    font-size: 15px;
+  }
+  .frameParent3 {
+    margin: 32px 0 16px;
+    font-size: 24px;
+  }
+  .frameParent {
+    order: 3;
+    height: 200px;
+    margin-top: 0;
+    margin-bottom: 24px;
+  }
+  .whyWarehousesFrom {
+    line-height: 32px;
+  }
+  .mekarkIsOne {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .frameGroup {
+    order: 4;
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+    font-size: 16px;
+  }
+  .divsvcIconParent {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 14px;
+    text-align: left;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 14px;
+    padding: 16px;
+    box-sizing: border-box;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
+  }
+  .divsvcIconParent:hover {
+    border-color: rgba(196, 22, 28, 0.35);
+    box-shadow: 0 6px 18px rgba(196, 22, 28, 0.1);
+    transform: translateY(-2px);
+  }
+  .divsvcIcon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: 10px;
+  }
+  .lucidedraftingCompassIcon {
+    height: 22px;
+  }
+  .inHouseDesignEngineeringParent {
+    align-items: flex-start;
+    text-align: left;
+    flex: 1;
+    min-width: 0;
+    gap: 6px;
+  }
+  .inHouseDesign {
+    display: block;
+    text-align: left;
+  }
+  .inHouseDesign .line {
+    display: inline;
+    white-space: normal;
+  }
+  .inHouseDesign .line::after {
+    content: " ";
+  }
+  .cardDesc,
+  .everyPreEngineeredWarehouse,
+  .factoryControlledFabrication,
+  .asATrusted,
+  .preEngineeredWarehouseBuild {
+    display: block;
+    text-align: left;
+    font-size: 13px;
+    line-height: 20px;
+  }
+  .cardDesc .line,
+  .everyPreEngineeredWarehouse .line,
+  .factoryControlledFabrication .line,
+  .asATrusted .line,
+  .preEngineeredWarehouseBuild .line {
+    display: inline;
+    white-space: normal;
+  }
+  .cardDesc .line::after,
+  .everyPreEngineeredWarehouse .line::after,
+  .factoryControlledFabrication .line::after,
+  .asATrusted .line::after,
+  .preEngineeredWarehouseBuild .line::after {
+    content: " ";
+  }
+  .bottomBanner {
+    border-radius: 20px;
+    padding: 16px;
+    margin-top: 28px;
+  }
+  .bottomBannerText {
+    font-size: 13px;
+    line-height: 20px;
+  }
+}
+
+@import "../shared/industryCtaMobileSection.patch.css";

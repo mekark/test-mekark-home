@@ -7,13 +7,14 @@ import {
   industryHeroMobileButtonIconClass,
   industryHeroMobileButtonTextClass,
 } from "@/components/industries/shared/industryHeroMobile";
+import macStyles from "./logisticsHeroMac.module.css";
 import { fadeSlideUp } from "./motion";
 
 export function HeroCTAButton() {
   return (
     <motion.a
       href="/#enquiry"
-      className={`inline-flex items-center justify-center gap-[7.1px] rounded-[5.65px] bg-[#c4161c] px-5 py-2.5 shadow-[0px_5.652px_22.61px_rgba(196,22,28,0.3)] sm:w-fit sm:rounded-[8px] sm:px-8 sm:py-5 sm:shadow-[0_10.667px_21.333px_rgba(196,22,28,0.3)] ${industryHeroMobileButtonClass}`}
+      className={`inline-flex items-center justify-center gap-[7.1px] rounded-[5.65px] bg-[#c4161c] px-5 py-2.5 shadow-[0px_5.652px_22.61px_rgba(196,22,28,0.3)] sm:w-fit sm:rounded-[8px] sm:px-8 sm:py-5 sm:shadow-[0_10.667px_21.333px_rgba(196,22,28,0.3)] ${industryHeroMobileButtonClass} ${macStyles.heroBtn}`}
       custom={0.6}
       variants={fadeSlideUp}
       initial="hidden"
@@ -21,11 +22,11 @@ export function HeroCTAButton() {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
-      <span className={industryHeroMobileButtonTextClass}>
+      <span className={`${industryHeroMobileButtonTextClass} ${macStyles.heroBtnText}`}>
         Get a Free Consultation
       </span>
       <motion.span
-        className={`relative shrink-0 overflow-hidden sm:size-[21px] ${industryHeroMobileButtonIconClass}`}
+        className={`relative shrink-0 overflow-hidden sm:size-[21px] ${industryHeroMobileButtonIconClass} ${macStyles.heroBtnIcon}`}
         whileHover={{ x: 5 }}
         transition={{ type: "spring", stiffness: 400, damping: 20 }}
       >

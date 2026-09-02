@@ -1,0 +1,480 @@
+/* Skeleton from food-and-beverage — Mac fluid vw (px/19.2). No transform scale. */
+.completeEotCraneSolutionsWrapper {
+	width: 100%;
+	position: relative;
+	background-color: #f6f6f6;
+	padding: 4.16667vw;
+	box-sizing: border-box;
+	text-align: left;
+	font-size: 1.45833vw;
+	color: #000;
+	font-family: var(--font-manrope), sans-serif;
+}
+
+.completeEotCraneSolutions {
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: stretch;
+	gap: 0px;
+	position: relative;
+}
+
+.rightScrollable {
+	flex-shrink: 0;
+	width: 53.3333vw;
+	max-width: 100%;
+}
+
+.frameParentScale {
+	position: relative;
+	width: 100%;
+	height: 77.6354vw;
+}
+
+.frameParent {
+	position: relative;
+	width: 100%;
+	height: 77.6354vw;
+}
+
+.timelineLine {
+	position: absolute;
+	top: 4.0625vw;
+	left: 0px;
+	width: 20.6979vw;
+	height: 68.7969vw;
+}
+
+.frameContainer {
+	position: absolute;
+	top: 0px;
+	left: 3.80208vw;
+	border-radius: 0.99583vw;
+	background-color: #fff;
+	border: 0.0625vw solid #c0c0c0;
+	box-sizing: border-box;
+	width: 40.2083vw;
+	height: 10.0833vw;
+	overflow: hidden;
+}
+
+.frameContainer .frameDiv {
+	width: 19.9479vw;
+}
+
+.frameContainer .economicalOverheadCrane {
+	width: 19.9479vw;
+}
+
+.frameDiv {
+	position: absolute;
+	top: 50%;
+	left: 18.4375vw;
+	width: 18.30208vw;
+	transform: translateY(-50%);
+	display: flex;
+	flex-direction: column;
+	gap: 0.41667vw;
+}
+
+.overheadSingleGirder {
+	position: relative;
+	font-size: 0.9375vw;
+	line-height: 1.55625vw;
+	color: #000;
+	white-space: normal;
+}
+
+.economicalOverheadCrane {
+	position: relative;
+	font-size: 0.83333vw;
+	line-height: 1.19792vw;
+	color: #5a5a5a;
+	width: 18.30208vw;
+}
+
+.rectangleIcon {
+	position: absolute;
+	top: -0.0625vw;
+	left: -0.0625vw;
+	width: 16.8073vw;
+	height: 10.0833vw;
+	object-fit: cover;
+	border-radius: 0.99583vw 0 0 0.99583vw;
+}
+
+.rectangleParent {
+	position: absolute;
+	top: 27.0151vw;
+	left: 3.80208vw;
+	border-radius: 0.99583vw;
+	background-color: #fff;
+	border: 0.0625vw solid #c0c0c0;
+	box-sizing: border-box;
+	width: 38.53125vw;
+	height: 10.0833vw;
+	overflow: hidden;
+}
+
+.rectangleGroup {
+	position: absolute;
+	top: 54.0318vw;
+	left: 3.80208vw;
+	border-radius: 0.99583vw;
+	background-color: #fff;
+	border: 0.0625vw solid #c0c0c0;
+	box-sizing: border-box;
+	width: 38.65625vw;
+	height: 10.0833vw;
+	overflow: hidden;
+}
+
+.rectangleContainer {
+	position: absolute;
+	top: 13.5078vw;
+	left: 14.80208vw;
+	border-radius: 0.99583vw;
+	background-color: #fff;
+	border: 0.0625vw solid #c0c0c0;
+	box-sizing: border-box;
+	width: 38.53125vw;
+	height: 10.0833vw;
+	overflow: hidden;
+}
+
+.rectangleParent2 {
+	position: absolute;
+	top: 40.5229vw;
+	left: 14.80208vw;
+	border-radius: 0.99583vw;
+	background-color: #fff;
+	border: 0.0625vw solid #c0c0c0;
+	box-sizing: border-box;
+	width: 38.53125vw;
+	height: 10.0833vw;
+	overflow: hidden;
+}
+
+.rectangleParent3 {
+	position: absolute;
+	top: 67.5521vw;
+	left: 14.80208vw;
+	border-radius: 0.99583vw;
+	background-color: #fff;
+	border: 0.0625vw solid #c0c0c0;
+	box-sizing: border-box;
+	width: 38.53125vw;
+	height: 10.0833vw;
+	overflow: hidden;
+}
+
+.leftStickyOuter {
+	/* Logistics xl proportions — 1920 canvas */
+	width: 40.2604vw;
+	flex-shrink: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	padding-top: 9.89583vw;
+	box-sizing: border-box;
+}
+
+.leftSticky {
+	position: sticky;
+	top: 5.20833vw;
+	display: flex;
+	flex-direction: column;
+	gap: 1.25vw;
+	max-width: 100%;
+}
+
+.ourSolutionsHeading {
+	position: relative;
+	margin: 0;
+	letter-spacing: -0.05208vw;
+	line-height: 3.125vw;
+	font-size: 2.39583vw;
+	font-weight: 700;
+	display: block;
+	width: 100%;
+	color: #000;
+}
+
+.completeEotCrane {
+	position: relative;
+	margin: 0;
+	letter-spacing: -0.02083vw;
+	line-height: 1.35;
+	font-size: 1.35417vw;
+	font-weight: 600;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	color: #000;
+}
+
+.subtitleLine {
+	display: block;
+	white-space: normal;
+}
+
+.asALeading {
+	position: relative;
+	margin: 0;
+	font-size: 0.9375vw;
+	font-weight: 300;
+	line-height: 1.45833vw;
+	display: block;
+	width: 90%;
+	max-width: 100%;
+	color: #5a5a5a;
+}
+
+.descLine {
+	display: inline;
+	white-space: normal;
+}
+
+.overlayborder {
+	position: relative;
+	margin: 3.33333vw auto 0;
+	border-radius: 999px;
+	background-color: rgba(196, 22, 28, 0.06);
+	border: 0.05208vw solid rgba(196, 22, 28, 0.35);
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 72.9167vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1.14583vw 3.33333vw;
+	color: #c4161c;
+}
+
+.strongEveryContainer {
+	width: 100%;
+	position: relative;
+	line-height: 1.5;
+	display: block;
+	font-size: 0.83333vw;
+	text-align: center;
+	color: #4c4c4c;
+}
+
+.bannerLine {
+	display: block;
+	white-space: nowrap;
+}
+
+.everyEotCrane {
+	line-height: inherit;
+	color: #f0353a;
+	font-weight: 700;
+}
+
+@media (min-width: 1920px) {
+	.completeEotCraneSolutionsWrapper {
+		padding-bottom: 1.04167vw;
+	}
+
+	.overlayborder {
+		margin-bottom: 0;
+	}
+}
+
+@media (max-width: 1200px) {
+	.completeEotCraneSolutionsWrapper {
+		padding: 40px 24px;
+		font-size: 16px;
+	}
+	.completeEotCraneSolutions {
+		flex-direction: column;
+		gap: 40px;
+	}
+	.leftStickyOuter {
+		width: 100%;
+		padding-top: 40px;
+	}
+	.leftSticky {
+		position: static;
+		max-width: none;
+	}
+	.rightScrollable {
+		width: 100%;
+	}
+	.frameParentScale {
+		width: 100%;
+		height: auto;
+	}
+	.frameParent {
+		width: 100%;
+		height: auto;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 24px;
+	}
+	.timelineLine {
+		display: none;
+	}
+	.frameContainer,
+	.rectangleParent,
+	.rectangleGroup,
+	.rectangleContainer,
+	.rectangleParent2,
+	.rectangleParent3 {
+		position: relative;
+		top: auto;
+		left: auto;
+		width: 100%;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		border-radius: 19.12px;
+		border-width: 1.2px;
+	}
+	.rectangleIcon {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: auto;
+		order: -1;
+		border-radius: 19.12px 19.12px 0 0;
+	}
+	.frameDiv {
+		position: relative;
+		top: auto;
+		left: auto;
+		width: 100%;
+		max-width: 100%;
+		transform: none;
+		padding: 24px;
+		box-sizing: border-box;
+	}
+	.frameContainer .frameDiv,
+	.rectangleParent .frameDiv,
+	.rectangleGroup .frameDiv,
+	.rectangleContainer .frameDiv,
+	.rectangleParent2 .frameDiv,
+	.rectangleParent3 .frameDiv {
+		width: 100%;
+		max-width: 100%;
+	}
+	.frameContainer .economicalOverheadCrane,
+	.rectangleParent .economicalOverheadCrane,
+	.rectangleGroup .economicalOverheadCrane,
+	.rectangleContainer .economicalOverheadCrane,
+	.rectangleParent2 .economicalOverheadCrane,
+	.rectangleParent3 .economicalOverheadCrane {
+		width: 100%;
+		max-width: 100%;
+	}
+	.overheadSingleGirder {
+		position: relative;
+		width: 100%;
+		white-space: normal;
+		top: auto;
+		left: auto;
+		font-size: 18px;
+		line-height: 29.88px;
+	}
+	.economicalOverheadCrane {
+		position: relative;
+		width: 100%;
+		white-space: normal;
+		top: auto;
+		left: auto;
+		font-size: 16px;
+		line-height: 23px;
+	}
+	.ourSolutionsHeading {
+		font-size: 41px;
+		line-height: 1.2;
+		letter-spacing: -0.5px;
+	}
+	.completeEotCrane {
+		font-size: 26px;
+		letter-spacing: -0.4px;
+	}
+	.asALeading {
+		font-size: 16px;
+		line-height: 22px;
+		width: 100%;
+	}
+	.descLine,
+	.subtitleLine {
+		white-space: normal;
+	}
+	.overlayborder {
+		border-radius: 24px;
+		padding: 20px 28px;
+		max-width: 100%;
+	}
+	.strongEveryContainer {
+		display: block;
+		font-size: 14px;
+		line-height: 22px;
+	}
+	.bannerLine {
+		display: inline;
+		white-space: normal;
+	}
+}
+
+@media (max-width: 768px) {
+	.completeEotCraneSolutionsWrapper {
+		padding: 32px 16px;
+	}
+	.ourSolutionsHeading {
+		font-size: 30px;
+		line-height: 1.2;
+	}
+	.completeEotCrane {
+		font-size: 20px;
+		line-height: 1.3;
+	}
+	.subtitleLine,
+	.descLine {
+		white-space: normal;
+	}
+	.asALeading {
+		font-size: 13px;
+		line-height: 20px;
+		max-width: none;
+	}
+	.leftSticky {
+		gap: 12px;
+		max-width: none;
+	}
+	.frameParent {
+		grid-template-columns: 1fr;
+	}
+	.frameDiv {
+		padding: 20px 16px;
+	}
+	.frameContainer .frameDiv,
+	.frameContainer .economicalOverheadCrane {
+		width: 100%;
+		max-width: 100%;
+	}
+	.overheadSingleGirder {
+		font-size: 16px;
+		line-height: 24px;
+	}
+	.economicalOverheadCrane {
+		font-size: 14px;
+		line-height: 20px;
+	}
+	.rectangleIcon {
+		height: 200px;
+	}
+	.overlayborder {
+		padding: 16px;
+		border-radius: 20px;
+	}
+	.strongEveryContainer {
+		font-size: 13px;
+		line-height: 20px;
+	}
+}

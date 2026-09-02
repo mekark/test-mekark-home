@@ -1,0 +1,279 @@
+/* Mac-style fluid vw. Clamp floors keep type readable at 1280–1440;
+   clamp ceilings match 1920/xl sizes (unchanged). */
+.faq {
+	width: 100%;
+	position: relative;
+	background-color: #fff;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 4.85938vw 5.55729vw;
+	box-sizing: border-box;
+	text-align: left;
+	font-size: clamp(36px, 2.7776vw, 53.33px);
+	color: #111;
+	font-family: var(--font-manrope), Manrope, sans-serif;
+}
+
+.frameParent {
+	align-self: stretch;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 3.47396vw;
+}
+
+.frequentlyAskedQuestionsWrapper {
+	width: 100%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.frequentlyAskedQuestions {
+	position: relative;
+	margin: 0;
+	letter-spacing: -0.06927vw;
+	line-height: 1.2;
+	text-align: center;
+	font-weight: 700;
+}
+
+.divspaceY3Parent {
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 2.08333vw;
+	font-size: clamp(13px, 0.83333vw, 16px);
+	color: #e60f1a;
+	font-family: var(--font-montserrat), Montserrat, sans-serif;
+}
+
+.divrevealParent {
+	flex: 1 1 0;
+	min-width: 0;
+	max-width: 41.1823vw;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	gap: 0.69271vw;
+}
+
+.divreveal {
+	align-self: stretch;
+	border-radius: 1.08229vw;
+	background-color: #fff;
+	border: 0.05208vw solid #e3e4e7;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 0 1.297vw;
+	min-height: 0;
+	box-sizing: border-box;
+}
+
+.divrevealOpen {
+	border-color: rgba(230, 15, 26, 0.35);
+}
+
+.buttonradix {
+	align-self: stretch;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 1.04167vw;
+	padding: 1.08333vw 0;
+	min-height: 5.30208vw;
+	box-sizing: border-box;
+	width: 100%;
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+	text-align: left;
+	color: inherit;
+	font: inherit;
+}
+
+.buttonradixOpen {
+	min-height: 0;
+	padding-bottom: 0.625vw;
+}
+
+.spanflex {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.9375vw;
+	min-width: 0;
+	flex: 1;
+	padding-top: 0.15vw;
+}
+
+.b {
+	position: relative;
+	letter-spacing: -0.02448vw;
+	line-height: clamp(16px, 0.86563vw, 16.624px);
+	font-weight: 700;
+	flex-shrink: 0;
+	width: clamp(24px, 1.5625vw, 30px);
+	padding-top: 0.15vw;
+}
+
+.question {
+	position: relative;
+	flex: 1;
+	min-width: 0;
+	font-size: clamp(15px, 0.9724vw, 18.667px);
+	letter-spacing: -0.02448vw;
+	line-height: 1.4;
+	font-weight: 600;
+	font-family: var(--font-manrope), Manrope, sans-serif;
+	color: #101116;
+	display: block;
+}
+
+.component1 {
+	height: clamp(14px, 0.86458vw, 16.624px);
+	width: clamp(14px, 0.86458vw, 16.624px);
+	position: relative;
+	overflow: hidden;
+	flex-shrink: 0;
+	margin-top: 0.35vw;
+	transition: transform 0.25s ease;
+}
+
+.component1Open {
+	transform: rotate(180deg);
+}
+
+.vectorIcon {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.answerWrap {
+	display: grid;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows 0.28s ease;
+	width: 100%;
+}
+
+.answerWrapOpen {
+	grid-template-rows: 1fr;
+}
+
+.answerInner {
+	overflow: hidden;
+	min-height: 0;
+}
+
+.answer {
+	margin: 0 0 1.14583vw 2.5vw;
+	font-size: clamp(13px, 0.83333vw, 16px);
+	line-height: 1.5;
+	font-weight: 400;
+	font-family: var(--font-manrope), Manrope, sans-serif;
+	color: #555;
+}
+
+@media (max-width: 1200px) {
+	.faq {
+		padding: 48px 24px;
+		font-size: 32px;
+	}
+
+	.frameParent {
+		gap: 32px;
+	}
+
+	.frequentlyAskedQuestions {
+		letter-spacing: -1px;
+		line-height: 40px;
+	}
+
+	.divspaceY3Parent {
+		flex-direction: column;
+		gap: 12px;
+		font-size: 14px;
+	}
+
+	.divrevealParent {
+		max-width: none;
+		width: 100%;
+		flex: 1 1 auto;
+		gap: 12px;
+	}
+
+	.divreveal {
+		border-radius: 16px;
+		padding: 0 16px;
+		border-width: 1px;
+	}
+
+	.buttonradix {
+		padding: 16px 0;
+		min-height: 0;
+		align-items: flex-start;
+	}
+
+	.buttonradixOpen {
+		padding-bottom: 8px;
+	}
+
+	.spanflex {
+		padding-top: 0;
+		gap: 12px;
+	}
+
+	.b {
+		width: 28px;
+		letter-spacing: -0.4px;
+		line-height: 16px;
+		padding-top: 4px;
+	}
+
+	.question {
+		font-size: 16px;
+		line-height: 24px;
+		letter-spacing: -0.3px;
+	}
+
+	.component1 {
+		width: 16px;
+		height: 16px;
+		margin-top: 4px;
+	}
+
+	.answer {
+		margin: 0 0 16px 36px;
+		font-size: 14px;
+		line-height: 22px;
+	}
+}
+
+@media (max-width: 768px) {
+	.faq {
+		padding: 32px 16px;
+		font-size: 26px;
+	}
+
+	.frequentlyAskedQuestions {
+		line-height: 34px;
+	}
+
+	.question {
+		font-size: 14px;
+		line-height: 22px;
+	}
+
+	.answer {
+		margin-left: 32px;
+		font-size: 13px;
+		line-height: 20px;
+	}
+}

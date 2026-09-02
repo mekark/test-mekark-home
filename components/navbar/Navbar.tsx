@@ -31,6 +31,37 @@ function isExternalHref(href: string): boolean {
   return href.startsWith("http://") || href.startsWith("https://");
 }
 
+function normalizePath(path: string): string {
+  const withoutHash = path.split("#")[0] ?? path;
+  const withoutQuery = withoutHash.split("?")[0] ?? withoutHash;
+  if (withoutQuery.length > 1 && withoutQuery.endsWith("/")) {
+    return withoutQuery.slice(0, -1);
+  }
+  return withoutQuery || "/";
+}
+
+/** Exact match, or nested under href (e.g. /services/tensile under /services/tensile). */
+function isPathActive(pathname: string, href: string): boolean {
+  if (isExternalHref(href)) return false;
+  const current = normalizePath(pathname);
+  const target = normalizePath(href);
+  if (target === "/") return current === "/";
+  return current === target || current.startsWith(`${target}/`);
+}
+
+function isNavItemActive(pathname: string, item: NavItem): boolean {
+  if (item.href && isPathActive(pathname, item.href)) return true;
+  if (item.children?.some((child) => isPathActive(pathname, child.href))) {
+    return true;
+  }
+  return Boolean(
+    item.sections?.some((section) => {
+      if (section.href && isPathActive(pathname, section.href)) return true;
+      return section.children.some((child) => isPathActive(pathname, child.href));
+    }),
+  );
+}
+
 const EXTERNAL_LINK_PROPS = {
   target: "_blank",
   rel: "noopener noreferrer",
@@ -61,10 +92,12 @@ function DropdownLinkContent({
   label,
   description,
   compact,
+  active,
 }: {
   label: string;
   description?: string;
   compact?: boolean;
+  active?: boolean;
 }) {
   return (
     <>
@@ -72,23 +105,27 @@ function DropdownLinkContent({
         aria-hidden
         className="absolute inset-y-2 left-0 w-0.5 origin-center scale-y-0 bg-mekark-red transition-transform duration-200 group-hover/link:scale-y-100"
       />
-      <div className="flex items-start justify-between gap-2">
+      <div className="relative flex items-start pr-5">
         <span
-          className={`font-[family-name:var(--font-manrope)] font-semibold leading-snug tracking-[-0.01em] text-white/88 transition-colors duration-200 group-hover/link:text-mekark-white ${
-            compact ? "text-[13px]" : "text-[14px]"
-          }`}
+          className={`font-[family-name:var(--font-manrope)] font-semibold leading-snug tracking-[-0.01em] transition-colors duration-200 group-hover/link:text-mekark-white ${
+            compact ? "text-[13px] whitespace-nowrap" : "text-[14px]"
+          } ${active ? "text-mekark-red" : "text-white/88"}`}
         >
           {label}
         </span>
         <span
           aria-hidden
-          className="mt-0.5 shrink-0 -translate-x-1 opacity-0 transition-all duration-200 group-hover/link:translate-x-0 group-hover/link:opacity-100"
+          className="pointer-events-none absolute top-0.5 right-0 shrink-0 -translate-x-1 opacity-0 transition-all duration-200 group-hover/link:translate-x-0 group-hover/link:opacity-100"
         >
           <DropdownArrowIcon />
         </span>
       </div>
       {description ? (
-        <span className="mt-1 block font-[family-name:var(--font-manrope)] text-[11px] leading-relaxed text-white/38 transition-colors duration-200 group-hover/link:text-white/55">
+        <span
+          className={`mt-1 block font-[family-name:var(--font-manrope)] text-[11px] leading-relaxed transition-colors duration-200 group-hover/link:text-white/55 ${
+            active ? "text-white/55" : "text-white/38"
+          }`}
+        >
           {description}
         </span>
       ) : null}
@@ -96,12 +133,18 @@ function DropdownLinkContent({
   );
 }
 
-function dropdownLinkClassName(description?: string, compact?: boolean) {
+function dropdownLinkClassName(
+  description?: string,
+  compact?: boolean,
+  active?: boolean,
+) {
   return `group/link relative block overflow-hidden rounded-sm border border-transparent transition-all duration-200 hover:border-white/10 hover:bg-white/[0.045] ${
+    active ? "bg-white/[0.04]" : ""
+  } ${
     description
       ? "px-3.5 py-3 pl-[18px]"
       : compact
-        ? "px-3 py-2.5 pl-[18px]"
+        ? "px-3.5 py-2.5 pl-[18px]"
         : "px-3.5 py-3 pl-[18px]"
   }`;
 }
@@ -185,10 +228,12 @@ function NavLinkMotion({
   href,
   children,
   className,
+  active,
 }: {
   href: string;
   children: React.ReactNode;
   className?: string;
+  active?: boolean;
 }) {
   const external = isExternalHref(href);
 
@@ -204,7 +249,11 @@ function NavLinkMotion({
           {children}
         </a>
       ) : (
-        <Link href={href} className={className}>
+        <Link
+          href={href}
+          className={className}
+          aria-current={active ? "page" : undefined}
+        >
           {children}
         </Link>
       )}
@@ -231,8 +280,10 @@ function DropdownLink({
   description?: string;
   compact?: boolean;
 }) {
+  const pathname = usePathname();
+  const active = isPathActive(pathname, href);
   const external = isExternalHref(href);
-  const className = dropdownLinkClassName(description, compact);
+  const className = dropdownLinkClassName(description, compact, active);
 
   return (
     <motion.li variants={navbarDropdownItemReveal}>
@@ -242,14 +293,20 @@ function DropdownLink({
             label={label}
             description={description}
             compact={compact}
+            active={active}
           />
         </a>
       ) : (
-        <Link href={href} className={className}>
+        <Link
+          href={href}
+          className={className}
+          aria-current={active ? "page" : undefined}
+        >
           <DropdownLinkContent
             label={label}
             description={description}
             compact={compact}
+            active={active}
           />
         </Link>
       )}
@@ -258,6 +315,8 @@ function DropdownLink({
 }
 
 function DesktopDropdown({ item }: { item: NavItem }) {
+  const pathname = usePathname();
+  const sectionActive = isNavItemActive(pathname, item);
   const [open, setOpen] = useState(false);
   const children = item.children ?? [];
   const sections = item.sections ?? [];
@@ -270,13 +329,14 @@ function DesktopDropdown({ item }: { item: NavItem }) {
       section.children.some((child) => child.description),
     );
   const columns = hasRichContent ? 2 : dropdownColumns(totalLinks);
+  const isCompactGrid = !hasRichContent && columns > 1;
 
   const panelWidth = hasRichContent
     ? "w-[min(92vw,560px)]"
     : columns === 3
       ? "w-[min(92vw,640px)]"
       : columns === 2
-        ? "w-[min(92vw,420px)]"
+        ? "w-[min(92vw,520px)]"
         : "w-[min(92vw,260px)]";
 
   return (
@@ -295,10 +355,13 @@ function DesktopDropdown({ item }: { item: NavItem }) {
       <button
         type="button"
         className={`relative flex items-center gap-1.5 px-2.5 py-2 font-[family-name:var(--font-manrope)] text-[12.5px] font-medium tracking-[0.04em] transition-colors duration-200 [text-shadow:0_1px_10px_rgba(0,0,0,0.55)] lg:px-3 ${
-          open ? "text-mekark-red" : "text-white/92 hover:text-mekark-red"
+          open || sectionActive
+            ? "text-mekark-red"
+            : "text-white/92 hover:text-mekark-red"
         }`}
         aria-haspopup="true"
         aria-expanded={open}
+        aria-current={sectionActive ? "true" : undefined}
       >
         {item.label}
         <ChevronDownIcon open={open} />
@@ -325,7 +388,9 @@ function DesktopDropdown({ item }: { item: NavItem }) {
             />
             <motion.div
               className={`relative overflow-hidden rounded-sm border border-white/12 bg-[#0c0c0c]/92 shadow-[0_28px_64px_rgba(0,0,0,0.55)] backdrop-blur-2xl ${
-                hasRichContent ? "p-4 sm:p-5" : "p-3 pl-4 sm:p-3.5 sm:pl-5"
+                hasRichContent || isCompactGrid
+                  ? "p-4 sm:p-5"
+                  : "p-3 pl-4 sm:p-3.5 sm:pl-5"
               } ${panelWidth}`}
               variants={navbarDropdownItemsStagger}
               initial="hidden"
@@ -342,8 +407,8 @@ function DesktopDropdown({ item }: { item: NavItem }) {
                 className={
                   hasRichContent
                     ? "grid grid-cols-1 gap-1.5 sm:grid-cols-2"
-                    : columns > 1
-                      ? `grid gap-1 ${columns === 3 ? "grid-cols-3" : "grid-cols-2"}`
+                    : isCompactGrid
+                      ? `grid gap-x-5 gap-y-1.5 ${columns === 3 ? "grid-cols-3" : "grid-cols-2"}`
                       : "flex flex-col gap-1"
                 }
               >
@@ -418,8 +483,10 @@ function MobileDropdownLink({
   description?: string;
   onNavigate: () => void;
 }) {
+  const pathname = usePathname();
+  const active = isPathActive(pathname, href);
   const external = isExternalHref(href);
-  const className = dropdownLinkClassName(description);
+  const className = dropdownLinkClassName(description, false, active);
 
   return (
     <motion.li variants={navbarDropdownItemReveal}>
@@ -430,11 +497,24 @@ function MobileDropdownLink({
           className={className}
           {...EXTERNAL_LINK_PROPS}
         >
-          <DropdownLinkContent label={label} description={description} />
+          <DropdownLinkContent
+            label={label}
+            description={description}
+            active={active}
+          />
         </a>
       ) : (
-        <Link href={href} onClick={onNavigate} className={className}>
-          <DropdownLinkContent label={label} description={description} />
+        <Link
+          href={href}
+          onClick={onNavigate}
+          className={className}
+          aria-current={active ? "page" : undefined}
+        >
+          <DropdownLinkContent
+            label={label}
+            description={description}
+            active={active}
+          />
         </Link>
       )}
     </motion.li>
@@ -537,13 +617,17 @@ function MobileNavItem({
   onToggle: (label: string) => void;
   onNavigate: () => void;
 }) {
+  const pathname = usePathname();
+  const sectionActive = isNavItemActive(pathname, item);
   const isOpen = openLabel === item.label;
   const hasChildren = Boolean(item.children?.length || item.sections?.length);
 
   if (!hasChildren && item.href) {
     const external = isExternalHref(item.href);
-    const className =
-      "block border-b border-white/8 px-5 py-4 text-[15px] font-medium text-mekark-white";
+    const active = isPathActive(pathname, item.href);
+    const className = `block border-b border-white/8 px-5 py-4 text-[15px] font-medium transition-colors ${
+      active ? "text-mekark-red" : "text-mekark-white"
+    }`;
 
     return (
       <motion.div variants={navbarMobileItemReveal}>
@@ -557,7 +641,12 @@ function MobileNavItem({
             {item.label}
           </a>
         ) : (
-          <Link href={item.href} onClick={onNavigate} className={className}>
+          <Link
+            href={item.href}
+            onClick={onNavigate}
+            className={className}
+            aria-current={active ? "page" : undefined}
+          >
             {item.label}
           </Link>
         )}
@@ -570,8 +659,11 @@ function MobileNavItem({
       <motion.button
         type="button"
         onClick={() => onToggle(item.label)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left text-[15px] font-medium text-mekark-white"
+        className={`flex w-full items-center justify-between px-5 py-4 text-left text-[15px] font-medium transition-colors ${
+          sectionActive ? "text-mekark-red" : "text-mekark-white"
+        }`}
         aria-expanded={isOpen}
+        aria-current={sectionActive ? "true" : undefined}
         whileTap={{ scale: 0.985 }}
       >
         {item.label}
@@ -816,7 +908,12 @@ export function Navbar() {
                 <motion.div key={item.label} variants={navbarItemReveal}>
                   <NavLinkMotion
                     href={item.href ?? "/"}
-                    className="block px-2.5 py-2 font-[family-name:var(--font-manrope)] text-[12.5px] font-medium tracking-[0.04em] text-white/92 transition-colors [text-shadow:0_1px_10px_rgba(0,0,0,0.55)] hover:text-mekark-red lg:px-3"
+                    active={isPathActive(pathname, item.href ?? "/")}
+                    className={`block px-2.5 py-2 font-[family-name:var(--font-manrope)] text-[12.5px] font-medium tracking-[0.04em] transition-colors [text-shadow:0_1px_10px_rgba(0,0,0,0.55)] hover:text-mekark-red lg:px-3 ${
+                      isPathActive(pathname, item.href ?? "/")
+                        ? "text-mekark-red"
+                        : "text-white/92"
+                    }`}
                   >
                     {item.label}
                   </NavLinkMotion>

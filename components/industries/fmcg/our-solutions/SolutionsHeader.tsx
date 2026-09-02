@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { fadeSlideUp } from "./motion";
+import macStyles from "./ourSolutionsMac.module.css";
 
 export function SolutionsHeader() {
   return (
@@ -17,7 +18,7 @@ export function SolutionsHeader() {
         End-to-end EPC
       </motion.p>
       <motion.h2
-        className="text-[28px] font-bold leading-tight text-black sm:text-[40px] lg:text-[46px]"
+        className={`text-[28px] font-bold leading-tight text-black sm:text-[40px] lg:text-[46px] ${macStyles.headerTitle}`}
         custom={0}
         variants={fadeSlideUp}
         initial="hidden"
@@ -27,7 +28,7 @@ export function SolutionsHeader() {
         Our Solutions
       </motion.h2>
       <motion.h3
-        className="max-w-[654px] text-lg font-medium leading-snug text-black sm:text-2xl lg:text-[28px]"
+        className={`max-w-[654px] text-lg font-medium leading-snug text-black sm:text-2xl lg:text-[28px] ${macStyles.headerSubtitle}`}
         custom={0.1}
         variants={fadeSlideUp}
         initial="hidden"
@@ -37,7 +38,7 @@ export function SolutionsHeader() {
         Complete FMCG Facility Solutions, Engineered End-to-End
       </motion.h3>
       <motion.p
-        className="max-w-[654px] text-base text-[#6e6e6e] lg:text-lg"
+        className={`max-w-[654px] text-base text-[#6e6e6e] lg:text-lg ${macStyles.headerBody}`}
         custom={0.2}
         variants={fadeSlideUp}
         initial="hidden"

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { faqs } from "./data";
 import { FaqItem } from "./FaqItem";
 import { fadeSlideUp } from "./motion";
+import macStyles from "./faqMac.module.css";
 
 function formatFaqNumber(index: number) {
   return String(index + 1).padStart(2, "0");
@@ -50,12 +51,12 @@ export function FaqSection() {
 
   return (
     <section
-      className="bg-white px-6 pb-16 pt-8 sm:px-10 sm:pt-10 lg:px-12 xl:px-16 2xl:px-20 lg:pb-24 lg:pt-12"
+      className={`bg-white px-6 pb-16 pt-8 sm:px-10 sm:pt-10 lg:px-12 xl:px-16 2xl:px-20 lg:pb-24 lg:pt-12 ${macStyles.section}`}
       aria-label="Frequently asked questions"
     >
       <div className="mx-auto flex w-full max-w-[1720px] flex-col gap-12 lg:gap-16">
         <motion.h2
-          className="text-center text-[32px] font-bold tracking-[-1.33px] text-[#111] sm:text-[40px] lg:text-[53px] lg:leading-[65px]"
+          className={`text-center text-[32px] font-bold tracking-[-1.33px] text-[#111] sm:text-[40px] lg:text-[53px] lg:leading-[65px] ${macStyles.title}`}
           custom={0}
           variants={fadeSlideUp}
           initial="hidden"
@@ -65,7 +66,7 @@ export function FaqSection() {
           Frequently Asked Questions
         </motion.h2>
 
-        <div className="flex flex-col gap-10 lg:flex-row lg:gap-10">
+        <div className={`flex flex-col gap-10 lg:flex-row lg:gap-10 ${macStyles.columns}`}>
           <FaqColumn
             items={leftColumn}
             startIndex={0}

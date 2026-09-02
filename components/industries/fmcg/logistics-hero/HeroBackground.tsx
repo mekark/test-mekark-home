@@ -8,6 +8,7 @@ import {
   industryHeroMobileGradientStyle,
   industryHeroMobileImageClass,
 } from "@/components/industries/shared/industryHeroMobile";
+import macStyles from "./logisticsHeroMac.module.css";
 
 export function HeroBackground() {
   return (
@@ -16,7 +17,7 @@ export function HeroBackground() {
         className={`absolute inset-0 z-0 overflow-hidden ${industryHeroMobileBgWrapperClass}`}
       >
         <motion.div
-          className="absolute inset-0 md:left-auto md:right-[-9%] md:w-[100%]"
+          className={`absolute inset-0 md:left-auto md:right-[-9%] md:w-[100%] ${macStyles.heroBgMotion}`}
           variants={backgroundZoom}
           initial="hidden"
           animate="visible"

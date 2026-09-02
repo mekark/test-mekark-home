@@ -1,0 +1,296 @@
+/* Mac-style fluid vw (px/19.2). At 1920 matches original xl fixed sizes. */
+.industriesWeServe {
+	width: 100%;
+	position: relative;
+	background-color: #fff;
+	overflow: hidden;
+	padding: 4.53125vw 4.16667vw 4.16667vw;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-shrink: 0;
+	text-align: center;
+	font-size: 0.9375vw;
+	color: #111;
+	font-family: Manrope, var(--font-manrope), sans-serif;
+}
+
+.gridBg {
+	pointer-events: none;
+	position: absolute;
+	inset: 0 auto auto 0;
+	width: 100%;
+	height: 20.3646vw;
+	overflow: hidden;
+	opacity: 0.15;
+}
+
+.gridBgImg {
+	object-fit: cover;
+	object-position: top center;
+}
+
+.industrialWarehouseConstructParent {
+	width: 89.2188vw;
+	max-width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.41667vw;
+	font-size: 2.60417vw;
+	margin-bottom: 3.59375vw;
+	position: relative;
+	z-index: 1;
+}
+
+.industrialWarehouseConstruct {
+	position: relative;
+	letter-spacing: -0.06927vw;
+	line-height: 3.4026vw;
+	font-weight: 700;
+}
+
+.ourPreEngineeredWarehouse {
+	align-self: stretch;
+	position: relative;
+	font-size: 0.9375vw;
+	color: #6e6e6e;
+}
+
+.frameParent {
+	/* xl:max-w-[1470px] */
+	width: 100%;
+	max-width: 76.5625vw;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	gap: 3.4375vw;
+	text-align: left;
+	color: #000;
+	margin-bottom: 3.75vw;
+	position: relative;
+	z-index: 1;
+}
+
+.frameGroup {
+	/* xl:grid-cols-5 xl:gap-x-[46px] */
+	align-self: stretch;
+	display: grid;
+	grid-template-columns: repeat(5, minmax(0, 1fr));
+	align-items: stretch;
+	column-gap: 2.39583vw;
+	row-gap: 3.4375vw;
+}
+
+.rectangleParent,
+.rectangleContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 1.71875vw;
+	height: 100%;
+	box-sizing: border-box;
+	min-width: 0;
+}
+
+.frameChildWrap {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 1;
+	overflow: hidden;
+	border-radius: 1.11111vw;
+	flex-shrink: 0;
+}
+
+.frameChild {
+	object-fit: cover;
+}
+
+.frameChildSynthetic {
+	position: absolute;
+	width: 100%;
+	height: 177.78%;
+	left: -0.09%;
+	top: -0.08%;
+	max-width: none;
+	object-fit: cover;
+}
+
+.frameChildKnitting {
+	position: absolute;
+	width: 153.87%;
+	height: 100%;
+	left: -27.2%;
+	top: 0.32%;
+	max-width: none;
+	object-fit: cover;
+}
+
+.fmcgRetailParent {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.57292vw;
+}
+
+.fmcgRetail {
+	position: relative;
+	line-height: 1.11111vw;
+	font-weight: 700;
+	font-family: Montserrat, var(--font-montserrat), sans-serif;
+	font-size: 0.9724vw;
+	color: #3c3938;
+}
+
+.distributionWarehouseBuildin {
+	width: 100%;
+	position: relative;
+	font-size: 0.83333vw;
+	line-height: 1.11111vw;
+	color: #555;
+	display: flex;
+	align-items: center;
+	font-family: Montserrat, var(--font-montserrat), sans-serif;
+}
+
+.overlayborder {
+	border-radius: 2.08333vw;
+	background-color: rgba(228, 0, 21, 0.05);
+	border: 0.05208vw solid rgba(228, 0, 21, 0.5);
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 91.6667vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1.27604vw 1.66667vw;
+	color: #6e6e6e;
+	font-size: 0.9375vw;
+	position: relative;
+	z-index: 1;
+}
+
+.strongEveryContainer {
+	width: 100%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	text-align: center;
+	line-height: 1.4;
+}
+
+.strongEveryContainer2 {
+	width: 100%;
+}
+
+.southIndia {
+	color: #e50818;
+	font-weight: 500;
+}
+
+@media (max-width: 1200px) {
+	.industriesWeServe {
+		padding: 40px 24px 48px;
+		font-size: 16px;
+	}
+
+	.gridBg {
+		height: 280px;
+	}
+
+	.industrialWarehouseConstructParent {
+		width: 100%;
+		font-size: 32px;
+		margin-bottom: 32px;
+	}
+
+	.industrialWarehouseConstruct {
+		letter-spacing: -1px;
+		line-height: 40px;
+	}
+
+	.ourPreEngineeredWarehouse {
+		font-size: 16px;
+	}
+
+	.frameParent {
+		max-width: 100%;
+		gap: 24px;
+		margin-bottom: 24px;
+	}
+
+	.frameGroup {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		column-gap: 24px;
+		row-gap: 24px;
+	}
+
+	.rectangleParent,
+	.rectangleContainer {
+		gap: 16px;
+	}
+
+	.frameChildWrap {
+		border-radius: 16px;
+	}
+
+	.fmcgRetail {
+		line-height: 24px;
+		font-size: 16px;
+	}
+
+	.distributionWarehouseBuildin {
+		font-size: 14px;
+		line-height: 20px;
+	}
+
+	.overlayborder {
+		border-radius: 24px;
+		padding: 20px 24px;
+		border-width: 0.5px;
+		max-width: 100%;
+		font-size: 14px;
+	}
+
+	.strongEveryContainer {
+		font-size: 14px;
+		line-height: 22px;
+	}
+}
+
+@media (max-width: 768px) {
+	.industriesWeServe {
+		padding: 32px 16px 40px;
+	}
+
+	.industrialWarehouseConstructParent {
+		font-size: 26px;
+		margin-bottom: 24px;
+	}
+
+	.industrialWarehouseConstruct {
+		line-height: 34px;
+	}
+
+	.ourPreEngineeredWarehouse {
+		font-size: 14px;
+	}
+
+	.frameGroup {
+		grid-template-columns: 1fr;
+	}
+
+	.overlayborder {
+		padding: 16px;
+		border-radius: 16px;
+		font-size: 13px;
+	}
+
+	.strongEveryContainer {
+		font-size: 13px;
+		line-height: 20px;
+	}
+}

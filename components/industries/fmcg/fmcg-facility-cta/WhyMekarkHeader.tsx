@@ -2,10 +2,11 @@
 
 import { motion } from "framer-motion";
 import { fadeSlideUp } from "./motion";
+import whyMac from "./fmcgCtaWhyMac.module.css";
 
 export function WhyMekarkHeader() {
   return (
-    <div className="mx-auto flex w-full max-w-[1520px] flex-col items-center gap-4 text-center">
+    <div className={`mx-auto flex w-full max-w-[1520px] flex-col items-center gap-4 text-center ${whyMac.whyHeader}`}>
       <motion.h2
         className="text-[32px] font-bold tracking-[-1.33px] text-[#111] sm:text-[40px] lg:text-[50px] lg:leading-[65px] xl:whitespace-nowrap"
         custom={0}

@@ -52,7 +52,11 @@ export default function WhyMekarkSection() {
       <div className={styles.section}>
         <div className={styles.planningAWarehouseOrLogistParent}>
           <div className={styles.planningAWarehouse}>
-            Planning an Automation Manufacturing Facility in South India?
+            <span>
+              Planning an Automation
+              <br />
+              Manufacturing Facility in South India?
+            </span>
           </div>
           <div className={styles.mekarksProjectCalendar}>
             Every week your production line isn&apos;t running is lost throughput
@@ -69,10 +73,9 @@ export default function WhyMekarkSection() {
             <Image
               className={styles.vectorIcon}
               src="/images/industries/automation/why-mekark/arrow-right-dark.svg"
-              width={27}
-              height={27}
-              sizes="100vw"
               alt=""
+              fill
+              sizes="28px"
             />
           </div>
         </a>
@@ -144,9 +147,8 @@ export default function WhyMekarkSection() {
         </div>
 
         <div className={styles.frameParent}>
-          <div className={styles.imageWrapper}>
-            <div className={styles.frameChild} aria-hidden />
-          </div>
+          <div className={styles.imageWrapper} />
+          <div className={styles.frameChild} aria-hidden />
         </div>
       </div>
 

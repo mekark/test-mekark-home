@@ -25,7 +25,7 @@
 
 .planningAWarehouseOrLogistParent {
   position: absolute;
-  top: 1.09375vw;
+  top: 2.4vw;
   left: 23.28125vw;
   display: flex;
   flex-direction: column;
@@ -35,7 +35,7 @@
 }
 
 .planningAWarehouse {
-  width: 40.78125vw;
+  width: 60vw;
   position: relative;
   line-height: 2.63125vw;
   font-weight: 800;
@@ -66,22 +66,22 @@
 
 .cta2 {
   position: absolute;
-  top: calc(50% - 2.05729vw);
-  left: 67.5vw;
+  top: calc(50% - 1.55vw);
+  left: 70.5vw;
   right: auto;
   border-radius: 999px;
   background-color: #fff;
   width: fit-content;
-  height: 4.11458vw;
+  height: 3.1vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.06771vw 1.78125vw;
+  padding: 0.75vw 1.3vw;
   box-sizing: border-box;
-  gap: 0.71354vw;
+  gap: 0.5vw;
   flex-shrink: 0;
   white-space: nowrap;
-  font-size: 1.18385vw;
+  font-size: 0.92vw;
   color: #0e0e0e;
   text-decoration: none;
   border: 0;
@@ -101,24 +101,15 @@
 }
 
 .component4 {
-  height: 1.38542vw;
-  width: 1.38542vw;
+  height: 1.35vw;
+  width: 1.35vw;
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
 }
 
 .vectorIcon {
-  position: absolute;
-  height: 50%;
-  width: 100%;
-  top: 25.05%;
-  right: 18.43%;
-  bottom: 24.95%;
-  left: 18.78%;
-  max-width: 100%;
-  overflow: hidden;
-  max-height: 100%;
+  object-fit: contain;
 }
 
 .sectionItem {
@@ -168,7 +159,7 @@
   top: 30.20833vw;
   left: 0;
   right: 0;
-  min-height: 38vw;
+  min-height: 32vw;
 }
 
 .frameGroup {
@@ -203,17 +194,21 @@
   overflow: hidden;
   background-image: url("/images/industries/automation/why-mekark/factory-bg.png");
   background-size: cover;
-  background-position: center;
+  background-position: center 15%;
   background-repeat: no-repeat;
 }
 
 .frameChild {
   position: absolute;
-  inset: 0;
+  top: 0;
+  bottom: 0;
+  left: -24vw;
+  right: 0;
   background: linear-gradient(
     90deg,
     #f6f6f6 0%,
-    rgba(246, 246, 246, 0) 40%
+    #f6f6f6 45%,
+    rgba(246, 246, 246, 0) 75%
   );
   pointer-events: none;
 }
@@ -316,7 +311,7 @@
 
 .overlay {
   position: absolute;
-  top: 69.5vw;
+  top: 63.5vw;
   left: 12.1875vw;
   width: 75.625vw;
   border: 0.5px solid rgba(228, 0, 21, 0.5);

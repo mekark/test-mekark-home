@@ -1,0 +1,94 @@
+/* Automation Facilities — Mac fluid vw (1201–1919), mirrors FMCG's
+   manufacturingSolutionsMac.module.css. XL (>=1920) / mobile unchanged. */
+
+@media (min-width: 1201px) and (max-width: 1919px) {
+  .section {
+    padding-top: clamp(32px, 2.5vw, 48px) !important;
+    padding-bottom: clamp(48px, 3.95833vw, 76px) !important;
+    padding-left: clamp(48px, 5.20833vw, 100px) !important;
+    padding-right: clamp(48px, 5.20833vw, 100px) !important;
+  }
+
+  .gridBg {
+    height: clamp(240px, 20.3646vw, 391px) !important;
+    opacity: 0.08 !important;
+    mix-blend-mode: multiply !important;
+  }
+
+  .sectionInner {
+    max-width: none !important;
+    width: 100% !important;
+    gap: clamp(24px, 2.5vw, 48px) !important;
+    align-items: center !important;
+  }
+
+  .headerBlock {
+    width: 100% !important;
+    max-width: 89.5833vw !important;
+    gap: clamp(10px, 0.83333vw, 16px) !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .title {
+    max-width: 100% !important;
+    font-size: clamp(32px, 2.60417vw, 50px) !important;
+    line-height: 1.15 !important;
+    letter-spacing: clamp(-1px, -0.06927vw, -1.33px) !important;
+    text-align: center !important;
+  }
+
+  .titleLineFirst,
+  .titleLineSecond {
+    display: block;
+  }
+
+  .subtitle {
+    max-width: 92.7083vw !important;
+    font-size: clamp(14px, 0.9375vw, 18px) !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+  }
+
+  .grid {
+    display: grid !important;
+    width: 100% !important;
+    max-width: 89.5833vw !important;
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+    gap: clamp(16px, 1.25vw, 24px) !important;
+    column-gap: clamp(16px, 1.25vw, 24px) !important;
+    row-gap: clamp(16px, 1.25vw, 24px) !important;
+  }
+
+  .card {
+    gap: clamp(10px, 0.72917vw, 14px) !important;
+    min-width: 0 !important;
+  }
+
+  .cardImage {
+    border-radius: clamp(12px, 1.11111vw, 21px) !important;
+  }
+
+  .cardBody {
+    gap: clamp(4px, 0.3125vw, 6px) !important;
+    width: 100% !important;
+  }
+
+  .cardTitle {
+    font-size: clamp(14px, 0.9375vw, 18px) !important;
+    line-height: 1.25 !important;
+  }
+
+  .cardDesc {
+    font-size: clamp(13px, 0.83333vw, 16px) !important;
+    line-height: 1.35 !important;
+  }
+
+  .footer {
+    width: 100% !important;
+    max-width: 88.5417vw !important;
+    font-size: clamp(13px, 0.9375vw, 18px) !important;
+    line-height: 1.35 !important;
+    text-align: center !important;
+  }
+}

@@ -1,43 +1,49 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 import {
-  MOBILE_FACILITY_CAROUSEL_DESKTOP,
   MOBILE_FACILITY_CAROUSEL_HINT,
   MOBILE_FACILITY_CAROUSEL_ITEM,
   MOBILE_FACILITY_CAROUSEL_TRACK,
 } from "@/components/industries/shared/industryMobileFacilityCarousel";
+import macStyles from "./automationFacilitiesMac.module.css";
+
+const fadeSlideUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (delay = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] as const },
+  }),
+};
 
 type Facility = {
   title: string;
   description: string;
   image: string;
-  imageFit?: "cover" | "crop-left";
-  titleLayout?: "robotics" | "two-lines" | "three-lines";
-  wideDescription?: boolean;
 };
-
-const IMAGE_SIZE = 257.333;
 
 const facilities: Facility[] = [
   {
     title: "Industrial Robotics Manufacturing:",
     description:
       "Vibration-controlled, high-precision facilities engineered for robotic arm and system assembly.",
-    image: "/images/industries/automation/automation-facilities/industrial-robotics.jpg",
-    imageFit: "crop-left",
-    titleLayout: "robotics",
+    image:
+      "/images/industries/automation/automation-facilities/industrial-robotics.jpg",
   },
   {
     title: "Control Panel & PLC Assembly Units:",
     description:
       "ESD-safe, contamination-controlled plants designed for panel building, wiring, and testing.",
-    image: "/images/industries/automation/automation-facilities/control-panel-plc.png",
+    image:
+      "/images/industries/automation/automation-facilities/control-panel-plc.png",
   },
   {
     title: "CNC & Precision Machinery Manufacturing:",
     description:
       "Heavy-load flooring and crane-integrated bays for machine tool assembly and testing.",
     image: "/images/industries/automation/automation-facilities/cnc-precision.png",
-    titleLayout: "three-lines",
   },
   {
     title: "Sensor, PCB & Electronics-Adjacent Assembly:",
@@ -49,9 +55,8 @@ const facilities: Facility[] = [
     title: "Automotive & Industrial Automation Equipment Manufacturing:",
     description:
       "Facilities built for conveyor systems, packaging automation, and material handling equipment production.",
-    image: "/images/industries/automation/automation-facilities/automotive-automation.png",
-    titleLayout: "three-lines",
-    wideDescription: true,
+    image:
+      "/images/industries/automation/automation-facilities/automotive-automation.png",
   },
   {
     title: "Testing & R&D Laboratories:",
@@ -61,146 +66,193 @@ const facilities: Facility[] = [
   },
 ];
 
-function FacilityImage({
-  src,
-  imageFit = "cover",
+function FacilityCard({
+  solution,
+  index,
+  mobile = false,
 }: {
-  src: string;
-  imageFit?: Facility["imageFit"];
+  solution: Facility;
+  index: number;
+  mobile?: boolean;
 }) {
-  if (imageFit === "crop-left") {
+  if (mobile) {
     return (
-      <div
-        className="relative mx-auto aspect-square w-full max-w-[257.333px] shrink-0 overflow-hidden rounded-[21.333px] sm:mx-0"
-        style={{ width: IMAGE_SIZE, height: IMAGE_SIZE, maxWidth: "100%" }}
+      <motion.article
+        className="flex h-full flex-col overflow-hidden rounded-2xl border border-[#f0d4d4] bg-white shadow-[0_4px_24px_rgba(229,8,24,0.08)]"
+        custom={index * 0.06}
+        variants={fadeSlideUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
       >
-        <Image
-          src={src}
-          alt=""
-          width={450}
-          height={IMAGE_SIZE}
-          className="absolute top-[0.21%] max-w-none object-cover"
-          style={{
-            width: "174.97%",
-            height: "100%",
-            left: "-15.68%",
-          }}
-          sizes={`${IMAGE_SIZE}px`}
-        />
-      </div>
+        <div className="relative aspect-[4/3] w-full overflow-hidden">
+          <Image
+            src={solution.image}
+            alt={solution.title}
+            fill
+            className="object-cover"
+            sizes="300px"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-black/30 to-transparent"
+          />
+          <div className="absolute left-3 top-3 flex size-7 items-center justify-center rounded-full bg-white/95 text-[11px] font-bold tabular-nums text-[#e50818] shadow-sm">
+            {String(index + 1).padStart(2, "0")}
+          </div>
+        </div>
+
+        <div className="flex flex-1 flex-col gap-2 px-4 py-4">
+          <h3 className="text-base font-bold leading-snug text-[#3c3938]">
+            {solution.title}
+          </h3>
+          <p className="text-sm leading-relaxed text-[#555]">
+            {solution.description}
+          </p>
+        </div>
+      </motion.article>
     );
   }
 
   return (
-    <div
-      className="relative mx-auto aspect-square w-full max-w-[257.333px] shrink-0 overflow-hidden rounded-[21.333px] sm:mx-0"
-      style={{ width: IMAGE_SIZE, height: IMAGE_SIZE, maxWidth: "100%" }}
+    <motion.article
+      className={`flex flex-col gap-8 ${macStyles.card}`}
+      custom={index * 0.08}
+      variants={fadeSlideUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
     >
-      <Image
-        src={src}
-        alt=""
-        fill
-        className="object-cover"
-        sizes={`${IMAGE_SIZE}px`}
-      />
-    </div>
-  );
-}
+      <div
+        className={`relative aspect-square w-full overflow-hidden rounded-[21px] ${macStyles.cardImage}`}
+      >
+        <Image
+          src={solution.image}
+          alt={solution.title}
+          fill
+          className="object-cover"
+          sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 258px"
+        />
+      </div>
 
-function FacilityCard({
-  title,
-  description,
-  image,
-  imageFit,
-  titleLayout = "two-lines",
-  wideDescription = false,
-}: Facility) {
-  const titleClasses = {
-    robotics:
-      "max-w-[229px] min-h-[53.734px] leading-[26.867px]",
-    "two-lines": "min-h-[42.667px] leading-[21.333px]",
-    "three-lines": "min-h-[64px] leading-[21.333px]",
-  }[titleLayout];
-
-  const descriptionMargin = {
-    robotics: "mt-[2.29px]",
-    "two-lines": "mt-[12px]",
-    "three-lines": "mt-[6px]",
-  }[titleLayout];
-
-  return (
-    <article className="flex w-full flex-col xl:max-w-[257.333px]">
-      <FacilityImage src={image} imageFit={imageFit} />
-      <div className="mt-6 flex flex-col sm:mt-[33.333px]">
+      <div className={`flex flex-col gap-2.5 ${macStyles.cardBody}`}>
         <h3
-          className={`font-[family-name:var(--font-montserrat)] text-base font-bold text-[#3c3938] sm:text-[18.667px] ${titleClasses}`}
+          className={`text-lg font-bold leading-[27px] text-[#3c3938] ${macStyles.cardTitle}`}
         >
-          {title}
+          {solution.title}
         </h3>
         <p
-          className={`${descriptionMargin} font-[family-name:var(--font-montserrat)] text-sm leading-relaxed text-[#555] sm:text-base sm:leading-[21.333px] ${wideDescription ? "w-full max-w-none" : "w-full"}`}
+          className={`text-base leading-[21px] text-[#555] ${macStyles.cardDesc}`}
         >
-          {description}
+          {solution.description}
         </p>
       </div>
-    </article>
+    </motion.article>
   );
 }
 
 export default function AutomationFacilitiesSection() {
   return (
     <section
-      className="relative bg-[#ffefef] px-[clamp(24px,5.573vw,107px)] py-16 text-[#111] lg:min-h-[885px] lg:pt-[103px] lg:pb-[48px]"
+      className={`relative bg-[#ffefef] px-5 pb-12 pt-6 sm:px-10 sm:pb-16 sm:pt-8 lg:px-12 lg:pb-24 lg:pt-12 xl:px-16 2xl:px-20 ${macStyles.section}`}
+      aria-label="Automation manufacturing facility construction across South India"
     >
       <div
-        className="pointer-events-none absolute inset-x-0 overflow-hidden opacity-15"
-        style={{ top: -13.33, height: 390.667 }}
         aria-hidden
+        className={`pointer-events-none absolute inset-x-0 top-0 h-[391px] overflow-hidden opacity-15 ${macStyles.gridBg}`}
       >
         <Image
           src="/images/industries/automation/automation-facilities/grid-bg.png"
           alt=""
           fill
-          className="object-cover"
+          className="object-cover object-top"
           sizes="100vw"
         />
       </div>
 
-      <div className="relative mx-auto w-full max-w-[1706px]">
-        <header className="mx-auto flex w-full max-w-[1452px] flex-col items-center gap-[13px] text-center lg:h-[157px]">
-          <h2 className="max-w-[1404px] font-[family-name:var(--font-manrope)] text-[clamp(1.75rem,3.5vw,50px)] font-bold leading-[1.2] tracking-[-1.3333px] text-[#111] lg:flex lg:h-[117px] lg:items-center lg:leading-[60px]">
-            Automation & Robotics Manufacturing Facility Construction Across
-            South India&apos;s Growth Hubs
-          </h2>
-          <p className="max-w-[1273px] font-[family-name:var(--font-manrope)] text-lg leading-[27px] text-black">
-            Our precision facility construction serves automation manufacturers
-            across Tamil Nadu, Karnataka, Andhra Pradesh, Telangana, and Kerala:
-          </p>
-        </header>
-
-        <div className="relative mt-12 lg:mt-[49px]">
-          <div
-            className={`${MOBILE_FACILITY_CAROUSEL_TRACK} ${MOBILE_FACILITY_CAROUSEL_DESKTOP} xl:grid xl:min-h-[448px] xl:min-w-[1706px] xl:max-w-[1706px] xl:grid-cols-[repeat(6,257.333px)] xl:justify-between xl:gap-x-0 xl:gap-y-0`}
+      <div
+        className={`relative mx-auto flex w-full max-w-[1720px] flex-col gap-8 sm:gap-12 lg:gap-16 ${macStyles.sectionInner}`}
+      >
+        <div
+          className={`mx-auto flex w-full max-w-[1452px] flex-col items-start gap-3 text-left sm:items-center sm:gap-4 sm:text-center ${macStyles.headerBlock}`}
+        >
+          <motion.p
+            className="text-xs font-semibold uppercase tracking-[0.14em] text-[#e50818] sm:hidden"
+            custom={0}
+            variants={fadeSlideUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
           >
-            {facilities.map((facility) => (
+            South India coverage
+          </motion.p>
+          <motion.h2
+            className={`max-w-[1356px] text-[26px] font-bold leading-tight tracking-[-0.8px] text-[#111] sm:text-[40px] sm:tracking-[-1.33px] lg:text-[50px] lg:leading-[60px] ${macStyles.title}`}
+            custom={0}
+            variants={fadeSlideUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <span className={macStyles.titleLineFirst}>
+              Automation &amp; Robotics Manufacturing Facility Construction
+            </span>
+            <span className={macStyles.titleLineSecond}>
+              Across South India&apos;s Growth Hubs
+            </span>
+          </motion.h2>
+          <motion.p
+            className={`max-w-[1273px] text-sm leading-relaxed text-black sm:text-base sm:leading-[27px] lg:text-lg ${macStyles.subtitle}`}
+            custom={0.1}
+            variants={fadeSlideUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            Our precision facility construction serves automation
+            manufacturers across Tamil Nadu, Karnataka, Andhra Pradesh,
+            Telangana, and Kerala
+          </motion.p>
+        </div>
+
+        <div className="sm:hidden">
+          <div className={MOBILE_FACILITY_CAROUSEL_TRACK}>
+            {facilities.map((facility, index) => (
               <div key={facility.title} className={MOBILE_FACILITY_CAROUSEL_ITEM}>
-                <FacilityCard {...facility} />
+                <FacilityCard solution={facility} index={index} mobile />
               </div>
             ))}
           </div>
-          <p className={MOBILE_FACILITY_CAROUSEL_HINT}>
+          <p className={`${MOBILE_FACILITY_CAROUSEL_HINT} sm:!hidden`}>
             Swipe to explore all {facilities.length} facilities
           </p>
         </div>
 
-        <p className="mx-auto mt-12 max-w-[1212px] text-center font-[family-name:var(--font-manrope)] text-lg font-normal leading-[23px] text-[#8b91a0] lg:mt-[34px]">
-          Wherever you&apos;re located in South India –{" "}
-          <span className="font-semibold text-[#f01d23]">
+        <div
+          className={`hidden grid-cols-2 gap-x-8 gap-y-12 sm:grid lg:grid-cols-3 2xl:grid-cols-6 ${macStyles.grid}`}
+        >
+          {facilities.map((facility, index) => (
+            <FacilityCard key={facility.title} solution={facility} index={index} />
+          ))}
+        </div>
+
+        <motion.p
+          className={`mx-auto max-w-[1212px] text-left text-sm leading-relaxed text-[#8b91a0] sm:text-center sm:text-base sm:leading-[23px] lg:text-lg ${macStyles.footer}`}
+          custom={0.2}
+          variants={fadeSlideUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          Wherever you&apos;re located in South India{" "}
+          <span className="font-semibold text-[#e50818]">
             Chennai, Coimbatore, Hosur, Bengaluru, Hyderabad, or Kochi
           </span>{" "}
-          – Mekark&apos;s automation facility engineering is customised to your
-          production process and precision requirements.
-        </p>
+          – Mekark&apos;s automation facility engineering
+          <br />
+          is customised to your production process and precision
+          requirements.
+        </motion.p>
       </div>
     </section>
   );

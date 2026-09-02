@@ -2,10 +2,10 @@
   width: 100%;
   position: relative;
   background-color: #f6f6f6;
-  padding: 80px;
+  padding: 4.16667vw;
   box-sizing: border-box;
   text-align: left;
-  font-size: 28px;
+  font-size: 1.45833vw;
   color: #000;
   font-family: var(--font-manrope), sans-serif;
 }
@@ -21,171 +21,169 @@
 
 .rightScrollable {
   flex-shrink: 0;
-  width: 903.1px;
+  width: 47.03646vw;
   max-width: 100%;
 }
 
 .frameParentScale {
   position: relative;
-  width: 903.1px;
-  height: 1314.3px;
+  width: 100%;
+  height: 68.45313vw;
 }
 
 .frameParent {
   position: relative;
-  width: 1024px;
-  height: 1490.6px;
-  transform: scale(0.8817);
-  transform-origin: top left;
+  width: 100%;
+  height: 100%;
 }
 
 .timelineLine {
   position: absolute;
-  top: 78px;
-  left: 0px;
-  width: 397.4px;
-  height: 1320.9px;
+  top: 3.58177vw;
+  left: 1.5vw;
+  width: 18.25313vw;
+  height: 60.66354vw;
 }
 
 .frameContainer {
   position: absolute;
   top: 0px;
-  left: 73px;
-  border-radius: 19.12px;
+  left: 4.85208vw;
+  border-radius: 0.87813vw;
   background-color: #fff;
-  border: 1.2px solid #c0c0c0;
+  border: 0.05511vw solid #c0c0c0;
   box-sizing: border-box;
-  width: 739.8px;
-  height: 193.6px;
+  width: 33.97750vw;
+  height: 8.89250vw;
   overflow: hidden;
 }
 
 .frameDiv {
   position: absolute;
   top: 50%;
-  left: 354px;
-  width: 351.4px;
+  left: 16.25729vw;
+  width: 16.13958vw;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.36667vw;
 }
 
 .overheadSingleGirder {
   position: relative;
-  font-size: 18px;
-  line-height: 29.88px;
+  font-size: 0.82656vw;
+  line-height: 1.37222vw;
   color: #000;
   white-space: normal;
 }
 
 .economicalOverheadCrane {
   position: relative;
-  font-size: 16px;
-  line-height: 23px;
+  font-size: 0.73475vw;
+  line-height: 1.05625vw;
   color: #5a5a5a;
-  width: 351.4px;
+  width: 16.13958vw;
 }
 
 .rectangleIcon {
   position: absolute;
-  top: -1.2px;
-  left: -1.2px;
-  width: 322.7px;
-  height: 193.6px;
+  top: -0.05511vw;
+  left: -0.05511vw;
+  width: 14.82129vw;
+  height: 8.89250vw;
   object-fit: cover;
-  border-radius: 19.12px 0 0 19.12px;
+  border-radius: 0.87813vw 0 0 0.87813vw;
 }
 
 .rectangleParent {
   position: absolute;
-  top: 518.69px;
-  left: 73px;
-  border-radius: 19.12px;
+  top: 23.82198vw;
+  left: 4.85208vw;
+  border-radius: 0.87813vw;
   background-color: #fff;
-  border: 1.2px solid #c0c0c0;
+  border: 0.05511vw solid #c0c0c0;
   box-sizing: border-box;
-  width: 739.8px;
-  height: 193.6px;
+  width: 33.97750vw;
+  height: 8.89250vw;
   overflow: hidden;
 }
 
 .rectangleGroup {
   position: absolute;
-  top: 1037.39px;
-  left: 73px;
-  border-radius: 19.12px;
+  top: 47.64479vw;
+  left: 4.85208vw;
+  border-radius: 0.87813vw;
   background-color: #fff;
-  border: 1.2px solid #c0c0c0;
+  border: 0.05511vw solid #c0c0c0;
   box-sizing: border-box;
-  width: 742.2px;
-  height: 193.6px;
+  width: 34.08770vw;
+  height: 8.89250vw;
   overflow: hidden;
 }
 
 .rectangleContainer {
   position: absolute;
-  top: 259.35px;
-  left: 284.2px;
-  border-radius: 19.12px;
+  top: 11.91125vw;
+  left: 14.55229vw;
+  border-radius: 0.87813vw;
   background-color: #fff;
-  border: 1.2px solid #c0c0c0;
+  border: 0.05511vw solid #c0c0c0;
   box-sizing: border-box;
-  width: 739.8px;
-  height: 193.6px;
+  width: 33.97750vw;
+  height: 8.89250vw;
   overflow: hidden;
 }
 
 .rectangleParent2 {
   position: absolute;
-  top: 778.04px;
-  left: 284.2px;
-  border-radius: 19.12px;
+  top: 35.73271vw;
+  left: 14.55229vw;
+  border-radius: 0.87813vw;
   background-color: #fff;
-  border: 1.2px solid #c0c0c0;
+  border: 0.05511vw solid #c0c0c0;
   box-sizing: border-box;
-  width: 739.8px;
-  height: 193.6px;
+  width: 33.97750vw;
+  height: 8.89250vw;
   overflow: hidden;
 }
 
 .rectangleParent3 {
   position: absolute;
-  top: 1297px;
-  left: 284.2px;
-  border-radius: 19.12px;
+  top: 59.56104vw;
+  left: 14.55229vw;
+  border-radius: 0.87813vw;
   background-color: #fff;
-  border: 1.2px solid #c0c0c0;
+  border: 0.05511vw solid #c0c0c0;
   box-sizing: border-box;
-  width: 739.8px;
-  height: 193.6px;
+  width: 33.97750vw;
+  height: 8.89250vw;
   overflow: hidden;
 }
 
 .leftStickyOuter {
-  width: 660px;
+  width: 34.37500vw;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-top: 220px;
+  padding-top: 11.45833vw;
 }
 
 .leftSticky {
   position: sticky;
-  top: 166px;
+  top: 8.64583vw;
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  max-width: 480px;
+  gap: 0.93750vw;
+  max-width: 25vw;
 }
 
 .ourSolutionsHeading {
   position: relative;
   margin: 0;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.02604vw;
   line-height: 1.15;
-  font-size: 41px;
+  font-size: 2.13542vw;
   font-weight: 700;
   display: block;
   width: 100%;
@@ -195,9 +193,9 @@
 .completeEotCrane {
   position: relative;
   margin: 0;
-  letter-spacing: -0.4px;
+  letter-spacing: -0.02083vw;
   line-height: 1.35;
-  font-size: 26px;
+  font-size: 1.35417vw;
   font-weight: 600;
   display: flex;
   flex-direction: column;
@@ -213,9 +211,9 @@
 .asALeading {
   position: relative;
   margin: 0;
-  font-size: 16px;
+  font-size: 0.83333vw;
   font-weight: 400;
-  line-height: 22px;
+  line-height: 1.14583vw;
   display: flex;
   flex-direction: column;
   width: fit-content;
@@ -235,12 +233,12 @@
   background-color: rgba(196, 22, 28, 0.06);
   border: 1px solid rgba(196, 22, 28, 0.35);
   box-sizing: border-box;
-  width: 88%;
-  max-width: 1330px;
+  width: 100%;
+  max-width: 1400px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 22px 56px;
+  padding: 22px 64px;
   color: #c4161c;
 }
 
@@ -287,6 +285,17 @@
   }
   .leftSticky {
     position: static;
+    max-width: none;
+  }
+  .ourSolutionsHeading {
+    font-size: 32px;
+  }
+  .completeEotCrane {
+    font-size: 22px;
+  }
+  .asALeading {
+    font-size: 14px;
+    line-height: 20px;
   }
   .rightScrollable {
     width: 100%;
@@ -298,7 +307,6 @@
   .frameParent {
     width: 100%;
     height: auto;
-    transform: none;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
@@ -319,6 +327,7 @@
     height: auto;
     display: flex;
     flex-direction: column;
+    overflow: visible;
   }
   .rectangleIcon {
     position: relative;
@@ -345,6 +354,12 @@
     white-space: normal;
     top: auto;
     left: auto;
+    font-size: 18px;
+    line-height: 1.35;
+  }
+  .economicalOverheadCrane {
+    font-size: 16px;
+    line-height: 23px;
   }
   .overlayborder {
     border-radius: 24px;

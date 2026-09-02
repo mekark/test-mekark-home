@@ -138,7 +138,7 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative h-[100dvh] min-h-[520px] max-h-[1020px] w-full overflow-hidden bg-black xl:max-h-[618px] 2xl:max-h-[1020px]"
+      className="relative h-[100dvh] min-h-[520px] max-h-[1020px] w-full overflow-hidden bg-black xl:h-[100svh] xl:min-h-[100svh] xl:max-h-none xl:w-screen xl:max-w-[100vw] xl:relative xl:left-1/2 xl:-translate-x-1/2 2xl:h-[100dvh] 2xl:max-h-[1020px] 2xl:w-full 2xl:max-w-none 2xl:left-auto 2xl:translate-x-0"
       aria-label="Hero video showcase"
     >
       {/* Poster always underneath so the hero never looks stuck/blank while buffering */}
@@ -146,7 +146,7 @@ export function HeroSection() {
         key={activeVideo.poster}
         src={activeVideo.poster}
         alt=""
-        className="absolute inset-0 size-full object-cover"
+        className="absolute inset-0 size-full origin-center object-cover object-center xl:min-h-full xl:min-w-full xl:scale-[1.08] 2xl:scale-100"
         aria-hidden
         fetchPriority="high"
         decoding="async"
@@ -155,7 +155,7 @@ export function HeroSection() {
       {canAutoplay ? (
         <video
           ref={videoRef}
-          className={`absolute inset-0 size-full object-cover transition-opacity duration-500 ${
+          className={`absolute inset-0 size-full origin-center object-cover object-center transition-opacity duration-500 xl:min-h-full xl:min-w-full xl:scale-[1.08] 2xl:scale-100 ${
             isReady ? "opacity-100" : "opacity-0"
           }`}
           muted

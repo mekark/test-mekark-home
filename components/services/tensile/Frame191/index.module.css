@@ -27,7 +27,7 @@
 	align-items: flex-start;
 	justify-content: center;
 	gap: 18px;
-	padding: 48px 64px 48px 100px;
+	padding: 48px 64px 48px 132px;
 	box-sizing: border-box;
 }
 
@@ -101,12 +101,18 @@
 }
 
 .ctaIcon {
+	position: relative;
 	display: inline-flex;
-	width: 19px;
-	height: 19px;
+	width: 18.8px;
+	height: 18.8px;
 	align-items: center;
 	justify-content: center;
 	flex-shrink: 0;
+	overflow: hidden;
+}
+
+.ctaIconImg {
+	object-fit: contain;
 }
 
 .media {

@@ -74,7 +74,7 @@ const STATS = [
 function StatIcon({ src, alt }: { src: string; alt: string }) {
   return (
     <div
-      className="relative isolate flex size-14 shrink-0 items-center justify-center rounded-full sm:size-20 lg:size-24"
+      className="relative isolate flex size-14 shrink-0 items-center justify-center rounded-full sm:size-20 lg:size-24 xl:size-[72px] 2xl:size-24"
       style={{
         background:
           "radial-gradient(95.52% 95.52% at 35% 30%, rgba(255,255,255,0.05), rgba(244,244,244,0.05))",
@@ -84,7 +84,7 @@ function StatIcon({ src, alt }: { src: string; alt: string }) {
         className="pointer-events-none absolute inset-0 z-0 rounded-full bg-transparent shadow-[0px_1.33px_0px_rgba(255,255,255,0.1)_inset,0px_10.67px_24px_-10.67px_rgba(0,0,0,0.12),0px_2.67px_5.33px_rgba(0,0,0,0.04)]"
         aria-hidden
       />
-      <div className="relative z-[1] size-6 sm:size-8">
+      <div className="relative z-[1] size-6 sm:size-8 xl:size-7 2xl:size-8">
         <Image
           src={src}
           alt={alt}
@@ -259,7 +259,7 @@ export function AboutMekarkSection() {
         {/* Stats grid — iMac Figma 6700:6756 · large Figma 3327:9362 */}
         <motion.div
           ref={statsRef}
-          className="box-border flex w-full flex-col items-stretch justify-center gap-3 rounded-4xl border-[1.3px] border-solid border-[rgba(255,255,255,0.8)] bg-[#0e0e0e] px-[1.3px] py-8 shadow-[0px_0px_20.27px_rgba(0,0,0,0.05)] backdrop-blur-[13.33px] sm:grid sm:grid-cols-2 sm:gap-[10.67px] sm:py-10 lg:flex lg:flex-row lg:items-start lg:gap-[14.67px] lg:py-[41px]"
+          className="box-border flex w-full flex-col items-stretch justify-center gap-3 rounded-4xl border-[1.3px] border-solid border-[rgba(255,255,255,0.8)] bg-[#0e0e0e] px-[1.3px] py-8 shadow-[0px_0px_20.27px_rgba(0,0,0,0.05)] backdrop-blur-[13.33px] sm:grid sm:grid-cols-2 sm:gap-[10.67px] sm:py-10 lg:flex lg:flex-row lg:items-start lg:gap-[14.67px] lg:py-[41px] xl:ml-8 xl:grid xl:w-[calc(100%-56px)] xl:grid-cols-[minmax(0,1.24fr)_minmax(0,0.92fr)_minmax(0,0.92fr)_minmax(0,0.92fr)] xl:items-stretch xl:gap-x-6 xl:gap-y-0 xl:py-6 xl:pl-6 xl:pr-[72px] 2xl:ml-0 2xl:flex 2xl:w-full 2xl:flex-row 2xl:grid-cols-none 2xl:gap-x-0 2xl:gap-[14.67px] 2xl:py-[41px] 2xl:pl-[1.3px] 2xl:pr-[1.3px]"
           variants={aboutStatsStagger}
           initial="hidden"
           whileInView="visible"
@@ -269,17 +269,29 @@ export function AboutMekarkSection() {
             <motion.div
               key={stat.iconAlt}
               variants={aboutStatReveal}
-              className={`relative isolate flex min-w-0 items-center gap-6 rounded-2xl px-8 py-[18.67px] sm:gap-[29.33px] lg:min-w-px lg:flex-[1_0_0] ${
-                index === 0 ? "lg:pr-6 xl:pr-11" : ""
+              className={`relative isolate flex min-w-0 items-center gap-6 rounded-2xl px-8 py-[18.67px] sm:gap-[29.33px] lg:min-w-px lg:flex-[1_0_0] xl:overflow-hidden xl:gap-4 xl:px-4 xl:py-4 2xl:overflow-visible 2xl:gap-6 2xl:px-8 2xl:py-[18.67px] ${
+                index === 0 ? "lg:pr-6 xl:pl-6 xl:pr-4 2xl:pl-8 2xl:pr-6" : ""
               } ${
-                index > 0
-                  ? "border-[rgba(214,214,214,0.25)] lg:border-l-[1.3px] lg:border-solid lg:pl-[33.33px]"
+                index === 1
+                  ? "border-[rgba(214,214,214,0.25)] lg:border-l-[1.3px] lg:border-solid lg:pl-[33.33px] xl:pl-8 xl:pr-2 2xl:pl-[33.33px] 2xl:pr-0"
+                  : ""
+              } ${
+                index === 2
+                  ? "border-[rgba(214,214,214,0.25)] lg:border-l-[1.3px] lg:border-solid lg:pl-[33.33px] xl:pl-9 xl:pr-2 2xl:pl-[33.33px] 2xl:pr-0"
+                  : ""
+              } ${
+                index === 3
+                  ? "border-[rgba(214,214,214,0.25)] lg:border-l-[1.3px] lg:border-solid lg:pl-[33.33px] xl:pl-12 xl:pr-0 2xl:pl-[33.33px] 2xl:pr-0"
                   : ""
               }`}
             >
               <StatIcon src={stat.icon} alt={stat.iconAlt} />
-              <div className="z-[1] flex shrink-0 flex-col items-start gap-[4.6px]">
-                <p className="whitespace-nowrap font-[family-name:var(--font-montserrat-alternates)] text-[28px] font-bold leading-none tracking-[-1.01px] text-white tabular-nums sm:text-[42px] sm:leading-none lg:text-[40px] xl:text-[38px] xl:leading-[38px] 2xl:text-[44.67px] 2xl:leading-[50.67px]">
+              <div className="z-[1] flex min-w-0 flex-col items-start gap-[4.6px] xl:gap-1.5 2xl:gap-[4.6px]">
+                <p
+                  className={`whitespace-nowrap font-[family-name:var(--font-montserrat-alternates)] font-bold leading-none tracking-[-1.01px] text-white tabular-nums text-[28px] sm:text-[42px] sm:leading-none lg:text-[40px] xl:text-[38px] xl:leading-[38px] 2xl:text-[44.67px] 2xl:leading-[50.67px] ${
+                    index === 0 ? "xl:text-[34px] xl:leading-[36px] 2xl:text-[44.67px] 2xl:leading-[50.67px]" : ""
+                  }`}
+                >
                   <CountUp
                     value={stat.countTo}
                     suffix={stat.suffix}
@@ -288,13 +300,18 @@ export function AboutMekarkSection() {
                     duration={1.7}
                   />
                 </p>
-                <p className="text-[11px] font-semibold uppercase leading-[16px] tracking-[1.2px] text-[#6b6b6b] sm:text-sm sm:leading-[21.27px] sm:tracking-[1.6px] lg:text-[13px] lg:tracking-[1.6px] xl:text-[12px] xl:leading-[16px] xl:tracking-[1.6px] 2xl:text-[14.67px] 2xl:leading-[21.27px] 2xl:tracking-[2.05px]">
+                <motion.div
+                  variants={aboutStatUnderline}
+                  className="hidden h-[2.67px] w-12 origin-left bg-[#ed2024] xl:block 2xl:hidden"
+                  aria-hidden
+                />
+                <p className="text-[11px] font-semibold uppercase leading-[16px] tracking-[1.2px] text-[#6b6b6b] sm:text-sm sm:leading-[21.27px] sm:tracking-[1.6px] lg:text-[13px] lg:tracking-[1.6px] xl:text-[11px] xl:leading-[14px] xl:tracking-[1.6px] 2xl:text-[14.67px] 2xl:leading-[21.27px] 2xl:tracking-[2.05px]">
                   {stat.label}
                 </p>
               </div>
               <motion.div
                 variants={aboutStatUnderline}
-                className="absolute bottom-[-2.7px] left-[112px] z-[2] h-[2.67px] w-12 origin-left bg-[#ed2024] sm:left-[157px]"
+                className="absolute bottom-[-2.7px] left-[112px] z-[2] h-[2.67px] w-12 origin-left bg-[#ed2024] sm:left-[157px] xl:hidden 2xl:left-[157px] 2xl:block"
                 aria-hidden
               />
             </motion.div>

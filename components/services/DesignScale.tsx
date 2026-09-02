@@ -6,6 +6,7 @@ import {
   useLayoutEffect,
   useRef,
   useState,
+  type CSSProperties,
   type ReactNode,
 } from "react";
 
@@ -88,11 +89,12 @@ export default function DesignScale({ children }: { children: ReactNode }) {
         className={isDesktop ? "origin-top-left will-change-transform" : undefined}
         style={
           isDesktop
-            ? {
+            ? ({
                 width: DESIGN_WIDTH,
                 transform: `translateX(${offsetX}px) scale(${scale})`,
                 marginBottom,
-              }
+                "--ds-scale": scale,
+              } as CSSProperties)
             : undefined
         }
       >

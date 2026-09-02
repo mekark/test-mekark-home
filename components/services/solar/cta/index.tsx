@@ -31,7 +31,7 @@ const Cta: NextPage = () => {
 							<a href="/#enquiry" className={`mt-6 ${styles.cta}`}>
 								<span className={styles.requestAFree}>Request a Free Quote</span>
 								<div className={styles.component4}>
-									<Image className={styles.vectorIcon} width={12} height={9} sizes="100vw" src="/images/services/solar/CTA/component-4.svg" alt="" />
+									<Image className={styles.vectorIcon} fill sizes="19px" src="/images/services/solar/CTA/component-4.svg" alt="" />
 								</div>
 							</a>
 						</ServiceMidCtaCopy>

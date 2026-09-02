@@ -374,7 +374,7 @@ const CERTIFICATES = [
     heroAlt: "Construction worker in high-visibility gear holding a hard hat",
   },
   {
-    src: "/images/about/safety/Quality.png",
+    src: "/images/about/safety/Quality-compressed.png",
     alt: "ISO 9001:2015 Certificate of Registration for MEKARK Structures India Pvt. Ltd.",
     label: "ISO 9001:2015",
     mobileImageClassName: "origin-center scale-[1.18]",
@@ -386,7 +386,7 @@ const CERTIFICATES = [
     overlay: "/images/about/safety/hero-3-workers.png",
     overlayAlt: "Two site engineers in safety vests looking toward the construction site",
     overlayClassName:
-      "top-[30%] bottom-[-16%] right-[11%] w-[min(52%,52rem)] lg:top-[34%] lg:bottom-[-18%] lg:right-[15%] lg:w-[min(48%,50rem)]",
+      "top-[30%] bottom-[-16%] right-[11%] w-[min(52%,52rem)] lg:top-[34%] lg:bottom-[-18%] lg:right-[9%] lg:w-[min(48%,50rem)]",
     overlayImageClassName: "object-contain object-center-bottom",
     heading: "Built Right, Every Single Time",
     description:
@@ -655,6 +655,8 @@ function SafetyCertificationsSection() {
   const touchStartY = useRef(0);
   const activeRef = useRef(0);
   const autoScrollPausedUntilRef = useRef(0);
+  const wheelLockRef = useRef(false);
+  const wheelIdleTimeoutRef = useRef<number | undefined>(undefined);
   const [active, setActive] = useState(0);
   const [direction, setDirection] = useState(1);
   const lastIndex = CERTIFICATES.length - 1;
@@ -734,29 +736,57 @@ function SafetyCertificationsSection() {
     const node = sectionRef.current;
     if (!node) return;
 
+    const releaseWheelLock = () => {
+      wheelLockRef.current = false;
+    };
+
+    const armWheelIdleTimer = () => {
+      if (wheelIdleTimeoutRef.current !== undefined) {
+        window.clearTimeout(wheelIdleTimeoutRef.current);
+      }
+      wheelIdleTimeoutRef.current = window.setTimeout(releaseWheelLock, 220);
+    };
+
     const onWheel = (event: WheelEvent) => {
       if (window.matchMedia("(max-width: 639px)").matches) return;
 
       const goingDown = event.deltaY > 0;
       const goingUp = event.deltaY < 0;
+      if (!goingDown && !goingUp) return;
 
-      if (goingDown && active < lastIndex) {
-        event.preventDefault();
-        event.stopPropagation();
-        goTo(active + 1, 1);
+      const current = activeRef.current;
+      const withinBounds =
+        (goingDown && current < lastIndex) || (goingUp && current > 0);
+
+      // Once a gesture has changed a slide, keep swallowing the rest of that
+      // same gesture even after the boundary is reached mid-gesture -
+      // otherwise trailing momentum leaks through as a real page scroll and
+      // the section flies away before the new slide can be read. Only a
+      // fresh gesture (after the wheel goes idle) is allowed to leave.
+      if (!wheelLockRef.current && !withinBounds) return;
+
+      event.preventDefault();
+      event.stopPropagation();
+
+      if (wheelLockRef.current) {
+        armWheelIdleTimer();
         return;
       }
 
-      if (goingUp && active > 0) {
-        event.preventDefault();
-        event.stopPropagation();
-        goTo(active - 1, -1);
-      }
+      wheelLockRef.current = true;
+      if (goingDown) goTo(current + 1, 1);
+      else goTo(current - 1, -1);
+      armWheelIdleTimer();
     };
 
     node.addEventListener("wheel", onWheel, { passive: false });
-    return () => node.removeEventListener("wheel", onWheel);
-  }, [active, goTo, lastIndex]);
+    return () => {
+      node.removeEventListener("wheel", onWheel);
+      if (wheelIdleTimeoutRef.current !== undefined) {
+        window.clearTimeout(wheelIdleTimeoutRef.current);
+      }
+    };
+  }, [goTo, lastIndex]);
 
   const slideAnimation = reduceMotion ? undefined : slideVariants;
   const mobileAnimation = reduceMotion ? undefined : mobileSlideVariants;
@@ -880,7 +910,7 @@ function SafetyCertificationsSection() {
           <motion.div
             ref={scrollerRef}
             variants={fadeUp}
-            className="relative mx-auto flex w-full min-h-0 max-w-[23rem] flex-1 flex-col overflow-hidden sm:mx-0 sm:max-w-[56rem] sm:-ml-8 sm:min-h-[min(calc(100dvh-13rem),62rem)] sm:overflow-visible lg:-ml-36 lg:max-w-[62rem]"
+            className="relative mx-auto mt-14 flex w-full min-h-0 max-w-[23rem] flex-col overflow-hidden sm:mx-0 sm:mt-0 sm:max-w-[56rem] sm:-ml-8 sm:flex-1 sm:min-h-[min(calc(100dvh-13rem),62rem)] sm:overflow-visible lg:-ml-36 lg:max-w-[62rem]"
             onTouchStart={(event) => {
               pauseAutoScroll();
               touchStartY.current = event.touches[0]?.clientY ?? 0;
@@ -894,7 +924,7 @@ function SafetyCertificationsSection() {
               else goTo(active - 1, -1);
             }}
           >
-            <div className="relative flex min-h-0 flex-1 flex-col overflow-hidden rounded-[22px] border border-white/90 bg-white/95 p-3 shadow-[0_22px_50px_rgba(15,23,42,0.14)] backdrop-blur-md sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none sm:backdrop-blur-none sm:overflow-visible">
+            <div className="relative flex min-h-0 flex-col overflow-hidden rounded-[22px] border border-white/90 bg-white/95 p-3 shadow-[0_22px_50px_rgba(15,23,42,0.14)] backdrop-blur-md sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none sm:backdrop-blur-none sm:flex-1 sm:overflow-visible">
               <div className="mb-3 flex shrink-0 items-center justify-between gap-3 sm:hidden">
                 <span className="rounded-full bg-[#111] px-3 py-1 font-[family-name:var(--font-manrope)] text-[11px] font-bold tracking-[0.08em] text-white">
                   {String(active + 1).padStart(2, "0")} /{" "}
@@ -914,7 +944,7 @@ function SafetyCertificationsSection() {
                 </AnimatePresence>
               </div>
 
-              <div className="relative min-h-0 flex-1 overflow-hidden sm:min-h-0">
+              <div className="relative aspect-[3/4] min-h-0 w-full overflow-hidden sm:aspect-auto sm:min-h-0 sm:flex-1">
                 <AnimatePresence initial={false} custom={direction} mode="sync">
                   <motion.div
                     key={CERTIFICATES[active].src}
@@ -959,7 +989,7 @@ function SafetyCertificationsSection() {
               </div>
             </div>
 
-            <div className="mt-3 flex flex-col items-center gap-2 sm:mt-0">
+            <div className="mt-3 flex flex-col items-center gap-2 sm:mt-0 lg:hidden">
               <div className="flex items-center justify-center gap-2 sm:absolute sm:bottom-3 sm:left-8 lg:left-0">
                 {CERTIFICATES.map((cert, index) => (
                   <button

@@ -275,7 +275,7 @@ export default function OurPEBSolutions() {
         </motion.div>
 
         <div className="relative mx-auto hidden overflow-hidden rounded-[40px] bg-[linear-gradient(118.73deg,#8B0C11_6.54%,#ED1D23_108.89%)] lg:block lg:min-h-[345px] lg:overflow-visible">
-          <ServiceMidCtaLine className="absolute left-[8.6%] top-[42.67px] z-[2]" />
+          <ServiceMidCtaLine className="absolute left-[6%] top-[42.67px] z-[2]" />
 
           <motion.div
             className="pointer-events-none absolute right-0 top-[-14%] hidden h-[125%] w-[56.6%] lg:block"
@@ -295,7 +295,7 @@ export default function OurPEBSolutions() {
           </motion.div>
 
           <motion.div
-            className="relative z-10 flex min-h-[264px] max-w-[580px] flex-col py-[clamp(2rem,2.14vw,2.56rem)] pl-7 lg:ml-[8.6%]"
+            className="relative z-10 flex min-h-[264px] max-w-[580px] flex-col pt-[clamp(2.75rem,2.9vw,3.3rem)] pb-[clamp(2rem,2.14vw,2.56rem)] pl-7 lg:ml-[6%]"
             initial={{ opacity: 0, x: -36 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.4 }}

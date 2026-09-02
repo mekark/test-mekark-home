@@ -107,7 +107,7 @@ export function OurHistoryPage() {
   const statsInView = useInView(statsRef, { once: true, amount: 0.35 });
 
   return (
-    <main className="overflow-hidden bg-[#f6f7f8] text-[#151515]">
+    <main className="overflow-x-clip bg-[#f6f7f8] text-[#151515]">
       {/* Hero */}
       <section className="relative isolate overflow-hidden pt-[60px]">
         <div className="mx-auto max-w-[1240px] px-5 pb-10 pt-10 text-center sm:px-8 sm:pb-14 sm:pt-14 lg:px-10 lg:pt-16">
@@ -237,94 +237,97 @@ export function OurHistoryPage() {
         </div>
       </section> */}
 
-      {/* Leadership */}
-      <section className="border-t border-[#dedede] bg-[#f6f7f8] px-5 py-12 sm:px-8 sm:py-16 lg:px-[clamp(1.25rem,18vw,345px)] lg:py-[120px]">
-        <div className="mx-auto grid max-w-[1230px] grid-cols-1 gap-8 sm:gap-10 lg:grid-cols-[440px_minmax(0,1fr)] lg:gap-16">
-          <motion.h2
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={VIEWPORT}
-            className="order-1 font-[family-name:var(--font-manrope)] text-[clamp(1.65rem,3vw,40px)] font-semibold leading-tight tracking-[-1px] text-black lg:col-start-2 lg:row-start-1"
-          >
-            Two generations. One promise.
-          </motion.h2>
-
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={VIEWPORT}
-            className="relative order-2 w-full max-w-[440px] lg:col-start-1 lg:row-start-1 lg:row-span-3"
-          >
-            <div className="relative w-full overflow-hidden rounded-[20px]">
-              <Image
-                src={mdPortraitPhoto}
-                alt="D. Aquin Janvel, Managing Director of Mekark Pvt Ltd"
-                className="h-auto w-full"
-                sizes="(max-width: 1024px) 100vw, 440px"
-              />
-            </div>
-            <div className="mt-4 border-t border-black/15 pt-4 sm:mt-5 sm:pt-5">
-              <p className="font-[family-name:var(--font-manrope)] text-lg font-medium leading-tight text-black sm:text-[21px]">
-                D. Aquin Janvel
-              </p>
-              <p className="mt-1 font-[family-name:var(--font-manrope)] text-sm text-[#333] sm:text-base">
-                MD of Mekark Pvt Ltd
-              </p>
-            </div>
-          </motion.div>
-
-          <motion.blockquote
-            variants={aboutQuoteReveal}
-            initial="hidden"
-            whileInView="visible"
-            viewport={VIEWPORT}
-            className="relative order-3 w-full max-w-[375px] sm:pl-10 sm:pt-[13px] lg:col-start-2 lg:row-start-2"
-          >
+      {/* Leadership — xl (≈1470×956): sticky portrait; 2xl+ normal layout */}
+      <section className="border-t border-[#dedede] bg-[#f6f7f8] px-5 py-12 sm:px-8 sm:py-16 lg:px-[clamp(1.25rem,18vw,345px)] lg:pt-[120px] lg:pb-16 xl:pb-12 2xl:py-[120px]">
+        <div className="mx-auto flex max-w-[1230px] flex-col gap-8 sm:gap-10 lg:flex-row lg:items-start lg:gap-16">
+          <aside className="relative w-full max-w-[440px] shrink-0 lg:w-[440px] xl:sticky xl:top-24 xl:self-start 2xl:static">
             <motion.div
-              variants={aboutQuoteIcon}
-              className="relative mb-3 h-[26px] w-[29px] sm:absolute sm:mb-0 sm:left-0 sm:top-[13px]"
-              aria-hidden
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={VIEWPORT}
             >
-              <Image
-                src="/images/about/quotes-ltr.svg"
-                alt=""
-                fill
-                className="object-contain"
-                sizes="36px"
-              />
+              <div className="relative w-full overflow-hidden rounded-[20px]">
+                <Image
+                  src={mdPortraitPhoto}
+                  alt="D. Aquin Janvel, Managing Director of Mekark Pvt Ltd"
+                  className="h-auto w-full"
+                  sizes="(max-width: 1024px) 100vw, 440px"
+                />
+              </div>
+              <div className="mt-4 border-t border-black/15 pt-4 sm:mt-5 sm:pt-5">
+                <p className="font-[family-name:var(--font-manrope)] text-lg font-medium leading-tight text-black sm:text-[21px]">
+                  D. Aquin Janvel
+                </p>
+                <p className="mt-1 font-[family-name:var(--font-manrope)] text-sm text-[#333] sm:text-base">
+                  MD of Mekark Pvt Ltd
+                </p>
+              </div>
             </motion.div>
-            <div className="relative w-full bg-[#fff3e4] p-4 sm:h-[146px] sm:p-0">
-              <p
-                className={`${robotoSlab.className} flex w-full items-center text-left text-lg font-light leading-[1.5] text-black sm:absolute sm:left-[17px] sm:top-1/2 sm:h-[90px] sm:w-[340px] sm:-translate-y-1/2 sm:text-xl sm:leading-[30px]`}
-              >
-                We didn&apos;t just inherit a business - we inherited a
-                responsibility to build better.
-              </p>
-            </div>
-          </motion.blockquote>
+          </aside>
 
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={VIEWPORT}
-            className="order-4 pb-8 sm:pb-12 lg:col-start-2 lg:row-start-3 lg:pb-[60px]"
-          >
-            <p className="font-[family-name:var(--font-manrope)] text-base leading-[1.65] text-black sm:text-[18px] sm:leading-[1.6]">
-              Mekark exists because two generations refused to stop building. My
-              father started with nothing but a workshop and a belief that
-              quality work speaks for itself. I grew up watching that belief
-              become a business, and when it was my turn to lead, my job
-              wasn&apos;t to change what he built, but to give it room to grow.
-              Every step since has really just been us keeping the same promise
-              at a bigger scale: do the work right, earn the trust, and let the
-              results speak. What started as a handful of people in a small
-              setup is today a team of over a thousand, building across South
-              India and we&apos;re still just getting started.
-            </p>
-          </motion.div>
+          <div className="flex min-w-0 flex-1 flex-col gap-6 sm:gap-7 lg:gap-5">
+            <motion.h2
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={VIEWPORT}
+              className="font-[family-name:var(--font-manrope)] text-[clamp(1.65rem,3vw,40px)] font-semibold leading-tight tracking-[-1px] text-black"
+            >
+              Two generations. One promise.
+            </motion.h2>
+
+            <motion.blockquote
+              variants={aboutQuoteReveal}
+              initial="hidden"
+              whileInView="visible"
+              viewport={VIEWPORT}
+              className="relative w-full max-w-[375px] sm:pl-10 sm:pt-[13px]"
+            >
+              <motion.div
+                variants={aboutQuoteIcon}
+                className="relative mb-3 h-[26px] w-[29px] sm:absolute sm:mb-0 sm:left-0 sm:top-[13px]"
+                aria-hidden
+              >
+                <Image
+                  src="/images/about/quotes-ltr.svg"
+                  alt=""
+                  fill
+                  className="object-contain"
+                  sizes="36px"
+                />
+              </motion.div>
+              <div className="relative w-full bg-[#fff3e4] p-4 sm:h-[146px] sm:p-0">
+                <p
+                  className={`${robotoSlab.className} flex w-full items-center text-left text-lg font-light leading-[1.5] text-black sm:absolute sm:left-[17px] sm:top-1/2 sm:h-[90px] sm:w-[340px] sm:-translate-y-1/2 sm:text-xl sm:leading-[30px]`}
+                >
+                  We didn&apos;t just inherit a business - we inherited a
+                  responsibility to build better.
+                </p>
+              </div>
+            </motion.blockquote>
+
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={VIEWPORT}
+              className="pb-8 sm:pb-12 xl:pb-0 2xl:pb-[60px]"
+            >
+              <p className="font-[family-name:var(--font-manrope)] text-base leading-[1.65] text-black sm:text-[18px] sm:leading-[1.6]">
+                Mekark exists because two generations refused to stop building. My
+                father started with nothing but a workshop and a belief that
+                quality work speaks for itself. I grew up watching that belief
+                become a business, and when it was my turn to lead, my job
+                wasn&apos;t to change what he built, but to give it room to grow.
+                Every step since has really just been us keeping the same promise
+                at a bigger scale: do the work right, earn the trust, and let the
+                results speak. What started as a handful of people in a small
+                setup is today a team of over a thousand, building across South
+                India and we&apos;re still just getting started.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 

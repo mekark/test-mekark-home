@@ -133,7 +133,7 @@ export default function PlanningCta() {
           <ServiceMidCtaLine className="absolute left-[6.87%] top-[42.67px] z-[2]" />
 
           {/* Copy block — Figma 2488:5967 */}
-          <div className="absolute left-[8.59%] top-[11.88%] flex h-[76.63%] w-[32.42%] min-w-0 flex-col">
+          <div className="absolute left-[8.59%] top-[16%] flex h-[70%] w-[32.42%] min-w-0 flex-col">
             <PlanningCtaTitle />
 
             <p className="mt-3 w-[110%] text-[clamp(14px,1.1vw,18.67px)] font-medium leading-[1.22] tracking-[1.42px] text-[#CCC6C6]">

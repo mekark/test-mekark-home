@@ -5,7 +5,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
 import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/motion/AnimatedSection";
-import { SECTION_CONTAINER_CLASS } from "@/lib/sectionLayout";
+import { SECTION_CONTAINER_CLASS, SECTION_MAC_FULL_BLEED_CLASS } from "@/lib/sectionLayout";
 import {
   drawVertical,
   logoRowReveal,
@@ -102,31 +102,33 @@ function LogoMarqueeRow({
 export function EngineeringNumbersSection() {
   return (
     <section className="relative w-full bg-[#f5f5f5] text-black">
-      {/* Engineering in Numbers — iMac Figma 6700:6708 · large screen Figma 3327:9311 */}
-      <div className={`${SECTION_CONTAINER_CLASS} relative pb-8 pt-8 font-[family-name:var(--font-manrope)] sm:pb-16 sm:pt-14 lg:pb-[70px] lg:pt-[61px] xl:pb-[46px] xl:pt-[46px] 2xl:pb-[70px] 2xl:pt-[61px]`}>
-        <div
-          className="pointer-events-none absolute inset-0 overflow-hidden bg-[#f5f5f5]"
-          aria-hidden
+      <div
+        className="pointer-events-none absolute inset-0 overflow-hidden bg-[#f5f5f5]"
+        aria-hidden
+      />
+      <motion.div
+        className="pointer-events-none absolute inset-0 overflow-hidden opacity-40"
+        initial={{ opacity: 0, scale: 1.04 }}
+        whileInView={{ opacity: 0.4, scale: 1 }}
+        viewport={VIEWPORT}
+        transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+        aria-hidden
+      >
+        <Image
+          src="/images/engineering/background-watermark.png"
+          alt=""
+          fill
+          className="object-cover object-[5.58%_top]"
+          sizes="100vw"
+          priority={false}
         />
-        <motion.div
-          className="pointer-events-none absolute inset-0 overflow-hidden opacity-40"
-          initial={{ opacity: 0, scale: 1.04 }}
-          whileInView={{ opacity: 0.4, scale: 1 }}
-          viewport={VIEWPORT}
-          transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
-          aria-hidden
-        >
-          <Image
-            src="/images/engineering/background-watermark.png"
-            alt=""
-            fill
-            className="object-cover object-[5.58%_top]"
-            sizes="100vw"
-            priority={false}
-          />
-        </motion.div>
+      </motion.div>
 
-        <div className="relative">
+      {/* Engineering in Numbers — iMac Figma 6700:6708 · large screen Figma 3327:9311 */}
+      <div
+        className={`${SECTION_CONTAINER_CLASS} ${SECTION_MAC_FULL_BLEED_CLASS} relative pb-8 pt-8 font-[family-name:var(--font-manrope)] sm:pb-16 sm:pt-14 lg:pb-[70px] lg:pt-[61px] xl:pb-[46px] xl:pt-[46px] 2xl:pb-[70px] 2xl:pt-[61px]`}
+      >
+        <div className="relative xl:px-[80px] 2xl:px-0">
           <AnimatedSection
             variants={slideFromLeft}
             className="flex max-w-[721px] flex-col items-start"
@@ -150,14 +152,14 @@ export function EngineeringNumbersSection() {
 
           <div className="mt-4 flex min-w-0 flex-col items-center gap-4 sm:mt-6 sm:gap-6 lg:mt-8 xl:mt-2 xl:flex-row xl:items-center xl:gap-9 2xl:mt-8 2xl:gap-12">
             <motion.div
-              className="relative z-10 w-full min-w-0 flex-1 xl:max-w-[765px] 2xl:max-w-[1020px]"
+              className="relative z-10 w-full min-w-0 flex-1 xl:max-w-none 2xl:max-w-[1020px]"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={VIEWPORT}
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             >
               {/* Figma crop: 1020×383 frame over full 3D plaque render */}
-              <div className="relative mx-auto aspect-[765/287] w-full max-w-[765px] overflow-hidden xl:mx-0 xl:aspect-[765/287] xl:max-w-[765px] 2xl:aspect-[1020/383] 2xl:max-w-[1020px]">
+              <div className="relative mx-auto aspect-[765/287] w-full max-w-[765px] overflow-hidden xl:mx-0 xl:aspect-[1366/512] xl:max-w-none 2xl:aspect-[1020/383] 2xl:max-w-[1020px]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/engineering/stat-40000-plaque.png"

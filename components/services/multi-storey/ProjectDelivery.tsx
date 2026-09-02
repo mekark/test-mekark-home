@@ -120,7 +120,7 @@ export default function ProjectDelivery() {
 
               <a
                 href="/#enquiry"
-                className="mt-6 inline-flex w-fit items-center gap-[9.6px] rounded-full bg-white px-6 py-[14px] text-base font-bold leading-[24px] text-quote-red transition-opacity hover:opacity-90"
+                className="mt-8 inline-flex w-fit items-center gap-[9.6px] rounded-full bg-white px-6 py-[14px] text-base font-bold leading-[24px] text-quote-red transition-opacity hover:opacity-90"
               >
                 Request a Free Quote
                 <Image

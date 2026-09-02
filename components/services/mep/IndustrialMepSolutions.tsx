@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import ServiceSolutionsMobileGrid from "@/components/services/ServiceSolutionsMobileGrid";
-import { SERVICE_BODY_TEXT_CLASS_SCALED } from "@/components/services/serviceTypography";
+import { SERVICE_CARD_BODY_CLASS_SCALED } from "@/components/services/serviceTypography";
 
 const solutions = [
   {
@@ -111,7 +111,7 @@ export default function IndustrialMepSolutions() {
                 <b className="block text-num-18_67 leading-[26px] text-darkslategray font-montserrat">
                   {item.title}
                 </b>
-                <p className={`mt-2 ${SERVICE_BODY_TEXT_CLASS_SCALED}`}>
+                <p className={`mt-2 ${SERVICE_CARD_BODY_CLASS_SCALED}`}>
                   {item.body}
                 </p>
               </div>

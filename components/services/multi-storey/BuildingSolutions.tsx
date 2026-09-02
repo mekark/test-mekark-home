@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import GridBackground from "@/components/services/multi-storey/GridBackground";
 import ServiceSolutionsMobileGrid from "@/components/services/ServiceSolutionsMobileGrid";
-import { SERVICE_BODY_TEXT_CLASS_SCALED } from "@/components/services/serviceTypography";
+import { SERVICE_CARD_BODY_CLASS_SCALED } from "@/components/services/serviceTypography";
 
 type Solution = {
   title: string;
@@ -152,7 +152,7 @@ export default function BuildingSolutions() {
               <h3 className="min-h-[42.66px] font-montserrat text-[18.67px] leading-[21.33px] font-bold text-darkslategray">
                 {item.desktopTitle}
               </h3>
-              <p className={`mt-3 min-h-[63.99px] text-left ${SERVICE_BODY_TEXT_CLASS_SCALED}`}>
+              <p className={`mt-3 min-h-[63.99px] text-left ${SERVICE_CARD_BODY_CLASS_SCALED}`}>
                 {item.body}
               </p>
             </motion.article>

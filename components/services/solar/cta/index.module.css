@@ -557,7 +557,7 @@
 }
 .frameParent6 {
 	position: absolute;
-	top: calc(50% - 124.65px);
+	top: calc(50% - 114px);
 	left: 146.331px;
 	display: flex;
 	flex-direction: column;
@@ -599,23 +599,14 @@
 	font-weight: 700;
 }
 .component4 {
-	height: clamp(14px, 19.2px, 19px);
-	width: clamp(14px, 19.2px, 19px);
+	height: 18.8px;
+	width: 18.8px;
 	position: relative;
 	overflow: hidden;
 	flex-shrink: 0;
 }
 .vectorIcon {
-	position: absolute;
-	height: 50%;
-	width: 100%;
-	top: 24.94%;
-	right: 19.06%;
-	bottom: 25.06%;
-	left: 18.71%;
-	max-width: 100%;
-	overflow: hidden;
-	max-height: 100%;
+	object-fit: contain;
 }
 .layer2CopyCta1 {
 	position: absolute;

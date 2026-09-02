@@ -13,7 +13,7 @@ const Frame191: NextPage = () => {
 				<div className={styles.copy}>
 					<ServiceMidCtaLine
 						stretch
-						className="left-[56px] lg:inset-y-auto lg:top-1/2 lg:h-[264px] lg:-translate-y-1/2"
+						className="hidden left-[104px] lg:block lg:inset-y-auto lg:top-1/2 lg:h-[264px] lg:-translate-y-1/2"
 					/>
 					<ServiceMidCtaTitle
 						line1="Planning a Tensile"
@@ -28,13 +28,14 @@ const Frame191: NextPage = () => {
 					</p>
 
 					<a href="/#enquiry" className={styles.cta}>
-						<span className={styles.ctaLabel}>Request a Free Site Assessment</span>
+						<span className={styles.ctaLabel}>Request a Free Quote	</span>
 						<span className={styles.ctaIcon} aria-hidden>
 							<Image
 								src="/images/services/tensile/frame191/arrow.svg"
-								width={12}
-								height={9}
 								alt=""
+								fill
+								className={styles.ctaIconImg}
+								sizes="19px"
 							/>
 						</span>
 					</a>

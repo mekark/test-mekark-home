@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import type { CSSProperties } from "react";
-import { SERVICE_BODY_TEXT_CLASS } from "@/components/services/serviceTypography";
+import { SERVICE_CARD_BODY_CLASS } from "@/components/services/serviceTypography";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 18 },
@@ -79,7 +79,7 @@ export default function ServiceSolutionsMobileGrid({
               <h3 className="font-montserrat text-[17px] font-bold leading-[22px] text-darkslategray sm:text-[18.67px]">
                 {item.title}
               </h3>
-              <p className={`mt-2 ${SERVICE_BODY_TEXT_CLASS}`}>
+              <p className={`mt-2 ${SERVICE_CARD_BODY_CLASS}`}>
                 {item.description}
               </p>
             </div>

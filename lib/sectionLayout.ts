@@ -2,6 +2,10 @@
 export const SECTION_CONTAINER_CLASS =
   "section-container relative mx-auto w-full";
 
+/** iMac / 1280–1535px — full viewport width like the hero video section. */
+export const SECTION_MAC_FULL_BLEED_CLASS =
+  "xl:max-w-none xl:w-full xl:px-0 2xl:max-w-[var(--section-max-width)] 2xl:pl-[var(--section-padding-x)] 2xl:pr-[var(--section-padding-x-right)]";
+
 /** Service page section shell — iMac Figma 6700:6691 · large 1920px canvas. */
 export const SERVICE_PAGE_SECTION_CLASS =
   "relative mx-auto w-full max-w-[1920px] px-5 py-14 sm:px-8 md:px-16 lg:px-[107px] lg:py-[107px] xl:px-20 xl:py-[65px] 2xl:px-[107px] 2xl:py-[107px]";

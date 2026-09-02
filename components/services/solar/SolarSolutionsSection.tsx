@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import ServiceSolutionsMobileGrid from "@/components/services/ServiceSolutionsMobileGrid";
-import { SERVICE_BODY_TEXT_CLASS_SCALED } from "@/components/services/serviceTypography";
+import { SERVICE_CARD_BODY_CLASS_SCALED } from "@/components/services/serviceTypography";
 import styles from "./cta/index.module.css";
 
 export const solarSolutions = [
@@ -104,7 +104,7 @@ export default function SolarSolutionsSection() {
                   <div className={styles.rooftopSolarFor}>
                     Rooftop Solar for Factories and Warehouses
                   </div>
-                  <div className={`${styles.highCapacitySystemsEngineer} ${SERVICE_BODY_TEXT_CLASS_SCALED}`}>
+                  <div className={`${styles.highCapacitySystemsEngineer} ${SERVICE_CARD_BODY_CLASS_SCALED}`}>
                     High-capacity systems engineered for industrial roof
                     structures
                   </div>
@@ -125,7 +125,7 @@ export default function SolarSolutionsSection() {
                   <div className={styles.rooftopSolarFor}>
                     Off-Grid Solar Systems
                   </div>
-                  <div className={`${styles.fullyIndependentPower} ${SERVICE_BODY_TEXT_CLASS_SCALED}`}>
+                  <div className={`${styles.fullyIndependentPower} ${SERVICE_CARD_BODY_CLASS_SCALED}`}>
                     Fully independent power supply for remote industrial
                     facilities
                   </div>
@@ -146,7 +146,7 @@ export default function SolarSolutionsSection() {
                   <div className={styles.rooftopSolarFor}>
                     Ground-Mounted Solar Power Plants
                   </div>
-                  <div className={`${styles.optimizedForBusinesses} ${SERVICE_BODY_TEXT_CLASS_SCALED}`}>
+                  <div className={`${styles.optimizedForBusinesses} ${SERVICE_CARD_BODY_CLASS_SCALED}`}>
                     Optimized for businesses with available open land
                   </div>
                 </div>
@@ -164,7 +164,7 @@ export default function SolarSolutionsSection() {
                   <div className={styles.rooftopSolarFor}>
                     Commercial Solar Energy Audit
                   </div>
-                  <div className={`${styles.detailedAssessmentOf} ${SERVICE_BODY_TEXT_CLASS_SCALED}`}>
+                  <div className={`${styles.detailedAssessmentOf} ${SERVICE_CARD_BODY_CLASS_SCALED}`}>
                     Detailed assessment of your current consumption and savings
                     potential
                   </div>
@@ -185,7 +185,7 @@ export default function SolarSolutionsSection() {
                   <div className={styles.rooftopSolarFor}>
                     Solar and Battery Storage Systems
                   </div>
-                  <div className={`${styles.uninterruptedPowerSupply} ${SERVICE_BODY_TEXT_CLASS_SCALED}`}>
+                  <div className={`${styles.uninterruptedPowerSupply} ${SERVICE_CARD_BODY_CLASS_SCALED}`}>
                     Uninterrupted power supply for manufacturing and cold
                     storage units
                   </div>
@@ -206,7 +206,7 @@ export default function SolarSolutionsSection() {
                   <div className={styles.rooftopSolarFor}>
                     On-Grid Solar with Net Metering
                   </div>
-                  <div className={`${styles.fullyIndependentPower} ${SERVICE_BODY_TEXT_CLASS_SCALED}`}>
+                  <div className={`${styles.fullyIndependentPower} ${SERVICE_CARD_BODY_CLASS_SCALED}`}>
                     Stay connected to the grid and reduce your electricity bill
                   </div>
                 </div>

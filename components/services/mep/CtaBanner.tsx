@@ -35,7 +35,7 @@ export default function CtaBanner() {
                 className="mt-8 inline-flex w-fit items-center justify-center gap-[9.6px] rounded-full bg-white px-[24.1px] py-[14.4px] text-red-ribbon"
               >
                 <b className="leading-[24.06px]">
-                  Request a Free Site Assessment
+                Request a Free Quote
                 </b>
                 <Image
                   src="/images/services/mep/cta-banner/arrow.svg"
@@ -72,7 +72,7 @@ export default function CtaBanner() {
         >
           <ServiceMidCtaLine className="absolute left-[117.33px] top-[42.67px] z-[2]" />
 
-          <div className="absolute top-[41.01px] left-[146.67px] z-10 flex min-h-[264px] w-[553.3px] flex-col">
+          <div className="absolute top-[50px] left-[146.67px] z-10 flex min-h-[264px] w-[553.3px] flex-col">
             <ServiceMidCtaTitle
               line1="Planning a Factory, Warehouse,"
               line2="or Manufacturing Plant?"
@@ -91,15 +91,15 @@ export default function CtaBanner() {
               className="mt-8 inline-flex w-fit items-center justify-center gap-[9.6px] rounded-full bg-white px-[24.1px] py-[14.4px] text-red-ribbon"
             >
               <b className="relative leading-[24.06px]">
-                Request a Free Site Assessment
+              Request a Free Quote
               </b>
-              <span className="relative h-[18.8px] w-[18.8px] overflow-hidden shrink-0">
+              <span className="relative size-[18.8px] shrink-0 overflow-hidden">
                 <Image
-                  className="absolute top-[24.94%] right-[19.06%] bottom-[25.06%] left-[18.71%] h-3/6 w-full max-h-full max-w-full overflow-hidden"
                   src="/images/services/mep/cta-banner/arrow.svg"
-                  width={12}
-                  height={9}
                   alt=""
+                  fill
+                  className="object-contain"
+                  sizes="19px"
                 />
               </span>
             </a>

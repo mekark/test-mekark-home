@@ -102,8 +102,8 @@ function LogoMarqueeRow({
 export function EngineeringNumbersSection() {
   return (
     <section className="relative w-full bg-[#f5f5f5] text-black">
-      {/* Engineering in Numbers — Figma 3327:9311 */}
-      <div className={`${SECTION_CONTAINER_CLASS} relative pb-8 pt-8 font-[family-name:var(--font-manrope)] sm:pb-16 sm:pt-14 lg:pb-[70px] lg:pt-[61px]`}>
+      {/* Engineering in Numbers — iMac Figma 6700:6708 · large screen Figma 3327:9311 */}
+      <div className={`${SECTION_CONTAINER_CLASS} relative pb-8 pt-8 font-[family-name:var(--font-manrope)] sm:pb-16 sm:pt-14 lg:pb-[70px] lg:pt-[61px] xl:pb-[46px] xl:pt-[46px] 2xl:pb-[70px] 2xl:pt-[61px]`}>
         <div
           className="pointer-events-none absolute inset-0 overflow-hidden bg-[#f5f5f5]"
           aria-hidden
@@ -131,33 +131,33 @@ export function EngineeringNumbersSection() {
             variants={slideFromLeft}
             className="flex max-w-[721px] flex-col items-start"
           >
-            <div className="relative flex h-7 min-w-0 items-center max-[350px]:h-6">
+            <div className="relative flex h-7 min-w-0 items-center max-[350px]:h-6 xl:h-[21px]">
               <span
-                className="h-[2.7px] w-[53px] shrink-0 bg-[#e40015] max-[350px]:w-8"
+                className="h-[2.7px] w-[53px] shrink-0 bg-[#e40015] max-[350px]:w-8 xl:w-[40px]"
                 aria-hidden
               />
-              <p className="ml-[15px] whitespace-nowrap text-xs font-semibold uppercase leading-[27.73px] tracking-[2.67px] text-[#828181] max-[350px]:ml-2 max-[350px]:text-[9px] max-[350px]:leading-none max-[350px]:tracking-[1px] sm:text-base">
+              <p className="ml-[15px] whitespace-nowrap text-xs font-semibold uppercase leading-[27.73px] tracking-[2.67px] text-[#828181] max-[350px]:ml-2 max-[350px]:text-[9px] max-[350px]:leading-none max-[350px]:tracking-[1px] sm:text-base xl:text-[12px] xl:leading-[20.8px] xl:tracking-[2px]">
                 Scale that speaks for itself
               </p>
             </div>
             <motion.h2
               variants={slideFromLeft}
-              className="mt-1 text-[28px] font-bold leading-tight text-black sm:text-[40px] sm:leading-[56px] lg:text-[48px] lg:leading-[56px] 2xl:whitespace-nowrap 2xl:text-[61.33px] 2xl:leading-[80px]"
+              className="mt-1 text-[28px] font-bold leading-tight text-black sm:text-[40px] sm:leading-[56px] lg:text-[48px] lg:leading-[56px] xl:text-[46px] xl:leading-[60px] 2xl:whitespace-nowrap 2xl:text-[61.33px] 2xl:leading-[80px]"
             >
               Annual Production Capacity{" "}
             </motion.h2>
           </AnimatedSection>
 
-          <div className="mt-4 flex min-w-0 flex-col items-center gap-4 sm:mt-6 sm:gap-6 lg:mt-8 2xl:flex-row 2xl:items-center 2xl:gap-12">
+          <div className="mt-4 flex min-w-0 flex-col items-center gap-4 sm:mt-6 sm:gap-6 lg:mt-8 xl:mt-2 xl:flex-row xl:items-center xl:gap-9 2xl:mt-8 2xl:gap-12">
             <motion.div
-              className="relative z-10 w-full min-w-0 flex-1 2xl:max-w-[1020px]"
+              className="relative z-10 w-full min-w-0 flex-1 xl:max-w-[765px] 2xl:max-w-[1020px]"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={VIEWPORT}
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             >
               {/* Figma crop: 1020×383 frame over full 3D plaque render */}
-              <div className="relative mx-auto aspect-[1020/383] w-full max-w-[1020px] overflow-hidden 2xl:mx-0">
+              <div className="relative mx-auto aspect-[765/287] w-full max-w-[765px] overflow-hidden xl:mx-0 xl:aspect-[765/287] xl:max-w-[765px] 2xl:aspect-[1020/383] 2xl:max-w-[1020px]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/engineering/stat-40000-plaque.png"
@@ -168,14 +168,14 @@ export function EngineeringNumbersSection() {
                   decoding="async"
                   fetchPriority="high"
                 />
-                <p className="absolute bottom-[14%] left-1/2 z-10 w-[96%] -translate-x-1/2 text-center text-sm font-bold uppercase tracking-[2.67px] text-black opacity-75 sm:text-xl sm:leading-[27.73px]">
+                <p className="absolute bottom-[14%] left-1/2 z-10 w-[96%] -translate-x-1/2 text-center text-sm font-bold uppercase tracking-[2.67px] text-black opacity-75 sm:text-xl sm:leading-[27.73px] xl:text-[15px] xl:leading-[20.8px] xl:tracking-[2px]">
                   metric ton per annum
                 </p>
               </div>
             </motion.div>
 
             <motion.div
-              className="flex w-full min-w-0 max-w-full items-stretch gap-4 sm:gap-[22px] 2xl:w-auto 2xl:max-w-none 2xl:shrink-0 2xl:self-center"
+              className="flex w-full min-w-0 max-w-full items-stretch gap-4 sm:gap-[22px] xl:w-auto xl:max-w-none xl:shrink-0 xl:self-center xl:gap-[22px] 2xl:gap-[22px]"
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
@@ -183,7 +183,7 @@ export function EngineeringNumbersSection() {
             >
               <motion.div
                 variants={drawVertical}
-                className="relative w-[1.3px] shrink-0 min-h-[120px] sm:min-h-[150px] 2xl:min-h-[240px]"
+                className="relative w-[1.3px] shrink-0 min-h-[120px] sm:min-h-[150px] xl:min-h-[200px] 2xl:min-h-[240px]"
                 style={{
                   background:
                     "linear-gradient(180deg, rgba(214,214,214,0), #d6d6d6 20%, #d6d6d6 80%, rgba(214,214,214,0))",
@@ -191,21 +191,21 @@ export function EngineeringNumbersSection() {
               >
                 <motion.span
                   variants={pulseDot}
-                  className="absolute left-1/2 top-1/2 z-10 flex size-[18.7px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-[1.3px] border-solid border-[#d6d6d6] bg-white"
+                  className="absolute left-1/2 top-1/2 z-10 flex size-[18.7px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-[1.3px] border-solid border-[#d6d6d6] bg-white xl:size-[14px] 2xl:size-[18.7px]"
                 >
-                  <span className="size-2 rounded bg-[#ed2024] shadow-[0_0_16px_rgba(237,32,36,0.7)]" />
+                  <span className="size-2 rounded bg-[#ed2024] shadow-[0_0_16px_rgba(237,32,36,0.7)] xl:size-[6px] xl:shadow-[0_0_12px_rgba(237,32,36,0.7)] 2xl:size-2 2xl:shadow-[0_0_16px_rgba(237,32,36,0.7)]" />
                 </motion.span>
               </motion.div>
               <motion.div
                 variants={fadeUp}
                 className="flex min-w-0 flex-1 items-center"
               >
-                <p className="text-left text-[13px] leading-[20px] text-[#2a2a2a] min-[480px]:text-[14px] min-[480px]:leading-[22px] md:text-[16px] md:leading-[24px] lg:text-[22px] lg:leading-[30px] xl:text-[24px] xl:leading-[32px] 2xl:text-[28px] 2xl:leading-[34px]">
-                  <span className="2xl:block 2xl:whitespace-nowrap">
+                <p className="text-left text-[13px] leading-[20px] text-[#2a2a2a] min-[480px]:text-[14px] min-[480px]:leading-[22px] md:text-[16px] md:leading-[24px] lg:text-[22px] lg:leading-[30px] xl:max-w-[360px] xl:text-[21px] xl:leading-[25.5px] 2xl:max-w-none 2xl:text-[28px] 2xl:leading-[34px]">
+                  <span className="xl:block xl:whitespace-nowrap 2xl:block 2xl:whitespace-nowrap">
                     Tons of structural steel manufactured at our
                   </span>
-                  <span className="2xl:hidden"> </span>
-                  <span className="2xl:block 2xl:whitespace-nowrap">
+                  <span className="xl:hidden 2xl:hidden"> </span>
+                  <span className="xl:block xl:whitespace-nowrap 2xl:block 2xl:whitespace-nowrap">
                     fully integrated Tamil Nadu facility.
                   </span>
                 </p>

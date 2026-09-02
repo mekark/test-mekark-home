@@ -372,6 +372,11 @@
   .bannerLine,
   .subtitleLine {
     white-space: normal;
+    display: inline;
+  }
+  .asALeading {
+    display: block;
+    width: 100%;
   }
 }
 

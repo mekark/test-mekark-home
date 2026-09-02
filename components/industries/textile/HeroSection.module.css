@@ -101,12 +101,12 @@
 .ctaText {
 	position: relative;
 	line-height: 1.666667vw;
-	font-weight: 600;
+	font-weight: 500;
 }
 
 .ctaIconWrap {
-	height: 1.75vw;
-	width: 1.75vw;
+	height: 1.2vw;
+	width: 1.2vw;
 	position: relative;
 	overflow: hidden;
 	flex-shrink: 0;

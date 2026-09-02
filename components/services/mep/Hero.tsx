@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ServiceMobileHero from "@/components/services/ServiceMobileHero";
 import { SERVICE_BODY_TEXT_SIZES } from "@/components/services/serviceTypography";
+import { SERVICE_HERO_HEIGHT_CLASS } from "@/lib/sectionLayout";
 
 const mobileStats = [
   {
@@ -85,7 +86,7 @@ export default function Hero() {
       <MobileHero />
 
       {/* Desktop */}
-      <section className="relative hidden h-[1048px] w-full shrink-0 overflow-hidden bg-gray-200 text-left font-manrope text-num-26_67 text-white md:block">
+      <section className={`relative hidden h-[1048px] w-full shrink-0 overflow-hidden bg-gray-200 text-left font-manrope text-num-26_67 text-white md:block ${SERVICE_HERO_HEIGHT_CLASS}`}>
         <div className="absolute top-[-32px] right-0 left-0 h-[1080px] w-full shrink-0">
           <Image
             className="absolute top-[-17px] left-0 h-[1080px] w-full max-w-none object-cover shrink-0"
@@ -97,7 +98,7 @@ export default function Hero() {
             priority
           />
           <div
-            className="absolute top-[32.33px] right-0 h-[1048px] w-full shrink-0"
+            className="absolute top-[32.33px] right-0 h-[1048px] w-full shrink-0 xl:top-6 xl:h-[786px] 2xl:top-[32.33px] 2xl:h-[1048px]"
             style={{
               background:
                 "linear-gradient(180deg, #ffc2c2, rgba(255, 255, 255, 0))",

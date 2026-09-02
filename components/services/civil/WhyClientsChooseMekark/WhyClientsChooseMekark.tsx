@@ -123,7 +123,7 @@ function Feature({
 
 export default function WhyClientsChooseMekark() {
   return (
-    <section className="relative isolate flex h-auto w-full shrink-0 flex-col items-start overflow-hidden text-center font-manrope text-[53.33px] text-gray-100 [background:linear-gradient(269.25deg,#fff,rgba(255,255,255,0)),linear-gradient(#e6e6e6,#e6e6e6)] lg:h-[1014.7px] lg:gap-[13.3px]">
+    <section className="relative isolate flex h-auto w-full shrink-0 flex-col items-start overflow-hidden text-center font-manrope text-[53.33px] text-gray-100 [background:linear-gradient(269.25deg,#fff,rgba(255,255,255,0)),linear-gradient(#e6e6e6,#e6e6e6)] lg:h-[1014.7px] lg:gap-[13.3px] xl:h-auto xl:min-h-[761px] 2xl:h-[1014.7px] 2xl:min-h-0">
       {/* Mobile / tablet — clean split: copy left of engineer feel */}
       <div className="relative z-10 w-full lg:hidden">
         {/* eslint-disable-next-line @next/next/no-img-element */}

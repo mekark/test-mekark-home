@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ServiceIntroTitle } from "@/components/services/ServiceIntroTitle";
 import { SERVICE_BODY_TEXT_CLASS } from "@/components/services/serviceTypography";
+import { SERVICE_END_TO_END_ASPECT_CLASS } from "@/lib/sectionLayout";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -45,7 +46,7 @@ export default function EndToEndPEB() {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-[1920px] flex-col px-5 py-10 sm:px-10 sm:py-14 lg:block lg:aspect-[1920/929] lg:overflow-hidden lg:px-0 lg:py-0">
+      <div className={`relative z-10 mx-auto flex w-full max-w-[1920px] flex-col px-5 py-10 sm:px-10 sm:py-14 lg:block lg:px-0 lg:py-0 ${SERVICE_END_TO_END_ASPECT_CLASS}`}>
         {/* Copy — Figma: left 224, title top 85.33 */}
         <div className="contents lg:block lg:absolute lg:left-[11.67%] lg:top-[9.18%] lg:z-10 lg:w-[43.54%] lg:max-w-none">
           <motion.div

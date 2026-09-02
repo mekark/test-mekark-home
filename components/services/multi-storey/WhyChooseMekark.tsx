@@ -219,7 +219,7 @@ export default function WhyChooseMekark() {
       </div>
 
       {/* ─── Desktop layout (unchanged) ─── */}
-      <div className="relative z-10 mx-auto hidden w-full max-w-[1920px] lg:block lg:min-h-[1014px] lg:px-10 lg:pt-9 lg:pb-0 xl:px-6">
+      <div className="relative z-10 mx-auto hidden w-full max-w-[1920px] lg:block lg:min-h-[1014px] lg:px-10 lg:pt-9 lg:pb-0 xl:min-h-[761px] xl:px-20 2xl:min-h-[1014px] 2xl:px-10">
         <motion.div
           className="mx-auto max-w-[1260px] text-center lg:mb-0"
           initial={{ opacity: 0, y: 18 }}

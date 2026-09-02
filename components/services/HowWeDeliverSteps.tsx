@@ -120,12 +120,12 @@ export default function HowWeDeliverSteps({
       </ol>
 
       <div
-        className={`mx-auto w-full max-w-[1413px] gap-8 sm:gap-10 xl:gap-8 ${desktop} ${desktopColClass(desktopCols)}`}
+        className={`mx-auto w-full max-w-[1413px] gap-8 overflow-visible sm:gap-10 xl:max-w-[1060px] xl:gap-6 2xl:max-w-[1413px] 2xl:gap-10 ${desktop} ${desktopColClass(desktopCols)}`}
       >
         {steps.map((step, index) => (
           <motion.div
             key={step.title}
-            className="relative"
+            className="relative min-w-0"
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -135,8 +135,8 @@ export default function HowWeDeliverSteps({
               delay: 0.05 * index,
             }}
           >
-            <div className="relative mb-9 h-[107px] w-[107px] rounded-[21.33px] bg-lavenderblush">
-              <div className="absolute top-1/2 left-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2">
+            <div className="relative mb-9 h-[107px] w-[107px] rounded-[21.33px] bg-lavenderblush xl:mb-6 xl:h-20 xl:w-20 xl:rounded-2xl 2xl:mb-9 2xl:h-[107px] 2xl:w-[107px] 2xl:rounded-[21.33px]">
+              <div className="absolute top-1/2 left-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2 xl:h-8 xl:w-8 2xl:h-10 2xl:w-10">
                 {step.icon ? (
                   <Image
                     src={step.icon}
@@ -146,7 +146,7 @@ export default function HowWeDeliverSteps({
                     className="object-contain"
                   />
                 ) : (
-                  <span className="flex h-full w-full items-center justify-center font-montserrat text-[15px] font-bold text-red">
+                  <span className="flex h-full w-full items-center justify-center font-montserrat text-[15px] font-bold text-red xl:text-[13px] 2xl:text-[15px]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 )}
@@ -157,14 +157,14 @@ export default function HowWeDeliverSteps({
                   alt=""
                   width={67}
                   height={20}
-                  className="absolute top-[60px] left-[145px] hidden h-5 w-[67px] xl:block"
+                  className="absolute top-10 left-[88px] hidden h-4 w-12 xl:block 2xl:top-[60px] 2xl:left-[145px] 2xl:h-5 2xl:w-[67px]"
                 />
               ) : null}
             </div>
-            <h3 className="font-montserrat text-[17px] leading-[21.33px] font-bold text-darkslategray sm:text-[18.67px]">
+            <h3 className="font-montserrat text-[17px] leading-[21.33px] font-bold text-darkslategray sm:text-[18.67px] xl:text-[15px] xl:leading-[20px] 2xl:text-[18.67px] 2xl:leading-[21.33px]">
               {step.title}
             </h3>
-            <p className={`mt-3 ${SERVICE_BODY_TEXT_CLASS}`}>
+            <p className={`mt-3 xl:mt-2 2xl:mt-3 ${SERVICE_BODY_TEXT_CLASS}`}>
               {step.body}
             </p>
           </motion.div>

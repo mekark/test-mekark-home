@@ -4,6 +4,7 @@ import {
   SERVICE_BODY_TEXT_CLASS,
   SERVICE_INTRO_TITLE_FIGMA_CLASS,
 } from "@/components/services/serviceTypography";
+import { SERVICE_MEP_END_TO_END_ASPECT_CLASS } from "@/lib/sectionLayout";
 
 const paragraphs = [
   {
@@ -31,7 +32,7 @@ export default function EndToEnd() {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-[1920px] flex-col px-5 py-8 sm:px-10 sm:py-10 lg:block lg:aspect-[1920/800] lg:overflow-hidden lg:px-0 lg:py-0">
+      <div className={`relative z-10 mx-auto flex w-full max-w-[1920px] flex-col px-5 py-8 sm:px-10 sm:py-10 lg:block lg:px-0 lg:py-0 ${SERVICE_MEP_END_TO_END_ASPECT_CLASS}`}>
         {/* Copy — Figma: left 224px, title top ~85px, body top ~295px */}
         <div className="contents lg:block lg:absolute lg:left-[11.67%] lg:top-[8%] lg:z-10 lg:w-[35%] lg:max-w-[672px]">
           <div className="order-1 lg:order-none">

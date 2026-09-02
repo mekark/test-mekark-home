@@ -14,13 +14,13 @@ function getTitleStyles(beforeRed: string) {
 
   if (len <= 32) {
     return {
-      size: "!text-[26px] sm:!text-[40px] lg:!text-[52px] xl:!text-[40px] 2xl:!text-[52px]",
+      size: "!text-[26px] sm:!text-[40px] lg:!text-[52px] xl:!text-[40px] xl:!leading-[44px] 2xl:!text-[52px] 2xl:!leading-[1.18]",
       width: "!max-w-[11em] lg:!max-w-[12em] xl:!max-w-[10em] 2xl:!max-w-[12em]",
     };
   }
   if (len <= 42) {
     return {
-      size: "!text-[24px] sm:!text-[36px] lg:!text-[48px] xl:!text-[36px] 2xl:!text-[48px]",
+      size: "!text-[24px] sm:!text-[36px] lg:!text-[48px] xl:!text-[36px] xl:!leading-[44px] 2xl:!text-[48px] 2xl:!leading-[1.18]",
       width: "!max-w-[11em] lg:!max-w-[12.5em] xl:!max-w-[10.5em] 2xl:!max-w-[12.5em]",
     };
   }

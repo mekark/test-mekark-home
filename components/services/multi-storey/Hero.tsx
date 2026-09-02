@@ -6,6 +6,7 @@ import Link from "next/link";
 import ServiceMobileHero from "@/components/services/ServiceMobileHero";
 import { animate, motion, useInView, useReducedMotion } from "framer-motion";
 import { SERVICE_BODY_TEXT_SIZES } from "@/components/services/serviceTypography";
+import { SERVICE_HERO_HEIGHT_CLASS } from "@/lib/sectionLayout";
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
@@ -135,7 +136,7 @@ function DesktopHero() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="relative hidden min-h-[1048px] w-full flex-col overflow-hidden bg-[#060606] font-sans text-white md:flex">
+    <section className={`relative hidden min-h-[1048px] w-full flex-col overflow-hidden bg-[#060606] font-sans text-white md:flex ${SERVICE_HERO_HEIGHT_CLASS}`}>
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute inset-0"
@@ -176,10 +177,10 @@ function DesktopHero() {
         />
       </div>
 
-      <div className="relative z-10 flex min-h-[1048px] w-full flex-col justify-between pl-32 pb-[66px] pt-32">
+      <div className={`relative z-10 flex min-h-[1048px] w-full flex-col justify-between pl-32 pb-[66px] pt-32 xl:min-h-[786px] xl:pl-20 xl:pb-12 xl:pt-24 2xl:min-h-[1048px] 2xl:pl-32 2xl:pb-[66px] 2xl:pt-32`}>
         <div className="relative flex w-full max-w-[989px] flex-col items-start gap-5 opacity-90">
           <motion.h1
-            className="w-max max-w-none whitespace-nowrap font-manrope text-5xl font-bold leading-[56px] tracking-[-1px] text-gray"
+            className="w-max max-w-none whitespace-nowrap font-manrope text-5xl font-bold leading-[56px] tracking-[-1px] text-gray xl:text-[36px] xl:leading-[42px] 2xl:text-5xl 2xl:leading-[56px]"
             initial={reduceMotion ? false : { opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: easeOut, delay: 0.15 }}

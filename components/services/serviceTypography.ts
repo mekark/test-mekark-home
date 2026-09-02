@@ -2,12 +2,26 @@
 export const SERVICE_BODY_TEXT_SIZES =
   "font-manrope text-[14px] font-normal leading-[22px] sm:text-[17px] sm:leading-[26px] lg:text-num-18_67 lg:leading-[26px] xl:text-[15px] xl:leading-[22px] 2xl:text-num-18_67 2xl:leading-[26px]";
 
+/**
+ * Body sizes for CSS-scaled canvases (Civil DesignScale).
+ * No xl shrink — DesignScale already fits the 1920 layout to the viewport.
+ */
+export const SERVICE_BODY_TEXT_SIZES_SCALED =
+  "font-manrope text-[14px] font-normal leading-[22px] sm:text-[17px] sm:leading-[26px] lg:text-num-18_67 lg:leading-[26px]";
+
 /** Standard body copy on light backgrounds (Civil WhyChooseMekark reference). */
 export const SERVICE_BODY_TEXT_CLASS = `${SERVICE_BODY_TEXT_SIZES} text-black`;
+
+/** Body copy inside DesignScale — large-desktop sizes only. */
+export const SERVICE_BODY_TEXT_CLASS_SCALED = `${SERVICE_BODY_TEXT_SIZES_SCALED} text-black`;
 
 /** Why Choose Mekark feature descriptions — Montserrat 16px / 25.33px / grey #555 (Figma grey/33). */
 export const SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS =
   "font-montserrat text-base font-normal leading-num-25_33 text-[#555] text-left xl:text-[14px] xl:leading-[20px] 2xl:text-base 2xl:leading-num-25_33";
+
+/** Feature body inside DesignScale — no xl shrink. */
+export const SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS_SCALED =
+  "font-montserrat text-base font-normal leading-num-25_33 text-[#555] text-left";
 
 /** Card / grid item titles on service pages — iMac Figma 6728:2619. */
 export const SERVICE_CARD_TITLE_CLASS =
@@ -15,7 +29,7 @@ export const SERVICE_CARD_TITLE_CLASS =
 
 /** Card / grid item body on service pages. */
 export const SERVICE_CARD_BODY_CLASS =
-  "font-montserrat text-[#555] xl:text-[13px] xl:leading-[18px] 2xl:text-num-18_67 2xl:leading-[26px]";
+  "font-montserrat text-[16px] leading-[22px] text-[#555] lg:text-num-18_67 lg:leading-[26px] xl:text-[13px] xl:leading-[18px] 2xl:text-num-18_67 2xl:leading-[26px]";
 
 /** @deprecated Use SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS */
 export const SERVICE_PEB_BENEFIT_DESCRIPTION_CLASS =
@@ -39,4 +53,17 @@ export const SERVICE_MID_CTA_TITLE_SIZE_CLASS: Record<
     "text-[clamp(1.25rem,3.7vw,1.45rem)] leading-[1.2] sm:text-[clamp(1.35rem,4vw,1.55rem)] lg:text-[clamp(1.4rem,2.15vw,2.55rem)] lg:leading-[1.2] xl:text-[clamp(1.25rem,2.2vw,2rem)] 2xl:text-[clamp(1.4rem,2.15vw,2.55rem)] 2xl:leading-[1.2]",
   long:
     "text-[clamp(1.1rem,3.2vw,1.35rem)] leading-[1.2] sm:text-[clamp(1.2rem,3.4vw,1.45rem)] lg:text-[clamp(1.25rem,1.9vw,2.35rem)] lg:leading-[1.2] xl:text-[clamp(1.15rem,2vw,1.9rem)] 2xl:text-[clamp(1.25rem,1.9vw,2.35rem)] 2xl:leading-[1.2]",
+};
+
+/** Mid-CTA titles inside DesignScale — large-desktop clamps only (no xl shrink). */
+export const SERVICE_MID_CTA_TITLE_SIZE_CLASS_SCALED: Record<
+  ServiceMidCtaTitleSize,
+  string
+> = {
+  short:
+    "text-[clamp(1.3rem,4vw,1.5rem)] leading-[1.2] sm:text-[clamp(1.4rem,4.2vw,1.6rem)] lg:text-[clamp(1.4rem,2.05vw,2.65rem)] lg:leading-[1.2]",
+  medium:
+    "text-[clamp(1.25rem,3.7vw,1.45rem)] leading-[1.2] sm:text-[clamp(1.35rem,4vw,1.55rem)] lg:text-[clamp(1.4rem,2.15vw,2.55rem)] lg:leading-[1.2]",
+  long:
+    "text-[clamp(1.1rem,3.2vw,1.35rem)] leading-[1.2] sm:text-[clamp(1.2rem,3.4vw,1.45rem)] lg:text-[clamp(1.25rem,1.9vw,2.35rem)] lg:leading-[1.2]",
 };

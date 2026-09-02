@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { SERVICE_MID_CTA_TITLE_SIZE_CLASS } from "@/components/services/serviceTypography";
+import { SERVICE_MID_CTA_TITLE_SIZE_CLASS_SCALED } from "@/components/services/serviceTypography";
 import {
   ServiceMidCtaCopy,
   ServiceMidCtaLine,
@@ -14,7 +14,7 @@ function PlanningCtaTitle({ id }: { id?: string }) {
   return (
     <h2
       id={id}
-      className={`w-full max-w-full font-extrabold lg:w-fit ${SERVICE_MID_CTA_TITLE_SIZE_CLASS.medium}`}
+      className={`w-full max-w-full font-extrabold lg:w-fit ${SERVICE_MID_CTA_TITLE_SIZE_CLASS_SCALED.medium}`}
     >
       <span className="block text-white lg:whitespace-nowrap">
         Planning a Factory, Commercial
@@ -39,7 +39,7 @@ export default function PlanningCta() {
   return (
     <section
       id="quote"
-      className="relative mx-auto w-full max-w-[1920px] overflow-visible bg-white px-5 py-8 sm:px-8 sm:py-10 lg:px-[80px] lg:pt-[72px] lg:pb-12 xl:px-20 2xl:px-[107px]"
+      className="relative mx-auto w-full max-w-[1920px] overflow-visible bg-white px-5 py-8 sm:px-8 sm:py-10 lg:px-[80px] lg:pt-[72px] lg:pb-12"
       aria-labelledby="civil-quote-title"
     >
       {/* Mobile — continuous red gradient; building blended at bottom */}
@@ -136,7 +136,7 @@ export default function PlanningCta() {
           <div className="absolute left-[8.59%] top-[11.88%] flex h-[76.63%] w-[32.42%] min-w-0 flex-col">
             <PlanningCtaTitle />
 
-            <p className="mt-3 w-[110%] text-[clamp(14px,1.1vw,18.67px)] font-medium leading-[1.22] tracking-[1.42px] text-[#CCC6C6] xl:text-[18.67px] xl:leading-[22.72px]">
+            <p className="mt-3 w-[110%] text-[clamp(14px,1.1vw,18.67px)] font-medium leading-[1.22] tracking-[1.42px] text-[#CCC6C6]">
               Get a free consultation and project blueprint from
               <br />
               Mekark&apos;s civil construction and structural engineering team.

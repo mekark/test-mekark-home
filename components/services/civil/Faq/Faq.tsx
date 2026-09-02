@@ -131,16 +131,16 @@ export default function Faq() {
   return (
     <section
       id="faq"
-      className="relative box-border flex w-full flex-col items-start overflow-hidden bg-white px-5 py-16 text-left font-manrope text-[53.33px] text-[#111] sm:px-8 sm:py-20 lg:px-[106.7px] lg:py-[93.3px] xl:px-20 xl:py-[65px] 2xl:px-[106.7px] 2xl:py-[93.3px]"
+      className="relative box-border flex w-full flex-col items-start overflow-hidden bg-white px-5 py-16 text-left font-manrope text-[53.33px] text-[#111] sm:px-8 sm:py-20 lg:px-[106.7px] lg:py-[93.3px]"
       aria-label="Frequently asked questions about civil and RCC construction"
     >
-      <div className="flex w-full flex-col items-center gap-10 self-stretch lg:gap-[66.7px] xl:gap-10 2xl:gap-[66.7px]">
+      <div className="flex w-full flex-col items-center gap-10 self-stretch lg:gap-[66.7px]">
         <motion.h2
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.55 }}
-          className="relative w-full max-w-[1480px] text-center text-[26px] font-bold tracking-[-1.33px] leading-[1.2] text-[#111] sm:text-[36px] sm:leading-[44px] lg:h-[66px] lg:text-[53.33px] lg:leading-[65.33px] xl:h-auto xl:text-[40px] xl:leading-[60px] 2xl:h-[66px] 2xl:text-[53.33px] 2xl:leading-[65.33px]"
+          className="relative w-full max-w-[1480px] text-center text-[26px] font-bold tracking-[-1.33px] leading-[1.2] text-[#111] sm:text-[36px] sm:leading-[44px] lg:h-[66px] lg:text-[53.33px] lg:leading-[65.33px]"
         >
           Frequently Asked Questions About Civil &amp; RCC Construction
         </motion.h2>

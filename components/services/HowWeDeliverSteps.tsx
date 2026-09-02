@@ -2,10 +2,17 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { SERVICE_BODY_TEXT_CLASS } from "@/components/services/serviceTypography";
+import {
+  SERVICE_BODY_TEXT_CLASS,
+  SERVICE_BODY_TEXT_CLASS_SCALED,
+} from "@/components/services/serviceTypography";
 import { SERVICE_SECTION_HEADLINE_CLASS } from "@/lib/sectionLayout";
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
+
+/** Large-desktop headline only — for CSS-scaled canvases (Civil DesignScale). */
+const SCALED_SECTION_HEADLINE_CLASS =
+  "text-[28px] leading-[1.2] font-bold tracking-[-1px] sm:text-[42px] sm:tracking-[-1.33px] lg:text-[53.33px] lg:leading-[65.33px]";
 
 export type HowWeDeliverStep = {
   title: string;
@@ -20,6 +27,11 @@ type HowWeDeliverStepsProps = {
   desktopFrom?: "sm" | "lg" | "xl";
   desktopCols?: 5 | 6;
   iconBoxClassName?: string;
+  /**
+   * When true, skip PEB iMac (`xl:`) shrinks — parent uses CSS scale
+   * (Civil DesignScale) so typography stays at the 1920 Figma size.
+   */
+  scaledCanvas?: boolean;
 };
 
 function breakpointClasses(desktopFrom: "sm" | "lg" | "xl") {
@@ -32,7 +44,12 @@ function breakpointClasses(desktopFrom: "sm" | "lg" | "xl") {
   return { mobile: "sm:hidden", desktop: "hidden sm:grid" };
 }
 
-function desktopColClass(cols: 5 | 6) {
+function desktopColClass(cols: 5 | 6, scaledCanvas: boolean) {
+  if (scaledCanvas) {
+    return cols === 6
+      ? "sm:grid-cols-2 lg:grid-cols-6"
+      : "sm:grid-cols-2 lg:grid-cols-5";
+  }
   return cols === 6
     ? "sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6"
     : "sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5";
@@ -45,13 +62,42 @@ export default function HowWeDeliverSteps({
   desktopFrom = "sm",
   desktopCols = 5,
   iconBoxClassName = "bg-lavenderblush",
+  scaledCanvas = false,
 }: HowWeDeliverStepsProps) {
   const { mobile, desktop } = breakpointClasses(desktopFrom);
+  const bodyClass = scaledCanvas
+    ? SERVICE_BODY_TEXT_CLASS_SCALED
+    : SERVICE_BODY_TEXT_CLASS;
+  const headlineClass = scaledCanvas
+    ? SCALED_SECTION_HEADLINE_CLASS
+    : SERVICE_SECTION_HEADLINE_CLASS;
+  const headlineSpacing = scaledCanvas
+    ? "mx-auto mb-10 text-center sm:mb-12 lg:mb-[53px]"
+    : "mx-auto mb-10 text-center sm:mb-12 lg:mb-[53px] xl:mb-10 2xl:mb-[53px]";
+  const desktopGridSpacing = scaledCanvas
+    ? "mx-auto w-full max-w-[1413px] gap-8 overflow-visible sm:gap-10"
+    : "mx-auto w-full max-w-[1413px] gap-8 overflow-visible sm:gap-10 xl:max-w-[1060px] xl:gap-6 2xl:max-w-[1413px] 2xl:gap-10";
+  const iconBoxClass = scaledCanvas
+    ? "relative mb-9 h-[107px] w-[107px] rounded-[21.33px] bg-lavenderblush"
+    : "relative mb-9 h-[107px] w-[107px] rounded-[21.33px] bg-lavenderblush xl:mb-6 xl:h-20 xl:w-20 xl:rounded-2xl 2xl:mb-9 2xl:h-[107px] 2xl:w-[107px] 2xl:rounded-[21.33px]";
+  const iconInnerClass = scaledCanvas
+    ? "absolute top-1/2 left-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2"
+    : "absolute top-1/2 left-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2 xl:h-8 xl:w-8 2xl:h-10 2xl:w-10";
+  const stepTitleClass = scaledCanvas
+    ? "font-montserrat text-[17px] leading-[21.33px] font-bold text-darkslategray sm:text-[18.67px]"
+    : "font-montserrat text-[17px] leading-[21.33px] font-bold text-darkslategray sm:text-[18.67px] xl:text-[15px] xl:leading-[20px] 2xl:text-[18.67px] 2xl:leading-[21.33px]";
+  const stepBodySpacing = scaledCanvas ? "mt-3" : "mt-3 xl:mt-2 2xl:mt-3";
+  const arrowClass = scaledCanvas
+    ? "absolute top-[60px] left-[145px] hidden h-5 w-[67px] lg:block"
+    : "absolute top-10 left-[88px] hidden h-4 w-12 xl:block 2xl:top-[60px] 2xl:left-[145px] 2xl:h-5 2xl:w-[67px]";
+  const fallbackNumClass = scaledCanvas
+    ? "flex h-full w-full items-center justify-center font-montserrat text-[15px] font-bold text-red"
+    : "flex h-full w-full items-center justify-center font-montserrat text-[15px] font-bold text-red xl:text-[13px] 2xl:text-[15px]";
 
   return (
     <>
       <motion.h2
-        className={`mx-auto mb-10 text-center sm:mb-12 lg:mb-[53px] xl:mb-10 2xl:mb-[53px] ${SERVICE_SECTION_HEADLINE_CLASS}`}
+        className={`${headlineSpacing} ${headlineClass}`}
         initial={{ opacity: 0, y: 18 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -110,9 +156,7 @@ export default function HowWeDeliverSteps({
                 <h3 className="font-montserrat text-[16px] leading-[21px] font-bold text-darkslategray">
                   {step.title}
                 </h3>
-                <p className={`mt-1.5 ${SERVICE_BODY_TEXT_CLASS}`}>
-                  {step.body}
-                </p>
+                <p className={`mt-1.5 ${bodyClass}`}>{step.body}</p>
               </div>
             </motion.li>
           );
@@ -120,7 +164,7 @@ export default function HowWeDeliverSteps({
       </ol>
 
       <div
-        className={`mx-auto w-full max-w-[1413px] gap-8 overflow-visible sm:gap-10 xl:max-w-[1060px] xl:gap-6 2xl:max-w-[1413px] 2xl:gap-10 ${desktop} ${desktopColClass(desktopCols)}`}
+        className={`${desktopGridSpacing} ${desktop} ${desktopColClass(desktopCols, scaledCanvas)}`}
       >
         {steps.map((step, index) => (
           <motion.div
@@ -135,8 +179,8 @@ export default function HowWeDeliverSteps({
               delay: 0.05 * index,
             }}
           >
-            <div className="relative mb-9 h-[107px] w-[107px] rounded-[21.33px] bg-lavenderblush xl:mb-6 xl:h-20 xl:w-20 xl:rounded-2xl 2xl:mb-9 2xl:h-[107px] 2xl:w-[107px] 2xl:rounded-[21.33px]">
-              <div className="absolute top-1/2 left-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2 xl:h-8 xl:w-8 2xl:h-10 2xl:w-10">
+            <div className={iconBoxClass}>
+              <div className={iconInnerClass}>
                 {step.icon ? (
                   <Image
                     src={step.icon}
@@ -146,7 +190,7 @@ export default function HowWeDeliverSteps({
                     className="object-contain"
                   />
                 ) : (
-                  <span className="flex h-full w-full items-center justify-center font-montserrat text-[15px] font-bold text-red xl:text-[13px] 2xl:text-[15px]">
+                  <span className={fallbackNumClass}>
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 )}
@@ -157,16 +201,12 @@ export default function HowWeDeliverSteps({
                   alt=""
                   width={67}
                   height={20}
-                  className="absolute top-10 left-[88px] hidden h-4 w-12 xl:block 2xl:top-[60px] 2xl:left-[145px] 2xl:h-5 2xl:w-[67px]"
+                  className={arrowClass}
                 />
               ) : null}
             </div>
-            <h3 className="font-montserrat text-[17px] leading-[21.33px] font-bold text-darkslategray sm:text-[18.67px] xl:text-[15px] xl:leading-[20px] 2xl:text-[18.67px] 2xl:leading-[21.33px]">
-              {step.title}
-            </h3>
-            <p className={`mt-3 xl:mt-2 2xl:mt-3 ${SERVICE_BODY_TEXT_CLASS}`}>
-              {step.body}
-            </p>
+            <h3 className={stepTitleClass}>{step.title}</h3>
+            <p className={`${stepBodySpacing} ${bodyClass}`}>{step.body}</p>
           </motion.div>
         ))}
       </div>

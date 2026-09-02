@@ -6,8 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
-import { SERVICE_BODY_TEXT_SIZES } from "@/components/services/serviceTypography";
-import { SERVICE_HERO_HEIGHT_CLASS } from "@/lib/sectionLayout";
+import { SERVICE_BODY_TEXT_SIZES_SCALED } from "@/components/services/serviceTypography";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 16 },
@@ -131,7 +130,7 @@ function MobileHero() {
 
 function DesktopHero() {
   return (
-    <div className={`relative hidden min-h-0 w-full shrink-0 flex-col overflow-hidden bg-[#060606] text-left font-sans text-white md:flex md:h-[1048px] ${SERVICE_HERO_HEIGHT_CLASS}`}>
+    <div className="relative hidden min-h-0 w-full shrink-0 flex-col overflow-hidden bg-[#060606] text-left font-sans text-white md:flex md:h-[1048px]">
       {/* Background */}
       <div className="absolute inset-0 shrink-0">
         <div className="absolute inset-0 lg:bottom-[-114px] lg:left-[-72px] lg:h-[1162px] lg:w-[2064px]">
@@ -179,7 +178,7 @@ function DesktopHero() {
         <motion.p
           variants={fadeUp}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className={`max-w-[1278px] text-gray-300 ${SERVICE_BODY_TEXT_SIZES}`}
+          className={`max-w-[1278px] text-gray-300 ${SERVICE_BODY_TEXT_SIZES_SCALED}`}
         >
           {heroDescription}
         </motion.p>

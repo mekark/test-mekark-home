@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS } from "@/components/services/serviceTypography";
+import { SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS_SCALED } from "@/components/services/serviceTypography";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 18 },
@@ -81,7 +81,7 @@ function Feature({
           <b className="block font-montserrat text-[15px] font-bold leading-[22px] text-darkslategray sm:text-[17px] sm:leading-6">
             {title}
           </b>
-          <p className={`mt-1.5 ${SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS}`}>
+          <p className={`mt-1.5 ${SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS_SCALED}`}>
             {description}
           </p>
         </div>
@@ -111,7 +111,7 @@ function Feature({
         </div>
         <div className="absolute top-[34px] right-0 left-0 flex flex-col items-start">
           <div
-            className={`relative flex items-center ${descriptionWidth} ${descriptionClassName} ${SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS}`}
+            className={`relative flex items-center ${descriptionWidth} ${descriptionClassName} ${SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS_SCALED}`}
           >
             {description}
           </div>
@@ -123,7 +123,7 @@ function Feature({
 
 export default function WhyClientsChooseMekark() {
   return (
-    <section className="relative isolate flex h-auto w-full shrink-0 flex-col items-start overflow-hidden text-center font-manrope text-[53.33px] text-gray-100 [background:linear-gradient(269.25deg,#fff,rgba(255,255,255,0)),linear-gradient(#e6e6e6,#e6e6e6)] lg:h-[1014.7px] lg:gap-[13.3px] xl:h-auto xl:min-h-[761px] 2xl:h-[1014.7px] 2xl:min-h-0">
+    <section className="relative isolate flex h-auto w-full shrink-0 flex-col items-start overflow-hidden text-center font-manrope text-[53.33px] text-gray-100 [background:linear-gradient(269.25deg,#fff,rgba(255,255,255,0)),linear-gradient(#e6e6e6,#e6e6e6)] lg:h-[1014.7px] lg:gap-[13.3px]">
       {/* Mobile / tablet — clean split: copy left of engineer feel */}
       <div className="relative z-10 w-full lg:hidden">
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -251,7 +251,7 @@ export default function WhyClientsChooseMekark() {
           <motion.b
             variants={fadeUp}
             transition={{ duration: 0.55, ease: "easeOut" }}
-            className="absolute top-[0.33px] left-1/2 flex w-max max-w-none shrink-0 -translate-x-1/2 items-center whitespace-nowrap tracking-[-1px] leading-[81.6px] xl:text-[40px] xl:leading-[60px] 2xl:text-[53.33px] 2xl:leading-[81.6px]"
+            className="absolute top-[0.33px] left-1/2 flex w-max max-w-none shrink-0 -translate-x-1/2 items-center whitespace-nowrap tracking-[-1px] leading-[81.6px]"
           >
             <span className="leading-[81.6px]">
               Why Industrial &amp; Commercial Clients

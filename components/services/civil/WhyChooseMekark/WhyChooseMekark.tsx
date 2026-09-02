@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ServiceIntroTitle } from "@/components/services/ServiceIntroTitle";
-import { SERVICE_BODY_TEXT_CLASS } from "@/components/services/serviceTypography";
+import { SERVICE_BODY_TEXT_CLASS_SCALED } from "@/components/services/serviceTypography";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -45,6 +45,7 @@ export default function WhyChooseMekark() {
               <ServiceIntroTitle
                 beforeRed="End-to-End Civil & RCC Construction, "
                 redPart="Under One Roof"
+                scaledCanvas
               />
             </motion.div>
           </div>
@@ -102,7 +103,7 @@ export default function WhyChooseMekark() {
                 key={index}
                 variants={fadeUp}
                 transition={{ duration: 0.45, ease: "easeOut" }}
-                className={`${SERVICE_BODY_TEXT_CLASS} ${
+                className={`${SERVICE_BODY_TEXT_CLASS_SCALED} ${
                   index < mobileParagraphs.length - 1 ? "mb-5 sm:mb-6" : ""
                 }`}
               >
@@ -133,13 +134,14 @@ export default function WhyChooseMekark() {
               className="lg:max-w-[836px]"
               beforeRed="End-to-End Civil & RCC Construction, "
               redPart="Under One Roof"
+              scaledCanvas
             />
           </motion.div>
 
           <motion.div
             variants={fadeUp}
             transition={{ duration: 0.55, ease: "easeOut" }}
-            className={`absolute top-[172px] left-[2.67px] flex w-[699px] flex-col gap-[26px] [word-break:break-word] ${SERVICE_BODY_TEXT_CLASS}`}
+            className={`absolute top-[172px] left-[2.67px] flex w-[699px] flex-col gap-[26px] [word-break:break-word] ${SERVICE_BODY_TEXT_CLASS_SCALED}`}
           >
             <p className="w-[686px]">
               Mekark is among the premier civil construction companies and RCC

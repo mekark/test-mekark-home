@@ -157,6 +157,7 @@
   height: 1.30208vw;
   width: 1.30208vw;
   position: relative;
+  top: 0.15vw;
   overflow: hidden;
   flex-shrink: 0;
 }

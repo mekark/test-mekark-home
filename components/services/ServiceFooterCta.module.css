@@ -170,8 +170,92 @@
 	object-fit: contain;
 }
 
+/**
+ * Fixed 1920px Figma sizes for DesignScale canvases (PEB).
+ * Only at desktop — below 1024 DesignScale is off and mobile media rules apply.
+ * `vw` resolves against the viewport, not the scaled 1920 wrapper.
+ */
+@media (min-width: 1024px) {
+	.scaled {
+		height: 206.7px;
+		font-size: 42px;
+	}
+	.scaled .ellipseParent {
+		top: calc(50% - 45.82px);
+		left: 106.67px;
+		width: 92px;
+		height: 92px;
+	}
+	.scaled .frameChild {
+		top: calc(50% - 46px);
+		box-shadow: 0px 0px 12.13px 9.33px rgba(0, 0, 0, 0.1);
+		width: 92px;
+		height: 92px;
+	}
+	.scaled .component1 {
+		top: calc(50% - 18.53px);
+		left: 27.47px;
+		width: 38.4px;
+		height: 38.4px;
+	}
+	.scaled .frameParent {
+		top: 40px;
+		left: 249px;
+		right: 256.8px;
+		gap: 0;
+		justify-content: space-between;
+		width: auto;
+		align-items: center;
+	}
+	.scaled .readyToStartYourCommercialParent {
+		gap: 6px;
+		max-width: 1050px;
+		flex: 1;
+		min-width: 0;
+	}
+	.scaled .readyToStartYourCommercialParentCompact {
+		gap: 0;
+	}
+	.scaled .readyToStartYourCommercialParentCompact .talkToMekarks {
+		margin-top: 4px;
+	}
+	.scaled .readyToStart {
+		height: 64px;
+		line-height: 50.52px;
+	}
+	.scaled .talkToMekarks {
+		font-size: 28px;
+		line-height: 22.72px;
+		letter-spacing: 1.42px;
+	}
+	.scaled .ctaParent {
+		width: 243.2px;
+		gap: 13.3px;
+		font-size: 16px;
+		flex-shrink: 0;
+	}
+	.scaled .cta,
+	.scaled .cta2 {
+		height: 55.3px;
+		padding: 14.4px 24.1px;
+		gap: 9.6px;
+		border-radius: 999px;
+	}
+	.scaled .getAFree {
+		line-height: 24.06px;
+	}
+	.scaled .component4 {
+		width: 18.8px;
+		height: 18.8px;
+	}
+	.scaled .component12 {
+		width: 18.7px;
+		height: 18.7px;
+	}
+}
+
 @media (max-width: 1199px) {
-	.section {
+	.section:not(.scaled) {
 		height: auto;
 		display: flex;
 		align-items: center;
@@ -179,7 +263,7 @@
 		padding: 1.75rem 2rem;
 		font-size: 1.55rem;
 	}
-	.ellipseParent {
+	.section:not(.scaled) .ellipseParent {
 		position: relative;
 		top: auto;
 		left: auto;
@@ -187,20 +271,20 @@
 		height: 4.25rem;
 		flex-shrink: 0;
 	}
-	.frameChild {
+	.section:not(.scaled) .frameChild {
 		top: 0;
 		width: 4.25rem;
 		height: 4.25rem;
 		box-shadow: 0 0 0.75rem 0.4rem rgba(0, 0, 0, 0.1);
 	}
-	.component1 {
+	.section:not(.scaled) .component1 {
 		top: 50%;
 		left: 50%;
 		width: 1.75rem;
 		height: 1.75rem;
 		transform: translate(-50%, -50%);
 	}
-	.frameParent {
+	.section:not(.scaled) .frameParent {
 		position: relative;
 		top: auto;
 		left: auto;
@@ -208,35 +292,113 @@
 		gap: 1.5rem;
 		justify-content: space-between;
 	}
-	.readyToStartYourCommercialParentCompact .talkToMekarks {
+	.section:not(.scaled) .readyToStartYourCommercialParentCompact .talkToMekarks {
 		margin-top: 0.2rem;
 	}
-	.readyToStart {
+	.section:not(.scaled) .readyToStart {
 		height: auto;
 		font-size: 1.55rem;
 		line-height: 1.25;
 	}
-	.talkToMekarks {
+	.section:not(.scaled) .talkToMekarks {
 		font-size: 0.95rem;
 		line-height: 1.45;
 	}
-	.ctaParent {
+	.section:not(.scaled) .ctaParent {
 		width: 11.5rem;
 		gap: 0.6rem;
 		font-size: 0.9rem;
 	}
-	.cta,
-	.cta2 {
+	.section:not(.scaled) .cta,
+	.section:not(.scaled) .cta2 {
 		height: auto;
 		padding: 0.75rem 1.1rem;
 		border-radius: 999px;
 		gap: 0.4rem;
 	}
-	.getAFree {
+	.section:not(.scaled) .getAFree {
 		line-height: 1.3;
 	}
-	.component4,
-	.component12 {
+	.section:not(.scaled) .component4,
+	.section:not(.scaled) .component12 {
+		width: 0.95rem;
+		height: 0.95rem;
+	}
+}
+
+/* Below DesignScale threshold — scaled footer falls back to flex layout */
+@media (max-width: 1023px) {
+	.scaled {
+		height: auto;
+		display: flex;
+		align-items: center;
+		gap: 1.25rem;
+		padding: 1.75rem 2rem;
+		font-size: 1.55rem;
+	}
+	.scaled .ellipseParent {
+		position: relative;
+		top: auto;
+		left: auto;
+		width: 4.25rem;
+		height: 4.25rem;
+		flex-shrink: 0;
+	}
+	.scaled .frameChild {
+		top: 0;
+		width: 4.25rem;
+		height: 4.25rem;
+		box-shadow: 0 0 0.75rem 0.4rem rgba(0, 0, 0, 0.1);
+	}
+	.scaled .component1 {
+		top: 50%;
+		left: 50%;
+		width: 1.75rem;
+		height: 1.75rem;
+		transform: translate(-50%, -50%);
+	}
+	.scaled .frameParent {
+		position: relative;
+		top: auto;
+		left: auto;
+		right: auto;
+		flex: 1;
+		gap: 1.5rem;
+		justify-content: space-between;
+		width: auto;
+	}
+	.scaled .readyToStartYourCommercialParent {
+		max-width: none;
+		flex: 1;
+		gap: 0.3125rem;
+	}
+	.scaled .readyToStart {
+		height: auto;
+		font-size: 1.55rem;
+		line-height: 1.25;
+	}
+	.scaled .talkToMekarks {
+		font-size: 0.95rem;
+		line-height: 1.45;
+		letter-spacing: normal;
+	}
+	.scaled .ctaParent {
+		width: 11.5rem;
+		gap: 0.6rem;
+		font-size: 0.9rem;
+	}
+	.scaled .cta,
+	.scaled .cta2 {
+		height: auto;
+		padding: 0.75rem 1.1rem;
+		border-radius: 999px;
+		gap: 0.4rem;
+	}
+	.scaled .getAFree {
+		line-height: 1.3;
+	}
+	.scaled .component4,
+	.scaled .component12 {
 		width: 0.95rem;
 		height: 0.95rem;
 	}

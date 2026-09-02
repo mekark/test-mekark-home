@@ -5,7 +5,8 @@ export default function BuildCTA() {
     <ServiceFooterCta
       id="contact"
       title="Ready to Build Faster, Smarter, Better"
-      subtitle="Talk to Mekark's PEB team today for a free consultation and project quote."
+      subtitle="Talk to Mekark's PEB expert today ."
+      scaledCanvas
     />
   );
 }

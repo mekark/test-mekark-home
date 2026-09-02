@@ -27,10 +27,17 @@ export const SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS_SCALED =
 export const SERVICE_CARD_TITLE_CLASS =
   "font-montserrat text-[clamp(0.9375rem,0.972vw,1.167rem)] font-bold leading-[1.44] text-[#3C3938] xl:text-[14px] xl:leading-[20px] 2xl:text-[18.67px] 2xl:leading-[27px]";
 
+/** Card titles inside DesignScale — large-desktop size only. */
+export const SERVICE_CARD_TITLE_CLASS_SCALED =
+  "font-montserrat text-[clamp(0.9375rem,0.972vw,1.167rem)] font-bold leading-[1.44] text-[#3C3938]";
+
 /** Card / grid item body on service pages. */
 export const SERVICE_CARD_BODY_CLASS =
   "font-montserrat text-[16px] leading-[22px] text-[#555] lg:text-num-18_67 lg:leading-[26px] xl:text-[13px] xl:leading-[18px] 2xl:text-num-18_67 2xl:leading-[26px]";
 
+/** Card body inside DesignScale — large-desktop size only. */
+export const SERVICE_CARD_BODY_CLASS_SCALED =
+  "font-montserrat text-[16px] leading-[22px] text-[#555] lg:text-num-18_67 lg:leading-[26px]";
 /** @deprecated Use SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS */
 export const SERVICE_PEB_BENEFIT_DESCRIPTION_CLASS =
   SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS;

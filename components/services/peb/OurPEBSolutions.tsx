@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 import HowWeDeliverSteps from "@/components/services/HowWeDeliverSteps";
 import ServiceSolutionsMobileGrid from "@/components/services/ServiceSolutionsMobileGrid";
 import {
-  SERVICE_CARD_BODY_CLASS,
-  SERVICE_CARD_TITLE_CLASS,
+  SERVICE_CARD_BODY_CLASS_SCALED,
+  SERVICE_CARD_TITLE_CLASS_SCALED,
 } from "@/components/services/serviceTypography";
 import { ServiceMidCtaTitle } from "@/components/services/ServiceMidCtaTitle";
 import {
@@ -134,7 +134,7 @@ function SolutionCard({ solution }: { solution: Solution }) {
       variants={cardReveal}
       whileHover={{ y: -6, transition: { duration: 0.25 } }}
     >
-      <div className="relative aspect-square w-full overflow-hidden rounded-[21.33px] xl:rounded-2xl 2xl:rounded-[21.33px]">
+      <div className="relative aspect-square w-full overflow-hidden rounded-[21.33px]">
         <Image
           src={solution.image}
           alt=""
@@ -148,10 +148,10 @@ function SolutionCard({ solution }: { solution: Solution }) {
           sizes={`(max-width: 767px) ${Math.min(100, Math.ceil(70 * zoom))}vw, ${fetchPx}px`}
         />
       </div>
-      <h3 className={`mt-[clamp(1.25rem,1.8vw,2.167rem)] xl:mt-6 2xl:mt-[clamp(1.25rem,1.8vw,2.167rem)] ${SERVICE_CARD_TITLE_CLASS}`}>
+      <h3 className={`mt-[clamp(1.25rem,1.8vw,2.167rem)] ${SERVICE_CARD_TITLE_CLASS_SCALED}`}>
         {solution.title}
       </h3>
-      <p className={`mt-2 ${SERVICE_CARD_BODY_CLASS}`}>
+      <p className={`mt-2 ${SERVICE_CARD_BODY_CLASS_SCALED}`}>
         {solution.description}
       </p>
     </motion.article>
@@ -192,10 +192,10 @@ export default function OurPEBSolutions() {
           }))}
         />
 
-        <div className="relative z-[1] mx-auto hidden max-w-[1920px] flex-col items-center gap-10 px-5 py-14 sm:px-8 md:gap-[66px] md:px-16 lg:flex lg:px-[107px] lg:py-[107px] xl:gap-10 xl:px-20 xl:py-[65px] 2xl:gap-[66px] 2xl:px-[107px] 2xl:py-[107px]">
+        <div className="relative z-[1] mx-auto hidden max-w-[1920px] flex-col items-center gap-10 px-5 py-14 sm:px-8 md:gap-[66px] md:px-16 lg:flex lg:px-[107px] lg:py-[107px] lg:gap-[66px]">
           <motion.h2
             id="peb-solutions-title"
-            className="max-w-[1147px] text-center font-manrope text-[32px] font-bold leading-[1.15] tracking-[-1.33px] text-[#111111] sm:text-[42px] lg:text-[53.33px] lg:leading-[65.33px] xl:text-[40px] xl:leading-[49px] 2xl:text-[53.33px] 2xl:leading-[65.33px]"
+            className="max-w-[1147px] text-center font-manrope text-[32px] font-bold leading-[1.15] tracking-[-1.33px] text-[#111111] sm:text-[42px] lg:text-[53.33px] lg:leading-[65.33px]"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -205,7 +205,7 @@ export default function OurPEBSolutions() {
           </motion.h2>
 
           <motion.div
-            className="grid w-full grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 xl:gap-6 2xl:gap-8"
+            className="grid w-full grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-6"
             variants={stagger}
             initial="hidden"
             whileInView="visible"
@@ -221,7 +221,7 @@ export default function OurPEBSolutions() {
       {/* Mid CTA — matches Civil PlanningCta mobile pattern */}
       <section
         id="quote"
-        className="relative mx-auto w-full max-w-[1920px] overflow-visible bg-white px-5 py-8 sm:px-8 sm:py-10 lg:px-[80px] lg:pt-[72px] lg:pb-12 xl:px-20 2xl:px-[107px]"
+        className="relative mx-auto w-full max-w-[1920px] overflow-visible bg-white px-5 py-8 sm:px-8 sm:py-10 lg:px-[80px] lg:pt-[72px] lg:pb-12"
         aria-labelledby="peb-quote-title"
       >
         <motion.div
@@ -238,6 +238,7 @@ export default function OurPEBSolutions() {
                 line1="Planning a Factory, Warehouse,"
                 line2="or Industrial Building?"
                 size="short"
+                scaledCanvas
               />
 
               <p className="mt-3 max-w-[28rem] text-[13px] font-medium leading-[18px] tracking-[1.1px] text-[#CCC6C6] sm:text-[14px] sm:leading-[20px]">
@@ -304,6 +305,7 @@ export default function OurPEBSolutions() {
               line1="Planning a Factory, Warehouse,"
               line2="or Industrial Building?"
               size="short"
+              scaledCanvas
             />
 
             <p className="mt-4 max-w-[520px] text-[clamp(0.875rem,0.972vw,1.167rem)] font-medium leading-[1.217] tracking-[1.42px] text-[#CCC6C6]">
@@ -348,12 +350,13 @@ export default function OurPEBSolutions() {
           />
         </div>
 
-        <div className="relative mx-auto flex w-full max-w-[1920px] flex-col items-center overflow-visible px-5 py-12 sm:px-10 sm:py-14 lg:px-[5.556%] lg:py-[5.556%] xl:px-20 xl:py-[65px] 2xl:px-[5.556%] 2xl:py-[5.556%]">
+        <div className="relative mx-auto flex w-full max-w-[1920px] flex-col items-center overflow-visible px-5 py-12 sm:px-10 sm:py-14 lg:px-[5.556%] lg:py-[5.556%]">
           <HowWeDeliverSteps
             title="How We Deliver Your PEB Project"
             steps={processSteps}
             arrowSrc="/images/services/peb/peb-solutions/process-arrow.svg"
             iconBoxClassName="bg-[#FDEBEB]"
+            scaledCanvas
           />
         </div>
       </section>

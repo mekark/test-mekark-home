@@ -1,5 +1,6 @@
 "use client";
 
+import DesignScale from "@/components/services/DesignScale";
 import BuildCTA from "@/components/services/peb/BuildCTA";
 import EndToEndPEB from "@/components/services/peb/EndToEndPEB";
 import FAQ from "@/components/services/peb/FAQ";
@@ -11,13 +12,15 @@ import WhyChooseMekark from "@/components/services/peb/WhyChooseMekark";
 export function PebPage() {
   return (
     <main className="peb-service-page m-0 flex w-full flex-col bg-white p-0">
-      <Hero />
-      <EndToEndPEB />
-      <WhyChooseMekark />
-      <OurPEBSolutions />
-      <TrustedSectors />
-      <FAQ />
-      <BuildCTA />
+      <DesignScale>
+        <Hero />
+        <EndToEndPEB />
+        <WhyChooseMekark />
+        <OurPEBSolutions />
+        <TrustedSectors />
+        <FAQ />
+        <BuildCTA />
+      </DesignScale>
     </main>
   );
 }

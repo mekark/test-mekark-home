@@ -6,8 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
-import { SERVICE_BODY_TEXT_SIZES } from "@/components/services/serviceTypography";
-import { SERVICE_HERO_HEIGHT_CLASS } from "@/lib/sectionLayout";
+import { SERVICE_BODY_TEXT_SIZES_SCALED } from "@/components/services/serviceTypography";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -121,7 +120,7 @@ function MobileHero() {
 
 function DesktopHero() {
   return (
-    <section className={`relative hidden min-h-0 w-full overflow-hidden bg-[#060606] font-[family-name:var(--font-manrope)] md:block md:h-[115dvh] ${SERVICE_HERO_HEIGHT_CLASS}`}>
+    <section className="relative hidden min-h-0 w-full overflow-hidden bg-[#060606] font-[family-name:var(--font-manrope)] md:block md:h-[1048px]">
       <div className="absolute inset-0">
         <div className="absolute left-[-8%] top-[-1%] h-[110%] w-[110%]">
           <Image
@@ -154,7 +153,7 @@ function DesktopHero() {
 
       <div className="relative z-10 mx-auto flex h-full w-full max-w-[1440px] flex-col items-center px-8 pt-32 pb-40 text-center">
         <motion.h1
-          className="w-full max-w-[1100px] text-center font-manrope text-[48px] font-bold leading-[56px] tracking-[-1.92px] text-[#111111] xl:text-[36px] xl:leading-[42px] xl:tracking-[-1.44px] 2xl:text-[48px] 2xl:leading-[56px] 2xl:tracking-[-1.92px]"
+          className="w-full max-w-[1100px] text-center font-manrope text-[48px] font-bold leading-[56px] tracking-[-1.92px] text-[#111111]"
           variants={fadeUp}
           initial="hidden"
           animate="visible"
@@ -168,7 +167,7 @@ function DesktopHero() {
         </motion.h1>
 
         <motion.p
-          className={`mt-[15px] w-full max-w-[1100px] text-center text-[rgba(5,7,12,0.5)] ${SERVICE_BODY_TEXT_SIZES}`}
+          className={`mt-[15px] w-full max-w-[1100px] text-center text-[rgba(5,7,12,0.5)] ${SERVICE_BODY_TEXT_SIZES_SCALED}`}
           variants={fadeUp}
           initial="hidden"
           animate="visible"

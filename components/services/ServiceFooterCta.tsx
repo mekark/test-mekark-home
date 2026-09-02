@@ -9,6 +9,8 @@ type ServiceFooterCtaProps = {
   quoteLabel?: string;
   callLabel?: string;
   compactCopy?: boolean;
+  /** Fixed 1920px Figma sizes — use inside DesignScale (PEB). */
+  scaledCanvas?: boolean;
 };
 
 export function ServiceFooterCta({
@@ -18,10 +20,14 @@ export function ServiceFooterCta({
   quoteLabel = "Get a Free Quote",
   callLabel = "Call us",
   compactCopy = false,
+  scaledCanvas = false,
 }: ServiceFooterCtaProps) {
   return (
-    <section id={id} className={styles.section} aria-label={title}>
-      <div className={styles.ellipseParent}>
+    <section
+      id={id}
+      className={`${styles.section}${scaledCanvas ? ` ${styles.scaled}` : ""}`}
+      aria-label={title}
+    >      <div className={styles.ellipseParent}>
         <div className={styles.frameChild} />
         <div className={styles.component1}>
           <Image

@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
-import { SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS } from "@/components/services/serviceTypography";
-import { SERVICE_WHY_CHOOSE_ASPECT_CLASS } from "@/lib/sectionLayout";
+import { SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS_SCALED } from "@/components/services/serviceTypography";
+import { SERVICE_WHY_CHOOSE_ASPECT_CLASS_SCALED } from "@/lib/sectionLayout";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -133,7 +133,7 @@ function BenefitItem({
       variants={benefitReveal}
       custom={direction}
     >
-      <p className="w-fit shrink-0 font-[family-name:var(--font-montserrat)] text-[clamp(2rem,10vw,5rem)] font-black leading-none text-[#CC1020] sm:text-[clamp(2.75rem,4.167vw,5rem)] sm:leading-[clamp(3.25rem,5.069vw,6.083rem)] xl:text-[60px] xl:leading-[73px] xl:tracking-[-3px] 2xl:text-[clamp(2.75rem,4.167vw,5rem)] 2xl:leading-[clamp(3.25rem,5.069vw,6.083rem)] 2xl:tracking-normal">
+      <p className="w-fit shrink-0 font-[family-name:var(--font-montserrat)] text-[clamp(2rem,10vw,5rem)] font-black leading-none text-[#CC1020] sm:text-[clamp(2.75rem,4.167vw,5rem)] sm:leading-[clamp(3.25rem,5.069vw,6.083rem)]">
         {benefit.number}
       </p>
 
@@ -145,10 +145,10 @@ function BenefitItem({
       </div>
 
       <div className="min-w-0 flex-1 pt-0">
-        <h3 className="font-[family-name:var(--font-montserrat)] text-[clamp(0.9375rem,0.972vw,1.167rem)] font-bold leading-[1.35] text-[#3C3938] sm:leading-[1.44] xl:text-[14px] xl:leading-[20px] 2xl:text-[clamp(0.9375rem,0.972vw,1.167rem)] 2xl:leading-[1.44]">
+        <h3 className="font-[family-name:var(--font-montserrat)] text-[clamp(0.9375rem,0.972vw,1.167rem)] font-bold leading-[1.35] text-[#3C3938] sm:leading-[1.44]">
           {benefit.title}
         </h3>
-        <p className={`mt-1.5 sm:mt-2 lg:mt-3 ${SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS}`}>
+        <p className={`mt-1.5 sm:mt-2 lg:mt-3 ${SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS_SCALED}`}>
           {benefit.description}
         </p>
       </div>
@@ -167,7 +167,7 @@ export default function WhyChooseMekark() {
         aria-hidden="true"
       />
 
-      <div className={`relative z-10 mx-auto w-full max-w-[1920px] px-5 py-10 sm:px-10 sm:py-14 lg:px-0 lg:py-0 ${SERVICE_WHY_CHOOSE_ASPECT_CLASS}`}>
+      <div className={`relative z-10 mx-auto w-full max-w-[1920px] px-5 py-10 sm:px-10 sm:py-14 lg:px-0 lg:py-0 ${SERVICE_WHY_CHOOSE_ASPECT_CLASS_SCALED}`}>
         {/* Site backdrop — Figma: 1920×1032 @ top -17.33 */}
         <Image
           src="/images/services/peb/why-choose/construction-site.png"
@@ -191,7 +191,7 @@ export default function WhyChooseMekark() {
         >
           <h2
             id="why-choose-mekark-title"
-            className="text-balance font-[family-name:var(--font-manrope)] text-[clamp(1.75rem,6vw,3.333rem)] font-bold leading-[1.2] sm:text-[clamp(2rem,2.778vw,3.333rem)] sm:leading-[clamp(2.75rem,4.25vw,5.1rem)] xl:text-[40px] xl:leading-[61px] xl:tracking-[-1px] 2xl:text-[clamp(2rem,2.778vw,3.333rem)] 2xl:leading-[clamp(2.75rem,4.25vw,5.1rem)] 2xl:tracking-normal"
+            className="text-balance font-[family-name:var(--font-manrope)] text-[clamp(1.75rem,6vw,3.333rem)] font-bold leading-[1.2] sm:text-[clamp(2rem,2.778vw,3.333rem)] sm:leading-[clamp(2.75rem,4.25vw,5.1rem)]"
           >
             <span className="text-[#111111]">Why Industrial Clients </span>
             <span className="text-[#E50818]">Choose Mekark</span>
@@ -257,7 +257,7 @@ export default function WhyChooseMekark() {
           {/* Desktop columns — Figma: left @ 0 w456, right @ 1032 w456, gap 60.67 */}
           <div className="relative z-10 hidden h-full lg:block">
             <motion.div
-              className="absolute left-0 top-[8.29%] flex w-[30.65%] flex-col gap-[60.67px] xl:gap-[45.5px] 2xl:gap-[60.67px]"
+              className="absolute left-0 top-[8.29%] flex w-[30.65%] flex-col gap-[60.67px]"
               variants={staggerBenefits}
               initial="hidden"
               whileInView="visible"
@@ -273,7 +273,7 @@ export default function WhyChooseMekark() {
             </motion.div>
 
             <motion.div
-              className="absolute left-[69.35%] top-[8.29%] flex w-[30.65%] flex-col gap-[60.67px] xl:gap-[45.5px] 2xl:gap-[60.67px]"
+              className="absolute left-[69.35%] top-[8.29%] flex w-[30.65%] flex-col gap-[60.67px]"
               variants={staggerBenefits}
               initial="hidden"
               whileInView="visible"

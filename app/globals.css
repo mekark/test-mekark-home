@@ -285,9 +285,10 @@
   }
 }
 
-/* Civil DesignScale already shrinks the 1920 canvas — keep large-desktop copy size. */
+/* Civil / PEB DesignScale already shrinks the 1920 canvas — keep large-desktop copy size. */
 @media (min-width: 1280px) {
-  .civil-service-page .service-section-description {
+  .civil-service-page .service-section-description,
+  .peb-service-page .service-section-description {
     font-size: 18.67px;
     line-height: 26px;
     letter-spacing: normal;

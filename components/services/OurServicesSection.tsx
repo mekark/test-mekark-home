@@ -156,7 +156,7 @@ function SolutionCard({
     >
       <ServiceAnchor
         href={service.href}
-        className="group relative block h-[250px] overflow-hidden rounded-[21px] sm:h-[280px] lg:h-[333px]"
+        className="relative block h-[250px] overflow-hidden rounded-[21px] sm:h-[280px] lg:h-[333px] xl:h-[250px] 2xl:h-[333px]"
       >
         <Image
           src={visual.src}
@@ -231,15 +231,15 @@ export function OurServicesSection() {
       id="our-solutions"
       className="relative w-full bg-[#0a0a0a] font-[family-name:var(--font-manrope)] text-white"
     >
-      <div className={`${SECTION_CONTAINER_CLASS} flex flex-col items-center gap-6 py-14 sm:gap-12 lg:gap-[120px] lg:py-[93px]`}>
+      <div className={`${SECTION_CONTAINER_CLASS} flex flex-col items-center gap-6 py-14 sm:gap-12 lg:gap-[120px] lg:py-[93px] xl:gap-[53px] xl:py-[70px] 2xl:gap-[120px] 2xl:py-[93px]`}>
         {coreServices.length > 0 ? (
-          <div className="flex w-full max-w-[1481px] flex-col items-center gap-12 lg:gap-[70px]">
+          <div className="flex w-full max-w-[1481px] flex-col items-center gap-12 lg:gap-[70px] xl:max-w-[1110px] xl:gap-[53px] 2xl:max-w-[1481px] 2xl:gap-[70px]">
             <motion.h2
               variants={aboutHeadlineStagger}
               initial="hidden"
               whileInView="visible"
               viewport={VIEWPORT}
-              className="flex w-full max-w-full flex-wrap justify-center gap-x-[0.3em] text-center text-[clamp(1.75rem,3.5vw,3.33rem)] font-bold leading-[1.5] tracking-[-1.33px] lg:leading-[80px]"
+              className="flex w-full max-w-full flex-wrap justify-center gap-x-[0.3em] text-center text-[clamp(1.75rem,3.5vw,3.33rem)] font-bold leading-[1.5] tracking-[-1.33px] lg:leading-[80px] xl:leading-[60px] 2xl:leading-[80px]"
             >
               <motion.span
                 className="inline-block text-[#e50818]"
@@ -257,13 +257,13 @@ export function OurServicesSection() {
         ) : null}
 
         {extendedServices.length > 0 ? (
-          <div className="-mt-1 flex w-full max-w-[1481px] flex-col items-center gap-8 sm:mt-0 sm:gap-12 lg:gap-[70px]">
+          <div className="-mt-1 flex w-full max-w-[1481px] flex-col items-center gap-8 sm:mt-0 sm:gap-12 lg:gap-[70px] xl:max-w-[1110px] xl:gap-[53px] 2xl:max-w-[1481px] 2xl:gap-[70px]">
             <motion.h2
               variants={aboutHeadlineStagger}
               initial="hidden"
               whileInView="visible"
               viewport={VIEWPORT}
-              className="flex w-full max-w-full flex-wrap justify-center gap-x-[0.3em] text-center text-[clamp(1.75rem,3.5vw,3.33rem)] font-bold leading-[1.35] tracking-[-1.33px] sm:leading-[1.5] lg:leading-[80px]"
+              className="flex w-full max-w-full flex-wrap justify-center gap-x-[0.3em] text-center text-[clamp(1.75rem,3.5vw,3.33rem)] font-bold leading-[1.35] tracking-[-1.33px] sm:leading-[1.5] lg:leading-[80px] xl:leading-[60px] 2xl:leading-[80px]"
             >
               <motion.span
                 className="inline-block text-[#ed1c24]"

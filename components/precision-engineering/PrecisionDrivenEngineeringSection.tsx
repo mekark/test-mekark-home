@@ -254,7 +254,7 @@ function SoftwareCard({
 export function PrecisionDrivenEngineeringSection() {
   return (
     <section className="relative w-full overflow-hidden bg-[#fef4f4] font-[family-name:var(--font-manrope)] text-[#111]">
-      <div className={`${SECTION_CONTAINER_CLASS} py-10 sm:py-14 lg:py-[93px]`}>
+      <div className={`${SECTION_CONTAINER_CLASS} py-10 sm:py-14 lg:py-[93px] xl:py-[70px] 2xl:py-[93px]`}>
         <motion.div
           className="flex w-full flex-col gap-8"
           variants={precEngSectionStagger}
@@ -267,7 +267,7 @@ export function PrecisionDrivenEngineeringSection() {
               <motion.div variants={precEngHeadlineGroup}>
                 <motion.h2
                   variants={precEngHeadlineWord}
-                  className="text-[clamp(1.5rem,6vw,3.33rem)] font-bold tracking-[-0.8px] sm:tracking-[-1.33px] lg:text-[53.33px] lg:leading-[80px]"
+                  className="text-[clamp(1.5rem,6vw,3.33rem)] font-bold tracking-[-0.8px] sm:tracking-[-1.33px] lg:text-[53.33px] lg:leading-[80px] xl:text-[40px] xl:leading-[60px] 2xl:text-[53.33px] 2xl:leading-[80px]"
                 >
                   <span>Precision-</span>
                   <span className="text-[#ed2024]">Driven Engineering</span>
@@ -281,7 +281,7 @@ export function PrecisionDrivenEngineeringSection() {
 
               <motion.p
                 variants={precEngSubtitleReveal}
-                className="max-w-[896px] text-[15px] leading-[1.7] text-[#666] sm:text-[17px] sm:leading-[1.8] lg:text-[23px] lg:leading-[41.5px]"
+                className="max-w-[896px] text-[15px] leading-[1.7] text-[#666] sm:text-[17px] sm:leading-[1.8] lg:text-[23px] lg:leading-[41.5px] xl:max-w-[718px] xl:text-[18px] xl:leading-[32px] 2xl:max-w-[896px] 2xl:text-[23px] 2xl:leading-[41.5px]"
               >
                 Tekla Structures and STAAD.Pro connect design intent, structural
                 validation, detailing, and CNC-ready output before site execution

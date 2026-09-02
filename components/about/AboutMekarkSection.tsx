@@ -102,12 +102,12 @@ export function AboutMekarkSection() {
   const statsInView = useInView(statsRef, { once: true, amount: 0.25 });
   return (
     <section className="relative w-full overflow-hidden bg-white font-[family-name:var(--font-manrope)] text-[#555]">
-      <div className={`${SECTION_CONTAINER_CLASS} flex flex-col items-center gap-10 py-12 sm:gap-12 sm:py-16 lg:gap-14 lg:py-[85px]`}>
-        {/* Hero row: image + copy — Figma 3327:9333 */}
-        <div className="flex w-full flex-col items-center gap-10 lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
+      <div className={`${SECTION_CONTAINER_CLASS} flex flex-col items-center gap-10 py-12 sm:gap-12 sm:py-16 lg:gap-14 lg:py-[85px] xl:gap-12 xl:py-[73px] 2xl:gap-14 2xl:py-[85px]`}>
+        {/* Hero row — iMac Figma 6700:6727 · large Figma 3327:9333 */}
+        <div className="flex w-full flex-col items-center gap-10 lg:flex-row lg:items-center lg:gap-12 xl:gap-12 2xl:gap-16">
           {/* Image card */}
           <motion.div
-            className="relative aspect-[692/588] w-full max-w-[692px] shrink-0 overflow-hidden rounded-[20px] border border-[rgba(245,245,245,0.08)] bg-[#111] sm:rounded-[26.67px] lg:aspect-auto lg:h-[588px] lg:w-[min(100%,692px)]"
+            className="relative aspect-[692/588] w-full max-w-[692px] shrink-0 overflow-hidden rounded-[20px] border border-[rgba(245,245,245,0.08)] bg-[#111] sm:rounded-[26.67px] lg:aspect-auto lg:h-[588px] lg:w-[min(100%,692px)] xl:aspect-[519/441] xl:h-[441px] xl:max-w-[519px] xl:w-[min(100%,519px)] 2xl:aspect-auto 2xl:h-[588px] 2xl:max-w-[692px] 2xl:w-[min(100%,692px)]"
             variants={aboutBuildingReveal}
             initial="hidden"
             whileInView="visible"
@@ -184,7 +184,7 @@ export function AboutMekarkSection() {
           >
             <motion.h2
               variants={aboutHeadlineStagger}
-              className="text-[28px] font-extrabold leading-tight text-[#121212] sm:text-[42px] sm:leading-[64px] lg:text-[53.33px] lg:leading-[81.33px]"
+              className="text-[28px] font-extrabold leading-tight text-[#121212] sm:text-[42px] sm:leading-[64px] lg:text-[53.33px] lg:leading-[81.33px] xl:text-[40px] xl:leading-[48px] 2xl:text-[53.33px] 2xl:leading-[81.33px]"
             >
               <motion.span variants={aboutHeadlineChunk} className="inline">
                 <span className="uppercase">- A</span>
@@ -195,7 +195,7 @@ export function AboutMekarkSection() {
 
             <motion.p
               variants={aboutParagraphReveal}
-              className="text-base leading-[28px] text-[#555] sm:text-[21.33px] sm:leading-[37.33px]"
+              className="text-base leading-[28px] text-[#555] sm:text-[21.33px] sm:leading-[37.33px] xl:text-[18px] xl:leading-[28px] 2xl:text-[21.33px] 2xl:leading-[37.33px]"
             >
               With 18+ years of engineering excellence and 200+ successfully
               delivered projects, Mekark is a trusted industrial EPC
@@ -206,7 +206,7 @@ export function AboutMekarkSection() {
 
             <motion.p
               variants={aboutParagraphReveal}
-              className="text-base leading-[28px] text-[#555] sm:text-[21.33px] sm:leading-[37.33px]"
+              className="text-base leading-[28px] text-[#555] sm:text-[21.33px] sm:leading-[37.33px] xl:text-[18px] xl:leading-[28px] 2xl:text-[21.33px] 2xl:leading-[37.33px]"
             >
               We don't just construct industrial buildings we design them to
               perform for years, not just get finished on time. From
@@ -218,7 +218,7 @@ export function AboutMekarkSection() {
 
             <motion.p
               variants={aboutParagraphReveal}
-              className="text-base leading-[28px] text-[#555] sm:text-[21.33px] sm:leading-[37.33px]"
+              className="text-base leading-[28px] text-[#555] sm:text-[21.33px] sm:leading-[37.33px] xl:text-[18px] xl:leading-[28px] 2xl:text-[21.33px] 2xl:leading-[37.33px]"
             >
               Our integrated approach brings design, procurement, production,
               and execution together under a single accountable system, reducing
@@ -249,14 +249,14 @@ export function AboutMekarkSection() {
                   aria-hidden
                 />
               </motion.div>
-              <p className="text-base font-semibold leading-[28px] text-black sm:max-w-[515px] sm:text-[21.33px] sm:leading-[33.33px]">
+              <p className="text-base font-semibold leading-[28px] text-black sm:max-w-[515px] sm:text-[21.33px] sm:leading-[33.33px] xl:max-w-[386px] xl:text-[18px] xl:leading-[25px] 2xl:max-w-[515px] 2xl:text-[21.33px] 2xl:leading-[33.33px]">
                 Precision engineering. Proven scale. Performance that lasts.
               </p>
             </motion.blockquote>
           </motion.div>
         </div>
 
-        {/* Stats grid — Figma 3327:9362 */}
+        {/* Stats grid — iMac Figma 6700:6756 · large Figma 3327:9362 */}
         <motion.div
           ref={statsRef}
           className="box-border flex w-full flex-col items-stretch justify-center gap-3 rounded-4xl border-[1.3px] border-solid border-[rgba(255,255,255,0.8)] bg-[#0e0e0e] px-[1.3px] py-8 shadow-[0px_0px_20.27px_rgba(0,0,0,0.05)] backdrop-blur-[13.33px] sm:grid sm:grid-cols-2 sm:gap-[10.67px] sm:py-10 lg:flex lg:flex-row lg:items-start lg:gap-[14.67px] lg:py-[41px]"
@@ -279,7 +279,7 @@ export function AboutMekarkSection() {
             >
               <StatIcon src={stat.icon} alt={stat.iconAlt} />
               <div className="z-[1] flex shrink-0 flex-col items-start gap-[4.6px]">
-                <p className="whitespace-nowrap font-[family-name:var(--font-montserrat-alternates)] text-[28px] font-bold leading-none tracking-[-1.01px] text-white tabular-nums sm:text-[42px] sm:leading-none lg:text-[40px] xl:text-[44.67px] xl:leading-[50.67px]">
+                <p className="whitespace-nowrap font-[family-name:var(--font-montserrat-alternates)] text-[28px] font-bold leading-none tracking-[-1.01px] text-white tabular-nums sm:text-[42px] sm:leading-none lg:text-[40px] xl:text-[38px] xl:leading-[38px] 2xl:text-[44.67px] 2xl:leading-[50.67px]">
                   <CountUp
                     value={stat.countTo}
                     suffix={stat.suffix}
@@ -288,7 +288,7 @@ export function AboutMekarkSection() {
                     duration={1.7}
                   />
                 </p>
-                <p className="text-[11px] font-semibold uppercase leading-[16px] tracking-[1.2px] text-[#6b6b6b] sm:text-sm sm:leading-[21.27px] sm:tracking-[1.6px] lg:text-[13px] lg:tracking-[1.6px] xl:text-[14.67px] xl:leading-[21.27px] xl:tracking-[2.05px]">
+                <p className="text-[11px] font-semibold uppercase leading-[16px] tracking-[1.2px] text-[#6b6b6b] sm:text-sm sm:leading-[21.27px] sm:tracking-[1.6px] lg:text-[13px] lg:tracking-[1.6px] xl:text-[12px] xl:leading-[16px] xl:tracking-[1.6px] 2xl:text-[14.67px] 2xl:leading-[21.27px] 2xl:tracking-[2.05px]">
                   {stat.label}
                 </p>
               </div>

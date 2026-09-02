@@ -136,7 +136,7 @@ export function MekarkBlogsSection() {
         initial="hidden"
         whileInView="visible"
         viewport={VIEWPORT}
-        className={`${SECTION_CONTAINER_CLASS} py-12 lg:py-[70px]`}
+        className={`${SECTION_CONTAINER_CLASS} py-12 lg:py-[70px] xl:py-[53px] 2xl:py-[70px]`}
       >
         <motion.div
           variants={blogHeaderReveal}
@@ -158,7 +158,7 @@ export function MekarkBlogsSection() {
 
           <motion.h2
             variants={blogHeadlineReveal}
-            className="max-w-[760px] text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold leading-tight tracking-[-1.3px] lg:text-[40px] lg:leading-[52px]"
+            className="max-w-[760px] text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold leading-tight tracking-[-1.3px] lg:text-[40px] lg:leading-[52px] xl:text-[36px] xl:leading-[46px] 2xl:text-[40px] 2xl:leading-[52px]"
           >
             <span className="text-[#1a1a1a]">
               Engineering insights, project updates{" "}

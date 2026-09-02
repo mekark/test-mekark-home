@@ -72,7 +72,7 @@ function CapabilityCard({
   icon,
 }: (typeof CAPABILITIES)[number]) {
   return (
-    <article className="group flex w-[min(100%,329px)] shrink-0 flex-col sm:w-[329px]">
+    <article className="group flex w-[min(100%,329px)] shrink-0 flex-col sm:w-[329px] xl:w-[275px] 2xl:w-[329px]">
       <div className="flex h-full flex-col rounded-[24px] px-6 pb-6 pt-5 transition-colors duration-300 ease-out group-hover:bg-[#f5f5f5] sm:px-8 sm:pb-8 sm:pt-8">
         <div className="relative flex size-[72px] shrink-0 items-center justify-center overflow-clip sm:size-[113px]">
           <div
@@ -143,17 +143,17 @@ export function CoreEpcCapabilitiesSection() {
 
   return (
     <section className="relative w-full overflow-hidden bg-white font-[family-name:var(--font-manrope)] text-black">
-      <div className={`${SECTION_CONTAINER_CLASS} py-14 sm:py-16 lg:py-[107px]`}>
+      <div className={`${SECTION_CONTAINER_CLASS} py-14 sm:py-16 lg:py-[107px] xl:py-[65px] 2xl:py-[107px]`}>
         <motion.div
           variants={epcCapHeadlineGroup}
           initial="hidden"
           whileInView="visible"
           viewport={VIEWPORT}
-          className="mb-5 sm:mb-12 lg:mb-[52px]"
+          className="mb-5 sm:mb-12 lg:mb-[52px] xl:mb-8 2xl:mb-[52px]"
         >
           <motion.h2
             variants={epcCapHeadlineWipe}
-            className="text-[clamp(2rem,4.5vw,53.33px)] font-extrabold leading-[1.1] tracking-[-1.12px] text-black"
+            className="text-[clamp(2rem,4.5vw,53.33px)] font-extrabold leading-[1.1] tracking-[-1.12px] text-black xl:text-[45px] xl:leading-[45px] 2xl:text-[53.33px] 2xl:leading-[1.1]"
           >
             Core{" "}
             <motion.span
@@ -180,7 +180,7 @@ export function CoreEpcCapabilitiesSection() {
                 <motion.div
                   key={capability.title}
                   variants={epcCapCardFromLeft}
-                  className="min-w-0 shrink-0 grow-0 basis-[min(100%,366.67px)] px-4 pb-4 pt-0 sm:pt-[21px]"
+                  className="min-w-0 shrink-0 grow-0 basis-[min(100%,366.67px)] px-4 pb-4 pt-0 sm:pt-[21px] xl:basis-[min(100%,275px)] 2xl:basis-[min(100%,366.67px)]"
                 >
                   <CapabilityCard {...capability} />
                 </motion.div>

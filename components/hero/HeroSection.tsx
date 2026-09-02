@@ -138,7 +138,7 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative h-[100dvh] min-h-[520px] max-h-[1020px] w-full overflow-hidden bg-black"
+      className="relative h-[100dvh] min-h-[520px] max-h-[1020px] w-full overflow-hidden bg-black xl:max-h-[618px] 2xl:max-h-[1020px]"
       aria-label="Hero video showcase"
     >
       {/* Poster always underneath so the hero never looks stuck/blank while buffering */}

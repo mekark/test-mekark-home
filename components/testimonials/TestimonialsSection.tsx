@@ -119,7 +119,7 @@ function TestimonialCard({
 export function TestimonialsSection() {
   return (
     <section className="relative w-full border-b border-[rgba(107,13,17,0.1)] bg-[#f8f6f6]">
-      <div className={`${SECTION_CONTAINER_CLASS} py-14 lg:py-[70px]`}>
+      <div className={`${SECTION_CONTAINER_CLASS} py-14 lg:py-[70px] xl:py-[53px] 2xl:py-[70px]`}>
         <motion.div
           variants={testGridStagger}
           initial="hidden"
@@ -144,7 +144,7 @@ export function TestimonialsSection() {
 
             <motion.h2
               variants={testHeadlineReveal}
-              className="mt-3.5 text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold leading-[1.2] tracking-[-0.84px] text-[#0d0808] lg:text-[40px] lg:leading-[48px]"
+              className="mt-3.5 text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold leading-[1.2] tracking-[-0.84px] text-[#0d0808] lg:text-[40px] lg:leading-[48px] xl:text-[36px] xl:leading-[44px] 2xl:text-[40px] 2xl:leading-[48px]"
             >
               What clients say after handover
             </motion.h2>

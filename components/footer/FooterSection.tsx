@@ -302,9 +302,9 @@ export function FooterSection() {
           initial="hidden"
           whileInView="visible"
           viewport={VIEWPORT}
-          className={`${SECTION_CONTAINER_CLASS} py-14 sm:py-16 lg:py-20`}
+          className={`${SECTION_CONTAINER_CLASS} py-14 sm:py-16 lg:py-20 xl:py-16 2xl:py-20`}
         >
-          <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
+          <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between lg:gap-16 xl:gap-12 2xl:gap-16">
             <motion.div
               variants={fadeUp}
               className="flex max-w-[640px] flex-col gap-6"
@@ -380,7 +380,7 @@ export function FooterSection() {
 
             <motion.div
               variants={fadeUp}
-              className="flex flex-col gap-8 sm:flex-row sm:gap-16 lg:gap-20 lg:pt-1"
+              className="flex flex-col gap-8 sm:flex-row sm:gap-16 lg:gap-20 lg:pt-1 xl:gap-14 2xl:gap-20"
             >
               <FooterLinkColumn title="Menu" links={MENU_LINKS} />
               <FooterLinkColumn title="Legal" links={LEGAL_LINKS} />

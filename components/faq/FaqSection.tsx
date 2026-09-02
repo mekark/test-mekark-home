@@ -158,9 +158,9 @@ export function FaqSection() {
         initial="hidden"
         whileInView="visible"
         viewport={VIEWPORT}
-        className={`${SECTION_CONTAINER_CLASS} py-14 lg:py-[70px]`}
+        className={`${SECTION_CONTAINER_CLASS} py-14 lg:py-[70px] xl:py-[53px] 2xl:py-[70px]`}
       >
-        <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,480px)_1fr] lg:gap-x-[85px] lg:gap-y-12">
+        <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,480px)_1fr] lg:gap-x-[85px] lg:gap-y-12 xl:grid-cols-[minmax(0,400px)_1fr] xl:gap-x-[60px] 2xl:grid-cols-[minmax(0,480px)_1fr] 2xl:gap-x-[85px]">
           <motion.aside
             variants={faqAsideReveal}
             className="relative lg:sticky lg:top-24"
@@ -182,13 +182,13 @@ export function FaqSection() {
             <div className="mt-[10px]">
               <motion.h2
                 variants={faqHeadlineLine}
-                className="bg-gradient-to-b from-[#fe7278] to-[#ed1c24] bg-clip-text text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold leading-[1.2] tracking-[-0.84px] text-transparent lg:text-[40px] lg:leading-[48px]"
+                className="bg-gradient-to-b from-[#fe7278] to-[#ed1c24] bg-clip-text text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold leading-[1.2] tracking-[-0.84px] text-transparent lg:text-[40px] lg:leading-[48px] xl:text-[36px] xl:leading-[44px] 2xl:text-[40px] 2xl:leading-[48px]"
               >
                 More Doubts?
               </motion.h2>
               <motion.h2
                 variants={faqHeadlineLine}
-                className="bg-gradient-to-b from-[#222] to-[#666] bg-clip-text text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold leading-[1.2] tracking-[-0.84px] text-transparent lg:text-[40px] lg:leading-[48px]"
+                className="bg-gradient-to-b from-[#222] to-[#666] bg-clip-text text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold leading-[1.2] tracking-[-0.84px] text-transparent lg:text-[40px] lg:leading-[48px] xl:text-[36px] xl:leading-[44px] 2xl:text-[40px] 2xl:leading-[48px]"
               >
                 We&apos;ve Got You.
               </motion.h2>

@@ -130,7 +130,7 @@ function ProjectListingCard({
 export function CompletedProjectsListingSection() {
   return (
     <section className="relative w-full bg-white text-[#111]">
-      <div className={`${SECTION_CONTAINER_CLASS} py-14 lg:py-[56px]`}>
+      <div className={`${SECTION_CONTAINER_CLASS} py-14 lg:py-[56px] xl:py-[48px] 2xl:py-[56px]`}>
         <motion.div
           className="mx-auto flex w-full flex-col items-center gap-12 lg:gap-[60px]"
           variants={mfgSectionStagger}
@@ -141,7 +141,7 @@ export function CompletedProjectsListingSection() {
           <div className="flex w-full max-w-[900px] flex-col items-center text-center">
             <motion.h2
               variants={mfgHeadlineReveal}
-              className="font-[family-name:var(--font-manrope)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold leading-[1.35] tracking-[-1px] text-black lg:text-[40px] lg:leading-[60px]"
+              className="font-[family-name:var(--font-manrope)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold leading-[1.35] tracking-[-1px] text-black lg:text-[40px] lg:leading-[60px] xl:text-[36px] xl:leading-[54px] 2xl:text-[40px] 2xl:leading-[60px]"
             >
               Our Completed Projects
             </motion.h2>

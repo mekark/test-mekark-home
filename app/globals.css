@@ -124,6 +124,22 @@
   }
 }
 
+/* iMac / 1440px canvas — Figma 6700:6691 */
+@media (min-width: 1280px) {
+  :root {
+    --section-padding-x: 80px;
+    --section-padding-x-right: 80px;
+  }
+}
+
+/* Large desktop — Figma 3327:9294 */
+@media (min-width: 1536px) {
+  :root {
+    --section-padding-x: 107px;
+    --section-padding-x-right: 107px;
+  }
+}
+
 .section-container {
   box-sizing: border-box;
   max-width: var(--section-max-width);

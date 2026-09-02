@@ -126,7 +126,7 @@ function HomeLogoCard({ logo }: { logo: HomeLogo }) {
         y: -4,
         transition: { type: "spring", stiffness: 340, damping: 22 },
       }}
-      className="relative flex h-[72px] w-full items-center justify-center overflow-hidden rounded-[10px] border border-black/5 bg-white px-2 py-2 sm:h-[92px] sm:rounded-[15px] sm:px-3 lg:h-[122px] lg:px-0 lg:py-0"
+      className="relative flex h-[72px] w-full items-center justify-center overflow-hidden rounded-[10px] border border-black/5 bg-white px-2 py-2 sm:h-[92px] sm:rounded-[15px] sm:px-3 lg:h-[122px] lg:px-0 lg:py-0 xl:h-[92px] 2xl:h-[122px]"
     >
       {/* Mobile — fit logos inside the card without cropping */}
       <div className="relative flex h-full w-full items-center justify-center sm:hidden">
@@ -191,8 +191,8 @@ export function TrustedSectorsSection({
             variants={fadeUp}
             className={
               isServices
-                ? "max-w-[1023px] text-center text-[clamp(1.5rem,4vw,2.5rem)] font-bold leading-[1.13] text-[#111] lg:text-[40px] lg:leading-[45.33px]"
-                : "max-w-[767px] text-center text-[clamp(1.5rem,2.8vw,1.875rem)] font-bold leading-[1.13] text-[#111] lg:text-[30px] lg:leading-[34px]"
+                ? "max-w-[1023px] text-center text-[clamp(1.5rem,4vw,2.5rem)] font-bold leading-[1.13] text-[#111] lg:text-[40px] lg:leading-[45.33px] xl:text-[36px] xl:leading-[40px] 2xl:text-[40px] 2xl:leading-[45.33px]"
+                : "max-w-[767px] text-center text-[clamp(1.5rem,2.8vw,1.875rem)] font-bold leading-[1.13] text-[#111] lg:text-[30px] lg:leading-[34px] xl:text-[26px] xl:leading-[30px] 2xl:text-[30px] 2xl:leading-[34px]"
             }
           >
             Trusted Across

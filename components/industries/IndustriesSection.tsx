@@ -145,7 +145,7 @@ function IndustryCard({
       style={{ boxShadow: CARD_SHADOW }}
       className="flex flex-col overflow-hidden rounded-2xl border border-[#eee] bg-white sm:rounded-3xl"
     >
-      <div className="relative h-[120px] w-full shrink-0 overflow-hidden sm:h-[220px] xl:h-[273px]">
+      <div className="relative h-[120px] w-full shrink-0 overflow-hidden sm:h-[220px] xl:h-[205px] 2xl:h-[273px]">
         <Image
           src={card.image}
           alt={card.title}
@@ -161,10 +161,10 @@ function IndustryCard({
       </div>
 
       <div className="flex flex-col px-3 pb-4 pt-3 sm:px-[35px] sm:pb-[37px] sm:pt-[35px]">
-        <h3 className="text-sm font-extrabold leading-[1.25] tracking-[-0.3px] text-[#111] sm:text-2xl sm:tracking-[-0.4px]">
+        <h3 className="text-sm font-extrabold leading-[1.25] tracking-[-0.3px] text-[#111] sm:text-2xl sm:tracking-[-0.4px] xl:text-xl xl:tracking-[-0.3px] 2xl:text-2xl 2xl:tracking-[-0.4px]">
           {card.title}
         </h3>
-        <p className="mt-2 text-[11px] leading-[16px] text-[#4f4f4f] sm:mt-4 sm:text-base sm:leading-[25px]">
+        <p className="mt-2 text-[11px] leading-[16px] text-[#4f4f4f] sm:mt-4 sm:text-base sm:leading-[25px] xl:mt-3 xl:text-sm xl:leading-[19px] 2xl:mt-4 2xl:text-base 2xl:leading-[25px]">
           {card.description}
         </p>
       </div>
@@ -175,9 +175,9 @@ function IndustryCard({
 export function IndustriesSection() {
   return (
     <section className="relative w-full border-b border-black/10 bg-white font-[family-name:var(--font-manrope)] text-[#111]">
-      <div className={`${SECTION_CONTAINER_CLASS} py-14 lg:py-[107px]`}>
+      <div className={`${SECTION_CONTAINER_CLASS} py-14 lg:py-[107px] xl:py-20 2xl:py-[107px]`}>
         <motion.div
-          className="mb-12 lg:mb-[67px]"
+          className="mb-12 lg:mb-[67px] xl:mb-12 2xl:mb-[67px]"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -190,7 +190,7 @@ export function IndustriesSection() {
 
             <motion.h2
               variants={aboutHeadlineStagger}
-              className="max-w-none overflow-visible text-[clamp(1.75rem,3.5vw,3.33rem)] font-extrabold leading-[1.05] tracking-[-1.12px] text-[#111] lg:col-start-1 lg:row-start-2 lg:-mt-5 lg:text-[53.33px] lg:leading-[56px]"
+              className="max-w-none overflow-visible text-[clamp(1.75rem,3.5vw,3.33rem)] font-extrabold leading-[1.05] tracking-[-1.12px] text-[#111] lg:col-start-1 lg:row-start-2 lg:-mt-5 lg:text-[53.33px] lg:leading-[56px] xl:text-[43px] xl:leading-[43px] 2xl:text-[53.33px] 2xl:leading-[56px]"
             >
               <motion.span variants={aboutHeadlineChunk} className="block lg:whitespace-nowrap">
                 Engineered for Every Sector
@@ -206,7 +206,7 @@ export function IndustriesSection() {
               />
               <motion.p
                 variants={fadeUp}
-                className="min-w-0 w-full max-w-[938.7px] pt-0 text-left text-lg leading-[170%] text-[#4f4f4f] sm:text-xl lg:pt-[calc(186.7px/2-62.68px)] lg:text-2xl"
+                className="min-w-0 w-full max-w-[938.7px] pt-0 text-left text-lg leading-[170%] text-[#4f4f4f] sm:text-xl lg:pt-[calc(186.7px/2-62.68px)] lg:text-2xl xl:max-w-[704px] xl:pt-[calc(140px/2-47px)] xl:text-xl 2xl:max-w-[938.7px] 2xl:pt-[calc(186.7px/2-62.68px)] 2xl:text-2xl"
               >
                 From heavy industrial plants to high-precision manufacturing
                 facilities, Mekark delivers engineering-led EPC solutions across
@@ -217,7 +217,7 @@ export function IndustriesSection() {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-2 gap-3 sm:gap-7 xl:grid-cols-4 xl:gap-[37px]">
+        <div className="grid grid-cols-2 gap-3 sm:gap-7 xl:grid-cols-4 xl:gap-[28px] 2xl:gap-[37px]">
           {INDUSTRIES.map((card) => (
             <IndustryCard key={card.number} card={card} />
           ))}

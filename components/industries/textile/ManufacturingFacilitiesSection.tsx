@@ -245,7 +245,7 @@ export default function ManufacturingFacilitiesSection() {
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
             variants={containerVariants}
-            className={`${MOBILE_FACILITY_CAROUSEL_TRACK} ${MOBILE_FACILITY_CAROUSEL_DESKTOP} xl:grid xl:max-w-[1470px] xl:grid-cols-5 xl:gap-x-[46px] xl:gap-y-[66px]`}
+            className={`${MOBILE_FACILITY_CAROUSEL_TRACK} ${MOBILE_FACILITY_CAROUSEL_DESKTOP} xl:mx-auto xl:grid xl:max-w-[1470px] xl:grid-cols-5 xl:gap-x-[46px] xl:gap-y-[66px]`}
           >
             {facilities.map((facility) => (
               <motion.div

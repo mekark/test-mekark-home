@@ -66,7 +66,13 @@ const initialFormData: FormData = {
 const inputClass =
   "mt-1 w-full h-11 px-4 rounded-lg border border-gray-200 bg-white text-[#111] text-[14px] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ED2024]/30";
 const selectClass =
-  "mt-1 w-full h-11 px-4 rounded-lg border border-gray-200 bg-white text-[#111] text-[14px] focus:outline-none focus:ring-2 focus:ring-[#ED2024]/30";
+  "mt-1 w-full h-11 appearance-none pl-4 pr-9 rounded-lg border border-gray-200 bg-white bg-no-repeat text-[#111] text-[14px] focus:outline-none focus:ring-2 focus:ring-[#ED2024]/30";
+const selectArrowStyle = {
+  backgroundImage:
+    "url(\"data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%236b7280' stroke-width='1.5'%3E%3Cpath d='M6 8l4 4 4-4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\")",
+  backgroundPosition: "right 14px center",
+  backgroundSize: "14px 14px",
+};
 const labelClass = "text-sm font-medium text-[#111]";
 
 export default function ContactForm() {
@@ -317,6 +323,7 @@ export default function ContactForm() {
                 setFormData({ ...formData, service: e.target.value })
               }
               className={selectClass}
+              style={selectArrowStyle}
             >
               <option value="">Select a service</option>
               {serviceOptions.map((opt) => (
@@ -344,6 +351,7 @@ export default function ContactForm() {
                 clearError("sqf");
               }}
               className={selectClass}
+              style={selectArrowStyle}
             >
               <option value="">Select area</option>
               {PROJECT_AREAS.map((opt) => (
@@ -374,6 +382,7 @@ export default function ContactForm() {
                 clearError("startTimeline");
               }}
               className={selectClass}
+              style={selectArrowStyle}
             >
               <option value="">Select timeline</option>
               {START_TIMELINES.map((opt) => (
@@ -404,6 +413,7 @@ export default function ContactForm() {
                 clearError("budget");
               }}
               className={selectClass}
+              style={selectArrowStyle}
             >
               <option value="">Select budget range</option>
               {BUDGETS.map((opt) => (

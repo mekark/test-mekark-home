@@ -36,7 +36,7 @@ export default function LogisticsHeroBanner() {
           </div>
         </div>
         <a href="/#enquiry" className={styles.cta}>
-          <div className={styles.ctaText}>Get a Free Consultation</div>
+          <div className={styles.ctaText}>Get a Free Quote</div>
           <div className={styles.ctaIcon}>
             <Image
               src="/images/industries/automation/arrow-right.svg"

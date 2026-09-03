@@ -18,7 +18,7 @@ const Footer: NextPage = () => {
             						</div>
           					</div>
           					<a href="/#enquiry" className={styles.cta}>
-            						<b className={styles.requestAQuote}>Request a Quote</b>
+            						<b className={styles.requestAQuote}>Get a Free Quote</b>
             						<div className={styles.component4}>
               							<Image className={styles.vectorIcon} src="/images/industries/logistics/footer/arrow-icon.svg" width={25} height={25} sizes="100vw" alt="" />
             						</div>

@@ -69,7 +69,7 @@ export function QuoteRequestBanner() {
             whileTap={{ scale: 0.97 }}
           >
             <span className="whitespace-nowrap text-lg font-bold text-white sm:text-[20px] sm:leading-[31px]">
-              Request a Quote
+              Get a Free Quote
             </span>
             <span className="relative size-[25px] shrink-0 overflow-hidden">
               <Image

@@ -23,7 +23,7 @@ export function HeroCTAButton() {
       whileTap={{ scale: 0.95 }}
     >
       <span className={`${industryHeroMobileButtonTextClass} ${macStyles.heroBtnText}`}>
-        Get a Free Consultation
+        Get a Free Quote
       </span>
       <motion.span
         className={`relative shrink-0 overflow-hidden sm:size-[21px] ${industryHeroMobileButtonIconClass} ${macStyles.heroBtnIcon}`}

@@ -32,7 +32,7 @@ const CTA = () => {
         </div>
         <div className={styles.sectionChild} />
         <a href="/#enquiry" className={styles.cta2}>
-          <b className={styles.talkToOur}>Request a Free Consultation</b>
+          <b className={styles.talkToOur}>Talk to Our Expert</b>
           <div className={styles.component4}>
             <Image
               className={styles.vectorIcon}

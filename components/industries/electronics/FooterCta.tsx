@@ -34,7 +34,7 @@ export default function FooterCta() {
             </div>
           </div>
           <a href="/#enquiry" className={styles.cta}>
-            <b className={styles.requestAQuote}>Request a Quote</b>
+            <b className={styles.requestAQuote}>Get a Free Quote</b>
             <div className={styles.component4}>
               <Image
                 className={styles.vectorIcon}

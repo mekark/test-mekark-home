@@ -28,7 +28,7 @@ export default function HeroSection() {
           delivered projects.
         </div>
         <a href="/#enquiry" className={styles.cta}>
-          <div className={styles.ctaText}>Request Free Quote</div>
+          <div className={styles.ctaText}>Get a Free Quote</div>
           <div className={styles.ctaIconWrap}>
             <Image
               className={styles.ctaIcon}

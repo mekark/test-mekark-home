@@ -46,7 +46,7 @@ export default function WhyMekarkSection() {
         </div>
         <div className={styles.sectionChild} />
         <a href="/#enquiry" className={styles.cta2}>
-          <b className={styles.talkToOur}>Book My Free Consultation</b>
+          <b className={styles.talkToOur}>Talk to Our Expert</b>
           <div className={styles.component4}>
             <Image
               className={styles.vectorIcon}

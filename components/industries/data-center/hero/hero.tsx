@@ -39,7 +39,7 @@ const DataCenterHeroBanner = () => {
           </div>
         </div>
         <a href="/#enquiry" className={styles.component5}>
-          <div className={styles.text}>Get a Free Consultation</div>
+          <div className={styles.text}>Get a Free Quote</div>
           <div className={styles.component4}>
             <Image
               className={styles.vectorIcon}

@@ -19,7 +19,7 @@ export function CtaBanner() {
               hours. No obligation, just honest expert advice.
             </>
           }
-          buttonText="Request a Free Consultation"
+          buttonText="Talk to Our Expert"
           workerAlt="Mekark warehouse construction expert"
           assets={logisticsCtaWorkerAssets}
         />

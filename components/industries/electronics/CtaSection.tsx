@@ -165,7 +165,7 @@ export default function CtaSection() {
                 24 hours. No obligation, just honest expert advice.
               </>
             }
-            buttonText="Request a Free Consultation"
+            buttonText="Talk to Our Expert"
             workerAlt="Mekark electronics manufacturing expert"
             assets={electronicsCtaWorkerAssets}
           />

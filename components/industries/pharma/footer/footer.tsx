@@ -37,7 +37,7 @@ const Footer = () => {
             </div>
           </div>
           <a href="/#enquiry" className={styles.cta}>
-            <span className={styles.requestAQuote}>Request a Quote</span>
+            <span className={styles.requestAQuote}>Get a Free Quote</span>
             <div className={styles.component4}>
               <Image
                 className={styles.vectorIcon}

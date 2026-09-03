@@ -76,7 +76,7 @@
   	justify-content: center;
   	padding: 1.06771vw 1.78125vw;
   	box-sizing: border-box;
-  	gap: 0.71354vw;
+  	gap: 0.45vw;
   	flex-shrink: 0;
   	white-space: nowrap;
   	font-size: 1.18385vw;
@@ -92,8 +92,8 @@
   	white-space: nowrap;
 }
 .component4 {
-  	height: 1.75vw;
-  	width: 1.75vw;
+  	height: 2.2vw;
+  	width: 2.2vw;
   	position: relative;
   	overflow: hidden;
   	flex-shrink: 0;
@@ -429,8 +429,8 @@
     		text-align: center;
   	}
   	.component4 {
-    		width: 16px;
-    		height: 16px;
+    		width: 18px;
+    		height: 18px;
   	}
   	.frameParent3 {
     		position: relative;

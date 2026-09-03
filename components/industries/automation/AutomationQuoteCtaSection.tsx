@@ -30,7 +30,7 @@ export default function AutomationQuoteCtaSection() {
         </div>
 
         <Link href="/#enquiry" className={styles.button}>
-          <span>Request a Quote</span>
+          <span>Get a Free Quote</span>
           <Image
             src="/images/industries/automation/automation-quote-cta/arrow-right.svg"
             alt=""

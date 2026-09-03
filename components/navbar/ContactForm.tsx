@@ -18,10 +18,10 @@ const BUDGETS = [
 ];
 
 const PROJECT_AREAS = [
-  "10,000 - 20,000 sq.ft",
-  "20,000 - 30,000 sq.ft",
-  "30,000 - 50,000 sq.ft",
-  "Above 50,000 sq.ft",
+  "10,000 - 20,000 Sq.ft",
+  "20,000 - 30,000 Sq.ft",
+  "30,000 - 50,000 Sq.ft",
+  "50,000+ Sq.ft",
 ];
 
 const serviceOptions = [

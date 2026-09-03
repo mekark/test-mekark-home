@@ -30,10 +30,10 @@ const HIGHLIGHTS = [
 
 const PROJECT_AREAS = [
   "Select area",
-  "Under 5,000 sq ft",
-  "5,000 – 20,000 sq ft",
-  "20,000 – 50,000 sq ft",
-  "50,000+ sq ft",
+  "10,000 - 20,000 Sq.ft",
+  "20,000 - 30,000 Sq.ft",
+  "30,000 - 50,000 Sq.ft",
+  "50,000+ Sq.ft",
 ] as const;
 
 const INDUSTRY_TYPES = [

@@ -24,11 +24,12 @@
 .warehouseWithManRedHatIsIcon {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  /* Figma: left-[calc(8.33%+148px)] w-[2249px] on ~1910 frame */
+  left: calc(8.33% + 7.708vw);
+  width: 117.75%;
   height: 100%;
   object-fit: cover;
-  object-position: -25% 49%;
+  object-position: left center;
   transform: none;
   scale: 1;
 }
@@ -42,11 +43,9 @@
   left: 0px;
   background: linear-gradient(
     90deg,
-    #000000 0%,
-    rgba(0, 0, 0, 0.96) 28%,
-    rgba(6, 6, 6, 0.78) 42%,
-    rgba(6, 6, 6, 0.35) 58%,
-    rgba(6, 6, 6, 0) 72%
+    #060606 11.146%,
+    rgba(6, 6, 6, 0.8) 45.924%,
+    rgba(6, 6, 6, 0) 77.328%
   );
   flex-shrink: 0;
 }
@@ -186,12 +185,13 @@
     height: 16px;
   }
   .warehouseWithManRedHatIsIcon {
+    left: 0;
     width: 100%;
     height: 100%;
     transform: none;
     scale: 1;
     object-fit: cover;
-    object-position: 82% 40%;
+    object-position: 70% 40%;
   }
   .div {
     position: relative;
@@ -278,10 +278,11 @@
     height: auto;
   }
   .warehouseWithManRedHatIsIcon {
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 62%;
+    object-position: 65% 45%;
     transform: scale(1);
     transform-origin: center bottom;
   }

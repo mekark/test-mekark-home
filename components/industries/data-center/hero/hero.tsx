@@ -9,7 +9,7 @@ const DataCenterHeroBanner = () => {
         <img
           className={styles.warehouseWithManRedHatIsIcon}
           src="/images/industries/data-center/hero/hero.png"
-          alt="Data centre construction facility"
+          alt="Data centre server hall"
           fetchPriority="high"
         />
       </div>

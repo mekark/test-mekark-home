@@ -41,7 +41,7 @@ const CompleteEOTCraneSolutionsEngineeredEndToEnd: NextPage = () => {
               							</div>
               							<div className={styles.frameParent2}>
                 								<div className={styles.frameIconWrapper}>
-                  									<Image className={styles.frameIconMulti} src="/images/industries/logistics/complete-logistics/multi-storey-warehouses.jpg" width={323} height={322} sizes="100vw" alt="" />
+                  									<Image className={styles.frameIconMulti} src="/images/industries/logistics/complete-logistics/multi-storey-warehouses.png" width={323} height={194} sizes="100vw" alt="" />
                 								</div>
                 								<div className={styles.multiStoreyWarehousesParent}>
                   									<div className={styles.industrialWarehouseSheds}>Multi-Storey Warehouses:</div>

@@ -141,11 +141,12 @@
 }
 .frameIconMulti {
   	position: absolute;
-  	top: -23.67%;
-  	left: 0.05%;
+  	top: 0;
+  	left: 0;
   	width: 100%;
-  	height: 166.36%;
-  	max-width: none;
+  	height: 100%;
+  	object-fit: cover;
+  	object-position: top left;
 }
 .frameIconLogistics {
   	position: absolute;

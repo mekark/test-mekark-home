@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "@/lib/motion-variants";
-import { CultureBackground } from "@/components/about/life-at-mekark/CultureBackground";
 import { CollageGrid } from "@/components/about/life-at-mekark/CollageGrid";
 
 const VIEWPORT = { once: true, margin: "-90px" as const };
@@ -242,7 +241,7 @@ export function LifeAtMekarkPage() {
       </section>
 
       {/* @Mekark */}
-      <section className="bg-white px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
+      <section className="bg-white px-5 pb-5 pt-16 sm:px-8 sm:pb-6 sm:pt-20 lg:px-10 lg:pb-8 lg:pt-24">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -277,14 +276,13 @@ export function LifeAtMekarkPage() {
       </section>
 
       {/* Culture */}
-      <section className="relative overflow-hidden bg-white px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
-        <CultureBackground />
+      <section className="bg-white px-5 pb-16 pt-5 sm:px-8 sm:pb-20 sm:pt-6 lg:px-10 lg:pb-24 lg:pt-8">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={VIEWPORT}
-          className="relative z-10 mx-auto max-w-[1370px]"
+          className="mx-auto max-w-[1370px]"
         >
           <motion.div variants={fadeUp} className="mb-10 sm:mb-14">
             <SectionHeading title="What Makes Our Culture Special?">
@@ -332,7 +330,7 @@ export function LifeAtMekarkPage() {
               className="group inline-flex items-center gap-2.5 rounded-[10px] bg-[#ed1c24] px-[50px] py-[15px] font-[family-name:var(--font-manrope)] text-[clamp(1.125rem,2vw,24px)] font-bold text-white shadow-[-2px_2px_3px_rgba(237,28,36,0.15)] transition-transform hover:-translate-y-0.5"
             >
               Work With Us
-              <span className="relative size-5 shrink-0 overflow-hidden min-[1201px]:size-6 min-[1920px]:size-7">
+              <span className="relative size-5 shrink-0 overflow-hidden sm:translate-x-1 min-[1201px]:size-6 min-[1920px]:size-7">
                 <Image
                   src={`${IMG}/arrow-icon.svg`}
                   alt=""

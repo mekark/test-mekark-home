@@ -124,7 +124,7 @@
   	display: flex;
   	align-items: center;
   	padding: 1.25vw 2.5vw;
-  	gap: 0.692708vw;
+  	gap: 0vw;
   	font-size: 1.110938vw;
   	font-family: var(--font-inter), Inter, sans-serif;
   	color: #fff;
@@ -138,11 +138,12 @@
   	font-weight: 500;
 }
 .component4 {
-  	height: 1.75vw;
-  	width: 1.75vw;
+  	height: 2.6vw;
+  	width: 3.1vw;
   	position: relative;
   	overflow: hidden;
   	flex-shrink: 0;
+  	margin-left: -0.3vw;
 }
 .vectorIcon {
   	position: absolute;

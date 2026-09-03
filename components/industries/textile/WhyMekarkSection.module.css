@@ -153,27 +153,15 @@
   	z-index: 4;
 }
 .eotCta1 {
-	/* Photo frame 491×323 — overflow hidden crops image, frame itself bleeds above banner */
   	position: absolute;
   	top: 0;
   	left: 0;
   	width: 25.5729vw;
   	height: 16.8229vw;
-  	overflow: hidden;
+  	object-fit: cover;
   	flex-shrink: 0;
   	z-index: 3;
   	pointer-events: none;
-}
-.eotCta1Img {
-	/* Figma crop: head at top, image taller than frame */
-  	position: absolute;
-  	top: 0;
-  	left: 10.55%;
-  	width: 78.89%;
-  	height: 144.52%;
-  	max-width: none;
-  	object-fit: cover;
-  	object-position: top center;
 }
 .frameParent {
 	/* Image block x=1064 y=616 w=856 h=571 */
@@ -372,6 +360,7 @@
     		max-width: 92%;
     		height: 220px;
     		margin: 8px 0 0;
+    		pointer-events: none;
   	}
   	.sectionItem {
     		display: block;
@@ -380,6 +369,7 @@
     		transform: translateX(-42%);
     		width: 145px;
     		height: 145px;
+    		z-index: 1;
   	}
   	.sectionInner {
     		display: block;
@@ -390,6 +380,7 @@
     		width: 88%;
     		height: auto;
     		max-height: 72%;
+    		z-index: 2;
   	}
   	.eotCta1 {
     		display: block;
@@ -403,15 +394,6 @@
     		max-width: 100%;
     		height: 220px;
     		margin: 0;
-    		overflow: hidden;
-  	}
-  	.eotCta1Img {
-    		position: relative;
-    		inset: auto;
-    		left: auto;
-    		width: auto;
-    		max-width: 100%;
-    		height: 220px;
     		object-fit: contain;
     		object-position: center bottom;
   	}
@@ -498,6 +480,7 @@
     		transform: none;
     		white-space: normal;
     		letter-spacing: -0.5px;
+    		font-size: 28px;
     		line-height: 36px;
   	}
   	.mekarkIsOne {
@@ -613,9 +596,6 @@
   	.eotCta1 {
     		height: 190px;
   	}
-  	.eotCta1Img {
-    		height: 190px;
-  	}
   	.workerVisual {
     		max-width: 96%;
     		height: 190px;
@@ -632,6 +612,7 @@
     		font-size: 24px;
   	}
   	.whyWarehousesFrom {
+    		font-size: 22px;
     		line-height: 32px;
   	}
   	.mekarkIsOne {

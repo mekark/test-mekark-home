@@ -64,7 +64,7 @@ const features: Feature[] = [
 const electronicsCtaWorkerAssets = {
   badgeFrame: "/images/industries/electronics/cta/frame-76.svg",
   sectionInner: "/images/industries/electronics/cta/frame-275.svg",
-  worker: "/images/industries/electronics/cta/engineer.png",
+  worker: "/images/industries/logistics/CTA/eot-cta-worker.png",
   arrow: "/images/industries/electronics/cta/cta-arrow.svg",
 };
 

@@ -332,7 +332,7 @@ export function LifeAtMekarkPage() {
               className="group inline-flex items-center gap-2.5 rounded-[10px] bg-[#ed1c24] px-[50px] py-[15px] font-[family-name:var(--font-manrope)] text-[clamp(1.125rem,2vw,24px)] font-bold text-white shadow-[-2px_2px_3px_rgba(237,28,36,0.15)] transition-transform hover:-translate-y-0.5"
             >
               Work With Us
-              <span className="relative size-10 shrink-0 overflow-hidden">
+              <span className="relative size-5 shrink-0 overflow-hidden min-[1201px]:size-6 min-[1920px]:size-7">
                 <Image
                   src={`${IMG}/arrow-icon.svg`}
                   alt=""

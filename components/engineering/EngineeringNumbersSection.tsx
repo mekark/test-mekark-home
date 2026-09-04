@@ -138,13 +138,13 @@ export function EngineeringNumbersSection() {
                 className="h-[2.7px] w-[53px] shrink-0 bg-[#e40015] max-[350px]:w-8 xl:w-[40px]"
                 aria-hidden
               />
-              <p className="ml-[15px] whitespace-nowrap text-xs font-semibold uppercase leading-[27.73px] tracking-[2.67px] text-[#828181] max-[350px]:ml-2 max-[350px]:text-[9px] max-[350px]:leading-none max-[350px]:tracking-[1px] sm:text-base xl:text-[12px] xl:leading-[20.8px] xl:tracking-[2px]">
+              <p className="ml-[15px] whitespace-nowrap text-[clamp(0.625rem,2.4vw,0.75rem)] font-semibold uppercase leading-none tracking-[1.6px] text-[#828181] max-[350px]:ml-2 max-[350px]:tracking-[1px] sm:text-[clamp(0.7rem,1.6vw,0.875rem)] sm:tracking-[2px] xl:text-[12px] xl:leading-[20.8px] xl:tracking-[2px] 2xl:text-base 2xl:tracking-[2.67px]">
                 Scale that speaks for itself
               </p>
             </div>
             <motion.h2
               variants={slideFromLeft}
-              className="mt-1 text-[28px] font-bold leading-tight text-black sm:text-[40px] sm:leading-[56px] lg:text-[48px] lg:leading-[56px] xl:text-[46px] xl:leading-[60px] 2xl:whitespace-nowrap 2xl:text-[61.33px] 2xl:leading-[80px]"
+              className="mt-1 text-[clamp(1.35rem,5.5vw,1.75rem)] font-bold leading-[1.15] text-black sm:text-[clamp(1.75rem,3.5vw,2.25rem)] sm:leading-[1.2] lg:text-[clamp(1.85rem,3vw,2.5rem)] lg:leading-[1.2] xl:text-[clamp(2rem,3.2vw,2.875rem)] xl:leading-[1.25] 2xl:whitespace-nowrap 2xl:text-[61.33px] 2xl:leading-[80px]"
             >
               Annual Production Capacity{" "}
             </motion.h2>
@@ -171,7 +171,7 @@ export function EngineeringNumbersSection() {
                   decoding="async"
                   fetchPriority="high"
                 />
-                <p className="absolute bottom-[14%] left-1/2 z-10 w-[96%] -translate-x-1/2 text-center text-sm font-bold uppercase tracking-[2.67px] text-black opacity-75 sm:text-xl sm:leading-[27.73px] xl:text-[15px] xl:leading-[20.8px] xl:tracking-[2px]">
+                <p className="absolute bottom-[14%] left-1/2 z-10 w-[96%] -translate-x-1/2 text-center text-[clamp(0.625rem,2.8vw,0.8125rem)] font-bold uppercase leading-none tracking-[1.4px] text-black opacity-75 sm:text-[clamp(0.7rem,1.5vw,0.95rem)] sm:tracking-[1.8px] lg:text-[clamp(0.75rem,1.2vw,0.9375rem)] xl:text-[clamp(0.8rem,1.05vw,0.9375rem)] xl:leading-[1.35] xl:tracking-[2px] 2xl:text-xl 2xl:leading-[27.73px] 2xl:tracking-[2.67px]">
                   metric ton per annum
                 </p>
               </div>
@@ -203,7 +203,7 @@ export function EngineeringNumbersSection() {
                 variants={fadeUp}
                 className="flex min-w-0 flex-1 items-center"
               >
-                <p className="text-left text-[13px] leading-[20px] text-[#2a2a2a] min-[480px]:text-[14px] min-[480px]:leading-[22px] md:text-[16px] md:leading-[24px] lg:text-[22px] lg:leading-[30px] xl:text-[clamp(1rem,1.5vw,1.3125rem)] xl:leading-[1.35] 2xl:max-w-none 2xl:text-[28px] 2xl:leading-[34px]">
+                <p className="text-left text-[clamp(0.8125rem,3.2vw,0.9375rem)] leading-[1.45] text-[#2a2a2a] sm:text-[clamp(0.875rem,1.8vw,1.0625rem)] sm:leading-[1.45] lg:text-[clamp(0.9375rem,1.5vw,1.125rem)] lg:leading-[1.4] xl:text-[clamp(1rem,1.4vw,1.25rem)] xl:leading-[1.35] 2xl:max-w-none 2xl:text-[28px] 2xl:leading-[34px]">
                   <span className="2xl:block 2xl:whitespace-nowrap">
                     Tons of structural steel manufactured at our
                   </span>

@@ -448,14 +448,14 @@ export function OnePartnerSection() {
             whileInView={{ y: 0 }}
             viewport={{ once: true, amount: 0.05, margin: "0px 0px -40px 0px" }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="relative z-10 mt-6 overflow-hidden rounded-[11px] border border-[#ddd] shadow-[0px_17px_38px_rgba(0,0,0,0.06)] lg:mt-1 lg:h-[139px] lg:rounded-[15px] lg:shadow-[0px_22.734px_50.521px_rgba(0,0,0,0.06)]"
+            className="relative z-10 mt-6 overflow-hidden rounded-[11px] border border-[#ddd] shadow-[0px_17px_38px_rgba(0,0,0,0.06)] lg:mt-1 lg:rounded-[15px] lg:shadow-[0px_22.734px_50.521px_rgba(0,0,0,0.06)]"
             style={{
               backgroundImage:
                 "linear-gradient(90deg, rgb(215, 10, 16) 0%, rgb(166, 4, 6) 100%)",
             }}
           >
             <div
-              className="absolute bottom-0 left-0 top-0 w-[9px] bg-black lg:w-[13px]"
+              className="absolute bottom-0 left-0 top-0 w-[9px] bg-black lg:w-[clamp(9px,1vw,13px)]"
               aria-hidden
             />
 
@@ -468,38 +468,39 @@ export function OnePartnerSection() {
               aria-hidden
             />
 
-            <div className="relative flex min-h-[104px] flex-col items-start gap-4 px-6 py-5 sm:flex-row sm:items-center sm:gap-8 sm:px-12 lg:h-full lg:min-h-[139px] lg:gap-8 lg:px-[69px] lg:py-0">
+            <div className="relative flex min-h-[104px] flex-col items-start gap-4 px-6 py-5 sm:flex-row sm:items-center sm:gap-5 sm:px-10 sm:py-6 lg:min-h-[clamp(7.5rem,11vw,8.7rem)] lg:gap-[clamp(1rem,2vw,2rem)] lg:px-[clamp(2.75rem,5.5vw,4.3rem)] lg:py-[clamp(1.1rem,2vw,1.75rem)] 2xl:min-h-[139px] 2xl:gap-8 2xl:px-[69px] 2xl:py-0">
               <motion.div
                 initial={{ scale: 0.92 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0.05, margin: "0px 0px -40px 0px" }}
                 transition={{ type: "spring", stiffness: 380, damping: 16, delay: 0.1 }}
-                className="flex size-[70px] shrink-0 items-center justify-center rounded-full border border-white lg:size-[93px]"
+                className="flex size-[70px] shrink-0 items-center justify-center rounded-full border border-white lg:size-[clamp(3.75rem,6vw,5.8rem)] 2xl:size-[93px]"
               >
                 <Image
                   src="/images/one-partner/banner-shield.svg"
                   alt=""
                   width={48}
                   height={48}
+                  className="size-9 lg:size-[clamp(2rem,3.2vw,3rem)] 2xl:size-12"
                   aria-hidden
                 />
               </motion.div>
 
-              <p className="relative z-10 max-w-[769px] text-xl font-medium leading-snug tracking-[-0.76px] text-white sm:text-[25px] lg:max-w-[1025px] lg:text-[33.33px] lg:leading-normal lg:tracking-[-1.01px]">
+              <p className="relative z-10 max-w-[42rem] text-[clamp(1.125rem,2.1vw,1.55rem)] font-medium leading-[1.3] tracking-[-0.76px] text-white sm:max-w-[min(100%,36rem)] sm:text-[clamp(1.25rem,2.35vw,1.75rem)] lg:max-w-[min(100%,40rem)] xl:max-w-[min(100%,44rem)] 2xl:max-w-[1025px] 2xl:text-[33.33px] 2xl:leading-normal 2xl:tracking-[-1.01px]">
                 Single accountability.{" "}
                 <span className="font-bold">Complete project ownership.</span>
               </p>
 
               <motion.div
                 variants={partnerLockSkylineDrift}
-                className="pointer-events-none absolute -right-5 -top-12 hidden h-[206px] w-[675px] lg:-right-7 lg:-top-16 lg:block lg:h-[275px] lg:w-[902px]"
+                className="pointer-events-none absolute -right-8 -top-10 hidden h-[180px] w-[min(58%,520px)] opacity-55 sm:block lg:-right-10 lg:-top-12 lg:h-[clamp(11rem,18vw,17rem)] lg:w-[min(55%,720px)] lg:opacity-50 xl:opacity-45 2xl:-right-7 2xl:-top-16 2xl:h-[275px] 2xl:w-[902px] 2xl:opacity-100"
               >
                 <Image
                   src="/images/one-partner/banner-skyline.png"
                   alt=""
                   fill
                   className="object-cover object-right"
-                  sizes="902px"
+                  sizes="(max-width: 1536px) 55vw, 902px"
                   aria-hidden
                 />
               </motion.div>

@@ -967,11 +967,11 @@ export const precEngHeadlineGroup: Variants = {
 };
 
 export const precEngHeadlineWord: Variants = {
-  hidden: { opacity: 0, y: 36, clipPath: "inset(100% 0 0 0)" },
+  // Avoid clipPath — inset(0) still crops bold Manrope stems/ascenders
+  hidden: { opacity: 0, y: 28 },
   visible: {
     opacity: 1,
     y: 0,
-    clipPath: "inset(0% 0 0 0)",
     transition: { duration: 0.85, ease: [0.22, 1, 0.36, 1] },
   },
 };

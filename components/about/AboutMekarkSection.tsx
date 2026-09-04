@@ -102,12 +102,14 @@ export function AboutMekarkSection() {
   const statsInView = useInView(statsRef, { once: true, amount: 0.25 });
   return (
     <section className="relative w-full overflow-hidden bg-white font-[family-name:var(--font-manrope)] text-[#555]">
-      <div className={`${SECTION_CONTAINER_CLASS} flex flex-col items-center gap-10 py-12 sm:gap-12 sm:py-16 lg:gap-14 lg:py-[85px] xl:gap-12 xl:py-[73px] 2xl:gap-14 2xl:py-[85px]`}>
-        {/* Hero row — iMac Figma 6700:6727 · large Figma 3327:9333 */}
-        <div className="flex w-full flex-col items-center gap-10 lg:flex-row lg:items-center lg:gap-12 xl:gap-12 2xl:gap-16">
+      <div
+        className={`${SECTION_CONTAINER_CLASS} flex flex-col items-center gap-10 py-12 sm:gap-12 sm:py-16 lg:gap-14 lg:py-[85px] xl:gap-12 xl:py-[73px] 2xl:gap-14 2xl:py-[85px]`}
+      >
+        {/* Hero row — image stretches to match copy height (paras + quote) */}
+        <div className="flex w-full flex-col items-center gap-10 lg:flex-row lg:items-stretch lg:gap-10 xl:gap-12 2xl:gap-16">
           {/* Image card */}
           <motion.div
-            className="relative aspect-[692/588] w-full max-w-[692px] shrink-0 overflow-hidden rounded-[20px] border border-[rgba(245,245,245,0.08)] bg-[#111] sm:rounded-[26.67px] lg:aspect-auto lg:h-[588px] lg:w-[min(100%,692px)] xl:aspect-[519/441] xl:h-[441px] xl:max-w-[519px] xl:w-[min(100%,519px)] 2xl:aspect-auto 2xl:h-[588px] 2xl:max-w-[692px] 2xl:w-[min(100%,692px)]"
+            className="relative aspect-[692/588] w-full max-w-[692px] shrink-0 overflow-hidden rounded-[20px] border border-[rgba(245,245,245,0.08)] bg-[#111] sm:rounded-[26.67px] lg:aspect-auto lg:h-auto lg:min-h-[480px] lg:w-[min(46%,640px)] lg:max-w-none xl:w-[min(44%,600px)] 2xl:min-h-[588px] 2xl:w-[min(48%,692px)]"
             variants={aboutBuildingReveal}
             initial="hidden"
             whileInView="visible"
@@ -176,7 +178,7 @@ export function AboutMekarkSection() {
 
           {/* Copy column */}
           <motion.div
-            className="flex w-full max-w-[920px] flex-col gap-6 lg:gap-[27px]"
+            className="flex w-full min-w-0 flex-1 flex-col gap-6 lg:justify-center lg:gap-[clamp(1.1rem,2vw,1.7rem)]"
             variants={aboutContainerStagger}
             initial="hidden"
             whileInView="visible"
@@ -184,7 +186,7 @@ export function AboutMekarkSection() {
           >
             <motion.h2
               variants={aboutHeadlineStagger}
-              className="text-[28px] font-extrabold leading-tight text-[#121212] sm:text-[42px] sm:leading-[64px] lg:text-[53.33px] lg:leading-[81.33px] xl:text-[40px] xl:leading-[48px] 2xl:text-[53.33px] 2xl:leading-[81.33px]"
+              className="text-[28px] font-extrabold leading-tight text-[#121212] sm:text-[42px] sm:leading-[64px] lg:text-[clamp(2rem,3.2vw,3.33rem)] lg:leading-[1.2] xl:text-[clamp(2rem,2.8vw,2.5rem)] xl:leading-[1.2] 2xl:text-[53.33px] 2xl:leading-[81.33px]"
             >
               <motion.span variants={aboutHeadlineChunk} className="inline">
                 <span className="uppercase">- A</span>
@@ -195,30 +197,29 @@ export function AboutMekarkSection() {
 
             <motion.p
               variants={aboutParagraphReveal}
-              className="text-base leading-[28px] text-[#555] sm:text-[21.33px] sm:leading-[37.33px] xl:text-[18px] xl:leading-[28px] 2xl:text-[21.33px] 2xl:leading-[37.33px]"
+              className="text-base leading-[28px] text-[#555] sm:text-[21.33px] sm:leading-[37.33px] lg:text-[clamp(0.95rem,1.35vw,1.2rem)] lg:leading-[1.65] xl:text-[clamp(0.95rem,1.25vw,1.125rem)] xl:leading-[1.6] 2xl:text-[21.33px] 2xl:leading-[37.33px]"
             >
               With 18+ years of engineering excellence and 200+ successfully
               delivered projects, Mekark is a trusted industrial EPC
               (Engineering, Procurement, and Construction) company specialising
-              in facilities that demand precision, scalability, and operational
-              intelligence.
+              in facilities that demand engineered for long-term operational
+              performance.
             </motion.p>
 
             <motion.p
               variants={aboutParagraphReveal}
-              className="text-base leading-[28px] text-[#555] sm:text-[21.33px] sm:leading-[37.33px] xl:text-[18px] xl:leading-[28px] 2xl:text-[21.33px] 2xl:leading-[37.33px]"
+              className="text-base leading-[28px] text-[#555] sm:text-[21.33px] sm:leading-[37.33px] lg:text-[clamp(0.95rem,1.35vw,1.2rem)] lg:leading-[1.65] xl:text-[clamp(0.95rem,1.25vw,1.125rem)] xl:leading-[1.6] 2xl:text-[21.33px] 2xl:leading-[37.33px]"
             >
               We don't just construct industrial buildings we design them to
-              perform for years, not just get finished on time. From
+              perform for years, not just to get finished on time. From
               ready-to-assemble steel buildings and factory shells to large
               open-span structures and turnkey plants, every Mekark project is
-              built to work well over its entire lifetime. It's not just about
-              hitting construction deadlines it's about lasting performance.
+              built for lasting performance over its full lifetime.
             </motion.p>
 
             <motion.p
               variants={aboutParagraphReveal}
-              className="text-base leading-[28px] text-[#555] sm:text-[21.33px] sm:leading-[37.33px] xl:text-[18px] xl:leading-[28px] 2xl:text-[21.33px] 2xl:leading-[37.33px]"
+              className="text-base leading-[28px] text-[#555] sm:text-[21.33px] sm:leading-[37.33px] lg:text-[clamp(0.95rem,1.35vw,1.2rem)] lg:leading-[1.65] xl:text-[clamp(0.95rem,1.25vw,1.125rem)] xl:leading-[1.6] 2xl:text-[21.33px] 2xl:leading-[37.33px]"
             >
               Our integrated approach brings design, procurement, production,
               and execution together under a single accountable system, reducing
@@ -249,7 +250,7 @@ export function AboutMekarkSection() {
                   aria-hidden
                 />
               </motion.div>
-              <p className="text-base font-semibold leading-[28px] text-black sm:max-w-[515px] sm:text-[21.33px] sm:leading-[33.33px] xl:max-w-[386px] xl:text-[18px] xl:leading-[25px] 2xl:max-w-[515px] 2xl:text-[21.33px] 2xl:leading-[33.33px]">
+              <p className="text-base font-semibold leading-[28px] text-black sm:max-w-[515px] sm:text-[21.33px] sm:leading-[33.33px] lg:text-[clamp(0.95rem,1.35vw,1.2rem)] lg:leading-[1.55] xl:max-w-[386px] xl:text-[clamp(0.95rem,1.25vw,1.125rem)] xl:leading-[1.5] 2xl:max-w-[515px] 2xl:text-[21.33px] 2xl:leading-[33.33px]">
                 Precision engineering. Proven scale. Performance that lasts.
               </p>
             </motion.blockquote>

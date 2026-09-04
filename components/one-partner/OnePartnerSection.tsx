@@ -247,10 +247,10 @@ function BenefitCard({
         aria-hidden
       />
 
-      <motion.div
-        variants={partnerLockContentStack}
-        className="relative z-10 flex h-full flex-col px-6 pb-6 pt-5 backdrop-blur-[2px] xl:px-6 xl:pb-6 xl:pt-5 2xl:px-[42px] 2xl:pb-[68px] 2xl:pt-[35px]"
-      >
+        <motion.div
+          variants={partnerLockContentStack}
+          className="relative z-10 flex h-full flex-col px-6 pb-6 pt-5 backdrop-blur-[2px] xl:px-3.5 xl:pb-5 xl:pt-4 2xl:px-[42px] 2xl:pb-[68px] 2xl:pt-[35px]"
+        >
         <motion.div
           variants={partnerLockIconPop}
           animate={{
@@ -294,10 +294,10 @@ function BenefitCard({
           </motion.p>
           <motion.h3
             variants={partnerLockTextRise}
-            className="text-lg font-bold leading-6 tracking-[-0.5px] text-[#111] xl:text-lg xl:leading-6 2xl:text-2xl 2xl:leading-8 2xl:tracking-[-0.76px]"
+            className="text-lg font-bold leading-6 tracking-[-0.5px] text-[#111] xl:text-[clamp(0.8125rem,1.05vw,1rem)] xl:leading-[1.25] xl:tracking-[-0.4px] 2xl:text-2xl 2xl:leading-8 2xl:tracking-[-0.76px]"
           >
             {titleLines.map((line) => (
-              <span key={line} className="block">
+              <span key={line} className="block xl:whitespace-nowrap">
                 {line}
               </span>
             ))}

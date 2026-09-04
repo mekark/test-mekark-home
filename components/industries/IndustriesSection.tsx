@@ -107,14 +107,14 @@ function SectionBadge() {
   return (
     <motion.div
       variants={aboutBadgeReveal}
-      className="relative box-border flex w-fit items-center gap-[9.4px] rounded-full border border-solid border-[1.175px] border-[rgba(219,28,34,0.2)] bg-[rgba(219,28,34,0.05)] px-[15.3px] py-[8.2px] text-left font-inter text-base text-[#e9000e]"
+      className="relative box-border flex w-fit items-center gap-1.5 rounded-full border border-solid border-[1.175px] border-[rgba(219,28,34,0.2)] bg-[rgba(219,28,34,0.05)] px-2.5 py-1.5 text-left font-inter text-[#e9000e] sm:gap-[9.4px] sm:px-[15.3px] sm:py-[8.2px]"
     >
       <motion.div
         variants={aboutBadgeDot}
-        className="relative size-[9.4px] rounded-full bg-[#e40015]"
+        className="relative size-1.5 shrink-0 rounded-full bg-[#e40015] sm:size-[9.4px]"
         aria-hidden
       />
-      <span className="font-medium leading-[18.8px] tracking-[0.7px]">
+      <span className="text-[clamp(0.625rem,2.8vw,0.75rem)] font-medium leading-none tracking-[0.5px] sm:text-[clamp(0.75rem,1.2vw,1rem)] sm:leading-[18.8px] sm:tracking-[0.7px]">
         What We Do
       </span>
     </motion.div>
@@ -183,16 +183,16 @@ export function IndustriesSection() {
           whileInView="visible"
           viewport={VIEWPORT}
         >
-          <div className="grid grid-cols-1 gap-x-0 gap-y-8 lg:grid-cols-[auto_minmax(0,1fr)] lg:grid-rows-[auto_auto] lg:items-start lg:gap-x-10 lg:gap-y-[22px] xl:gap-x-12">
+          <div className="grid grid-cols-1 gap-x-0 gap-y-4 sm:gap-y-6 lg:grid-cols-[auto_minmax(0,1fr)] lg:grid-rows-[auto_auto] lg:items-start lg:gap-x-10 lg:gap-y-[22px] xl:gap-x-12">
             <div className="lg:col-start-1 lg:row-start-1">
               <SectionBadge />
             </div>
 
             <motion.h2
               variants={aboutHeadlineStagger}
-              className="max-w-none overflow-visible text-[clamp(1.75rem,3.5vw,3.33rem)] font-extrabold leading-[1.05] tracking-[-1.12px] text-[#111] lg:col-start-1 lg:row-start-2 lg:-mt-5 lg:text-[53.33px] lg:leading-[56px] xl:text-[43px] xl:leading-[43px] 2xl:text-[53.33px] 2xl:leading-[56px]"
+              className="max-w-none overflow-visible whitespace-nowrap text-[clamp(1.375rem,5.8vw,1.875rem)] font-extrabold leading-[1.15] tracking-[-0.6px] text-[#111] sm:text-[clamp(1.75rem,4vw,2.5rem)] sm:tracking-[-1px] lg:col-start-1 lg:row-start-2 lg:-mt-5 lg:text-[clamp(2rem,3.5vw,3.33rem)] lg:leading-[1.05] lg:tracking-[-1.12px] xl:text-[43px] xl:leading-[43px] 2xl:text-[53.33px] 2xl:leading-[56px]"
             >
-              <motion.span variants={aboutHeadlineChunk} className="block lg:whitespace-nowrap">
+              <motion.span variants={aboutHeadlineChunk} className="inline whitespace-nowrap">
                 Engineered for Every Sector
               </motion.span>
             </motion.h2>
@@ -206,7 +206,7 @@ export function IndustriesSection() {
               />
               <motion.p
                 variants={fadeUp}
-                className="min-w-0 w-full max-w-[938.7px] pt-0 text-left text-lg leading-[170%] text-[#4f4f4f] sm:text-xl lg:pt-[calc(186.7px/2-62.68px)] lg:text-2xl xl:max-w-[704px] xl:pt-[calc(140px/2-47px)] xl:text-xl 2xl:max-w-[938.7px] 2xl:pt-[calc(186.7px/2-62.68px)] 2xl:text-2xl"
+                className="min-w-0 w-full max-w-[938.7px] pt-0 text-left text-[clamp(0.875rem,3.6vw,1rem)] leading-[1.55] text-[#4f4f4f] sm:text-[clamp(1rem,2vw,1.125rem)] sm:leading-[1.6] lg:pt-[calc(186.7px/2-62.68px)] lg:text-[clamp(1.05rem,1.6vw,1.5rem)] lg:leading-[1.65] xl:max-w-[704px] xl:pt-[calc(140px/2-47px)] xl:text-xl xl:leading-[170%] 2xl:max-w-[938.7px] 2xl:pt-[calc(186.7px/2-62.68px)] 2xl:text-2xl"
               >
                 From heavy industrial plants to high-precision manufacturing
                 facilities, Mekark delivers engineering-led EPC solutions across

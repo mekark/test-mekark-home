@@ -146,10 +146,9 @@ function SolutionCard({
 
   if (!visual) return null;
 
+  // Same height for every card at each breakpoint (core + extended)
   const cardHeightClass =
-    overlay === "extended"
-      ? "h-[250px] sm:h-[280px] xl:h-[217px] 2xl:h-[333px]"
-      : "h-[250px] sm:h-[280px] xl:h-[250px] 2xl:h-[333px]";
+    "h-[200px] sm:h-[240px] xl:h-[250px] 2xl:h-[333px]";
 
   return (
     <motion.article
@@ -161,7 +160,7 @@ function SolutionCard({
     >
       <ServiceAnchor
         href={service.href}
-        className={`relative block overflow-hidden rounded-[21px] ${cardHeightClass}`}
+        className={`group relative block overflow-hidden rounded-[21px] ${cardHeightClass}`}
       >
         <Image
           src={visual.src}
@@ -175,17 +174,17 @@ function SolutionCard({
         <div
           className={
             overlay === "extended"
-              ? "absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.92)] via-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0.15)]"
-              : "absolute inset-x-0 bottom-0 h-[53%] bg-gradient-to-t from-[rgba(0,0,0,0.92)] via-[rgba(0,0,0,0.5)] to-transparent"
+              ? "absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.88)] via-[rgba(0,0,0,0.35)] to-[rgba(0,0,0,0.08)] sm:from-[rgba(0,0,0,0.92)] sm:via-[rgba(0,0,0,0.5)] sm:to-[rgba(0,0,0,0.15)]"
+              : "absolute inset-x-0 bottom-0 h-[38%] bg-gradient-to-t from-[rgba(0,0,0,0.9)] via-[rgba(0,0,0,0.45)] to-transparent sm:h-[53%] sm:from-[rgba(0,0,0,0.92)] sm:via-[rgba(0,0,0,0.5)]"
           }
           aria-hidden
         />
 
-        <div className="absolute inset-x-[28px] bottom-[28px] flex flex-col gap-[7px] xl:inset-x-[21px] xl:bottom-[21px] xl:gap-1.5 2xl:inset-x-[28px] 2xl:bottom-[28px] 2xl:gap-[7px]">
-          <h3 className="text-xl font-bold leading-[29px] text-white sm:text-2xl xl:text-[22px] xl:leading-[22px] 2xl:text-2xl 2xl:leading-[29px]">
+        <div className="absolute inset-x-4 bottom-4 flex flex-col gap-1 sm:inset-x-[28px] sm:bottom-[28px] sm:gap-[7px] xl:inset-x-[21px] xl:bottom-[21px] xl:gap-1.5 2xl:inset-x-[28px] 2xl:bottom-[28px] 2xl:gap-[7px]">
+          <h3 className="text-[15px] font-bold leading-snug text-white sm:text-xl sm:leading-[29px] md:text-2xl xl:text-[22px] xl:leading-[22px] 2xl:text-2xl 2xl:leading-[29px]">
             {visual.title}
           </h3>
-          <p className="max-w-[433px] text-sm leading-[22px] text-[#aaa] sm:text-base sm:leading-[25px] xl:max-w-[318px] xl:text-sm xl:leading-[18px] 2xl:max-w-[433px] 2xl:text-base 2xl:leading-[25px]">
+          <p className="line-clamp-2 max-w-[433px] text-[11px] leading-[1.4] text-[#c8c8c8] sm:line-clamp-none sm:text-sm sm:leading-[22px] sm:text-[#aaa] md:text-base md:leading-[25px] xl:max-w-[318px] xl:text-sm xl:leading-[18px] 2xl:max-w-[433px] 2xl:text-base 2xl:leading-[25px]">
             {visual.description}
           </p>
         </div>

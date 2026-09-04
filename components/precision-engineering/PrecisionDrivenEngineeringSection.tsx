@@ -327,39 +327,40 @@ export function PrecisionDrivenEngineeringSection() {
                 }}
                 className="w-full self-start rounded-2xl border border-[#ffd5d5] bg-white px-3 py-4 shadow-[0px_13.333px_22.667px_rgba(237,28,36,0.07)] sm:px-5 sm:py-5 lg:px-6 lg:py-6 2xl:px-9 2xl:pt-9 2xl:pb-6"
               >
-                {/* Equal-height step cards in one row */}
+                {/* Card + its benefit stay paired (mobile stack & desktop columns) */}
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:items-stretch sm:gap-0">
                   {WORKFLOW_STEPS.map((step) => (
-                    <div key={step.number} className="h-full min-w-0">
-                      <WorkflowStep step={step} />
+                    <div
+                      key={step.number}
+                      className="flex min-w-0 flex-col sm:h-full"
+                    >
+                      <div className="min-h-0 flex-1">
+                        <WorkflowStep step={step} />
+                      </div>
+
+                      <motion.div
+                        variants={precEngBenefitItem}
+                        className="mt-2.5 flex items-center gap-2 px-1 sm:mt-4 sm:items-start sm:justify-center sm:gap-3 sm:px-3"
+                      >
+                        <motion.span
+                          variants={precEngBenefitDot}
+                          className="size-1.5 shrink-0 rounded-full bg-[#ed1c24] sm:mt-[0.45em] sm:size-2"
+                          aria-hidden
+                        />
+                        <p className="min-w-0 whitespace-nowrap text-[clamp(0.7rem,3.1vw,0.8125rem)] font-semibold leading-none text-[#555] sm:min-h-[2.6em] sm:whitespace-normal sm:text-left sm:text-[clamp(0.75rem,1.05vw,1.15rem)] sm:leading-snug sm:max-w-[14ch]">
+                          <span className="sm:hidden">
+                            {step.benefit[0]} {step.benefit[1]}
+                          </span>
+                          <span className="hidden sm:inline">
+                            {step.benefit[0]}
+                            <br />
+                            {step.benefit[1]}
+                          </span>
+                        </p>
+                      </motion.div>
                     </div>
                   ))}
                 </div>
-
-                {/* Benefits on a separate aligned row so bullets share one baseline */}
-                <motion.div
-                  variants={precEngBenefitRow}
-                  className="mt-3 grid grid-cols-1 gap-3 sm:mt-4 sm:grid-cols-3 sm:items-start sm:gap-0"
-                >
-                  {WORKFLOW_STEPS.map((step) => (
-                    <motion.div
-                      key={`${step.number}-benefit`}
-                      variants={precEngBenefitItem}
-                      className="flex items-start gap-2.5 px-1 sm:justify-center sm:gap-3 sm:px-3"
-                    >
-                      <motion.span
-                        variants={precEngBenefitDot}
-                        className="mt-[0.45em] size-1.5 shrink-0 rounded-full bg-[#ed1c24] sm:size-2"
-                        aria-hidden
-                      />
-                      <p className="min-h-[3.6em] min-w-0 text-left text-[clamp(0.75rem,1.05vw,1.15rem)] font-semibold leading-snug text-[#555] sm:min-h-[3.9em] sm:max-w-[14ch]">
-                        {step.benefit[0]}
-                        <br />
-                        {step.benefit[1]}
-                      </p>
-                    </motion.div>
-                  ))}
-                </motion.div>
               </motion.div>
 
               <motion.blockquote

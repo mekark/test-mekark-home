@@ -55,7 +55,7 @@ type FiveSPoint = (typeof FIVE_S_POINTS)[number];
 function FiveSPointCard({ point }: { point: FiveSPoint }) {
   return (
     <article
-      className="relative flex h-full w-full min-w-0 flex-col items-center justify-center rounded-[14px] px-4 py-5 text-center shadow-[0_12px_26px_rgba(22,22,22,0.05),0_3px_8px_rgba(22,22,22,0.04)] sm:px-6 sm:py-10 lg:min-h-[510px] lg:px-5 lg:py-12"
+      className="relative flex h-full w-full min-w-0 flex-col items-center justify-center rounded-[14px] px-3 py-5 text-center shadow-[0_12px_26px_rgba(22,22,22,0.05),0_3px_8px_rgba(22,22,22,0.04)] sm:px-4 sm:py-6 lg:min-h-0 lg:px-3 lg:py-6 xl:px-4 xl:py-8 2xl:min-h-[510px] 2xl:px-5 2xl:py-12"
       style={{
         backgroundImage:
           "linear-gradient(180deg, #fefefe 0%, #fafafa 42%, #f4f4f4 78%, #f1f1f1 100%)",
@@ -67,29 +67,29 @@ function FiveSPointCard({ point }: { point: FiveSPoint }) {
       />
       <div
         aria-hidden
-        className="mb-3 flex size-[72px] shrink-0 items-center justify-center rounded-full border-2 border-[#e50818] bg-[radial-gradient(circle_at_50%_34%,#fff_0%,#fdfdfd_62%,#f8f8f8_100%)] shadow-[0_7px_8px_rgba(20,20,20,0.07),0_1px_1.5px_rgba(20,20,20,0.05)] sm:mb-6 sm:size-[clamp(96px,22vw,145px)]"
+        className="mb-2.5 flex size-14 shrink-0 items-center justify-center rounded-full border-2 border-[#e50818] bg-[radial-gradient(circle_at_50%_34%,#fff_0%,#fdfdfd_62%,#f8f8f8_100%)] shadow-[0_7px_8px_rgba(20,20,20,0.07),0_1px_1.5px_rgba(20,20,20,0.05)] sm:mb-3 sm:size-16 lg:mb-3 lg:size-[clamp(3.5rem,5vw,4.75rem)] 2xl:mb-6 2xl:size-[clamp(6rem,7.5vw,9.0625rem)]"
       >
-        <div className="relative size-8 sm:size-[clamp(40px,10vw,60px)]">
+        <div className="relative size-6 sm:size-7 lg:size-[clamp(1.5rem,2.2vw,2.25rem)] 2xl:size-[clamp(2.5rem,3.2vw,3.75rem)]">
           <Image
             src={point.icon}
             alt=""
             fill
             className="object-contain"
-            sizes="(max-width: 640px) 32px, 60px"
+            sizes="(max-width: 1024px) 28px, (max-width: 1536px) 36px, 60px"
           />
         </div>
       </div>
-      <p className="font-[family-name:var(--font-manrope)] text-[clamp(1.75rem,7vw,3rem)] font-bold leading-none tracking-[0.24px] text-[#e50818]">
+      <p className="font-[family-name:var(--font-manrope)] text-[clamp(1.5rem,2.4vw,3rem)] font-bold leading-none tracking-[0.24px] text-[#e50818]">
         {point.number}
       </p>
-      <h3 className="mt-2 font-[family-name:var(--font-manrope)] text-[clamp(1.125rem,4vw,2rem)] font-bold leading-tight tracking-[-0.26px] text-[#141719] sm:mt-3">
+      <h3 className="mt-1.5 font-[family-name:var(--font-manrope)] text-[clamp(1rem,1.45vw,2rem)] font-bold leading-tight tracking-[-0.26px] text-[#141719] sm:mt-2">
         {point.title}
       </h3>
       <div
         aria-hidden
-        className="mt-2 h-[3.5px] w-[34px] rounded-[2px] bg-[#e50818] sm:mt-4"
+        className="mt-2 h-[3px] w-7 rounded-[2px] bg-[#e50818] sm:mt-2.5 lg:w-8 2xl:mt-4 2xl:h-[3.5px] 2xl:w-[34px]"
       />
-      <p className="mt-2 max-w-[232px] font-[family-name:var(--font-manrope)] text-[clamp(0.875rem,3.4vw,1.25rem)] font-medium leading-[1.4] tracking-[0.04px] text-[#5f6161] sm:mt-4 sm:leading-[1.48]">
+      <p className="mt-2 max-w-[15rem] font-[family-name:var(--font-manrope)] text-[clamp(0.75rem,1.05vw,1.25rem)] font-medium leading-[1.4] tracking-[0.04px] text-[#5f6161] sm:mt-2.5 sm:leading-[1.45] 2xl:mt-4 2xl:max-w-[232px]">
         {point.description}
       </p>
     </article>
@@ -273,25 +273,25 @@ function AssociatePartnerCard({
 }) {
   return (
     <article
-      className={`group/partner flex min-w-0 max-w-[281px] cursor-pointer flex-col gap-[14px] ${className}`}
+      className={`group/partner flex min-w-0 w-full max-w-[281px] cursor-pointer flex-col gap-3 sm:gap-[14px] ${className}`}
     >
-      <div className="relative flex h-[111px] items-center justify-center rounded-[20px] border border-[#e2e5ea] bg-white px-4 py-[27px] shadow-[0_1px_0_rgba(14,17,22,0.02)] transition-[box-shadow,transform,border-color] duration-300 group-hover/partner:-translate-y-0.5 group-hover/partner:border-[#e12a2b]/35 group-hover/partner:shadow-[0_10px_28px_rgba(14,17,22,0.08)]">
+      <div className="relative flex h-[88px] items-center justify-center rounded-[16px] border border-[#e2e5ea] bg-white px-3 py-5 shadow-[0_1px_0_rgba(14,17,22,0.02)] transition-[box-shadow,transform,border-color] duration-300 group-hover/partner:-translate-y-0.5 group-hover/partner:border-[#e12a2b]/35 group-hover/partner:shadow-[0_10px_28px_rgba(14,17,22,0.08)] sm:h-[100px] lg:h-[clamp(5.5rem,8vw,6.9375rem)] lg:rounded-[20px] lg:px-4 lg:py-[clamp(1.25rem,1.8vw,1.7rem)]">
         <Image
           src={partner.src}
           alt={partner.alt}
           width={145}
           height={57}
-          className="h-[57px] w-[145px] max-w-full object-contain object-center opacity-95 transition-opacity duration-300 group-hover/partner:opacity-100"
+          className="h-[46px] w-[118px] max-w-full object-contain object-center opacity-95 transition-opacity duration-300 group-hover/partner:opacity-100 sm:h-[52px] sm:w-[132px] lg:h-[clamp(2.75rem,3.8vw,3.5625rem)] lg:w-[clamp(7rem,9.5vw,9.0625rem)]"
           sizes="145px"
         />
         <AssociatePartnerHoverCorners />
       </div>
-      <div className="flex min-w-0 items-start gap-[9px]">
+      <div className="flex min-w-0 items-start gap-2 sm:gap-[9px]">
         <span
           aria-hidden
-          className="mt-[7px] size-[6px] shrink-0 rounded-[3px] bg-[#e2e5ea] transition-colors duration-300 group-hover/partner:bg-[#e12a2b]"
+          className="mt-1.5 size-[6px] shrink-0 rounded-[3px] bg-[#e2e5ea] transition-colors duration-300 group-hover/partner:bg-[#e12a2b] sm:mt-[7px]"
         />
-        <p className="min-w-0 font-[family-name:var(--font-manrope)] text-[13.6px] font-medium leading-[1.45] text-[#4c525b] transition-colors duration-300 group-hover/partner:text-[#0e1116]">
+        <p className="min-w-0 font-[family-name:var(--font-manrope)] text-[clamp(0.8125rem,1.05vw,0.85rem)] font-medium leading-[1.45] text-[#4c525b] transition-colors duration-300 group-hover/partner:text-[#0e1116]">
           {partner.label}
         </p>
       </div>
@@ -485,7 +485,7 @@ function SafetyFiveSPointsSection() {
         />
       </div>
 
-      <div className="relative mx-auto flex w-full max-w-[1740px] flex-col gap-8 px-4 py-12 sm:gap-10 sm:px-8 sm:py-16 lg:gap-14 lg:px-[clamp(2rem,7vw,8.35rem)] lg:py-[clamp(3.5rem,5vw,5.5rem)]">
+      <div className="relative mx-auto flex w-full max-w-[1740px] flex-col gap-6 px-4 py-10 sm:gap-8 sm:px-8 sm:py-14 lg:gap-10 lg:px-[clamp(1.5rem,5vw,8.35rem)] lg:py-[clamp(2.5rem,4vw,5.5rem)]">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -494,18 +494,18 @@ function SafetyFiveSPointsSection() {
         >
           <motion.div
             variants={fadeUp}
-            className="h-[6px] w-[min(111px,28vw)] rounded-[3px] bg-[#e50818] sm:h-[7px]"
+            className="h-[5px] w-[min(111px,28vw)] rounded-[3px] bg-[#e50818] sm:h-[6px] 2xl:h-[7px]"
             aria-hidden
           />
           <motion.h2
             variants={fadeUp}
-            className="font-[family-name:var(--font-manrope)] text-[clamp(1.75rem,6.5vw,3.75rem)] font-extrabold leading-[1.1] tracking-[-0.04em] text-[#0b0a0a] sm:tracking-[-1.32px]"
+            className="font-[family-name:var(--font-manrope)] text-[1.65rem] font-bold leading-[1.12] tracking-[-0.5px] text-black sm:text-[clamp(1.35rem,3.2vw,60px)] sm:leading-[1.1] sm:tracking-[-1px]"
           >
             5S Safety Points
           </motion.h2>
           <motion.p
             variants={fadeUp}
-            className="max-w-[735px] font-[family-name:var(--font-manrope)] text-[clamp(0.9375rem,3.8vw,1.375rem)] font-medium leading-[1.56] tracking-[0.046px] text-[#65686b]"
+            className="max-w-[677px] font-[family-name:var(--font-manrope)] text-[0.92rem] font-medium leading-[1.45] text-[#515151] sm:text-[clamp(0.95rem,1.25vw,22px)] sm:leading-[1.36]"
           >
             Applying 5S every day helps us maintain safe, efficient, and
             organized project environments.
@@ -518,7 +518,7 @@ function SafetyFiveSPointsSection() {
           variants={staggerContainer}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="hidden min-[480px]:grid min-[480px]:grid-cols-2 min-[480px]:gap-4 lg:grid-cols-5 lg:gap-[17px]"
+          className="hidden min-[480px]:grid min-[480px]:grid-cols-2 min-[480px]:gap-3 sm:gap-4 lg:grid-cols-5 lg:gap-3 xl:gap-4 2xl:gap-[17px]"
         >
           {FIVE_S_POINTS.map((point) => (
             <motion.div key={point.number} variants={fadeUp}>
@@ -553,12 +553,12 @@ function SafetyAssociatePartnersSection() {
         }}
       />
 
-      <div className="relative mx-auto w-full max-w-[1740px] px-4 py-12 sm:px-8 sm:py-16 lg:px-[clamp(2rem,7vw,8.35rem)] lg:py-[clamp(3.5rem,5vw,5.5rem)]">
+      <div className="relative mx-auto w-full max-w-[1740px] px-4 py-10 sm:px-8 sm:py-14 lg:px-[clamp(1.5rem,5vw,8.35rem)] lg:py-[clamp(2.5rem,4vw,5.5rem)]">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="flex flex-col gap-8 sm:gap-10 lg:gap-12"
+          className="flex flex-col gap-6 sm:gap-8 lg:gap-10"
         >
           {/* Mobile + tablet layout */}
           <div className="flex flex-col gap-6 lg:hidden">
@@ -573,10 +573,10 @@ function SafetyAssociatePartnersSection() {
               <p className="font-[family-name:var(--font-manrope)] text-[11px] font-semibold uppercase tracking-[0.24em] text-[#7a828c]">
                 In collaboration with
               </p>
-              <h2 className="font-[family-name:var(--font-manrope)] text-[clamp(1.75rem,6.5vw,2.25rem)] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#0e1116]">
+              <h2 className="font-[family-name:var(--font-manrope)] text-[1.65rem] font-bold leading-[1.12] tracking-[-0.5px] text-black sm:text-[clamp(1.35rem,3.2vw,60px)] sm:leading-[1.1] sm:tracking-[-1px]">
                 Associate Partners
               </h2>
-              <p className="font-[family-name:var(--font-manrope)] text-[14px] leading-[1.5] text-[#5f6161]">
+              <p className="font-[family-name:var(--font-manrope)] text-[0.92rem] font-medium leading-[1.45] text-[#515151] sm:text-[clamp(0.95rem,1.25vw,22px)] sm:leading-[1.36]">
                 {ASSOCIATE_PARTNERS.length} institutional chambers and industry
                 bodies across India.
               </p>
@@ -591,28 +591,31 @@ function SafetyAssociatePartnersSection() {
           <div className="mx-auto hidden w-full max-w-[1462px] flex-col gap-5 sm:flex-row sm:items-start sm:justify-between sm:gap-8 lg:flex">
             <motion.div
               variants={fadeUp}
-              className="relative flex min-w-0 max-w-[735px] flex-col gap-[13px] pl-[26px]"
+              className="relative flex min-w-0 max-w-[735px] flex-col gap-2.5 pl-5 xl:pl-[26px]"
             >
               <div
                 aria-hidden
-                className="absolute bottom-[-3px] left-0 top-[-7px] w-[7px] rounded-[3px] bg-[#e50818]"
+                className="absolute bottom-[-3px] left-0 top-[-7px] w-1 rounded-[3px] bg-[#e50818] xl:w-[7px]"
               />
-              <p className="font-[family-name:var(--font-manrope)] text-[12.5px] font-semibold uppercase tracking-[0.28em] text-[#7a828c]">
+              <p className="font-[family-name:var(--font-manrope)] text-[11px] font-semibold uppercase tracking-[0.24em] text-[#7a828c] sm:text-[12.5px] sm:tracking-[0.28em]">
                 In collaboration with
               </p>
-              <h2 className="font-[family-name:var(--font-manrope)] text-[clamp(2rem,4.2vw,3.75rem)] font-extrabold leading-[1.13] tracking-[-1.11px] text-[#0e1116]">
+              <h2 className="font-[family-name:var(--font-manrope)] text-[1.65rem] font-bold leading-[1.12] tracking-[-0.5px] text-black sm:text-[clamp(1.35rem,3.2vw,60px)] sm:leading-[1.1] sm:tracking-[-1px]">
                 Associate Partners
               </h2>
+              <p className="font-[family-name:var(--font-manrope)] text-[0.92rem] font-medium leading-[1.45] text-[#515151] sm:text-[clamp(0.95rem,1.25vw,22px)] sm:leading-[1.36]">
+                Institutional chambers and industry bodies across India.
+              </p>
             </motion.div>
 
             <motion.div
               variants={fadeUp}
-              className="flex shrink-0 flex-col items-end gap-1.5 pt-8"
+              className="flex shrink-0 flex-col items-end gap-1.5 pt-4 xl:pt-8"
             >
-              <p className="font-[family-name:var(--font-manrope)] text-[clamp(1.75rem,2.8vw,2.5rem)] font-extrabold leading-none text-[#0e1116]">
+              <p className="font-[family-name:var(--font-manrope)] text-[clamp(1.5rem,2.2vw,2.5rem)] font-extrabold leading-none text-[#0e1116]">
                 {ASSOCIATE_PARTNERS.length}
               </p>
-              <p className="font-[family-name:var(--font-manrope)] text-[11.5px] font-medium uppercase tracking-[0.2em] text-[#7a828c]">
+              <p className="font-[family-name:var(--font-manrope)] text-[11px] font-medium uppercase tracking-[0.2em] text-[#7a828c] sm:text-[11.5px]">
                 Institutional bodies
               </p>
             </motion.div>
@@ -629,7 +632,7 @@ function SafetyAssociatePartnersSection() {
             variants={staggerContainer}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            className="mx-auto hidden w-full max-w-[1462px] grid-cols-2 gap-x-8 gap-y-[34px] lg:grid xl:grid-cols-4 xl:gap-x-[113px]"
+            className="mx-auto hidden w-full max-w-[1462px] grid-cols-2 gap-x-6 gap-y-8 lg:grid xl:grid-cols-4 xl:gap-x-[clamp(2rem,5vw,7rem)] xl:gap-y-[clamp(1.75rem,2.5vw,2.125rem)]"
           >
             {ASSOCIATE_PARTNERS.map((partner) => (
               <motion.li
@@ -888,7 +891,7 @@ function SafetyCertificationsSection() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: reduceMotion ? 0.15 : 0.3 }}
-                className="font-[family-name:var(--font-manrope)] text-[1.65rem] font-bold leading-[1.12] tracking-[-0.5px] whitespace-nowrap text-black sm:w-max sm:max-w-none sm:text-[clamp(1.35rem,3.2vw,60px)] sm:leading-[1.1] sm:tracking-[-1px]"
+                className="mx-auto max-w-[20ch] text-balance font-[family-name:var(--font-manrope)] text-[clamp(1.35rem,6.2vw,1.65rem)] font-bold leading-[1.15] tracking-[-0.5px] text-black sm:mx-0 sm:max-w-none sm:w-max sm:text-pretty sm:text-[clamp(1.35rem,3.2vw,60px)] sm:leading-[1.1] sm:tracking-[-1px] sm:whitespace-nowrap"
               >
                 {activeHeading}
               </motion.h1>

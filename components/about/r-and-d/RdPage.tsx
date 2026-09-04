@@ -200,13 +200,13 @@ export function RdPage() {
             "linear-gradient(96.33deg, #8B0C11 6.54%, #ED1D23 108.89%)",
         }}
       >
-        <div className="mx-auto flex min-h-[140px] w-full max-w-[1920px] items-center justify-center px-5 py-10 sm:min-h-[180px] sm:px-8 sm:py-12 lg:min-h-[207px] lg:px-[80px]">
+        <div className="mx-auto flex min-h-0 w-full max-w-[1920px] items-center justify-center px-4 py-6 sm:px-6 sm:py-7 lg:px-[clamp(1.25rem,4vw,5rem)] lg:py-8">
           <motion.p
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={VIEWPORT}
-            className="max-w-[1400px] text-center text-[clamp(1.25rem,3vw,39px)] font-extrabold leading-none tracking-normal text-white"
+            className="w-full max-w-none text-center text-[clamp(0.8rem,2.15vw,39px)] font-extrabold leading-none tracking-normal text-white max-[479px]:text-balance sm:whitespace-nowrap"
           >
             Together, these efforts help us build not just faster, but smarter.
           </motion.p>

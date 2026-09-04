@@ -571,7 +571,7 @@ export function ExtendedServiceSection() {
         <div className="relative mt-6 flex min-h-0 flex-1 lg:mt-[40px]">
           <div
             className={`pointer-events-none absolute inset-y-0 right-0 z-0 hidden overflow-hidden lg:block ${
-              hasBakedFade ? "w-[820px]" : "w-[860px]"
+              hasBakedFade ? "w-[min(52vw,900px)]" : "w-[860px]"
             }`}
           >
             <AnimatePresence mode="wait">
@@ -590,21 +590,22 @@ export function ExtendedServiceSection() {
                   priority={active.id === "eot"}
                   className={
                     hasBakedFade
-                      ? "object-cover object-right object-center"
+                      ? "object-cover object-[72%_center]"
                       : "object-cover object-right object-top"
                   }
-                  sizes="860px"
+                  sizes="900px"
                 />
-                {hasBakedFade ? null : (
-                  <div
-                    aria-hidden
-                    className="pointer-events-none absolute inset-0"
-                    style={{
-                      backgroundImage:
-                        "linear-gradient(90deg, #f6f6f6 0%, rgba(246,246,246,0.92) 12%, rgba(246,246,246,0.4) 32%, rgba(246,246,246,0) 52%)",
-                    }}
-                  />
-                )}
+                {/* Soft left fade into section bg — always applied so baked PNGs
+                    still seal cleanly against #f6f6f6 (racking / cold-storage). */}
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0"
+                  style={{
+                    backgroundImage: hasBakedFade
+                      ? "linear-gradient(90deg, #f6f6f6 0%, #f6f6f6 8%, rgba(246,246,246,0.97) 22%, rgba(246,246,246,0.7) 40%, rgba(246,246,246,0.28) 58%, rgba(246,246,246,0) 74%)"
+                      : "linear-gradient(90deg, #f6f6f6 0%, rgba(246,246,246,0.92) 12%, rgba(246,246,246,0.4) 32%, rgba(246,246,246,0) 52%)",
+                  }}
+                />
               </motion.div>
             </AnimatePresence>
           </div>
@@ -648,15 +649,15 @@ export function ExtendedServiceSection() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -12 }}
                       transition={{ duration: 0.28, ease: EASE }}
-                      className="flex max-w-[625px] flex-col gap-5"
+                      className="mx-auto flex w-full max-w-[625px] flex-col items-center gap-4 text-center sm:gap-5 lg:mx-0 lg:items-start lg:text-left"
                     >
-                      <p className="text-[14px] font-bold uppercase leading-normal text-[#e50818]">
+                      <p className="w-full text-[12px] font-bold uppercase leading-normal tracking-[0.04em] text-[#e50818] sm:text-[14px] sm:tracking-normal">
                         {active.eyebrow}
                       </p>
-                      <h2 className="whitespace-nowrap text-[clamp(1.75rem,3vw,40px)] font-medium leading-normal text-[#17171b] lg:text-[40px]">
+                      <h2 className="w-full whitespace-nowrap text-[clamp(1.15rem,5.2vw,40px)] font-medium leading-normal text-[#17171b] lg:text-[40px]">
                         {active.title}
                       </h2>
-                      <p className="text-[16px] font-normal leading-normal whitespace-pre-wrap text-[#555] sm:text-[18px] lg:text-[22px]">
+                      <p className="w-full text-[16px] font-normal leading-normal whitespace-pre-wrap text-[#555] sm:text-[18px] lg:text-[22px]">
                         {active.paragraphs.join("\n\n")}
                       </p>
                     </motion.div>

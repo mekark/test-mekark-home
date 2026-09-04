@@ -47,7 +47,6 @@ const BENEFITS = [
     description:
       "Seamless transition from architectural vision to onground structural reality.",
     icon: "/images/one-partner/icon-box.svg",
-    iconSize: 40,
   },
   {
     category: "Financials",
@@ -55,7 +54,6 @@ const BENEFITS = [
     description:
       "Locked-in budgets with minimal variation through advanced material quantification.",
     icon: "/images/one-partner/icon-calculator.svg",
-    iconSize: 40,
   },
   {
     category: "Speed",
@@ -63,7 +61,6 @@ const BENEFITS = [
     description:
       "50% faster delivery timelines versus conventional construction methods.",
     icon: "/images/one-partner/icon-gauge.svg",
-    iconSize: 36,
   },
   {
     category: "Simplicity",
@@ -71,7 +68,6 @@ const BENEFITS = [
     description:
       "One partner eliminates multi-vendor friction and misaligned project handoffs.",
     icon: "/images/one-partner/icon-handshake.svg",
-    iconSize: 40,
   },
   {
     category: "Accountability",
@@ -79,7 +75,6 @@ const BENEFITS = [
     description:
       "Every structure is designed for expansion, operational stress, and long-term load stability.",
     icon: "/images/one-partner/icon-shield-check.svg",
-    iconSize: 40,
   },
 ];
 
@@ -88,7 +83,6 @@ type Benefit = {
   title: string | readonly string[];
   description: string;
   icon: string;
-  iconSize: number;
 };
 
 function ConnectorPulse() {
@@ -269,16 +263,19 @@ function BenefitCard({
                 }
               : { type: "spring", stiffness: 360, damping: 22 }
           }
-          className="relative flex size-[64px] shrink-0 items-center justify-center rounded-full border border-[#eee] shadow-[0px_10px_9px_rgba(0,0,0,0.06),inset_0px_0px_17px_rgba(0,0,0,0.04)] xl:size-[77px] 2xl:size-[103px] 2xl:shadow-[0px_13.391px_12.275px_rgba(0,0,0,0.06),inset_0px_0px_22px_rgba(0,0,0,0.04)]"
+          className="relative flex size-12 shrink-0 items-center justify-center rounded-full border border-[#eee] shadow-[0px_8px_7px_rgba(0,0,0,0.06),inset_0px_0px_14px_rgba(0,0,0,0.04)] sm:size-14 md:size-[64px] md:shadow-[0px_10px_9px_rgba(0,0,0,0.06),inset_0px_0px_17px_rgba(0,0,0,0.04)] xl:size-[77px] 2xl:size-[103px] 2xl:shadow-[0px_13.391px_12.275px_rgba(0,0,0,0.06),inset_0px_0px_22px_rgba(0,0,0,0.04)]"
           style={{ backgroundImage: ICON_CIRCLE_BG }}
         >
-          <Image
-            src={benefit.icon}
-            alt=""
-            width={benefit.iconSize}
-            height={benefit.iconSize}
-            aria-hidden
-          />
+          <div className="relative size-6 sm:size-7 md:size-9 xl:size-9 2xl:size-10">
+            <Image
+              src={benefit.icon}
+              alt=""
+              fill
+              className="object-contain"
+              sizes="40px"
+              aria-hidden
+            />
+          </div>
         </motion.div>
 
         <motion.div

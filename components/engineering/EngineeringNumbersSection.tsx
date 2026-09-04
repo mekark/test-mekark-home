@@ -128,7 +128,7 @@ export function EngineeringNumbersSection() {
       <div
         className={`${SECTION_CONTAINER_CLASS} ${SECTION_MAC_FULL_BLEED_CLASS} relative pb-8 pt-8 font-[family-name:var(--font-manrope)] sm:pb-16 sm:pt-14 lg:pb-[70px] lg:pt-[61px] xl:pb-[46px] xl:pt-[46px] 2xl:pb-[70px] 2xl:pt-[61px]`}
       >
-        <div className="relative xl:px-[80px] 2xl:px-0">
+        <div className="relative xl:px-[clamp(1.5rem,5vw,5rem)] 2xl:px-0">
           <AnimatedSection
             variants={slideFromLeft}
             className="flex max-w-[721px] flex-col items-start"
@@ -150,16 +150,17 @@ export function EngineeringNumbersSection() {
             </motion.h2>
           </AnimatedSection>
 
-          <div className="mt-4 flex min-w-0 flex-col items-center gap-4 sm:mt-6 sm:gap-6 lg:mt-8 xl:mt-2 xl:flex-row xl:items-center xl:gap-9 2xl:mt-8 2xl:gap-12">
+          {/* Constrained row: plaque never eats the divider column at 1280–1535 */}
+          <div className="mt-4 flex min-w-0 flex-col items-center gap-4 sm:mt-6 sm:gap-6 lg:mt-8 xl:mt-6 xl:flex-row xl:items-center xl:gap-10 2xl:mt-8 2xl:gap-12">
             <motion.div
-              className="relative z-10 w-full min-w-0 flex-1 xl:max-w-none 2xl:max-w-[1020px]"
+              className="relative z-10 w-full min-w-0 flex-1 xl:max-w-[min(100%,640px)] 2xl:max-w-[1020px]"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={VIEWPORT}
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             >
               {/* Figma crop: 1020×383 frame over full 3D plaque render */}
-              <div className="relative mx-auto aspect-[765/287] w-full max-w-[765px] overflow-hidden xl:mx-0 xl:aspect-[1366/512] xl:max-w-none 2xl:aspect-[1020/383] 2xl:max-w-[1020px]">
+              <div className="relative mx-auto aspect-[765/287] w-full max-w-[765px] overflow-hidden xl:mx-0 xl:aspect-[1020/383] xl:max-w-full 2xl:aspect-[1020/383] 2xl:max-w-[1020px]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/engineering/stat-40000-plaque.png"
@@ -177,7 +178,7 @@ export function EngineeringNumbersSection() {
             </motion.div>
 
             <motion.div
-              className="flex w-full min-w-0 max-w-full items-stretch gap-4 sm:gap-[22px] xl:w-auto xl:max-w-none xl:shrink-0 xl:self-center xl:gap-[22px] 2xl:gap-[22px]"
+              className="flex w-full min-w-0 max-w-full items-stretch gap-4 sm:gap-[22px] xl:w-[min(100%,22.5rem)] xl:shrink-0 xl:grow-0 xl:self-center xl:gap-5 2xl:w-auto 2xl:max-w-none 2xl:gap-[22px]"
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
@@ -185,7 +186,7 @@ export function EngineeringNumbersSection() {
             >
               <motion.div
                 variants={drawVertical}
-                className="relative w-[1.3px] shrink-0 min-h-[120px] sm:min-h-[150px] xl:min-h-[200px] 2xl:min-h-[240px]"
+                className="relative w-[1.3px] shrink-0 min-h-[120px] sm:min-h-[150px] xl:min-h-[180px] 2xl:min-h-[240px]"
                 style={{
                   background:
                     "linear-gradient(180deg, rgba(214,214,214,0), #d6d6d6 20%, #d6d6d6 80%, rgba(214,214,214,0))",
@@ -202,12 +203,12 @@ export function EngineeringNumbersSection() {
                 variants={fadeUp}
                 className="flex min-w-0 flex-1 items-center"
               >
-                <p className="text-left text-[13px] leading-[20px] text-[#2a2a2a] min-[480px]:text-[14px] min-[480px]:leading-[22px] md:text-[16px] md:leading-[24px] lg:text-[22px] lg:leading-[30px] xl:max-w-[360px] xl:text-[21px] xl:leading-[25.5px] 2xl:max-w-none 2xl:text-[28px] 2xl:leading-[34px]">
-                  <span className="xl:block xl:whitespace-nowrap 2xl:block 2xl:whitespace-nowrap">
+                <p className="text-left text-[13px] leading-[20px] text-[#2a2a2a] min-[480px]:text-[14px] min-[480px]:leading-[22px] md:text-[16px] md:leading-[24px] lg:text-[22px] lg:leading-[30px] xl:text-[clamp(1rem,1.5vw,1.3125rem)] xl:leading-[1.35] 2xl:max-w-none 2xl:text-[28px] 2xl:leading-[34px]">
+                  <span className="2xl:block 2xl:whitespace-nowrap">
                     Tons of structural steel manufactured at our
                   </span>
-                  <span className="xl:hidden 2xl:hidden"> </span>
-                  <span className="xl:block xl:whitespace-nowrap 2xl:block 2xl:whitespace-nowrap">
+                  <span className="2xl:hidden"> </span>
+                  <span className="2xl:block 2xl:whitespace-nowrap">
                     fully integrated Tamil Nadu facility.
                   </span>
                 </p>

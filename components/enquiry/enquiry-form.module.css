@@ -3,10 +3,11 @@
   z-index: 1;
   display: grid;
   width: 100%;
-  max-width: 44vw;
-  flex-shrink: 0;
-  margin-right: 1.5vw;
-  padding-bottom: 1vw;
+  max-width: min(100%, 52rem);
+  flex: 1 1 0;
+  min-width: 0;
+  margin-right: 0;
+  padding-bottom: clamp(0.75rem, 1vw, 1.25rem);
 }
 
 .formShape {
@@ -17,7 +18,7 @@
 
 .vectorIcon {
   object-fit: fill;
-  filter: drop-shadow(-0.65vw 0px 0px #ed1c24);
+  filter: drop-shadow(clamp(-10px, -0.65vw, -6px) 0px 0px #ed1c24);
   pointer-events: none;
 }
 
@@ -31,30 +32,31 @@
   position: relative;
   z-index: 1;
   background-color: transparent;
-  padding: 2.2vw 4vw 1.2vw 4.5vw;
+  padding: clamp(1.25rem, 2.2vw, 2.75rem) clamp(1.25rem, 4vw, 4.5rem)
+    clamp(1rem, 1.2vw, 1.5rem) clamp(1.35rem, 4.5vw, 5rem);
   box-sizing: border-box;
 }
 
 .enquiryForm {
-  font-size: 1.0417vw;
+  font-size: clamp(0.9375rem, 1.05vw, 1.25rem);
   font-weight: 800;
   text-transform: capitalize;
   color: #000;
 }
 
 .label {
-  margin-bottom: 1.1111vw;
+  margin-bottom: clamp(0.75rem, 1.1vw, 1.35rem);
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 0.7vw;
+  gap: clamp(0.55rem, 0.7vw, 0.85rem);
 }
 
 .formRow {
   display: flex;
-  gap: 1vw;
+  gap: clamp(0.65rem, 1vw, 1.25rem);
 }
 
 .field {
@@ -62,20 +64,20 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.3125vw;
+  gap: clamp(0.25rem, 0.3125vw, 0.4rem);
 }
 
 .fieldFull {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0.3125vw;
+  gap: clamp(0.25rem, 0.3125vw, 0.4rem);
 }
 
 .name {
-  font-size: 0.6418vw;
-  letter-spacing: 0.1126vw;
-  line-height: 0.8445vw;
+  font-size: clamp(0.6875rem, 0.65vw, 0.8125rem);
+  letter-spacing: clamp(0.06em, 0.1126vw, 0.12em);
+  line-height: 1.35;
   text-transform: uppercase;
   font-weight: 600;
   color: #000;
@@ -83,12 +85,12 @@
 
 .input {
   width: 100%;
-  border-radius: 0.625vw;
+  border-radius: clamp(0.4rem, 0.625vw, 0.75rem);
   background-color: rgba(237, 32, 36, 0.06);
-  border: 0.0518vw solid rgba(63, 63, 63, 0.1);
+  border: 1px solid rgba(63, 63, 63, 0.1);
   box-sizing: border-box;
-  padding: 0.5556vw 0.7292vw;
-  font-size: 0.7292vw;
+  padding: clamp(0.55rem, 0.56vw, 0.7rem) clamp(0.65rem, 0.73vw, 0.9rem);
+  font-size: clamp(0.8125rem, 0.73vw, 0.9375rem);
   color: #03080f;
   font-family: inherit;
   outline: none;
@@ -106,14 +108,14 @@
 
 .textarea {
   width: 100%;
-  min-height: 3.75vw;
+  min-height: clamp(3.5rem, 3.75vw, 4.75rem);
   resize: vertical;
-  border-radius: 0.625vw;
+  border-radius: clamp(0.4rem, 0.625vw, 0.75rem);
   background-color: rgba(237, 32, 36, 0.06);
-  border: 0.0518vw solid rgba(63, 63, 63, 0.1);
+  border: 1px solid rgba(63, 63, 63, 0.1);
   box-sizing: border-box;
-  padding: 0.5556vw 0.7292vw;
-  font-size: 0.7292vw;
+  padding: clamp(0.55rem, 0.56vw, 0.7rem) clamp(0.65rem, 0.73vw, 0.9rem);
+  font-size: clamp(0.8125rem, 0.73vw, 0.9375rem);
   color: #03080f;
   font-family: inherit;
   outline: none;
@@ -129,9 +131,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-radius: 0.625vw;
+  border-radius: clamp(0.4rem, 0.625vw, 0.75rem);
   background-color: rgba(237, 32, 36, 0.06);
-  border: 0.0518vw solid rgba(63, 63, 63, 0.1);
+  border: 1px solid rgba(63, 63, 63, 0.1);
   box-sizing: border-box;
   max-width: 100%;
 }
@@ -139,13 +141,14 @@
 .selectArea {
   border: none;
   background: transparent;
-  font-size: 0.7292vw;
+  font-size: clamp(0.8125rem, 0.73vw, 0.9375rem);
   color: #03080f;
   width: 100%;
   min-width: 0;
   appearance: none;
   font-family: inherit;
-  padding: 0.5556vw 1.6vw 0.5556vw 0.7292vw;
+  padding: clamp(0.55rem, 0.56vw, 0.7rem) clamp(1.5rem, 1.6vw, 2rem)
+    clamp(0.55rem, 0.56vw, 0.7rem) clamp(0.65rem, 0.73vw, 0.9rem);
   cursor: pointer;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -154,11 +157,11 @@
 }
 
 .svgIcon4 {
-  width: 0.5677vw;
-  height: 0.3646vw;
+  width: clamp(8px, 0.5677vw, 12px);
+  height: clamp(5px, 0.3646vw, 8px);
   flex-shrink: 0;
   position: absolute;
-  right: 0.7292vw;
+  right: clamp(0.55rem, 0.73vw, 0.9rem);
   pointer-events: none;
 }
 
@@ -166,8 +169,8 @@
   grid-area: 2 / 1;
   position: relative;
   z-index: 2;
-  width: 50%;
-  margin: 0.6vw auto 0;
+  width: min(100%, 20rem);
+  margin: clamp(0.65rem, 0.6vw, 0.85rem) auto 0;
   justify-self: center;
 }
 
@@ -175,10 +178,11 @@
   width: 100%;
   border: none;
   cursor: pointer;
-  border-radius: 0.7292vw;
+  border-radius: clamp(0.5rem, 0.73vw, 0.9rem);
   background-color: #ed1c24;
-  padding: 1.1vw 1.25vw;
-  box-shadow: 0px 0.4vw 1.5vw rgba(237, 28, 36, 0.35);
+  padding: clamp(0.85rem, 1.1vw, 1.25rem) clamp(1rem, 1.25vw, 1.5rem);
+  box-shadow: 0px clamp(4px, 0.4vw, 8px) clamp(12px, 1.5vw, 24px)
+    rgba(237, 28, 36, 0.35);
 }
 
 .button:disabled {
@@ -187,30 +191,25 @@
 }
 
 .requestProjectProposal {
-  font-size: 0.9583vw;
+  font-size: clamp(0.875rem, 0.96vw, 1.125rem);
   font-weight: 700;
   color: #fff;
   text-align: center;
 }
 
 .errorMessage {
-  margin-bottom: 0.6vw;
-  font-size: 0.8vw;
+  margin-bottom: clamp(0.5rem, 0.6vw, 0.75rem);
+  font-size: clamp(0.75rem, 0.8vw, 0.9375rem);
   font-weight: 600;
   color: #ed1c24;
   text-align: center;
 }
 
-@media (max-width: 1280px) {
-  .frameParent {
-    max-width: 100%;
-    margin-right: 0;
-  }
-}
-
 @media (max-width: 1024px) {
   .frameParent {
     width: 100%;
+    max-width: 100%;
+    flex: none;
     padding-bottom: 0;
   }
 
@@ -219,87 +218,94 @@
   }
 
   .background {
-    padding: 5vw;
+    padding: clamp(1.25rem, 5vw, 2rem);
     background-color: #fff;
-    border-radius: 3vw;
-    box-shadow: 0 1vw 3vw rgba(0, 0, 0, 0.25);
+    border-radius: clamp(1rem, 3vw, 1.5rem);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
   }
 
   .enquiryForm {
-    font-size: 2.6vw;
+    font-size: clamp(1.125rem, 2.6vw, 1.5rem);
+  }
+
+  .form {
+    gap: clamp(0.75rem, 3vw, 1.25rem);
   }
 
   .formRow {
     flex-direction: column;
-    gap: 3vw;
+    gap: clamp(0.75rem, 3vw, 1.25rem);
   }
 
   .field,
   .fieldFull {
-    gap: 1vw;
+    gap: 0.5rem;
   }
 
   .name {
-    font-size: 1.8vw;
-    line-height: 2.4vw;
+    font-size: clamp(0.75rem, 1.8vw, 0.875rem);
+    line-height: 1.35;
+    letter-spacing: 0.08em;
   }
 
   .input,
   .textarea,
   .selectArea {
-    font-size: 2.2vw;
-    padding: 2vw;
+    font-size: clamp(0.9375rem, 2.2vw, 1.0625rem);
+    padding: clamp(0.75rem, 2vw, 1rem);
+    border-radius: 0.5rem;
   }
 
   .selectArea {
-    font-size: 1.8vw;
-    padding-right: 6vw;
+    padding-right: 2.5rem;
   }
 
   .textarea {
-    min-height: 12vw;
+    min-height: 6rem;
   }
 
   .buttonmargin {
     width: 100%;
-    margin: 4vw auto 0;
+    max-width: none;
+    margin: 1rem auto 0;
+  }
+
+  .button {
+    padding: 1rem 1.25rem;
+    border-radius: 0.65rem;
   }
 
   .requestProjectProposal {
-    font-size: 2.6vw;
+    font-size: clamp(1rem, 2.6vw, 1.25rem);
   }
 
   .errorMessage {
-    font-size: 2.2vw;
+    font-size: clamp(0.875rem, 2.2vw, 1rem);
+  }
+
+  .svgIcon4 {
+    width: 10px;
+    height: 6px;
+    right: 1rem;
   }
 }
 
 @media (max-width: 640px) {
   .enquiryForm {
-    font-size: 4vw;
+    font-size: 1.125rem;
   }
 
   .name {
-    font-size: 2.8vw;
-    line-height: 3.6vw;
+    font-size: 0.75rem;
   }
 
   .input,
   .textarea,
   .selectArea {
-    font-size: 3.4vw;
-  }
-
-  .selectArea {
-    font-size: 2.8vw;
-    padding-right: 8vw;
+    font-size: 0.9375rem;
   }
 
   .requestProjectProposal {
-    font-size: 3.8vw;
-  }
-
-  .errorMessage {
-    font-size: 3.4vw;
+    font-size: 1rem;
   }
 }

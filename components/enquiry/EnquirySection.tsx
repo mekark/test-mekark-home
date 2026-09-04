@@ -390,24 +390,24 @@ export function EnquirySection() {
         initial="hidden"
         whileInView="visible"
         viewport={VIEWPORT}
-        className={`${SECTION_CONTAINER_CLASS} relative z-[1] flex flex-col items-center justify-between gap-8 py-12 lg:min-h-[25vw] lg:flex-row lg:items-start lg:gap-[3.75vw] lg:pt-[2.6vw] lg:pb-[1.6vw]`}
+        className={`${SECTION_CONTAINER_CLASS} relative z-[1] flex flex-col items-center gap-8 py-12 lg:min-h-0 lg:flex-row lg:items-start lg:justify-between lg:gap-8 lg:py-14 xl:gap-10 xl:py-16 2xl:gap-14 2xl:py-[3vw]`}
       >
         <motion.div
           variants={enquiryCopyReveal}
-          className="w-full shrink-0 lg:w-[30.1389vw] lg:pl-[2.0833vw] lg:pt-[1.5vw]"
+          className="w-full shrink-0 lg:w-[min(100%,22rem)] xl:w-[min(34%,26rem)] 2xl:w-[min(30%,32rem)]"
         >
           <motion.p
             variants={enquiryCopyItem}
-            className="text-[15px] font-extrabold uppercase leading-[22px] tracking-[3.73px] text-[#e40015] lg:text-[0.7778vw] lg:leading-[1.1667vw] lg:tracking-[0.1944vw]"
+            className="text-[15px] font-extrabold uppercase leading-[22px] tracking-[3.73px] text-[#e40015] lg:text-[clamp(0.7rem,0.78vw,0.875rem)] lg:leading-normal lg:tracking-[0.2em]"
           >
             Start Your Project
           </motion.p>
 
           <motion.h2
             variants={enquiryCopyItem}
-            className="mt-2 text-[clamp(2rem,4.2vw,3.73rem)] font-extrabold leading-[1.08] tracking-[-1.5px] text-white lg:mt-[0.5556vw] lg:text-[3.1111vw] lg:leading-[3.3597vw] lg:tracking-[-0.0778vw]"
+            className="mt-2 text-[clamp(2rem,4.2vw,3.73rem)] font-extrabold leading-[1.08] tracking-[-1.5px] text-white lg:mt-3 lg:text-[clamp(2rem,2.8vw,3.73rem)] lg:leading-[1.1]"
           >
-            <span className="block lg:whitespace-nowrap">
+            <span className="block 2xl:whitespace-nowrap">
               Let&apos;s Build Your Next
             </span>
             <span className="block">Industrial Project.</span>
@@ -415,7 +415,7 @@ export function EnquirySection() {
 
           <motion.p
             variants={enquiryCopyItem}
-            className="mt-2 max-w-[512px] text-[clamp(1rem,1.4vw,1.267rem)] leading-[1.75] text-white/80 lg:mt-[0.5556vw] lg:max-w-[26.6667vw] lg:text-[1.0556vw] lg:leading-[1.8472vw]"
+            className="mt-2 max-w-[512px] text-[clamp(1rem,1.4vw,1.267rem)] leading-[1.75] text-white/80 lg:mt-3 lg:max-w-none lg:text-[clamp(0.9375rem,1.05vw,1.267rem)] lg:leading-[1.7]"
           >
             Partner with Mekark for high-quality, fast-track, and cost-efficient
             industrial construction solutions.
@@ -423,25 +423,25 @@ export function EnquirySection() {
 
           <motion.ul
             variants={enquiryHighlightStagger}
-            className="mt-4 flex flex-col gap-3 lg:mt-[1.25vw] lg:gap-[0.8333vw]"
+            className="mt-4 flex flex-col gap-3 lg:mt-5 lg:gap-3"
           >
             {HIGHLIGHTS.map((item) => (
               <motion.li
                 key={item}
                 variants={enquiryHighlightItem}
-                className="flex items-center gap-4 lg:gap-[0.8333vw]"
+                className="flex items-center gap-3 sm:gap-4"
               >
-                <span className="flex size-[27px] shrink-0 items-center justify-center rounded-full bg-[#ed2024] lg:size-[1.3889vw]">
+                <span className="flex size-[27px] shrink-0 items-center justify-center rounded-full bg-[#ed2024] lg:size-7 2xl:size-[1.3889vw]">
                   <Image
                     src="/images/enquiry/SVG.svg"
                     alt=""
                     width={14}
                     height={11}
-                    className="h-[10px] w-[13px] lg:h-[0.5573vw] lg:w-[0.6927vw]"
+                    className="h-[10px] w-[13px]"
                     aria-hidden
                   />
                 </span>
-                <span className="text-[clamp(0.95rem,1.3vw,1.175rem)] font-semibold leading-[1.5] text-white/90 lg:text-[0.9792vw] lg:leading-[1.4667vw]">
+                <span className="text-[clamp(0.95rem,1.3vw,1.175rem)] font-semibold leading-[1.5] text-white/90 lg:text-[clamp(0.9rem,0.98vw,1.175rem)]">
                   {item}
                 </span>
               </motion.li>
@@ -458,7 +458,7 @@ export function EnquirySection() {
               className={styles.vectorIcon}
               src="/images/enquiry/Vector.png"
               fill
-              sizes="(max-width: 1024px) 0px, 44vw"
+              sizes="(max-width: 1024px) 0px, min(52rem, 55vw)"
               alt=""
               aria-hidden
             />

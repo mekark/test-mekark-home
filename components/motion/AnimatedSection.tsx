@@ -1,8 +1,9 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useRef, type ReactNode } from "react";
 import type { Variants } from "framer-motion";
+import { defaultViewport } from "@/lib/motion/viewport";
 
 type AnimatedSectionProps = {
   children: ReactNode;
@@ -20,7 +21,19 @@ export function AnimatedSection({
   once = true,
 }: AnimatedSectionProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once, margin: "-80px" });
+  const reduceMotion = useReducedMotion();
+  const isInView = useInView(ref, {
+    once,
+    margin: defaultViewport.margin,
+  });
+
+  if (reduceMotion) {
+    return (
+      <div ref={ref} className={className}>
+        {children}
+      </div>
+    );
+  }
 
   return (
     <motion.div

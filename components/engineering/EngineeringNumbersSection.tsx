@@ -1,222 +1,25 @@
 "use client";
 
-import Image from "next/image";
-import useEmblaCarousel from "embla-carousel-react";
-import AutoScroll from "embla-carousel-auto-scroll";
-import { motion } from "framer-motion";
-import { AnimatedSection } from "@/components/motion/AnimatedSection";
-import { SECTION_CONTAINER_CLASS, SECTION_MAC_FULL_BLEED_CLASS } from "@/lib/sectionLayout";
-import {
-  drawVertical,
-  logoRowReveal,
-  notchDrop,
-  pulseDot,
-  fadeUp,
-  scaleIn,
-  slideFromLeft,
-  staggerContainer,
-} from "@/lib/motion-variants";
-
-const VIEWPORT = { once: true, margin: "-80px" as const };
-
-const LOGO_ROW_1 = [
-  { src: "/images/engineering/logos/johnson.png", alt: "Johnson Electric" },
-  { src: "/images/engineering/logos/jk.png", alt: "JK Tyre" },
-  { src: "/images/engineering/logos/igarashi.png", alt: "Igarashi" },
-  { src: "/images/engineering/logos/hyundai.png", alt: "Hyundai" },
-  { src: "/images/engineering/logos/hero.png", alt: "Hero" },
-  { src: "/images/engineering/logos/ford.png", alt: "Ford" },
-  { src: "/images/engineering/logos/exaktheit.png", alt: "Exaktheit" },
-  { src: "/images/engineering/logos/epi.png", alt: "EPI" },
-  { src: "/images/engineering/logos/eastman.png", alt: "Eastman" },
-  { src: "/images/engineering/logos/ctci.png", alt: "CTCI" },
-] as const;
-
-const LOGO_ROW_2 = [
-  { src: "/images/engineering/logos/vwu.png", alt: "VWU" },
-  { src: "/images/engineering/logos/voltas.png", alt: "Voltas" },
-  { src: "/images/engineering/logos/tvs.png", alt: "TVS" },
-  { src: "/images/engineering/logos/tata.png", alt: "Tata Electronics" },
-  { src: "/images/engineering/logos/stetter.png", alt: "Schwing Stetter" },
-  { src: "/images/engineering/logos/srf.png", alt: "SRF" },
-  { src: "/images/engineering/logos/saveetha.png", alt: "Saveetha" },
-  { src: "/images/engineering/logos/sarvam.png", alt: "Sarvam Safety" },
-  { src: "/images/engineering/logos/sanmar1.png", alt: "Sanmar" },
-  { src: "/images/engineering/logos/sanmar2.png", alt: "Sanmar Group" },
-] as const;
-
-function LogoMarqueeRow({
-  logos,
-  direction,
-  delay = 0,
-}: {
-  logos: readonly { src: string; alt: string }[];
-  direction: "forward" | "backward";
-  delay?: number;
-}) {
-  const duplicated = [...logos, ...logos];
-
-  const [emblaRef] = useEmblaCarousel(
-    { loop: true, align: "start", dragFree: true },
-    [
-      AutoScroll({
-        direction,
-        speed: 0.6,
-        startDelay: 400,
-        stopOnInteraction: false,
-        stopOnMouseEnter: true,
-      }),
-    ],
-  );
-
-  return (
-    <motion.div
-      variants={logoRowReveal}
-      initial="hidden"
-      whileInView="visible"
-      viewport={VIEWPORT}
-      transition={{ delay }}
-    >
-      <div ref={emblaRef} className="overflow-hidden">
-        <div className="flex">
-          {duplicated.map((logo, index) => (
-            <div
-              key={`${logo.alt}-${index}`}
-              className="relative mx-[25px] size-[60px] shrink-0 sm:mx-[37px] sm:size-[75px]"
-            >
-              <Image
-                src={logo.src}
-                alt={logo.alt}
-                fill
-                className="object-contain"
-                sizes="75px"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-    </motion.div>
-  );
-}
+import { BackgroundWatermark } from "@/components/engineering/BackgroundWatermark";
+import { EngineeringHeading } from "@/components/engineering/EngineeringHeading";
+import { ProductionCapacity } from "@/components/engineering/ProductionCapacity";
+import { SectionContainer } from "@/components/ui/SectionContainer";
 
 export function EngineeringNumbersSection() {
   return (
-    <section className="relative w-full bg-[#f5f5f5] text-black">
-      <div
-        className="pointer-events-none absolute inset-0 overflow-hidden bg-[#f5f5f5]"
-        aria-hidden
-      />
-      <motion.div
-        className="pointer-events-none absolute inset-0 overflow-hidden opacity-40"
-        initial={{ opacity: 0, scale: 1.04 }}
-        whileInView={{ opacity: 0.4, scale: 1 }}
-        viewport={VIEWPORT}
-        transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
-        aria-hidden
-      >
-        <Image
-          src="/images/engineering/background-watermark.png"
-          alt=""
-          fill
-          className="object-cover object-[5.58%_top]"
-          sizes="100vw"
-          priority={false}
-        />
-      </motion.div>
+    <section className="relative w-full bg-mekark-white text-black">
+      <BackgroundWatermark />
 
       {/* Engineering in Numbers — iMac Figma 6700:6708 · large screen Figma 3327:9311 */}
-      <div
-        className={`${SECTION_CONTAINER_CLASS} ${SECTION_MAC_FULL_BLEED_CLASS} relative pb-8 pt-8 font-[family-name:var(--font-manrope)] sm:pb-16 sm:pt-14 lg:pb-[70px] lg:pt-[61px] xl:pb-[46px] xl:pt-[46px] 2xl:pb-[70px] 2xl:pt-[61px]`}
+      <SectionContainer
+        macFullBleed
+        className="relative pb-8 pt-8 font-[family-name:var(--font-manrope)] sm:pb-16 sm:pt-14 lg:pb-[70px] lg:pt-[61px] xl:pb-[46px] xl:pt-[46px] 2xl:pb-[70px] 2xl:pt-[61px]"
       >
         <div className="relative xl:px-[clamp(1.5rem,5vw,5rem)] 2xl:px-0">
-          <AnimatedSection
-            variants={slideFromLeft}
-            className="flex max-w-[721px] flex-col items-start"
-          >
-            <div className="relative flex h-7 min-w-0 items-center max-[350px]:h-6 xl:h-[21px]">
-              <span
-                className="h-[2.7px] w-[53px] shrink-0 bg-[#e40015] max-[350px]:w-8 xl:w-[40px]"
-                aria-hidden
-              />
-              <p className="ml-[15px] whitespace-nowrap text-[clamp(0.625rem,2.4vw,0.75rem)] font-semibold uppercase leading-none tracking-[1.6px] text-[#828181] max-[350px]:ml-2 max-[350px]:tracking-[1px] sm:text-[clamp(0.7rem,1.6vw,0.875rem)] sm:tracking-[2px] xl:text-[12px] xl:leading-[20.8px] xl:tracking-[2px] 2xl:text-base 2xl:tracking-[2.67px]">
-                Scale that speaks for itself
-              </p>
-            </div>
-            <motion.h2
-              variants={slideFromLeft}
-              className="mt-1 text-[clamp(1.35rem,5.5vw,1.75rem)] font-bold leading-[1.15] text-black sm:text-[clamp(1.75rem,3.5vw,2.25rem)] sm:leading-[1.2] lg:text-[clamp(1.85rem,3vw,2.5rem)] lg:leading-[1.2] xl:text-[clamp(2rem,3.2vw,2.875rem)] xl:leading-[1.25] 2xl:whitespace-nowrap 2xl:text-[61.33px] 2xl:leading-[80px]"
-            >
-              Annual Production Capacity{" "}
-            </motion.h2>
-          </AnimatedSection>
-
-          {/* Constrained row: plaque never eats the divider column at 1280–1535 */}
-          <div className="mt-4 flex min-w-0 flex-col items-center gap-4 sm:mt-6 sm:gap-6 lg:mt-8 xl:mt-6 xl:flex-row xl:items-center xl:gap-10 2xl:mt-8 2xl:gap-12">
-            <motion.div
-              className="relative z-10 w-full min-w-0 flex-1 xl:max-w-[min(100%,640px)] 2xl:max-w-[1020px]"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={VIEWPORT}
-              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            >
-              {/* Figma crop: 1020×383 frame over full 3D plaque render */}
-              <div className="relative mx-auto aspect-[765/287] w-full max-w-[765px] overflow-hidden xl:mx-0 xl:aspect-[1020/383] xl:max-w-full 2xl:aspect-[1020/383] 2xl:max-w-[1020px]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/images/engineering/stat-40000-plaque.png"
-                  alt="40,000+"
-                  width={2040}
-                  height={1500}
-                  className="pointer-events-none absolute left-[-6.18%] top-[-40.42%] h-[198.95%] w-[111.96%] max-w-none"
-                  decoding="async"
-                  fetchPriority="high"
-                />
-                <p className="absolute bottom-[14%] left-1/2 z-10 w-[96%] -translate-x-1/2 text-center text-[clamp(0.625rem,2.8vw,0.8125rem)] font-bold uppercase leading-none tracking-[1.4px] text-black opacity-75 sm:text-[clamp(0.7rem,1.5vw,0.95rem)] sm:tracking-[1.8px] lg:text-[clamp(0.75rem,1.2vw,0.9375rem)] xl:text-[clamp(0.8rem,1.05vw,0.9375rem)] xl:leading-[1.35] xl:tracking-[2px] 2xl:text-xl 2xl:leading-[27.73px] 2xl:tracking-[2.67px]">
-                  metric ton per annum
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="flex w-full min-w-0 max-w-full items-stretch gap-4 sm:gap-[22px] xl:w-[min(100%,22.5rem)] xl:shrink-0 xl:grow-0 xl:self-center xl:gap-5 2xl:w-auto 2xl:max-w-none 2xl:gap-[22px]"
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-            >
-              <motion.div
-                variants={drawVertical}
-                className="relative w-[1.3px] shrink-0 min-h-[120px] sm:min-h-[150px] xl:min-h-[180px] 2xl:min-h-[240px]"
-                style={{
-                  background:
-                    "linear-gradient(180deg, rgba(214,214,214,0), #d6d6d6 20%, #d6d6d6 80%, rgba(214,214,214,0))",
-                }}
-              >
-                <motion.span
-                  variants={pulseDot}
-                  className="absolute left-1/2 top-1/2 z-10 flex size-[18.7px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-[1.3px] border-solid border-[#d6d6d6] bg-white xl:size-[14px] 2xl:size-[18.7px]"
-                >
-                  <span className="size-2 rounded bg-[#ed2024] shadow-[0_0_16px_rgba(237,32,36,0.7)] xl:size-[6px] xl:shadow-[0_0_12px_rgba(237,32,36,0.7)] 2xl:size-2 2xl:shadow-[0_0_16px_rgba(237,32,36,0.7)]" />
-                </motion.span>
-              </motion.div>
-              <motion.div
-                variants={fadeUp}
-                className="flex min-w-0 flex-1 items-center"
-              >
-                <p className="text-left text-[clamp(0.8125rem,3.2vw,0.9375rem)] leading-[1.45] text-[#2a2a2a] sm:text-[clamp(0.875rem,1.8vw,1.0625rem)] sm:leading-[1.45] lg:text-[clamp(0.9375rem,1.5vw,1.125rem)] lg:leading-[1.4] xl:text-[clamp(1rem,1.4vw,1.25rem)] xl:leading-[1.35] 2xl:max-w-none 2xl:text-[28px] 2xl:leading-[34px]">
-                  <span className="2xl:block 2xl:whitespace-nowrap">
-                    Tons of structural steel manufactured at our
-                  </span>
-                  <span className="2xl:hidden"> </span>
-                  <span className="2xl:block 2xl:whitespace-nowrap">
-                    fully integrated Tamil Nadu facility.
-                  </span>
-                </p>
-              </motion.div>
-            </motion.div>
-          </div>
+          <EngineeringHeading />
+          <ProductionCapacity />
         </div>
-      </div>
+      </SectionContainer>
     </section>
   );
 }

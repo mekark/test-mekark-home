@@ -22,6 +22,7 @@
 	height: 18.1771vw;
 	z-index: 0;
 	pointer-events: none;
+	overflow: hidden;
 }
 .grid1Icon {
 	object-fit: cover;

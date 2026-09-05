@@ -44,7 +44,7 @@ export function OpeningsSection() {
             </h2>
           </div>
           <a
-            href="mailto:careers@mekark.com"
+            href="#open-application"
             className="inline-flex shrink-0 items-center gap-1 text-[14px] font-semibold leading-5 text-[#e8291c] sm:mb-1"
           >
             View all positions

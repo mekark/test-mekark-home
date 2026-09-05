@@ -169,6 +169,7 @@ export default function ContactForm() {
           budget: formData.budget,
           message: buildMessage(),
         }),
+        signal: AbortSignal.timeout(30_000),
       });
 
       const data = (await response.json()) as { message?: string };
@@ -182,8 +183,15 @@ export default function ContactForm() {
 
       setFormData(initialFormData);
       window.location.assign("/thank-you");
-    } catch {
-      setSubmitError("Something went wrong. Please try again.");
+    } catch (error) {
+      const timedOut =
+        error instanceof Error &&
+        (error.name === "TimeoutError" || error.name === "AbortError");
+      setSubmitError(
+        timedOut
+          ? "The enquiry service is taking too long. Please try again in a moment."
+          : "Something went wrong. Please try again.",
+      );
     } finally {
       setIsSubmitting(false);
     }

@@ -6,6 +6,7 @@ import {
   useCallback,
   useContext,
   useEffect,
+  useRef,
   useState,
   type ReactNode,
 } from "react";
@@ -18,6 +19,9 @@ type NavigationLoadingContextValue = {
 
 const NavigationLoadingContext =
   createContext<NavigationLoadingContextValue | null>(null);
+
+/** Clear a stuck overlay if the route never changes (e.g. hash-only history). */
+const NAVIGATION_LOADING_TIMEOUT_MS = 8_000;
 
 function isInternalNavigation(href: string, pathname: string) {
   if (
@@ -64,18 +68,36 @@ export function NavigationLoadingProvider({
 }) {
   const pathname = usePathname();
   const [isNavigating, setIsNavigating] = useState(false);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const startNavigation = useCallback(() => {
-    setIsNavigating(true);
+  const clearNavigationTimeout = useCallback(() => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
   }, []);
 
   const completeNavigation = useCallback(() => {
+    clearNavigationTimeout();
     setIsNavigating(false);
-  }, []);
+  }, [clearNavigationTimeout]);
+
+  const startNavigation = useCallback(() => {
+    setIsNavigating(true);
+    clearNavigationTimeout();
+    timeoutRef.current = setTimeout(() => {
+      setIsNavigating(false);
+      timeoutRef.current = null;
+    }, NAVIGATION_LOADING_TIMEOUT_MS);
+  }, [clearNavigationTimeout]);
 
   useEffect(() => {
     completeNavigation();
   }, [pathname, completeNavigation]);
+
+  useEffect(() => {
+    return () => clearNavigationTimeout();
+  }, [clearNavigationTimeout]);
 
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
@@ -100,11 +122,17 @@ export function NavigationLoadingProvider({
         return;
       }
 
-      setIsNavigating(true);
+      startNavigation();
     };
 
     const handlePopState = () => {
-      setIsNavigating(true);
+      // Hash-only history changes keep the same pathname — don't block the UI.
+      if (window.location.pathname === pathname) {
+        completeNavigation();
+        return;
+      }
+
+      startNavigation();
     };
 
     document.addEventListener("click", handleClick, true);
@@ -114,7 +142,7 @@ export function NavigationLoadingProvider({
       document.removeEventListener("click", handleClick, true);
       window.removeEventListener("popstate", handlePopState);
     };
-  }, [pathname]);
+  }, [pathname, startNavigation, completeNavigation]);
 
   return (
     <NavigationLoadingContext.Provider value={{ startNavigation }}>

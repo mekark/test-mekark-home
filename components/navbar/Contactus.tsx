@@ -224,6 +224,13 @@ export default function ContactUsContent() {
               </a>
               <a
                 href="#enquiry"
+                onClick={(event) => {
+                  event.preventDefault();
+                  document.getElementById("enquiry")?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }}
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-[12px] border border-white/20 bg-white/10 px-5 text-sm font-extrabold text-white backdrop-blur-sm transition hover:bg-white/16"
               >
                 Send an enquiry

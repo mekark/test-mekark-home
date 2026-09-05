@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 const UPSTREAM_ENDPOINT = "https://mekark-mail.onrender.com/api/enquiry-form";
+const UPSTREAM_TIMEOUT_MS = 30_000;
 
 type EnquiryFormPayload = {
   name: string;
@@ -131,22 +132,44 @@ export async function POST(request: NextRequest) {
 
     const upstreamOrigin = resolveUpstreamOrigin(request);
 
-    const response = await fetch(UPSTREAM_ENDPOINT, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Origin: upstreamOrigin,
-      },
-      body: JSON.stringify(payload),
-      cache: "no-store",
-    });
+    let response: Response;
+    try {
+      response = await fetch(UPSTREAM_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Origin: upstreamOrigin,
+        },
+        body: JSON.stringify(payload),
+        cache: "no-store",
+        signal: AbortSignal.timeout(UPSTREAM_TIMEOUT_MS),
+      });
+    } catch (error) {
+      const timedOut =
+        error instanceof Error &&
+        (error.name === "TimeoutError" || error.name === "AbortError");
+
+      console.error("Upstream enquiry request failed:", error);
+
+      return NextResponse.json(
+        {
+          success: false,
+          message: timedOut
+            ? "The enquiry service is taking too long. Please try again in a moment."
+            : "Unable to reach the enquiry service. Please try again.",
+        },
+        {
+          status: timedOut ? 504 : 502,
+        },
+      );
+    }
 
     if (!response.ok) {
       return NextResponse.json(
         {
           success: false,
-          message: "Upstream failed",
+          message: "Unable to submit your enquiry right now. Please try again.",
         },
         {
           status: 500,

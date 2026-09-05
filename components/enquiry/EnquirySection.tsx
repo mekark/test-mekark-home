@@ -334,6 +334,7 @@ export function EnquirySection() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(payload),
+        signal: AbortSignal.timeout(30_000),
       });
 
       const data = (await response.json()) as { message?: string };
@@ -348,10 +349,15 @@ export function EnquirySection() {
 
       startNavigation();
       router.push("/thank-you");
-    } catch {
+    } catch (error) {
+      const timedOut =
+        error instanceof Error &&
+        (error.name === "TimeoutError" || error.name === "AbortError");
       setSubmitStatus("error");
       setSubmitMessage(
-        "Unable to submit your enquiry. Please check your connection and try again.",
+        timedOut
+          ? "The enquiry service is taking too long. Please try again in a moment."
+          : "Unable to submit your enquiry. Please check your connection and try again.",
       );
     }
   }

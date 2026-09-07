@@ -45,7 +45,7 @@ const STAT_COLUMNS = [
     {
       countTo: 40000,
       useGrouping: true,
-      unit: "MT /Per Annum",
+      unit: "MT /Annum",
       label: "Production capacity",
     },
     { text: "CIVIL + PEB + MEP", label: "Turnkey solutions" },

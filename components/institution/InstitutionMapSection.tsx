@@ -14,10 +14,11 @@ type Callout = {
   side: "left" | "right";
   line: number;
   dot?: boolean;
+  dotLarge?: boolean;
 };
 
 const CALLOUTS: Callout[] = [
-  { name: "Goa", x: "23.99%", y: "54.79%", side: "left", line: 115, dot: true },
+  { name: "Goa", x: "23.99%", y: "54.79%", side: "left", line: 115, dot: true, dotLarge: true },
   { name: "Hyderabad", x: "49.05%", y: "53.54%", side: "right", line: 118 },
   { name: "Vijayawada", x: "50.88%", y: "56.66%", side: "right", line: 105, dot: true },
   { name: "Chennai", x: "54.02%", y: "66.46%", side: "right", line: 92 },
@@ -26,7 +27,7 @@ const CALLOUTS: Callout[] = [
   { name: "Kochi", x: "39.55%", y: "76.63%", side: "left", line: 72 },
 ];
 
-function MapCallout({ name, x, y, side, line, dot }: Callout) {
+function MapCallout({ name, x, y, side, line, dot, dotLarge }: Callout) {
   const isLeft = side === "left";
 
   return (
@@ -34,11 +35,11 @@ function MapCallout({ name, x, y, side, line, dot }: Callout) {
       {dot && (
         <span
           aria-hidden
-          className="absolute left-0 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white ring-[1.5px] ring-mekark-red shadow-[0_0_4px_1px_rgba(237,28,36,0.45)]"
-          style={{
-            width: `clamp(6px, ${((10 / 1920) * 100).toFixed(3)}vw, 10px)`,
-            height: `clamp(6px, ${((10 / 1920) * 100).toFixed(3)}vw, 10px)`,
-          }}
+          className={`absolute left-0 top-0 h-[clamp(4px,1.4vw,7px)] w-[clamp(4px,1.4vw,7px)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white ring-[clamp(1px,0.35vw,1.5px)] ring-mekark-red shadow-[0_0_4px_1px_rgba(237,28,36,0.45)] ${
+            dotLarge
+              ? "lg:h-3 lg:w-3 lg:ring-[5px] lg:shadow-[0_0_12px_2px_rgba(237,28,36,0.6)]"
+              : "lg:h-3.5 lg:w-3.5 lg:ring-2 lg:shadow-[0_0_10px_2px_rgba(237,28,36,0.55)]"
+          }`}
         />
       )}
       <div

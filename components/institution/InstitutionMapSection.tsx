@@ -71,7 +71,7 @@ export function InstitutionMapSection() {
       aria-label="Institutional construction across South India"
       className="relative w-full overflow-hidden bg-[#1a1a1a]"
     >
-      <div className="relative mx-auto flex min-h-0 w-full max-w-[1920px] flex-col gap-10 px-5 py-12 sm:px-8 lg:aspect-[1920/780] lg:flex-row lg:items-center lg:gap-8 lg:px-[72px] lg:py-0">
+      <div className="relative mx-auto flex min-h-0 w-full max-w-[1920px] flex-col gap-10 px-5 py-12 sm:px-8 lg:aspect-[1920/780] lg:min-h-[760px] lg:flex-row lg:items-center lg:gap-8 lg:px-[72px] lg:py-0">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -81,7 +81,7 @@ export function InstitutionMapSection() {
         >
           <motion.h2
             variants={fadeUp}
-            className="mb-5 font-[family-name:var(--font-manrope)] text-[34px] font-bold capitalize leading-none tracking-normal text-white lg:-mt-19"
+            className="mb-5 font-[family-name:var(--font-manrope)] text-[34px] font-bold capitalize leading-none tracking-normal text-white lg:mt-[-3.958vw]"
           >
             Built For Crowds.
             <span className="mt-2 block text-mekark-red max-[430px]:leading-[1.35]">Engineered For Safety</span>
@@ -115,8 +115,8 @@ export function InstitutionMapSection() {
           </motion.p>
         </motion.div>
 
-        <div className="relative flex-1 overflow-hidden lg:min-h-[420px] lg:h-full">
-          <div className="relative mx-auto aspect-square w-full max-w-[420px] lg:absolute lg:top-[-39%] lg:right-[-23%] lg:mx-0 lg:h-[128%] lg:w-auto lg:max-w-none lg:scale-110">
+        <div className="relative flex-1 overflow-hidden lg:aspect-square">
+          <div className="relative mx-auto aspect-square w-full max-w-[420px] lg:absolute lg:top-[-39%] lg:right-[-23%] lg:mx-0 lg:aspect-square lg:h-auto lg:w-[128%] lg:max-w-none lg:scale-110">
             <Image
               src="/images/institution/map-section/map-india.png"
               alt="3D map of India with South India highlighted"

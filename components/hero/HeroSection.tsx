@@ -5,18 +5,20 @@ import { AnimatePresence, motion } from "framer-motion";
 import { SECTION_CONTAINER_CLASS } from "@/lib/sectionLayout";
 
 const HERO_VIDEOS = [
-  {
-    src: "/images/hero/PEB-2.mp4",
-    poster: "/images/hero/peb-poster.png",
-    title: "PEB Construction",
-    subtitle: "Pre-engineered building systems",
-  },
+
   {
     src: "/images/hero/Civil.mp4",
     poster: "/images/hero/video-2.jpg",
     title: "Civil Construction",
     subtitle: "Foundations to finished infrastructure",
   },
+  {
+    src: "/images/hero/PEB-2.mp4",
+    poster: "/images/hero/peb-poster.png",
+    title: "PEB Construction",
+    subtitle: "Pre-engineered building systems",
+  },
+
   {
     src: "/images/hero/Multi storey.mp4",
     poster: "/images/hero/video-3.jpg",

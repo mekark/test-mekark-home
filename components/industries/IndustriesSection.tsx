@@ -24,7 +24,7 @@ const INDUSTRIES = [
     title: "Manufacturing Industry",
     description:
       "Scalable infrastructure for high-volume production and assembly.",
-    image: "/images/industries/01-manufacturing-v3.png",
+    image: "/images/industries/01-manufacturing-v4.png",
   },
   {
     number: "02",

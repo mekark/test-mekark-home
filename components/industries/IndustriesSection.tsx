@@ -193,7 +193,7 @@ export function IndustriesSection() {
               className="max-w-none overflow-visible whitespace-nowrap text-[clamp(1.375rem,5.8vw,1.875rem)] font-extrabold leading-[1.15] tracking-[-0.6px] text-[#111] sm:text-[clamp(1.75rem,4vw,2.5rem)] sm:tracking-[-1px] lg:col-start-1 lg:row-start-2 lg:-mt-5 lg:text-[clamp(2rem,3.5vw,3.33rem)] lg:leading-[1.05] lg:tracking-[-1.12px] xl:text-[43px] xl:leading-[43px] 2xl:text-[53.33px] 2xl:leading-[56px]"
             >
               <motion.span variants={aboutHeadlineChunk} className="inline whitespace-nowrap">
-                Engineered for Every Sector
+                Engineered For Every Sector
               </motion.span>
             </motion.h2>
 

@@ -23,7 +23,7 @@ const CAPABILITIES = [
     icon: "/images/capabilities/icon-land-approvals.svg",
   },
   {
-    title: "Architectural And Site Planning",
+    title: "Architectural & Site Planning",
     description:
       "Strategic architectural planning and site layout design that aligns every structure with logistical flow, scalability, and long-term industrial performance.",
     icon: "/images/capabilities/icon-architectural.svg",
@@ -72,30 +72,30 @@ function CapabilityCard({
   icon,
 }: (typeof CAPABILITIES)[number]) {
   return (
-    <article className="group flex w-[min(100%,329px)] shrink-0 flex-col sm:w-[329px] xl:w-[275px] 2xl:w-[329px]">
+    <article className="group flex h-full w-[min(100%,329px)] shrink-0 flex-col sm:w-[329px] xl:w-[275px] 2xl:w-[329px]">
       <div className="flex h-full flex-col rounded-[24px] px-6 pb-6 pt-5 transition-colors duration-300 ease-out group-hover:bg-[#f5f5f5] sm:px-8 sm:pb-8 sm:pt-8">
-        <div className="relative flex size-[72px] shrink-0 items-center justify-center overflow-clip sm:size-[113px]">
+        <div className="relative flex size-[64px] shrink-0 items-center justify-center overflow-clip sm:size-[88px] xl:size-[80px] 2xl:size-[113px]">
           <div
-            className="absolute inset-0 rounded-[14px] bg-[#fdebeb] opacity-55 transition-opacity duration-300 group-hover:opacity-100 sm:rounded-[22.67px] sm:opacity-35"
+            className="absolute inset-0 rounded-[12px] bg-[#fdebeb] opacity-55 transition-opacity duration-300 group-hover:opacity-100 sm:rounded-[18px] sm:opacity-35 xl:rounded-[16px] 2xl:rounded-[22.67px]"
             aria-hidden
           />
-          <div className="relative size-[36px] overflow-clip sm:size-[60px]">
+          <div className="relative size-[32px] overflow-clip sm:size-[48px] xl:size-[42px] 2xl:size-[60px]">
             <Image
               src={icon}
               alt=""
               fill
               className="object-contain"
-              sizes="(max-width: 640px) 36px, 60px"
+              sizes="(max-width: 640px) 32px, (max-width: 1280px) 48px, (max-width: 1536px) 42px, 60px"
               aria-hidden
             />
           </div>
         </div>
 
-        <div className="mt-3 flex flex-col gap-[13.3px] sm:mt-6">
-          <h3 className="text-[20px] font-bold leading-[26px] text-[#0f0f0f] sm:text-2xl sm:leading-[30px]">
+        <div className="mt-3 flex flex-1 flex-col items-start gap-[13.3px] text-left sm:mt-6">
+          <h3 className="min-h-[4.875rem] w-full text-[20px] font-bold leading-[26px] text-[#0f0f0f] sm:min-h-[5.625rem] sm:text-2xl sm:leading-[30px] xl:min-h-[5.625rem]">
             {title}
           </h3>
-          <p className="text-base font-light leading-[25px] text-[#0f0f0f]">
+          <p className="min-h-[7.8125rem] w-full flex-1 text-base font-light leading-[25px] text-[#0f0f0f]">
             {description}
           </p>
         </div>
@@ -142,18 +142,18 @@ export function CoreEpcCapabilitiesSection() {
   );
 
   return (
-    <section className="relative w-full overflow-hidden bg-white font-[family-name:var(--font-manrope)] text-black">
+    <section className="relative w-full overflow-x-clip bg-white font-[family-name:var(--font-manrope)] text-black">
       <div className={`${SECTION_CONTAINER_CLASS} py-14 sm:py-16 lg:py-[107px] xl:py-[65px] 2xl:py-[107px]`}>
         <motion.div
           variants={epcCapHeadlineGroup}
           initial="hidden"
           whileInView="visible"
           viewport={VIEWPORT}
-          className="mb-5 sm:mb-12 lg:mb-[52px] xl:mb-8 2xl:mb-[52px]"
+          className="mb-5 overflow-visible sm:mb-12 lg:mb-[52px] xl:mb-8 2xl:mb-[52px]"
         >
           <motion.h2
             variants={epcCapHeadlineWipe}
-            className="text-[clamp(2rem,4.5vw,53.33px)] font-extrabold leading-[1.1] tracking-[-1.12px] text-black xl:text-[45px] xl:leading-[45px] 2xl:text-[53.33px] 2xl:leading-[1.1]"
+            className="overflow-visible pb-1 text-[28px] font-extrabold leading-[1.2] tracking-[-0.8px] text-black sm:text-[36px] sm:tracking-[-1px] lg:text-[40px] lg:leading-[1.2] lg:tracking-[-1.12px] xl:text-[43px] xl:leading-[1.2] 2xl:text-[53.33px] 2xl:leading-[1.2]"
           >
             Core{" "}
             <motion.span
@@ -180,7 +180,7 @@ export function CoreEpcCapabilitiesSection() {
                 <motion.div
                   key={capability.title}
                   variants={epcCapCardFromLeft}
-                  className="min-w-0 shrink-0 grow-0 basis-[min(100%,366.67px)] px-4 pb-4 pt-0 sm:pt-[21px] xl:basis-[min(100%,275px)] 2xl:basis-[min(100%,366.67px)]"
+                  className="flex min-w-0 shrink-0 grow-0 basis-[min(100%,366.67px)] px-4 pb-4 pt-0 sm:pt-[21px] xl:basis-[min(100%,275px)] 2xl:basis-[min(100%,366.67px)]"
                 >
                   <CapabilityCard {...capability} />
                 </motion.div>

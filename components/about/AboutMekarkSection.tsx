@@ -28,18 +28,24 @@ const STATS = [
     suffix: " Lakh+",
     label: (
       <>
-        Sq.Ft Manufacturing
+        Sq.Ft Completed
         <br />
-        Facility
+        Projects
       </>
     ),
     icon: "/images/about/icon-factory.svg",
-    iconAlt: "Manufacturing facility",
+    iconAlt: "Completed projects",
   },
   {
     countTo: 18,
     suffix: "+",
-    label: "Years of Experience",
+    label: (
+      <>
+        Years of
+        <br />
+        Experience
+      </>
+    ),
     icon: "/images/about/icon-medal.svg",
     iconAlt: "Years of experience",
   },

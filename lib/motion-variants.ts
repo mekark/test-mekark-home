@@ -366,7 +366,7 @@ export const epcCapScanLine: Variants = {
 export const epcCapHeadlineWipe: Variants = {
   hidden: { clipPath: "inset(0 100% 0 0)", opacity: 0, x: -28 },
   visible: {
-    clipPath: "inset(0 0% 0 0)",
+    clipPath: "inset(0 0 0 0)",
     opacity: 1,
     x: 0,
     transition: { duration: 0.95, ease: [0.77, 0, 0.175, 1], delay: 0.35 },

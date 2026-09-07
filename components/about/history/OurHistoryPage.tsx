@@ -29,7 +29,7 @@ const STAT_COLUMNS = [
       countTo: 70,
       suffix: " Lakh+",
       unit: "SQ.FT",
-      label: "Captive facility",
+      label: "Completed projects",
     },
   ],
   [
@@ -45,7 +45,7 @@ const STAT_COLUMNS = [
     {
       countTo: 40000,
       useGrouping: true,
-      unit: "MT / Annum",
+      unit: "MT /Per Annum",
       label: "Production capacity",
     },
     { text: "CIVIL + PEB + MEP", label: "Turnkey solutions" },

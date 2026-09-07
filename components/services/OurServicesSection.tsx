@@ -180,11 +180,11 @@ function SolutionCard({
           aria-hidden
         />
 
-        <div className="absolute inset-x-4 bottom-4 flex flex-col gap-1 sm:inset-x-[28px] sm:bottom-[28px] sm:gap-[7px] xl:inset-x-[21px] xl:bottom-[21px] xl:gap-1.5 2xl:inset-x-[28px] 2xl:bottom-[28px] 2xl:gap-[7px]">
-          <h3 className="text-[15px] font-bold leading-snug text-white sm:text-xl sm:leading-[29px] md:text-2xl xl:text-[22px] xl:leading-[22px] 2xl:text-2xl 2xl:leading-[29px]">
+        <div className="absolute inset-x-4 bottom-4 flex flex-col items-start gap-1 text-left sm:inset-x-[28px] sm:bottom-[28px] sm:gap-[7px] xl:inset-x-[21px] xl:bottom-[21px] xl:gap-1.5 2xl:inset-x-[28px] 2xl:bottom-[28px] 2xl:gap-[7px]">
+          <h3 className="w-full text-[15px] font-bold leading-snug text-white sm:text-xl sm:leading-[29px] md:text-2xl xl:text-[22px] xl:leading-[22px] 2xl:text-2xl 2xl:leading-[29px]">
             {visual.title}
           </h3>
-          <p className="line-clamp-2 max-w-[433px] text-[11px] leading-[1.4] text-[#c8c8c8] sm:line-clamp-none sm:text-sm sm:leading-[22px] sm:text-[#aaa] md:text-base md:leading-[25px] xl:max-w-[318px] xl:text-sm xl:leading-[18px] 2xl:max-w-[433px] 2xl:text-base 2xl:leading-[25px]">
+          <p className="line-clamp-2 min-h-[calc(2*1.4em)] w-full max-w-[433px] text-[11px] leading-[1.4] text-[#c8c8c8] sm:min-h-[44px] sm:text-sm sm:leading-[22px] sm:text-[#aaa] md:min-h-[50px] md:text-base md:leading-[25px] xl:min-h-[36px] xl:max-w-[318px] xl:text-sm xl:leading-[18px] 2xl:min-h-[50px] 2xl:max-w-[433px] 2xl:text-base 2xl:leading-[25px]">
             {visual.description}
           </p>
         </div>
@@ -277,7 +277,7 @@ export function OurServicesSection() {
                 Extended
               </motion.span>
               <motion.span className="inline-block" variants={aboutHeadlineChunk}>
-                Infrastructure Solutions.
+                Infrastructure Solutions
               </motion.span>
             </motion.h2>
 

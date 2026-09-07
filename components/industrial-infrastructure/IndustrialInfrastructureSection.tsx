@@ -95,7 +95,7 @@ export function IndustrialInfrastructureSection() {
               Extended
             </motion.span>
             <motion.span className="inline-block" variants={aboutHeadlineChunk}>
-              Infrastructure Solutions.
+              Infrastructure Solutions
             </motion.span>
           </motion.h2>
 

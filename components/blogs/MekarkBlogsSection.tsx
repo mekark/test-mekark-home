@@ -163,7 +163,7 @@ export function MekarkBlogsSection() {
             <span className="text-[#1a1a1a]">
               Engineering insights, project updates{" "}
             </span>
-            <span className="text-[#ed2024]">and industry stories.</span>
+            <span className="text-[#ed2024]">and industry stories</span>
           </motion.h2>
         </motion.div>
 

@@ -196,9 +196,11 @@ export function FaqSection() {
 
             <motion.p
               variants={faqHeadlineLine}
-              className="mt-3 max-w-[380px] text-sm leading-6 text-[#777] sm:mt-4 sm:text-base sm:leading-8"
+              className="mt-3 max-w-[380px] text-sm leading-5 text-[#777] sm:mt-4 sm:text-base sm:leading-6"
             >
-              Get Connected So We Could Answer Your Questions
+              Get connected so we could
+              <br />
+              answer your questions
             </motion.p>
 
             <motion.div

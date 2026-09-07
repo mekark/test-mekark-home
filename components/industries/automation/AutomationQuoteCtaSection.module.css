@@ -2,11 +2,11 @@
   position: relative;
   display: flex;
   width: 100%;
-  min-height: 388px;
+  min-height: 320px;
   overflow: hidden;
   align-items: center;
   justify-content: center;
-  padding: 48px 24px;
+  padding: 36px 24px;
   color: #fff;
   font-family: var(--font-manrope), Manrope, sans-serif;
 }
@@ -35,7 +35,7 @@
   width: min(100%, 1730px);
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 28px;
   text-align: center;
 }
 
@@ -103,12 +103,12 @@
 
 @media (max-width: 767px) {
   .section {
-    min-height: 420px;
-    padding: 48px 20px;
+    min-height: 360px;
+    padding: 36px 20px;
   }
 
   .content {
-    gap: 32px;
+    gap: 24px;
   }
 
   .heading {

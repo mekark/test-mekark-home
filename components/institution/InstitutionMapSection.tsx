@@ -84,7 +84,7 @@ export function InstitutionMapSection() {
             className="mb-5 font-[family-name:var(--font-manrope)] text-[34px] font-bold capitalize leading-none tracking-normal text-white lg:-mt-19"
           >
             Built For Crowds.
-            <span className="mt-2 block text-mekark-red">Engineered For Safety</span>
+            <span className="mt-2 block text-mekark-red max-[430px]:leading-[1.35]">Engineered For Safety</span>
           </motion.h2>
 
           <motion.p variants={fadeUp} className={CARD_CLASS}>

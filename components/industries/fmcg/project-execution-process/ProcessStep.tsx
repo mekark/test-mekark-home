@@ -27,7 +27,7 @@ export function ProcessStep({ step, index, mobile = false }: ProcessStepProps) {
             {step.title}
           </h3>
           <p className="text-sm leading-relaxed text-[#555]">
-            {step.description}
+            {step.description.replace(/\n/g, " ")}
           </p>
         </div>
       </motion.article>
@@ -51,7 +51,7 @@ export function ProcessStep({ step, index, mobile = false }: ProcessStepProps) {
         <h3 className={`text-base font-semibold leading-normal text-[#3c3938] sm:text-lg ${macStyles.stepTitle}`}>
           {step.title}
         </h3>
-        <p className={`text-sm leading-[21px] text-[#555] sm:text-base ${macStyles.stepDesc}`}>
+        <p className={`whitespace-normal text-sm leading-[21px] text-[#555] min-[1650px]:whitespace-pre-line ${macStyles.stepDesc}`}>
           {step.description}
         </p>
       </div>

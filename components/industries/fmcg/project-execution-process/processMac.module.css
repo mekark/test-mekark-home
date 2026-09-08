@@ -35,11 +35,11 @@
 
   .stepsRow {
     width: 100% !important;
-    gap: clamp(16px, 1.45833vw, 28px) !important;
+    gap: clamp(10px, 0.9vw, 18px) !important;
   }
 
   .stepGroup {
-    gap: clamp(16px, 1.45833vw, 28px) !important;
+    gap: clamp(10px, 0.9vw, 18px) !important;
   }
 
   .stepWrap {
@@ -63,15 +63,16 @@
   }
 
   .stepDesc {
-    width: clamp(160px, 14.2708vw, 274px) !important;
-    max-width: 14.2708vw !important;
-    font-size: clamp(13px, 0.83333vw, 16px) !important;
-    line-height: 1.45 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: clamp(12px, 0.8vw, 15px) !important;
+    line-height: 1.5 !important;
   }
 
   .connector {
     display: block !important;
     height: clamp(12px, 1.02083vw, 20px) !important;
     width: clamp(40px, 3.47396vw, 67px) !important;
+    align-self: center !important;
   }
 }

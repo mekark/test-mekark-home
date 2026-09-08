@@ -111,8 +111,9 @@ export function ManufacturingSolutionsSection() {
           <span className="font-semibold text-[#e50818]">
             Chennai, Coimbatore, Hosur, Bengaluru, Hyderabad, or Kochi
           </span>{" "}
-          – Mekark&apos;s FMCG facility engineering is customised to your
-          production process and compliance requirements.
+          – Mekark&apos;s FMCG facility engineering is{" "}
+          <br className="hidden lg:block" />
+          customised to your production process and compliance requirements.
         </motion.p>
       </div>
     </section>

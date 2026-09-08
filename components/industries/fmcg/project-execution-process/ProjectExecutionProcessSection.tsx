@@ -76,11 +76,11 @@ export function ProjectExecutionProcessSection() {
           ))}
         </div>
 
-        <div className={`hidden min-w-0 items-stretch gap-5 min-[1201px]:flex 2xl:gap-7 ${macStyles.stepsRow}`}>
+        <div className={`hidden min-w-0 items-stretch gap-3 min-[1201px]:flex 2xl:gap-4 ${macStyles.stepsRow}`}>
           {processSteps.map((step, index) => (
             <div
               key={step.number}
-              className={`flex min-w-0 flex-1 items-center gap-5 2xl:gap-7 ${macStyles.stepGroup}`}
+              className={`flex min-w-0 flex-1 items-center gap-3 2xl:gap-4 ${macStyles.stepGroup}`}
             >
               <ProcessStep step={step} index={index} />
               {index < processSteps.length - 1 && <ProcessConnector />}

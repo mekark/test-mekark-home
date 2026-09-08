@@ -9,25 +9,25 @@ export const processSteps: ProcessStepItem[] = [
     number: "01",
     title: "Process & Feasibility Study",
     description:
-      "Understanding your production line layout, hygiene classification, warehousing requirements, and expansion plans before design begins.",
+      "Understanding your production\nline layout, hygiene classification,\nwarehousing requirements, and\nexpansion plans before design\nbegins.",
   },
   {
     number: "02",
     title: "Design & Engineering",
     description:
-      "Structural layout, electrical zoning, HVAC, and MEP coordination planned into a build-ready engineering package using STAAD Pro, TEKLA, and Autodesk.",
+      "Structural layout, electrical\nzoning, HVAC, and MEP\ncoordination planned into a\nbuild-ready engineering\npackage using STAAD Pro,\nTEKLA, and Autodesk.",
   },
   {
     number: "03",
     title: "Factory Fabrication",
     description:
-      "Precision manufacturing at our Tamil Nadu plants, with structural steel, cladding, and cold storage panels fabricated to exact specs.",
+      "Precision manufacturing at our\nTamil Nadu plants, with\nstructural steel, cladding, and\ncold storage panels fabricated\nto exact specs.",
   },
   {
     number: "04",
     title: "Civil, Structural & MEP Execution",
     description:
-      "Hygienic flooring, steel framing, HVAC, warehousing, and utility integration executed with precision sequencing for a compliant, production-ready base.",
+      "Hygienic flooring, steel\nframing, HVAC, warehousing,\nand utility integration\nexecuted with precision\nsequencing for a compliant,\nproduction-ready base.",
   },
   {
     number: "05",

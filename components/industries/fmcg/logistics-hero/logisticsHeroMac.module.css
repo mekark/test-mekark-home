@@ -63,3 +63,12 @@
     width: 100% !important;
   }
 }
+
+/* Wide "normal" desktop that still falls inside the Mac fluid range
+   (e.g. a 1920px monitor whose viewport is ~1903px after the scrollbar).
+   Give the hero paragraph room for the forced 3-line break. */
+@media (min-width: 1700px) and (max-width: 1919px) {
+  .heroDesc {
+    max-width: min(80%, 1015px) !important;
+  }
+}

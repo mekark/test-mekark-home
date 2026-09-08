@@ -15,9 +15,11 @@ export function HeroDescription() {
       animate="visible"
     >
       Mekark builds turnkey FMCG manufacturing plants, packaging units,
-      distribution warehouses, and cold storage infrastructure across Tamil
-      Nadu, Karnataka, Andhra Pradesh, Telangana, and Kerala. Engineered for
-      speed-to-market, hygiene, and long-term reliability.
+      distribution
+      <br className="hidden min-[1700px]:block" /> warehouses, and cold storage
+      infrastructure across Tamil Nadu, Karnataka, Andhra Pradesh,
+      <br className="hidden min-[1700px]:block" /> Telangana, and Kerala.
+      Engineered for speed-to-market, hygiene, and long-term reliability.
     </motion.p>
   );
 }

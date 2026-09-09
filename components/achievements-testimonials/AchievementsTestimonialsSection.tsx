@@ -341,7 +341,7 @@ export function AchievementsTestimonialsSection() {
                   variants={testHeadlineReveal}
                   className="mt-3.5 text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold leading-[1.2] tracking-[-0.84px] text-[#0d0808] lg:text-[40px] lg:leading-[48px]"
                 >
-                  What clients say after handover
+                  What Clients Say After Handover
                 </motion.h2>
               </div>
 

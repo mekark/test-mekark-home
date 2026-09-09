@@ -260,7 +260,7 @@ export function OurHistoryPage() {
                   D. Aquin Janvel
                 </p>
                 <p className="mt-1 font-[family-name:var(--font-manrope)] text-sm text-[#333] sm:text-base">
-                  MD of Mekark Pvt Ltd
+                  Managing Director
                 </p>
               </div>
             </motion.div>
@@ -315,16 +315,16 @@ export function OurHistoryPage() {
               className="pb-2 sm:pb-4 lg:pb-0"
             >
               <p className="max-w-[62ch] font-[family-name:var(--font-manrope)] text-base leading-[1.65] text-black sm:text-[clamp(1rem,1.15vw,1.125rem)] sm:leading-[1.65]">
-                Mekark exists because two generations refused to stop building. My
-                father started with nothing but a workshop and a belief that
+                Mekark exists because two generations refused to stop building.
+                My father started with nothing but a workshop and a belief that
                 quality work speaks for itself. I grew up watching that belief
                 become a business, and when it was my turn to lead, my job
-                wasn&apos;t to change what he built, but to give it room to grow.
-                Every step since has really just been us keeping the same promise
-                at a bigger scale: do the work right, earn the trust, and let the
-                results speak. What started as a handful of people in a small
-                setup is today a team of over a thousand, building across South
-                India and we&apos;re still just getting started.
+                wasn&apos;t to change what he built, but to give it room to
+                grow. Every step since has really just been us keeping the same
+                promise at a bigger scale: do the work right, earn the trust,
+                and let the results speak. What started as a handful of people
+                in a small setup is today a team of over a thousand, building
+                across South India and we&apos;re still just getting started.
               </p>
             </motion.div>
           </div>
@@ -376,10 +376,9 @@ export function OurHistoryPage() {
                 className="max-w-[800px] font-[family-name:var(--font-manrope)] text-base font-medium leading-[1.78] text-[#515151] opacity-80 sm:text-[16.3px]"
               >
                 From a small PEB beginning to a full-scale construction partner,
-                <br className="hidden sm:inline" />
-                {" "}
-                Mekark has grown through engineering excellence, trusted execution,
-                and long-term industrial impact.
+                <br className="hidden sm:inline" /> Mekark has grown through
+                engineering excellence, trusted execution, and long-term
+                industrial impact.
               </motion.p>
             </div>
 

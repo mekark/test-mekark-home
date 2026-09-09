@@ -38,8 +38,9 @@ const SERVICES: ExtendedOffering[] = [
     eyebrow: "End-to-End Industrial Systems",
     title: "EOT Crane",
     paragraphs: [
-      "As a leading EOT crane service providers in South India, Mekark designs, fabricates, installs, and commissions electric overhead travelling cranes tailored to your facility's load capacity, span, and operational demands ensuring maximum efficiency and long-term structural reliability.",
-      "Every EOT crane is custom-engineered around your load requirements, bay dimensions, and duty cycle, meeting IS 3177 and IS 807 safety standards with certified interlocks, overload protection, and AMC support across South India.",
+      "As a leading EOT crane supplier in South India, Mekark supplies electric overhead travelling cranes (EOT cranes) tailored to your facility's load capacity, crane span, and operational duty cycle, ensuring maximum handling efficiency and long-term structural reliability.",
+      "Every EOT crane we supply is selected and configured around your specific load requirements, bay dimensions, and duty class, meeting IS 3177 and IS 807 safety standards, with certified safety interlocks, overload protection systems, and AMC (Annual Maintenance Contract) support.",
+      "Our EOT crane offering is suited for manufacturing plants, warehouses, and heavy engineering facilities.",
     ],
     image: "/images/extended-service/eot-blended.png",
     imageAlt:
@@ -107,8 +108,9 @@ const SERVICES: ExtendedOffering[] = [
     eyebrow: "End-to-End Industrial Systems",
     title: "Racking",
     paragraphs: [
-      "As a leading pallet racking system service providers in South India, Mekark designs, fabricates, and installs heavy-duty industrial storage racks tailored to your facility's load capacity, storage density, and material handling requirements from Selective and Double Deep to Drive-In, Cantilever, and Mezzanine racking.",
-      "Every racking system meets IS 807 and MHE code specifications for load rating and seismic bracing, with CNC-fabricated precision and AMC support across South India ensuring your industrial storage racks stay safe and stable for years.",
+      "As a leading pallet racking system supplier in South India, Mekark supplies heavy-duty industrial storage racks tailored to your facility's load capacity, storage density, and material handling requirements, from Selective and Double Deep to Drive-In, Cantilever, and Mezzanine racking, ensuring maximum storage efficiency and long-term structural stability.",
+      "Every racking system we supply is selected and configured around your specific load ratings, bay dimensions, and storage layout, meeting IS 807 and MHE code specifications for load rating and seismic bracing, with CNC-fabricated precision and AMC (Annual Maintenance Contract) support.",
+      "Our racking offering is suited for warehouses, distribution centres, and manufacturing storage facilities.",
     ],
     image: "/images/extended-service/racking-blended.png",
     imageAlt: "Heavy-duty industrial pallet racking in a warehouse aisle",
@@ -168,7 +170,7 @@ const SERVICES: ExtendedOffering[] = [
         question:
           "Does Mekark supply and install pallet racking systems across South India?",
         answer:
-          "Yes. Mekark supplies and installs pallet racking across Tamil Nadu, Karnataka, Andhra Pradesh, Telangana, and Kerala, with AMC support after handover.",
+          "Yes. Mekark supplies and installs heavy-duty industrial storage racks across Tamil Nadu, Karnataka, Andhra Pradesh, Telangana, and Kerala, with AMC support after handover.",
       },
     ],
   },
@@ -179,8 +181,9 @@ const SERVICES: ExtendedOffering[] = [
     eyebrow: "End-to-End Industrial Systems",
     title: "Clean Room",
     paragraphs: [
-      "As a leading clean room service provider in South India, Mekark designs, fabricates, and installs modular clean rooms, from Cleanroom HVAC Systems to Pharmaceutical and Electronics/Semiconductor Clean Rooms, along with STP, WTP, and ETP systems for complete facility compliance.",
-      "Every system meets ISO 14644, GMP, and WHO-GMP standards, with factory-fabricated precision and AMC support across South India ensuring your controlled environments and treatment plants stay compliant for years.",
+      "As a leading clean room solutions provider in South India, Mekark provides modular clean room systems tailored to your facility's contamination control, airflow, and compliance requirements, from Cleanroom HVAC Systems to Pharmaceutical and Electronics/Semiconductor Clean Rooms, along with STP, WTP, and ETP systems for complete facility compliance.",
+      "We select and configure every cleanroom system we supply to meet ISO 14644, GMP, and WHO-GMP standards, with factory-fabricated precision and AMC (Annual Maintenance Contract) support.",
+      "Our cleanroom offering suits pharmaceutical plants, electronics/semiconductor facilities, and regulated manufacturing environments.",
     ],
     image: "/images/extended-service/clean-room.png",
     imageAlt: "Modular contamination-controlled clean room interior",
@@ -235,9 +238,9 @@ const SERVICES: ExtendedOffering[] = [
       },
       {
         question:
-          "Does Mekark supply and install clean room and water treatment systems across South India?",
+          "Does Mekark supply and install clean room systems across South India?",
         answer:
-          "Yes. Mekark manufactures, supplies, and installs modular clean room systems, Sewage Treatment Plants, Water Treatment Plants, and Effluent Treatment Plants across Tamil Nadu, Karnataka, Andhra Pradesh, Telangana, and Kerala, with on-site installation and AMC (Annual Maintenance Contract) support throughout Chennai, Coimbatore, Bengaluru, Hyderabad, and Kochi.",
+          "Yes. Mekark provides modular clean room solutions across Tamil Nadu, Karnataka, Andhra Pradesh, Telangana, and Kerala, with AMC support after handover.",
       },
     ],
   },
@@ -248,8 +251,9 @@ const SERVICES: ExtendedOffering[] = [
     eyebrow: "End-to-End Industrial Systems",
     title: "Cold Storage Facility Construction",
     paragraphs: [
-      "As a leading cold storage facility construction company in South India, Mekark designs, fabricates, and builds insulated cold storage units tailored to your product type, temperature range, and storage capacity, from Blast Freezers and Chillers to Multi-Temperature Cold Rooms, PUF Panel Insulated Storage, and Modular Cold Storage systems.",
-      "Every cold storage facility is built with PUF-insulated panels for optimal thermal efficiency, fire-retardant material specifications, and refrigeration systems engineered for consistent temperature control, with AMC support across South India to keep your cold chain infrastructure reliable and compliant for years.",
+      "As a leading cold storage solution providers in South India, Mekark provides insulated cold storage units tailored to your product type, temperature range, and storage capacity, from Blast Freezers and Chillers to Multi-Temperature Cold Rooms, PUF Panel Insulated Storage, and Modular Cold Storage systems.",
+      "Every cold storage system we supply is selected and configured with PUF-insulated panels for optimal thermal efficiency, fire-retardant material specifications, and refrigeration systems engineered for consistent temperature control, backed by AMC (Annual Maintenance Contract) support.",
+      "Our cold storage offering is suited for food processing plants, cold chain logistics facilities, and pharmaceutical storage units.",
     ],
     image: "/images/extended-service/cold-storage-blended.png",
     imageAlt:
@@ -311,9 +315,9 @@ const SERVICES: ExtendedOffering[] = [
       },
       {
         question:
-          "What industries use Mekark's cold storage facility construction services?",
+          "Does Mekark supply and install cold storage systems across South India?",
         answer:
-          "Our cold storage facilities serve food processing, dairy, pharmaceuticals, seafood/meat processing, agriculture/agri-exports, and cold chain logistics providers.",
+          "Yes. Mekark provides cold storage systems across Tamil Nadu, Karnataka, Andhra Pradesh, Telangana, and Kerala, with AMC support after handover.",
       },
     ],
   },

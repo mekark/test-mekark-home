@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
@@ -20,8 +20,6 @@ type ProjectCategory =
   | "industrial"
   | "peb";
 
-type FilterId = "all" | ProjectCategory;
-
 type Project = {
   title: string;
   type: string;
@@ -29,15 +27,6 @@ type Project = {
   image: string;
   categories: ProjectCategory[];
 };
-
-const FILTERS: { id: FilterId; label: string }[] = [
-  { id: "all", label: "All" },
-  { id: "commercial", label: "Commercial" },
-  { id: "residential", label: "Residential" },
-  { id: "infrastructure", label: "Infrastructure" },
-  { id: "industrial", label: "Industrial" },
-  { id: "peb", label: "PEB" },
-];
 
 const PROJECTS: Project[] = [
   {
@@ -214,25 +203,14 @@ function Pagination({
 }
 
 export function CompletedProjectsPage() {
-  const [filter, setFilter] = useState<FilterId>("all");
   const [page, setPage] = useState(1);
 
-  const filtered = useMemo(() => {
-    if (filter === "all") return PROJECTS;
-    return PROJECTS.filter((project) => project.categories.includes(filter));
-  }, [filter]);
-
-  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const totalPages = Math.max(1, Math.ceil(PROJECTS.length / PAGE_SIZE));
   const currentPage = Math.min(page, totalPages);
-  const visible = filtered.slice(
+  const visible = PROJECTS.slice(
     (currentPage - 1) * PAGE_SIZE,
     currentPage * PAGE_SIZE,
   );
-
-  const selectFilter = (id: FilterId) => {
-    setFilter(id);
-    setPage(1);
-  };
 
   const goToPage = (next: number) => {
     const clamped = Math.min(totalPages, Math.max(1, next));
@@ -277,41 +255,10 @@ export function CompletedProjectsPage() {
         className="scroll-mt-[96px] bg-white px-5 py-8 sm:px-8 sm:py-10 lg:px-[48px] lg:py-[30px]"
       >
         <div className="mx-auto flex w-full max-w-[1415px] flex-col gap-5">
-          <div className="flex flex-col gap-3 border-b border-[rgba(13,13,13,0.12)] pb-4 sm:flex-row sm:items-center sm:gap-4 lg:h-[59px] lg:pb-0">
-            <p className="shrink-0 text-[12px] leading-4 font-normal tracking-[1.68px] text-[#6b6558] uppercase">
-              Filter
-            </p>
-            <div
-              role="tablist"
-              aria-label="Project category"
-              className="flex flex-wrap items-center gap-2 sm:gap-2.5"
-            >
-              {FILTERS.map((item) => {
-                const active = filter === item.id;
-                return (
-                  <button
-                    key={item.id}
-                    type="button"
-                    role="tab"
-                    aria-selected={active}
-                    onClick={() => selectFilter(item.id)}
-                    className={`rounded-[8px] px-[17px] py-[7px] text-[14px] leading-5 font-semibold tracking-[1.12px] uppercase transition-colors ${
-                      active
-                        ? "border border-[rgba(237,32,36,0.9)] bg-[#ed2024] text-[#f7f5f0]"
-                        : "border border-[rgba(13,13,13,0.12)] bg-white text-[#6b6558] hover:border-[rgba(237,32,36,0.35)] hover:text-[#ed2024]"
-                    }`}
-                  >
-                    {item.label}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
           <div className="rounded-[20px] border border-[#eee] bg-[#f9f9f9] p-4 sm:p-6 lg:p-[41px]">
             {visible.length > 0 ? (
               <motion.div
-                key={`${filter}-${currentPage}`}
+                key={currentPage}
                 variants={mfgGridStagger}
                 initial="hidden"
                 whileInView="visible"
@@ -328,7 +275,7 @@ export function CompletedProjectsPage() {
               </motion.div>
             ) : (
               <p className="py-16 text-center text-[15px] text-[#5e646a]">
-                No completed projects in this category yet.
+                No completed projects yet.
               </p>
             )}
 

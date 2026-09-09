@@ -10,6 +10,8 @@ import { CollageGrid } from "@/components/about/life-at-mekark/CollageGrid";
 const VIEWPORT = { once: true, margin: "-90px" as const };
 const IMG = "/images/about/life-at-mekark";
 const MEKARK_REEL_URL = "https://www.instagram.com/reel/DQBMJsgkYEG/";
+const ZOHO_FOUNDER_REEL_URL =
+  "https://www.instagram.com/reel/DcyW4mFRDPA/?stkn=MTVzZmZ4dnpla3hrMw%3D%3D";
 const MEKARK_REEL_PREVIEW = `${IMG}/reel-1-preview.mp4`;
 const PREVIEW_DURATION_SEC = 5;
 
@@ -267,9 +269,11 @@ export function LifeAtMekarkPage() {
               imgClassName="absolute top-[-37.71%] left-[-0.08%] h-[160.73%] w-full max-w-none object-cover"
             />
             <VideoCard
-              src={`${IMG}/video-2.png`}
-              alt="Team member working at a desk in the Mekark office"
-              label="Play Mekark social video 2"
+              src={`${IMG}/video-2-zoho-founder.jpeg`}
+              alt="Zoho co-founder speaking about the rise of Mekark"
+              label="Watch the Zoho co-founder reel on Instagram"
+              href={ZOHO_FOUNDER_REEL_URL}
+              imgClassName="absolute left-0 top-0 h-[160.73%] w-full max-w-none object-cover"
             />
           </div>
         </motion.div>

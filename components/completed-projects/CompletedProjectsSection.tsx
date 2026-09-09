@@ -101,7 +101,7 @@ export function CompletedProjectsSection() {
               className="mt-3 max-w-[1144px] text-base leading-7 text-[#666] sm:mt-4 sm:text-[18px] sm:leading-[28px] lg:text-[20px] lg:leading-[30px] xl:text-[23.47px] xl:leading-[35.2px]"
             >
               A showcase of Mekark&apos;s engineering excellence across
-              industrial, commercial, and logistics sectors nationwide,
+              industrial, commercial, institutional, and logistics sectors nationwide,
               delivering precision-built facilities that stand the test of
               scale and time.
             </motion.p>

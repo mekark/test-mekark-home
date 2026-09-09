@@ -37,17 +37,18 @@ const STATS = [
     iconAlt: "Completed projects",
   },
   {
-    countTo: 18,
-    suffix: "+",
+    countTo: 150,
+    suffix: " Days",
+    footnote: true,
     label: (
       <>
-        Years of
+        Design-to-Handover
         <br />
-        Experience
+        Turnaround
       </>
     ),
-    icon: "/images/about/icon-medal.svg",
-    iconAlt: "Years of experience",
+    icon: "/images/about/icon-calendar.svg",
+    iconAlt: "Design-to-handover turnaround",
   },
   {
     countTo: 200,
@@ -292,6 +293,14 @@ export function AboutMekarkSection() {
                     delay={0.35 + index * 0.18}
                     duration={1.7}
                   />
+                  {"footnote" in stat && stat.footnote ? (
+                    <sup
+                      className="ml-0.5 align-super text-[0.36em] font-normal opacity-50"
+                      aria-hidden
+                    >
+                      *
+                    </sup>
+                  ) : null}
                 </p>
                 <motion.div
                   variants={aboutStatUnderline}

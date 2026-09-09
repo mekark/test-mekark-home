@@ -216,10 +216,10 @@ export function LifeAtMekarkPage() {
               variants={fadeUp}
               className="font-[family-name:var(--font-manrope)] text-[clamp(1.85rem,4vw,40px)] font-bold leading-[1.4] text-[#1a1a1a]"
             >
-              Life at Mekark
+              Life At Mekark
             </motion.h1>
             <motion.p variants={fadeUp} className="font-[family-name:var(--font-manrope)] text-[clamp(1rem,1.4vw,18px)] leading-normal text-[#191919]">
-              Behind Every Project, a Team That Believes in It
+              Behind every project, a team that believes in it.
               <br className="hidden sm:inline" />
               <span className="sm:ml-1">
                 A glimpse into the people, moments, and everyday hustle that make

@@ -102,21 +102,15 @@ function MailIcon() {
 
 function LinkedInIcon() {
   return (
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
-      <path
-        d="M3.5 5.25v5.25M3.5 3.5h.01M6.125 10.5V8.312a1.75 1.75 0 0 1 3.5 0V10.5M6.125 5.25V10.5"
-        stroke="currentColor"
-        strokeWidth="1.25"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124ZM7.119 20.452H3.555V9h3.564v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003Z" />
     </svg>
   );
 }
 
 function InstagramIcon() {
   return (
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
+    <svg width="18" height="18" viewBox="0 0 14 14" fill="none" aria-hidden>
       <rect
         x="1.75"
         y="1.75"
@@ -134,44 +128,24 @@ function InstagramIcon() {
 
 function FacebookIcon() {
   return (
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
-      <path
-        d="M8.75 4.375h1.75V2.625A7 7 0 0 0 8.75 2.625H7a3.5 3.5 0 0 0-3.5 3.5v1.75H2.625v2.625H3.5V12.25h2.625V8.75h1.75l.875-2.625H6.125V6.125c0-.484.391-.875.875-.875Z"
-        stroke="currentColor"
-        strokeWidth="1.1"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047v-2.66c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.971h-1.513c-1.491 0-1.956.931-1.956 1.887v2.263h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073Z" />
     </svg>
   );
 }
 
 function XIcon() {
   return (
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
-      <path
-        d="M2.5 2.5 11.5 11.5M11.5 2.5 2.5 11.5"
-        stroke="currentColor"
-        strokeWidth="1.25"
-        strokeLinecap="round"
-      />
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.64 7.584H.47l8.6-9.835L0 1.154h7.594l5.243 6.932 6.064-6.933Zm-1.29 19.49h2.039L6.487 3.24H4.3l13.31 17.403Z" />
     </svg>
   );
 }
 
 function YouTubeIcon() {
   return (
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
-      <rect
-        x="1.25"
-        y="3.25"
-        width="11.5"
-        height="7.5"
-        rx="2"
-        stroke="currentColor"
-        strokeWidth="1.25"
-      />
-      <path d="M6 5.25v3.5l3-1.75L6 5.25Z" fill="currentColor" />
+    <svg width="20" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.121 2.136c1.872.505 9.377.505 9.377.505s7.505 0 9.376-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814ZM9.545 15.568V8.432L15.818 12l-6.273 3.568Z" />
     </svg>
   );
 }
@@ -380,7 +354,7 @@ export function FooterSection() {
 
             <motion.div
               variants={fadeUp}
-              className="flex flex-col gap-8 sm:flex-row sm:gap-16 lg:gap-20 lg:pt-1 xl:gap-14 2xl:gap-20"
+              className="flex flex-col gap-8 sm:flex-row sm:gap-16 lg:gap-26 lg:pt-1 xl:gap-20 2xl:gap-26"
             >
               <FooterLinkColumn title="Menu" links={MENU_LINKS} />
               <FooterLinkColumn title="Legal" links={LEGAL_LINKS} />

@@ -395,7 +395,7 @@ export function OurHistoryPage() {
                     key={columnIndex}
                     className={`max-[519px]:contents min-[520px]:flex min-[520px]:flex-col min-[520px]:gap-8 sm:min-[520px]:gap-10 lg:flex-1 lg:gap-[50px] ${
                       columnIndex < STAT_COLUMNS.length - 1
-                        ? "lg:border-r lg:border-b-0 lg:pb-0 lg:pr-[41px]"
+                        ? "lg:border-r lg:border-white/25 lg:border-b-0 lg:pb-0 lg:pr-[41px]"
                         : ""
                     } ${
                       columnIndex === 2

@@ -658,8 +658,6 @@ function SafetyCertificationsSection() {
   const touchStartY = useRef(0);
   const activeRef = useRef(0);
   const autoScrollPausedUntilRef = useRef(0);
-  const wheelLockRef = useRef(false);
-  const wheelIdleTimeoutRef = useRef<number | undefined>(undefined);
   const [active, setActive] = useState(0);
   const [direction, setDirection] = useState(1);
   const lastIndex = CERTIFICATES.length - 1;
@@ -739,17 +737,6 @@ function SafetyCertificationsSection() {
     const node = sectionRef.current;
     if (!node) return;
 
-    const releaseWheelLock = () => {
-      wheelLockRef.current = false;
-    };
-
-    const armWheelIdleTimer = () => {
-      if (wheelIdleTimeoutRef.current !== undefined) {
-        window.clearTimeout(wheelIdleTimeoutRef.current);
-      }
-      wheelIdleTimeoutRef.current = window.setTimeout(releaseWheelLock, 220);
-    };
-
     const onWheel = (event: WheelEvent) => {
       if (window.matchMedia("(max-width: 639px)").matches) return;
 
@@ -761,33 +748,24 @@ function SafetyCertificationsSection() {
       const withinBounds =
         (goingDown && current < lastIndex) || (goingUp && current > 0);
 
-      // Once a gesture has changed a slide, keep swallowing the rest of that
-      // same gesture even after the boundary is reached mid-gesture -
-      // otherwise trailing momentum leaks through as a real page scroll and
-      // the section flies away before the new slide can be read. Only a
-      // fresh gesture (after the wheel goes idle) is allowed to leave.
-      if (!wheelLockRef.current && !withinBounds) return;
+      // Only step through certificates while there is another one to show in
+      // the scroll direction. At the first / last certificate the wheel is
+      // left alone so the page scrolls normally and the user can move on into
+      // the next (or previous) section instead of being trapped here.
+      if (!withinBounds) return;
 
       event.preventDefault();
       event.stopPropagation();
 
-      if (wheelLockRef.current) {
-        armWheelIdleTimer();
-        return;
-      }
-
-      wheelLockRef.current = true;
+      // goTo() self-throttles via cooldownRef, so one wheel gesture advances
+      // one slide.
       if (goingDown) goTo(current + 1, 1);
       else goTo(current - 1, -1);
-      armWheelIdleTimer();
     };
 
     node.addEventListener("wheel", onWheel, { passive: false });
     return () => {
       node.removeEventListener("wheel", onWheel);
-      if (wheelIdleTimeoutRef.current !== undefined) {
-        window.clearTimeout(wheelIdleTimeoutRef.current);
-      }
     };
   }, [goTo, lastIndex]);
 

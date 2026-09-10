@@ -1,13 +1,13 @@
 "use client";
 
-import { type FormEvent, type ReactNode, useEffect, useMemo, useState } from "react";
+import { type FormEvent, type ReactNode, useEffect, useState } from "react";
 import Image from "next/image";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { useNavigationLoading } from "@/components/ui/NavigationLoadingProvider";
 import {
-  ENQUIRY_INDUSTRY_BY_SLUG,
   FIND_SERVICES,
+  NAV_ITEMS,
 } from "@/components/navbar/nav-data";
 import {
   enquiryCopyItem,
@@ -36,17 +36,18 @@ const PROJECT_AREAS = [
   "50,000+ Sq.ft",
 ] as const;
 
+const INDUSTRY_LINKS = [
+  ...(NAV_ITEMS.find((item) => item.label === "Industries We Serve")?.children ?? []),
+  { label: "Institutional", href: "/institutional" },
+];
+const SERVICE_LINKS = FIND_SERVICES.map((service) => ({
+  ...service,
+  label: service.label === "EOT" ? "EOT Crane" : service.label,
+}));
+
 const INDUSTRY_TYPES = [
   "Select industry type",
-  "Institutional — Auditoriums & Stadiums",
-  "Warehouse & Logistics",
-  "Factories, Industries & Plants",
-  "Manufacturing",
-  "Multistorey Steel",
-  "Cold Storage",
-  "EOT Crane",
-  "Datacentre",
-  "Clean Rooms",
+  ...INDUSTRY_LINKS.map((industry) => industry.label),
 ] as const;
 
 const PROJECT_TIMELINES = [
@@ -67,38 +68,18 @@ const PROJECT_BUDGETS = [
 
 const SERVICE_TYPES = [
   "Select service",
-  ...FIND_SERVICES.map((service) => service.label),
+  ...SERVICE_LINKS.map((service) => service.label),
 ] as const;
-
-function withExtraOption(options: readonly string[], extra: string) {
-  if (!extra || extra === options[0] || options.includes(extra)) {
-    return options;
-  }
-
-  return [options[0], extra, ...options.slice(1)];
-}
 
 function resolveIndustryValue(
   industrySlug: string | null,
   industryLabel: string | null,
 ) {
-  if (industryLabel) {
-    const exact = INDUSTRY_TYPES.find(
-      (option) => option.toLowerCase() === industryLabel.toLowerCase(),
-    );
-
-    if (exact && exact !== INDUSTRY_TYPES[0]) {
-      return exact;
-    }
-
-    return industryLabel;
-  }
-
-  if (industrySlug && ENQUIRY_INDUSTRY_BY_SLUG[industrySlug]) {
-    return ENQUIRY_INDUSTRY_BY_SLUG[industrySlug];
-  }
-
-  return "";
+  return INDUSTRY_LINKS.find(
+    (option) =>
+      option.href.split("/").pop() === industrySlug ||
+      option.label.toLowerCase() === (industryLabel ?? "").toLowerCase(),
+  )?.label ?? "";
 }
 
 function resolveServiceValue(
@@ -111,7 +92,12 @@ function resolveServiceValue(
       option.label.toLowerCase() === (serviceLabel ?? "").toLowerCase(),
   );
 
-  return matched?.label ?? serviceLabel ?? "";
+  return SERVICE_LINKS.find(
+    (option) =>
+      option.slug === serviceSlug ||
+      option.label.toLowerCase() === (serviceLabel ?? "").toLowerCase() ||
+      option.slug === matched?.slug,
+  )?.label ?? "";
 }
 
 function buildSolutionPrefill(
@@ -231,15 +217,6 @@ export function EnquirySection() {
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>("idle");
   const [submitMessage, setSubmitMessage] = useState("");
 
-  const industryOptions = useMemo(
-    () => withExtraOption(INDUSTRY_TYPES, industryType),
-    [industryType],
-  );
-  const serviceOptions = useMemo(
-    () => withExtraOption(SERVICE_TYPES, serviceType),
-    [serviceType],
-  );
-
   const queryString = searchParams.toString();
 
   useEffect(() => {
@@ -306,10 +283,6 @@ export function EnquirySection() {
     const industry = String(formData.get("industry") ?? "").trim();
     const service = String(formData.get("service") ?? "").trim();
     const details = String(formData.get("message") ?? "").trim();
-    const messageBody =
-      service && !details.toLowerCase().includes(service.toLowerCase())
-        ? [details, `Service: ${service}`].filter(Boolean).join("\n")
-        : details;
 
     const payload = {
       name: String(formData.get("name") ?? "").trim(),
@@ -318,10 +291,11 @@ export function EnquirySection() {
       company: String(formData.get("company") ?? "").trim(),
       location: String(formData.get("location") ?? "").trim(),
       industry,
+      service,
       sqf: String(formData.get("sqft") ?? "").trim(),
       startTimeline: String(formData.get("projectTimeline") ?? "").trim(),
       budget: String(formData.get("projectBudget") ?? "").trim(),
-      message: messageBody,
+      message: details,
     };
 
     setSubmitStatus("submitting");
@@ -545,7 +519,7 @@ export function EnquirySection() {
                       required
                       value={industryType}
                       onChange={setIndustryType}
-                      options={industryOptions}
+                      options={INDUSTRY_TYPES}
                     />
                   </FormField>
                 </div>
@@ -557,7 +531,7 @@ export function EnquirySection() {
                       name="service"
                       value={serviceType}
                       onChange={setServiceType}
-                      options={serviceOptions}
+                      options={SERVICE_TYPES}
                     />
                   </FormField>
                   <FormField label="Project Area" required>

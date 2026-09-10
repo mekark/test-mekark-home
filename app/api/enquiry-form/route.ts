@@ -10,6 +10,7 @@ type EnquiryFormPayload = {
   company: string;
   location: string;
   industry: string;
+  service: string;
   sqf: string;
   startTimeline: string;
   budget: string;
@@ -44,6 +45,7 @@ function parseEnquiryPayload(body: unknown): EnquiryFormPayload | null {
     typeof data.location === "string" ? data.location.trim() : "";
   const industry =
     typeof data.industry === "string" ? data.industry.trim() : "";
+  const service = typeof data.service === "string" ? data.service.trim() : "";
   const sqf = typeof data.sqf === "string" ? data.sqf.trim() : "";
   const startTimeline =
     typeof data.startTimeline === "string" ? data.startTimeline.trim() : "";
@@ -69,6 +71,7 @@ function parseEnquiryPayload(body: unknown): EnquiryFormPayload | null {
     company,
     location,
     industry: industry || "General Enquiry",
+    service,
     sqf,
     startTimeline: startTimeline || "Not specified",
     budget: budget || "Not specified",

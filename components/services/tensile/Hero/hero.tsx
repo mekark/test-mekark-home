@@ -44,15 +44,6 @@ const mobileStats = [
     ),
     mobileLabel: "Fabric Suppliers",
   },
-  {
-    key: "capacity",
-    value: (
-      <>
-        X-<span className="text-[#ed2024]">Ton</span>
-      </>
-    ),
-    mobileLabel: "Fabrication Capacity",
-  },
 ] as const;
 
 function MobileHero() {
@@ -180,13 +171,6 @@ export default function Hero() {
                 <span className={styles.span}> ETFE</span>
               </div>
               <div className={styles.statLabel}>Certified Fabric Suppliers</div>
-            </div>
-            <div className={styles.stat}>
-              <div className={styles.div}>
-                <span className={styles.span}>{`X - `}</span>
-                <span className={styles.ton}>Ton</span>
-              </div>
-              <div className={styles.statLabel}>In-House Fabrication Capacity</div>
             </div>
             <div className={`${styles.stat} ${styles.statWide}`}>
               <div className={styles.iso90012015Container}>

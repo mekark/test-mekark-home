@@ -223,7 +223,7 @@ function BenefitCard({
       }}
       animate={{ scale: hovered ? 1.03 : 1 }}
       transition={{ type: "spring", stiffness: 360, damping: 24 }}
-      className="group relative flex w-[242px] shrink-0 snap-start flex-col overflow-hidden rounded-[18px] border border-[#dedede] bg-white/90 sm:w-[260px] md:w-[280px] xl:h-[339px] xl:min-h-[339px] xl:w-full xl:min-w-0 xl:flex-1 xl:rounded-[18px] 2xl:h-[452px] 2xl:min-h-[452px] 2xl:rounded-[24px]"
+      className="group relative flex w-[242px] shrink-0 snap-start flex-col overflow-hidden rounded-[18px] border border-[#dedede] bg-white/90 sm:w-[260px] md:w-[280px] xl:min-h-[339px] xl:w-full xl:min-w-0 xl:flex-1 xl:rounded-[18px] 2xl:min-h-[452px] 2xl:rounded-[24px]"
     >
       <motion.div
         className="pointer-events-none absolute inset-0 z-[2] rounded-[18px] xl:rounded-[18px] 2xl:rounded-[24px]"
@@ -243,7 +243,7 @@ function BenefitCard({
 
         <motion.div
           variants={partnerLockContentStack}
-          className="relative z-10 flex h-full flex-col px-6 pb-6 pt-5 backdrop-blur-[2px] xl:px-3.5 xl:pb-5 xl:pt-4 2xl:px-[42px] 2xl:pb-[68px] 2xl:pt-[35px]"
+          className="relative z-10 flex flex-1 flex-col px-6 pb-6 pt-5 backdrop-blur-[2px] xl:px-3.5 xl:pb-5 xl:pt-4 2xl:px-[42px] 2xl:pb-[68px] 2xl:pt-[35px]"
         >
         <motion.div
           variants={partnerLockIconPop}
@@ -294,7 +294,7 @@ function BenefitCard({
             className="text-lg font-bold leading-6 tracking-[-0.5px] text-[#111] xl:text-[clamp(0.8125rem,1.05vw,1rem)] xl:leading-[1.25] xl:tracking-[-0.4px] 2xl:text-2xl 2xl:leading-8 2xl:tracking-[-0.76px]"
           >
             {titleLines.map((line) => (
-              <span key={line} className="block xl:whitespace-nowrap">
+              <span key={line} className="block [overflow-wrap:anywhere]">
                 {line}
               </span>
             ))}
@@ -357,10 +357,10 @@ export function OnePartnerSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full overflow-hidden border-b border-black/10 bg-white font-[family-name:var(--font-manrope)] text-[#111] lg:min-h-[1081px] xl:min-h-[811px] 2xl:min-h-[1081px]"
+      className="relative w-full overflow-hidden border-b border-black/10 bg-[#f7f7f7] font-[family-name:var(--font-manrope)] text-[#111] lg:min-h-[1081px] xl:min-h-[811px] 2xl:min-h-[1081px]"
     >
       <motion.div
-        className="pointer-events-none absolute inset-0 will-change-transform"
+        className="pointer-events-none absolute inset-0 opacity-50 will-change-transform"
         style={{ y: bgYSpring, scale: bgScaleSpring }}
       >
         <Image

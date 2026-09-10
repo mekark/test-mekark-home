@@ -74,18 +74,18 @@ function CapabilityCard({
   return (
     <article className="group flex h-full w-[min(100%,329px)] shrink-0 flex-col sm:w-[329px] xl:w-[275px] 2xl:w-[329px]">
       <div className="flex h-full flex-col rounded-[24px] px-6 pb-6 pt-5 transition-colors duration-300 ease-out group-hover:bg-[#f5f5f5] sm:px-8 sm:pb-8 sm:pt-8">
-        <div className="relative flex size-[64px] shrink-0 items-center justify-center overflow-clip sm:size-[88px] xl:size-[80px] 2xl:size-[113px]">
+        <div className="relative flex size-[56px] shrink-0 items-center justify-center overflow-clip sm:size-[80px] xl:size-[72px] 2xl:size-[96px]">
           <div
             className="absolute inset-0 rounded-[12px] bg-[#fdebeb] opacity-55 transition-opacity duration-300 group-hover:opacity-100 sm:rounded-[18px] sm:opacity-35 xl:rounded-[16px] 2xl:rounded-[22.67px]"
             aria-hidden
           />
-          <div className="relative size-[32px] overflow-clip sm:size-[48px] xl:size-[42px] 2xl:size-[60px]">
+          <div className="relative size-[28px] overflow-clip sm:size-[42px] xl:size-[38px] 2xl:size-[52px]">
             <Image
               src={icon}
               alt=""
               fill
               className="object-contain"
-              sizes="(max-width: 640px) 32px, (max-width: 1280px) 48px, (max-width: 1536px) 42px, 60px"
+              sizes="(min-width: 1536px) 52px, (min-width: 1280px) 38px, (min-width: 640px) 42px, 28px"
               aria-hidden
             />
           </div>
@@ -172,7 +172,7 @@ export function CoreEpcCapabilitiesSection() {
             initial="hidden"
             whileInView="visible"
             viewport={VIEWPORT}
-            className="overflow-hidden"
+            className="-ml-10 overflow-hidden sm:-ml-12"
             ref={emblaRef}
           >
             <div className="flex touch-pan-x gap-0">

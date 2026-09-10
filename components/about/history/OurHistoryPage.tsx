@@ -29,7 +29,7 @@ const STAT_COLUMNS = [
       countTo: 70,
       suffix: " Lakh+",
       unit: "SQ.FT",
-      label: "Completed projects",
+      label: "Projects completed",
     },
   ],
   [
@@ -37,7 +37,6 @@ const STAT_COLUMNS = [
       countTo: 200,
       suffix: "+",
       label: "Projects delivered",
-      labelCase: "normal" as const,
     },
     { countTo: 7, suffix: "+", unit: "STATES", label: "Project reach" },
   ],

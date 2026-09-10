@@ -72,15 +72,15 @@ const trustItems = [
     label: "Years Experience",
     mobileLabel: "Years Experience",
   },
-  {
-    value: (
-      <>
-        X <span className="text-[#ed2024]">Tons</span>
-      </>
-    ),
-    label: "Successful Multi-Storey & Industrial Projects",
-    mobileLabel: "Multi-Storey Projects",
-  },
+  // {
+  //   value: (
+  //     <>
+  //       X <span className="text-[#ed2024]">Tons</span>
+  //     </>
+  //   ),
+  //   label: "Successful Multi-Storey & Industrial Projects",
+  //   mobileLabel: "Multi-Storey Projects",
+  // },
   {
     value: (
       <>

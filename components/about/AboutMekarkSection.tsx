@@ -28,9 +28,9 @@ const STATS = [
     suffix: " Lakh+",
     label: (
       <>
-        Sq.Ft Completed
+        Sq.Ft Projects
         <br />
-        Projects
+        Completed
       </>
     ),
     icon: "/images/about/icon-factory.svg",

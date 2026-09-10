@@ -145,7 +145,7 @@ export default function WhyChooseMekark() {
           >
             <p className="w-[686px]">
               Mekark is among the premier civil construction companies and RCC
-              service provider in Chennai, offering resilient, code-compliant
+              contractor in Chennai, offering resilient, code-compliant
               structures for industrial, commercial, and institutional projects
               across Tamil Nadu, Andhra Pradesh, Karnataka, Kerala, Telangana,
               and pan-India.

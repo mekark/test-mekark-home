@@ -55,15 +55,15 @@ const mobileStats: Stat[] = [
       <CountUp end={40000} delay={0.75} format={formatWithCommas}>
         {(n) => (
           <>
-            {n} <span className="text-[#ed2024]">Tons</span>
+            {n} <span className="text-[#ed2024]">MT</span>
           </>
         )}
       </CountUp>
     ),
   },
   {
-    label: "Manufacturing Campus",
-    mobileLabel: "Manufacturing Campus",
+    label: "Projects Completed",
+    mobileLabel: "Projects Completed",
     value: (
       <CountUp end={70} delay={0.85}>
         {(n) => (

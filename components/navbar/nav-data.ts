@@ -225,7 +225,10 @@ export const NAV_ITEMS: NavItem[] = [
   },
   {
     label: "Our Service",
-    children: serviceLinks("/services", [...CORE_SERVICE_LABELS]),
+    children: serviceLinks(
+      "/services",
+      CORE_SERVICE_LABELS.filter((label) => label !== "Solar"),
+    ),
     sections: [
       {
         label: "Extended Service",
@@ -245,7 +248,6 @@ export const NAV_ITEMS: NavItem[] = [
       "Food & Beverage",
       "FMCG",
       "Pharma",
-      "Automation",
       "Data Center",
     ]),
   },

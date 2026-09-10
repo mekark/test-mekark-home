@@ -306,10 +306,6 @@ export function EnquirySection() {
     const industry = String(formData.get("industry") ?? "").trim();
     const service = String(formData.get("service") ?? "").trim();
     const details = String(formData.get("message") ?? "").trim();
-    const messageBody =
-      service && !details.toLowerCase().includes(service.toLowerCase())
-        ? [details, `Service: ${service}`].filter(Boolean).join("\n")
-        : details;
 
     const payload = {
       name: String(formData.get("name") ?? "").trim(),
@@ -318,10 +314,11 @@ export function EnquirySection() {
       company: String(formData.get("company") ?? "").trim(),
       location: String(formData.get("location") ?? "").trim(),
       industry,
+      service,
       sqf: String(formData.get("sqft") ?? "").trim(),
       startTimeline: String(formData.get("projectTimeline") ?? "").trim(),
       budget: String(formData.get("projectBudget") ?? "").trim(),
-      message: messageBody,
+      message: details,
     };
 
     setSubmitStatus("submitting");

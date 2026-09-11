@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/contact-us",
+        destination: "/resources/contact-us",
+        permanent: true,
+      },
+      {
         source: "/civil-construction-company-chennai",
         destination: "/services/civil",
         permanent: true,

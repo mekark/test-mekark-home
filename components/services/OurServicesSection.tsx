@@ -250,7 +250,7 @@ export function OurServicesSection() {
                 className="inline-block text-[#e50818]"
                 variants={aboutHeadlineChunk}
               >
-                Our
+                Our  
               </motion.span>
               <motion.span className="inline-block" variants={aboutHeadlineChunk}>
                 Solutions

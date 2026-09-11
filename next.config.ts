@@ -1,6 +1,30 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/civil-construction-company-chennai",
+        destination: "/services/civil",
+        permanent: true,
+      },
+      {
+        source: "/pre-engineered-building-manufacturer-company-chennai",
+        destination: "/services/peb",
+        permanent: true,
+      },
+      {
+        source: "/warehouse-shed-manufacturer-chennai",
+        destination: "/industries/logistics-and-warehouse",
+        permanent: true,
+      },
+      {
+        source: "/factory-building-manufacturer",
+        destination: "https://factorybuildingmanufacturer.mekark.com/",
+        permanent: true,
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {

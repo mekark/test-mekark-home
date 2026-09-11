@@ -15,6 +15,7 @@ type EnquiryFormPayload = {
   startTimeline: string;
   budget: string;
   message: string;
+  sourcePage: string;
 };
 
 function normalizePhone(value: string) {
@@ -51,6 +52,11 @@ function parseEnquiryPayload(body: unknown): EnquiryFormPayload | null {
     typeof data.startTimeline === "string" ? data.startTimeline.trim() : "";
   const budget = typeof data.budget === "string" ? data.budget.trim() : "";
   const message = typeof data.message === "string" ? data.message.trim() : "";
+  const rawSourcePage =
+    typeof data.sourcePage === "string" ? data.sourcePage.trim() : "";
+  const sourcePage = rawSourcePage.startsWith("/")
+    ? rawSourcePage.slice(0, 300)
+    : "";
 
   if (!name || !phone || !industry || !sqf || !startTimeline || !budget) {
     return null;
@@ -76,6 +82,7 @@ function parseEnquiryPayload(body: unknown): EnquiryFormPayload | null {
     startTimeline: startTimeline || "Not specified",
     budget: budget || "Not specified",
     message,
+    sourcePage,
   };
 }
 

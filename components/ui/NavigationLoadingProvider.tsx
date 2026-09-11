@@ -118,7 +118,26 @@ export function NavigationLoadingProvider({
       }
 
       const href = anchor.getAttribute("href");
-      if (!href || !isInternalNavigation(href, pathname)) {
+      if (!href) {
+        return;
+      }
+
+      try {
+        const destination = new URL(href, window.location.href);
+
+        if (
+          pathname !== "/" &&
+          destination.origin === window.location.origin &&
+          destination.pathname === "/" &&
+          destination.hash === "#enquiry"
+        ) {
+          sessionStorage.setItem("enquiry_source", window.location.pathname);
+        }
+      } catch {
+        // Ignore malformed links and allow the browser to handle them normally.
+      }
+
+      if (!isInternalNavigation(href, pathname)) {
         return;
       }
 

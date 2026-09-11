@@ -120,6 +120,22 @@ function isValidPhone(phone: string) {
   return /^\d{10}$/.test(phone);
 }
 
+function getEnquirySource() {
+  try {
+    return sessionStorage.getItem("enquiry_source") ?? "";
+  } catch {
+    return "";
+  }
+}
+
+function clearEnquirySource() {
+  try {
+    sessionStorage.removeItem("enquiry_source");
+  } catch {
+    // Storage can be unavailable in privacy-restricted browsers.
+  }
+}
+
 function FormField({
   label,
   required,
@@ -283,6 +299,7 @@ export function EnquirySection() {
     const industry = String(formData.get("industry") ?? "").trim();
     const service = String(formData.get("service") ?? "").trim();
     const details = String(formData.get("message") ?? "").trim();
+    const sourcePage = getEnquirySource();
 
     const payload = {
       name: String(formData.get("name") ?? "").trim(),
@@ -296,6 +313,7 @@ export function EnquirySection() {
       startTimeline: String(formData.get("projectTimeline") ?? "").trim(),
       budget: String(formData.get("projectBudget") ?? "").trim(),
       message: details,
+      sourcePage,
     };
 
     setSubmitStatus("submitting");
@@ -321,6 +339,7 @@ export function EnquirySection() {
         return;
       }
 
+      clearEnquirySource();
       startNavigation();
       router.push("/thank-you");
     } catch (error) {

@@ -67,7 +67,7 @@ export default function EndToEnd() {
             alt=""
             width={602}
             height={752}
-            className="pointer-events-none absolute z-0 hidden opacity-60 lg:left-[68.63%] lg:top-[-16.64%] lg:block lg:h-[80.92%] lg:w-[31.35%] lg:object-cover"
+            className="pointer-events-none absolute z-[1] hidden opacity-60 lg:left-[68.63%] lg:top-[-16.64%] lg:block lg:h-[80.92%] lg:w-[31.35%] lg:object-cover"
             sizes="(max-width: 1920px) 31vw, 602px"
           />
 
@@ -76,7 +76,7 @@ export default function EndToEnd() {
             alt=""
             width={1147}
             height={341}
-            className="pointer-events-none absolute z-[1] hidden lg:left-[43.54%] lg:top-[51.36%] lg:block lg:h-[36.73%] lg:w-[59.73%] lg:object-contain"
+            className="pointer-events-none absolute z-0 hidden lg:left-[32%] lg:top-[-26%] lg:block lg:h-[140%] lg:w-[152%] lg:object-contain"
             sizes="(max-width: 1920px) 60vw, 1147px"
           />
 

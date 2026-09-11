@@ -303,6 +303,19 @@ export function OurHistoryPage() {
                   We didn&apos;t just inherit a business - we inherited a
                   responsibility to build better.
                 </p>
+                <motion.div
+                  variants={aboutQuoteIcon}
+                  className="absolute -bottom-9 right-1 h-[26px] w-[29px] rotate-180 sm:bottom-0 sm:right-0 sm:translate-x-[140%]"
+                  aria-hidden
+                >
+                  <Image
+                    src="/images/about/quotes-ltr.svg"
+                    alt=""
+                    fill
+                    className="object-contain"
+                    sizes="36px"
+                  />
+                </motion.div>
               </div>
             </motion.blockquote>
 
@@ -311,7 +324,7 @@ export function OurHistoryPage() {
               initial="hidden"
               whileInView="visible"
               viewport={VIEWPORT}
-              className="pb-2 sm:pb-4 lg:pb-0"
+              className="mt-4 pb-2 sm:mt-0 sm:pb-4 lg:pb-0"
             >
               <p className="max-w-[62ch] font-[family-name:var(--font-manrope)] text-base leading-[1.65] text-black sm:text-[clamp(1rem,1.15vw,1.125rem)] sm:leading-[1.65]">
                 Mekark exists because two generations refused to stop building.

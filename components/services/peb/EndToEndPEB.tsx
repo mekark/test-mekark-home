@@ -108,15 +108,6 @@ export default function EndToEndPEB() {
           />
 
           <Image
-            src="/images/services/peb/about/construction-base.png"
-            alt=""
-            width={1147}
-            height={341}
-            className="pointer-events-none absolute z-[1] hidden lg:left-[43.54%] lg:top-[51.36%] lg:block lg:h-[36.73%] lg:w-[59.73%] lg:object-contain"
-            sizes="(max-width: 1920px) 60vw, 1147px"
-          />
-
-          <Image
             src="/images/services/peb/about/peb-building.png"
             alt=""
             width={1054}

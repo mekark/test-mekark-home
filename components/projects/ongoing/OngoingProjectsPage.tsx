@@ -32,13 +32,13 @@ const PROJECTS: Project[] = [
   {
     title: "EPIL",
     type: "Turnkey",
-    location: "-",
+    location: "Chennai",
     image: "/images/projects/ongoing/1.jpg",
     categories: ["industrial", "peb"],
   },
   {
     title: "Orbitalls",
-    type: "Turnkey",
+    type: "Manufacturing Unit",
     location: "Ulundhurpet",
     image: "/images/projects/ongoing/2.jpg",
     categories: ["industrial", "peb"],

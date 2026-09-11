@@ -744,14 +744,22 @@ function SafetyCertificationsSection() {
       const goingUp = event.deltaY < 0;
       if (!goingDown && !goingUp) return;
 
+      // Only hijack the wheel while the section still fills the viewport. The
+      // moment it has been scrolled even a little - the header or the next
+      // section is showing - let the wheel move the whole page normally in
+      // both directions instead of snapping back to certificate stepping.
+      const rect = node.getBoundingClientRect();
+      const fillsViewport =
+        rect.top <= 2 && rect.bottom >= window.innerHeight - 2;
+      if (!fillsViewport) return;
+
       const current = activeRef.current;
       const withinBounds =
         (goingDown && current < lastIndex) || (goingUp && current > 0);
 
-      // Only step through certificates while there is another one to show in
-      // the scroll direction. At the first / last certificate the wheel is
-      // left alone so the page scrolls normally and the user can move on into
-      // the next (or previous) section instead of being trapped here.
+      // At the first / last certificate the wheel is left alone so the page
+      // scrolls normally and the user can move on into the next (or previous)
+      // section instead of being trapped here.
       if (!withinBounds) return;
 
       event.preventDefault();

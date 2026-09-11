@@ -414,6 +414,13 @@ const MOBILE_CERT_IMAGE_CLASS =
 
 const MOBILE_AUTO_SCROLL_INTERVAL = 4500;
 const MOBILE_AUTO_SCROLL_PAUSE = 10000;
+// After stepping onto the first/last certificate, keep absorbing wheel input
+// for a moment before handing off to native page scroll. A trackpad swipe
+// keeps firing momentum wheel events well after the finger lifts, and
+// without this grace period that same swipe both lands on the boundary
+// slide and immediately scrolls it away - so the last certificate is never
+// actually seen.
+const BOUNDARY_RELEASE_GRACE_MS = 500;
 const SLIDE_EASE = [0.22, 1, 0.36, 1] as const;
 
 const slideVariants = {
@@ -658,6 +665,7 @@ function SafetyCertificationsSection() {
   const touchStartY = useRef(0);
   const activeRef = useRef(0);
   const autoScrollPausedUntilRef = useRef(0);
+  const lastStepAtRef = useRef(0);
   const [active, setActive] = useState(0);
   const [direction, setDirection] = useState(1);
   const lastIndex = CERTIFICATES.length - 1;
@@ -674,6 +682,7 @@ function SafetyCertificationsSection() {
       setDirection(dir);
       setActive(next);
       activeRef.current = next;
+      lastStepAtRef.current = Date.now();
       window.setTimeout(() => {
         cooldownRef.current = false;
       }, 580);
@@ -737,6 +746,8 @@ function SafetyCertificationsSection() {
     const node = sectionRef.current;
     if (!node) return;
 
+    let restoreScrollBehaviorTimeout: number | undefined;
+
     const onWheel = (event: WheelEvent) => {
       if (window.matchMedia("(max-width: 639px)").matches) return;
 
@@ -760,7 +771,31 @@ function SafetyCertificationsSection() {
       // At the first / last certificate the wheel is left alone so the page
       // scrolls normally and the user can move on into the next (or previous)
       // section instead of being trapped here.
-      if (!withinBounds) return;
+      if (!withinBounds) {
+        // Still inside the grace window right after landing on this boundary
+        // slide - almost certainly momentum from the same swipe that just
+        // stepped here. Absorb it so the slide is actually shown instead of
+        // being scrolled straight past.
+        if (Date.now() - lastStepAtRef.current < BOUNDARY_RELEASE_GRACE_MS) {
+          event.preventDefault();
+          event.stopPropagation();
+          return;
+        }
+
+        // The page has `scroll-behavior: smooth` globally. Handing wheel
+        // events straight to that once we stop preventDefault-ing here makes
+        // the browser pile up an accelerating scroll animation on every
+        // subsequent tick, so the section jumps/overshoots instead of moving
+        // with the wheel. Drop to instant scrolling for this handoff so the
+        // page moves 1:1, then restore smooth scrolling shortly after.
+        const root = document.documentElement;
+        root.style.scrollBehavior = "auto";
+        window.clearTimeout(restoreScrollBehaviorTimeout);
+        restoreScrollBehaviorTimeout = window.setTimeout(() => {
+          root.style.scrollBehavior = "";
+        }, 300);
+        return;
+      }
 
       event.preventDefault();
       event.stopPropagation();
@@ -774,6 +809,8 @@ function SafetyCertificationsSection() {
     node.addEventListener("wheel", onWheel, { passive: false });
     return () => {
       node.removeEventListener("wheel", onWheel);
+      window.clearTimeout(restoreScrollBehaviorTimeout);
+      document.documentElement.style.scrollBehavior = "";
     };
   }, [goTo, lastIndex]);
 

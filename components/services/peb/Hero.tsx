@@ -10,7 +10,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
-import { SERVICE_BODY_TEXT_SIZES_SCALED } from "@/components/services/serviceTypography";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -177,7 +176,7 @@ function DesktopHero() {
         </motion.h1>
 
         <motion.p
-          className={`mt-[15px] w-full max-w-[1100px] text-center text-[rgba(5,7,12,0.5)] ${SERVICE_BODY_TEXT_SIZES_SCALED}`}
+          className="relative mt-[15px] flex w-full max-w-[1278px] items-center justify-center text-center font-manrope text-[18.67px] font-medium leading-[26.67px] text-gray-300"
           variants={fadeUp}
           initial="hidden"
           animate="visible"

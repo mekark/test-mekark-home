@@ -7,10 +7,6 @@ import {
   civilMobileHeroImageDefaults,
   civilMobileHeroLayout,
 } from "@/components/services/serviceMobileHeroCivilLayout";
-import {
-  SERVICE_BODY_TEXT_SIZES,
-  SERVICE_BODY_TEXT_SIZES_SCALED,
-} from "@/components/services/serviceTypography";
 import styles from "./index.module.css";
 
 const heroDescription =
@@ -119,7 +115,7 @@ export default function Hero() {
               <br />
               Manufacturer
             </h1>
-            <p className={`${styles.mekarkDesignsFabricates} ${SERVICE_BODY_TEXT_SIZES_SCALED} text-[rgba(5,7,12,0.55)]`}>
+            <p className={`${styles.mekarkDesignsFabricates} relative flex max-w-[1278px] items-center font-manrope text-[18.67px] font-medium leading-[26.67px] text-gray-300`}>
               Mekark designs, fabricates, and installs high-strength PTFE and ETFE
               tensile fabric structures for stadiums, car parks, industrial sheds,
               and commercial

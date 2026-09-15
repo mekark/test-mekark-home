@@ -6,10 +6,6 @@ import {
   civilMobileHeroLayout,
   greyMobileHeroBottomGradient,
 } from "@/components/services/serviceMobileHeroCivilLayout";
-import {
-  SERVICE_BODY_TEXT_SIZES,
-  SERVICE_BODY_TEXT_SIZES_SCALED,
-} from "@/components/services/serviceTypography";
 
 const mobileStats = [
   {
@@ -209,7 +205,7 @@ export default function Hero() {
           <b className="relative self-stretch whitespace-nowrap font-manrope text-[clamp(1.75rem,2.05vw,40px)] font-bold leading-[46px] tracking-[-0.9px] text-gray">
             South India&apos;s Leading Industrial MEP Contractor &amp; Turnkey MEP Contracting Company
           </b>
-          <div className={`relative flex w-full max-w-[1158px] items-center text-gray-300 ${SERVICE_BODY_TEXT_SIZES_SCALED}`}>
+          <div className="relative flex w-full max-w-[1278px] items-center font-manrope text-[18.67px] font-medium leading-[26.67px] text-gray-300">
             {heroDescription}
           </div>
           <div className="relative h-[50.7px] w-[400px] text-[16px] text-white">

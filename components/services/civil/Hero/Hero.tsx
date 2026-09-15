@@ -10,7 +10,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
-import { SERVICE_BODY_TEXT_SIZES_SCALED } from "@/components/services/serviceTypography";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 16 },
@@ -46,13 +45,13 @@ const mainStats: {
       <CountUp end={40000} delay={0.75} format={formatWithCommas}>
         {(n) => (
           <>
-            {n} <span className="text-[#ed2024]">MT Annually</span>
+            {n} <span className="text-[#ed2024]">MT</span>
           </>
         )}
       </CountUp>
     ),
-    label: "Successful Commercial & Industrial Projects",
-    mobileLabel: "Industrial Projects",
+    label: "Annual Production Capacity",
+    mobileLabel: "Annual Production Capacity",
   },
   {
     value: (
@@ -171,7 +170,7 @@ function DesktopHero() {
 
       {/* Copy + CTAs */}
       <motion.div
-        className="relative z-10 mx-auto flex w-full max-w-none flex-col items-center gap-5 px-8 pt-28 text-center text-[48px] text-gray-100 opacity-[0.9]"
+        className="relative z-10 mx-auto flex w-full max-w-none flex-col items-center gap-5 px-8 pt-28 text-center text-[48px] text-gray-100"
         initial="hidden"
         animate="visible"
         variants={{
@@ -192,7 +191,7 @@ function DesktopHero() {
         <motion.p
           variants={fadeUp}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className={`max-w-[1278px] text-gray-300 ${SERVICE_BODY_TEXT_SIZES_SCALED}`}
+          className="relative flex max-w-[1278px] items-center justify-center text-center font-manrope text-[18.67px] font-medium leading-[26.67px] text-gray-300"
         >
           {heroDescription}
         </motion.p>

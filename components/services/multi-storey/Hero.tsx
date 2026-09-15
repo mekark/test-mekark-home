@@ -9,7 +9,6 @@ import {
   civilMobileHeroLayout,
 } from "@/components/services/serviceMobileHeroCivilLayout";
 import { animate, motion, useInView, useReducedMotion } from "framer-motion";
-import { SERVICE_BODY_TEXT_SIZES_SCALED } from "@/components/services/serviceTypography";
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
@@ -197,7 +196,7 @@ function DesktopHero() {
           </motion.h1>
 
           <motion.p
-            className={`w-full text-gray-300 ${SERVICE_BODY_TEXT_SIZES_SCALED}`}
+            className="relative flex w-full max-w-[1278px] items-center font-manrope text-[18.67px] font-medium leading-[26.67px] text-gray-300"
             initial={reduceMotion ? false : { opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: easeOut, delay: 0.3 }}

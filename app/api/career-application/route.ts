@@ -47,8 +47,8 @@ export async function POST(request: NextRequest) {
     const payload: CareerApplicationPayload = {
       name: body.name!.trim(),
       email: body.email!.trim(),
-      role: body.role?.trim(),
-      experience: body.experience?.trim(),
+      role: body.role!.trim(),
+      experience: body.experience!.trim(),
       expertise: body.expertise!.trim(),
       applicationType: body.applicationType?.trim() || "Open Application",
       sourceDomain: body.sourceDomain?.trim(),

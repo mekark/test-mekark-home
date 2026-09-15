@@ -58,11 +58,22 @@ function parseEnquiryPayload(body: unknown): EnquiryFormPayload | null {
     ? rawSourcePage.slice(0, 300)
     : "";
 
-  if (!name || !phone || !industry || !sqf || !startTimeline || !budget) {
+  if (
+    !name ||
+    !email ||
+    !phone ||
+    !company ||
+    !industry ||
+    !service ||
+    !sqf ||
+    !startTimeline ||
+    !budget ||
+    !message
+  ) {
     return null;
   }
 
-  if (email && !isValidEmail(email)) {
+  if (!isValidEmail(email)) {
     return null;
   }
 
@@ -76,11 +87,11 @@ function parseEnquiryPayload(body: unknown): EnquiryFormPayload | null {
     phone,
     company,
     location,
-    industry: industry || "General Enquiry",
+    industry,
     service,
     sqf,
-    startTimeline: startTimeline || "Not specified",
-    budget: budget || "Not specified",
+    startTimeline,
+    budget,
     message,
     sourcePage,
   };

@@ -1,8 +1,8 @@
 export type CareerApplicationPayload = {
   name: string;
   email: string;
-  role?: string;
-  experience?: string;
+  role: string;
+  experience: string;
   expertise: string;
   applicationType?: string;
   sourceDomain?: string;
@@ -38,6 +38,14 @@ export function validateCareerPayload(
 
   if (!EMAIL_PATTERN.test(String(body.email).trim())) {
     return "Enter a valid email address";
+  }
+
+  if (!hasValue(body.role)) {
+    return "Current role / designation is required";
+  }
+
+  if (!hasValue(body.experience)) {
+    return "Years of experience is required";
   }
 
   if (!hasValue(body.expertise) || body.expertise === "Area of Expertise") {

@@ -26,9 +26,12 @@ export default function FooterCta() {
                 <span className={styles.descLine}>
                   Tell us your process requirements: cleanroom class, production
                   size, location, and timeline. As a leading electronics
-                  manufacturing facility construction company and trusted
-                  cleanroom builder in South India, Mekark will have a
-                  preliminary design and estimate ready within 24 hours.
+                  manufacturing facility
+                </span>
+                <span className={styles.descLine}>
+                  construction company and trusted cleanroom builder in South
+                  India, Mekark will have a preliminary design and estimate
+                  ready within 24 hours.
                 </span>
               </div>
             </div>

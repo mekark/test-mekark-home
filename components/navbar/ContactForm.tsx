@@ -100,17 +100,24 @@ export default function ContactForm() {
       newErrors.name = "Name is required";
     }
 
+    if (!formData.company.trim()) {
+      newErrors.company = "Company name is required";
+    }
+
     if (!formData.phone.trim()) {
       newErrors.phone = "Mobile number is required";
     } else if (!/^\d{10}$/.test(formData.phone)) {
       newErrors.phone = "Mobile number must be exactly 10 digits";
     }
 
-    if (
-      formData.email.trim() &&
-      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
-    ) {
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = "Enter a valid email address";
+    }
+
+    if (!formData.service) {
+      newErrors.service = "Please select a service";
     }
 
     if (!formData.sqf) {
@@ -123,6 +130,10 @@ export default function ContactForm() {
 
     if (!formData.budget) {
       newErrors.budget = "Please select a project budget";
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required";
     }
 
     setErrors(newErrors);
@@ -163,7 +174,8 @@ export default function ContactForm() {
           phone: formData.phone.trim(),
           company: formData.company.trim(),
           location: "",
-          industry: formData.service || "General Enquiry",
+          industry: formData.service,
+          service: formData.service,
           sqf: formData.sqf,
           startTimeline: formData.startTimeline,
           budget: formData.budget,
@@ -227,6 +239,7 @@ export default function ContactForm() {
             <input
               id="contact-name"
               type="text"
+              required
               value={formData.name}
               onChange={(e) => {
                 setFormData({ ...formData, name: e.target.value });
@@ -247,18 +260,23 @@ export default function ContactForm() {
             transition={{ duration: 0.4, delay: 0.1 }}
           >
             <label htmlFor="contact-company" className={labelClass}>
-              Company Name
+              Company Name <span className="text-[#ED2024]">*</span>
             </label>
             <input
               id="contact-company"
               type="text"
+              required
               value={formData.company}
-              onChange={(e) =>
-                setFormData({ ...formData, company: e.target.value })
-              }
+              onChange={(e) => {
+                setFormData({ ...formData, company: e.target.value });
+                clearError("company");
+              }}
               placeholder="Enter your company name"
               className={inputClass}
             />
+            {errors.company && (
+              <p className="text-red-500 text-xs mt-1">{errors.company}</p>
+            )}
           </motion.div>
         </div>
 
@@ -275,6 +293,7 @@ export default function ContactForm() {
             <input
               id="contact-phone"
               type="tel"
+              required
               inputMode="numeric"
               maxLength={10}
               value={formData.phone}
@@ -294,11 +313,12 @@ export default function ContactForm() {
             transition={{ duration: 0.4, delay: 0.2 }}
           >
             <label htmlFor="contact-email" className={labelClass}>
-              Email <span className="text-gray-400 font-normal">(optional)</span>
+              Email <span className="text-[#ED2024]">*</span>
             </label>
             <input
               id="contact-email"
               type="email"
+              required
               value={formData.email}
               onChange={(e) => {
                 setFormData({ ...formData, email: e.target.value });
@@ -321,15 +341,16 @@ export default function ContactForm() {
             transition={{ duration: 0.4, delay: 0.2 }}
           >
             <label htmlFor="contact-service" className={labelClass}>
-              Select Service{" "}
-              <span className="text-gray-400 font-normal">(optional)</span>
+              Select Service <span className="text-[#ED2024]">*</span>
             </label>
             <select
               id="contact-service"
+              required
               value={formData.service}
-              onChange={(e) =>
-                setFormData({ ...formData, service: e.target.value })
-              }
+              onChange={(e) => {
+                setFormData({ ...formData, service: e.target.value });
+                clearError("service");
+              }}
               className={selectClass}
               style={selectArrowStyle}
             >
@@ -340,6 +361,9 @@ export default function ContactForm() {
                 </option>
               ))}
             </select>
+            {errors.service && (
+              <p className="text-red-500 text-xs mt-1">{errors.service}</p>
+            )}
           </motion.div>
 
           <motion.div
@@ -353,6 +377,7 @@ export default function ContactForm() {
             </label>
             <select
               id="contact-sqf"
+              required
               value={formData.sqf}
               onChange={(e) => {
                 setFormData({ ...formData, sqf: e.target.value });
@@ -384,6 +409,7 @@ export default function ContactForm() {
             </label>
             <select
               id="contact-startTimeline"
+              required
               value={formData.startTimeline}
               onChange={(e) => {
                 setFormData({ ...formData, startTimeline: e.target.value });
@@ -415,6 +441,7 @@ export default function ContactForm() {
             </label>
             <select
               id="contact-budget"
+              required
               value={formData.budget}
               onChange={(e) => {
                 setFormData({ ...formData, budget: e.target.value });
@@ -443,18 +470,23 @@ export default function ContactForm() {
           transition={{ duration: 0.4, delay: 0.25 }}
         >
           <label htmlFor="contact-message" className={labelClass}>
-            Message
+            Message <span className="text-[#ED2024]">*</span>
           </label>
           <textarea
             id="contact-message"
             rows={4}
+            required
             value={formData.message}
-            onChange={(e) =>
-              setFormData({ ...formData, message: e.target.value })
-            }
+            onChange={(e) => {
+              setFormData({ ...formData, message: e.target.value });
+              clearError("message");
+            }}
             placeholder="Tell us about your project or enquiry"
             className="mt-1 w-full px-4 py-3 rounded-lg border border-gray-200 bg-white text-[#111] text-[14px] placeholder:text-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-[#ED2024]/30"
           />
+          {errors.message && (
+            <p className="text-red-500 text-xs mt-1">{errors.message}</p>
+          )}
         </motion.div>
 
         {submitError && (

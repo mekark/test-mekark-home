@@ -156,11 +156,13 @@ export function CtaSection() {
             />
             <input
               name="role"
+              required
               placeholder="Current Role / Designation"
               className="h-[48px] w-full min-w-0 rounded-[10px] border border-[#e8e8e8] bg-white px-[18px] text-[16px] font-medium text-[#111111] outline-none placeholder:text-[#888888] sm:rounded-none sm:text-[14px]"
             />
             <input
               name="experience"
+              required
               placeholder="Years of Experience"
               className="h-[48px] w-full min-w-0 rounded-[10px] border border-[#e8e8e8] bg-white px-[18px] text-[16px] font-medium text-[#111111] outline-none placeholder:text-[#888888] sm:rounded-none sm:text-[14px]"
             />

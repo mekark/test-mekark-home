@@ -150,8 +150,7 @@ function FormField({
   return (
     <div className={className ?? styles.field}>
       <label className={styles.name}>
-        {label}
-        {required ? " *" : ""}
+        {required ? `${label} *` : label}
       </label>
       {children}
     </div>
@@ -512,10 +511,11 @@ export function EnquirySection() {
                       className={styles.input}
                     />
                   </FormField>
-                  <FormField label="Company">
+                  <FormField label="Company" required>
                     <input
                       type="text"
                       name="company"
+                      required
                       placeholder="Company name"
                       className={styles.input}
                     />
@@ -523,10 +523,11 @@ export function EnquirySection() {
                 </div>
 
                 <div className={styles.formRow}>
-                  <FormField label="Location">
+                  <FormField label="Location" required>
                     <input
                       type="text"
                       name="location"
+                      required
                       placeholder="City / District"
                       className={styles.input}
                     />
@@ -544,10 +545,11 @@ export function EnquirySection() {
                 </div>
 
                 <div className={styles.formRow}>
-                  <FormField label="Service">
+                  <FormField label="Service" required>
                     <SelectField
                       id="enquiry-service"
                       name="service"
+                      required
                       value={serviceType}
                       onChange={setServiceType}
                       options={SERVICE_TYPES}
@@ -588,10 +590,15 @@ export function EnquirySection() {
                   </FormField>
                 </div>
 
-                <FormField label="Project Details" className={styles.fieldFull}>
+                <FormField
+                  label="Project Details"
+                  required
+                  className={styles.fieldFull}
+                >
                   <textarea
                     name="message"
                     rows={3}
+                    required
                     value={message}
                     onChange={(event) => setMessage(event.target.value)}
                     placeholder="Describe your project — type, usage, timeline…"

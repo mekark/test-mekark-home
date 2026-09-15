@@ -54,7 +54,7 @@ const faqItems: FAQItem[] = [
   {
     question: "How long does a typical PEB construction project take?",
     answer:
-      "Timelines vary by scale and scope, but PEB construction is significantly faster than conventional construction—up to 50% faster—with a standard industrial shed typically completed in X–Y weeks once the design is finalized.",
+      "Timelines vary by scale and scope, but PEB construction is significantly faster than conventional construction—up to 50% faster—with a standard industrial shed typically completed in 20-22 weeks* once the design is finalized.",
   },
   {
     question:

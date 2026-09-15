@@ -109,7 +109,7 @@ const processSteps = [
   },
   {
     title: "In-House Fabrication",
-    body: "Manufactured at our X lakh sq. ft. facility under quality checks",
+    body: "Manufactured at our 70 lakh sq. ft. Project facility under quality checks",
     icon: "/images/services/peb/peb-solutions/fabrication.svg",
   },
   {

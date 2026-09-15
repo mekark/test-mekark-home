@@ -27,7 +27,7 @@ const faqItems = [
     number: "04",
     question: "How long does a typical industrial MEP project take?",
     answer:
-      "Timelines vary by scale and system complexity, but our five-stage process typically delivers a standard project in x–y weeks once design is finalised, and long-lead equipment is confirmed.",
+      "Timelines vary by scale and system complexity, but our five-stage process typically delivers a standard project in 20-22 weeks* once design is finalised, and long-lead equipment is confirmed.",
   },
   {
     number: "05",

@@ -37,7 +37,7 @@ const mobileStats = [
         70 lakh <span className="text-[#ed2024]">+ Sq.ft.</span>
       </>
     ),
-    mobileLabel: "Mfg. Campus",
+    mobileLabel: "Projects Completed",
   },
   {
     key: "engineers",
@@ -174,7 +174,7 @@ export default function Hero() {
               </div>
               <div className="text-[10.67px] text-gray-400">
                 <div className="relative tracking-[1.6px] leading-[9.57px] font-semibold capitalize">
-                  Manufacturing Campus
+                  Projects Completed
                 </div>
               </div>
             </div>

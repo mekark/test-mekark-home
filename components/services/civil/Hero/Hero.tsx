@@ -46,7 +46,7 @@ const mainStats: {
       <CountUp end={40000} delay={0.75} format={formatWithCommas}>
         {(n) => (
           <>
-            {n} <span className="text-[#ed2024]">MT</span>
+            {n} <span className="text-[#ed2024]">MT Annually</span>
           </>
         )}
       </CountUp>

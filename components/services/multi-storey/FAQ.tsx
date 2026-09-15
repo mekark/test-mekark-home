@@ -24,7 +24,7 @@ const faqs = [
   {
     question: "How long does a typical project take?",
     answer:
-      "Timelines vary by scale, but pre-engineered steel construction typically delivers a standard project faster than conventional RCC — usually x–y weeks once design is finalised.",
+      "Timelines vary by scale, but pre-engineered steel construction typically delivers a standard project faster than conventional RCC — usually 20–22 weeks* once design is finalised.",
   },
   {
     question:

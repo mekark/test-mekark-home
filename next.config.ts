@@ -33,6 +33,61 @@ const nextConfig: NextConfig = {
         destination: "https://factorybuildingmanufacturer.mekark.com/",
         permanent: true,
       },
+      {
+        source: "/manufacturing",
+        destination: "https://manufacturing.mekark.com/",
+        permanent: true,
+      },
+      {
+        source: "/blog",
+        destination: "https://blog.mekark.com/",
+        permanent: true,
+      },
+      {
+        source: "/gallery",
+        destination: "/about/life-at-mekark",
+        permanent: true,
+      },
+      {
+        source: "/peb-contractor",
+        destination: "/services/peb",
+        permanent: true,
+      },
+      {
+        source: "/tensile-fabric-roofing",
+        destination: "/services/tensile",
+        permanent: true,
+      },
+      {
+        source: "/about-us",
+        destination: "/about/our-history",
+        permanent: true,
+      },
+      {
+        source: "/videos",
+        destination: "/about/life-at-mekark",
+        permanent: true,
+      },
+      {
+        source: "/multi-level-car-parking-system-manufacturer-company-chennai",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/multi-storey-building-manufacturer",
+        destination: "/services/multi-storey",
+        permanent: true,
+      },
+      {
+        source: "/peb-industrial-shed-supplier",
+        destination: "/services/peb",
+        permanent: true,
+      },
+      {
+        source: "/architectural-design-detailing-drafting-chennai",
+        destination: "/",
+        permanent: true,
+      },
     ];
   },
   images: {

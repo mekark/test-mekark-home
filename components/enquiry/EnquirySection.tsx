@@ -555,7 +555,7 @@ export function EnquirySection() {
                       options={SERVICE_TYPES}
                     />
                   </FormField>
-                  <FormField label="Project Area" required>
+                  <FormField label="Project (Sq.ft)" required>
                     <SelectField
                       id="enquiry-area"
                       name="sqft"

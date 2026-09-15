@@ -55,7 +55,7 @@ type FiveSPoint = (typeof FIVE_S_POINTS)[number];
 function FiveSPointCard({ point }: { point: FiveSPoint }) {
   return (
     <article
-      className="relative flex h-full w-full min-w-0 flex-col items-center justify-center rounded-[14px] px-3 py-5 text-center shadow-[0_12px_26px_rgba(22,22,22,0.05),0_3px_8px_rgba(22,22,22,0.04)] sm:px-4 sm:py-6 lg:min-h-0 lg:px-3 lg:py-6 xl:px-4 xl:py-8 2xl:min-h-[510px] 2xl:px-5 2xl:py-12"
+      className="relative flex h-full w-full min-w-0 flex-col items-center justify-start rounded-[14px] px-3 py-5 text-center shadow-[0_12px_26px_rgba(22,22,22,0.05),0_3px_8px_rgba(22,22,22,0.04)] sm:px-4 sm:py-6 lg:min-h-0 lg:px-3 lg:py-6 xl:px-4 xl:py-8 2xl:min-h-[510px] 2xl:px-5 2xl:py-12"
       style={{
         backgroundImage:
           "linear-gradient(180deg, #fefefe 0%, #fafafa 42%, #f4f4f4 78%, #f1f1f1 100%)",
@@ -69,12 +69,12 @@ function FiveSPointCard({ point }: { point: FiveSPoint }) {
         aria-hidden
         className="mb-2.5 flex size-14 shrink-0 items-center justify-center rounded-full border-2 border-[#e50818] bg-[radial-gradient(circle_at_50%_34%,#fff_0%,#fdfdfd_62%,#f8f8f8_100%)] shadow-[0_7px_8px_rgba(20,20,20,0.07),0_1px_1.5px_rgba(20,20,20,0.05)] sm:mb-3 sm:size-16 lg:mb-3 lg:size-[clamp(3.5rem,5vw,4.75rem)] 2xl:mb-6 2xl:size-[clamp(6rem,7.5vw,9.0625rem)]"
       >
-        <div className="relative size-6 sm:size-7 lg:size-[clamp(1.5rem,2.2vw,2.25rem)] 2xl:size-[clamp(2.5rem,3.2vw,3.75rem)]">
+        <div className="relative flex size-6 shrink-0 items-center justify-center sm:size-7 lg:size-[clamp(1.5rem,2.2vw,2.25rem)] 2xl:size-[clamp(2.5rem,3.2vw,3.75rem)]">
           <Image
             src={point.icon}
             alt=""
             fill
-            className="object-contain"
+            className="object-contain object-center"
             sizes="(max-width: 1024px) 28px, (max-width: 1536px) 36px, 60px"
           />
         </div>

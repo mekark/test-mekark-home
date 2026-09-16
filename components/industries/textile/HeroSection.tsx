@@ -17,9 +17,9 @@ export default function HeroSection() {
       </div>
       <div className={styles.heroGradient} aria-hidden />
       <div className={styles.content}>
-        <b className={styles.title}>
+        <h1 className={styles.title}>
           Leading Textile Mill &amp; Factory Building Contractor in South India
-        </b>
+        </h1>
         <div className={styles.description}>
           Mekark is South India&apos;s trusted textile factory building
           contractor, constructing spinning mills, weaving sheds, garment

@@ -203,9 +203,9 @@ export function HeroSection() {
                 aria-hidden
               />
               <div>
-                <h2 className="font-[family-name:var(--font-manrope)] text-[clamp(1.75rem,calc(0.5rem+3.2vw),2.75rem)] leading-[1.1] font-semibold tracking-[-0.02em] text-mekark-white">
+                <h1 className="font-[family-name:var(--font-manrope)] text-[clamp(1.75rem,calc(0.5rem+3.2vw),2.75rem)] leading-[1.1] font-semibold tracking-[-0.02em] text-mekark-white">
                   {activeVideo.title}
-                </h2>
+                </h1>
                 <p className="mt-2 max-w-md font-[family-name:var(--font-manrope)] text-sm leading-relaxed text-white/65 sm:mt-2.5 sm:text-[15px] xl:mt-3 xl:text-base">
                   {activeVideo.subtitle}
                 </p>

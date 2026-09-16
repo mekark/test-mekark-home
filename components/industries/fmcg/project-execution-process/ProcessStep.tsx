@@ -43,15 +43,21 @@ export function ProcessStep({ step, index, mobile = false }: ProcessStepProps) {
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
-      <p className={`text-[32px] font-medium leading-none text-[#f01d23] sm:text-[40px] ${macStyles.stepNumber}`}>
+      <p
+        className={`shrink-0 text-[32px] font-medium leading-none text-[#f01d23] sm:text-[40px] ${macStyles.stepNumber}`}
+      >
         {step.number}
       </p>
 
       <div className={`flex flex-col gap-2.5 ${macStyles.stepContent}`}>
-        <h3 className={`text-base font-semibold leading-normal text-[#3c3938] sm:text-lg ${macStyles.stepTitle}`}>
+        <h3
+          className={`text-base font-semibold leading-[1.35] text-[#3c3938] sm:text-lg ${macStyles.stepTitle}`}
+        >
           {step.title}
         </h3>
-        <p className={`whitespace-normal text-sm leading-[21px] text-[#555] min-[1650px]:whitespace-pre-line ${macStyles.stepDesc}`}>
+        <p
+          className={`whitespace-normal text-left text-sm leading-[21px] text-[#555] min-[1650px]:whitespace-pre-line ${macStyles.stepDesc}`}
+        >
           {step.description}
         </p>
       </div>

@@ -15,27 +15,35 @@ const DataCenterHeroBanner = () => {
       </div>
       <div className={styles.divabsolute} />
       <div className={styles.div}>
-        <b className={styles.leadingPreEngineeredWarehou}>
+        <h1 className={styles.leadingPreEngineeredWarehou}>
           <span className={styles.titleLine}>
             Leading Data Centre Construction
           </span>
           <span className={styles.titleLine}>
             Company in South India
           </span>
-        </b>
+        </h1>
         <div className={styles.logisticsIndustrialStructuWrapper}>
-          <b className={styles.logisticsIndustrial}>
+          <h2 className={styles.logisticsIndustrial}>
             <span className={styles.subLine}>
               Tier III/IV Compliant Facilities, Precision Cooling &amp; MEP
             </span>
             <span className={styles.subLine}>Infrastructure by Mekark</span>
-          </b>
+          </h2>
         </div>
         <div className={styles.mekarkIsATrustedPreEngineWrapper}>
           <div className={styles.mekarkIsA}>
-            Mekark builds turnkey hyperscale, colocation, and modular data
-            centres across Tamil Nadu, Karnataka, Andhra Pradesh, Telangana,
-            and Kerala. Engineered for uptime, redundancy, and rapid go-live.
+            <span className={styles.descLine}>
+              Mekark builds turnkey hyperscale, colocation, and modular data
+              centres across Tamil Nadu,
+            </span>
+            <span className={styles.descLine}>
+              Karnataka, Andhra Pradesh, Telangana, and Kerala. Engineered for
+              uptime,
+            </span>
+            <span className={styles.descLine}>
+              redundancy, and rapid go-live.
+            </span>
           </div>
         </div>
         <a href="/#enquiry" className={styles.component5}>

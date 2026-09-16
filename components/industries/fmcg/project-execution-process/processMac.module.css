@@ -67,6 +67,7 @@
     max-width: 100% !important;
     font-size: clamp(12px, 0.8vw, 15px) !important;
     line-height: 1.5 !important;
+    text-align: left !important;
   }
 
   .connector {
@@ -74,5 +75,7 @@
     height: clamp(12px, 1.02083vw, 20px) !important;
     width: clamp(40px, 3.47396vw, 67px) !important;
     align-self: center !important;
+    margin-top: 0 !important;
+    transform: translateX(-8px) translateY(-12px) !important;
   }
 }

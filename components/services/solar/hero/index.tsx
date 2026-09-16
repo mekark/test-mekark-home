@@ -143,9 +143,9 @@ export default function Hero() {
           </div>
         </div>
         <div className={styles.text}>
-          <b className={styles.southIndiasTrusted}>
+          <h1 className={styles.southIndiasTrusted}>
             South India&apos;s Trusted Commercial Solar Installation Contractor
-          </b>
+          </h1>
           <div className={`${styles.mekarkDeliversEndToEnd} ${SERVICE_BODY_TEXT_SIZES_SCALED} text-[rgba(5,7,12,0.5)]`}>
             {heroDescription}
           </div>

@@ -15,21 +15,21 @@ const PharmaceuticalHeroBanner = () => {
       </div>
       <div className={styles.divabsolute} />
       <div className={styles.div}>
-        <b className={styles.leadingPreEngineeredWarehou}>
+        <h1 className={styles.leadingPreEngineeredWarehou}>
           <span className={styles.titleLine}>
             Leading Pharmaceutical Manufacturing
           </span>
           <span className={styles.titleLine}>
             Facility Construction Company in South India
           </span>
-        </b>
+        </h1>
         <div className={styles.logisticsIndustrialStructuWrapper}>
-          <b className={styles.logisticsIndustrial}>
+          <h2 className={styles.logisticsIndustrial}>
             <span className={styles.subLine}>
               GMP Cleanrooms, Sterile Plants &amp; Cold Chain
             </span>
             <span className={styles.subLine}>Infrastructure by Mekark</span>
-          </b>
+          </h2>
         </div>
         <div className={styles.mekarkIsATrustedPreEngineWrapper}>
           <div className={styles.mekarkIsA}>

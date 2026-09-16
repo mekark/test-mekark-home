@@ -25,13 +25,13 @@ export default function LogisticsHero() {
       </div>
       <div className={styles.divabsolute} />
       <div className={styles.div}>
-        <b className={styles.leadingPreEngineeredWarehou}>
+        <h1 className={styles.leadingPreEngineeredWarehou}>
           Leading Pre-Engineered Warehouse Building Manufacturer in South India
-        </b>
+        </h1>
         <div className={styles.logisticsIndustrialStructuWrapper}>
-          <b className={styles.logisticsIndustrial}>
+          <h2 className={styles.logisticsIndustrial}>
             Logistics &amp; Industrial Structures by Mekark
-          </b>
+          </h2>
         </div>
         <div className={styles.mekarkIsATrustedPreEngineWrapper}>
           <div className={styles.mekarkIsA}>

@@ -17,30 +17,38 @@ const FoodBeverageHeroBanner = () => {
       </div>
       <div className={styles.divabsolute} />
       <div className={styles.div}>
-        <b className={styles.leadingPreEngineeredWarehou}>
+        <h1 className={styles.leadingPreEngineeredWarehou}>
           <span className={styles.titleLine}>
             Leading Food &amp; Beverage Manufacturing
           </span>
           <span className={styles.titleLine}>
             Facility Construction Company in South India
           </span>
-        </b>
+        </h1>
         <div className={styles.logisticsIndustrialStructuWrapper}>
-          <b className={styles.logisticsIndustrial}>
+          <h2 className={styles.logisticsIndustrial}>
             <span className={styles.subLine}>
               HACCP-Compliant Plants, Cold Storage &amp;
             </span>
             <span className={styles.subLine}>
               Hygienic Infrastructure by Mekark
             </span>
-          </b>
+          </h2>
         </div>
         <div className={styles.mekarkIsATrustedPreEngineWrapper}>
           <div className={styles.mekarkIsA}>
-            Mekark builds turnkey food processing plants, beverage bottling
-            facilities, dairy units, and cold storage infrastructure across Tamil
-            Nadu, Karnataka, Andhra Pradesh, Telangana, and Kerala. Engineered
-            for hygiene and delivered on time.
+            <span className={styles.descLine}>
+              Mekark builds turnkey food processing plants, beverage bottling
+              facilities,
+            </span>
+            <span className={styles.descLine}>
+              dairy units, and cold storage infrastructure across Tamil Nadu,
+              Karnataka, Andhra Pradesh,
+            </span>
+            <span className={styles.descLine}>
+              Telangana, and Kerala. Engineered for hygiene and delivered on
+              time.
+            </span>
           </div>
         </div>
         <a href="/#enquiry" className={styles.component5}>

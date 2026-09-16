@@ -15,16 +15,16 @@ export default function LogisticsHeroBanner() {
       />
       <div className={styles.divabsolute} />
       <div className={styles.div}>
-        <b className={styles.leadingTitle}>
+        <h1 className={styles.leadingTitle}>
           Leading Automation Manufacturing Facility
           <br />
           Construction Company in South India
-        </b>
+        </h1>
         <div className={styles.highlightWrapper}>
-          <b className={styles.highlight}>
+          <h2 className={styles.highlight}>
             Smart Factories, Robotics Plants &amp; Industry 4.0-Ready
             Infrastructure by Mekark
-          </b>
+          </h2>
         </div>
         <div className={styles.descriptionWrapper}>
           <div className={styles.description}>

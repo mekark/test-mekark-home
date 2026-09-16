@@ -71,6 +71,7 @@
 .leadingPreEngineeredWarehou {
   	align-self: stretch;
   	position: relative;
+  	font-weight: 700;
 }
 .logisticsIndustrialStructuWrapper {
   	width: 100%;
@@ -100,6 +101,7 @@
   	align-items: center;
   	width: calc(100% - 1.5625vw);
   	flex-shrink: 0;
+  	font-weight: 700;
 }
 .mekarkIsATrustedPreEngineWrapper {
   	align-self: stretch;

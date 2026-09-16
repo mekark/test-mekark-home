@@ -202,9 +202,9 @@ export default function Hero() {
         </div>
 
         <div className="relative z-[1] flex w-full shrink-0 flex-col items-start gap-5 pl-32 pr-[131px] pt-32 text-[40px] text-gray-100 opacity-90">
-          <b className="relative self-stretch whitespace-nowrap font-manrope text-[clamp(1.75rem,2.05vw,40px)] font-bold leading-[46px] tracking-[-0.9px] text-gray">
+          <h1 className="relative self-stretch whitespace-nowrap font-manrope text-[clamp(1.75rem,2.05vw,40px)] font-bold leading-[46px] tracking-[-0.9px] text-gray">
             South India&apos;s Leading Industrial MEP Contractor &amp; Turnkey MEP Contracting Company
-          </b>
+          </h1>
           <div className="relative flex w-full max-w-[1278px] items-center font-manrope text-[18.67px] font-medium leading-[26.67px] text-gray-300">
             {heroDescription}
           </div>

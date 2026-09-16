@@ -79,6 +79,7 @@
   gap: 0.35vw;
   line-height: 1.2;
   font-size: 2.9vw;
+  font-weight: 700;
 }
 .titleLine {
   display: block;
@@ -113,6 +114,7 @@
   gap: 0.2vw;
   box-sizing: border-box;
   flex-shrink: 0;
+  font-weight: 700;
 }
 .subLine {
   display: block;
@@ -209,9 +211,12 @@
     line-height: 1.2;
   }
   .titleLine,
-  .subLine,
-  .descLine {
+  .subLine {
     white-space: nowrap;
+  }
+  .descLine {
+    display: inline;
+    white-space: normal;
   }
   .logisticsIndustrialStructuWrapper {
     height: auto;
@@ -316,10 +321,14 @@
     max-width: 342px;
   }
   .titleLine,
-  .subLine,
-  .descLine {
+  .subLine {
     white-space: normal;
     line-height: 100%;
+  }
+  .descLine {
+    display: inline;
+    white-space: normal;
+    line-height: 1.5;
   }
   .logisticsIndustrialStructuWrapper {
     font-size: 15px;

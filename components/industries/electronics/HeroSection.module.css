@@ -127,6 +127,11 @@
   font-weight: 400;
 }
 
+.descLine {
+  display: block;
+  white-space: nowrap;
+}
+
 .component5 {
   box-shadow: 0px 0.555556vw 2.222396vw rgba(196, 22, 28, 0.3);
   border-radius: 0.555729vw;
@@ -268,6 +273,11 @@
     white-space: normal;
   }
 
+  .descLine {
+    display: inline;
+    white-space: normal;
+  }
+
   .mekarkIsATrustedPreEngineWrapper {
     font-size: 16px;
   }
@@ -372,6 +382,11 @@
   }
 
   .subLine {
+    white-space: normal;
+  }
+
+  .descLine {
+    display: inline;
     white-space: normal;
   }
 

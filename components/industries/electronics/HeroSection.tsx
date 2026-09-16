@@ -19,24 +19,31 @@ export default function HeroSection() {
       </div>
       <div className={styles.divabsolute} />
       <div className={styles.div}>
-        <b className={styles.leadingPreEngineeredWarehou}>
+        <h1 className={styles.leadingPreEngineeredWarehou}>
           Leading Electronics Manufacturing Facility Construction Company in
           South India
-        </b>
+        </h1>
         <div className={styles.logisticsIndustrialStructuWrapper}>
-          <b className={styles.logisticsIndustrial}>
+          <h2 className={styles.logisticsIndustrial}>
             <span className={styles.subLine}>
               Clean Rooms, ESD-Safe Plants &amp; Precision
             </span>
             <span className={styles.subLine}>Infrastructure by Mekark</span>
-          </b>
+          </h2>
         </div>
         <div className={styles.mekarkIsATrustedPreEngineWrapper}>
           <div className={styles.mekarkIsA}>
-            Mekark builds turnkey clean rooms, ESD-safe assembly plants, and
-            precision electronics manufacturing facilities across Tamil Nadu,
-            Karnataka, Andhra Pradesh, Telangana, and Kerala. Engineered for
-            precision. Delivered on time.
+            <span className={styles.descLine}>
+              Mekark builds turnkey clean rooms, ESD-safe assembly plants, and
+              precision
+            </span>
+            <span className={styles.descLine}>
+              electronics manufacturing facilities across Tamil Nadu, Karnataka,
+              Andhra Pradesh, Telangana, and Kerala.
+            </span>
+            <span className={styles.descLine}>
+              Engineered for precision. Delivered on time.
+            </span>
           </div>
         </div>
         <a href="/#enquiry" className={styles.component5}>

@@ -22,7 +22,7 @@ export default function GridBackground({
     >
       <div className={`relative size-full ${isBottom ? "-scale-y-100" : ""}`}>
         <Image
-          src="/images/services/multi-storey/frame212/solutions/grid-bg.png"
+          src="/images/services/multi-storey/frame212/solutions/grid-bg.webp"
           alt=""
           fill
           sizes="100vw"

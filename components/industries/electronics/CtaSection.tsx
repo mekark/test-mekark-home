@@ -64,7 +64,7 @@ const features: Feature[] = [
 const electronicsCtaWorkerAssets = {
   badgeFrame: "/images/industries/electronics/cta/frame-76.svg",
   sectionInner: "/images/industries/electronics/cta/frame-275.svg",
-  worker: "/images/industries/logistics/CTA/eot-cta-worker.png",
+  worker: "/images/industries/logistics/CTA/eot-cta-worker.webp",
   arrow: "/images/industries/electronics/cta/cta-arrow.svg",
 };
 
@@ -206,7 +206,7 @@ export default function CtaSection() {
               <div className={whyStyles.imageWrapper}>
                 <Image
                   className={whyStyles.imageIcon}
-                  src="/images/industries/electronics/cta/manufacturing-floor-alt.png"
+                  src="/images/industries/electronics/cta/manufacturing-floor-alt.webp"
                   width={937}
                   height={636}
                   sizes="100vw"
@@ -242,7 +242,7 @@ export default function CtaSection() {
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
           >
             <Image
-              src="/images/industries/electronics/cta/manufacturing-floor-alt.png"
+              src="/images/industries/electronics/cta/manufacturing-floor-alt.webp"
               alt="Workers at an electronics manufacturing production line"
               fill
               className="object-cover object-center"

@@ -45,7 +45,7 @@ export default function ExecutionProcessSection() {
       <div className={styles.grid1IconWrap}>
         <Image
           className={styles.grid1Icon}
-          src="/images/industries/textile/execution-process/grid.png"
+          src="/images/industries/textile/execution-process/grid.webp"
           fill
           sizes="100vw"
           alt=""

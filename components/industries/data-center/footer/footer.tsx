@@ -8,7 +8,7 @@ const Footer = () => {
         {/* Native img so transform/position CSS applies reliably */}
         <img
           className={styles.backgroundImage}
-          src="/images/industries/data-center/footer/footer.png"
+          src="/images/industries/data-center/footer/footer.webp"
           alt=""
         />
       </div>

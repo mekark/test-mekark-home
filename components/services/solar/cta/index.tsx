@@ -38,7 +38,7 @@ const Cta: NextPage = () => {
 					</div>
 					<div className={styles.layer2CopyCta1} />
 					<div className={styles.sectionChild2} />
-					<Image className={styles.solarCta1} width={786} height={415} sizes="100vw" src="/images/services/solar/CTA/solar-cta-1.png" alt="" />
+					<Image className={styles.solarCta1} width={786} height={415} sizes="100vw" src="/images/services/solar/CTA/solar-cta-1.webp" alt="" />
 				</div>
 			</div>
 		</div>

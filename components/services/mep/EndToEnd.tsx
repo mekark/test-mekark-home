@@ -63,7 +63,7 @@ export default function EndToEnd() {
           aria-hidden="true"
         >
           <Image
-            src="/images/services/mep/end-to-end/layer-14.png"
+            src="/images/services/mep/end-to-end/layer-14.webp"
             alt=""
             width={602}
             height={752}
@@ -72,7 +72,7 @@ export default function EndToEnd() {
           />
 
           <Image
-            src="/images/services/mep/end-to-end/floor-grid.png"
+            src="/images/services/mep/end-to-end/floor-grid.webp"
             alt=""
             width={1147}
             height={341}
@@ -81,7 +81,7 @@ export default function EndToEnd() {
           />
 
           <Image
-            src="/images/services/mep/end-to-end/mep-cutaway.png"
+            src="/images/services/mep/end-to-end/mep-cutaway.webp"
             alt="MEP systems cutaway illustration"
             width={986}
             height={658}

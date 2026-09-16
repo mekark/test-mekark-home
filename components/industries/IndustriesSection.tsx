@@ -24,74 +24,74 @@ const INDUSTRIES = [
     title: "Manufacturing Industry",
     description:
       "Scalable infrastructure for high-volume production and assembly.",
-    image: "/images/industries/01-manufacturing-v4.png",
+    image: "/images/industries/01-manufacturing-v4.webp",
   },
   {
     number: "02",
     title: "Logistics & Warehousing",
     description:
       "High-capacity facilities for storage and distribution networks.",
-    image: "/images/industries/02-logistics-v3.png",
+    image: "/images/industries/02-logistics-v3.webp",
   },
   {
     number: "03",
     title: "Food Processing Industry",
     description: "Hygienic and temperature-controlled building solutions.",
-    image: "/images/industries/03-food-processing-v3.png",
+    image: "/images/industries/03-food-processing-v3.webp",
   },
   {
     number: "04",
     title: "Road & Infra Solutions",
     description:
       "Integrated civil and structural works for roads, bridges, and large-scale ground infrastructure.",
-    image: "/images/industries/04-road-civil-v3.png",
+    image: "/images/industries/04-road-civil-v3.webp",
   },
   {
     number: "05",
     title: "Pharmaceutical Industry",
     description:
       "Compliance-driven infrastructure for controlled environments.",
-    image: "/images/industries/05-pharmaceutical-v3.png",
+    image: "/images/industries/05-pharmaceutical-v3.webp",
   },
   {
     number: "06",
     title: "Textile",
     description: "Resilient infrastructure for continuous textile production.",
-    image: "/images/industries/06-textile-v3.png",
+    image: "/images/industries/06-textile-v3.webp",
   },
   {
     number: "07",
     title: "Electronics",
     description:
       "Precision infrastructure for high-tech manufacturing environments.",
-    image: "/images/industries/07-electronics-v3.png",
+    image: "/images/industries/07-electronics-v3.webp",
   },
   {
     number: "08",
     title: "Data Centers",
     description:
       "Mission-critical infrastructure designed for high uptime and secure operations.",
-    image: "/images/industries/08-data-centers-v3.png",
+    image: "/images/industries/08-data-centers-v3.webp",
   },
   {
     number: "09",
     title: "Energy & Renewables",
     description:
       "Sustainable industrial solutions for solar, wind, battery storage, and clean energy facilities.",
-    image: "/images/industries/09-energy-renewables-v3.jpg",
+    image: "/images/industries/09-energy-renewables-v3.webp",
   },
   {
     number: "10",
     title: "Institutions",
     description: "Durable infrastructure for everyday academic life.",
-    image: "/images/industries/10-school-university-v3.png",
+    image: "/images/industries/10-school-university-v3.webp",
   },
   {
     number: "11",
     title: "Hospitals",
     description:
       "Precision infrastructure for critical healthcare operations.",
-    image: "/images/industries/11-hospitals-v3.png",
+    image: "/images/industries/11-hospitals-v3.webp",
     imageClassName:
       "object-cover scale-[1.25] object-[36%_24%]",
   },
@@ -99,7 +99,7 @@ const INDUSTRIES = [
     number: "12",
     title: "Auditoriums",
     description: "Large-span infrastructure for acoustics and capacity.",
-    image: "/images/industries/12-auditoriums-v3.png",
+    image: "/images/industries/12-auditoriums-v3.webp",
   },
 ] as const;
 

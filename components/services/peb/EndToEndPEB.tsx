@@ -99,7 +99,7 @@ export default function EndToEndPEB() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
         >
           <Image
-            src="/images/services/peb/about/construction-detail.png"
+            src="/images/services/peb/about/construction-detail.webp"
             alt=""
             width={602}
             height={752}
@@ -108,7 +108,7 @@ export default function EndToEndPEB() {
           />
 
           <Image
-            src="/images/services/peb/about/peb-building.png"
+            src="/images/services/peb/about/peb-building.webp"
             alt=""
             width={1054}
             height={703}

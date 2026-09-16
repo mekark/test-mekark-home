@@ -129,7 +129,7 @@ export default function WhyClientsChooseMekark() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.22]"
-          src="/images/services/civil/why-clients/bg.png"
+          src="/images/services/civil/why-clients/bg.webp"
           alt=""
         />
 
@@ -185,7 +185,7 @@ export default function WhyClientsChooseMekark() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/services/civil/why-clients/site-blur.png"
+                src="/images/services/civil/why-clients/site-blur.webp"
                 alt=""
                 className="h-full w-full object-cover"
               />
@@ -194,7 +194,7 @@ export default function WhyClientsChooseMekark() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className="pointer-events-none absolute top-[-8%] left-[-28%] h-[118%] w-[160%] max-w-none object-cover"
-                src="/images/services/civil/why-clients/engineer.png"
+                src="/images/services/civil/why-clients/engineer.webp"
                 alt="Mekark civil engineer with hard hat and clipboard"
               />
             </div>
@@ -233,7 +233,7 @@ export default function WhyClientsChooseMekark() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           className="absolute right-0 bottom-[0.03px] h-[1032px] w-full max-w-[1920px] shrink-0 object-cover opacity-40"
-          src="/images/services/civil/why-clients/bg.png"
+          src="/images/services/civil/why-clients/bg.webp"
           width={1920}
           height={1032}
           alt=""
@@ -344,7 +344,7 @@ export default function WhyClientsChooseMekark() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="pointer-events-none absolute top-[7.38%] left-[2.99%] h-[92.66%] w-[95.87%] max-w-none object-cover"
-              src="/images/services/civil/why-clients/site-blur.png"
+              src="/images/services/civil/why-clients/site-blur.webp"
               alt=""
             />
           </div>
@@ -352,7 +352,7 @@ export default function WhyClientsChooseMekark() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="pointer-events-none absolute top-[-12.96%] left-[-26.66%] h-[112.96%] w-[152%] max-w-none object-cover"
-              src="/images/services/civil/why-clients/engineer.png"
+              src="/images/services/civil/why-clients/engineer.webp"
               alt="Mekark civil engineer with hard hat and clipboard"
             />
           </div>

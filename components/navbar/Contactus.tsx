@@ -150,7 +150,7 @@ export default function ContactUsContent() {
       <section className="relative overflow-hidden bg-[#0a0a0a] pt-[60px] text-white">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero/peb-poster.png"
+            src="/images/hero/peb-poster.webp"
             alt=""
             fill
             priority

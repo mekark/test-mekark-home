@@ -6,7 +6,7 @@ const Footer = () => {
     <div className={styles.frameParent}>
       <Image
         className={styles.backgroundImage}
-        src="/images/industries/pharma/footer/ed0f0baf5e66363731524bd1df3ed6c45dc08233.png"
+        src="/images/industries/pharma/footer/ed0f0baf5e66363731524bd1df3ed6c45dc08233.webp"
         fill
         sizes="100vw"
         alt=""

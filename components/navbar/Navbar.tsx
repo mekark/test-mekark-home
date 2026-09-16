@@ -883,7 +883,7 @@ export function Navbar() {
                 transition={{ type: "spring", stiffness: 400, damping: 24 }}
               >
                 <Image
-                  src="/images/LogoMekark.png"
+                  src="/images/LogoMekark.webp"
                   alt="Mekark"
                   width={220}
                   height={60}

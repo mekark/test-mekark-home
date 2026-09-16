@@ -8,7 +8,7 @@ export default function HeroSection() {
         <div className={styles.heroBgInner}>
           <Image
             className={styles.warehouseWithManRedHatIsIcon}
-            src="/images/industries/electronics/hero/hero-background.png"
+            src="/images/industries/electronics/hero/hero-background.webp"
             width={1920}
             height={900}
             sizes="100vw"

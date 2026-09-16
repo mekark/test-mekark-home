@@ -65,7 +65,7 @@ const WhyChooseMekark: NextPage = () => {
 			<div className={styles.bg} aria-hidden>
 				<Image
 					className={styles.bgImage}
-					src="/images/services/tensile/why/background.png"
+					src="/images/services/tensile/why/background.webp"
 					width={1920}
 					height={1032}
 					sizes="100vw"
@@ -99,7 +99,7 @@ const WhyChooseMekark: NextPage = () => {
 				<div className={styles.media}>
 					<Image
 						className={styles.watermark}
-						src="/images/services/tensile/why/logo-watermark.png"
+						src="/images/services/tensile/why/logo-watermark.webp"
 						width={587}
 						height={534}
 						sizes="(max-width: 900px) 70vw, 40vw"
@@ -107,7 +107,7 @@ const WhyChooseMekark: NextPage = () => {
 					/>
 					<Image
 						className={styles.product}
-						src="/images/services/tensile/why/product.png"
+						src="/images/services/tensile/why/product.webp"
 						width={795}
 						height={903}
 						sizes="(max-width: 900px) 80vw, 45vw"

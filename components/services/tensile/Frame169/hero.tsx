@@ -23,7 +23,7 @@ const Frame169: NextPage = () => {
       			<div className={styles.media}>
         				<Image
           					className={styles.heroPhoto}
-          					src="/images/services/tensile/frame189/hero-photo.png"
+          					src="/images/services/tensile/frame189/hero-photo.webp"
           					width={977}
           					height={577}
           					sizes="(max-width: 900px) 100vw, 50vw"

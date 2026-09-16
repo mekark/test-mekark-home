@@ -12,7 +12,7 @@ const TRACKS = [
     title: "Engineering-led",
     description:
       "Developing pre-cast and pre-fabricated systems that reduce on-site construction time, improve consistency, and minimise the delays that come with conventional building methods.",
-    image: "/images/about/r-and-d/engineering-led.png",
+    image: "/images/about/r-and-d/engineering-led.webp",
     imageAlt:
       "Site engineer in safety gear holding blueprints and a radio outside a modern building",
     icon: "/images/about/r-and-d/icon-engineering.svg",
@@ -26,7 +26,7 @@ const TRACKS = [
     title: "Client-led",
     description:
       "in-depth, segment-wise research into how MNCs and international clients work, their standards, workflows, and expectations, so we can adapt our processes to deliver a seamless experience regardless of geography.",
-    image: "/images/about/r-and-d/client-led.png",
+    image: "/images/about/r-and-d/client-led.webp",
     imageAlt: "Two professionals shaking hands over project documents",
     icon: "/images/about/r-and-d/icon-client.svg",
     iconAlt: "Globe",
@@ -74,7 +74,7 @@ export function RdPage() {
             className="relative mx-auto mt-8 aspect-[1670/827] w-full max-w-[1760px] overflow-hidden rounded-[25px] sm:mt-10 lg:mt-12"
           >
             <Image
-              src="/images/about/r-and-d/hero.png"
+              src="/images/about/r-and-d/hero.webp"
               alt="Mekark engineer reviewing blueprints beside a building model"
               fill
               priority

@@ -42,7 +42,7 @@ const SERVICES: ExtendedOffering[] = [
       "Every EOT crane we supply is selected and configured around your specific load requirements, bay dimensions, and duty class, meeting IS 3177 and IS 807 safety standards, with certified safety interlocks, overload protection systems, and AMC (Annual Maintenance Contract) support.",
       "Our EOT crane offering is suited for manufacturing plants, warehouses, and heavy engineering facilities.",
     ],
-    image: "/images/extended-service/eot-blended.png",
+    image: "/images/extended-service/eot-blended.webp",
     imageAlt:
       "Electric overhead travelling crane hoist, trolley and hook assembly",
     faqs: [
@@ -112,7 +112,7 @@ const SERVICES: ExtendedOffering[] = [
       "Every racking system we supply is selected and configured around your specific load ratings, bay dimensions, and storage layout, meeting IS 807 and MHE code specifications for load rating and seismic bracing, with CNC-fabricated precision and AMC (Annual Maintenance Contract) support.",
       "Our racking offering is suited for warehouses, distribution centres, and manufacturing storage facilities.",
     ],
-    image: "/images/extended-service/racking-blended.png",
+    image: "/images/extended-service/racking-blended.webp",
     imageAlt: "Heavy-duty industrial pallet racking in a warehouse aisle",
     faqs: [
       {
@@ -185,7 +185,7 @@ const SERVICES: ExtendedOffering[] = [
       "We select and configure every cleanroom system we supply to meet ISO 14644, GMP, and WHO-GMP standards, with factory-fabricated precision and AMC (Annual Maintenance Contract) support.",
       "Our cleanroom offering suits pharmaceutical plants, electronics/semiconductor facilities, and regulated manufacturing environments.",
     ],
-    image: "/images/extended-service/clean-room.png",
+    image: "/images/extended-service/clean-room.webp",
     imageAlt: "Modular contamination-controlled clean room interior",
     faqs: [
       {
@@ -255,7 +255,7 @@ const SERVICES: ExtendedOffering[] = [
       "Every cold storage system we supply is selected and configured with PUF-insulated panels for optimal thermal efficiency, fire-retardant material specifications, and refrigeration systems engineered for consistent temperature control, backed by AMC (Annual Maintenance Contract) support.",
       "Our cold storage offering is suited for food processing plants, cold chain logistics facilities, and pharmaceutical storage units.",
     ],
-    image: "/images/extended-service/cold-storage-blended.png",
+    image: "/images/extended-service/cold-storage-blended.webp",
     imageAlt:
       "Insulated cold storage facility with PUF panel sliding door and refrigeration unit",
     faqs: [

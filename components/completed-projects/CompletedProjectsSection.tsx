@@ -52,7 +52,7 @@ function ProjectCard({
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="relative size-[42%] max-h-[140px] max-w-[140px]">
           <Image
-            src="/images/completed-projects/image-placeholder.png"
+            src="/images/completed-projects/image-placeholder.webp"
             alt=""
             fill
             className="object-contain opacity-90 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"

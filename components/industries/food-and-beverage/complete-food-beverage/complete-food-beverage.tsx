@@ -36,7 +36,7 @@ const OurSolutions = () => {
               <div className={styles.frameContainer}>
                 <Image
                   className={styles.rectangleIcon}
-                  src="/images/industries/food-and-beverage/our-solutions/1.jpg"
+                  src="/images/industries/food-and-beverage/our-solutions/1.webp"
                   width={323}
                   height={194}
                   sizes="100vw"
@@ -55,7 +55,7 @@ const OurSolutions = () => {
               <div className={styles.rectangleContainer}>
                 <Image
                   className={styles.rectangleIcon}
-                  src="/images/industries/food-and-beverage/our-solutions/2.jpg"
+                  src="/images/industries/food-and-beverage/our-solutions/2.webp"
                   width={323}
                   height={194}
                   sizes="100vw"
@@ -75,7 +75,7 @@ const OurSolutions = () => {
               <div className={styles.rectangleParent}>
                 <Image
                   className={styles.rectangleIcon}
-                  src="/images/industries/food-and-beverage/our-solutions/3.png"
+                  src="/images/industries/food-and-beverage/our-solutions/3.webp"
                   width={323}
                   height={194}
                   sizes="100vw"
@@ -95,7 +95,7 @@ const OurSolutions = () => {
               <div className={styles.rectangleParent2}>
                 <Image
                   className={styles.rectangleIcon}
-                  src="/images/industries/food-and-beverage/our-solutions/4.png"
+                  src="/images/industries/food-and-beverage/our-solutions/4.webp"
                   width={323}
                   height={194}
                   sizes="100vw"
@@ -115,7 +115,7 @@ const OurSolutions = () => {
               <div className={styles.rectangleGroup}>
                 <Image
                   className={styles.rectangleIcon}
-                  src="/images/industries/food-and-beverage/our-solutions/5.jpg"
+                  src="/images/industries/food-and-beverage/our-solutions/5.webp"
                   width={323}
                   height={194}
                   sizes="100vw"
@@ -135,7 +135,7 @@ const OurSolutions = () => {
               <div className={styles.rectangleParent3}>
                 <Image
                   className={styles.rectangleIcon}
-                  src="/images/industries/food-and-beverage/our-solutions/6.png"
+                  src="/images/industries/food-and-beverage/our-solutions/6.webp"
                   width={323}
                   height={194}
                   sizes="100vw"

@@ -136,7 +136,7 @@ export default function WhyChooseMekark() {
       {/* Full-bleed site background — Figma: bottom-anchored */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[min(1032px,100%)] w-full">
         <Image
-          src="/images/services/multi-storey/why-choose/site-bg.png"
+          src="/images/services/multi-storey/why-choose/site-bg.webp"
           alt=""
           fill
           sizes="100vw"
@@ -182,7 +182,7 @@ export default function WhyChooseMekark() {
         >
           <div className="pointer-events-none absolute top-[8%] left-1/2 h-[58%] w-[72%] -translate-x-1/2 blur-[2px]">
             <Image
-              src="/images/services/multi-storey/why-choose/building-blur.png"
+              src="/images/services/multi-storey/why-choose/building-blur.webp"
               alt=""
               fill
               sizes="280px"
@@ -191,7 +191,7 @@ export default function WhyChooseMekark() {
           </div>
           <div className="absolute inset-0">
             <Image
-              src="/images/services/multi-storey/why-choose/worker.png"
+              src="/images/services/multi-storey/why-choose/worker.webp"
               alt="Mekark engineer with structural blueprints"
               fill
               sizes="420px"
@@ -254,7 +254,7 @@ export default function WhyChooseMekark() {
                 feathered edge so it isn't a jagged clip. */}
             <div className="absolute bottom-[320px] left-[calc(50%-48px)] h-[min(850px,106%)] w-[min(820px,69%)] -translate-x-1/2 blur-[2.67px] [mask-image:linear-gradient(to_right,transparent_0,transparent_calc(16%-3px),#000_16%,#000_calc(100%-2px),transparent_100%)] [-webkit-mask-image:linear-gradient(to_right,transparent_0,transparent_calc(16%-3px),#000_16%,#000_calc(100%-2px),transparent_100%)]">
               <Image
-                src="/images/services/multi-storey/why-choose/building-blur.png"
+                src="/images/services/multi-storey/why-choose/building-blur.webp"
                 alt=""
                 fill
                 sizes="524px"
@@ -263,7 +263,7 @@ export default function WhyChooseMekark() {
             </div>
             <div className="absolute bottom-0 left-[45%] h-[88%] w-[95%] max-w-none -translate-x-1/2">
               <Image
-                src="/images/services/multi-storey/why-choose/worker.png"
+                src="/images/services/multi-storey/why-choose/worker.webp"
                 alt=""
                 fill
                 sizes="(min-width: 1280px) 960px, 60vw"

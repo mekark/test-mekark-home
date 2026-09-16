@@ -261,7 +261,7 @@ export function LifeAtMekarkPage() {
 
           <div className="grid gap-6 md:grid-cols-2 md:gap-8">
             <VideoCard
-              src={`${IMG}/video-1.png`}
+              src={`${IMG}/video-1.webp`}
               alt="Mekark office entrance with illuminated logo"
               label="Play Mekark Instagram reel"
               href={MEKARK_REEL_URL}
@@ -269,7 +269,7 @@ export function LifeAtMekarkPage() {
               imgClassName="absolute top-[-37.71%] left-[-0.08%] h-[160.73%] w-full max-w-none object-cover"
             />
             <VideoCard
-              src={`${IMG}/video-2-zoho-founder.jpeg`}
+              src={`${IMG}/video-2-zoho-founder.webp`}
               alt="Zoho co-founder speaking about the rise of Mekark"
               label="Watch the Zoho co-founder reel on Instagram"
               href={ZOHO_FOUNDER_REEL_URL}

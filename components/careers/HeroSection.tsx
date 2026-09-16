@@ -4,7 +4,7 @@ export function HeroSection() {
   return (
     <section className="relative h-[min(100svh,560px)] min-h-[420px] w-full overflow-hidden bg-black pt-[60px] sm:h-[min(678px,85svh)] lg:h-[min(620px,82svh)] xl:h-[678px]">
       <Image
-        src="/assets/careers/hero.png"
+        src="/assets/careers/hero.webp"
         alt="Mekark teams on site and in the office"
         fill
         priority

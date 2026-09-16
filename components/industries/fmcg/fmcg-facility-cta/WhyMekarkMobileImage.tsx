@@ -15,7 +15,7 @@ export function WhyMekarkMobileImage() {
       viewport={{ once: true, amount: 0.2 }}
     >
       <Image
-        src="/images/industries/fmcg/fmcg-facility-cta/factory-floor.png"
+        src="/images/industries/fmcg/fmcg-facility-cta/factory-floor.webp"
         alt="FMCG manufacturing facility interior with production equipment"
         fill
         className="object-cover object-center"

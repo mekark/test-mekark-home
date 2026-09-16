@@ -14,7 +14,7 @@ const VIEWPORT = { once: true, margin: "-80px" as const };
 const HOME_LOGOS = [
   {
     name: "Tata",
-    src: "/images/trusted-sectors/tata.png",
+    src: "/images/trusted-sectors/tata.webp",
     className: "h-[47px] w-[60px]",
     imageClassName:
       "absolute h-[151%] w-[209%] max-w-none object-cover left-[-52%] top-[-26%]",
@@ -22,7 +22,7 @@ const HOME_LOGOS = [
   },
   {
     name: "D Mart",
-    src: "/images/trusted-sectors/dmart.png",
+    src: "/images/trusted-sectors/dmart.webp",
     className: "h-[28px] w-[75px]",
     imageClassName:
       "absolute h-[270%] w-[133%] max-w-none object-cover left-[-17%] top-[-81%]",
@@ -30,31 +30,31 @@ const HOME_LOGOS = [
   },
   {
     name: "Komatsu",
-    src: "/images/trusted-sectors/komatsu.png",
+    src: "/images/trusted-sectors/komatsu.webp",
     className: "h-[52px] w-[107px]",
     objectFit: "cover" as const,
   },
   {
     name: "Bosch",
-    src: "/images/trusted-sectors/bosch.png",
+    src: "/images/trusted-sectors/bosch.webp",
     className: "h-[63px] w-[112px]",
     objectFit: "cover" as const,
   },
   {
     name: "Danfoss",
-    src: "/images/trusted-sectors/danfoss.png",
+    src: "/images/trusted-sectors/danfoss.webp",
     className: "h-[50px] w-[90px]",
     objectFit: "cover" as const,
   },
   {
     name: "TVS",
-    src: "/images/trusted-sectors/tvs.png",
+    src: "/images/trusted-sectors/tvs.webp",
     className: "size-[75px]",
     objectFit: "cover" as const,
   },
   {
     name: "Nokia",
-    src: "/images/trusted-sectors/nokia.png",
+    src: "/images/trusted-sectors/nokia.webp",
     className: "h-[32px] w-[104px]",
     imageClassName:
       "absolute h-[330%] w-full max-w-none object-cover left-0 top-[-116%]",
@@ -62,7 +62,7 @@ const HOME_LOGOS = [
   },
   {
     name: "Kryolan",
-    src: "/images/trusted-sectors/kryolan.png",
+    src: "/images/trusted-sectors/kryolan.webp",
     className: "h-[80px] w-[136px]",
     imageClassName:
       "absolute h-[215%] w-[126%] max-w-none object-cover left-[-12%] top-[-58%]",
@@ -70,13 +70,13 @@ const HOME_LOGOS = [
   },
   {
     name: "Reliance Industries Limited",
-    src: "/images/trusted-sectors/reliance.png",
+    src: "/images/trusted-sectors/reliance.webp",
     className: "h-[60px] w-[95px]",
     objectFit: "cover" as const,
   },
   {
     name: "Sobha",
-    src: "/images/trusted-sectors/sobha.png",
+    src: "/images/trusted-sectors/sobha.webp",
     className: "size-[75px]",
     imageClassName:
       "absolute h-[149%] w-[161%] max-w-none object-cover left-[-34%] top-[-24%]",
@@ -84,7 +84,7 @@ const HOME_LOGOS = [
   },
   {
     name: "SRM",
-    src: "/images/trusted-sectors/srm.png",
+    src: "/images/trusted-sectors/srm.webp",
     className: "h-[66px] w-[71px]",
     imageClassName:
       "absolute h-[141%] w-[131%] max-w-none object-cover left-[-18%] top-[-19%]",
@@ -92,19 +92,19 @@ const HOME_LOGOS = [
   },
   {
     name: "L&T",
-    src: "/images/trusted-sectors/l-and-t.png",
+    src: "/images/trusted-sectors/l-and-t.webp",
     className: "h-[77px] w-[75px]",
     objectFit: "contain" as const,
   },
   {
     name: "Agile",
-    src: "/images/trusted-sectors/agile.png",
+    src: "/images/trusted-sectors/agile.webp",
     className: "h-[57px] w-[75px]",
     objectFit: "cover" as const,
   },
   {
     name: "Blue Star",
-    src: "/images/trusted-sectors/blue-star.png",
+    src: "/images/trusted-sectors/blue-star.webp",
     className: "h-[25px] w-[124px]",
     objectFit: "cover" as const,
   },

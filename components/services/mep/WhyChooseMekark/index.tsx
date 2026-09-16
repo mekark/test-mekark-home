@@ -65,7 +65,7 @@ const WhyChooseMekark: NextPage = () => {
       <div className={styles.bg} aria-hidden>
         <Image
           className={styles.bgImage}
-          src="/images/services/mep/why-choose/site-bg.png"
+          src="/images/services/mep/why-choose/site-bg.webp"
           width={1920}
           height={1032}
           sizes="100vw"
@@ -97,7 +97,7 @@ const WhyChooseMekark: NextPage = () => {
         <div className={styles.media}>
           <Image
             className={styles.watermark}
-            src="/images/arrow.png"
+            src="/images/arrow.webp"
             width={587}
             height={534}
             sizes="(max-width: 900px) 70vw, 40vw"
@@ -105,7 +105,7 @@ const WhyChooseMekark: NextPage = () => {
           />
           <Image
             className={styles.product}
-            src="/images/services/mep/why-choose/worker.png"
+            src="/images/services/mep/why-choose/worker.webp"
             width={795}
             height={861}
             sizes="(max-width: 900px) 80vw, 45vw"

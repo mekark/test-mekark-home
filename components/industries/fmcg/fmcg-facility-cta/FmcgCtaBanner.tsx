@@ -51,7 +51,7 @@ export function FmcgCtaBanner() {
           <div className={styles.eotCta1}>
             <Image
               className={styles.eotCta1Img}
-              src="/images/industries/fmcg/fmcg-facility-cta/engineer.png"
+              src="/images/industries/fmcg/fmcg-facility-cta/engineer.webp"
               width={491}
               height={467}
               sizes="(max-width: 768px) 96vw, (max-width: 1200px) 92vw, 491px"

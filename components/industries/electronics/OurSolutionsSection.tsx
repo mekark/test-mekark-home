@@ -36,7 +36,7 @@ export default function OurSolutionsSection() {
               <div className={styles.frameContainer}>
                 <Image
                   className={styles.rectangleIcon}
-                  src="/images/industries/electronics/solutions/turnkey-factory.png"
+                  src="/images/industries/electronics/solutions/turnkey-factory.webp"
                   width={323}
                   height={194}
                   sizes="100vw"
@@ -55,7 +55,7 @@ export default function OurSolutionsSection() {
               <div className={styles.rectangleContainer}>
                 <Image
                   className={styles.rectangleIcon}
-                  src="/images/industries/electronics/solutions/clean-room.png"
+                  src="/images/industries/electronics/solutions/clean-room.webp"
                   width={323}
                   height={194}
                   sizes="100vw"
@@ -74,7 +74,7 @@ export default function OurSolutionsSection() {
               <div className={styles.rectangleParent}>
                 <Image
                   className={styles.rectangleIcon}
-                  src="/images/industries/electronics/solutions/esd-flooring.png"
+                  src="/images/industries/electronics/solutions/esd-flooring.webp"
                   width={323}
                   height={194}
                   sizes="100vw"
@@ -93,7 +93,7 @@ export default function OurSolutionsSection() {
               <div className={styles.rectangleParent2}>
                 <Image
                   className={styles.rectangleIcon}
-                  src="/images/industries/electronics/solutions/hvac-systems.png"
+                  src="/images/industries/electronics/solutions/hvac-systems.webp"
                   width={323}
                   height={194}
                   sizes="100vw"
@@ -112,7 +112,7 @@ export default function OurSolutionsSection() {
               <div className={styles.rectangleGroup}>
                 <Image
                   className={styles.rectangleIcon}
-                  src="/images/industries/electronics/solutions/mep-infrastructure.png"
+                  src="/images/industries/electronics/solutions/mep-infrastructure.webp"
                   width={323}
                   height={194}
                   sizes="100vw"
@@ -131,7 +131,7 @@ export default function OurSolutionsSection() {
               <div className={styles.rectangleParent3}>
                 <Image
                   className={styles.rectangleIcon}
-                  src="/images/industries/electronics/solutions/eot-crane.png"
+                  src="/images/industries/electronics/solutions/eot-crane.webp"
                   width={323}
                   height={194}
                   sizes="100vw"

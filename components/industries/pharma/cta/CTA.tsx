@@ -63,7 +63,7 @@ const CTA = () => {
           />
           <Image
             className={styles.eotCta1}
-            src="/images/industries/logistics/CTA/eot-cta-worker.png"
+            src="/images/industries/logistics/CTA/eot-cta-worker.webp"
             width={491}
             height={323}
             sizes="(max-width: 768px) 96vw, (max-width: 1200px) 92vw, 491px"
@@ -76,7 +76,7 @@ const CTA = () => {
         <div className={styles.imageWrapper}>
           <Image
             className={styles.imageIcon}
-            src="/images/industries/pharma/cta/why-pharma.png"
+            src="/images/industries/pharma/cta/why-pharma.webp"
             width={937}
             height={636}
             sizes="100vw"

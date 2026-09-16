@@ -36,7 +36,7 @@ export default function HowWeDeliver() {
         <div className="-scale-y-100 flex-none">
           <Image
             className="h-[280px] w-[1917.8px] max-w-none object-cover opacity-[0.15] sm:h-[390.7px]"
-            src="/images/services/mep/how-we-deliver/grid.png"
+            src="/images/services/mep/how-we-deliver/grid.webp"
             width={1918}
             height={391}
             sizes="100vw"

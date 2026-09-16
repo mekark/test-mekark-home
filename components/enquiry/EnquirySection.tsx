@@ -361,7 +361,7 @@ export function EnquirySection() {
     >
       <div className="absolute inset-0">
         <Image
-          src="/images/enquiry/div.absolute.png"
+          src="/images/enquiry/div.absolute.webp"
           alt=""
           fill
           className="object-cover opacity-50"
@@ -369,7 +369,7 @@ export function EnquirySection() {
           priority={false}
         />
         <Image
-          src="/images/enquiry/homeabout 1.png"
+          src="/images/enquiry/homeabout 1.webp"
           alt=""
           fill
           className="object-cover object-center"
@@ -454,7 +454,7 @@ export function EnquirySection() {
           <div className={styles.formShape}>
             <Image
               className={styles.vectorIcon}
-              src="/images/enquiry/Vector.png"
+              src="/images/enquiry/Vector.webp"
               fill
               sizes="(max-width: 1024px) 0px, min(52rem, 55vw)"
               alt=""

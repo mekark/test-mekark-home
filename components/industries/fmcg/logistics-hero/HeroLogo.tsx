@@ -14,7 +14,7 @@ export function HeroLogo() {
     >
       <Link href="/" aria-label="Mekark home" className="inline-block">
         <Image
-          src="/LogoMekark.png"
+          src="/images/LogoMekark.webp"
           alt="Mekark"
           width={140}
           height={38}

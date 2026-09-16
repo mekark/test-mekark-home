@@ -53,7 +53,7 @@ export default function Solutions() {
             transition={{ duration: 0.8, ease: easeOut }}
           >
             <Image
-              src="/images/services/multi-storey/solutions/blueprint.png"
+              src="/images/services/multi-storey/solutions/blueprint.webp"
               alt=""
               width={602}
               height={752}
@@ -70,7 +70,7 @@ export default function Solutions() {
             transition={{ duration: 0.75, ease: easeOut, delay: 0.1 }}
           >
             <Image
-              src="/images/services/multi-storey/solutions/steel-frame-v2.png"
+              src="/images/services/multi-storey/solutions/steel-frame-v2.webp"
               alt="Multi-storey structural steel building frame"
               width={1112}
               height={741}

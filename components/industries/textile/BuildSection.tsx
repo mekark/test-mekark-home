@@ -41,7 +41,7 @@ export default function BuildSection() {
 							<div className={styles.frameContainer}>
 								<Image
 									className={styles.rectangleIcon}
-									src="/images/industries/textile/solutions/spinning.png"
+									src="/images/industries/textile/solutions/spinning.webp"
 									width={323}
 									height={194}
 									sizes="100vw"
@@ -62,7 +62,7 @@ export default function BuildSection() {
 							<div className={styles.rectangleContainer}>
 								<Image
 									className={styles.rectangleIcon}
-									src="/images/industries/textile/solutions/weaving.png"
+									src="/images/industries/textile/solutions/weaving.webp"
 									width={323}
 									height={194}
 									sizes="100vw"
@@ -82,7 +82,7 @@ export default function BuildSection() {
 							<div className={styles.rectangleParent}>
 								<Image
 									className={styles.rectangleIcon}
-									src="/images/industries/textile/solutions/garment.png"
+									src="/images/industries/textile/solutions/garment.webp"
 									width={323}
 									height={194}
 									sizes="100vw"
@@ -102,7 +102,7 @@ export default function BuildSection() {
 							<div className={styles.rectangleParent2}>
 								<Image
 									className={styles.rectangleIcon}
-									src="/images/industries/textile/solutions/dyeing.png"
+									src="/images/industries/textile/solutions/dyeing.webp"
 									width={323}
 									height={194}
 									sizes="100vw"
@@ -122,7 +122,7 @@ export default function BuildSection() {
 							<div className={styles.rectangleGroup}>
 								<Image
 									className={styles.rectangleIcon}
-									src="/images/industries/textile/solutions/composite.png"
+									src="/images/industries/textile/solutions/composite.webp"
 									width={323}
 									height={194}
 									sizes="100vw"
@@ -142,7 +142,7 @@ export default function BuildSection() {
 							<div className={styles.rectangleParent3}>
 								<Image
 									className={styles.rectangleIcon}
-									src="/images/industries/textile/solutions/peb.png"
+									src="/images/industries/textile/solutions/peb.webp"
 									width={323}
 									height={194}
 									sizes="100vw"

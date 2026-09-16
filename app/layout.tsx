@@ -51,8 +51,8 @@ export const metadata: Metadata = {
   description:
     "Mekark is an industrial EPC service provider with 18+ years of experience delivering factories, pre-engineered buildings & large-span structures end-to-end. Get in touch.",
   icons: {
-    icon: "/images/LogoMekark.png",
-    apple: "/images/LogoMekark.png",
+    icon: "/images/LogoMekark.webp",
+    apple: "/images/LogoMekark.webp",
   },
 };
 

@@ -8,7 +8,7 @@ const DataCenterHeroBanner = () => {
         {/* Native img so transform/position CSS applies reliably */}
         <img
           className={styles.warehouseWithManRedHatIsIcon}
-          src="/images/industries/data-center/hero/hero.png"
+          src="/images/industries/data-center/hero/hero.webp"
           alt="Data centre server hall"
           fetchPriority="high"
         />

@@ -54,7 +54,7 @@ export default function ElectronicsCtaBanner() {
           <div className={styles.eotCta1}>
             <Image
               className={styles.eotCta1Img}
-              src="/images/industries/electronics/cta/engineer.png"
+              src="/images/industries/electronics/cta/engineer.webp"
               width={491}
               height={323}
               sizes="(max-width: 768px) 96vw, (max-width: 1200px) 92vw, 491px"

@@ -19,7 +19,7 @@ export function ProjectExecutionProcessSection() {
         className={`pointer-events-none absolute inset-x-0 bottom-0 h-[349px] opacity-5 ${macStyles.gridBg}`}
       >
         <Image
-          src="/images/industries/fmcg/project-execution-process/grid-bg.png"
+          src="/images/industries/fmcg/project-execution-process/grid-bg.webp"
           alt=""
           fill
           className="scale-y-[-1] object-cover object-top"

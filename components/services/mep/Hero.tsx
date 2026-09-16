@@ -67,7 +67,7 @@ function MobileHero() {
       description={heroDescription}
       heroImage={{
         ...civilMobileHeroImageDefaults,
-        src: "/images/services/mep/hero/layer-1.png",
+        src: "/images/services/mep/hero/layer-1.webp",
         alt: "Industrial MEP facility",
         objectPosition: "center bottom",
         scale: 1.2,
@@ -106,7 +106,7 @@ export default function Hero() {
         <div className="absolute top-[-32px] right-0 left-0 h-[1080px] w-full shrink-0">
           <Image
             className="absolute top-[-17px] left-0 h-[1080px] w-full max-w-none object-cover shrink-0"
-            src="/images/services/mep/hero/remove-1.png"
+            src="/images/services/mep/hero/remove-1.webp"
             width={1920}
             height={1080}
             sizes="100vw"
@@ -123,7 +123,7 @@ export default function Hero() {
           <div className="absolute top-[125px] left-0 h-[882px] w-full overflow-hidden shrink-0">
             <Image
               className="absolute inset-0 h-full w-full object-cover object-[center_5%]"
-              src="/images/services/mep/hero/layer-1.png"
+              src="/images/services/mep/hero/layer-1.webp"
               width={1920}
               height={1080}
               sizes="100vw"

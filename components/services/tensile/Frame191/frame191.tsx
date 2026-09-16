@@ -44,7 +44,7 @@ const Frame191: NextPage = () => {
 				<div className={styles.media}>
 					<Image
 						className={styles.heroPhoto}
-						src="/images/services/tensile/frame191/hero-photo.png"
+						src="/images/services/tensile/frame191/hero-photo.webp"
 						width={779}
 						height={345}
 						sizes="(max-width: 900px) 100vw, 45vw"
@@ -52,7 +52,7 @@ const Frame191: NextPage = () => {
 					/>
 					<Image
 						className={styles.illustration}
-						src="/images/services/tensile/frame191/illustration.png"
+						src="/images/services/tensile/frame191/illustration.webp"
 						width={397}
 						height={414}
 						sizes="(max-width: 900px) 50vw, 25vw"

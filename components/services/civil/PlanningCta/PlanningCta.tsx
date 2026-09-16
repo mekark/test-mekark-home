@@ -81,7 +81,7 @@ export default function PlanningCta() {
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[200px] sm:h-[260px]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/services/civil/cta/MidCTA.png"
+            src="/images/services/civil/cta/MidCTA.webp"
             alt="Modern commercial building under construction"
             className="absolute left-1/2 bottom-0 h-[115%] w-[170%] max-w-none -translate-x-[46%] object-cover object-[center_30%] sm:w-[145%] sm:-translate-x-[48%]"
           />
@@ -113,7 +113,7 @@ export default function PlanningCta() {
           transition={{ duration: 0.8, ease: easeOut }}
         >
           <Image
-            src="/images/services/civil/cta/MidCTA.png"
+            src="/images/services/civil/cta/MidCTA.webp"
             alt=""
             width={976}
             height={614}

@@ -6,42 +6,42 @@ const FACILITIES = [
     title: "Dairy Processing Plants:",
     description:
       "Hygienic, wash-down-ready facilities engineered for milk processing, packaging, and cold storage.",
-    image: "/images/industries/food-and-beverage/solutions/1.jpg",
+    image: "/images/industries/food-and-beverage/solutions/1.webp",
     imageAlt: "Dairy Processing Plants",
   },
   {
     title: "Beverage Bottling & Packaging Units:",
     description:
       "High-speed production plants designed for continuous, automation-ready bottling and canning lines.",
-    image: "/images/industries/food-and-beverage/solutions/2.png",
+    image: "/images/industries/food-and-beverage/solutions/2.webp",
     imageAlt: "Beverage Bottling and Packaging Units",
   },
   {
     title: "Bakery & Confectionery Manufacturing:",
     description:
       "Temperature-controlled facilities built for consistent baking, proofing, and packaging environments.",
-    image: "/images/industries/food-and-beverage/solutions/3.png",
+    image: "/images/industries/food-and-beverage/solutions/3.webp",
     imageAlt: "Bakery and Confectionery Manufacturing",
   },
   {
     title: "Meat, Poultry & Seafood Processing:",
     description:
       "Cold chain-integrated plants with blast freezing and hygienic processing zones.",
-    image: "/images/industries/food-and-beverage/solutions/4.png",
+    image: "/images/industries/food-and-beverage/solutions/4.webp",
     imageAlt: "Meat Poultry and Seafood Processing",
   },
   {
     title: "Fruit, Vegetable & Agro-Processing:",
     description:
       "Facilities designed for washing, sorting, processing, and cold storage of perishable produce.",
-    image: "/images/industries/food-and-beverage/solutions/5.png",
+    image: "/images/industries/food-and-beverage/solutions/5.webp",
     imageAlt: "Fruit Vegetable and Agro-Processing",
   },
   {
     title: "Contract Food Manufacturing (Co-Packing):",
     description:
       "Multi-tenant-ready facilities with flexible bay design for scaling production.",
-    image: "/images/industries/food-and-beverage/solutions/6.jpg",
+    image: "/images/industries/food-and-beverage/solutions/6.webp",
     imageAlt: "Contract Food Manufacturing Co-Packing",
   },
 ] as const;
@@ -53,7 +53,7 @@ export default function Solutions() {
         <div className={styles.gridBg} aria-hidden>
           <Image
             className={styles.grid1Icon}
-            src="/images/industries/food-and-beverage/solutions/grid-1.png"
+            src="/images/industries/food-and-beverage/solutions/grid-1.webp"
             fill
             sizes="100vw"
             alt=""

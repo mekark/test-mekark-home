@@ -24,7 +24,7 @@ export function InternshipSection() {
   return (
     <section className="relative overflow-hidden px-5 py-10 md:px-20 lg:py-0">
       <Image
-        src="/assets/careers/internship-pattern.png"
+        src="/assets/careers/internship-pattern.webp"
         alt=""
         fill
         className="object-cover object-center"
@@ -33,7 +33,7 @@ export function InternshipSection() {
       <div className="relative mx-auto max-w-[1280px] lg:aspect-[1280/629]">
         <div className="pointer-events-none absolute inset-0 hidden lg:block">
           <Image
-            src="/assets/careers/internship-photo.png"
+            src="/assets/careers/internship-photo.webp"
             alt="Mekark interns collaborating around laptops"
             fill
             className="object-cover object-center"

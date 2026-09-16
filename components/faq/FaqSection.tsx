@@ -208,7 +208,7 @@ export function FaqSection() {
               className="relative mx-auto mt-6 h-[220px] w-[180px] sm:mt-10 sm:h-[720px] sm:w-[460px] lg:mx-0"
             >
               <Image
-                src="/images/faq/question-mark.png"
+                src="/images/faq/question-mark.webp"
                 alt=""
                 fill
                 className="object-contain object-bottom"

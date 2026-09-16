@@ -7,7 +7,7 @@ export default function HeroSection() {
       <div className={styles.heroBgWrapper}>
         <Image
           className={styles.heroBgImage}
-          src="/images/industries/textile/hero/herobg.png"
+          src="/images/industries/textile/hero/herobg.webp"
           width={1920}
           height={900}
           sizes="100vw"

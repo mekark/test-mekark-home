@@ -113,7 +113,7 @@ function MobileHero() {
       description={heroDescription}
       heroImage={{
         ...civilMobileHeroImageDefaults,
-        src: "/images/services/civil/hero/building.png",
+        src: "/images/services/civil/hero/building.webp",
         alt: "Mekark civil construction project",
         objectPosition: "32% 78%",
         scale: 1.13,
@@ -148,7 +148,7 @@ function DesktopHero() {
       <div className="absolute inset-0 shrink-0">
         <div className="absolute inset-0 lg:bottom-[-114px] lg:left-[-72px] lg:h-[1162px] lg:w-[2064px]">
           <Image
-            src="/images/services/civil/hero/bg.png"
+            src="/images/services/civil/hero/bg.webp"
             alt=""
             fill
             priority
@@ -160,7 +160,7 @@ function DesktopHero() {
         <div className="pointer-events-none absolute bottom-[-0.33px] left-0 z-[1] h-[737px] w-full max-w-[1920px] overflow-hidden">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/services/civil/hero/building.png"
+            src="/images/services/civil/hero/building.webp"
             alt="Mekark civil construction project under construction"
             className="absolute left-0 top-[-33.87%] h-[146.62%] w-full object-cover"
           />

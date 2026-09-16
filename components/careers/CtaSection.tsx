@@ -116,7 +116,7 @@ export function CtaSection() {
     >
       <div className="absolute inset-y-0 right-0 hidden w-1/2 lg:block">
         <Image
-          src="/assets/careers/cta-bg.png"
+          src="/assets/careers/cta-bg.webp"
           alt=""
           fill
           className="object-cover object-center"

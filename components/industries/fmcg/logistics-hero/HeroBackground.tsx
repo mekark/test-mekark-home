@@ -23,7 +23,7 @@ export function HeroBackground() {
           animate="visible"
         >
           <Image
-            src="/images/industries/fmcg/logistics-hero/hero-bg.png"
+            src="/images/industries/fmcg/logistics-hero/hero-bg.webp"
             alt="FMCG manufacturing facility at dusk"
             fill
             priority

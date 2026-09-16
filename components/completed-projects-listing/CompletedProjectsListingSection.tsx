@@ -29,37 +29,37 @@ const PROJECTS = [
     title: "Air Vision",
     type: "Warehouse",
     location: "Irungattukottai",
-    image: "/images/completed-projects-listing/air-vision.png",
+    image: "/images/completed-projects-listing/air-vision.webp",
   },
   {
     title: "Solo paints",
     type: "Paint Manufacturing",
     location: "Tirunelveli",
-    image: "/images/completed-projects-listing/solo-paints.png",
+    image: "/images/completed-projects-listing/solo-paints.webp",
   },
   {
     title: "Jaguar Showroom",
     type: "Car Showroom",
     location: "Tiruvallur",
-    image: "/images/completed-projects-listing/jaguar-showroom.png",
+    image: "/images/completed-projects-listing/jaguar-showroom.webp",
   },
   {
     title: "MIPL",
     type: "Manufacturing Unit",
     location: "Chennai",
-    image: "/images/completed-projects-listing/mipl.png",
+    image: "/images/completed-projects-listing/mipl.webp",
   },
   {
     title: "TAAC School",
     type: "Institution",
     location: "Chennai",
-    image: "/images/completed-projects-listing/taac-school.png",
+    image: "/images/completed-projects-listing/taac-school.webp",
   },
   {
     title: "SOP",
     type: "Manufacturing Unit",
     location: "Vellanur",
-    image: "/images/completed-projects-listing/sop.png",
+    image: "/images/completed-projects-listing/sop.webp",
   },
 ] as const;
 

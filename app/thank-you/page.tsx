@@ -15,7 +15,7 @@ export default function ThankYouPage() {
       <section className="relative flex min-h-[70vh] w-full items-center justify-center overflow-hidden px-5 py-20 sm:px-8 lg:px-20">
         <div className="absolute inset-0">
           <Image
-            src="/images/enquiry/background.png"
+            src="/images/enquiry/background.webp"
             alt=""
             fill
             className="object-cover object-center"

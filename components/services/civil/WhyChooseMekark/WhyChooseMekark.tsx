@@ -28,7 +28,7 @@ export default function WhyChooseMekark() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/services/civil/why-choose/blueprint.png"
+            src="/images/services/civil/why-choose/blueprint.webp"
             alt=""
             className="h-full w-full object-cover object-center"
           />
@@ -64,7 +64,7 @@ export default function WhyChooseMekark() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/services/civil/why-choose/blueprint.png"
+                src="/images/services/civil/why-choose/blueprint.webp"
                 alt=""
                 className="h-full w-full scale-125 object-cover object-left -rotate-[3deg]"
               />
@@ -73,7 +73,7 @@ export default function WhyChooseMekark() {
             <div className="absolute inset-y-0 left-0 right-5 overflow-hidden rounded-r-[28px] shadow-[0_18px_40px_rgba(17,17,17,0.18)] sm:right-8 sm:rounded-r-[36px]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/services/civil/why-choose/building-mask.png"
+                src="/images/services/civil/why-choose/building-mask.webp"
                 alt="Mekark RCC construction project with tower crane"
                 className="absolute inset-0 h-full w-full object-cover object-[center_38%]"
               />
@@ -175,7 +175,7 @@ export default function WhyChooseMekark() {
         >
           <Image
             className="absolute top-[43px] left-[651px] h-[626px] w-[502px] shrink-0 object-cover opacity-50"
-            src="/images/services/civil/why-choose/building-bg.png"
+            src="/images/services/civil/why-choose/building-bg.webp"
             width={502}
             height={626}
             sizes="502px"
@@ -184,7 +184,7 @@ export default function WhyChooseMekark() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             className="absolute top-[182.67px] left-0 h-[769px] w-[1153px] shrink-0 object-cover"
-            src="/images/services/civil/why-choose/building-mask.png"
+            src="/images/services/civil/why-choose/building-mask.webp"
             width={1153}
             height={769}
             alt="Mekark RCC construction project with tower crane"
@@ -202,7 +202,7 @@ export default function WhyChooseMekark() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="pointer-events-none absolute top-[-148.44%] left-[-6.66%] h-[290.08%] w-[129.51%] max-w-none"
-              src="/images/services/civil/why-choose/blueprint.png"
+              src="/images/services/civil/why-choose/blueprint.webp"
               alt=""
             />
           </div>

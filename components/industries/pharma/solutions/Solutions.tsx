@@ -41,7 +41,7 @@ const Solutions = () => {
         </div>
         <Image
           className={styles.grid1Icon}
-          src="/images/industries/pharma/solutions/grid-1.png"
+          src="/images/industries/pharma/solutions/grid-1.webp"
           width={1918}
           height={391}
           sizes="100vw"
@@ -71,7 +71,7 @@ const Solutions = () => {
             <div className={`${styles.rectangleParent} ${carouselStyles.item}`}>
               <Image
                 className={styles.frameChild}
-                src="/images/industries/pharma/solutions/1.png"
+                src="/images/industries/pharma/solutions/1.webp"
                 width={262}
                 height={262}
                 sizes="100vw"
@@ -94,7 +94,7 @@ const Solutions = () => {
             <div className={`${styles.rectangleGroup} ${carouselStyles.item}`}>
               <Image
                 className={styles.frameChild}
-                src="/images/industries/pharma/solutions/2.png"
+                src="/images/industries/pharma/solutions/2.webp"
                 width={262}
                 height={262}
                 sizes="100vw"
@@ -117,7 +117,7 @@ const Solutions = () => {
             <div className={`${styles.rectangleContainer} ${carouselStyles.item}`}>
               <Image
                 className={styles.frameChild}
-                src="/images/industries/pharma/solutions/3.png"
+                src="/images/industries/pharma/solutions/3.webp"
                 width={262}
                 height={262}
                 sizes="100vw"
@@ -140,7 +140,7 @@ const Solutions = () => {
             <div className={`${styles.frameDiv} ${carouselStyles.item}`}>
               <Image
                 className={styles.frameChild}
-                src="/images/industries/pharma/solutions/4.png"
+                src="/images/industries/pharma/solutions/4.webp"
                 width={262}
                 height={262}
                 sizes="100vw"
@@ -163,7 +163,7 @@ const Solutions = () => {
             <div className={`${styles.rectangleParent2} ${carouselStyles.item}`}>
               <Image
                 className={styles.frameChild2}
-                src="/images/industries/pharma/solutions/5.png"
+                src="/images/industries/pharma/solutions/5.webp"
                 width={262}
                 height={262}
                 sizes="100vw"
@@ -186,7 +186,7 @@ const Solutions = () => {
             <div className={`${styles.rectangleParent3} ${carouselStyles.item}`}>
               <Image
                 className={styles.frameChild}
-                src="/images/industries/pharma/solutions/6.png"
+                src="/images/industries/pharma/solutions/6.webp"
                 width={262}
                 height={262}
                 sizes="100vw"

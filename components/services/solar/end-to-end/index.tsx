@@ -39,7 +39,7 @@ const EndToEnd: NextPage = () => {
 				width={908}
 				height={603}
 				sizes="100vw"
-				src="/images/services/solar/end-to-end/solar-ete-1.png"
+				src="/images/services/solar/end-to-end/solar-ete-1.webp"
 				alt=""
 			/>
 		</div>

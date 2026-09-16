@@ -7,22 +7,22 @@ import { fadeUp, staggerContainer } from "@/lib/motion-variants";
 const CARDS = [
   {
     title: "School & College Auditoriums",
-    src: "/images/institution/3rd section/1.png",
+    src: "/images/institution/3rd section/1.webp",
     alt: "Interior of a school and college auditorium with red seating and a wooden stage",
   },
   {
     title: "Indoor Sports Stadium",
-    src: "/images/institution/3rd section/2.png",
+    src: "/images/institution/3rd section/2.webp",
     alt: "Indoor sports stadium with a wooden multi-purpose court and spectator seating",
   },
   {
     title: "Outdoor Sports Stadium",
-    src: "/images/institution/3rd section/3.png",
+    src: "/images/institution/3rd section/3.webp",
     alt: "Outdoor stadium with a running track, field, and tensile roof grandstand",
   },
   {
     title: "Schools and Colleges",
-    src: "/images/institution/3rd section/4.png",
+    src: "/images/institution/3rd section/4.webp",
     alt: "Modern school and college campus building with a landscaped courtyard",
   },
 ] as const;

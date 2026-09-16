@@ -51,7 +51,7 @@ export default function CtaBanner() {
           <div className="relative h-[220px] w-full shrink-0 sm:h-[280px]">
             <Image
               className="h-full w-full object-cover object-[center_20%]"
-              src="/images/services/mep/cta-banner/engineer.png"
+              src="/images/services/mep/cta-banner/engineer.webp"
               width={949}
               height={345}
               sizes="100vw"
@@ -107,7 +107,7 @@ export default function CtaBanner() {
 
           <Image
             className="absolute top-[-0.33px] left-[757.33px] h-[345.3px] w-[949px] object-cover shrink-0"
-            src="/images/services/mep/cta-banner/engineer.png"
+            src="/images/services/mep/cta-banner/engineer.webp"
             width={949}
             height={345}
             sizes="949px"

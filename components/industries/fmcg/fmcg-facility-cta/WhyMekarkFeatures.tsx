@@ -51,7 +51,7 @@ export function WhyMekarkFeatures() {
       >
         <div className={`absolute inset-0 ${whyMac.featuresImageMask} ${whyMac.featuresImageBlend}`}>
           <Image
-            src="/images/industries/fmcg/fmcg-facility-cta/factory-floor.png"
+            src="/images/industries/fmcg/fmcg-facility-cta/factory-floor.webp"
             alt="FMCG manufacturing facility interior with production equipment"
             fill
             className="object-cover object-right-bottom"

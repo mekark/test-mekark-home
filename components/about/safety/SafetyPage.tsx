@@ -175,62 +175,62 @@ function FiveSMobileCarousel() {
 
 const ASSOCIATE_PARTNERS = [
   {
-    src: "/images/about/safety/partners/madras-chamber.png",
+    src: "/images/about/safety/partners/madras-chamber.webp",
     alt: "Madras Chamber of Commerce logo",
     label: "Madras Chamber of Commerce",
   },
   {
-    src: "/images/about/safety/partners/sicci.png",
+    src: "/images/about/safety/partners/sicci.webp",
     alt: "SICCI logo",
     label: "SICCI (South Indian Chamber of Commerce & Industry)",
   },
   {
-    src: "/images/about/safety/partners/indo-french.png",
+    src: "/images/about/safety/partners/indo-french.webp",
     alt: "Indo-French Chamber of Commerce and Industry logo",
     label: "Indo-French Chamber of Commerce & Industry",
   },
   {
-    src: "/images/about/safety/partners/indo-german.png",
+    src: "/images/about/safety/partners/indo-german.webp",
     alt: "Indo-German Chamber of Commerce logo",
     label: "Indo-German Chamber of Commerce",
   },
   {
-    src: "/images/about/safety/partners/tamil-chamber.png",
+    src: "/images/about/safety/partners/tamil-chamber.webp",
     alt: "Tamil Chamber of Commerce logo",
     label: "Tamil Chamber of Commerce",
   },
   {
-    src: "/images/about/safety/partners/ficci.png",
+    src: "/images/about/safety/partners/ficci.webp",
     alt: "FICCI logo",
     label: "FICCI (Federation of Indo-Chamber of Commerce & Industry)",
   },
   {
-    src: "/images/about/safety/partners/indo-american.png",
+    src: "/images/about/safety/partners/indo-american.webp",
     alt: "Indo-American Chamber of Commerce logo",
     label: "Indo-American Chamber of Commerce",
   },
   {
-    src: "/images/about/safety/partners/hindustan-chamber.png",
+    src: "/images/about/safety/partners/hindustan-chamber.webp",
     alt: "Hindustan Chamber of Commerce logo",
     label: "Hindustan Chamber of Commerce",
   },
   {
-    src: "/images/about/safety/partners/iod.png",
+    src: "/images/about/safety/partners/iod.webp",
     alt: "Institute of Directors logo",
     label: "IOD (Institute of Directors)",
   },
   {
-    src: "/images/about/safety/partners/rai.png",
+    src: "/images/about/safety/partners/rai.webp",
     alt: "Retailers Association of India logo",
     label: "Retail Association of India (RAI)",
   },
   {
-    src: "/images/about/safety/partners/indo-japanese.png",
+    src: "/images/about/safety/partners/indo-japanese.webp",
     alt: "Indo-Japanese Association logo",
     label: "Indo-Japanese Association (IJA)",
   },
   {
-    src: "/images/about/safety/partners/tn-chamber.png",
+    src: "/images/about/safety/partners/tn-chamber.webp",
     alt: "Tamil Nadu Chamber of Commerce and Industry logo",
     label: "Tamil Nadu Chamber of Commerce & Industry (TN Chamber / TNCCI)",
   },
@@ -353,37 +353,37 @@ const DEFAULT_DESCRIPTION =
 
 const CERTIFICATES = [
   {
-    src: "/images/about/safety/Certi1.png",
+    src: "/images/about/safety/Certi1.webp",
     alt: "ISO 45001:2018 Certificate of Registration for MEKARK Structures India Pvt. Ltd.",
     label: "ISO 45001:2018",
     mobileImageClassName: "origin-center scale-[1.18]",
     className:
       "object-contain object-center max-sm:origin-center max-sm:scale-[1.42] sm:object-left-top",
-    hero: "/images/about/safety/hero.jpg",
+    hero: "/images/about/safety/hero.webp",
     heroClassName: "object-cover object-[center_28%] sm:object-[72%_center]",
     heroAlt: "Construction worker in high-visibility gear holding a hard hat",
   },
   {
-    src: "/images/about/safety/Certi2.png",
+    src: "/images/about/safety/Certi2.webp",
     alt: "Workplace Safety Excellence Certificate awarded to Mekark Structures India Pvt Ltd by Orbittal for Best Contractor Safety Performance, National Safety Day 2026.",
     label: "Safety Excellence",
     className:
       "object-contain object-center sm:object-left-top sm:translate-x-8 lg:translate-x-10",
-    hero: "/images/about/safety/hero.jpg",
+    hero: "/images/about/safety/hero.webp",
     heroClassName: "object-cover object-[center_28%] sm:object-[72%_center]",
     heroAlt: "Construction worker in high-visibility gear holding a hard hat",
   },
   {
-    src: "/images/about/safety/Quality-compressed.png",
+    src: "/images/about/safety/Quality-compressed.webp",
     alt: "ISO 9001:2015 Certificate of Registration for MEKARK Structures India Pvt. Ltd.",
     label: "ISO 9001:2015",
     mobileImageClassName: "origin-center scale-[1.18]",
     className:
       "object-contain object-center origin-top-left scale-[0.93] object-left-top sm:translate-x-0 lg:translate-x-2",
-    hero: "/images/about/safety/hero-3.jpg",
+    hero: "/images/about/safety/hero-3.webp",
     heroClassName: "object-cover object-[center_35%] sm:object-[58%_center]",
     heroAlt: "Construction site at golden hour with a tower crane over an unfinished building",
-    overlay: "/images/about/safety/hero-3-workers.png",
+    overlay: "/images/about/safety/hero-3-workers.webp",
     overlayAlt: "Two site engineers in safety vests looking toward the construction site",
     overlayClassName:
       "top-[30%] bottom-[-16%] right-[11%] w-[min(52%,52rem)] lg:top-[34%] lg:bottom-[-18%] lg:right-[9%] lg:w-[min(48%,50rem)]",
@@ -393,13 +393,13 @@ const CERTIFICATES = [
       "Consistent quality standards, non-negotiable at every stage of every project.",
   },
   {
-    src: "/images/about/safety/Environmental.png",
+    src: "/images/about/safety/Environmental.webp",
     alt: "ISO 14001:2015 Certificate of Registration for MEKARK Structures India Pvt. Ltd.",
     label: "ISO 14001:2015",
     mobileImageClassName: "origin-center scale-[1.18]",
     className:
       "object-contain object-center max-sm:origin-center max-sm:scale-[1.48] sm:origin-top-left sm:scale-[0.97] sm:object-left-top sm:-translate-x-10 lg:-translate-x-6",
-    hero: "/images/about/safety/hero-4.png",
+    hero: "/images/about/safety/hero-4.webp",
     heroClassName: "object-cover object-right",
     heroAlt: "Hand cradling a globe with a green sprout growing from the top against a sunlit forest",
     heroUnoptimized: true,
@@ -484,7 +484,7 @@ function SafetyFiveSPointsSection() {
         className="pointer-events-none absolute right-0 top-0 hidden h-[min(50vw,427px)] w-[min(48vw,932px)] opacity-10 sm:block"
       >
         <Image
-          src="/images/about/safety/5s/background-watermark.png"
+          src="/images/about/safety/5s/background-watermark.webp"
           alt=""
           fill
           className="object-cover object-left-top"

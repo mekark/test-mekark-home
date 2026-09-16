@@ -25,7 +25,7 @@ type SolutionVisual = {
 
 const SOLUTION_CARDS: Record<string, SolutionVisual> = {
   civil: {
-    src: "/images/services/civil.png",
+    src: "/images/services/civil.webp",
     alt: "Civil construction and site development on an industrial plot",
     title: "Civil Construction",
     description:
@@ -33,7 +33,7 @@ const SOLUTION_CARDS: Record<string, SolutionVisual> = {
     objectPosition: "center 38%",
   },
   peb: {
-    src: "/images/services/peb.png",
+    src: "/images/services/peb.webp",
     alt: "Pre-engineered steel warehouse at dusk",
     title: "PEB",
     description:
@@ -41,14 +41,14 @@ const SOLUTION_CARDS: Record<string, SolutionVisual> = {
     objectPosition: "30% center",
   },
   "multi-storey": {
-    src: "/images/services/multi-storey.png",
+    src: "/images/services/multi-storey.webp",
     alt: "Multi-storey steel building with glass facade",
     title: "Multi-Storey Buildings",
     description:
       "Vertical steel structures maximising land use with heavy floor loading.",
   },
   mep: {
-    src: "/images/services/mep.png",
+    src: "/images/services/mep.webp",
     alt: "Industrial building with visible MEP piping and HVAC systems",
     title: "MEP Services",
     description:
@@ -56,7 +56,7 @@ const SOLUTION_CARDS: Record<string, SolutionVisual> = {
     objectPosition: "35% center",
   },
   solar: {
-    src: "/images/services/solar.png",
+    src: "/images/services/solar.webp",
     alt: "Ground-mounted solar arrays at sunset",
     title: "Solar Solutions",
     description:
@@ -64,21 +64,21 @@ const SOLUTION_CARDS: Record<string, SolutionVisual> = {
     objectPosition: "40% center",
   },
   tensile: {
-    src: "/images/services/tensile.png",
+    src: "/images/services/tensile.webp",
     alt: "Illuminated tensile fabric canopy at dusk",
     title: "Tensile & Fabric Structures",
     description:
       "Lightweight tensile roofing and canopy structures for open and semi-open spaces.",
   },
   eot: {
-    src: "/images/services/eot.png",
+    src: "/images/services/eot.webp",
     alt: "Electric overhead travelling crane inside a PEB facility",
     title: "EOT",
     description: "Heavy-duty infrastructure for precision material handling.",
     objectPosition: "center bottom",
   },
   racking: {
-    src: "/images/services/racking.png",
+    src: "/images/services/racking.webp",
     alt: "Heavy-duty industrial pallet racking in a warehouse aisle",
     title: "Heavy Duty Racking",
     description:
@@ -86,14 +86,14 @@ const SOLUTION_CARDS: Record<string, SolutionVisual> = {
     objectPosition: "40% center",
   },
   "clean-room": {
-    src: "/images/services/clean-room.png",
+    src: "/images/services/clean-room.webp",
     alt: "Modular contamination-controlled clean room",
     title: "Clean Room",
     description:
       "Contamination-controlled infrastructure for precision manufacturing.",
   },
   "cold-storage": {
-    src: "/images/ext.png",
+    src: "/images/ext.webp",
     alt: "Temperature-controlled cold storage warehouse interior",
     title: "Cold Storage",
     description:

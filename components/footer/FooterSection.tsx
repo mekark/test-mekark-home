@@ -285,7 +285,7 @@ export function FooterSection() {
             >
               <div className="flex flex-wrap items-center gap-4">
                 <Image
-                  src="/images/LogoMekark.png"
+                  src="/images/LogoMekark.webp"
                   alt="Mekark"
                   width={227}
                   height={80}

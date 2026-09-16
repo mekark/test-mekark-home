@@ -23,7 +23,7 @@ export function ManufacturingSolutionsSection() {
         className="pointer-events-none absolute inset-x-0 top-0 h-[391px] overflow-hidden opacity-15"
       >
         <Image
-          src="/images/industries/fmcg/fmcg-facility-cta/solutions-grid.png"
+          src="/images/industries/fmcg/fmcg-facility-cta/solutions-grid.webp"
           alt=""
           fill
           className="object-cover object-top"

@@ -12,28 +12,28 @@ const VENUES = [
     number: "01",
     title: "School & college auditoriums",
     copy: "Performance-ready halls planned around sightlines, acoustics, and dependable day-to-day use.",
-    image: "/images/industries/12-auditoriums-v3.png",
+    image: "/images/industries/12-auditoriums-v3.webp",
     imageAlt: "School and college auditorium with tiered seating",
   },
   {
     number: "02",
     title: "Indoor sports stadiums",
     copy: "Wide-span enclosures that keep the playing area open, flexible, and spectator-friendly.",
-    image: "/images/institutional/indoor-sports-stadium.jpg",
+    image: "/images/institutional/indoor-sports-stadium.webp",
     imageAlt: "Indoor sports stadium with a wide-span roof and court",
   },
   {
     number: "03",
     title: "Outdoor stadium structures",
     copy: "Weather-resilient stands and lightweight canopies engineered for exposed conditions.",
-    image: "/images/institutional/outdoor-stadium.jpg",
+    image: "/images/institutional/outdoor-stadium.webp",
     imageAlt: "Outdoor stadium spectator stands beneath a covered roof",
   },
   {
     number: "04",
     title: "Community halls",
     copy: "Safe, functional gathering spaces designed for varied public and institutional use.",
-    image: "/images/institutional/community-hall.jpg",
+    image: "/images/institutional/community-hall.webp",
     imageAlt: "Community gathering in a large public hall",
   },
 ] as const;
@@ -117,7 +117,7 @@ export function InstitutionalPage() {
     <main className="overflow-hidden bg-white text-[#151515]">
       <section className="relative isolate min-h-[760px] overflow-hidden bg-black pt-[60px] lg:min-h-[820px]">
         <Image
-          src="/images/institutional/home.jpg"
+          src="/images/institutional/home.webp"
           alt="Rows of seating in a modern auditorium"
           fill
           priority
@@ -213,7 +213,7 @@ export function InstitutionalPage() {
       <section id="engineering" className="relative isolate overflow-hidden bg-[#101112] text-white">
         <div className="grid min-h-[720px] lg:grid-cols-2">
           <motion.div variants={slideFromLeft} initial="hidden" whileInView="visible" viewport={VIEWPORT} className="relative min-h-[440px] overflow-hidden lg:min-h-full">
-            <Image src="/images/institutional/tensile-stadium-roof.jpg" alt="Tensile membrane stadium roof and steel support structure" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+            <Image src="/images/institutional/tensile-stadium-roof.webp" alt="Tensile membrane stadium roof and steel support structure" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" aria-hidden />
             <div className="absolute bottom-7 left-7 right-7 flex items-end justify-between border-t border-white/30 pt-4 sm:bottom-10 sm:left-10 sm:right-10">
               <p className="max-w-[300px] text-xs font-semibold uppercase tracking-[0.18em] text-white/75">Lightweight structure. Serious performance.</p>

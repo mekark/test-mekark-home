@@ -77,7 +77,7 @@ const SOFTWARE_CARDS = [
     badge: "3D BIM Modeling",
     description:
       "Fabrication-ready structural detailing and connection design for precision execution.",
-    logo: "/images/precision-engineering/tekla-logo.png",
+    logo: "/images/precision-engineering/tekla-logo.webp",
     tags: ["Shop Drawings", "Clash Detection", "CNC Export"],
   },
   {
@@ -85,7 +85,7 @@ const SOFTWARE_CARDS = [
     badge: "Structural Analysis",
     description:
       "Industry-standard load analysis with full code compliance for industrial structures.",
-    logo: "/images/precision-engineering/staad-pro.png",
+    logo: "/images/precision-engineering/staad-pro.webp",
     tags: ["Seismic Analysis", "Wind Load", "Code Compliance"],
   },
   {
@@ -93,7 +93,7 @@ const SOFTWARE_CARDS = [
     badge: "Metal Building Design",
     description:
       "Specialized PEB design software that optimizes steel frames for material efficiency and structural strength.",
-    logo: "/images/precision-engineering/mbs-logo.png",
+    logo: "/images/precision-engineering/mbs-logo.webp",
     tags: ["Cost Estimation", "Design Optimization", "BIM Export"],
   },
 ] as const;

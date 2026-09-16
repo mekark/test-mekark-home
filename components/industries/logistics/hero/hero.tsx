@@ -6,21 +6,21 @@ export default function LogisticsHero() {
     <div className={styles.logisticsHeroBanner}>
       <Image
         className={styles.warehouseWithManRedHatIsIcon}
-        src="/images/industries/logistics/hero/warehouse-with-man-red-hat.png"
+        src="/images/industries/logistics/hero/warehouse-with-man-red-hat.webp"
         width={1920}
         height={900}
         sizes="100vw"
-        alt=""
+        alt="Warehouse worker in red hard hat inside a logistics facility"
         priority
       />
       <div className={styles.wrapperAerialViewOfAModer}>
         <Image
           className={styles.aerialViewOfAModernPreEn}
-          src="/images/industries/logistics/hero/aerial-view-warehouse-facility.png"
+          src="/images/industries/logistics/hero/aerial-view-warehouse-facility.webp"
           width={1488}
           height={1013.3}
           sizes="100vw"
-          alt=""
+          alt="Aerial view of a modern pre-engineered warehouse facility"
         />
       </div>
       <div className={styles.divabsolute} />

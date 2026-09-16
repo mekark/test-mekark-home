@@ -8,20 +8,20 @@ const HERO_VIDEOS = [
 
   {
     src: "/images/hero/Civil.mp4",
-    poster: "/images/hero/video-2.jpg",
+    poster: "/images/hero/video-2.webp",
     title: "Civil Construction",
     subtitle: "Foundations to finished infrastructure",
   },
   {
     src: "/images/hero/PEB-2.mp4",
-    poster: "/images/hero/peb-poster.png",
+    poster: "/images/hero/peb-poster.webp",
     title: "PEB Construction",
     subtitle: "Pre-engineered building systems",
   },
 
   {
     src: "/images/hero/Multi storey.mp4",
-    poster: "/images/hero/video-3.jpg",
+    poster: "/images/hero/video-3.webp",
     title: "Multi-Storey Construction",
     subtitle: "Vertical steel structures at scale",
   },

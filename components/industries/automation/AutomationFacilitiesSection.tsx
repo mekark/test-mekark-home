@@ -30,39 +30,39 @@ const facilities: Facility[] = [
     description:
       "Vibration-controlled, high-precision facilities engineered for robotic arm and system assembly.",
     image:
-      "/images/industries/automation/automation-facilities/industrial-robotics.jpg",
+      "/images/industries/automation/automation-facilities/industrial-robotics.webp",
   },
   {
     title: "Control Panel & PLC Assembly Units:",
     description:
       "ESD-safe, contamination-controlled plants designed for panel building, wiring, and testing.",
     image:
-      "/images/industries/automation/automation-facilities/control-panel-plc.png",
+      "/images/industries/automation/automation-facilities/control-panel-plc.webp",
   },
   {
     title: "CNC & Precision Machinery Manufacturing:",
     description:
       "Heavy-load flooring and crane-integrated bays for machine tool assembly and testing.",
-    image: "/images/industries/automation/automation-facilities/cnc-precision.png",
+    image: "/images/industries/automation/automation-facilities/cnc-precision.webp",
   },
   {
     title: "Sensor, PCB & Electronics-Adjacent Assembly:",
     description:
       "Cleanroom-adjacent, static-controlled environments for sensitive component handling.",
-    image: "/images/industries/automation/automation-facilities/sensor-pcb.png",
+    image: "/images/industries/automation/automation-facilities/sensor-pcb.webp",
   },
   {
     title: "Automotive & Industrial Automation Equipment Manufacturing:",
     description:
       "Facilities built for conveyor systems, packaging automation, and material handling equipment production.",
     image:
-      "/images/industries/automation/automation-facilities/automotive-automation.png",
+      "/images/industries/automation/automation-facilities/automotive-automation.webp",
   },
   {
     title: "Testing & R&D Laboratories:",
     description:
       "Climate-controlled, vibration-isolated spaces for automation product testing and validation.",
-    image: "/images/industries/automation/automation-facilities/testing-rnd.png",
+    image: "/images/industries/automation/automation-facilities/testing-rnd.webp",
   },
 ];
 
@@ -162,7 +162,7 @@ export default function AutomationFacilitiesSection() {
         className={`pointer-events-none absolute inset-x-0 top-0 h-[391px] overflow-hidden opacity-15 ${macStyles.gridBg}`}
       >
         <Image
-          src="/images/industries/automation/automation-facilities/grid-bg.png"
+          src="/images/industries/automation/automation-facilities/grid-bg.webp"
           alt=""
           fill
           className="object-cover object-top"

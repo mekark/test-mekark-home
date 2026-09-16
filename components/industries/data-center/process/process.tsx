@@ -7,7 +7,7 @@ const Process = () => {
       <div className={styles.grid1IconWrap}>
         <Image
           className={styles.grid1Icon}
-          src="/images/industries/data-center/process/grid-background.png"
+          src="/images/industries/data-center/process/grid-background.webp"
           fill
           sizes="100vw"
           alt=""

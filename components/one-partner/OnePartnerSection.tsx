@@ -364,7 +364,7 @@ export function OnePartnerSection() {
         style={{ y: bgYSpring, scale: bgScaleSpring }}
       >
         <Image
-          src="/images/one-partner/bg.png"
+          src="/images/one-partner/bg.webp"
           alt=""
           fill
           className="object-cover object-top"
@@ -493,7 +493,7 @@ export function OnePartnerSection() {
                 className="pointer-events-none absolute -right-8 -top-10 hidden h-[180px] w-[min(58%,520px)] opacity-55 sm:block lg:-right-10 lg:-top-12 lg:h-[clamp(11rem,18vw,17rem)] lg:w-[min(55%,720px)] lg:opacity-50 xl:opacity-45 2xl:-right-7 2xl:-top-16 2xl:h-[275px] 2xl:w-[902px] 2xl:opacity-100"
               >
                 <Image
-                  src="/images/one-partner/banner-skyline.png"
+                  src="/images/one-partner/banner-skyline.webp"
                   alt=""
                   fill
                   className="object-cover object-right"

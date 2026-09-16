@@ -123,7 +123,7 @@ export function AboutMekarkSection() {
             viewport={VIEWPORT}
           >
             <Image
-              src="/images/about/facility-card.png"
+              src="/images/about/facility-card.webp"
               alt="Mekark industrial facility"
               fill
               className="object-cover object-center"
@@ -134,7 +134,7 @@ export function AboutMekarkSection() {
             {/* Centered Mekark wordmark */}
             <div className="absolute left-1/2 top-1/2 z-[2] h-8 w-[min(72%,385px)] -translate-x-1/2 -translate-y-1/2 sm:h-10">
               <Image
-                src="/images/about/Mekark logo (Black) 1.png"
+                src="/images/about/Mekark logo (Black) 1.webp"
                 alt="Mekark"
                 fill
                 className="object-contain"

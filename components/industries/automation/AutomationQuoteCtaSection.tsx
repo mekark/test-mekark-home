@@ -7,7 +7,7 @@ export default function AutomationQuoteCtaSection() {
     <section className={styles.section} aria-labelledby="automation-quote-title">
       <Image
         className={styles.backgroundImage}
-        src="/images/industries/automation/automation-quote-cta/factory-background.png"
+        src="/images/industries/automation/automation-quote-cta/factory-background.webp"
         alt=""
         fill
         sizes="100vw"

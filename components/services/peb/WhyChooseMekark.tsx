@@ -170,7 +170,7 @@ export default function WhyChooseMekark() {
       <div className={`relative z-10 mx-auto w-full max-w-[1920px] px-5 py-10 sm:px-10 sm:py-14 lg:px-0 lg:py-0 ${SERVICE_WHY_CHOOSE_ASPECT_CLASS_SCALED}`}>
         {/* Site backdrop — Figma: 1920×1032 @ top -17.33 */}
         <Image
-          src="/images/services/peb/why-choose/construction-site.png"
+          src="/images/services/peb/why-choose/construction-site.webp"
           alt=""
           fill
           className="pointer-events-none object-cover object-bottom opacity-90 lg:top-[-1.7%]"
@@ -220,7 +220,7 @@ export default function WhyChooseMekark() {
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           >
             <Image
-              src="/images/services/peb/why-choose/structure-backdrop.png"
+              src="/images/services/peb/why-choose/structure-backdrop.webp"
               alt=""
               width={627}
               height={665}
@@ -228,7 +228,7 @@ export default function WhyChooseMekark() {
               sizes="(max-width: 1023px) 80vw, 720px"
             />
             <Image
-              src="/images/services/peb/why-choose/engineer.png"
+              src="/images/services/peb/why-choose/engineer.webp"
               alt=""
               width={847}
               height={847}

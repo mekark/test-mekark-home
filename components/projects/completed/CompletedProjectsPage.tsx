@@ -33,42 +33,42 @@ const PROJECTS: Project[] = [
     title: "Air Vision",
     type: "Warehouse",
     location: "Irungattukottai",
-    image: "/images/completed-projects-listing/air-vision.png",
+    image: "/images/completed-projects-listing/air-vision.webp",
     categories: ["industrial", "peb"],
   },
   {
     title: "Solo paints",
     type: "Paint Manufacturing",
     location: "Tirunelveli",
-    image: "/images/completed-projects-listing/solo-paints.png",
+    image: "/images/completed-projects-listing/solo-paints.webp",
     categories: ["industrial", "peb"],
   },
   {
     title: "Jaguar Showroom",
     type: "Car Showroom",
     location: "Tiruvallur",
-    image: "/images/completed-projects-listing/jaguar-showroom.png",
+    image: "/images/completed-projects-listing/jaguar-showroom.webp",
     categories: ["commercial"],
   },
   {
     title: "MIPL",
     type: "Manufacturing Unit",
     location: "Chennai",
-    image: "/images/completed-projects-listing/mipl.png",
+    image: "/images/completed-projects-listing/mipl.webp",
     categories: ["industrial", "peb"],
   },
   {
     title: "TAAC School",
     type: "Institution",
     location: "Chennai",
-    image: "/images/completed-projects-listing/taac-school.png",
+    image: "/images/completed-projects-listing/taac-school.webp",
     categories: ["residential", "infrastructure"],
   },
   {
     title: "SOP",
     type: "Manufacturing Unit",
     location: "Vellanur",
-    image: "/images/completed-projects-listing/sop.png",
+    image: "/images/completed-projects-listing/sop.webp",
     categories: ["industrial", "infrastructure"],
   },
 ];
@@ -225,7 +225,7 @@ export function CompletedProjectsPage() {
       <section className="relative isolate flex min-h-[380px] items-center justify-center pt-[60px] lg:min-h-[480px]">
         <div className="absolute inset-0 overflow-hidden">
           <Image
-            src="/images/projects/completed/hero.jpg"
+            src="/images/projects/completed/hero.webp"
             alt="Completed Mekark industrial facility at sunset"
             fill
             priority

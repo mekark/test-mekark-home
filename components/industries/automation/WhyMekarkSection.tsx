@@ -98,7 +98,7 @@ export default function WhyMekarkSection() {
           />
           <Image
             className={styles.eotCta1}
-            src="/images/industries/logistics/CTA/eot-cta-worker.png"
+            src="/images/industries/logistics/CTA/eot-cta-worker.webp"
             width={491}
             height={323}
             sizes="(max-width: 768px) 96vw, (max-width: 1200px) 92vw, 491px"

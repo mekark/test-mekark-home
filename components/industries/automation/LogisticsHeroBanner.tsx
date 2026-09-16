@@ -6,7 +6,7 @@ export default function LogisticsHeroBanner() {
     <div className={styles.automationHeroBanner}>
       <Image
         className={styles.heroBackgroundIcon}
-        src="/images/industries/automation/hero-background.png"
+        src="/images/industries/automation/hero-background.webp"
         width={1920}
         height={900}
         sizes="100vw"

@@ -60,7 +60,7 @@ function MobileHero() {
       description={heroDescription}
       heroImage={{
         ...civilMobileHeroImageDefaults,
-        src: "/images/tensile-hero-mv.png",
+        src: "/images/tensile-hero-mv.webp",
         alt: "Mekark tensile structure project",
         objectPosition: "center bottom",
         scale: 1.2,
@@ -97,7 +97,7 @@ export default function Hero() {
           <div className={styles.imageChild} />
           <Image
             className={styles.chatgptImageAug20202603}
-            src="/images/services/tensile/hero/hero-bg.png"
+            src="/images/services/tensile/hero/hero-bg.webp"
             width={1920}
             height={1081}
             sizes="100vw"

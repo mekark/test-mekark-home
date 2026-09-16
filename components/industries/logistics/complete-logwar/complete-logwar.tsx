@@ -34,7 +34,7 @@ const CompleteEOTCraneSolutionsEngineeredEndToEnd: NextPage = () => {
             <div className={styles.frameContainer}>
               <Image
                 className={styles.rectangleIcon}
-                src="/images/industries/logistics/complete-logistics/industrial-warehouse-sheds.png"
+                src="/images/industries/logistics/complete-logistics/industrial-warehouse-sheds.webp"
                 width={323}
                 height={194}
                 sizes="100vw"
@@ -51,7 +51,7 @@ const CompleteEOTCraneSolutionsEngineeredEndToEnd: NextPage = () => {
             <div className={styles.frameParent3}>
               <Image
                 className={styles.rectangleIcon}
-                src="/images/industries/logistics/complete-logistics/distribution-centres.jpg"
+                src="/images/industries/logistics/complete-logistics/distribution-centres.webp"
                 width={323}
                 height={194}
                 sizes="100vw"
@@ -68,7 +68,7 @@ const CompleteEOTCraneSolutionsEngineeredEndToEnd: NextPage = () => {
             <div className={styles.frameDiv}>
               <Image
                 className={styles.rectangleIcon}
-                src="/images/industries/logistics/complete-logistics/cold-storage-structures.png"
+                src="/images/industries/logistics/complete-logistics/cold-storage-structures.webp"
                 width={323}
                 height={346}
                 sizes="100vw"
@@ -85,7 +85,7 @@ const CompleteEOTCraneSolutionsEngineeredEndToEnd: NextPage = () => {
             <div className={styles.frameParent4}>
               <Image
                 className={styles.rectangleIcon}
-                src="/images/industries/logistics/complete-logistics/logistics-parks-multi-bay.jpg"
+                src="/images/industries/logistics/complete-logistics/logistics-parks-multi-bay.webp"
                 width={323}
                 height={324}
                 sizes="100vw"
@@ -104,7 +104,7 @@ const CompleteEOTCraneSolutionsEngineeredEndToEnd: NextPage = () => {
             <div className={styles.frameParent2}>
               <Image
                 className={styles.rectangleIcon}
-                src="/images/industries/logistics/complete-logistics/multi-storey-warehouses.png"
+                src="/images/industries/logistics/complete-logistics/multi-storey-warehouses.webp"
                 width={323}
                 height={194}
                 sizes="100vw"

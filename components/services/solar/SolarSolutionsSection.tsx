@@ -10,36 +10,36 @@ export const solarSolutions = [
     title: "Rooftop Solar for Factories and Warehouses",
     description:
       "High-capacity systems engineered for industrial roof structures",
-    image: "/images/services/solar/CTA/rectangle-15.png",
+    image: "/images/services/solar/CTA/rectangle-15.webp",
   },
   {
     title: "Off-Grid Solar Systems",
     description:
       "Fully independent power supply for remote industrial facilities",
-    image: "/images/services/solar/CTA/rectangle-16.png",
+    image: "/images/services/solar/CTA/rectangle-16.webp",
     imageClassName: "object-cover scale-[1.327] object-top",
   },
   {
     title: "Ground-Mounted Solar Power Plants",
     description: "Optimized for businesses with available open land",
-    image: "/images/services/solar/CTA/rectangle-16-1.png",
+    image: "/images/services/solar/CTA/rectangle-16-1.webp",
   },
   {
     title: "Commercial Solar Energy Audit",
     description:
       "Detailed assessment of your current consumption and savings potential",
-    image: "/images/services/solar/CTA/commercial-solar-energy-audit.png",
+    image: "/images/services/solar/CTA/commercial-solar-energy-audit.webp",
   },
   {
     title: "Solar and Battery Storage Systems",
     description:
       "Uninterrupted power supply for manufacturing and cold storage units",
-    image: "/images/services/solar/CTA/rectangle-16-2.png",
+    image: "/images/services/solar/CTA/rectangle-16-2.webp",
   },
   {
     title: "On-Grid Solar with Net Metering",
     description: "Stay connected to the grid and reduce your electricity bill",
-    image: "/images/services/solar/CTA/on-grid-net-metering.png",
+    image: "/images/services/solar/CTA/on-grid-net-metering.webp",
     imageClassName: "object-cover scale-[1.28] object-top",
   },
 ] as const;
@@ -50,7 +50,7 @@ export default function SolarSolutionsSection() {
       <section className="relative w-full shrink-0 overflow-hidden bg-white text-left font-manrope text-gray lg:hidden">
         <Image
           className="pointer-events-none absolute top-0 left-0 h-[200px] w-full object-cover object-bottom opacity-[0.15] sm:h-[280px]"
-          src="/images/services/solar/CTA/grid-1-1.png"
+          src="/images/services/solar/CTA/grid-1-1.webp"
           width={1918}
           height={391}
           sizes="100vw"
@@ -79,7 +79,7 @@ export default function SolarSolutionsSection() {
           width={1918}
           height={391}
           sizes="100vw"
-          src="/images/services/solar/CTA/grid-1-1.png"
+          src="/images/services/solar/CTA/grid-1-1.webp"
           alt=""
         />
 
@@ -97,7 +97,7 @@ export default function SolarSolutionsSection() {
                   width={473}
                   height={277}
                   sizes="100vw"
-                  src="/images/services/solar/CTA/rectangle-15.png"
+                  src="/images/services/solar/CTA/rectangle-15.webp"
                   alt="Rooftop solar for factories and warehouses"
                 />
                 <div className={styles.rooftopSolarForFactoriesAnParent}>
@@ -117,7 +117,7 @@ export default function SolarSolutionsSection() {
                     width={473}
                     height={277}
                     sizes="100vw"
-                    src="/images/services/solar/CTA/rectangle-16.png"
+                    src="/images/services/solar/CTA/rectangle-16.webp"
                     alt="Off-grid solar systems"
                   />
                 </div>
@@ -139,7 +139,7 @@ export default function SolarSolutionsSection() {
                   width={473}
                   height={277}
                   sizes="100vw"
-                  src="/images/services/solar/CTA/rectangle-16-1.png"
+                  src="/images/services/solar/CTA/rectangle-16-1.webp"
                   alt="Ground-mounted solar power plants"
                 />
                 <div className={styles.rooftopSolarForFactoriesAnParent}>
@@ -157,7 +157,7 @@ export default function SolarSolutionsSection() {
                   width={473}
                   height={277}
                   sizes="100vw"
-                  src="/images/services/solar/CTA/commercial-solar-energy-audit.png"
+                  src="/images/services/solar/CTA/commercial-solar-energy-audit.webp"
                   alt="Commercial solar energy audit"
                 />
                 <div className={styles.rooftopSolarForFactoriesAnParent}>
@@ -178,7 +178,7 @@ export default function SolarSolutionsSection() {
                   width={473}
                   height={277}
                   sizes="100vw"
-                  src="/images/services/solar/CTA/rectangle-16-2.png"
+                  src="/images/services/solar/CTA/rectangle-16-2.webp"
                   alt="Solar and battery storage systems"
                 />
                 <div className={styles.rooftopSolarForFactoriesAnParent}>
@@ -198,7 +198,7 @@ export default function SolarSolutionsSection() {
                     width={473}
                     height={277}
                     sizes="100vw"
-                    src="/images/services/solar/CTA/on-grid-net-metering.png"
+                    src="/images/services/solar/CTA/on-grid-net-metering.webp"
                     alt="On-grid solar with net metering"
                   />
                 </div>

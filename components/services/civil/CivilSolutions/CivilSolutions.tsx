@@ -20,7 +20,7 @@ const solutions: {
   imageWidth?: string;
 }[] = [
   {
-    image: "/images/services/civil/solutions/rcc.png",
+    image: "/images/services/civil/solutions/rcc.webp",
     imageClassName: "absolute top-[0.01%] left-[-42.61%] h-full w-[179.83%] max-w-none",
     title: "Civil Construction & RCC Structures",
     titleClassName: "leading-[21.33px]",
@@ -31,7 +31,7 @@ const solutions: {
     left: "left-0",
   },
   {
-    image: "/images/services/civil/solutions/structural.png",
+    image: "/images/services/civil/solutions/structural.webp",
     imageClassName:
       "absolute top-[0.01%] left-[-32.11%] h-full w-[179.83%] max-w-none",
     title: "Structural Design & Engineering",
@@ -43,7 +43,7 @@ const solutions: {
     left: "left-[289.33px]",
   },
   {
-    image: "/images/services/civil/solutions/industrial.png",
+    image: "/images/services/civil/solutions/industrial.webp",
     imageClassName:
       "absolute top-[-0.25%] left-[-34.64%] h-full w-[177.78%] max-w-none",
     title: "Industrial Civil Construction",
@@ -55,7 +55,7 @@ const solutions: {
     left: "left-[580px]",
   },
   {
-    image: "/images/services/civil/solutions/commercial.png",
+    image: "/images/services/civil/solutions/commercial.webp",
     imageClassName:
       "absolute top-[-0.29%] left-[-77.81%] h-[111.82%] w-[201.08%] max-w-none",
     title: "Commercial & Institutional Construction",
@@ -67,7 +67,7 @@ const solutions: {
     left: "left-[869.33px]",
   },
   {
-    image: "/images/services/civil/solutions/foundation.png",
+    image: "/images/services/civil/solutions/foundation.webp",
     imageClassName: "absolute inset-0 size-full object-cover",
     title: "Foundation & Structural Framework",
     titleClassName: "leading-[21.33px]",
@@ -79,7 +79,7 @@ const solutions: {
     imageWidth: "w-[258.7px]",
   },
   {
-    image: "/images/services/civil/solutions/mep.png",
+    image: "/images/services/civil/solutions/mep.webp",
     imageClassName:
       "absolute top-[-0.23%] left-[-11.57%] h-full w-[150.38%] max-w-none",
     title: "MEP & Finishing Works",
@@ -98,7 +98,7 @@ export default function CivilSolutions() {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         className="pointer-events-none absolute top-0 left-0 h-[200px] w-full object-cover opacity-15 sm:h-[280px] lg:top-[-13.33px] lg:h-[390.7px] lg:w-[1917.8px]"
-        src="/images/services/civil/solutions/grid.png"
+        src="/images/services/civil/solutions/grid.webp"
         width={1918}
         height={391}
         alt=""

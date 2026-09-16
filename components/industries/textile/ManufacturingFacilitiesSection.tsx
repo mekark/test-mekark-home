@@ -17,7 +17,7 @@ const facilities: Facility[] = [
     description:
       "Optimised column spacing and humidity-controlled environments for ring frame and rotor operations.",
     image:
-      "/images/industries/textile/manufacturing-facilities/cotton-spinning.png",
+      "/images/industries/textile/manufacturing-facilities/cotton-spinning.webp",
     imageAlt: "Cotton spinning mill with ring frame machinery",
   },
   {
@@ -25,7 +25,7 @@ const facilities: Facility[] = [
     description:
       "Engineered for high-speed synthetic yarn production with integrated dust and temperature control.",
     image:
-      "/images/industries/textile/manufacturing-facilities/synthetic-fibre.png",
+      "/images/industries/textile/manufacturing-facilities/synthetic-fibre.webp",
     imageAlt: "Synthetic fibre spinning unit with vertical spindles",
     imageFit: "synthetic-fibre",
   },
@@ -34,14 +34,14 @@ const facilities: Facility[] = [
     description:
       "Column-free sheds with north-light roofing for consistent daylight and loom productivity.",
     image:
-      "/images/industries/textile/manufacturing-facilities/weaving-sheds.png",
+      "/images/industries/textile/manufacturing-facilities/weaving-sheds.webp",
     imageAlt: "Wide weaving shed with looms and north-light roofing",
   },
   {
     title: "Knitting Factory Buildings",
     description:
       "Clear-span facilities for circular and flat knitting machinery with adequate floor loading.",
-    image: "/images/industries/textile/manufacturing-facilities/knitting.png",
+    image: "/images/industries/textile/manufacturing-facilities/knitting.webp",
     imageAlt: "Knitting factory floor with circular knitting machines",
     imageFit: "knitting",
   },
@@ -50,7 +50,7 @@ const facilities: Facility[] = [
     description:
       "Multi-floor sewing and finishing units built to Factory Act standards.",
     image:
-      "/images/industries/textile/manufacturing-facilities/garment-apparel.png",
+      "/images/industries/textile/manufacturing-facilities/garment-apparel.webp",
     imageAlt: "Garment factory with sewing stations and workers",
   },
   {
@@ -58,7 +58,7 @@ const facilities: Facility[] = [
     description:
       "Corrosion-resistant structures with ETP integration and chemical storage.",
     image:
-      "/images/industries/textile/manufacturing-facilities/dyeing-bleaching.png",
+      "/images/industries/textile/manufacturing-facilities/dyeing-bleaching.webp",
     imageAlt: "Dyeing and bleaching plant with industrial tanks",
   },
   {
@@ -66,7 +66,7 @@ const facilities: Facility[] = [
     description:
       "Facilities for fabric handling, curing, and finishing with steam and utility infrastructure.",
     image:
-      "/images/industries/textile/manufacturing-facilities/printing-finishing.png",
+      "/images/industries/textile/manufacturing-facilities/printing-finishing.webp",
     imageAlt: "Fabric printing and finishing production area",
   },
   {
@@ -74,7 +74,7 @@ const facilities: Facility[] = [
     description:
       "Turnkey campuses covering ginning, spinning, weaving, dyeing, and finishing.",
     image:
-      "/images/industries/textile/manufacturing-facilities/composite-mill.png",
+      "/images/industries/textile/manufacturing-facilities/composite-mill.webp",
     imageAlt: "Composite textile mill machinery processing fabric",
   },
   {
@@ -82,7 +82,7 @@ const facilities: Facility[] = [
     description:
       "Engineered for high-precision texturising machinery and consistent process conditions.",
     image:
-      "/images/industries/textile/manufacturing-facilities/yarn-texturising.png",
+      "/images/industries/textile/manufacturing-facilities/yarn-texturising.webp",
     imageAlt: "Yarn texturising plant with precision machinery",
   },
   {
@@ -90,7 +90,7 @@ const facilities: Facility[] = [
     description:
       "Specialised structures for nonwoven fabric production with process-specific ventilation.",
     image:
-      "/images/industries/textile/manufacturing-facilities/technical-textiles.png",
+      "/images/industries/textile/manufacturing-facilities/technical-textiles.webp",
     imageAlt: "Technical textiles nonwoven production line",
   },
 ];
@@ -156,7 +156,7 @@ export default function ManufacturingFacilitiesSection() {
       <div className={styles.gridBg} aria-hidden>
         <Image
           className={styles.gridBgImg}
-          src="/images/industries/textile/manufacturing-facilities/grid.png"
+          src="/images/industries/textile/manufacturing-facilities/grid.webp"
           alt=""
           fill
           sizes="100vw"

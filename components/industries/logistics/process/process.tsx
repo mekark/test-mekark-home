@@ -41,7 +41,7 @@ const Process: NextPage = () => {
       <div className={styles.grid1IconWrap}>
         <Image
           className={styles.grid1Icon}
-          src="/images/industries/logistics/process/grid-background.png"
+          src="/images/industries/logistics/process/grid-background.webp"
           fill
           sizes="100vw"
           alt=""

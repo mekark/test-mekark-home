@@ -7,32 +7,32 @@ import { SERVICE_CARD_BODY_CLASS_SCALED } from "@/components/services/serviceTyp
 
 const solutions = [
   {
-    src: "/images/services/tensile/frame170/car-parking-sheds.png",
+    src: "/images/services/tensile/frame170/car-parking-sheds.webp",
     title: "Tensile Roofing and Canopies",
     body: "Column-free fabric roofing suitable for commercial and industrial applications",
   },
   {
-    src: "/images/services/tensile/frame170/roofing-canopies.png",
+    src: "/images/services/tensile/frame170/roofing-canopies.webp",
     title: "Tensile Car Parking Sheds",
     body: "Weather-resistant, UV-resistant car parking sheds suitable for office buildings, factories, residential buildings, etc.",
   },
   {
-    src: "/images/services/tensile/frame170/dome-structures.png",
+    src: "/images/services/tensile/frame170/dome-structures.webp",
     title: "Tensile Dome Structures",
     body: "Dome and hypar-shaped fabric structures suitable for architectural purposes",
   },
   {
-    src: "/images/services/tensile/frame170/stadium-roofing.png",
+    src: "/images/services/tensile/frame170/stadium-roofing.webp",
     title: "Stadiums and Sports Facilities Roofing",
     body: "Large span tensile membrane roof suitable for stadiums and sports facilities",
   },
   {
-    src: "/images/services/tensile/frame170/event-canopies.png",
+    src: "/images/services/tensile/frame170/event-canopies.webp",
     title: "Event and Entrances Canopies",
     body: "Custom-made tensile canopies suitable for malls, hotels and events",
   },
   {
-    src: "/images/services/tensile/frame170/maintenance-repairs.png",
+    src: "/images/services/tensile/frame170/maintenance-repairs.webp",
     title: "Maintenance and Repairs",
     body: "Maintenance and repair of structures periodically",
   },
@@ -46,7 +46,7 @@ export default function Frame170() {
       <div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[200px] sm:h-[280px] lg:h-[390px]">
         <Image
           className="h-full w-full object-cover object-top opacity-95"
-          src="/images/services/tensile/frame170/grid-bg.png"
+          src="/images/services/tensile/frame170/grid-bg.webp"
           width={1918}
           height={391}
           sizes="100vw"

@@ -115,7 +115,7 @@ function MobileHero() {
       description={heroDescription}
       heroImage={{
         ...civilMobileHeroImageDefaults,
-        src: "/images/services/multi-storey/hero/building-layer.png",
+        src: "/images/services/multi-storey/hero/building-layer.webp",
         alt: "Multi-storey steel building under construction",
         objectPosition: "center bottom",
         scale: 1.23,
@@ -152,7 +152,7 @@ function DesktopHero() {
           transition={{ duration: 1.4, ease: easeOut }}
         >
           <Image
-            src="/images/services/multi-storey/hero/sky-bg.png"
+            src="/images/services/multi-storey/hero/sky-bg.webp"
             alt=""
             fill
             priority
@@ -167,7 +167,7 @@ function DesktopHero() {
             }}
           />
           <Image
-            src="/images/services/multi-storey/hero/building-layer.png"
+            src="/images/services/multi-storey/hero/building-layer.webp"
             alt="Multi-storey steel building under construction"
             fill
             priority

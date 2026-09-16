@@ -13,7 +13,7 @@ import {
   fadeUp,
   staggerContainer,
 } from "@/lib/motion-variants";
-import mdPortraitPhoto from "@/public/images/about/history/md-portrait-photo.png";
+import mdPortraitPhoto from "@/public/images/about/history/md-portrait-photo.webp";
 
 const VIEWPORT = { once: true, margin: "-90px" as const };
 
@@ -148,7 +148,7 @@ export function OurHistoryPage() {
         <div className="relative mx-auto w-full sm:hidden">
           <div className="relative w-full aspect-[402/80]">
             <Image
-              src="/images/about/history/about-hero-mobile.png"
+              src="/images/about/history/about-hero-mobile.webp"
               alt=""
               fill
               className="object-cover object-center"
@@ -159,7 +159,7 @@ export function OurHistoryPage() {
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="relative aspect-[71/54] h-[67%] w-auto">
                 <Image
-                  src="/images/about/history/18-plus-mobile.png"
+                  src="/images/about/history/18-plus-mobile.webp"
                   alt="18+ years of experience"
                   fill
                   className="object-contain"
@@ -175,7 +175,7 @@ export function OurHistoryPage() {
         <div className="relative mx-auto hidden w-full max-w-[1916px] sm:block">
           <div className="relative w-full aspect-[802/160]">
             <Image
-              src="/images/about/history/18%20Years.png"
+              src="/images/about/history/18%20Years.webp"
               alt="18+ years of experience"
               fill
               className="object-contain object-bottom"
@@ -349,7 +349,7 @@ export function OurHistoryPage() {
           <div className="relative mx-auto h-full max-w-[1911px]">
             <div className="absolute inset-x-0 bottom-0 h-[min(32vw,130px)] sm:h-[min(52vw,619px)]">
               <Image
-                src="/images/about/history/journey-bg-mobile.png"
+                src="/images/about/history/journey-bg-mobile.webp"
                 alt=""
                 fill
                 className="object-cover object-bottom sm:hidden"
@@ -357,7 +357,7 @@ export function OurHistoryPage() {
                 aria-hidden
               />
               <Image
-                src="/images/about/history/journey-bg.png"
+                src="/images/about/history/journey-bg.webp"
                 alt=""
                 fill
                 className="hidden object-cover object-bottom sm:block"

@@ -18,7 +18,7 @@ export const solutions: SolutionItem[] = [
     title: "Turnkey FMCG Plant Construction",
     description:
       "Full-scope design, civil works, structural steel, and MEP delivered under one contract for FMCG manufacturing and packaging units.",
-    image: "/images/industries/fmcg/our-solutions/turnkey-plant.png",
+    image: "/images/industries/fmcg/our-solutions/turnkey-plant.webp",
     top: 0,
     left: 73,
   },
@@ -26,7 +26,7 @@ export const solutions: SolutionItem[] = [
     title: "Hygienic Flooring & Clean-Process Interiors",
     description:
       "GMP and FSSAI-compliant epoxy and PU flooring, coved skirting, and wash-down-ready wall systems for personal care, home care, and packaged food production lines.",
-    image: "/images/industries/fmcg/our-solutions/hygienic-flooring.png",
+    image: "/images/industries/fmcg/our-solutions/hygienic-flooring.webp",
     top: 259,
     left: 284,
   },
@@ -34,7 +34,7 @@ export const solutions: SolutionItem[] = [
     title: "Warehousing & Distribution Infrastructure",
     description:
       "High-bay racking-ready warehouses, cross-dock facilities, and cold storage for fast-moving consumer goods logistics.",
-    image: "/images/industries/fmcg/our-solutions/warehousing.png",
+    image: "/images/industries/fmcg/our-solutions/warehousing.webp",
     top: 519,
     left: 73,
   },
@@ -42,7 +42,7 @@ export const solutions: SolutionItem[] = [
     title: "HVAC & Air Handling Systems:",
     description:
       "Temperature, humidity, and air quality control engineered specifically for FMCG production, filling, and packaging environments.",
-    image: "/images/industries/fmcg/our-solutions/hvac.png",
+    image: "/images/industries/fmcg/our-solutions/hvac.webp",
     top: 778,
     left: 284,
   },
@@ -50,7 +50,7 @@ export const solutions: SolutionItem[] = [
     title: "MEP & Utility Infrastructure:",
     description:
       "Electrical, mechanical, plumbing, compressed air, and process utility systems built for uninterrupted, high-speed FMCG plant operations.",
-    image: "/images/industries/fmcg/our-solutions/mep.png",
+    image: "/images/industries/fmcg/our-solutions/mep.webp",
     top: 1037,
     left: 73,
   },
@@ -58,7 +58,7 @@ export const solutions: SolutionItem[] = [
     title: "EOT Crane & Material Handling Systems:",
     description:
       "Overhead crane, conveyor, and internal logistics infrastructure for bulk raw material handling and high-volume packaging lines.",
-    image: "/images/industries/fmcg/our-solutions/eot-crane.png",
+    image: "/images/industries/fmcg/our-solutions/eot-crane.webp",
     top: 1301,
     left: 284,
   },

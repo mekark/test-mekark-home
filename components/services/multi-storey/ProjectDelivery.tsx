@@ -57,7 +57,7 @@ export default function ProjectDelivery() {
           <div className="relative mt-auto h-[200px] w-full shrink-0 overflow-hidden sm:h-[260px]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/services/multi-storey/frame212/cta/building-mobile.jpg"
+              src="/images/services/multi-storey/frame212/cta/building-mobile.webp"
               alt="Multi-storey building under construction"
               className="absolute left-1/2 bottom-0 h-[115%] w-[150%] max-w-none -translate-x-1/2 object-cover object-bottom sm:w-[135%]"
             />

@@ -21,7 +21,7 @@ export function QuoteRequestBanner() {
       >
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <Image
-            src="/images/industries/fmcg/fmcg-facility-cta/quote-request-banner-bg.png"
+            src="/images/industries/fmcg/fmcg-facility-cta/quote-request-banner-bg.webp"
             alt=""
             width={2400}
             height={1350}

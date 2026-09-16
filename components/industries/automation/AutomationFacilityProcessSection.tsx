@@ -40,7 +40,7 @@ export default function AutomationFacilityProcessSection() {
       <div className={styles.grid1IconWrap}>
         <Image
           className={styles.grid1Icon}
-          src="/images/industries/automation/automation-facilities/grid-bg.png"
+          src="/images/industries/automation/automation-facilities/grid-bg.webp"
           fill
           sizes="100vw"
           alt=""

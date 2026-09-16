@@ -22,7 +22,7 @@ const solutions: Solution[] = [
   {
     title: "Multi-Storey Steel Building Construction",
     body: "Structural steel buildings engineered for strength, speed, and scalability.",
-    image: "/images/services/multi-storey/frame212/solutions/steel-building.jpg",
+    image: "/images/services/multi-storey/frame212/solutions/steel-building.webp",
     desktopTitle: (
       <>
         <Line>Multi-Storey Steel</Line>
@@ -33,7 +33,7 @@ const solutions: Solution[] = [
   {
     title: "Pre-Engineered Building (PEB) Structures",
     body: "Faster, more cost-efficient than conventional construction.",
-    image: "/images/services/multi-storey/frame212/solutions/peb.jpg",
+    image: "/images/services/multi-storey/frame212/solutions/peb.webp",
     desktopTitle: (
       <>
         <Line>Pre-Engineered Building</Line>
@@ -44,7 +44,7 @@ const solutions: Solution[] = [
   {
     title: "Structural Design & Engineering",
     body: "Load planning and analysis using BIM technology.",
-    image: "/images/services/multi-storey/frame212/solutions/structural-design.jpg",
+    image: "/images/services/multi-storey/frame212/solutions/structural-design.webp",
     desktopTitle: (
       <>
         <Line>Structural Design &amp;</Line>
@@ -55,7 +55,7 @@ const solutions: Solution[] = [
   {
     title: "Industrial Buildings",
     body: "Multi-level facilities for manufacturing, processing, and storage.",
-    image: "/images/services/multi-storey/frame212/solutions/industrial.jpg",
+    image: "/images/services/multi-storey/frame212/solutions/industrial.webp",
     desktopTitle: (
       <>
         <Line>Industrial</Line>
@@ -66,7 +66,7 @@ const solutions: Solution[] = [
   {
     title: "Commercial & Institutional Buildings",
     body: "Office, retail, hospital, hotel, and educational structures.",
-    image: "/images/services/multi-storey/frame212/solutions/commercial.jpg",
+    image: "/images/services/multi-storey/frame212/solutions/commercial.webp",
     desktopTitle: (
       <>
         <Line>Commercial &amp;</Line>
@@ -77,13 +77,13 @@ const solutions: Solution[] = [
   {
     title: "Warehouse Construction",
     body: "Multi-level logistics and storage structures on steel framing.",
-    image: "/images/services/multi-storey/frame212/solutions/warehouse.jpg",
+    image: "/images/services/multi-storey/frame212/solutions/warehouse.webp",
     desktopTitle: <Line>Warehouse Construction</Line>,
   },
   {
     title: "Foundation & Structural Framework",
     body: "RCC foundation and steel superstructure integration with quality control.",
-    image: "/images/services/multi-storey/frame212/solutions/foundation.jpg",
+    image: "/images/services/multi-storey/frame212/solutions/foundation.webp",
     desktopTitle: (
       <>
         <Line>Foundation &amp; Structural</Line>
@@ -94,7 +94,7 @@ const solutions: Solution[] = [
   {
     title: "MEP & Finishing Works",
     body: "Mechanical, electrical, plumbing, and premium finishing across all floors.",
-    image: "/images/services/multi-storey/frame212/solutions/mep.jpg",
+    image: "/images/services/multi-storey/frame212/solutions/mep.webp",
     desktopTitle: <Line>MEP &amp; Finishing Works</Line>,
   },
 ];

@@ -15,25 +15,25 @@ const SOLUTIONS = [
   {
     title: "EOT",
     description: "Heavy-duty infrastructure for precision material handling.",
-    image: "/images/industrial-infrastructure/eot-v2.png",
+    image: "/images/industrial-infrastructure/eot-v2.webp",
   },
   {
     title: "Heavy Duty Racking",
     description:
       "Optimised infrastructure for high-density industrial storage.",
-    image: "/images/industrial-infrastructure/heavy-duty-racking-v2.jpg",
+    image: "/images/industrial-infrastructure/heavy-duty-racking-v2.webp",
   },
   {
     title: "Clean Room",
     description:
       "Contamination-controlled infrastructure for precision manufacturing.",
-    image: "/images/industrial-infrastructure/clean-room-v2.jpg",
+    image: "/images/industrial-infrastructure/clean-room-v2.webp",
   },
   {
     title: "Cold Storage",
     description:
       "Precision-engineered facilities for reliable, temperature-sensitive storage.",
-    image: "/images/ext.png",
+    image: "/images/ext.webp",
   },
 ] as const;
 

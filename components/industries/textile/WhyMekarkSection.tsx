@@ -77,11 +77,11 @@ export default function WhyMekarkSection() {
           />
           <Image
             className={styles.eotCta1}
-            src="/images/industries/logistics/CTA/eot-cta-worker.png"
+            src="/images/industries/logistics/CTA/eot-cta-worker.webp"
             width={491}
             height={323}
             sizes="(max-width: 768px) 96vw, (max-width: 1200px) 92vw, 491px"
-            alt="Mekark warehouse construction expert"
+            alt="Mekark textile facility construction expert"
             priority
           />
         </div>
@@ -91,7 +91,7 @@ export default function WhyMekarkSection() {
         <div className={styles.imageWrapper}>
           <Image
             className={styles.imageIcon}
-            src="/images/industries/textile/why-mekark/factory.png"
+            src="/images/industries/textile/why-mekark/factory.webp"
             width={1066}
             height={723}
             sizes="100vw"

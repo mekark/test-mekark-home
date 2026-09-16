@@ -3,31 +3,31 @@ import { SectionBadge } from "./SectionBadge";
 
 const photos = [
   {
-    src: "/assets/careers/life/team-at-work.png",
+    src: "/assets/careers/life/team-at-work.webp",
     alt: "Engineer working on a laptop at a technical workstation",
     caption: "Site review — Pune automotive plant",
     className: "min-h-[220px] md:col-span-2 md:row-span-2 md:min-h-[551px] md:rounded-l-[23px]",
   },
   {
-    src: "/assets/careers/life/engineering-team.png",
+    src: "/assets/careers/life/engineering-team.webp",
     alt: "Team member in the Chennai design studio",
     caption: "Chennai design studio",
     className: "min-h-[220px] md:min-h-[271px]",
   },
   {
-    src: "/assets/careers/life/cold-storage.png",
+    src: "/assets/careers/life/cold-storage.webp",
     alt: "Industrial site with cranes during commissioning",
     caption: "Cold chain commissioning",
     className: "min-h-[220px] md:min-h-[271px] md:rounded-tr-[23px]",
   },
   {
-    src: "/assets/careers/life/office.png",
+    src: "/assets/careers/life/office.webp",
     alt: "Mekark headquarters office interior",
     caption: "HQ — Anna Nagar, Chennai",
     className: "min-h-[220px] md:min-h-[271px]",
   },
   {
-    src: "/assets/careers/life/team-celebration.png",
+    src: "/assets/careers/life/team-celebration.webp",
     alt: "Team collaborating around a table",
     caption: "Project handover — Hyderabad data centre",
     className: "min-h-[220px] md:min-h-[271px] md:rounded-br-[23px]",

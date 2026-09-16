@@ -47,7 +47,7 @@ const CompletePharma = () => {
               <div className={styles.frameContainer}>
                 <Image
                   className={styles.rectangleIcon}
-                  src="/images/industries/pharma/complete-pharma/1.png"
+                  src="/images/industries/pharma/complete-pharma/1.webp"
                   width={323}
                   height={194}
                   sizes="100vw"
@@ -66,7 +66,7 @@ const CompletePharma = () => {
               <div className={styles.rectangleContainer}>
                 <Image
                   className={styles.rectangleIcon}
-                  src="/images/industries/pharma/complete-pharma/2.png"
+                  src="/images/industries/pharma/complete-pharma/2.webp"
                   width={323}
                   height={194}
                   sizes="100vw"
@@ -89,7 +89,7 @@ const CompletePharma = () => {
               <div className={styles.rectangleParent}>
                 <Image
                   className={styles.rectangleIcon}
-                  src="/images/industries/pharma/complete-pharma/3.png"
+                  src="/images/industries/pharma/complete-pharma/3.webp"
                   width={323}
                   height={194}
                   sizes="100vw"
@@ -109,7 +109,7 @@ const CompletePharma = () => {
               <div className={styles.rectangleParent2}>
                 <Image
                   className={styles.rectangleIcon}
-                  src="/images/industries/pharma/complete-pharma/4.png"
+                  src="/images/industries/pharma/complete-pharma/4.webp"
                   width={323}
                   height={194}
                   sizes="100vw"
@@ -129,7 +129,7 @@ const CompletePharma = () => {
               <div className={styles.rectangleGroup}>
                 <Image
                   className={styles.rectangleIcon}
-                  src="/images/industries/pharma/complete-pharma/5.jpg"
+                  src="/images/industries/pharma/complete-pharma/5.webp"
                   width={323}
                   height={194}
                   sizes="100vw"
@@ -149,7 +149,7 @@ const CompletePharma = () => {
               <div className={styles.rectangleParent3}>
                 <Image
                   className={styles.rectangleIcon}
-                  src="/images/industries/pharma/complete-pharma/6.png"
+                  src="/images/industries/pharma/complete-pharma/6.webp"
                   width={323}
                   height={194}
                   sizes="100vw"

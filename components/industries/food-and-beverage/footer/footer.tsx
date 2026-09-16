@@ -6,7 +6,7 @@ const Footer = () => {
     <div className={styles.frameParent}>
       <Image
         className={styles.backgroundImage}
-        src="/images/industries/food-and-beverage/footer/footer-bg.png"
+        src="/images/industries/food-and-beverage/footer/footer-bg.webp"
         fill
         sizes="100vw"
         alt=""

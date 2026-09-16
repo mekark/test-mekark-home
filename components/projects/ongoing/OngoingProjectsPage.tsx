@@ -33,28 +33,28 @@ const PROJECTS: Project[] = [
     title: "EPIL",
     type: "Turnkey",
     location: "Chennai",
-    image: "/images/projects/ongoing/1.jpg",
+    image: "/images/projects/ongoing/1.webp",
     categories: ["industrial", "peb"],
   },
   {
     title: "Orbitalls",
     type: "Manufacturing Unit",
     location: "Ulundhurpet",
-    image: "/images/projects/ongoing/2.jpg",
+    image: "/images/projects/ongoing/2.webp",
     categories: ["industrial", "peb"],
   },
   {
     title: "JMR Apparels",
     type: "Apparels",
     location: "Chennai",
-    image: "/images/projects/ongoing/3.png",
+    image: "/images/projects/ongoing/3.webp",
     categories: ["industrial", "commercial"],
   },
   {
     title: "JK Tyres",
     type: "Manufacturing Unit",
     location: "Chennai",
-    image: "/images/projects/ongoing/4.jpg",
+    image: "/images/projects/ongoing/4.webp",
     categories: ["industrial", "peb"],
   },
 ];
@@ -211,7 +211,7 @@ export function OngoingProjectsPage() {
       <section className="relative isolate flex min-h-[380px] items-center justify-center pt-[60px] lg:min-h-[480px]">
         <div className="absolute inset-0 overflow-hidden">
           <Image
-            src="/images/projects/ongoing/hero.jpg"
+            src="/images/projects/ongoing/hero.webp"
             alt="Ongoing Mekark industrial construction at sunset"
             fill
             priority

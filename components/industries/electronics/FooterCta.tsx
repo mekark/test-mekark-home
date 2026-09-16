@@ -6,7 +6,7 @@ export default function FooterCta() {
     <div className={styles.frameParent}>
       <Image
         className={styles.backgroundImage}
-        src="/images/industries/electronics/quote-cta/background.png"
+        src="/images/industries/electronics/quote-cta/background.webp"
         fill
         sizes="100vw"
         alt=""

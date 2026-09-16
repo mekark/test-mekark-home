@@ -7,7 +7,7 @@ const FACILITIES = [
     description:
       "ESD-safe assembly plants engineered for precision component production and high-volume throughput.",
     image:
-      "/images/industries/electronics/facility-construction/electronics-component.png",
+      "/images/industries/electronics/facility-construction/electronics-component.webp",
     imageAlt:
       "Green circuit board assembly line for electronics component manufacturing",
   },
@@ -16,7 +16,7 @@ const FACILITIES = [
     description:
       "Clean room facilities built to the required cleanliness classification for sensitive fabrication processes.",
     image:
-      "/images/industries/electronics/facility-construction/semiconductor-assembly.png",
+      "/images/industries/electronics/facility-construction/semiconductor-assembly.webp",
     imageAlt:
       "Worker in a cleanroom suit at a semiconductor precision assembly facility",
   },
@@ -25,7 +25,7 @@ const FACILITIES = [
     description:
       "High-volume production plants designed for continuous, automation-ready operations.",
     image:
-      "/images/industries/electronics/facility-construction/consumer-electronics.png",
+      "/images/industries/electronics/facility-construction/consumer-electronics.webp",
     imageAlt: "Workers at a consumer electronics production line",
   },
   {
@@ -33,7 +33,7 @@ const FACILITIES = [
     description:
       "Controlled-environment facilities for auto-component and EV electronics manufacturers.",
     image:
-      "/images/industries/electronics/facility-construction/automotive-electronics.png",
+      "/images/industries/electronics/facility-construction/automotive-electronics.webp",
     imageAlt:
       "Automotive electronics manufacturing on a vehicle production line",
   },
@@ -42,7 +42,7 @@ const FACILITIES = [
     description:
       "Precision production infrastructure with utility redundancy for uninterrupted manufacturing.",
     image:
-      "/images/industries/electronics/facility-construction/telecom-networking.png",
+      "/images/industries/electronics/facility-construction/telecom-networking.webp",
     imageAlt: "Server racks and telecom networking equipment infrastructure",
   },
   {
@@ -50,7 +50,7 @@ const FACILITIES = [
     description:
       "Multi-tenant-ready facilities with flexible bay design for scaling production.",
     image:
-      "/images/industries/electronics/facility-construction/contract-manufacturing.png",
+      "/images/industries/electronics/facility-construction/contract-manufacturing.webp",
     imageAlt:
       "Multiple circuit boards arranged for contract electronics manufacturing",
   },
@@ -63,7 +63,7 @@ export default function FacilityConstructionSection() {
         <div className={styles.gridBg} aria-hidden>
           <Image
             className={styles.grid1Icon}
-            src="/images/industries/electronics/facility-construction/grid.png"
+            src="/images/industries/electronics/facility-construction/grid.webp"
             fill
             sizes="100vw"
             alt=""

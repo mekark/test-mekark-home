@@ -16,7 +16,7 @@ export const engineeringNumbers = {
   eyebrow: "Scale that speaks for itself",
   title: "Annual Production Capacity",
   plaque: {
-    src: "/images/engineering/stat-40000-plaque.png",
+    src: "/images/engineering/stat-40000-plaque.webp",
     alt: "40,000+",
     unitLabel: "metric ton per annum",
   },
@@ -24,5 +24,5 @@ export const engineeringNumbers = {
     line1: "Tons of structural steel manufactured at our",
     line2: "fully integrated Tamil Nadu facility.",
   },
-  watermarkSrc: "/images/engineering/background-watermark.png",
+  watermarkSrc: "/images/engineering/background-watermark.webp",
 } as const satisfies EngineeringNumbersContent;

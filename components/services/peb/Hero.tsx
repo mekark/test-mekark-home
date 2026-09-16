@@ -102,7 +102,7 @@ function MobileHero() {
       description={heroDescription}
       heroImage={{
         ...civilMobileHeroImageDefaults,
-        src: "/images/services/peb/hero/layer.png",
+        src: "/images/services/peb/hero/layer.webp",
         alt: "Mekark pre-engineered building manufacturing facility",
         objectPosition: "center bottom",
         scale: 1.50,
@@ -133,7 +133,7 @@ function DesktopHero() {
       <div className="absolute inset-0">
         <div className="absolute left-[-8%] top-[-1%] h-[110%] w-[110%]">
           <Image
-            src="/images/services/peb/hero/building.png"
+            src="/images/services/peb/hero/building.webp"
             alt=""
             fill
             priority
@@ -147,7 +147,7 @@ function DesktopHero() {
         <div className="absolute bottom-[-4%] left-[-8%] h-[70%] w-[110%] overflow-hidden">
           <div className="relative h-[157%] w-full -translate-y-[36%]">
             <Image
-              src="/images/services/peb/hero/layer.png"
+              src="/images/services/peb/hero/layer.webp"
               alt="Mekark pre-engineered building manufacturing facility"
               fill
               priority

@@ -8,7 +8,7 @@ const PharmaceuticalHeroBanner = () => {
         {/* Native img so transform/position CSS applies reliably */}
         <img
           className={styles.warehouseWithManRedHatIsIcon}
-          src="/images/industries/pharma/hero/hero.png"
+          src="/images/industries/pharma/hero/hero.webp"
           alt="Pharmaceutical manufacturing facility"
           fetchPriority="high"
         />

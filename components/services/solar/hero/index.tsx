@@ -52,7 +52,7 @@ function MobileHero() {
       description={heroDescription}
       heroImage={{
         ...civilMobileHeroImageDefaults,
-        src: "/images/services/solar/hero/remove-the-building-2.png",
+        src: "/images/services/solar/hero/remove-the-building-2.webp",
         alt: "Mekark commercial solar installation",
         objectPosition: "center bottom",
         scale: 1.1,
@@ -89,7 +89,7 @@ export default function Hero() {
             width={1921}
             height={1049}
             sizes="100vw"
-            src="/images/services/solar/hero/remove-the-building-1.png"
+            src="/images/services/solar/hero/remove-the-building-1.webp"
             alt=""
           />
           <div className={styles.imageChild} />
@@ -98,7 +98,7 @@ export default function Hero() {
             width={1921}
             height={1049}
             sizes="100vw"
-            src="/images/services/solar/hero/remove-the-building-2.png"
+            src="/images/services/solar/hero/remove-the-building-2.webp"
             alt=""
           />
           <div className={styles.multiStoreyLayer11} />

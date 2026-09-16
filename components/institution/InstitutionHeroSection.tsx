@@ -34,7 +34,7 @@ export function InstitutionHeroSection() {
   return (
     <section className="relative isolate min-h-[760px] overflow-hidden bg-black pt-[60px] lg:min-h-[820px]">
       <Image
-        src="/images/institutional/home.jpg"
+        src="/images/institutional/home.webp"
         alt="Rows of seating in a modern auditorium"
         fill
         priority

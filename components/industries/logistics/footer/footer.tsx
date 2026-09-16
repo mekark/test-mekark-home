@@ -6,7 +6,7 @@ import styles from './index.module.css';
 const Footer: NextPage = () => {
   	return (
     		<div className={styles.frameParent}>
-      			<Image className={styles.backgroundImage} src="/images/industries/logistics/footer/footer-background.png" fill sizes="100vw" alt="" />
+      			<Image className={styles.backgroundImage} src="/images/industries/logistics/footer/footer-background.webp" fill sizes="100vw" alt="" />
       			<div className={styles.frameWrapper}>
         				<div className={styles.frameGroup}>
           					<div className={styles.frameContainer}>

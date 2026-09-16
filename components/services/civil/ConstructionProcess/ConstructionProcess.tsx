@@ -44,7 +44,7 @@ export default function ConstructionProcess() {
       >
         <div className="relative h-full w-full -scale-y-100">
           <Image
-            src="/images/services/civil/process/grid.png"
+            src="/images/services/civil/process/grid.webp"
             alt=""
             fill
             className="object-cover object-top"

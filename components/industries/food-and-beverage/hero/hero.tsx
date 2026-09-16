@@ -7,7 +7,7 @@ const FoodBeverageHeroBanner = () => {
       <div className={styles.heroBgWrapper}>
         <Image
           className={styles.warehouseWithManRedHatIsIcon}
-          src="/images/industries/food-and-beverage/hero/094b340e4341865b579a5b936db8b1f86325cefd.png"
+          src="/images/industries/food-and-beverage/hero/094b340e4341865b579a5b936db8b1f86325cefd.webp"
           width={1920}
           height={900}
           sizes="100vw"

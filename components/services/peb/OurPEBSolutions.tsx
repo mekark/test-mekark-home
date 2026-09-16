@@ -53,14 +53,14 @@ const solutions: Solution[] = [
     title: "PEB Design & Engineering",
     description:
       "Structural design and analysis using ETABS, AutoCAD, and STAAD. Pro, Tekla.",
-    image: "/images/services/peb/peb-solutions/peb-design-engineering.jpg",
+    image: "/images/services/peb/peb-solutions/peb-design-engineering.webp",
     objectPosition: "38% 25%",
     zoom: 1.15,
   },
   {
     title: "PEB Manufacturing",
     description: "Custom-engineered steel components fabricated in-house",
-    image: "/images/services/peb/peb-solutions/peb-manufacturing.jpg",
+    image: "/images/services/peb/peb-solutions/peb-manufacturing.webp",
     objectPosition: "65% 55%",
     zoom: 1.15,
   },
@@ -68,28 +68,28 @@ const solutions: Solution[] = [
     title: "PEB Erection & Installation",
     description:
       "On-site assembly with safety-compliant, quality-checked execution",
-    image: "/images/services/peb/peb-solutions/peb-erection-installation.jpg",
+    image: "/images/services/peb/peb-solutions/peb-erection-installation.webp",
     objectPosition: "45% 42%",
     zoom: 1.1,
   },
   {
     title: "Industrial Sheds & Warehouses",
     description: "PEB structures for storage, logistics, and manufacturing use",
-    image: "/images/services/peb/peb-solutions/industrial-sheds-warehouse.png",
+    image: "/images/services/peb/peb-solutions/industrial-sheds-warehouse.webp",
     objectPosition: "48% 58%",
     zoom: 1.08,
   },
   {
     title: "Multi-Storey PEB Structures",
     description: "Space-frame and multi-level pre-engineered buildings",
-    image: "/images/services/peb/peb-solutions/multi-storey-peb.png",
+    image: "/images/services/peb/peb-solutions/multi-storey-peb.webp",
     objectPosition: "50% 35%",
     zoom: 1.15,
   },
   {
     title: "Pre-Engineered Roofing Systems",
     description: "Durable, weather-resistant PEB roofing solutions",
-    image: "/images/services/peb/peb-solutions/pre-engineered-roofing-systems.jpg",
+    image: "/images/services/peb/peb-solutions/pre-engineered-roofing-systems.webp",
     objectPosition: "50% 45%",
     zoom: 1.1,
     rotate: 90,
@@ -171,7 +171,7 @@ export default function OurPEBSolutions() {
           aria-hidden="true"
         >
           <Image
-            src="/images/services/peb/peb-solutions/grid.png"
+            src="/images/services/peb/peb-solutions/grid.webp"
             alt=""
             fill
             className="object-cover"
@@ -267,7 +267,7 @@ export default function OurPEBSolutions() {
           <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[185px] sm:h-[235px]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/services/peb/peb-solutions/Mid CTA 1.png"
+              src="/images/services/peb/peb-solutions/Mid CTA 1.webp"
               alt="Pre-engineered building under construction"
               className="absolute left-1/2 bottom-[18px] h-[96%] w-[132%] max-w-none -translate-x-[46%] object-cover object-[center_28%] sm:bottom-[24px] sm:w-[110%] sm:-translate-x-[48%]"
             />
@@ -286,7 +286,7 @@ export default function OurPEBSolutions() {
             transition={{ duration: 0.85, ease: easeOut }}
           >
             <Image
-              src="/images/services/peb/peb-solutions/Mid CTA 1.png"
+              src="/images/services/peb/peb-solutions/Mid CTA 1.webp"
               alt=""
               fill
               className="object-cover object-[left_25%]"
@@ -342,7 +342,7 @@ export default function OurPEBSolutions() {
           aria-hidden="true"
         >
           <Image
-            src="/images/services/peb/peb-solutions/grid.png"
+            src="/images/services/peb/peb-solutions/grid.webp"
             alt=""
             fill
             className="object-cover object-top -scale-y-100"

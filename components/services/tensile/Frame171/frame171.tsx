@@ -37,7 +37,7 @@ export default function Frame171() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[200px] sm:h-[280px] lg:h-[390px]">
         <Image
           className="h-full w-full object-cover object-bottom opacity-95"
-          src="/images/services/tensile/frame171/grid-bg.png"
+          src="/images/services/tensile/frame171/grid-bg.webp"
           width={1918}
           height={391}
           sizes="100vw"

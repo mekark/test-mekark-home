@@ -47,7 +47,7 @@ const CompleteDC = () => {
               <div className={styles.frameContainer}>
                 <Image
                   className={styles.rectangleIcon}
-                  src="/images/industries/data-center/complete-dt/1.png"
+                  src="/images/industries/data-center/complete-dt/1.webp"
                   width={323}
                   height={194}
                   sizes="100vw"
@@ -67,7 +67,7 @@ const CompleteDC = () => {
               <div className={styles.rectangleContainer}>
                 <Image
                   className={styles.rectangleIcon}
-                  src="/images/industries/data-center/complete-dt/2.png"
+                  src="/images/industries/data-center/complete-dt/2.webp"
                   width={323}
                   height={194}
                   sizes="100vw"
@@ -87,7 +87,7 @@ const CompleteDC = () => {
               <div className={styles.rectangleParent}>
                 <Image
                   className={styles.rectangleIcon}
-                  src="/images/industries/data-center/complete-dt/3.png"
+                  src="/images/industries/data-center/complete-dt/3.webp"
                   width={323}
                   height={194}
                   sizes="100vw"
@@ -107,7 +107,7 @@ const CompleteDC = () => {
               <div className={styles.rectangleParent2}>
                 <Image
                   className={styles.rectangleIcon}
-                  src="/images/industries/data-center/complete-dt/4.png"
+                  src="/images/industries/data-center/complete-dt/4.webp"
                   width={323}
                   height={194}
                   sizes="100vw"
@@ -127,7 +127,7 @@ const CompleteDC = () => {
               <div className={styles.rectangleGroup}>
                 <Image
                   className={styles.rectangleIcon}
-                  src="/images/industries/data-center/complete-dt/5.jpg"
+                  src="/images/industries/data-center/complete-dt/5.webp"
                   width={323}
                   height={194}
                   sizes="100vw"
@@ -147,7 +147,7 @@ const CompleteDC = () => {
               <div className={styles.rectangleParent3}>
                 <Image
                   className={styles.rectangleIcon}
-                  src="/images/industries/data-center/complete-dt/6.png"
+                  src="/images/industries/data-center/complete-dt/6.webp"
                   width={323}
                   height={194}
                   sizes="100vw"

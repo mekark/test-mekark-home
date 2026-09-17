@@ -6,7 +6,7 @@ import styles from './index.module.css';
 const Footer: NextPage = () => {
   	return (
     		<div className={styles.frameParent}>
-      			<Image className={styles.backgroundImage} src="/images/industries/logistics/footer/footer-background.webp" fill sizes="100vw" alt="" />
+      			<Image className={styles.backgroundImage} src="/images/industries/logistics/footer/footer-background.webp" fill sizes="100vw" alt="Logistics warehouse facility by Mekark" />
       			<div className={styles.frameWrapper}>
         				<div className={styles.frameGroup}>
           					<div className={styles.frameContainer}>
@@ -20,7 +20,7 @@ const Footer: NextPage = () => {
           					<a href="/#enquiry" className={styles.cta}>
             						<b className={styles.requestAQuote}>Get a Free Quote</b>
             						<div className={styles.component4}>
-              							<Image className={styles.vectorIcon} src="/images/industries/logistics/footer/arrow-icon.svg" width={25} height={25} sizes="100vw" alt="" />
+              							<Image className={styles.vectorIcon} src="/images/industries/logistics/footer/arrow-icon.svg" width={25} height={25} sizes="100vw" alt="Arrow icon" />
             						</div>
           					</a>
         				</div>

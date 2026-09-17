@@ -50,7 +50,7 @@ export function OpeningsSection() {
             View all positions
             <AssetIcon
               src="/assets/careers/icons/arrow-right.svg"
-              alt=""
+              alt="Arrow icon"
               size={14}
             />
           </a>
@@ -73,7 +73,7 @@ export function OpeningsSection() {
                 <span className="inline-flex items-center gap-1">
                   <AssetIcon
                     src="/assets/careers/icons/location.svg"
-                    alt=""
+                    alt="Timeline icon"
                     size={12}
                   />
                   {job.location}
@@ -81,7 +81,7 @@ export function OpeningsSection() {
                 <span className="inline-flex items-center gap-1">
                   <AssetIcon
                     src="/assets/careers/icons/clock.svg"
-                    alt=""
+                    alt="Timeline icon"
                     size={12}
                   />
                   {job.type}
@@ -89,7 +89,7 @@ export function OpeningsSection() {
                 <span className="inline-flex items-center gap-1">
                   <AssetIcon
                     src="/assets/careers/icons/star.svg"
-                    alt=""
+                    alt="Job type icon"
                     size={12}
                   />
                   {job.experience}
@@ -102,7 +102,7 @@ export function OpeningsSection() {
                 Apply Now
                 <AssetIcon
                   src="/assets/careers/icons/arrow-apply.svg"
-                  alt=""
+                  alt="Apply now arrow"
                   size={12}
                 />
               </a>

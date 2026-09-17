@@ -98,7 +98,7 @@ function FaqItem({
         >
           <Image
             src="/images/services/civil/faq/chevron.svg"
-            alt=""
+            alt="Expand section"
             width={17}
             height={17}
             className="size-full object-contain"

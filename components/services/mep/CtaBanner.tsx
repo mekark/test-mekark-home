@@ -41,7 +41,7 @@ export default function CtaBanner() {
                   src="/images/services/mep/cta-banner/arrow.svg"
                   width={12}
                   height={9}
-                  alt=""
+                  alt="Arrow icon"
                   className="h-[9px] w-[12px]"
                 />
               </a>
@@ -96,7 +96,7 @@ export default function CtaBanner() {
               <span className="relative size-[18.8px] shrink-0 overflow-hidden">
                 <Image
                   src="/images/services/mep/cta-banner/arrow.svg"
-                  alt=""
+                  alt="Arrow icon"
                   fill
                   className="object-contain"
                   sizes="19px"

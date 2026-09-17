@@ -66,7 +66,7 @@ export default function FacilityConstructionSection() {
             src="/images/industries/electronics/facility-construction/grid.webp"
             fill
             sizes="100vw"
-            alt=""
+            alt="Decorative grid background"
           />
         </div>
 

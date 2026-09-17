@@ -16,7 +16,7 @@ export default function ThankYouPage() {
         <div className="absolute inset-0">
           <Image
             src="/images/enquiry/background.webp"
-            alt=""
+            alt="Thank you page background"
             fill
             className="object-cover object-center"
             sizes="100vw"

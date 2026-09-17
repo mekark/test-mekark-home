@@ -90,7 +90,7 @@ export default function Hero() {
             height={1049}
             sizes="100vw"
             src="/images/services/solar/hero/remove-the-building-1.webp"
-            alt=""
+            alt="Commercial solar installation on industrial building"
           />
           <div className={styles.imageChild} />
           <Image
@@ -99,7 +99,7 @@ export default function Hero() {
             height={1049}
             sizes="100vw"
             src="/images/services/solar/hero/remove-the-building-2.webp"
-            alt=""
+            alt="Rooftop commercial solar panels on Mekark project"
           />
           <div className={styles.multiStoreyLayer11} />
           <div className={styles.imageItem} />
@@ -163,7 +163,7 @@ export default function Hero() {
                   height={6.9}
                   sizes="100vw"
                   src="/images/services/solar/hero/component-4.svg"
-                  alt=""
+                  alt="Arrow icon"
                 />
               </div>
             </Link>

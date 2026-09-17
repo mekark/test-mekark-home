@@ -104,7 +104,7 @@ function FeatureIcon({ src }: { src: string }) {
         }}
       />
       <span className="relative size-[22px] overflow-hidden lg:size-[26px]">
-        <Image src={src} alt="" fill className="object-contain" aria-hidden />
+        <Image src={src} alt="Feature icon" fill className="object-contain" aria-hidden />
       </span>
       <div
         aria-hidden
@@ -136,7 +136,7 @@ function DesktopWhyFeature({ icon, title, description }: Feature) {
           width={26}
           height={26}
           sizes="100vw"
-          alt=""
+          alt={`${title} icon`}
         />
       </div>
       <div className={whyStyles.inHouseDesignEngineeringParent}>

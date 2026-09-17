@@ -45,7 +45,7 @@ const Solutions = () => {
           width={1918}
           height={391}
           sizes="100vw"
-          alt=""
+          alt="Decorative grid background"
         />
         <div className={styles.frameParent}>
           <div className={styles.frameGroup}>

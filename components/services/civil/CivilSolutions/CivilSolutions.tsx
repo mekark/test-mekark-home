@@ -101,7 +101,7 @@ export default function CivilSolutions() {
         src="/images/services/civil/solutions/grid.webp"
         width={1918}
         height={391}
-        alt=""
+        alt="Decorative grid background"
       />
 
       {/* Mobile / tablet grid */}

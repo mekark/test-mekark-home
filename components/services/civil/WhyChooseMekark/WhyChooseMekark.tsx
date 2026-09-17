@@ -29,7 +29,7 @@ export default function WhyChooseMekark() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/services/civil/why-choose/blueprint.webp"
-            alt=""
+            alt="Structural blueprint for civil construction"
             className="h-full w-full object-cover object-center"
           />
         </div>
@@ -65,7 +65,7 @@ export default function WhyChooseMekark() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/services/civil/why-choose/blueprint.webp"
-                alt=""
+                alt="Structural blueprint for civil construction"
                 className="h-full w-full scale-125 object-cover object-left -rotate-[3deg]"
               />
             </div>
@@ -179,7 +179,7 @@ export default function WhyChooseMekark() {
             width={502}
             height={626}
             sizes="502px"
-            alt=""
+            alt="Commercial building under civil construction"
           />
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -203,7 +203,7 @@ export default function WhyChooseMekark() {
             <img
               className="pointer-events-none absolute top-[-148.44%] left-[-6.66%] h-[290.08%] w-[129.51%] max-w-none"
               src="/images/services/civil/why-choose/blueprint.webp"
-              alt=""
+              alt="Structural blueprint for civil construction"
             />
           </div>
         </motion.div>

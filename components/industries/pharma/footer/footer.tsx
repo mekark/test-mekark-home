@@ -9,7 +9,7 @@ const Footer = () => {
         src="/images/industries/pharma/footer/ed0f0baf5e66363731524bd1df3ed6c45dc08233.webp"
         fill
         sizes="100vw"
-        alt=""
+        alt="Pharmaceutical manufacturing facility by Mekark"
         priority={false}
       />
       <div className={styles.frameWrapper}>
@@ -45,7 +45,7 @@ const Footer = () => {
                 width={25}
                 height={25}
                 sizes="100vw"
-                alt=""
+                alt="Arrow icon"
               />
             </div>
           </a>

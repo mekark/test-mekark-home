@@ -46,7 +46,7 @@ export default function ProjectDelivery() {
               Request a Free Quote
               <Image
                 src="/images/services/multi-storey/frame212/icons/quote-arrow.svg"
-                alt=""
+                alt="Arrow icon"
                 width={16}
                 height={12}
                 className="h-3 w-4"
@@ -73,7 +73,7 @@ export default function ProjectDelivery() {
             <div className="absolute top-0 right-0 h-[481px] w-[966px]">
               <Image
                 src="/images/services/multi-storey/frame212/cta/building.webp"
-                alt=""
+                alt="Multi-storey steel building project by Mekark"
                 width={966}
                 height={481}
                 sizes="966px"
@@ -94,7 +94,7 @@ export default function ProjectDelivery() {
               <div className="absolute top-[-67.33px] right-0 h-[481px] w-[966px]">
                 <Image
                   src="/images/services/multi-storey/frame212/cta/building.webp"
-                  alt=""
+                  alt="Multi-storey steel building project by Mekark"
                   width={966}
                   height={481}
                   sizes="966px"
@@ -125,7 +125,7 @@ export default function ProjectDelivery() {
                 Request a Free Quote
                 <Image
                   src="/images/services/multi-storey/frame212/icons/quote-arrow.svg"
-                  alt=""
+                  alt="Arrow icon"
                   width={12}
                   height={9}
                   className="h-[9px] w-3"

@@ -39,7 +39,7 @@ export default function FooterCta() {
                 width={25}
                 height={25}
                 sizes="100vw"
-                alt=""
+                alt="Arrow icon"
               />
             </div>
           </a>

@@ -151,7 +151,7 @@ export default function ContactUsContent() {
         <div className="absolute inset-0">
           <Image
             src="/images/hero/peb-poster.webp"
-            alt=""
+            alt="Pre-engineered building construction showcase"
             fill
             priority
             className="object-cover object-center"

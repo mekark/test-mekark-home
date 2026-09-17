@@ -24,7 +24,7 @@ export function BackgroundWatermark() {
       >
         <Image
           src={engineeringNumbers.watermarkSrc}
-          alt=""
+          alt="Engineering section background watermark"
           fill
           className="object-cover object-[5.58%_top]"
           sizes="100vw"

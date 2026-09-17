@@ -224,7 +224,7 @@ export function TrustedSectorsSection({
               <div className="relative size-6 shrink-0 lg:size-8">
                 <Image
                   src="/images/trusted-sectors/shield-tick.svg"
-                  alt=""
+                  alt="Verified badge icon"
                   fill
                   className="object-contain"
                   sizes="32px"

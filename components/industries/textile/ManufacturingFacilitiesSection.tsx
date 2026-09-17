@@ -157,7 +157,7 @@ export default function ManufacturingFacilitiesSection() {
         <Image
           className={styles.gridBgImg}
           src="/images/industries/textile/manufacturing-facilities/grid.webp"
-          alt=""
+          alt="Decorative grid background"
           fill
           sizes="100vw"
         />

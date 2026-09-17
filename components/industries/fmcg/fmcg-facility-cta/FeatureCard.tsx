@@ -40,7 +40,7 @@ export function FeatureCard({ feature, index }: FeatureCardProps) {
         <div className="relative size-[22px] overflow-hidden lg:size-[26px]">
           <Image
             src={feature.icon}
-            alt=""
+            alt={`${feature.title} icon`}
             width={26}
             height={26}
             className="size-full"

@@ -131,7 +131,7 @@ function FAQCard({
         >
           <Image
             src="/images/services/peb/faq/chevron.svg"
-            alt=""
+            alt="Expand section"
             fill
             className="object-contain"
             sizes="17px"

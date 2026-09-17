@@ -25,7 +25,7 @@ export function InternshipSection() {
     <section className="relative overflow-hidden px-5 py-10 md:px-20 lg:py-0">
       <Image
         src="/assets/careers/internship-pattern.webp"
-        alt=""
+        alt="Internship section background pattern"
         fill
         className="object-cover object-center"
         sizes="100vw"
@@ -56,7 +56,7 @@ export function InternshipSection() {
                   className="flex items-center gap-3 rounded-[12px] border border-[#f3f4f6] bg-[#fff7f7] px-3 py-2.5"
                 >
                   <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-white">
-                    <AssetIcon src={item.icon} alt="" size={20} />
+                    <AssetIcon src={item.icon} alt={`${item.title} icon`} size={20} />
                   </span>
                   <span>
                     <span className="block text-[13px] font-bold leading-4 text-[#111827]">
@@ -76,7 +76,7 @@ export function InternshipSection() {
               Apply for Internship
               <AssetIcon
                 src="/assets/careers/icons/arrow-internship.svg"
-                alt=""
+                alt="Apply for internship arrow"
                 size={18}
               />
             </a>

@@ -43,7 +43,7 @@ export default function AutomationFacilityProcessSection() {
           src="/images/industries/automation/automation-facilities/grid-bg.webp"
           fill
           sizes="100vw"
-          alt=""
+          alt="Decorative grid background"
           unoptimized
         />
       </div>
@@ -71,7 +71,7 @@ export default function AutomationFacilityProcessSection() {
                   width={66.7}
                   height={19.6}
                   sizes="100vw"
-                  alt=""
+                  alt="Arrow icon"
                 />
               ) : null}
             </div>

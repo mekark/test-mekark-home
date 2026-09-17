@@ -9,7 +9,7 @@ export function ProcessConnector() {
     >
       <Image
         src="/images/industries/fmcg/project-execution-process/connector-arrow.svg"
-        alt=""
+        alt="Arrow icon"
         fill
         className="object-contain"
       />

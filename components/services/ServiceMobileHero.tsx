@@ -41,6 +41,7 @@ export type ServiceMobileHeroProps = {
   stats: ServiceMobileHeroStat[];
   certification: ReactNode;
   enquiryHref?: string;
+  onEnquiryClick?: () => void;
   projectsHref?: string;
   statsOverlapMargin?: string;
   statsTranslateY?: string;
@@ -77,6 +78,7 @@ export default function ServiceMobileHero({
   stats,
   certification,
   enquiryHref = "/#enquiry",
+  onEnquiryClick,
   projectsHref = "/projects/completed-projects",
   statsOverlapMargin = "-108px",
   statsTranslateY = "14px",
@@ -113,12 +115,22 @@ export default function ServiceMobileHero({
           </p>
 
           <div className="flex w-full max-w-[488px] flex-col items-center pt-[10.8px] pb-6">
-            <a
-              href={enquiryHref}
-              className="inline-flex h-[45px] w-[165px] shrink-0 items-center justify-center rounded-[6.93px] bg-[#c4161c] px-[31.19px] py-[15.59px] text-[14px] font-semibold leading-[20.79px] whitespace-nowrap text-white shadow-[0px_6.93px_13.86px_rgba(196,22,28,0.3)]"
-            >
-              Get a Free Quote
-            </a>
+            {onEnquiryClick ? (
+              <button
+                type="button"
+                onClick={onEnquiryClick}
+                className="inline-flex h-[45px] w-[165px] shrink-0 items-center justify-center rounded-[6.93px] bg-[#c4161c] px-[31.19px] py-[15.59px] text-[14px] font-semibold leading-[20.79px] whitespace-nowrap text-white shadow-[0px_6.93px_13.86px_rgba(196,22,28,0.3)]"
+              >
+                Get a Free Quote
+              </button>
+            ) : (
+              <a
+                href={enquiryHref}
+                className="inline-flex h-[45px] w-[165px] shrink-0 items-center justify-center rounded-[6.93px] bg-[#c4161c] px-[31.19px] py-[15.59px] text-[14px] font-semibold leading-[20.79px] whitespace-nowrap text-white shadow-[0px_6.93px_13.86px_rgba(196,22,28,0.3)]"
+              >
+                Get a Free Quote
+              </a>
+            )}
 
             <Link
               href={projectsHref}
@@ -129,7 +141,7 @@ export default function ServiceMobileHero({
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={arrowIcon}
-                  alt=""
+                  alt="Arrow icon"
                   className="absolute inset-0 size-full"
                 />
               </span>
@@ -222,7 +234,7 @@ export default function ServiceMobileHero({
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={CERT_BADGE}
-                    alt=""
+                    alt="ISO certification badge"
                     className="absolute inset-0 size-full"
                   />
                 </span>
@@ -364,7 +376,7 @@ export default function ServiceMobileHero({
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={CERT_BADGE}
-                  alt=""
+                  alt="ISO certification badge"
                   className="absolute inset-0 size-full"
                 />
               </span>

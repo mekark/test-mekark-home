@@ -51,7 +51,7 @@ export default function LogisticsHero() {
               src="/images/industries/logistics/hero/arrow-icon.svg"
               width={20}
               height={16}
-              alt=""
+              alt="Arrow icon"
             />
           </div>
         </a>

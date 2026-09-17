@@ -53,7 +53,7 @@ function ProjectCard({
         <div className="relative size-[42%] max-h-[140px] max-w-[140px]">
           <Image
             src="/images/completed-projects/image-placeholder.webp"
-            alt=""
+            alt="Completed project photo placeholder"
             fill
             className="object-contain opacity-90 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
             sizes="140px"

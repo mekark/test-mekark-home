@@ -40,7 +40,7 @@ const CTA = () => {
               width={20}
               height={16}
               sizes="100vw"
-              alt=""
+              alt="Arrow icon"
             />
           </div>
         </a>
@@ -51,7 +51,7 @@ const CTA = () => {
             width={180}
             height={180}
             sizes="100vw"
-            alt=""
+            alt="Decorative badge frame"
           />
           <Image
             className={styles.sectionInner}
@@ -59,7 +59,7 @@ const CTA = () => {
             width={317}
             height={213}
             sizes="100vw"
-            alt=""
+            alt="Mekark logistics consultant"
           />
           <Image
             className={styles.eotCta1}
@@ -95,7 +95,7 @@ const CTA = () => {
               width={26}
               height={26}
               sizes="100vw"
-              alt=""
+              alt="Design icon"
             />
           </div>
           <div className={styles.inHouseDesignEngineeringParent}>
@@ -125,7 +125,7 @@ const CTA = () => {
               width={26}
               height={26}
               sizes="100vw"
-              alt=""
+              alt="Timeline icon"
             />
           </div>
           <div className={styles.inHouseDesignEngineeringParent}>
@@ -153,7 +153,7 @@ const CTA = () => {
               width={26}
               height={26}
               sizes="100vw"
-              alt=""
+              alt="Factory icon"
             />
           </div>
           <div className={styles.inHouseDesignEngineeringParent}>
@@ -186,7 +186,7 @@ const CTA = () => {
               width={26}
               height={26}
               sizes="100vw"
-              alt=""
+              alt="Turnkey integration icon"
             />
           </div>
           <div className={styles.inHouseDesignEngineeringParent}>
@@ -215,7 +215,7 @@ const CTA = () => {
               width={26}
               height={26}
               sizes="100vw"
-              alt=""
+              alt="Location icon"
             />
           </div>
           <div className={styles.inHouseDesignEngineeringParent}>
@@ -250,7 +250,7 @@ const CTA = () => {
               width={26}
               height={26}
               sizes="100vw"
-              alt=""
+              alt="Safety standards icon"
             />
           </div>
           <div className={styles.inHouseDesignEngineeringParent}>

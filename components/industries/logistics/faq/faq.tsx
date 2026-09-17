@@ -82,7 +82,7 @@ const FaqItem = ({ num, question, answer, isOpen, onToggle }: FaqItemProps) => (
         				<div className={styles.question}>{question}</div>
       			</div>
       			<div className={`${styles.component1} ${isOpen ? styles.component1Open : ''}`}>
-        				<Image className={styles.vectorIcon} src="/images/industries/logistics/faq/faq-chevron.svg" width={17} height={17} sizes="100vw" alt="" />
+        				<Image className={styles.vectorIcon} src="/images/industries/logistics/faq/faq-chevron.svg" width={17} height={17} sizes="100vw" alt="Expand section" />
       			</div>
     		</button>
     		<div className={`${styles.answerWrap} ${isOpen ? styles.answerWrapOpen : ''}`}>

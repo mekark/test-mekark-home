@@ -60,7 +60,7 @@ const FoodBeverageHeroBanner = () => {
               width={22}
               height={22}
               sizes="100vw"
-              alt=""
+              alt="Arrow icon"
             />
           </div>
         </a>

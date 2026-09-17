@@ -69,7 +69,7 @@ const WhyChooseMekark: NextPage = () => {
 					width={1920}
 					height={1032}
 					sizes="100vw"
-					alt=""
+					alt="Tensile structure project site background"
 				/>
 			</div>
 
@@ -103,7 +103,7 @@ const WhyChooseMekark: NextPage = () => {
 						width={587}
 						height={534}
 						sizes="(max-width: 900px) 70vw, 40vw"
-						alt=""
+						alt="Mekark logo watermark"
 					/>
 					<Image
 						className={styles.product}

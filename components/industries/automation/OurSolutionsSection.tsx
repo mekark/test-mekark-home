@@ -75,7 +75,7 @@ function MobileSolutionCard({ title, description, image }: Solution) {
       <div className="relative h-[180px] w-full shrink-0 sm:h-[200px]">
         <Image
           src={image}
-          alt=""
+          alt={title}
           fill
           className="object-cover"
           sizes="100vw"
@@ -118,7 +118,7 @@ function DesktopSolutionCard({
       >
         <Image
           src={solution.image}
-          alt=""
+          alt={solution.title}
           fill
           className="object-cover"
           sizes="17vw"
@@ -187,7 +187,7 @@ export default function OurSolutionsSection() {
           >
             <Image
               src="/images/industries/automation/solutions/timeline.svg"
-              alt=""
+              alt="Process timeline illustration"
               width={397.4}
               height={1320.9}
               sizes="19vw"

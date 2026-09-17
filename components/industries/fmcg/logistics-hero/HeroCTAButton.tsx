@@ -32,7 +32,7 @@ export function HeroCTAButton() {
       >
         <Image
           src="/images/industries/fmcg/logistics-hero/arrow-icon.svg"
-          alt=""
+          alt="Arrow icon"
           width={21}
           height={21}
           className="size-full"

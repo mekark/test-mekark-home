@@ -269,7 +269,7 @@ function BenefitCard({
           <div className="relative size-6 sm:size-7 md:size-9 xl:size-9 2xl:size-10">
             <Image
               src={benefit.icon}
-              alt=""
+              alt={`${benefit.title} icon`}
               fill
               className="object-contain"
               sizes="40px"
@@ -365,7 +365,7 @@ export function OnePartnerSection() {
       >
         <Image
           src="/images/one-partner/bg.webp"
-          alt=""
+          alt="One partner section background"
           fill
           className="object-cover object-top"
           sizes="100vw"
@@ -475,7 +475,7 @@ export function OnePartnerSection() {
               >
                 <Image
                   src="/images/one-partner/banner-shield.svg"
-                  alt=""
+                  alt="Safety standards icon"
                   width={48}
                   height={48}
                   className="size-9 lg:size-[clamp(2rem,3.2vw,3rem)] 2xl:size-12"
@@ -494,7 +494,7 @@ export function OnePartnerSection() {
               >
                 <Image
                   src="/images/one-partner/banner-skyline.webp"
-                  alt=""
+                  alt="Industrial skyline illustration"
                   fill
                   className="object-cover object-right"
                   sizes="(max-width: 1536px) 55vw, 902px"

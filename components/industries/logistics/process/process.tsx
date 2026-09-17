@@ -44,7 +44,7 @@ const Process: NextPage = () => {
           src="/images/industries/logistics/process/grid-background.webp"
           fill
           sizes="100vw"
-          alt=""
+          alt="Decorative grid background"
           unoptimized
         />
       </div>
@@ -74,7 +74,7 @@ const Process: NextPage = () => {
                   width={66.7}
                   height={19.6}
                   sizes="100vw"
-                  alt=""
+                  alt="Arrow icon"
                 />
               ) : null}
             </div>

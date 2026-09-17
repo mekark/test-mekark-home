@@ -30,7 +30,7 @@ export default function ElectronicsCtaBanner() {
               width={16.7}
               height={13.3}
               sizes="100vw"
-              alt=""
+              alt="Arrow icon"
             />
           </div>
         </a>
@@ -41,7 +41,7 @@ export default function ElectronicsCtaBanner() {
             width={180}
             height={180}
             sizes="100vw"
-            alt=""
+            alt="Decorative badge frame"
           />
           <Image
             className={styles.sectionInner}
@@ -49,7 +49,7 @@ export default function ElectronicsCtaBanner() {
             width={317}
             height={213}
             sizes="100vw"
-            alt=""
+            alt="Decorative section frame"
           />
           <div className={styles.eotCta1}>
             <Image

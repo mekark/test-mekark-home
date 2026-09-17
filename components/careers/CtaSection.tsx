@@ -117,7 +117,7 @@ export function CtaSection() {
       <div className="absolute inset-y-0 right-0 hidden w-1/2 lg:block">
         <Image
           src="/assets/careers/cta-bg.webp"
-          alt=""
+          alt="Careers call-to-action background"
           fill
           className="object-cover object-center"
           sizes="50vw"
@@ -216,7 +216,7 @@ export function CtaSection() {
             {status !== "sending" ? (
               <AssetIcon
                 src="/assets/careers/icons/arrow-submit.svg"
-                alt=""
+                alt="Submit application arrow"
                 size={15}
               />
             ) : null}

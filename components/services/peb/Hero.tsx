@@ -134,7 +134,7 @@ function DesktopHero() {
         <div className="absolute left-[-8%] top-[-1%] h-[110%] w-[110%]">
           <Image
             src="/images/services/peb/hero/building.webp"
-            alt=""
+            alt="Pre-engineered industrial building by Mekark"
             fill
             priority
             className="object-cover object-center"
@@ -208,7 +208,7 @@ function DesktopHero() {
             <span className="relative inline-block size-[10px] shrink-0 overflow-hidden">
               <Image
                 src="/images/services/peb/hero/arrow.svg"
-                alt=""
+                alt="Arrow icon"
                 width={8}
                 height={7}
                 className="size-full"

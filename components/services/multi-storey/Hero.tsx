@@ -153,7 +153,7 @@ function DesktopHero() {
         >
           <Image
             src="/images/services/multi-storey/hero/sky-bg.webp"
-            alt=""
+            alt="Skyline backdrop for multi-storey steel building"
             fill
             priority
             sizes="1920px"
@@ -225,7 +225,7 @@ function DesktopHero() {
               <span className="relative inline-block size-[14px] overflow-hidden transition-transform duration-300 group-hover:translate-x-1">
                 <Image
                   src="/images/services/multi-storey/hero/arrow.svg"
-                  alt=""
+                  alt="Arrow icon"
                   width={10}
                   height={9}
                   className="absolute top-1/4 left-[18%] h-1/2 w-[62.5%]"

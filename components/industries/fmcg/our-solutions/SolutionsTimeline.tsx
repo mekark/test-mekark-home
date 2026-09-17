@@ -55,7 +55,7 @@ export function SolutionsTimeline() {
           >
             <Image
               src="/images/industries/fmcg/our-solutions/timeline.svg"
-              alt=""
+              alt="Process timeline illustration"
               width={397}
               height={1328}
               className="h-full w-full"

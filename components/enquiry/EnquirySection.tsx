@@ -1,14 +1,15 @@
 "use client";
 
-import { type FormEvent, type ReactNode, useEffect, useState } from "react";
+import { useEffect, useMemo } from "react";
 import Image from "next/image";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
-import { useNavigationLoading } from "@/components/ui/NavigationLoadingProvider";
+import { EnquiryFormCore } from "@/components/enquiry/EnquiryFormCore";
 import {
-  FIND_SERVICES,
-  NAV_ITEMS,
-} from "@/components/navbar/nav-data";
+  buildSolutionPrefill,
+  resolveIndustryValue,
+  resolveServiceValue,
+} from "@/components/enquiry/enquiry-form-shared";
 import {
   enquiryCopyItem,
   enquiryCopyReveal,
@@ -18,7 +19,6 @@ import {
   enquirySectionStagger,
 } from "@/lib/motion-variants";
 import { SECTION_CONTAINER_CLASS } from "@/lib/sectionLayout";
-import styles from "./enquiry-form.module.css";
 
 const VIEWPORT = { once: true, margin: "-80px" as const };
 
@@ -27,186 +27,6 @@ const HIGHLIGHTS = [
   "18+ years of structural expertise",
   "98% on-time project execution",
 ] as const;
-
-const PROJECT_AREAS = [
-  "Select area",
-  "10,000 - 20,000 Sq.ft",
-  "20,000 - 30,000 Sq.ft",
-  "30,000 - 50,000 Sq.ft",
-  "50,000+ Sq.ft",
-] as const;
-
-const INDUSTRY_LINKS = [
-  ...(NAV_ITEMS.find((item) => item.label === "Industries We Serve")?.children ?? []),
-  { label: "Institutional", href: "/institutional" },
-];
-const SERVICE_LINKS = FIND_SERVICES.map((service) => ({
-  ...service,
-  label: service.label === "EOT" ? "EOT Crane" : service.label,
-}));
-
-const INDUSTRY_TYPES = [
-  "Select industry type",
-  ...INDUSTRY_LINKS.map((industry) => industry.label),
-] as const;
-
-const PROJECT_TIMELINES = [
-  "Select timeline",
-  "Immediately",
-  "Within 1 Month",
-  "Within 3 Months",
-  "Planning for Future",
-] as const;
-
-const PROJECT_BUDGETS = [
-  "Select budget",
-  "Below ₹50 Lakhs",
-  "₹50 Lakhs – ₹1 Crore",
-  "₹1 Crore – ₹5 Crores",
-  "Above ₹5 Crores",
-] as const;
-
-const SERVICE_TYPES = [
-  "Select service",
-  ...SERVICE_LINKS.map((service) => service.label),
-] as const;
-
-function resolveIndustryValue(
-  industrySlug: string | null,
-  industryLabel: string | null,
-) {
-  return INDUSTRY_LINKS.find(
-    (option) =>
-      option.href.split("/").pop() === industrySlug ||
-      option.label.toLowerCase() === (industryLabel ?? "").toLowerCase(),
-  )?.label ?? "";
-}
-
-function resolveServiceValue(
-  serviceSlug: string | null,
-  serviceLabel: string | null,
-) {
-  const matched = FIND_SERVICES.find(
-    (option) =>
-      option.slug === serviceSlug ||
-      option.label.toLowerCase() === (serviceLabel ?? "").toLowerCase(),
-  );
-
-  return SERVICE_LINKS.find(
-    (option) =>
-      option.slug === serviceSlug ||
-      option.label.toLowerCase() === (serviceLabel ?? "").toLowerCase() ||
-      option.slug === matched?.slug,
-  )?.label ?? "";
-}
-
-function buildSolutionPrefill(
-  industryLabel: string | null,
-  serviceLabel: string | null,
-) {
-  const parts = [
-    industryLabel ? `Industry: ${industryLabel}` : null,
-    serviceLabel ? `Service: ${serviceLabel}` : null,
-  ].filter(Boolean);
-
-  return parts.length ? `${parts.join(" · ")}.` : "";
-}
-
-function normalizePhone(value: string) {
-  return value.replace(/\D/g, "").slice(0, 10);
-}
-
-function isValidPhone(phone: string) {
-  return /^\d{10}$/.test(phone);
-}
-
-function getEnquirySource() {
-  try {
-    return sessionStorage.getItem("enquiry_source") ?? "";
-  } catch {
-    return "";
-  }
-}
-
-function clearEnquirySource() {
-  try {
-    sessionStorage.removeItem("enquiry_source");
-  } catch {
-    // Storage can be unavailable in privacy-restricted browsers.
-  }
-}
-
-function FormField({
-  label,
-  required,
-  className,
-  children,
-}: {
-  label: string;
-  required?: boolean;
-  className?: string;
-  children: ReactNode;
-}) {
-  return (
-    <div className={className ?? styles.field}>
-      <label className={styles.name}>
-        {required ? `${label} *` : label}
-      </label>
-      {children}
-    </div>
-  );
-}
-
-function SelectField({
-  name,
-  value,
-  onChange,
-  options,
-  required,
-  id,
-}: {
-  name: string;
-  value: string;
-  onChange: (value: string) => void;
-  options: readonly string[];
-  required?: boolean;
-  id: string;
-}) {
-  const placeholder = options[0];
-
-  return (
-    <div className={styles.buttonListbox}>
-      <select
-        id={id}
-        name={name}
-        required={required}
-        value={value}
-        onChange={(event) => onChange(event.target.value)}
-        className={styles.selectArea}
-      >
-        {options.map((option) => (
-          <option
-            key={option}
-            value={option === placeholder ? "" : option}
-            disabled={option === placeholder}
-          >
-            {option}
-          </option>
-        ))}
-      </select>
-      <Image
-        className={styles.svgIcon4}
-        src="/images/enquiry/SVG-chevron.svg"
-        width={11}
-        height={7}
-        alt=""
-        aria-hidden
-      />
-    </div>
-  );
-}
-
-type SubmitStatus = "idle" | "submitting" | "error";
 
 function scrollToEnquirySection() {
   requestAnimationFrame(() => {
@@ -219,20 +39,23 @@ function scrollToEnquirySection() {
 
 export function EnquirySection() {
   const router = useRouter();
-  const { startNavigation } = useNavigationLoading();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const [projectArea, setProjectArea] = useState("");
-  const [industryType, setIndustryType] = useState("");
-  const [serviceType, setServiceType] = useState("");
-  const [projectTimeline, setProjectTimeline] = useState("");
-  const [projectBudget, setProjectBudget] = useState("");
-  const [phone, setPhone] = useState("");
-  const [message, setMessage] = useState("");
-  const [submitStatus, setSubmitStatus] = useState<SubmitStatus>("idle");
-  const [submitMessage, setSubmitMessage] = useState("");
-
   const queryString = searchParams.toString();
+
+  const prefill = useMemo(() => {
+    const params = new URLSearchParams(queryString);
+    const industrySlug = params.get("industry");
+    const industryLabel = params.get("industryLabel");
+    const serviceSlug = params.get("service");
+    const serviceLabel = params.get("serviceLabel");
+
+    return {
+      industry: resolveIndustryValue(industrySlug, industryLabel),
+      service: resolveServiceValue(serviceSlug, serviceLabel),
+      message: buildSolutionPrefill(industryLabel, serviceLabel),
+    };
+  }, [queryString]);
 
   useEffect(() => {
     const handleHashNavigation = () => {
@@ -259,100 +82,14 @@ export function EnquirySection() {
     }
 
     const nextIndustry = resolveIndustryValue(industrySlug, industryLabel);
-    if (nextIndustry) {
-      setIndustryType(nextIndustry);
-    }
-
     const nextService = resolveServiceValue(serviceSlug, serviceLabel);
-    if (nextService) {
-      setServiceType(nextService);
-    }
-
     const prefill = buildSolutionPrefill(industryLabel, serviceLabel);
 
-    if (prefill) {
-      setMessage(prefill);
+    if (nextIndustry || nextService || prefill) {
+      router.replace(`${pathname}#enquiry`, { scroll: false });
+      scrollToEnquirySection();
     }
-
-    router.replace(`${pathname}#enquiry`, { scroll: false });
-    scrollToEnquirySection();
   }, [pathname, router, queryString]);
-
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
-    if (submitStatus === "submitting") {
-      return;
-    }
-
-    const form = event.currentTarget;
-    const formData = new FormData(form);
-    const normalizedPhone = normalizePhone(String(formData.get("phone") ?? ""));
-
-    if (!isValidPhone(normalizedPhone)) {
-      setSubmitStatus("error");
-      setSubmitMessage("Phone number must be exactly 10 digits.");
-      return;
-    }
-
-    const industry = String(formData.get("industry") ?? "").trim();
-    const service = String(formData.get("service") ?? "").trim();
-    const details = String(formData.get("message") ?? "").trim();
-    const sourcePage = getEnquirySource();
-
-    const payload = {
-      name: String(formData.get("name") ?? "").trim(),
-      email: String(formData.get("email") ?? "").trim(),
-      phone: normalizedPhone,
-      company: String(formData.get("company") ?? "").trim(),
-      location: String(formData.get("location") ?? "").trim(),
-      industry,
-      service,
-      sqf: String(formData.get("sqft") ?? "").trim(),
-      startTimeline: String(formData.get("projectTimeline") ?? "").trim(),
-      budget: String(formData.get("projectBudget") ?? "").trim(),
-      message: details,
-      sourcePage,
-    };
-
-    setSubmitStatus("submitting");
-    setSubmitMessage("");
-
-    try {
-      const response = await fetch("/api/enquiry-form", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-        signal: AbortSignal.timeout(30_000),
-      });
-
-      const data = (await response.json()) as { message?: string };
-
-      if (!response.ok) {
-        setSubmitStatus("error");
-        setSubmitMessage(
-          data.message ?? "Unable to submit your enquiry. Please try again.",
-        );
-        return;
-      }
-
-      clearEnquirySource();
-      startNavigation();
-      router.push("/thank-you");
-    } catch (error) {
-      const timedOut =
-        error instanceof Error &&
-        (error.name === "TimeoutError" || error.name === "AbortError");
-      setSubmitStatus("error");
-      setSubmitMessage(
-        timedOut
-          ? "The enquiry service is taking too long. Please try again in a moment."
-          : "Unable to submit your enquiry. Please check your connection and try again.",
-      );
-    }
-  }
 
   return (
     <section
@@ -362,7 +99,7 @@ export function EnquirySection() {
       <div className="absolute inset-0">
         <Image
           src="/images/enquiry/div.absolute.webp"
-          alt=""
+          alt="Enquiry section background texture"
           fill
           className="object-cover opacity-50"
           sizes="100vw"
@@ -370,7 +107,7 @@ export function EnquirySection() {
         />
         <Image
           src="/images/enquiry/homeabout 1.webp"
-          alt=""
+          alt="Mekark industrial construction project"
           fill
           className="object-cover object-center"
           sizes="100vw"
@@ -432,7 +169,7 @@ export function EnquirySection() {
                 <span className="flex size-[27px] shrink-0 items-center justify-center rounded-full bg-[#ed2024] lg:size-7 2xl:size-[1.3889vw]">
                   <Image
                     src="/images/enquiry/SVG.svg"
-                    alt=""
+                    alt="Checkmark icon"
                     width={14}
                     height={11}
                     className="h-[10px] w-[13px]"
@@ -449,186 +186,14 @@ export function EnquirySection() {
 
         <motion.div
           variants={enquiryFormReveal}
-          className={`${styles.frameParent} w-full`}
+          className="w-full max-w-[min(100%,52rem)] flex-1"
         >
-          <div className={styles.formShape}>
-            <Image
-              className={styles.vectorIcon}
-              src="/images/enquiry/Vector.webp"
-              fill
-              sizes="(max-width: 1024px) 0px, min(52rem, 55vw)"
-              alt=""
-              aria-hidden
-            />
-
-            <div className={styles.frameGroup}>
-              <div className={styles.background}>
-              <form
-                id="enquiry-form"
-                onSubmit={handleSubmit}
-                className={styles.form}
-              >
-                <div className={styles.label}>
-                  <div className={styles.enquiryForm}>Enquiry Form</div>
-                </div>
-
-                <div className={styles.formRow}>
-                  <FormField label="Name" required>
-                    <input
-                      type="text"
-                      name="name"
-                      required
-                      placeholder="Your full name"
-                      className={styles.input}
-                    />
-                  </FormField>
-                  <FormField label="Email" required>
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      placeholder="you@company.com"
-                      className={styles.input}
-                    />
-                  </FormField>
-                </div>
-
-                <div className={styles.formRow}>
-                  <FormField label="Phone" required>
-                    <input
-                      type="tel"
-                      name="phone"
-                      required
-                      inputMode="numeric"
-                      autoComplete="tel-national"
-                      maxLength={10}
-                      pattern="\d{10}"
-                      value={phone}
-                      onChange={(event) =>
-                        setPhone(normalizePhone(event.target.value))
-                      }
-                      placeholder="+91 98XXX XXXXX"
-                      className={styles.input}
-                    />
-                  </FormField>
-                  <FormField label="Company" required>
-                    <input
-                      type="text"
-                      name="company"
-                      required
-                      placeholder="Company name"
-                      className={styles.input}
-                    />
-                  </FormField>
-                </div>
-
-                <div className={styles.formRow}>
-                  <FormField label="Location" required>
-                    <input
-                      type="text"
-                      name="location"
-                      required
-                      placeholder="City / District"
-                      className={styles.input}
-                    />
-                  </FormField>
-                  <FormField label="Industry Type" required>
-                    <SelectField
-                      id="enquiry-industry"
-                      name="industry"
-                      required
-                      value={industryType}
-                      onChange={setIndustryType}
-                      options={INDUSTRY_TYPES}
-                    />
-                  </FormField>
-                </div>
-
-                <div className={styles.formRow}>
-                  <FormField label="Service" required>
-                    <SelectField
-                      id="enquiry-service"
-                      name="service"
-                      required
-                      value={serviceType}
-                      onChange={setServiceType}
-                      options={SERVICE_TYPES}
-                    />
-                  </FormField>
-                  <FormField label="Project (Sq.ft)" required>
-                    <SelectField
-                      id="enquiry-area"
-                      name="sqft"
-                      required
-                      value={projectArea}
-                      onChange={setProjectArea}
-                      options={PROJECT_AREAS}
-                    />
-                  </FormField>
-                </div>
-
-                <div className={styles.formRow}>
-                  <FormField label="Project Start Timeline" required>
-                    <SelectField
-                      id="enquiry-timeline"
-                      name="projectTimeline"
-                      required
-                      value={projectTimeline}
-                      onChange={setProjectTimeline}
-                      options={PROJECT_TIMELINES}
-                    />
-                  </FormField>
-                  <FormField label="Project Budget" required>
-                    <SelectField
-                      id="enquiry-budget"
-                      name="projectBudget"
-                      required
-                      value={projectBudget}
-                      onChange={setProjectBudget}
-                      options={PROJECT_BUDGETS}
-                    />
-                  </FormField>
-                </div>
-
-                <FormField
-                  label="Project Details"
-                  required
-                  className={styles.fieldFull}
-                >
-                  <textarea
-                    name="message"
-                    rows={3}
-                    required
-                    value={message}
-                    onChange={(event) => setMessage(event.target.value)}
-                    placeholder="Describe your project — type, usage, timeline…"
-                    className={styles.textarea}
-                  />
-                </FormField>
-              </form>
-            </div>
-          </div>
-          </div>
-
-          <div className={styles.buttonmargin}>
-            {submitMessage ? (
-              <p role="alert" className={styles.errorMessage}>
-                {submitMessage}
-              </p>
-            ) : null}
-            <button
-              type="submit"
-              form="enquiry-form"
-              disabled={submitStatus === "submitting"}
-              className={styles.button}
-            >
-              <div className={styles.requestProjectProposal}>
-                {submitStatus === "submitting"
-                  ? "Submitting..."
-                  : "Request Project Proposal"}
-              </div>
-            </button>
-          </div>
+          <EnquiryFormCore
+            key={`${prefill.industry}-${prefill.service}-${prefill.message}`}
+            defaultIndustry={prefill.industry}
+            defaultService={prefill.service}
+            defaultMessage={prefill.message}
+          />
         </motion.div>
       </motion.div>
     </section>

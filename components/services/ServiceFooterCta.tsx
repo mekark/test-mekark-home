@@ -39,7 +39,7 @@ export function ServiceFooterCta({
             height={32}
             sizes="100vw"
             src="/images/services/solar/footer/phone.svg"
-            alt=""
+            alt="Phone icon"
           />
         </div>
       </div>
@@ -74,7 +74,7 @@ export function ServiceFooterCta({
                 height={9}
                 sizes="100vw"
                 src="/images/services/solar/footer/Component 4.svg"
-                alt=""
+                alt="Arrow icon"
               />
             </div>
           </a>
@@ -87,7 +87,7 @@ export function ServiceFooterCta({
                 height={16}
                 sizes="100vw"
                 src="/images/services/solar/footer/Component 1.svg"
-                alt=""
+                alt="FAQ expand icon"
               />
             </div>
           </a>

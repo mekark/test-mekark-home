@@ -171,7 +171,7 @@ export default function WhyChooseMekark() {
         {/* Site backdrop — Figma: 1920×1032 @ top -17.33 */}
         <Image
           src="/images/services/peb/why-choose/construction-site.webp"
-          alt=""
+          alt="Active PEB construction site managed by Mekark"
           fill
           className="pointer-events-none object-cover object-bottom opacity-90 lg:top-[-1.7%]"
           sizes="100vw"
@@ -221,7 +221,7 @@ export default function WhyChooseMekark() {
           >
             <Image
               src="/images/services/peb/why-choose/structure-backdrop.webp"
-              alt=""
+              alt="PEB steel structure backdrop"
               width={627}
               height={665}
               className="pointer-events-none absolute left-1/2 top-[4%] z-0 h-[78%] w-[84%] -translate-x-1/2 object-contain opacity-95 blur-[1px] lg:top-[-18%] lg:h-auto lg:w-[110%]"
@@ -229,7 +229,7 @@ export default function WhyChooseMekark() {
             />
             <Image
               src="/images/services/peb/why-choose/engineer.webp"
-              alt=""
+              alt="Mekark engineer at PEB construction site"
               width={847}
               height={847}
               className="pointer-events-none absolute inset-0 z-[1] h-full w-full object-contain lg:inset-auto lg:left-1/2 lg:top-[2%] lg:h-[118%] lg:w-auto lg:max-w-none lg:-translate-x-1/2 lg:object-contain"

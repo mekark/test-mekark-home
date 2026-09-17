@@ -109,7 +109,7 @@ const FaqItem = ({ num, question, answer, isOpen, onToggle }: FaqItemProps) => (
           width={17}
           height={17}
           sizes="100vw"
-          alt=""
+          alt="Expand section"
         />
       </div>
     </button>

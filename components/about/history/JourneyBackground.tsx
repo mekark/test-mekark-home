@@ -30,7 +30,7 @@ export function JourneyBackground({ active }: JourneyBackgroundProps) {
         >
           <img
             src={src}
-            alt=""
+            alt="Mekark company journey timeline illustration layer"
             draggable={false}
             className="absolute inset-0 h-full w-full object-cover object-bottom"
           />

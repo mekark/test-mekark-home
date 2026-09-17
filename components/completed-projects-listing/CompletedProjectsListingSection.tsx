@@ -70,7 +70,7 @@ function MetaRow({ label }: { label: string }) {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/images/completed-projects-listing/arrow.svg"
-          alt=""
+          alt="Arrow icon"
           width={6}
           height={9}
           className="h-[11px] w-auto"

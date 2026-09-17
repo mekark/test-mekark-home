@@ -32,7 +32,7 @@ const Frame191: NextPage = () => {
 						<span className={styles.ctaIcon} aria-hidden>
 							<Image
 								src="/images/services/tensile/frame191/arrow.svg"
-								alt=""
+								alt="Arrow icon"
 								fill
 								className={styles.ctaIconImg}
 								sizes="19px"
@@ -56,7 +56,7 @@ const Frame191: NextPage = () => {
 						width={397}
 						height={414}
 						sizes="(max-width: 900px) 50vw, 25vw"
-						alt=""
+						alt="Tensile structure engineering illustration"
 					/>
 				</div>
 			</div>

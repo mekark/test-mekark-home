@@ -61,13 +61,13 @@ export default function PlanningCta() {
 
             <a
               href="/#enquiry"
-              className="mt-6 inline-flex min-h-[40px] w-fit max-w-full items-center justify-center gap-2 rounded-full bg-white px-4 py-2.5 text-[13px] font-bold leading-[18px] text-[#E5091F] transition-transform active:scale-[0.98] sm:mt-7 sm:min-h-[44px] sm:px-5 sm:py-3 sm:text-[14px]"
+              className="mt-6 inline-flex min-h-[40px] w-fit max-w-full items-center justify-center gap-2 rounded-full bg-white px-4 py-2.5 text-[13px] font-bold leading-[18px] text-[#E5091F] no-underline transition-transform active:scale-[0.98] sm:mt-7 sm:min-h-[44px] sm:px-5 sm:py-3 sm:text-[14px]"
             >
               Request a Free Quote
               <span className="relative size-[14px] shrink-0 sm:size-[16px]">
                 <Image
                   src="/images/services/civil/cta/arrow.svg"
-                  alt=""
+                  alt="Arrow icon"
                   fill
                   className="object-contain"
                   sizes="18px"
@@ -114,7 +114,7 @@ export default function PlanningCta() {
         >
           <Image
             src="/images/services/civil/cta/MidCTA.webp"
-            alt=""
+            alt="Civil construction project by Mekark"
             width={976}
             height={614}
             className="h-[614px] w-full max-w-none rounded-t-none rounded-br-[34px] rounded-bl-none object-cover"
@@ -144,13 +144,13 @@ export default function PlanningCta() {
 
             <a
               href="/#enquiry"
-              className="mt-auto inline-flex w-fit items-center justify-center gap-[9.6px] rounded-full bg-white px-[24.1px] py-[14.4px] text-base font-bold leading-[24.06px] text-[#E5091F] transition-transform hover:scale-[1.03]"
+              className="mt-auto inline-flex w-fit items-center justify-center gap-[9.6px] rounded-full bg-white px-[24.1px] py-[14.4px] text-base font-bold leading-[24.06px] text-[#E5091F] no-underline transition-transform hover:scale-[1.03]"
             >
               Request a Free Quote
               <span className="relative size-[18.8px] shrink-0 overflow-hidden">
                 <Image
                   src="/images/services/civil/cta/arrow.svg"
-                  alt=""
+                  alt="Arrow icon"
                   fill
                   className="object-contain"
                   sizes="19px"

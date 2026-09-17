@@ -29,7 +29,7 @@ const CompleteEOTCraneSolutionsEngineeredEndToEnd: NextPage = () => {
               width={397.4}
               height={1153}
               sizes="100vw"
-              alt=""
+              alt="Logistics project delivery timeline illustration"
             />
             <div className={styles.frameContainer}>
               <Image

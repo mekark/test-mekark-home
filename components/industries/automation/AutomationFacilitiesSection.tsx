@@ -163,7 +163,7 @@ export default function AutomationFacilitiesSection() {
       >
         <Image
           src="/images/industries/automation/automation-facilities/grid-bg.webp"
-          alt=""
+          alt="Decorative grid background"
           fill
           className="object-cover object-top"
           sizes="100vw"

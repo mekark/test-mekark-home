@@ -72,7 +72,7 @@ function FiveSPointCard({ point }: { point: FiveSPoint }) {
         <div className="relative flex size-6 shrink-0 items-center justify-center sm:size-7 lg:size-[clamp(1.5rem,2.2vw,2.25rem)] 2xl:size-[clamp(2.5rem,3.2vw,3.75rem)]">
           <Image
             src={point.icon}
-            alt=""
+            alt={`${point.title} icon`}
             fill
             className="object-contain object-center"
             sizes="(max-width: 1024px) 28px, (max-width: 1536px) 36px, 60px"
@@ -485,7 +485,7 @@ function SafetyFiveSPointsSection() {
       >
         <Image
           src="/images/about/safety/5s/background-watermark.webp"
-          alt=""
+          alt="Safety standards section background watermark"
           fill
           className="object-cover object-left-top"
           sizes="932px"

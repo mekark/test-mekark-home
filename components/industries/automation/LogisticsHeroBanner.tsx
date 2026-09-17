@@ -40,7 +40,7 @@ export default function LogisticsHeroBanner() {
           <div className={styles.ctaIcon}>
             <Image
               src="/images/industries/automation/arrow-right.svg"
-              alt=""
+              alt="Arrow icon"
               fill
               className={styles.ctaIconImg}
               sizes="20px"

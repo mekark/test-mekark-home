@@ -9,7 +9,7 @@ const Footer = () => {
         <img
           className={styles.backgroundImage}
           src="/images/industries/data-center/footer/footer.webp"
-          alt=""
+          alt="Data center facility footer background"
         />
       </div>
       <div className={styles.frameWrapper}>
@@ -42,7 +42,7 @@ const Footer = () => {
                 width={25}
                 height={25}
                 sizes="100vw"
-                alt=""
+                alt="Arrow icon"
               />
             </div>
           </a>

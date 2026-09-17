@@ -187,13 +187,13 @@ function VideoCard({
             className={overlayClassName}
           >
             <span className="relative size-[min(22vw,120px)]">
-              <Image src={`${IMG}/play-icon.svg`} alt="" fill aria-hidden />
+              <Image src={`${IMG}/play-icon.svg`} alt="Play video" fill aria-hidden />
             </span>
           </a>
         ) : (
           <button type="button" aria-label={label} className={overlayClassName}>
             <span className="relative size-[min(22vw,120px)]">
-              <Image src={`${IMG}/play-icon.svg`} alt="" fill aria-hidden />
+              <Image src={`${IMG}/play-icon.svg`} alt="Play video" fill aria-hidden />
             </span>
           </button>
         )}
@@ -307,7 +307,7 @@ export function LifeAtMekarkPage() {
                 <div className="relative size-[50px] shrink-0 overflow-hidden">
                   <Image
                     src={value.icon}
-                    alt=""
+                    alt={`${value.title} icon`}
                     fill
                     aria-hidden
                     className="object-contain"
@@ -337,7 +337,7 @@ export function LifeAtMekarkPage() {
               <span className="relative size-5 shrink-0 overflow-hidden sm:translate-x-1 min-[1201px]:size-6 min-[1920px]:size-7">
                 <Image
                   src={`${IMG}/arrow-icon.svg`}
-                  alt=""
+                  alt="Arrow icon"
                   fill
                   aria-hidden
                   className="object-contain"

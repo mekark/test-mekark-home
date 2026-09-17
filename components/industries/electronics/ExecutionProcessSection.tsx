@@ -43,7 +43,7 @@ export default function ExecutionProcessSection() {
           src="/images/industries/logistics/process/grid-background.webp"
           fill
           sizes="100vw"
-          alt=""
+          alt="Decorative grid background"
           unoptimized
         />
       </div>
@@ -73,7 +73,7 @@ export default function ExecutionProcessSection() {
                   width={66.7}
                   height={19.6}
                   sizes="100vw"
-                  alt=""
+                  alt="Arrow icon"
                 />
               ) : null}
             </div>

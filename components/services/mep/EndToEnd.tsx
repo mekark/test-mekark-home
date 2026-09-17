@@ -64,7 +64,7 @@ export default function EndToEnd() {
         >
           <Image
             src="/images/services/mep/end-to-end/layer-14.webp"
-            alt=""
+            alt="Industrial MEP systems installation"
             width={602}
             height={752}
             className="pointer-events-none absolute z-[1] hidden opacity-60 lg:left-[68.63%] lg:top-[-16.64%] lg:block lg:h-[80.92%] lg:w-[31.35%] lg:object-cover"
@@ -73,7 +73,7 @@ export default function EndToEnd() {
 
           <Image
             src="/images/services/mep/end-to-end/floor-grid.webp"
-            alt=""
+            alt="Decorative grid background"
             width={1147}
             height={341}
             className="pointer-events-none absolute z-0 hidden lg:left-[32%] lg:top-[-26%] lg:block lg:h-[140%] lg:w-[152%] lg:object-contain"

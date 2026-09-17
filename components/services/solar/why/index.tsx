@@ -7,7 +7,7 @@ const WhyChooseMekark: NextPage = () => {
 	return (
 		<div className={`${styles.whyChooseMekark} ${macStyles.whyChooseMekark}`}>
 			<div className={`${styles.copy1Parent} ${macStyles.copy1Parent}`}>
-				<Image className={`${styles.copy1Icon} ${macStyles.copy1Icon}`} width={1920} height={1032} sizes="100vw" src="/images/services/solar/why/copy-1.webp" alt="" />
+				<Image className={`${styles.copy1Icon} ${macStyles.copy1Icon}`} width={1920} height={1032} sizes="100vw" src="/images/services/solar/why/copy-1.webp" alt="Solar EPC project site background" />
 				<div className={`${styles.whyIndustrialClientsChooseParent} ${macStyles.whyIndustrialClientsChooseParent}`}>
 					<b className={`${styles.whyIndustrialClientsContainer} ${macStyles.whyIndustrialClientsContainer}`}>
 						<span className={styles.whyIndustrialClientsContainer2}>
@@ -115,7 +115,7 @@ const WhyChooseMekark: NextPage = () => {
 						</div>
 					</div>
 					<div className={`${styles.image25Parent} ${macStyles.image25Parent}`}>
-						<Image className={`${styles.image25Icon} ${macStyles.image25Icon}`} width={597} height={388} sizes="(max-width: 1199px) 55vw, 31vw" src="/images/services/solar/why/image-25.webp" alt="" />
+						<Image className={`${styles.image25Icon} ${macStyles.image25Icon}`} width={597} height={388} sizes="(max-width: 1199px) 55vw, 31vw" src="/images/services/solar/why/image-25.webp" alt="Commercial rooftop solar installation overview" />
 						<Image className={`${styles.chatgptImageAug3202604} ${macStyles.chatgptImageAug3202604}`} width={673} height={669} sizes="(max-width: 1199px) 100vw, 70vw" src="/images/services/solar/why/engineers.webp" alt="Mekark engineering team on site" />
 					</div>
 				</div>

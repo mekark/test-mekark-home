@@ -106,7 +106,7 @@ function TestimonialCard({
       <blockquote className="relative mt-8 flex-1">
         <Image
           src="/images/achievements-testimonials/icon-quote.svg"
-          alt=""
+          alt="Testimonial quote icon"
           width={34}
           height={34}
           aria-hidden

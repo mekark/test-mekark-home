@@ -40,7 +40,7 @@ const EndToEnd: NextPage = () => {
 				height={603}
 				sizes="100vw"
 				src="/images/services/solar/end-to-end/solar-ete-1.webp"
-				alt=""
+				alt="End-to-end commercial solar EPC installation"
 			/>
 		</div>
 	);

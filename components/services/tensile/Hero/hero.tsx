@@ -101,7 +101,7 @@ export default function Hero() {
             width={1920}
             height={1081}
             sizes="100vw"
-            alt=""
+            alt="Tensile fabric structure canopy by Mekark"
             priority
           />
           <div className={styles.imageItem} />
@@ -136,7 +136,7 @@ export default function Hero() {
                     src="/images/services/tensile/hero/arrow.svg"
                     width={9}
                     height={7}
-                    alt=""
+                    alt="Arrow icon"
                   />
                 </span>
               </Link>

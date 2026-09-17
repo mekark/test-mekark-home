@@ -147,9 +147,8 @@ export function HeroSection() {
       <img
         key={activeVideo.poster}
         src={activeVideo.poster}
-        alt=""
+        alt={`${activeVideo.title} — Mekark industrial construction showcase`}
         className="absolute inset-0 size-full origin-center object-cover object-center xl:min-h-full xl:min-w-full xl:scale-[1.08] 2xl:scale-100"
-        aria-hidden
         fetchPriority="high"
         decoding="async"
       />

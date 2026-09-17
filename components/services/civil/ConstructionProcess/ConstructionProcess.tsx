@@ -45,7 +45,7 @@ export default function ConstructionProcess() {
         <div className="relative h-full w-full -scale-y-100">
           <Image
             src="/images/services/civil/process/grid.webp"
-            alt=""
+            alt="Decorative grid background"
             fill
             className="object-cover object-top"
             sizes="100vw"

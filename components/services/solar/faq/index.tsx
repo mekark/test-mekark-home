@@ -97,7 +97,7 @@ const FaqItem = ({
 						height={17}
 						sizes="100vw"
 						src="/images/services/solar/faq/Component 1.svg"
-						alt=""
+						alt="FAQ expand icon"
 					/>
 				</motion.div>
 			</button>

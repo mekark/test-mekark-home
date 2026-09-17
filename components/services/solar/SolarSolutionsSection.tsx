@@ -54,7 +54,7 @@ export default function SolarSolutionsSection() {
           width={1918}
           height={391}
           sizes="100vw"
-          alt=""
+          alt="Decorative grid background"
         />
 
         <ServiceSolutionsMobileGrid
@@ -80,7 +80,7 @@ export default function SolarSolutionsSection() {
           height={391}
           sizes="100vw"
           src="/images/services/solar/CTA/grid-1-1.webp"
-          alt=""
+          alt="Decorative grid background"
         />
 
         <div className={styles.solarSolutionsDesktop}>

@@ -209,7 +209,7 @@ export function FaqSection() {
             >
               <Image
                 src="/images/faq/question-mark.webp"
-                alt=""
+                alt="FAQ question mark illustration"
                 fill
                 className="object-contain object-bottom"
                 sizes="(max-width: 640px) 180px, 460px"

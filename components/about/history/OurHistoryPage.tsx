@@ -149,7 +149,7 @@ export function OurHistoryPage() {
           <div className="relative w-full aspect-[402/80]">
             <Image
               src="/images/about/history/about-hero-mobile.webp"
-              alt=""
+              alt="Mekark company history hero image"
               fill
               className="object-cover object-center"
               sizes="100vw"
@@ -214,7 +214,7 @@ export function OurHistoryPage() {
               <span className="relative size-[min(18vw,120px)]">
                 <Image
                   src="/images/about/history/play-icon.svg"
-                  alt=""
+                  alt="Play video"
                   fill
                   aria-hidden
                 />
@@ -290,7 +290,7 @@ export function OurHistoryPage() {
               >
                 <Image
                   src="/images/about/quotes-ltr.svg"
-                  alt=""
+                  alt="Opening quotation mark"
                   fill
                   className="object-contain"
                   sizes="36px"
@@ -310,7 +310,7 @@ export function OurHistoryPage() {
                 >
                   <Image
                     src="/images/about/quotes-ltr.svg"
-                    alt=""
+                    alt="Opening quotation mark"
                     fill
                     className="object-contain"
                     sizes="36px"
@@ -350,7 +350,7 @@ export function OurHistoryPage() {
             <div className="absolute inset-x-0 bottom-0 h-[min(32vw,130px)] sm:h-[min(52vw,619px)]">
               <Image
                 src="/images/about/history/journey-bg-mobile.webp"
-                alt=""
+                alt="Mekark journey timeline background"
                 fill
                 className="object-cover object-bottom sm:hidden"
                 sizes="100vw"
@@ -358,7 +358,7 @@ export function OurHistoryPage() {
               />
               <Image
                 src="/images/about/history/journey-bg.webp"
-                alt=""
+                alt="Mekark journey timeline background"
                 fill
                 className="hidden object-cover object-bottom sm:block"
                 sizes="100vw"

@@ -175,7 +175,7 @@ function StarRating() {
         <Image
           key={index}
           src="/images/achievements-testimonials/star-4.svg"
-          alt=""
+          alt="Rating star"
           width={17}
           height={17}
           aria-hidden
@@ -210,7 +210,7 @@ function TestimonialCard({
       <div className="flex items-center justify-between gap-4">
         <Image
           src="/images/achievements-testimonials/icon-quote.svg"
-          alt=""
+          alt="Testimonial quote icon"
           width={32}
           height={32}
           aria-hidden

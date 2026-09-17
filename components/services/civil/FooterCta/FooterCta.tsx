@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { PHONE_HREF } from "@/lib/contact";
 
@@ -15,7 +17,7 @@ export default function FooterCta() {
           <div className="absolute left-1/2 top-1/2 h-[38.4px] w-[38.4px] -translate-x-1/2 -translate-y-1/2 overflow-hidden">
             <Image
               src="/images/services/civil/footer/phone-icon.svg"
-              alt=""
+              alt="Phone icon"
               width={32}
               height={32}
               className="absolute inset-[8.33%] h-[83.33%] w-[83.34%] max-h-full max-w-full object-contain"
@@ -41,7 +43,7 @@ export default function FooterCta() {
             <span className="relative h-[18.8px] w-[18.8px] shrink-0 overflow-hidden">
               <Image
                 src="/images/services/civil/footer/quote-arrow.svg"
-                alt=""
+                alt="Arrow icon"
                 fill
                 className="object-contain"
                 sizes="19px"
@@ -56,7 +58,7 @@ export default function FooterCta() {
             <span className="relative h-[18.7px] w-[18.7px] shrink-0 overflow-hidden">
               <Image
                 src="/images/services/civil/footer/call-phone.svg"
-                alt=""
+                alt="Call phone icon"
                 fill
                 className="object-contain"
                 sizes="19px"
@@ -81,7 +83,7 @@ export default function FooterCta() {
           <div className="absolute left-[27.47px] top-[calc(50%-18.53px)] h-[38.4px] w-[38.4px] overflow-hidden">
             <Image
               src="/images/services/civil/footer/phone-icon.svg"
-              alt=""
+              alt="Phone icon"
               width={32}
               height={32}
               className="absolute inset-[8.33%] h-[83.33%] w-[83.34%] max-h-full max-w-full object-contain"
@@ -98,7 +100,7 @@ export default function FooterCta() {
             <span className="relative h-[18.8px] w-[18.8px] shrink-0 overflow-hidden">
               <Image
                 src="/images/services/civil/footer/quote-arrow.svg"
-                alt=""
+                alt="Arrow icon"
                 width={12}
                 height={9}
                 className="absolute inset-0 h-full w-full object-contain"
@@ -113,7 +115,7 @@ export default function FooterCta() {
             <span className="relative h-[18.7px] w-[18.7px] shrink-0 overflow-hidden">
               <Image
                 src="/images/services/civil/footer/call-phone.svg"
-                alt=""
+                alt="Call phone icon"
                 width={16}
                 height={16}
                 className="absolute inset-0 h-full w-full object-contain"

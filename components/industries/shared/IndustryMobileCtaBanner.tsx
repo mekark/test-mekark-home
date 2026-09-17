@@ -54,7 +54,7 @@ export function IndustryMobileCtaBanner({
 						width={16.7}
 						height={13.3}
 						sizes="16px"
-						alt=""
+						alt="Arrow icon"
 					/>
 				</span>
 			</a>
@@ -65,7 +65,7 @@ export function IndustryMobileCtaBanner({
 					width={180}
 					height={180}
 					sizes="(max-width: 768px) 125px, 145px"
-					alt=""
+					alt="Decorative badge frame"
 				/>
 				<Image
 					className={styles.sectionInner}
@@ -73,7 +73,7 @@ export function IndustryMobileCtaBanner({
 					width={317}
 					height={213}
 					sizes="88vw"
-					alt=""
+					alt="Decorative section frame"
 				/>
 				<Image
 					className={styles.worker}

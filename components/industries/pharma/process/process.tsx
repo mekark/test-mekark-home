@@ -10,7 +10,7 @@ const Process = () => {
           src="/images/industries/pharma/process/grid-background.webp"
           fill
           sizes="100vw"
-          alt=""
+          alt="Decorative grid background"
           unoptimized
         />
       </div>
@@ -39,7 +39,7 @@ const Process = () => {
           width={67}
           height={20}
           sizes="100vw"
-          alt=""
+          alt="Arrow icon"
         />
         <div className={styles.parent}>
           <div className={styles.div}>02</div>
@@ -60,7 +60,7 @@ const Process = () => {
           width={67}
           height={20}
           sizes="100vw"
-          alt=""
+          alt="Arrow icon"
         />
         <div className={styles.parent}>
           <div className={styles.div}>03</div>
@@ -78,7 +78,7 @@ const Process = () => {
           width={67}
           height={20}
           sizes="100vw"
-          alt=""
+          alt="Arrow icon"
         />
         <div className={styles.frameDiv}>
           <div className={styles.div}>04</div>
@@ -100,7 +100,7 @@ const Process = () => {
             width={67}
             height={20}
             sizes="100vw"
-            alt=""
+            alt="Arrow icon"
           />
           <div className={styles.frameDiv}>
             <div className={styles.div}>05</div>

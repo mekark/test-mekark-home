@@ -24,7 +24,7 @@ export function ManufacturingSolutionsSection() {
       >
         <Image
           src="/images/industries/fmcg/fmcg-facility-cta/solutions-grid.webp"
-          alt=""
+          alt="Decorative grid background"
           fill
           className="object-cover object-top"
           sizes="100vw"

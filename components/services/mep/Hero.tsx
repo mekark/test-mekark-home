@@ -110,7 +110,7 @@ export default function Hero() {
             width={1920}
             height={1080}
             sizes="100vw"
-            alt=""
+            alt="Industrial MEP facility background"
             priority
           />
           <div
@@ -230,7 +230,7 @@ export default function Hero() {
                   src="/images/services/mep/hero/arrow.svg"
                   width={9}
                   height={7}
-                  alt=""
+                  alt="Arrow icon"
                 />
               </span>
             </Link>

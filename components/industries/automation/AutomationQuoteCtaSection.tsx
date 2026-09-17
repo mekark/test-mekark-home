@@ -8,7 +8,7 @@ export default function AutomationQuoteCtaSection() {
       <Image
         className={styles.backgroundImage}
         src="/images/industries/automation/automation-quote-cta/factory-background.webp"
-        alt=""
+        alt="Automation manufacturing facility by Mekark"
         fill
         sizes="100vw"
         aria-hidden
@@ -33,7 +33,7 @@ export default function AutomationQuoteCtaSection() {
           <span>Get a Free Quote</span>
           <Image
             src="/images/industries/automation/automation-quote-cta/arrow-right.svg"
-            alt=""
+            alt="Arrow icon"
             width={25}
             height={25}
             aria-hidden

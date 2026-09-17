@@ -146,7 +146,7 @@ function WorkflowStep({
       >
         <Image
           src={step.icon}
-          alt=""
+          alt={`${step.title} icon`}
           width={69}
           height={69}
           className="size-10 object-contain sm:size-[clamp(2.75rem,4vw,4rem)] 2xl:size-[69px]"
@@ -302,7 +302,7 @@ export function PrecisionDrivenEngineeringSection() {
                   <motion.div variants={precEngPillIcon}>
                     <Image
                       src={pill.icon}
-                      alt=""
+                      alt={`${pill.label} icon`}
                       width={32}
                       height={32}
                       className="size-5 sm:size-6 lg:size-[clamp(1.25rem,1.8vw,2rem)] 2xl:size-8"

@@ -135,7 +135,7 @@ export default function HowWeDeliverSteps({
                     <div className="relative size-7">
                       <Image
                         src={step.icon}
-                        alt=""
+                        alt={`${step.title} icon`}
                         fill
                         sizes="28px"
                         className="object-contain"
@@ -184,7 +184,7 @@ export default function HowWeDeliverSteps({
                 {step.icon ? (
                   <Image
                     src={step.icon}
-                    alt=""
+                    alt={`${step.title} icon`}
                     fill
                     sizes="40px"
                     className="object-contain"
@@ -198,7 +198,7 @@ export default function HowWeDeliverSteps({
               {index < steps.length - 1 ? (
                 <Image
                   src={arrowSrc}
-                  alt=""
+                  alt="Process step arrow"
                   width={67}
                   height={20}
                   className={arrowClass}

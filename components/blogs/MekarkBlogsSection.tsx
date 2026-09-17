@@ -88,7 +88,7 @@ function BlogCard({
       <div className="relative h-[192px] w-full shrink-0 bg-[#f3f4f6]">
         <Image
           src={post.image}
-          alt=""
+          alt={post.title}
           fill
           className="object-cover"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 520px"

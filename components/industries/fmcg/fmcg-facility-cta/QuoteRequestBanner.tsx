@@ -22,7 +22,7 @@ export function QuoteRequestBanner() {
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <Image
             src="/images/industries/fmcg/fmcg-facility-cta/quote-request-banner-bg.webp"
-            alt=""
+            alt="FMCG facility quote request banner background"
             width={2400}
             height={1350}
             className="absolute left-[0.01%] top-[-105.28%] h-[277.68%] w-full max-w-none object-cover"
@@ -74,7 +74,7 @@ export function QuoteRequestBanner() {
             <span className="relative size-[25px] shrink-0 overflow-hidden">
               <Image
                 src="/images/industries/fmcg/fmcg-facility-cta/quote-request-arrow.svg"
-                alt=""
+                alt="Arrow icon"
                 width={25}
                 height={25}
                 className="size-full"

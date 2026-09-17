@@ -31,7 +31,7 @@ const OurSolutions = () => {
                 width={397.4}
                 height={1320.9}
                 sizes="100vw"
-                alt=""
+                alt="Process timeline illustration"
               />
               <div className={styles.frameContainer}>
                 <Image

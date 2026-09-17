@@ -463,7 +463,7 @@ function FaqItem({
         <span className="relative size-[17px] shrink-0 overflow-clip">
           <img
             src="/images/extended-service/faq-chevron.svg"
-            alt=""
+            alt="Expand section"
             width={17}
             height={17}
             className={`absolute inset-0 m-auto size-full object-contain transition-transform duration-200 ${
@@ -628,7 +628,7 @@ export function ExtendedServiceSection() {
                 <span className="relative size-6 shrink-0 overflow-clip">
                   <img
                     src="/images/extended-service/cta-arrow.svg"
-                    alt=""
+                    alt="Arrow icon"
                     width={25}
                     height={25}
                     className="size-full object-contain"

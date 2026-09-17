@@ -137,7 +137,7 @@ export default function WhyChooseMekark() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[min(1032px,100%)] w-full">
         <Image
           src="/images/services/multi-storey/why-choose/site-bg.webp"
-          alt=""
+          alt="Multi-storey steel construction site background"
           fill
           sizes="100vw"
           className="object-contain object-bottom"
@@ -183,7 +183,7 @@ export default function WhyChooseMekark() {
           <div className="pointer-events-none absolute top-[8%] left-1/2 h-[58%] w-[72%] -translate-x-1/2 blur-[2px]">
             <Image
               src="/images/services/multi-storey/why-choose/building-blur.webp"
-              alt=""
+              alt="Multi-storey steel building under construction"
               fill
               sizes="280px"
               className="object-cover object-center opacity-80"
@@ -255,7 +255,7 @@ export default function WhyChooseMekark() {
             <div className="absolute bottom-[320px] left-[calc(50%-48px)] h-[min(850px,106%)] w-[min(820px,69%)] -translate-x-1/2 blur-[2.67px] [mask-image:linear-gradient(to_right,transparent_0,transparent_calc(16%-3px),#000_16%,#000_calc(100%-2px),transparent_100%)] [-webkit-mask-image:linear-gradient(to_right,transparent_0,transparent_calc(16%-3px),#000_16%,#000_calc(100%-2px),transparent_100%)]">
               <Image
                 src="/images/services/multi-storey/why-choose/building-blur.webp"
-                alt=""
+                alt="Multi-storey steel building under construction"
                 fill
                 sizes="524px"
                 className="object-contain object-bottom"
@@ -264,7 +264,7 @@ export default function WhyChooseMekark() {
             <div className="absolute bottom-0 left-[45%] h-[88%] w-[95%] max-w-none -translate-x-1/2">
               <Image
                 src="/images/services/multi-storey/why-choose/worker.webp"
-                alt=""
+                alt="Construction worker at multi-storey steel project"
                 fill
                 sizes="(min-width: 1280px) 960px, 60vw"
                 className="object-contain object-bottom"

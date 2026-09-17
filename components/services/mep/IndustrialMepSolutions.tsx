@@ -61,7 +61,7 @@ export default function IndustrialMepSolutions() {
         width={1918}
         height={391}
         sizes="100vw"
-        alt=""
+        alt="Decorative grid background"
       />
 
       <ServiceSolutionsMobileGrid

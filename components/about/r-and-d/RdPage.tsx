@@ -147,7 +147,7 @@ export function RdPage() {
                 >
                   <Image
                     src={track.icon}
-                    alt=""
+                    alt={`${track.title} icon`}
                     width={track.iconWidth}
                     height={track.iconHeight}
                     className={`h-auto object-contain ${

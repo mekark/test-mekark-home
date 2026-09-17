@@ -250,7 +250,7 @@ export function AboutMekarkSection() {
               >
                 <Image
                   src="/images/about/quotes-ltr.svg"
-                  alt=""
+                  alt="Opening quotation mark"
                   fill
                   className="object-contain"
                   sizes="40px"

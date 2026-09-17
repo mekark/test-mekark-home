@@ -66,7 +66,7 @@ function MetaRow({ label }: { label: string }) {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/images/completed-projects-listing/arrow.svg"
-          alt=""
+          alt="Arrow icon"
           width={6}
           height={9}
           className="h-[11px] w-auto"
@@ -141,7 +141,7 @@ function Pagination({
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/projects/completed/page-prev.svg"
-            alt=""
+            alt="Previous page"
             width={5}
             height={8}
             className="h-[8px] w-[5px]"
@@ -177,7 +177,7 @@ function Pagination({
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/projects/completed/page-next.svg"
-            alt=""
+            alt="Next page"
             width={5}
             height={8}
             className="h-[8px] w-[5px]"

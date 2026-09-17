@@ -56,7 +56,7 @@ export default function Solutions() {
             src="/images/industries/food-and-beverage/solutions/grid-1.webp"
             fill
             sizes="100vw"
-            alt=""
+            alt="Decorative grid background"
           />
         </div>
 

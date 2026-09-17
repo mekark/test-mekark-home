@@ -31,7 +31,7 @@ export default function OurSolutionsSection() {
                 width={397}
                 height={1321}
                 sizes="100vw"
-                alt=""
+                alt="Process timeline illustration"
               />
               <div className={styles.frameContainer}>
                 <Image

@@ -107,7 +107,7 @@ function FaqItem({
             src="/images/services/mep/faq/chevron.svg"
             width={10}
             height={6}
-            alt=""
+            alt="Expand section"
             className="block h-[5.5px] w-[9.7px] object-contain"
           />
         </motion.span>

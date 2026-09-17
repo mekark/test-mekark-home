@@ -40,7 +40,7 @@ export default function HowWeDeliver() {
             width={1918}
             height={391}
             sizes="100vw"
-            alt=""
+            alt="Decorative grid background"
           />
         </div>
       </div>

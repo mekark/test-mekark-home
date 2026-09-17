@@ -130,7 +130,7 @@ export default function WhyClientsChooseMekark() {
         <img
           className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.22]"
           src="/images/services/civil/why-clients/bg.webp"
-          alt=""
+          alt="Civil construction site at Mekark project"
         />
 
         <div className="relative mx-auto w-full max-w-[925px] px-5 pt-12 pb-14 sm:px-8 sm:pt-16 sm:pb-16">
@@ -186,7 +186,7 @@ export default function WhyClientsChooseMekark() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/services/civil/why-clients/site-blur.webp"
-                alt=""
+                alt="Civil construction site behind Mekark engineer"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -236,7 +236,7 @@ export default function WhyClientsChooseMekark() {
           src="/images/services/civil/why-clients/bg.webp"
           width={1920}
           height={1032}
-          alt=""
+          alt="Civil construction site at Mekark project"
         />
         <motion.div
           className="absolute top-[56px] left-1/2 h-[140px] w-[1260px] max-w-[calc(100%-48px)] shrink-0 -translate-x-1/2"
@@ -345,7 +345,7 @@ export default function WhyClientsChooseMekark() {
             <img
               className="pointer-events-none absolute top-[7.38%] left-[2.99%] h-[92.66%] w-[95.87%] max-w-none object-cover"
               src="/images/services/civil/why-clients/site-blur.webp"
-              alt=""
+              alt="Civil construction site behind Mekark engineer"
             />
           </div>
           <div className="absolute top-[calc(50%+80px)] left-1/2 h-[741px] w-[826px] shrink-0 -translate-x-1/2 -translate-y-1/2 overflow-hidden">

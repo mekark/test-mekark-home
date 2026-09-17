@@ -100,7 +100,7 @@ export default function EndToEndPEB() {
         >
           <Image
             src="/images/services/peb/about/construction-detail.webp"
-            alt=""
+            alt="PEB construction detail at Mekark project"
             width={602}
             height={752}
             className="pointer-events-none absolute z-0 hidden opacity-60 lg:left-[68.63%] lg:top-[-16.64%] lg:block lg:h-[80.92%] lg:w-[31.35%] lg:object-cover"
@@ -109,7 +109,7 @@ export default function EndToEndPEB() {
 
           <Image
             src="/images/services/peb/about/peb-building.webp"
-            alt=""
+            alt="Completed pre-engineered building by Mekark"
             width={1054}
             height={703}
             priority={false}

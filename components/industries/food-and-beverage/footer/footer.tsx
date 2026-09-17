@@ -9,7 +9,7 @@ const Footer = () => {
         src="/images/industries/food-and-beverage/footer/footer-bg.webp"
         fill
         sizes="100vw"
-        alt=""
+        alt="Food and beverage facility footer background"
         priority={false}
       />
       <div className={styles.frameWrapper}>
@@ -45,7 +45,7 @@ const Footer = () => {
                 width={25}
                 height={25}
                 sizes="100vw"
-                alt=""
+                alt="Arrow icon"
               />
             </div>
           </a>

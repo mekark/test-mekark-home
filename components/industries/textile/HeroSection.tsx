@@ -35,7 +35,7 @@ export default function HeroSection() {
               src="/images/industries/textile/hero/arrow.svg"
               width={18}
               height={18}
-              alt=""
+              alt="Arrow icon"
             />
           </div>
         </a>

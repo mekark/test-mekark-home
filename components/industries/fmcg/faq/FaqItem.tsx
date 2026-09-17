@@ -47,7 +47,7 @@ export function FaqItem({
         >
           <Image
             src="/images/industries/fmcg/faq/chevron-down.svg"
-            alt=""
+            alt="Expand section"
             fill
             className="object-contain"
           />

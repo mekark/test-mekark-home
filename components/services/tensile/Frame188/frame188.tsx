@@ -98,7 +98,7 @@ const Frame188: NextPage = () => {
 							src="/images/services/tensile/frame188/chevron.svg"
 							width={22}
 							height={11}
-							alt=""
+							alt="Expand section"
 						/>
 					</span>
 				</div>

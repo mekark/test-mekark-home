@@ -54,7 +54,7 @@ export default function Solutions() {
           >
             <Image
               src="/images/services/multi-storey/solutions/blueprint.webp"
-              alt=""
+              alt="Structural blueprint for multi-storey steel building"
               width={602}
               height={752}
               sizes="(max-width: 1920px) 31vw, 602px"

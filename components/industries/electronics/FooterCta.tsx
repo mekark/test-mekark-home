@@ -9,7 +9,7 @@ export default function FooterCta() {
         src="/images/industries/electronics/quote-cta/background.webp"
         fill
         sizes="100vw"
-        alt=""
+        alt="Electronics facility quote section background"
         priority={false}
       />
       <div className={styles.frameWrapper}>
@@ -45,7 +45,7 @@ export default function FooterCta() {
                 width={25}
                 height={25}
                 sizes="100vw"
-                alt=""
+                alt="Arrow icon"
               />
             </div>
           </a>

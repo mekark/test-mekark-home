@@ -20,7 +20,7 @@ export function ProjectExecutionProcessSection() {
       >
         <Image
           src="/images/industries/fmcg/project-execution-process/grid-bg.webp"
-          alt=""
+          alt="Decorative grid background"
           fill
           className="scale-y-[-1] object-cover object-top"
           sizes="100vw"

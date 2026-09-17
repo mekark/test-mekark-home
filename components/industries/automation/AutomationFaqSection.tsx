@@ -98,7 +98,7 @@ function FaqCard({
         <span className="relative size-[16.624px] shrink-0 transition-transform duration-200 group-open:rotate-180">
           <Image
             src="/images/industries/automation/faq/chevron-down.svg"
-            alt=""
+            alt="Expand section"
             fill
             sizes="17px"
             aria-hidden

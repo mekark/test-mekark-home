@@ -137,7 +137,7 @@ function SolutionCard({ solution }: { solution: Solution }) {
       <div className="relative aspect-square w-full overflow-hidden rounded-[21.33px]">
         <Image
           src={solution.image}
-          alt=""
+          alt={solution.title}
           fill
           quality={100}
           className="object-cover"
@@ -172,7 +172,7 @@ export default function OurPEBSolutions() {
         >
           <Image
             src="/images/services/peb/peb-solutions/grid.webp"
-            alt=""
+            alt="Decorative grid background"
             fill
             className="object-cover"
             sizes="100vw"
@@ -254,7 +254,7 @@ export default function OurPEBSolutions() {
                 <span className="relative size-[16px] shrink-0">
                   <Image
                     src="/images/services/peb/peb-solutions/cta-arrow.svg"
-                    alt=""
+                    alt="Arrow icon"
                     fill
                     className="object-contain"
                     sizes="16px"
@@ -287,7 +287,7 @@ export default function OurPEBSolutions() {
           >
             <Image
               src="/images/services/peb/peb-solutions/Mid CTA 1.webp"
-              alt=""
+              alt="Pre-engineered building project by Mekark"
               fill
               className="object-cover object-[left_25%]"
               sizes="(max-width: 1920px) 57vw, 967px"
@@ -321,7 +321,7 @@ export default function OurPEBSolutions() {
               <span className="relative size-[19px] shrink-0 overflow-hidden">
                 <Image
                   src="/images/services/peb/peb-solutions/cta-arrow.svg"
-                  alt=""
+                  alt="Arrow icon"
                   fill
                   className="object-contain"
                   sizes="19px"
@@ -343,7 +343,7 @@ export default function OurPEBSolutions() {
         >
           <Image
             src="/images/services/peb/peb-solutions/grid.webp"
-            alt=""
+            alt="Decorative grid background"
             fill
             className="object-cover object-top -scale-y-100"
             sizes="100vw"

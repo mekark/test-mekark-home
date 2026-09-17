@@ -84,7 +84,7 @@ const CTA: NextPage = () => {
               width={16.7}
               height={13.3}
               sizes="100vw"
-              alt=""
+              alt="Arrow icon"
             />
           </div>
         </a>
@@ -95,7 +95,7 @@ const CTA: NextPage = () => {
             width={180}
             height={180}
             sizes="100vw"
-            alt=""
+            alt="Decorative badge frame"
           />
           <Image
             className={styles.sectionInner}
@@ -103,7 +103,7 @@ const CTA: NextPage = () => {
             width={317}
             height={213}
             sizes="100vw"
-            alt=""
+            alt="Mekark logistics consultant"
           />
           <Image
             className={styles.eotCta1}
@@ -138,7 +138,7 @@ const CTA: NextPage = () => {
                 width={26}
                 height={26}
                 sizes="100vw"
-                alt=""
+                alt={`${feature.title} icon`}
               />
             </div>
             <div className={styles.inHouseDesignEngineeringParent}>

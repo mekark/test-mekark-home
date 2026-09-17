@@ -149,7 +149,7 @@ function DesktopHero() {
         <div className="absolute inset-0 lg:bottom-[-114px] lg:left-[-72px] lg:h-[1162px] lg:w-[2064px]">
           <Image
             src="/images/services/civil/hero/bg.webp"
-            alt=""
+            alt="Civil construction project skyline"
             fill
             priority
             className="object-cover"
@@ -206,7 +206,7 @@ function DesktopHero() {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-[calc(50%-26.09px)] left-0 inline-flex items-center gap-[8.7px] rounded-[6.93px] bg-firebrick px-[31.2px] py-[15.6px] shadow-[0px_6.93px_27.72px_rgba(196,22,28,0.3)]"
+            className="absolute top-[calc(50%-26.09px)] left-0 inline-flex items-center gap-[8.7px] rounded-[6.93px] bg-firebrick px-[31.2px] py-[15.6px] shadow-[0px_6.93px_27.72px_rgba(196,22,28,0.3)] no-underline"
           >
             <span className="leading-[20.79px] font-semibold text-white">
               Get a Free Quote
@@ -224,7 +224,7 @@ function DesktopHero() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/services/civil/hero/arrow.svg"
-                alt=""
+                alt="Arrow icon"
                 width={10}
                 height={9}
                 className="h-auto w-[10px] transition-transform duration-200 group-hover:translate-x-0.5"

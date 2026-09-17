@@ -82,7 +82,7 @@ function CapabilityCard({
           <div className="relative size-[28px] overflow-clip sm:size-[42px] xl:size-[38px] 2xl:size-[52px]">
             <Image
               src={icon}
-              alt=""
+              alt={`${title} icon`}
               fill
               className="object-contain"
               sizes="(min-width: 1536px) 52px, (min-width: 1280px) 38px, (min-width: 640px) 42px, 28px"
@@ -197,7 +197,7 @@ export function CoreEpcCapabilitiesSection() {
             >
               <Image
                 src="/images/capabilities/carousel-arrow.svg"
-                alt=""
+                alt="Arrow icon"
                 width={21}
                 height={16}
                 className="brightness-0"
@@ -215,7 +215,7 @@ export function CoreEpcCapabilitiesSection() {
             >
               <Image
                 src="/images/capabilities/carousel-arrow.svg"
-                alt=""
+                alt="Arrow icon"
                 width={21}
                 height={16}
                 className="rotate-180 brightness-0"

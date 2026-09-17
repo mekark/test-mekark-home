@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CTA_PHONE_ICON, PHONE_HREF } from "@/lib/contact";
 import styles from "./ElectronicsCtaBanner.module.css";
 
 export default function ElectronicsCtaBanner() {
@@ -21,16 +22,16 @@ export default function ElectronicsCtaBanner() {
           </p>
         </div>
         <div className={styles.sectionChild} />
-        <a href="/#enquiry" className={styles.cta2}>
+        <a href={PHONE_HREF} className={styles.cta2}>
           <b className={styles.talkToOur}>Talk to Our Expert</b>
           <div className={styles.component4}>
             <Image
               className={styles.vectorIcon}
-              src="/images/industries/electronics/cta/cta-arrow.svg"
-              width={16.7}
-              height={13.3}
-              sizes="100vw"
-              alt="Arrow icon"
+              src={CTA_PHONE_ICON}
+              width={27}
+              height={27}
+              sizes="27px"
+              alt="Phone icon"
             />
           </div>
         </a>

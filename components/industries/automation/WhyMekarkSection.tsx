@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CTA_PHONE_ICON, PHONE_HREF } from "@/lib/contact";
 import styles from "./WhyMekarkSection.module.css";
 
 type Feature = {
@@ -67,15 +68,15 @@ export default function WhyMekarkSection() {
           </div>
         </div>
         <div className={styles.sectionChild} />
-        <a href="/#enquiry" className={styles.cta2}>
+        <a href={PHONE_HREF} className={styles.cta2}>
           <b className={styles.talkToOur}>Talk to Our Expert</b>
           <div className={styles.component4}>
             <Image
               className={styles.vectorIcon}
-              src="/images/industries/automation/why-mekark/arrow-right-dark.svg"
-              alt="Arrow icon"
+              src={CTA_PHONE_ICON}
+              alt="Phone icon"
               fill
-              sizes="28px"
+              sizes="27px"
             />
           </div>
         </a>

@@ -78,6 +78,8 @@
 
   .cta2 {
     z-index: 2;
+    transform: none;
+    gap: 10px;
   }
 }
 
@@ -97,6 +99,8 @@
     max-width: 82%;
     padding: 12px 20px;
     font-size: 15px;
+    transform: none;
+    gap: 10px;
   }
 
   .eotCta1 {

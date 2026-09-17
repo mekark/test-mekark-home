@@ -65,7 +65,6 @@ const electronicsCtaWorkerAssets = {
   badgeFrame: "/images/industries/electronics/cta/frame-76.svg",
   sectionInner: "/images/industries/electronics/cta/frame-275.svg",
   worker: "/images/industries/logistics/CTA/eot-cta-worker.webp",
-  arrow: "/images/industries/electronics/cta/cta-arrow.svg",
 };
 
 /** Desktop column layout — xl uses uniform vw; Mac overrides per-column in CSS */

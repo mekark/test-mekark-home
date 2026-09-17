@@ -154,10 +154,10 @@ function WorkflowStep({
         />
       </motion.div>
 
-      {/* Fixed title slot so Analyse / Model / Shop Drawings share one baseline */}
+      {/* Fixed title slot so Analyse / Model / Shop Drawings share one top baseline */}
       <motion.h3
         variants={precEngStepTitle}
-        className="mt-2 flex min-h-[2.6em] items-end text-base font-extrabold leading-[1.25] text-[#111] sm:min-h-[2.75em] sm:text-[clamp(0.95rem,1.45vw,1.5rem)] 2xl:min-h-[76px] 2xl:text-[25.6px] 2xl:leading-[38.4px]"
+        className="mt-2 flex min-h-[2.6em] items-start text-base font-extrabold leading-[1.25] text-[#111] sm:min-h-[2.75em] sm:text-[clamp(0.95rem,1.45vw,1.5rem)] 2xl:min-h-[76px] 2xl:text-[25.6px] 2xl:leading-[38.4px]"
       >
         {step.title}
       </motion.h3>

@@ -75,14 +75,16 @@
   	z-index: 2;
 }
 .cta2 {
-	/* x=1307, h=70, px=30 py=20, text 22 */
+	/* Match FMCG CTA button size */
   	position: absolute;
   	top: 50%;
-  	left: 68.0729vw;
+  	right: 6.05%;
+  	left: auto;
   	transform: translateY(-50%);
   	border-radius: 999px;
   	background-color: #fff;
   	width: fit-content;
+  	max-width: calc(100% - 25.25% - 6.05% - 1.5625vw);
   	height: auto;
   	min-height: 3.64583vw;
   	display: flex;
@@ -98,7 +100,7 @@
   	text-decoration: none;
   	border: 0;
   	cursor: pointer;
-  	z-index: 2;
+  	z-index: 3;
 }
 .talkToOur {
   	position: relative;
@@ -108,8 +110,8 @@
   	white-space: nowrap;
 }
 .component4 {
-  	height: 1.0vw;
-  	width: 1.0vw;
+  	height: 1.388vw;
+  	width: 1.388vw;
   	position: relative;
   	overflow: hidden;
   	flex-shrink: 0;
@@ -445,6 +447,7 @@
     		min-height: 48px;
     		padding: 12px 24px;
     		font-size: 16px;
+    		gap: 10px;
     		z-index: 2;
   	}
   	.talkToOur {
@@ -453,8 +456,8 @@
     		text-align: center;
   	}
   	.component4 {
-    		width: 16px;
-    		height: 16px;
+    		width: 18px;
+    		height: 18px;
   	}
   	.frameParent3 {
     		position: relative;
@@ -592,6 +595,7 @@
     		justify-content: center;
     		padding: 12px 49px;
     		font-size: 15px;
+    		gap: 10px;
   	}
   	.eotCta1 {
     		height: 190px;

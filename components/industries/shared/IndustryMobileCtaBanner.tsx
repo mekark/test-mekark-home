@@ -1,12 +1,13 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
+import { CTA_PHONE_ICON, PHONE_HREF } from "@/lib/contact";
 import styles from "./industryMobileCtaBanner.module.css";
 
 export type IndustryCtaBannerAssets = {
 	badgeFrame: string;
 	sectionInner: string;
 	worker: string;
-	arrow: string;
+	arrow?: string;
 };
 
 export type IndustryMobileCtaBannerProps = {
@@ -25,12 +26,14 @@ export function IndustryMobileCtaBanner({
 	title,
 	subtitle,
 	buttonText,
-	buttonHref = "/#enquiry",
+	buttonHref = PHONE_HREF,
 	workerAlt = "Mekark industry expert",
 	assets,
 	className,
 	compactWorker = false,
 }: IndustryMobileCtaBannerProps) {
+	const iconSrc = assets.arrow ?? CTA_PHONE_ICON;
+
 	return (
 		<div
 			className={[
@@ -50,11 +53,11 @@ export function IndustryMobileCtaBanner({
 				<span className={styles.buttonIcon}>
 					<Image
 						className={styles.buttonIconImg}
-						src={assets.arrow}
+						src={iconSrc}
 						width={16.7}
 						height={13.3}
 						sizes="16px"
-						alt="Arrow icon"
+						alt="Phone icon"
 					/>
 				</span>
 			</a>

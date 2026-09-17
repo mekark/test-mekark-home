@@ -3,11 +3,14 @@ import { OngoingProjectsPage } from "@/components/projects/ongoing/OngoingProjec
 // import { EnquirySection } from "@/components/enquiry/EnquirySection";
 import { FooterSection } from "@/components/footer/FooterSection";
 
-export const metadata: Metadata = {
-  title: "Ongoing Projects — Mekark",
+import { createPageMetadata } from "@/lib/page-metadata";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Ongoing Construction Projects Portfolio | Mekark",
   description:
-    "See Mekark's ongoing PEB, commercial, industrial, and infrastructure projects currently under construction.",
-};
+    "View Mekark's ongoing construction projects across manufacturing, turnkey and apparel facilities, showcasing our industrial construction expertise.",
+  pathname: "/projects/ongoing-projects",
+});
 
 export default function OngoingProjectsRoute() {
   return (

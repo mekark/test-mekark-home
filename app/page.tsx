@@ -1,4 +1,13 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
+import { createPageMetadata } from "@/lib/page-metadata";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Industrial EPC Contractor & Turnkey Construction Company | Mekark",
+  description:
+    "Mekark is a turnkey industrial EPC solutions provider delivering end-to-end design, engineering, construction, PEB, MEP and industrial infrastructure solutions across India.",
+  pathname: "/",
+});
 import { AboutMekarkSection } from "@/components/about/AboutMekarkSection";
 import { EngineeringNumbersSection } from "@/components/engineering/EngineeringNumbersSection";
 import { HeroSection } from "@/components/hero/HeroSection";

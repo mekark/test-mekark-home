@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { TensilePage } from "@/components/services/tensile/TensilePage";
 import { FooterSection } from "@/components/footer/FooterSection";
+import { createPageMetadata } from "@/lib/page-metadata";
 
-export const metadata: Metadata = {
-  title: "Tensile Structure Contractor in South India | Mekark",
+export const metadata: Metadata = createPageMetadata({
+  title: "Tensile Structure Manufacturer in Chennai | Mekark",
   description:
-    "Mekark designs, fabricates & installs PTFE/ETFE tensile structures across South India, car parking sheds, canopies, domes & stadium roofing. Get a free quote.",
-};
+    "Leading tensile structure company in Chennai offering tensile roofing, fabric structures, car parking, canopies, PTFE and ETFE structures.",
+  pathname: "/services/tensile",
+});
 
 export default function TensileServicePage() {
   return (

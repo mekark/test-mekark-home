@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { DataCenterPage } from "@/components/industries/data-center/DataCenterPage";
 import { FooterSection } from "@/components/footer/FooterSection";
+import { createPageMetadata } from "@/lib/page-metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Data Centre Construction Company in South India | Mekark",
   description:
-    "Mekark builds turnkey hyperscale, colocation, and modular data centres with Tier III/IV compliant facilities and precision cooling across South India.",
-};
+    "Mekark builds turnkey data centres across South India with civil, structural, MEP, precision cooling, power and white-space infrastructure.",
+  pathname: "/industries/data-center",
+});
 
 export default function DataCenterIndustryPage() {
   return (

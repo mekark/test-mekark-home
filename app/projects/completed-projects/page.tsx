@@ -3,11 +3,14 @@ import { CompletedProjectsPage } from "@/components/projects/completed/Completed
 // import { EnquirySection } from "@/components/enquiry/EnquirySection";
 import { FooterSection } from "@/components/footer/FooterSection";
 
-export const metadata: Metadata = {
-  title: "Completed Projects — Mekark",
+import { createPageMetadata } from "@/lib/page-metadata";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Completed Industrial Construction Projects | Mekark",
   description:
-    "Explore Mekark's completed PEB, commercial, industrial, and infrastructure projects across South India.",
-};
+    "Explore Mekark's completed industrial construction projects, including warehouses, manufacturing units, showrooms and institutional buildings across South India.",
+  pathname: "/projects/completed-projects",
+});
 
 export default function CompletedProjectsRoute() {
   return (

@@ -6,11 +6,14 @@ import { InstitutionTypesSection } from "@/components/institution/InstitutionTyp
 // import { EnquirySection } from "@/components/enquiry/EnquirySection";
 import { FooterSection } from "@/components/footer/FooterSection";
 
-export const metadata: Metadata = {
-  title: "Institutional Construction — Auditoriums & Stadiums | Mekark",
+import { createPageMetadata } from "@/lib/page-metadata";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Institutional Construction Company in South India | Mekark",
   description:
-    "Mekark delivers auditoriums, indoor sports stadiums, outdoor stadium structures, tensile roofing, and community halls across South India.",
-};
+    "Mekark delivers institutional construction across South India, including auditoriums, sports stadiums, schools, colleges, community halls and tensile structures.",
+  pathname: "/institutional",
+});
 
 export default function InstitutionalRoute() {
   return (

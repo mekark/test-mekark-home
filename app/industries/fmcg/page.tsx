@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { FmcgPage } from "@/components/industries/fmcg/FmcgPage";
 import { FooterSection } from "@/components/footer/FooterSection";
+import { createPageMetadata } from "@/lib/page-metadata";
 
-export const metadata: Metadata = {
-  title: "FMCG Manufacturing Facility Construction in South India | Mekark",
+export const metadata: Metadata = createPageMetadata({
+  title: "FMCG Manufacturing Facility Construction | Mekark",
   description:
-    "Mekark builds turnkey FMCG manufacturing plants, warehousing, and hygienic production facilities for packaged food, personal care, and home care across South India.",
-};
+    "Mekark builds turnkey FMCG manufacturing facilities with civil, structural, MEP, HVAC, hygienic interiors and warehousing across South India.",
+  pathname: "/industries/fmcg",
+});
 
 export default function FmcgIndustryPage() {
   return (

@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { MultiStoreyPage } from "@/components/services/multi-storey/MultiStoreyPage";
 import { FooterSection } from "@/components/footer/FooterSection";
+import { createPageMetadata } from "@/lib/page-metadata";
 
-export const metadata: Metadata = {
-  title: "Multi-Storey Building Manufacturer in Chennai | Mekark",
+export const metadata: Metadata = createPageMetadata({
+  title: "Multi Storey Steel Building Construction Company | Mekark",
   description:
-    "Mekark is Chennai's trusted multi-storey steel building manufacturer. Turnkey PEB construction for factories, offices & warehouses. Get a free quote.",
-};
+    "Build commercial and industrial multi storey steel buildings with Mekark. End-to-end design, fabrication, construction and turnkey solutions.",
+  pathname: "/services/multi-storey",
+});
 
 export default function MultiStoreyServicePage() {
   return (

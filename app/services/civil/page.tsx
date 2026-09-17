@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { CivilPage } from "@/components/services/civil/CivilPage";
 import { FooterSection } from "@/components/footer/FooterSection";
+import { createPageMetadata } from "@/lib/page-metadata";
 
-export const metadata: Metadata = {
-  title: "Civil Construction Company in Chennai | Mekark",
+export const metadata: Metadata = createPageMetadata({
+  title: "Industrial Civil Construction Company in Chennai | Mekark",
   description:
-    "Mekark is Chennai's leading civil construction & RCC contractor. Turnkey solutions for factories, warehouses & commercial buildings. Get a free quote.",
-};
+    "Industrial civil construction company in Chennai specializing in factory civil works, RCC, foundations, concrete structures and industrial projects.",
+  pathname: "/services/civil",
+});
 
 export default function CivilServicePage() {
   return (

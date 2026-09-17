@@ -47,9 +47,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Mekark | End-to-End Industrial EPC Services & Project Solutions",
+  metadataBase: new URL("https://www.mekark.com"),
+  title: "Industrial EPC Contractor & Turnkey Construction Company | Mekark",
   description:
-    "Mekark is an industrial EPC service provider with 18+ years of experience delivering factories, pre-engineered buildings & large-span structures end-to-end. Get in touch.",
+    "Mekark is a turnkey industrial EPC solutions provider delivering end-to-end design, engineering, construction, PEB, MEP and industrial infrastructure solutions across India.",
   icons: {
     icon: "/images/LogoMekark.webp",
     apple: "/images/LogoMekark.webp",

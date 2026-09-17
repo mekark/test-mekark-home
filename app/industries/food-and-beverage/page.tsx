@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { FoodAndBeveragePage } from "@/components/industries/food-and-beverage/FoodAndBeveragePage";
 import { FooterSection } from "@/components/footer/FooterSection";
+import { createPageMetadata } from "@/lib/page-metadata";
 
-export const metadata: Metadata = {
-  title:
-    "Food & Beverage Manufacturing Facility Construction in South India | Mekark",
+export const metadata: Metadata = createPageMetadata({
+  title: "Food & Beverage Facility Construction Company | Mekark",
   description:
-    "Mekark builds turnkey food processing plants, beverage bottling facilities, dairy units, and HACCP-compliant cold storage infrastructure across South India.",
-};
+    "Mekark builds turnkey food and beverage facilities with food processing, cold storage, HVAC, MEP and hygienic infrastructure across South India.",
+  pathname: "/industries/food-and-beverage",
+});
 
 export default function FoodAndBeverageIndustryPage() {
   return (

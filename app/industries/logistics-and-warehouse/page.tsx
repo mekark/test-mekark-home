@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { LogisticsPage } from "@/components/industries/logistics/LogisticsPage";
 import { FooterSection } from "@/components/footer/FooterSection";
+import { createPageMetadata } from "@/lib/page-metadata";
 
-export const metadata: Metadata = {
-  title: "Pre-Engineered Warehouse Building Manufacturer | Mekark",
+export const metadata: Metadata = createPageMetadata({
+  title: "Warehouse Construction Company in Chennai | Mekark",
   description:
-    "Mekark designs, fabricates & erects PEB warehouses, distribution centres & cold storage structures across South India. Get a free quote today.",
-};
+    "Mekark is a warehouse construction company in Chennai offering turnkey warehouse, industrial, logistics and PEB building construction solutions.",
+  pathname: "/industries/logistics-and-warehouse",
+});
 
 export default function LogisticsIndustryPage() {
   return (

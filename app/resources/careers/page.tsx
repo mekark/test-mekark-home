@@ -2,11 +2,14 @@ import type { Metadata } from "next";
 import { CareersPage } from "@/components/careers/CareersPage";
 import { FooterSection } from "@/components/footer/FooterSection";
 
-export const metadata: Metadata = {
-  title: "Careers at Mekark",
+import { createPageMetadata } from "@/lib/page-metadata";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Mekark Careers | Jobs in Industrial Construction & Engineering",
   description:
-    "Join Mekark and help build the future of industrial infrastructure.",
-};
+    "Explore career opportunities at Mekark in industrial construction, engineering, design, project execution, sales, internships and more.",
+  pathname: "/resources/careers",
+});
 
 export default function CareersRoute() {
   return (

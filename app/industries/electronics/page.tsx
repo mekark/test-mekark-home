@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { ElectronicsPage } from "@/components/industries/electronics/ElectronicsPage";
 import { FooterSection } from "@/components/footer/FooterSection";
+import { createPageMetadata } from "@/lib/page-metadata";
 
-export const metadata: Metadata = {
-  title:
-    "Electronics Manufacturing Facility Construction in South India | Mekark",
+export const metadata: Metadata = createPageMetadata({
+  title: "Electronics Manufacturing Facility Construction | Mekark",
   description:
-    "Mekark builds turnkey clean rooms, ESD-safe assembly plants, and precision electronics manufacturing facilities across Tamil Nadu, Karnataka, Andhra Pradesh, Telangana, and Kerala. Engineered for precision. Delivered on time.",
-};
+    "Mekark provides electronics manufacturing facility construction with industrial building, civil, MEP, cleanroom and turnkey EPC solutions.",
+  pathname: "/industries/electronics",
+});
 
 export default function ElectronicsIndustryPage() {
   return (

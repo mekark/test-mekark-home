@@ -1,11 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import { ServiceMidCtaTitle } from "@/components/services/ServiceMidCtaTitle";
 import {
   ServiceMidCtaCopy,
   ServiceMidCtaLine,
 } from "@/components/services/ServiceMidCtaLine";
+import { useServiceEnquiry } from "@/components/services/ServiceEnquiryProvider";
 
 export default function CtaBanner() {
+  const { openEnquiry } = useServiceEnquiry();
+
   return (
     <>
       {/* Mobile / tablet */}
@@ -30,13 +35,12 @@ export default function CtaBanner() {
                 design-build team.
               </p>
 
-              <a
-                href="/#enquiry"
-                className="mt-8 inline-flex w-fit items-center justify-center gap-[9.6px] rounded-full bg-white px-[24.1px] py-[14.4px] text-red-ribbon"
+              <button
+                type="button"
+                onClick={openEnquiry}
+                className="mt-8 inline-flex w-fit cursor-pointer items-center justify-center gap-[9.6px] rounded-full border-0 bg-white px-[24.1px] py-[14.4px] text-red-ribbon"
               >
-                <b className="leading-[24.06px]">
-                Request a Free Quote
-                </b>
+                <b className="leading-[24.06px]">Request a Free Quote</b>
                 <Image
                   src="/images/services/mep/cta-banner/arrow.svg"
                   width={12}
@@ -44,7 +48,7 @@ export default function CtaBanner() {
                   alt="Arrow icon"
                   className="h-[9px] w-[12px]"
                 />
-              </a>
+              </button>
             </ServiceMidCtaCopy>
           </div>
 
@@ -86,13 +90,12 @@ export default function CtaBanner() {
               design-build team.
             </p>
 
-            <a
-              href="/#enquiry"
-              className="mt-8 inline-flex w-fit items-center justify-center gap-[9.6px] rounded-full bg-white px-[24.1px] py-[14.4px] text-red-ribbon"
+            <button
+              type="button"
+              onClick={openEnquiry}
+              className="mt-8 inline-flex w-fit cursor-pointer items-center justify-center gap-[9.6px] rounded-full border-0 bg-white px-[24.1px] py-[14.4px] text-red-ribbon"
             >
-              <b className="relative leading-[24.06px]">
-              Request a Free Quote
-              </b>
+              <b className="relative leading-[24.06px]">Request a Free Quote</b>
               <span className="relative size-[18.8px] shrink-0 overflow-hidden">
                 <Image
                   src="/images/services/mep/cta-banner/arrow.svg"
@@ -102,7 +105,7 @@ export default function CtaBanner() {
                   sizes="19px"
                 />
               </span>
-            </a>
+            </button>
           </div>
 
           <Image

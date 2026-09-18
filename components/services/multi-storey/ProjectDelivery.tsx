@@ -7,10 +7,13 @@ import {
   ServiceMidCtaCopy,
   ServiceMidCtaLine,
 } from "@/components/services/ServiceMidCtaLine";
+import { useServiceEnquiry } from "@/components/services/ServiceEnquiryProvider";
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
 export default function ProjectDelivery() {
+  const { openEnquiry } = useServiceEnquiry();
+
   return (
     <section
       id="quote"
@@ -39,9 +42,10 @@ export default function ProjectDelivery() {
               </p>
             </ServiceMidCtaCopy>
 
-            <a
-              href="/#enquiry"
-              className="relative z-10 mt-6 inline-flex min-h-[48px] w-full items-center justify-center gap-2.5 rounded-full bg-white px-5 py-3.5 text-[14px] font-bold text-[#E5091F] transition-transform active:scale-[0.98] sm:mt-7 sm:w-fit sm:px-6"
+            <button
+              type="button"
+              onClick={openEnquiry}
+              className="relative z-10 mt-6 inline-flex min-h-[48px] w-full cursor-pointer items-center justify-center gap-2.5 rounded-full border-0 bg-white px-5 py-3.5 text-[14px] font-bold text-[#E5091F] transition-transform active:scale-[0.98] sm:mt-7 sm:w-fit sm:px-6"
             >
               Request a Free Quote
               <Image
@@ -51,7 +55,7 @@ export default function ProjectDelivery() {
                 height={12}
                 className="h-3 w-4"
               />
-            </a>
+            </button>
           </div>
 
           <div className="relative mt-auto h-[200px] w-full shrink-0 overflow-hidden sm:h-[260px]">
@@ -118,9 +122,10 @@ export default function ProjectDelivery() {
                 structural engineering team.
               </p>
 
-              <a
-                href="/#enquiry"
-                className="mt-8 inline-flex w-fit items-center gap-[9.6px] rounded-full bg-white px-6 py-[14px] text-base font-bold leading-[24px] text-quote-red transition-opacity hover:opacity-90"
+              <button
+                type="button"
+                onClick={openEnquiry}
+                className="mt-8 inline-flex w-fit cursor-pointer items-center gap-[9.6px] rounded-full border-0 bg-white px-6 py-[14px] text-base font-bold leading-[24px] text-quote-red transition-opacity hover:opacity-90"
               >
                 Request a Free Quote
                 <Image
@@ -130,7 +135,7 @@ export default function ProjectDelivery() {
                   height={9}
                   className="h-[9px] w-3"
                 />
-              </a>
+              </button>
             </div>
           </div>
         </div>

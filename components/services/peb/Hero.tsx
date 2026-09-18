@@ -10,6 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
+import { useServiceEnquiry } from "@/components/services/ServiceEnquiryProvider";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -87,6 +88,8 @@ const mobileStats: Stat[] = [
 const desktopStats: Stat[] = mobileStats;
 
 function MobileHero() {
+  const { openEnquiry } = useServiceEnquiry();
+
   return (
     <ServiceMobileHero
       {...civilMobileHeroLayout}
@@ -109,6 +112,7 @@ function MobileHero() {
         translateY: "-10px",
       }}
       arrowIcon="/images/services/peb/hero/arrow.svg"
+      onEnquiryClick={openEnquiry}
       stats={mobileStats.map((stat) => ({
         key: stat.label,
         value: stat.value,
@@ -128,6 +132,8 @@ function MobileHero() {
 }
 
 function DesktopHero() {
+  const { openEnquiry } = useServiceEnquiry();
+
   return (
     <section className="relative hidden min-h-0 w-full overflow-hidden bg-[#060606] font-[family-name:var(--font-manrope)] md:block md:h-[1048px]">
       <div className="absolute inset-0">
@@ -192,14 +198,15 @@ function DesktopHero() {
           animate="visible"
           custom={0.5}
         >
-          <motion.a
-            href="/#enquiry"
-            className="inline-flex items-center justify-center rounded-[5px] bg-[#c4161c] px-[23px] py-[12px] text-[14px] font-semibold leading-none text-white shadow-[0px_5px_10px_rgba(196,22,28,0.3)] transition-colors duration-300 hover:bg-[#a81217]"
+          <motion.button
+            type="button"
+            onClick={openEnquiry}
+            className="inline-flex cursor-pointer items-center justify-center rounded-[5px] border-0 bg-[#c4161c] px-[23px] py-[12px] text-[14px] font-semibold leading-none text-white shadow-[0px_5px_10px_rgba(196,22,28,0.3)] transition-colors duration-300 hover:bg-[#a81217]"
             whileHover={{ scale: 1.07 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
             Get a Free Quote
-          </motion.a>
+          </motion.button>
           <Link
             href="/projects/completed-projects"
             className="inline-flex items-center justify-center gap-1.5 px-4 py-3 text-[14px] font-semibold leading-none text-[#c4161c] transition-opacity duration-300 hover:opacity-80"

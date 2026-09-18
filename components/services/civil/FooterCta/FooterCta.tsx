@@ -2,9 +2,12 @@
 
 import Image from "next/image";
 import { PHONE_HREF } from "@/lib/contact";
+import { useServiceEnquiry } from "@/components/services/ServiceEnquiryProvider";
 
 /** Figma node 2790:9694 — Civil footer CTA @ 1920px */
 export default function FooterCta() {
+  const { openEnquiry } = useServiceEnquiry();
+
   return (
     <section
       id="contact"
@@ -35,9 +38,10 @@ export default function FooterCta() {
         </div>
 
         <div className="flex w-full max-w-[17rem] flex-col gap-2.5 text-base text-red-ribbon">
-          <a
-            href="/#enquiry"
-            className="flex h-12 items-center justify-center gap-2.5 rounded-full bg-white px-6 font-bold no-underline"
+          <button
+            type="button"
+            onClick={openEnquiry}
+            className="flex h-12 cursor-pointer items-center justify-center gap-2.5 rounded-full border-0 bg-white px-6 font-bold"
           >
             Get a Free Quote
             <span className="relative h-[18.8px] w-[18.8px] shrink-0 overflow-hidden">
@@ -49,7 +53,7 @@ export default function FooterCta() {
                 sizes="19px"
               />
             </span>
-          </a>
+          </button>
           <a
             href={PHONE_HREF}
             className="flex h-12 items-center justify-center gap-2.5 rounded-full bg-gray px-6 font-bold text-white no-underline"
@@ -92,9 +96,10 @@ export default function FooterCta() {
         </div>
 
         <div className="absolute left-[1420px] top-[calc(50%-61.82px)] flex w-[243.2px] shrink-0 flex-col items-start gap-[13.3px] text-base text-red-ribbon">
-          <a
-            href="/#enquiry"
-            className="box-border flex h-[55.3px] items-center justify-center gap-[9.6px] self-stretch rounded-full bg-white px-[24.1px] py-[14.4px] no-underline"
+          <button
+            type="button"
+            onClick={openEnquiry}
+            className="box-border flex h-[55.3px] cursor-pointer items-center justify-center gap-[9.6px] self-stretch rounded-full border-0 bg-white px-[24.1px] py-[14.4px]"
           >
             <b className="relative leading-[24.06px]">Get a Free Quote</b>
             <span className="relative h-[18.8px] w-[18.8px] shrink-0 overflow-hidden">
@@ -106,7 +111,7 @@ export default function FooterCta() {
                 className="absolute inset-0 h-full w-full object-contain"
               />
             </span>
-          </a>
+          </button>
           <a
             href={PHONE_HREF}
             className="box-border flex h-[55.3px] items-center justify-center gap-[9.6px] self-stretch rounded-full bg-gray px-[24.1px] py-[14.4px] text-white no-underline"

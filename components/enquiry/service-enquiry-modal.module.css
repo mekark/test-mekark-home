@@ -5,9 +5,11 @@
 
 .sheet {
   display: flex;
-  max-height: min(94vh, 920px);
   width: 100%;
   max-width: min(100%, 68rem);
+  height: auto;
+  max-height: min(94vh, 920px);
+  min-height: 0;
   flex-direction: column;
   overflow: hidden;
   border-radius: 1.25rem 1.25rem 0 0;
@@ -27,6 +29,75 @@
 @media (min-width: 1024px) {
   .sheet {
     flex-direction: row;
+    align-items: stretch;
+    max-height: min(90vh, 880px);
+  }
+}
+
+/* Compact only on short laptop viewports (1280×720, 1366×768) */
+@media (min-width: 1024px) and (max-height: 800px) {
+  .sheet {
+    max-height: min(94dvh, 720px);
+  }
+
+  .sidebar {
+    width: min(28%, 15.5rem);
+    padding: 1.25rem 1.1rem;
+  }
+
+  .sidebarTitle {
+    font-size: 1.25rem;
+  }
+
+  .sidebarDescription {
+    margin-top: 0.45rem;
+    font-size: 0.8125rem;
+    line-height: 1.45;
+  }
+
+  .highlights {
+    gap: 0.55rem;
+  }
+
+  .highlightText {
+    font-size: 0.78rem;
+  }
+
+  .desktopFormHeader {
+    padding: 0.85rem 1.25rem 0.75rem;
+  }
+
+  .formHeaderTitle {
+    font-size: 1rem;
+  }
+
+  .formHeaderSubtitle {
+    font-size: 0.78rem;
+  }
+
+  .formScroll {
+    padding: 0.75rem 1.25rem 0.85rem;
+  }
+}
+
+/* 1280 / 1366 widths — slightly smaller modal, keep Project Details + CTA visible */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .sheet {
+    max-width: min(100%, 54rem);
+    max-height: min(88dvh, 720px);
+  }
+
+  .sidebar {
+    width: min(32%, 17rem);
+    padding: 1.35rem 1.25rem;
+  }
+
+  .desktopFormHeader {
+    padding: 1rem 1.35rem 0.85rem;
+  }
+
+  .formScroll {
+    padding: 0.85rem 1.35rem 1.25rem;
   }
 }
 
@@ -50,6 +121,7 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
+  flex-shrink: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   padding: 0.85rem 1.25rem 1rem;
 }
@@ -76,6 +148,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 2rem 1.75rem;
+    min-height: 0;
   }
 }
 
@@ -97,9 +170,11 @@
   z-index: 1;
   display: flex;
   height: 100%;
+  min-height: 0;
   flex-direction: column;
   justify-content: space-between;
   gap: 1.5rem;
+  overflow-y: auto;
 }
 
 .eyebrow {
@@ -160,7 +235,7 @@
   display: flex;
   min-height: 0;
   min-width: 0;
-  flex: 1;
+  flex: 1 1 auto;
   flex-direction: column;
   background: #fff;
 }
@@ -170,6 +245,7 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
+  flex-shrink: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   padding: 1.35rem 1.75rem 1.1rem;
 }
@@ -196,11 +272,13 @@
 
 .formScroll {
   min-height: 0;
-  flex: 1;
+  flex: 1 1 auto;
+  overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
   padding: 1rem 1.25rem 1.25rem;
   scrollbar-gutter: stable;
+  -webkit-overflow-scrolling: touch;
 }
 
 @media (min-width: 1024px) {
@@ -225,25 +303,4 @@
 
 .closeButton:hover {
   background: #f5f5f5;
-}
-
-.sidebarCloseButton {
-  composes: closeButton;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 2;
-  border-color: rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
-}
-
-.sidebarCloseButton:hover {
-  background: rgba(255, 255, 255, 0.14);
-}
-
-@media (max-width: 1023px) {
-  .sidebarCloseButton {
-    display: none;
-  }
 }

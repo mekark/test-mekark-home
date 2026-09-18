@@ -13,6 +13,7 @@ import {
   ServiceMidCtaCopy,
   ServiceMidCtaLine,
 } from "@/components/services/ServiceMidCtaLine";
+import { useServiceEnquiry } from "@/components/services/ServiceEnquiryProvider";
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
@@ -159,6 +160,8 @@ function SolutionCard({ solution }: { solution: Solution }) {
 }
 
 export default function OurPEBSolutions() {
+  const { openEnquiry } = useServiceEnquiry();
+
   return (
     <div className="w-full bg-white text-[#111111]">
       {/* Solutions — Figma 1920×754.67 */}
@@ -246,9 +249,10 @@ export default function OurPEBSolutions() {
                 PEB engineering team.
               </p>
 
-              <a
-                href="/#enquiry"
-                className="relative z-10 mt-6 inline-flex min-h-[48px] w-full items-center justify-center gap-2.5 rounded-full bg-white px-5 py-3.5 text-[14px] font-bold text-[#E5091F] transition-transform active:scale-[0.98] sm:mt-7 sm:w-fit sm:px-6"
+              <button
+                type="button"
+                onClick={openEnquiry}
+                className="relative z-10 mt-6 inline-flex min-h-[48px] w-full cursor-pointer items-center justify-center gap-2.5 rounded-full border-0 bg-white px-5 py-3.5 text-[14px] font-bold text-[#E5091F] transition-transform active:scale-[0.98] sm:mt-7 sm:w-fit sm:px-6"
               >
                 Request a Free Quote
                 <span className="relative size-[16px] shrink-0">
@@ -260,7 +264,7 @@ export default function OurPEBSolutions() {
                     sizes="16px"
                   />
                 </span>
-              </a>
+              </button>
             </ServiceMidCtaCopy>
           </div>
 
@@ -313,9 +317,10 @@ export default function OurPEBSolutions() {
               PEB engineering team.
             </p>
 
-            <a
-              href="/#enquiry"
-              className="mt-8 inline-flex w-fit items-center justify-center gap-[9.62px] rounded-full bg-white px-6 py-[14px] text-base font-bold leading-[24px] text-[#E5091F] transition-transform hover:scale-[1.03]"
+            <button
+              type="button"
+              onClick={openEnquiry}
+              className="mt-8 inline-flex w-fit cursor-pointer items-center justify-center gap-[9.62px] rounded-full border-0 bg-white px-6 py-[14px] text-base font-bold leading-[24px] text-[#E5091F] transition-transform hover:scale-[1.03]"
             >
               Request a Free Quote
               <span className="relative size-[19px] shrink-0 overflow-hidden">
@@ -327,7 +332,7 @@ export default function OurPEBSolutions() {
                   sizes="19px"
                 />
               </span>
-            </a>
+            </button>
           </motion.div>
         </div>
       </section>

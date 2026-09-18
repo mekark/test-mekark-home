@@ -10,21 +10,25 @@ import IndustrialMepSolutions from "@/components/services/mep/IndustrialMepSolut
 import ReadyToStart from "@/components/services/mep/ReadyToStart";
 import TrustedSectors from "@/components/services/mep/TrustedSectors";
 import WhyChooseMekark from "@/components/services/mep/WhyChooseMekark";
+import { ServiceEnquiryProvider } from "@/components/services/ServiceEnquiryProvider";
+import { MEP_ENQUIRY_CONFIG } from "@/components/services/serviceEnquiryConfigs";
 
 export function MepPage() {
   return (
-    <main className="mep-service-page flex flex-1 flex-col overflow-x-hidden bg-white">
-      <DesignScale>
-        <Hero />
-        <EndToEnd />
-        <WhyChooseMekark />
-        <IndustrialMepSolutions />
-        <CtaBanner />
-        <HowWeDeliver />
-        <TrustedSectors />
-        <FaqSection />
-        <ReadyToStart />
-      </DesignScale>
-    </main>
+    <ServiceEnquiryProvider config={MEP_ENQUIRY_CONFIG}>
+      <main className="mep-service-page flex flex-1 flex-col overflow-x-hidden bg-white">
+        <DesignScale>
+          <Hero />
+          <EndToEnd />
+          <WhyChooseMekark />
+          <IndustrialMepSolutions />
+          <CtaBanner />
+          <HowWeDeliver />
+          <TrustedSectors />
+          <FaqSection />
+          <ReadyToStart />
+        </DesignScale>
+      </main>
+    </ServiceEnquiryProvider>
   );
 }

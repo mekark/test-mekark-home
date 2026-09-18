@@ -10,6 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
+import { useServiceEnquiry } from "@/components/services/ServiceEnquiryProvider";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 16 },
@@ -100,6 +101,8 @@ const CIVIL_MOBILE_BOTTOM_GRADIENT =
   "linear-gradient(180deg, rgba(130, 100, 80, 0) 0%, rgba(130, 100, 80, 0) 22%, rgba(116, 88, 53, 0.58) 50%, rgba(116, 88, 53, 0.92) 70%, #624914 100%)";
 
 function MobileHero() {
+  const { openEnquiry } = useServiceEnquiry();
+
   return (
     <ServiceMobileHero
       {...civilMobileHeroLayout}
@@ -123,6 +126,7 @@ function MobileHero() {
         bottomColor: "#624914",
       }}
       arrowIcon="/images/services/civil/hero/arrow.svg"
+      onEnquiryClick={openEnquiry}
       stats={mainStats.map((stat) => ({
         key: stat.label,
         value: stat.value,
@@ -142,6 +146,8 @@ function MobileHero() {
 }
 
 function DesktopHero() {
+  const { openEnquiry } = useServiceEnquiry();
+
   return (
     <div className="relative hidden min-h-0 w-full shrink-0 flex-col overflow-hidden bg-[#060606] text-left font-sans text-white md:flex md:h-[1048px]">
       {/* Background */}
@@ -201,17 +207,18 @@ function DesktopHero() {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="relative h-[50.7px] w-[400px] text-left text-[16px] text-white"
         >
-          <motion.a
-            href="/#enquiry"
+          <motion.button
+            type="button"
+            onClick={openEnquiry}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-[calc(50%-26.09px)] left-0 inline-flex items-center gap-[8.7px] rounded-[6.93px] bg-firebrick px-[31.2px] py-[15.6px] shadow-[0px_6.93px_27.72px_rgba(196,22,28,0.3)] no-underline"
+            className="absolute top-[calc(50%-26.09px)] left-0 inline-flex cursor-pointer items-center gap-[8.7px] rounded-[6.93px] border-0 bg-firebrick px-[31.2px] py-[15.6px] shadow-[0px_6.93px_27.72px_rgba(196,22,28,0.3)]"
           >
             <span className="leading-[20.79px] font-semibold text-white">
               Get a Free Quote
             </span>
-          </motion.a>
+          </motion.button>
 
           <Link
             href="/projects/completed-projects"

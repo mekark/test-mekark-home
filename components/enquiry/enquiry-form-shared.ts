@@ -11,7 +11,47 @@ export const PROJECT_AREAS = [
   "50,000+ Sq.ft",
 ] as const;
 
-/** Extra smaller footprints for tensile, kept alongside standard areas. */
+export const CIVIL_PROJECT_AREAS = [
+  "Select area",
+  "10,000 - 20,000 Sq.ft",
+  "20,000 - 30,000 Sq.ft",
+  "30,000 - 50,000 Sq.ft",
+  "Above 50,000+ Sq.ft",
+] as const;
+
+export const PEB_PROJECT_AREAS = [
+  "Select area",
+  "10,000 - 20,000 Sq.ft",
+  "20,000 - 30,000 Sq.ft",
+  "30,000 - 50,000 Sq.ft",
+  "Above 50,000+ Sq.ft",
+] as const;
+
+export const MULTI_STOREY_PROJECT_AREAS = [
+  "Select area",
+  "10,000 - 20,000 Sq.ft",
+  "20,000 - 30,000 Sq.ft",
+  "30,000 - 50,000 Sq.ft",
+  "Above 50,000+ Sq.ft",
+] as const;
+
+export const MEP_PROJECT_AREAS = [
+  "Select area",
+  "10,000 - 20,000 Sq.ft",
+  "20,000 - 30,000 Sq.ft",
+  "30,000 - 50,000 Sq.ft",
+  "Above 50,000+ Sq.ft",
+] as const;
+
+export const SOLAR_PROJECT_AREAS = [
+  "Select area",
+  "10,000 - 20,000 Sq.ft",
+  "20,000 - 30,000 Sq.ft",
+  "30,000 - 50,000 Sq.ft",
+  "Above 50,000+ Sq.ft",
+] as const;
+
+/** Tensile structures are typically smaller canopy / roofing footprints. */
 export const TENSILE_PROJECT_AREAS = [
   "Select area",
   "1,000 - 5,000 Sq.ft",

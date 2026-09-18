@@ -369,13 +369,21 @@
 }
 
 .modalRoot .textarea {
-  min-height: 5.5rem;
+  min-height: 4.2rem;
+}
+
+.modalRoot .fieldFull {
+  margin-bottom: 0;
 }
 
 .modalRoot .buttonmargin {
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-width: none;
-  margin: 1rem 0 0;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  background: transparent;
 }
 
 .modalRoot .button {
@@ -385,4 +393,134 @@
 
 .modalRoot .requestProjectProposal {
   font-size: 0.98rem;
+}
+
+/* Compact only on short laptop screens */
+@media (max-height: 800px) {
+  .modalRoot .form {
+    gap: 0.55rem;
+  }
+
+  .modalRoot .formRow {
+    gap: 0.55rem;
+  }
+
+  .modalRoot .field,
+  .modalRoot .fieldFull {
+    gap: 0.2rem;
+  }
+
+  .modalRoot .name {
+    font-size: 0.625rem;
+  }
+
+  .modalRoot .input,
+  .modalRoot .textarea {
+    min-height: 2.35rem;
+    padding-top: 0.45rem;
+    padding-bottom: 0.45rem;
+    font-size: 0.8125rem;
+  }
+
+  .modalRoot .buttonListbox {
+    min-height: 2.35rem;
+    height: 2.35rem;
+    padding: 0;
+  }
+
+  .modalRoot .selectArea {
+    height: 100%;
+    min-height: 100%;
+    padding: 0.45rem 1.75rem 0.45rem 0.7rem;
+    font-size: 0.8125rem;
+  }
+
+  .modalRoot .textarea {
+    min-height: 2.5rem;
+  }
+
+  .modalRoot .fieldFull {
+    padding-bottom: 0;
+  }
+
+  .modalRoot .buttonmargin {
+    margin-top: 0.65rem;
+    padding: 0;
+  }
+
+  .modalRoot .button {
+    padding: 0.75rem 1rem;
+  }
+
+  .modalRoot .requestProjectProposal {
+    font-size: 0.9rem;
+  }
+}
+
+/*
+ * 1280 / 1366 laptop widths — make dropdowns match name/email input look.
+ * Larger desktops keep the default modal select styling.
+ */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .modalRoot .input,
+  .modalRoot .buttonListbox {
+    min-height: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    background-color: #f8f8f8;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+  }
+
+  .modalRoot .input {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8125rem;
+    line-height: 1.25;
+  }
+
+  .modalRoot .buttonListbox {
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .modalRoot .selectArea {
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+    padding: 0.5rem 1.75rem 0.5rem 0.75rem;
+    font-size: 0.8125rem;
+    line-height: 1.25;
+    color: #03080f;
+  }
+
+  .modalRoot .svgIcon4 {
+    width: 10px;
+    height: 6px;
+    right: 0.75rem;
+  }
+
+  .modalRoot .buttonListbox:focus-within,
+  .modalRoot .input:focus {
+    border-color: rgba(237, 28, 36, 0.35);
+    box-shadow: 0 0 0 3px rgba(237, 28, 36, 0.08);
+    background-color: #fff;
+  }
+
+  .modalRoot .textarea {
+    min-height: 2.5rem;
+  }
+
+  .modalRoot .fieldFull {
+    padding-bottom: 0;
+  }
+
+  .modalRoot .buttonmargin {
+    margin-top: 0.7rem;
+    padding: 0;
+  }
+
+  .modalRoot .button {
+    padding: 0.8rem 1.1rem;
+  }
 }

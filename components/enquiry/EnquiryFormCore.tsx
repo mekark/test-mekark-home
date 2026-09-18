@@ -334,7 +334,7 @@ export function EnquiryFormCore({
                     />
                   </>
                 </FormField>
-                <FormField label="Project Area" required>
+                <FormField label="Project Sq.ft" required>
                   <SelectField
                     id={`${fieldIdPrefix}-area`}
                     name="sqft"
@@ -372,7 +372,7 @@ export function EnquiryFormCore({
               <FormField label="Project Details" className={styles.fieldFull}>
                 <textarea
                   name="message"
-                  rows={3}
+                  rows={variant === "modal" ? 2 : 3}
                   value={message}
                   onChange={(event) => setMessage(event.target.value)}
                   placeholder="Describe your project — type, usage, timeline…"

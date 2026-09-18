@@ -9,6 +9,7 @@ import {
   civilMobileHeroLayout,
 } from "@/components/services/serviceMobileHeroCivilLayout";
 import { animate, motion, useInView, useReducedMotion } from "framer-motion";
+import { useServiceEnquiry } from "@/components/services/ServiceEnquiryProvider";
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
@@ -108,6 +109,8 @@ const trustItems = [
 ] as const;
 
 function MobileHero() {
+  const { openEnquiry } = useServiceEnquiry();
+
   return (
     <ServiceMobileHero
       {...civilMobileHeroLayout}
@@ -123,6 +126,7 @@ function MobileHero() {
         translateY: "-13px",
       }}
       arrowIcon="/images/services/multi-storey/hero/arrow.svg"
+      onEnquiryClick={openEnquiry}
       stats={trustItems.slice(0, 4).map((item) => ({
         key: item.label,
         value: item.value,
@@ -141,6 +145,7 @@ function MobileHero() {
 
 function DesktopHero() {
   const reduceMotion = useReducedMotion();
+  const { openEnquiry } = useServiceEnquiry();
 
   return (
     <section className="relative hidden min-h-[1048px] w-full flex-col overflow-hidden bg-[#060606] font-sans text-white md:flex">
@@ -210,12 +215,13 @@ function DesktopHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: easeOut, delay: 0.45 }}
           >
-            <a
-              href="/#enquiry"
-              className="inline-flex items-center justify-center rounded-[6.93px] bg-firebrick px-[31px] py-[15.6px] text-base font-semibold leading-[20.79px] text-white shadow-[0px_6.93px_27.72px_rgba(196,22,28,0.3)] transition-transform duration-300 hover:scale-[1.02]"
+            <button
+              type="button"
+              onClick={openEnquiry}
+              className="inline-flex cursor-pointer items-center justify-center rounded-[6.93px] border-0 bg-firebrick px-[31px] py-[15.6px] text-base font-semibold leading-[20.79px] text-white shadow-[0px_6.93px_27.72px_rgba(196,22,28,0.3)] transition-transform duration-300 hover:scale-[1.02]"
             >
               Get a Free Quote
-            </a>
+            </button>
 
             <Link
               href="/projects/completed-projects"

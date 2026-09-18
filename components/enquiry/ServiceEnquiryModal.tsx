@@ -82,7 +82,7 @@ export function ServiceEnquiryModal({
     <AnimatePresence>
       {isOpen ? (
         <motion.div
-          className="fixed inset-0 z-[300] flex items-end justify-center p-0 sm:items-center sm:p-4 lg:p-6"
+          className="fixed inset-0 z-[300] flex min-h-0 items-end justify-center overflow-hidden p-0 sm:items-center sm:p-4 lg:p-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -117,15 +117,6 @@ export function ServiceEnquiryModal({
                 sizes="320px"
               />
               <div className={modalStyles.sidebarOverlay} aria-hidden />
-
-              <button
-                type="button"
-                aria-label="Close"
-                onClick={onClose}
-                className={modalStyles.sidebarCloseButton}
-              >
-                <CloseIcon />
-              </button>
 
               <div className={modalStyles.sidebarContent}>
                 <div>

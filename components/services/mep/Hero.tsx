@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import ServiceMobileHero from "@/components/services/ServiceMobileHero";
@@ -6,6 +8,7 @@ import {
   civilMobileHeroLayout,
   greyMobileHeroBottomGradient,
 } from "@/components/services/serviceMobileHeroCivilLayout";
+import { useServiceEnquiry } from "@/components/services/ServiceEnquiryProvider";
 
 const mobileStats = [
   {
@@ -50,6 +53,8 @@ const heroDescription =
   "Mekark delivers turnkey MEP design-build for factories, warehouses, and manufacturing plants: HVAC, electrical, plumbing, firefighting, and mechanical utilities, backed by 18+ years of experience and 200+ completed industrial MEP projects across Tamil Nadu, India.";
 
 function MobileHero() {
+  const { openEnquiry } = useServiceEnquiry();
+
   return (
     <ServiceMobileHero
       {...civilMobileHeroLayout}
@@ -78,6 +83,7 @@ function MobileHero() {
         bottomColor: "#252525",
       }}
       arrowIcon="/images/services/mep/hero/arrow.svg"
+      onEnquiryClick={openEnquiry}
       stats={mobileStats.map((stat) => ({
         key: stat.key,
         value: stat.value,
@@ -97,6 +103,8 @@ function MobileHero() {
 }
 
 export default function Hero() {
+  const { openEnquiry } = useServiceEnquiry();
+
   return (
     <>
       <MobileHero />
@@ -209,14 +217,15 @@ export default function Hero() {
             {heroDescription}
           </div>
           <div className="relative h-[50.7px] w-[400px] text-[16px] text-white">
-            <a
-              href="/#enquiry"
-              className="absolute top-1/2 left-0 flex -translate-y-1/2 items-center gap-[8.7px] rounded-[6.93px] bg-firebrick px-[31.2px] py-[15.6px] shadow-[0px_6.93px_27.72px_rgba(196,22,28,0.3)] shrink-0"
+            <button
+              type="button"
+              onClick={openEnquiry}
+              className="absolute top-1/2 left-0 flex -translate-y-1/2 cursor-pointer items-center gap-[8.7px] rounded-[6.93px] border-0 bg-firebrick px-[31.2px] py-[15.6px] shadow-[0px_6.93px_27.72px_rgba(196,22,28,0.3)] shrink-0"
             >
               <span className="relative shrink-0 leading-[20.79px] font-semibold">
                 Get a Free Quote
               </span>
-            </a>
+            </button>
             <Link
               href="/projects/completed-projects"
               className="absolute top-0 bottom-[0.5px] left-[217.04px] h-[calc(100%-0.5px)] w-[191.8px] shrink-0 rounded-[5.2px] text-firebrick"

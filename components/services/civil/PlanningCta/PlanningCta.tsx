@@ -7,6 +7,7 @@ import {
   ServiceMidCtaCopy,
   ServiceMidCtaLine,
 } from "@/components/services/ServiceMidCtaLine";
+import { useServiceEnquiry } from "@/components/services/ServiceEnquiryProvider";
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
@@ -36,6 +37,8 @@ const CTA_HEIGHT = 345.33;
  * Red box: 1706.67 × 345.33
  */
 export default function PlanningCta() {
+  const { openEnquiry } = useServiceEnquiry();
+
   return (
     <section
       id="quote"
@@ -59,9 +62,10 @@ export default function PlanningCta() {
               civil construction and structural engineering team.
             </p>
 
-            <a
-              href="/#enquiry"
-              className="mt-6 inline-flex min-h-[40px] w-fit max-w-full items-center justify-center gap-2 rounded-full bg-white px-4 py-2.5 text-[13px] font-bold leading-[18px] text-[#E5091F] no-underline transition-transform active:scale-[0.98] sm:mt-7 sm:min-h-[44px] sm:px-5 sm:py-3 sm:text-[14px]"
+            <button
+              type="button"
+              onClick={openEnquiry}
+              className="mt-6 inline-flex min-h-[40px] w-fit max-w-full cursor-pointer items-center justify-center gap-2 rounded-full border-0 bg-white px-4 py-2.5 text-[13px] font-bold leading-[18px] text-[#E5091F] transition-transform active:scale-[0.98] sm:mt-7 sm:min-h-[44px] sm:px-5 sm:py-3 sm:text-[14px]"
             >
               Request a Free Quote
               <span className="relative size-[14px] shrink-0 sm:size-[16px]">
@@ -73,7 +77,7 @@ export default function PlanningCta() {
                   sizes="18px"
                 />
               </span>
-            </a>
+            </button>
           </ServiceMidCtaCopy>
         </div>
 
@@ -142,9 +146,10 @@ export default function PlanningCta() {
               Mekark&apos;s civil construction and structural engineering team.
             </p>
 
-            <a
-              href="/#enquiry"
-              className="mt-auto inline-flex w-fit items-center justify-center gap-[9.6px] rounded-full bg-white px-[24.1px] py-[14.4px] text-base font-bold leading-[24.06px] text-[#E5091F] no-underline transition-transform hover:scale-[1.03]"
+            <button
+              type="button"
+              onClick={openEnquiry}
+              className="mt-auto inline-flex w-fit cursor-pointer items-center justify-center gap-[9.6px] rounded-full border-0 bg-white px-[24.1px] py-[14.4px] text-base font-bold leading-[24.06px] text-[#E5091F] transition-transform hover:scale-[1.03]"
             >
               Request a Free Quote
               <span className="relative size-[18.8px] shrink-0 overflow-hidden">
@@ -156,7 +161,7 @@ export default function PlanningCta() {
                   sizes="19px"
                 />
               </span>
-            </a>
+            </button>
           </div>
         </motion.div>
       </div>

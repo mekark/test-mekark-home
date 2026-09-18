@@ -297,6 +297,10 @@
 	gap: 8.7px;
 	flex-shrink: 0;
 	text-decoration: none;
+	border: none;
+	cursor: pointer;
+	color: inherit;
+	font: inherit;
 }
 .text2 {
 	position: relative;

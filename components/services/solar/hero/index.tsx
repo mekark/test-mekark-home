@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import ServiceMobileHero from "@/components/services/ServiceMobileHero";
@@ -9,6 +11,7 @@ import {
   SERVICE_BODY_TEXT_SIZES,
   SERVICE_BODY_TEXT_SIZES_SCALED,
 } from "@/components/services/serviceTypography";
+import { useServiceEnquiry } from "@/components/services/ServiceEnquiryProvider";
 import styles from "./index.module.css";
 
 const heroDescription =
@@ -45,6 +48,8 @@ const mobileStats = [
 ] as const;
 
 function MobileHero() {
+  const { openEnquiry } = useServiceEnquiry();
+
   return (
     <ServiceMobileHero
       {...civilMobileHeroLayout}
@@ -60,6 +65,7 @@ function MobileHero() {
         translateY: "-32px",
       }}
       arrowIcon="/images/services/solar/hero/component-4.svg"
+      onEnquiryClick={openEnquiry}
       stats={mobileStats.map((stat) => ({
         key: stat.key,
         value: stat.value,
@@ -77,6 +83,8 @@ function MobileHero() {
 }
 
 export default function Hero() {
+  const { openEnquiry } = useServiceEnquiry();
+
   return (
     <>
       <MobileHero />
@@ -150,10 +158,14 @@ export default function Hero() {
             {heroDescription}
           </div>
           <div className={styles.cta}>
-            <a href="/#enquiry" className={styles.component5}>
+            <button
+              type="button"
+              onClick={openEnquiry}
+              className={styles.component5}
+            >
               <div className={styles.text2}>Get a Free Quote</div>
               <div className={styles.component4} />
-            </a>
+            </button>
             <Link href="/projects/completed-projects" className={styles.exploreSolutions}>
               <div className={styles.viewOurProjects}>View Our Projects</div>
               <div className={styles.component42}>

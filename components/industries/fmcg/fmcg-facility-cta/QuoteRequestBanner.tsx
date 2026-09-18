@@ -2,10 +2,13 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useServiceEnquiry } from "@/components/services/ServiceEnquiryProvider";
 import { fadeSlideUp } from "./motion";
 import macStyles from "./quoteRequestMac.module.css";
 
 export function QuoteRequestBanner() {
+  const { openEnquiry } = useServiceEnquiry();
+
   return (
     <section
       className="relative w-full overflow-hidden"
@@ -57,9 +60,10 @@ export function QuoteRequestBanner() {
             </p>
           </motion.div>
 
-          <motion.a
-            href="/#enquiry"
-            className={`inline-flex items-center justify-center gap-3 rounded-[30px] bg-[#ed2024] px-10 py-4 sm:px-[90px] sm:py-4 ${macStyles.cta}`}
+          <motion.button
+            type="button"
+            onClick={openEnquiry}
+            className={`inline-flex cursor-pointer items-center justify-center gap-3 rounded-[30px] border-0 bg-[#ed2024] px-10 py-4 sm:px-[90px] sm:py-4 ${macStyles.cta}`}
             custom={0.2}
             variants={fadeSlideUp}
             initial="hidden"
@@ -80,7 +84,7 @@ export function QuoteRequestBanner() {
                 className="size-full"
               />
             </span>
-          </motion.a>
+          </motion.button>
         </div>
       </motion.div>
     </section>

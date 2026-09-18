@@ -37,6 +37,10 @@ type ServiceEnquiryModalProps = {
   highlights?: readonly string[];
   submitLabel?: string;
   projectAreas?: readonly string[];
+  defaultService?: string;
+  defaultIndustry?: string;
+  lockService?: boolean;
+  lockIndustry?: boolean;
   onSubmit?: () => void;
 };
 
@@ -51,6 +55,10 @@ export function ServiceEnquiryModal({
   highlights = DEFAULT_HIGHLIGHTS,
   submitLabel = "Request Project Proposal",
   projectAreas,
+  defaultService,
+  defaultIndustry,
+  lockService = true,
+  lockIndustry = false,
   onSubmit,
 }: ServiceEnquiryModalProps) {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
@@ -202,9 +210,11 @@ export function ServiceEnquiryModal({
               <div className={modalStyles.formScroll}>
                 <EnquiryFormCore
                   formId={`${serviceSlug}-enquiry-form`}
-                  defaultService={serviceLabel}
+                  defaultService={defaultService ?? (lockService ? serviceLabel : "")}
+                  defaultIndustry={defaultIndustry}
                   sourcePage={sourcePage}
-                  lockService
+                  lockService={lockService}
+                  lockIndustry={lockIndustry}
                   variant="modal"
                   submitLabel={submitLabel}
                   projectAreas={projectAreas}

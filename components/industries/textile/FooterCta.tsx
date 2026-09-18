@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
+import { useServiceEnquiry } from "@/components/services/ServiceEnquiryProvider";
 import styles from "./FooterCta.module.css";
 
 export default function FooterCta() {
+  const { openEnquiry } = useServiceEnquiry();
+
   return (
     <div className={styles.frameParent}>
       <Image
@@ -28,7 +33,7 @@ export default function FooterCta() {
               </div>
             </div>
           </div>
-          <a href="/#enquiry" className={styles.cta}>
+          <button type="button" onClick={openEnquiry} className={styles.cta}>
             <b className={styles.requestAQuote}>
               Request Free Project Estimate
             </b>
@@ -42,7 +47,7 @@ export default function FooterCta() {
                 alt="Arrow icon"
               />
             </div>
-          </a>
+          </button>
         </div>
       </div>
     </div>

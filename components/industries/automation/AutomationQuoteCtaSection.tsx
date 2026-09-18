@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import { useServiceEnquiry } from "@/components/services/ServiceEnquiryProvider";
 import styles from "./AutomationQuoteCtaSection.module.css";
 
 export default function AutomationQuoteCtaSection() {
+  const { openEnquiry } = useServiceEnquiry();
+
   return (
     <section className={styles.section} aria-labelledby="automation-quote-title">
       <Image
@@ -29,7 +33,7 @@ export default function AutomationQuoteCtaSection() {
           </p>
         </div>
 
-        <Link href="/#enquiry" className={styles.button}>
+        <button type="button" onClick={openEnquiry} className={styles.button}>
           <span>Get a Free Quote</span>
           <Image
             src="/images/industries/automation/automation-quote-cta/arrow-right.svg"
@@ -38,7 +42,7 @@ export default function AutomationQuoteCtaSection() {
             height={25}
             aria-hidden
           />
-        </Link>
+        </button>
       </div>
     </section>
   );

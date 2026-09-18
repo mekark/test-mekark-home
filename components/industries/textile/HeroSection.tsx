@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
+import { useServiceEnquiry } from "@/components/services/ServiceEnquiryProvider";
 import styles from "./HeroSection.module.css";
 
 export default function HeroSection() {
+  const { openEnquiry } = useServiceEnquiry();
+
   return (
     <div className={styles.textileHeroBanner}>
       <div className={styles.heroBgWrapper}>
@@ -27,7 +32,7 @@ export default function HeroSection() {
           and civil construction, backed by 18+ years of experience and 200+
           delivered projects.
         </div>
-        <a href="/#enquiry" className={styles.cta}>
+        <button type="button" onClick={openEnquiry} className={styles.cta}>
           <div className={styles.ctaText}>Get a Free Quote</div>
           <div className={styles.ctaIconWrap}>
             <Image
@@ -38,7 +43,7 @@ export default function HeroSection() {
               alt="Arrow icon"
             />
           </div>
-        </a>
+        </button>
       </div>
     </div>
   );

@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
+import { useServiceEnquiry } from "@/components/services/ServiceEnquiryProvider";
 import styles from "./index.module.css";
 
 const Footer = () => {
+  const { openEnquiry } = useServiceEnquiry();
+
   return (
     <div className={styles.frameParent}>
       <Image
@@ -36,7 +41,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <a href="/#enquiry" className={styles.cta}>
+          <button type="button" onClick={openEnquiry} className={styles.cta}>
             <b className={styles.requestAQuote}>Get a Free Quote</b>
             <div className={styles.component4}>
               <Image
@@ -48,7 +53,7 @@ const Footer = () => {
                 alt="Arrow icon"
               />
             </div>
-          </a>
+          </button>
         </div>
       </div>
     </div>

@@ -7,14 +7,18 @@ import {
   industryHeroMobileButtonIconClass,
   industryHeroMobileButtonTextClass,
 } from "@/components/industries/shared/industryHeroMobile";
+import { useServiceEnquiry } from "@/components/services/ServiceEnquiryProvider";
 import macStyles from "./logisticsHeroMac.module.css";
 import { fadeSlideUp } from "./motion";
 
 export function HeroCTAButton() {
+  const { openEnquiry } = useServiceEnquiry();
+
   return (
-    <motion.a
-      href="/#enquiry"
-      className={`inline-flex items-center justify-center gap-[7.1px] rounded-[5.65px] bg-[#c4161c] px-5 py-2.5 shadow-[0px_5.652px_22.61px_rgba(196,22,28,0.3)] sm:w-fit sm:rounded-[8px] sm:px-8 sm:py-5 sm:shadow-[0_10.667px_21.333px_rgba(196,22,28,0.3)] ${industryHeroMobileButtonClass} ${macStyles.heroBtn}`}
+    <motion.button
+      type="button"
+      onClick={openEnquiry}
+      className={`inline-flex cursor-pointer items-center justify-center gap-[7.1px] rounded-[5.65px] border-0 bg-[#c4161c] px-5 py-2.5 shadow-[0px_5.652px_22.61px_rgba(196,22,28,0.3)] sm:w-fit sm:rounded-[8px] sm:px-8 sm:py-5 sm:shadow-[0_10.667px_21.333px_rgba(196,22,28,0.3)] ${industryHeroMobileButtonClass} ${macStyles.heroBtn}`}
       custom={0.6}
       variants={fadeSlideUp}
       initial="hidden"
@@ -38,6 +42,6 @@ export function HeroCTAButton() {
           className="size-full"
         />
       </motion.span>
-    </motion.a>
+    </motion.button>
   );
 }

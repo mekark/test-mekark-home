@@ -1,6 +1,6 @@
 import {
+  FIND_INDUSTRIES,
   FIND_SERVICES,
-  NAV_ITEMS,
 } from "@/components/navbar/nav-data";
 
 export const PROJECT_AREAS = [
@@ -60,8 +60,10 @@ export const TENSILE_PROJECT_AREAS = [
 ] as const;
 
 const INDUSTRY_LINKS = [
-  ...(NAV_ITEMS.find((item) => item.label === "Industries We Serve")?.children ??
-    []),
+  ...FIND_INDUSTRIES.map((industry) => ({
+    label: industry.label,
+    href: industry.href,
+  })),
   { label: "Institutional", href: "/institutional" },
 ];
 

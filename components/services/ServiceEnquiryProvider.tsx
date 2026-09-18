@@ -27,6 +27,10 @@ export type ServiceEnquiryConfig = {
   projectAreas: readonly string[];
   highlights: readonly string[];
   submitLabel?: string;
+  defaultService?: string;
+  defaultIndustry?: string;
+  lockService?: boolean;
+  lockIndustry?: boolean;
 };
 
 type ServiceEnquiryContextValue = {
@@ -144,6 +148,10 @@ export function ServiceEnquiryProvider({
         submitLabel={config.submitLabel ?? "Request Project Proposal"}
         projectAreas={config.projectAreas}
         highlights={config.highlights}
+        defaultService={config.defaultService}
+        defaultIndustry={config.defaultIndustry}
+        lockService={config.lockService ?? true}
+        lockIndustry={config.lockIndustry ?? false}
         onSubmit={() =>
           trackServiceFormSubmit(config.serviceSlug, config.formSourcePage)
         }

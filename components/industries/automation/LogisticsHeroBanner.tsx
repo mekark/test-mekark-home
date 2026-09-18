@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
+import { useServiceEnquiry } from "@/components/services/ServiceEnquiryProvider";
 import styles from "./hero/index.module.css";
 
 export default function LogisticsHeroBanner() {
+  const { openEnquiry } = useServiceEnquiry();
+
   return (
     <div className={styles.automationHeroBanner}>
       <Image
@@ -35,7 +40,7 @@ export default function LogisticsHeroBanner() {
             future scalability.
           </div>
         </div>
-        <a href="/#enquiry" className={styles.cta}>
+        <button type="button" onClick={openEnquiry} className={styles.cta}>
           <div className={styles.ctaText}>Get a Free Quote</div>
           <div className={styles.ctaIcon}>
             <Image
@@ -46,7 +51,7 @@ export default function LogisticsHeroBanner() {
               sizes="20px"
             />
           </div>
-        </a>
+        </button>
       </div>
     </div>
   );

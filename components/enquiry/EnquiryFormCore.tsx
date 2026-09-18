@@ -10,12 +10,24 @@ import {
   PROJECT_BUDGETS,
   PROJECT_TIMELINES,
   SERVICE_TYPES,
+  TENSILE_PROJECT_AREAS,
   clearEnquirySource,
   getEnquirySource,
   isValidPhone,
   normalizePhone,
 } from "@/components/enquiry/enquiry-form-shared";
 import styles from "./enquiry-form.module.css";
+
+function isTensileService(service: string) {
+  return service.trim().toLowerCase() === "tensile";
+}
+
+function resolveProjectAreas(
+  service: string,
+  fallbackAreas: readonly string[],
+) {
+  return isTensileService(service) ? TENSILE_PROJECT_AREAS : fallbackAreas;
+}
 
 type SubmitStatus = "idle" | "submitting" | "error";
 
@@ -101,6 +113,7 @@ export type EnquiryFormCoreProps = {
   defaultMessage?: string;
   sourcePage?: string;
   lockService?: boolean;
+  lockIndustry?: boolean;
   variant?: "section" | "modal";
   submitLabel?: string;
   projectAreas?: readonly string[];
@@ -117,6 +130,7 @@ export function EnquiryFormCore({
   defaultMessage = "",
   sourcePage,
   lockService = false,
+  lockIndustry = false,
   variant = "section",
   submitLabel = "Request Project Proposal",
   projectAreas = PROJECT_AREAS,
@@ -137,6 +151,17 @@ export function EnquiryFormCore({
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>("idle");
   const [submitMessage, setSubmitMessage] = useState("");
 
+  const activeService = serviceType || defaultService;
+  const areaOptions = resolveProjectAreas(activeService, projectAreas);
+
+  function handleServiceChange(value: string) {
+    setServiceType(value);
+    const nextAreas = resolveProjectAreas(value, projectAreas);
+    if (projectArea && !nextAreas.includes(projectArea)) {
+      setProjectArea("");
+    }
+  }
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
@@ -154,7 +179,10 @@ export function EnquiryFormCore({
       return;
     }
 
-    const industry = String(formData.get("industry") ?? "").trim();
+    const industry =
+      String(formData.get("industry") ?? "").trim() ||
+      industryType.trim() ||
+      defaultIndustry.trim();
     const service =
       String(formData.get("service") ?? "").trim() ||
       serviceType.trim() ||
@@ -303,14 +331,24 @@ export function EnquiryFormCore({
                   />
                 </FormField>
                 <FormField label="Industry Type" required>
-                  <SelectField
-                    id={`${fieldIdPrefix}-industry`}
-                    name="industry"
-                    required
-                    value={industryType}
-                    onChange={setIndustryType}
-                    options={INDUSTRY_TYPES}
-                  />
+                  <>
+                    {lockIndustry && (industryType || defaultIndustry) ? (
+                      <input
+                        type="hidden"
+                        name="industry"
+                        value={industryType || defaultIndustry}
+                      />
+                    ) : null}
+                    <SelectField
+                      id={`${fieldIdPrefix}-industry`}
+                      name="industry"
+                      required
+                      value={industryType}
+                      onChange={setIndustryType}
+                      options={INDUSTRY_TYPES}
+                      disabled={lockIndustry && Boolean(defaultIndustry)}
+                    />
+                  </>
                 </FormField>
               </div>
 
@@ -328,7 +366,7 @@ export function EnquiryFormCore({
                       id={`${fieldIdPrefix}-service`}
                       name="service"
                       value={serviceType}
-                      onChange={setServiceType}
+                      onChange={handleServiceChange}
                       options={SERVICE_TYPES}
                       disabled={lockService && Boolean(defaultService)}
                     />
@@ -341,7 +379,7 @@ export function EnquiryFormCore({
                     required
                     value={projectArea}
                     onChange={setProjectArea}
-                    options={projectAreas}
+                    options={areaOptions}
                   />
                 </FormField>
               </div>

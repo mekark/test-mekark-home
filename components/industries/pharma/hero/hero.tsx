@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
+import { useServiceEnquiry } from "@/components/services/ServiceEnquiryProvider";
 import styles from "./index.module.css";
 
 const PharmaceuticalHeroBanner = () => {
+  const { openEnquiry } = useServiceEnquiry();
+
   return (
     <div className={styles.logisticsHeroBanner}>
       <div className={styles.heroBgWrapper}>
@@ -47,7 +52,7 @@ const PharmaceuticalHeroBanner = () => {
             </span>
           </div>
         </div>
-        <a href="/#enquiry" className={styles.component5}>
+        <button type="button" onClick={openEnquiry} className={styles.component5}>
           <div className={styles.text}>Get a Free Quote</div>
           <div className={styles.component4}>
             <Image
@@ -59,7 +64,7 @@ const PharmaceuticalHeroBanner = () => {
               alt="Arrow icon"
             />
           </div>
-        </a>
+        </button>
       </div>
     </div>
   );

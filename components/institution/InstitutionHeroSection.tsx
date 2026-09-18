@@ -76,7 +76,7 @@ export function InstitutionHeroSection() {
         </motion.p>
         <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-3">
           <Link
-            href="#institutional-enquiry"
+            href="/#enquiry"
             className="group inline-flex min-h-12 items-center gap-3 rounded-sm bg-[#ed1c24] px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-[#c81017]"
           >
             Discuss your project <ArrowIcon />

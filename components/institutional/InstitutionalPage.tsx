@@ -150,7 +150,7 @@ export function InstitutionalPage() {
             Engineering spaces built for crowds, performance, and decades of use across South India.
           </motion.p>
           <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-3">
-            <Link href="#institutional-enquiry" className="group inline-flex min-h-12 items-center gap-3 rounded-sm bg-[#ed1c24] px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-[#c81017]">
+            <Link href="/#enquiry" className="group inline-flex min-h-12 items-center gap-3 rounded-sm bg-[#ed1c24] px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-[#c81017]">
               Discuss your project <ArrowIcon />
             </Link>
             <Link href="#engineering" className="inline-flex min-h-12 items-center gap-3 rounded-sm border border-white/30 px-6 py-3 text-sm font-bold text-white backdrop-blur-sm transition-colors hover:border-white hover:bg-white/10">
@@ -249,7 +249,7 @@ export function InstitutionalPage() {
               Precision engineering for spaces that bring communities together.
             </motion.h2>
             <motion.div variants={fadeUp} className="lg:pb-2">
-              <Link href="#institutional-enquiry" className="inline-flex min-h-14 items-center gap-3 bg-white px-7 py-4 text-sm font-extrabold text-[#171717] transition-transform hover:-translate-y-0.5">
+              <Link href="/#enquiry" className="inline-flex min-h-14 items-center gap-3 bg-white px-7 py-4 text-sm font-extrabold text-[#171717] transition-transform hover:-translate-y-0.5">
                 Start a conversation <ArrowIcon />
               </Link>
             </motion.div>

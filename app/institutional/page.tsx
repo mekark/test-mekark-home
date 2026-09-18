@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { InstitutionalPage } from "@/components/institutional/InstitutionalPage";
 import { InstitutionHeroSection } from "@/components/institution/InstitutionHeroSection";
 import { InstitutionMapSection } from "@/components/institution/InstitutionMapSection";
 import { InstitutionTypesSection } from "@/components/institution/InstitutionTypesSection";
-// import { EnquirySection } from "@/components/enquiry/EnquirySection";
 import { FooterSection } from "@/components/footer/FooterSection";
 
 import { createPageMetadata } from "@/lib/page-metadata";
@@ -18,15 +16,9 @@ export const metadata: Metadata = createPageMetadata({
 export default function InstitutionalRoute() {
   return (
     <div className="flex flex-1 flex-col bg-white">
-      {/* <InstitutionalPage /> */}
       <InstitutionHeroSection />
       <InstitutionMapSection />
       <InstitutionTypesSection />
-      {/* <div id="institutional-enquiry" className="scroll-mt-24">
-        <Suspense fallback={null}>
-          <EnquirySection />
-        </Suspense>
-      </div> */}
       <FooterSection />
     </div>
   );

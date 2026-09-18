@@ -11,6 +11,14 @@ export const PROJECT_AREAS = [
   "50,000+ Sq.ft",
 ] as const;
 
+/** Extra smaller footprints for tensile, kept alongside standard areas. */
+export const TENSILE_PROJECT_AREAS = [
+  "Select area",
+  "1,000 - 5,000 Sq.ft",
+  "5,000 - 10,000 Sq.ft",
+  "Above 10,000 Sq.ft",
+] as const;
+
 const INDUSTRY_LINKS = [
   ...(NAV_ITEMS.find((item) => item.label === "Industries We Serve")?.children ??
     []),

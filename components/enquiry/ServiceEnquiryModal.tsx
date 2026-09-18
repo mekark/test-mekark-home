@@ -36,6 +36,7 @@ type ServiceEnquiryModalProps = {
   description?: ReactNode;
   highlights?: readonly string[];
   submitLabel?: string;
+  projectAreas?: readonly string[];
   onSubmit?: () => void;
 };
 
@@ -49,6 +50,7 @@ export function ServiceEnquiryModal({
   description,
   highlights = DEFAULT_HIGHLIGHTS,
   submitLabel = "Request Project Proposal",
+  projectAreas,
   onSubmit,
 }: ServiceEnquiryModalProps) {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
@@ -214,6 +216,7 @@ export function ServiceEnquiryModal({
                   lockService
                   variant="modal"
                   submitLabel={submitLabel}
+                  projectAreas={projectAreas}
                   onSubmitSuccess={onClose}
                   onTrackSubmit={onSubmit}
                 />

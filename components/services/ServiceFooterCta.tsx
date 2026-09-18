@@ -7,6 +7,7 @@ type ServiceFooterCtaProps = {
   subtitle: string;
   id?: string;
   quoteLabel?: string;
+  quoteHref?: string;
   callLabel?: string;
   compactCopy?: boolean;
   /** Fixed 1920px Figma sizes — use inside DesignScale (PEB). */
@@ -20,6 +21,7 @@ export function ServiceFooterCta({
   subtitle,
   id,
   quoteLabel = "Get a Free Quote",
+  quoteHref = "/#enquiry",
   callLabel = "Call us",
   compactCopy = false,
   scaledCanvas = false,
@@ -65,7 +67,7 @@ export function ServiceFooterCta({
           </p>
         </div>
         <div className={styles.ctaParent}>
-          <a href="/#enquiry" className={styles.cta}>
+          <a href={quoteHref} className={styles.cta}>
             <b className={styles.getAFree}>{quoteLabel}</b>
             <div className={styles.component4}>
               <Image

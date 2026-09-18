@@ -103,6 +103,7 @@ export type EnquiryFormCoreProps = {
   lockService?: boolean;
   variant?: "section" | "modal";
   submitLabel?: string;
+  projectAreas?: readonly string[];
   onSubmitSuccess?: () => void;
   onBeforeNavigate?: () => void;
   onTrackSubmit?: () => void;
@@ -118,6 +119,7 @@ export function EnquiryFormCore({
   lockService = false,
   variant = "section",
   submitLabel = "Request Project Proposal",
+  projectAreas = PROJECT_AREAS,
   onSubmitSuccess,
   onBeforeNavigate,
   onTrackSubmit,
@@ -327,7 +329,7 @@ export function EnquiryFormCore({
                     required
                     value={projectArea}
                     onChange={setProjectArea}
-                    options={PROJECT_AREAS}
+                    options={projectAreas}
                   />
                 </FormField>
               </div>

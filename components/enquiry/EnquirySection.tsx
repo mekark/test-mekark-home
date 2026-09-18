@@ -37,7 +37,13 @@ function scrollToEnquirySection() {
   });
 }
 
-export function EnquirySection() {
+export function EnquirySection({
+  projectAreas,
+  defaultService,
+}: {
+  projectAreas?: readonly string[];
+  defaultService?: string;
+} = {}) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -52,10 +58,11 @@ export function EnquirySection() {
 
     return {
       industry: resolveIndustryValue(industrySlug, industryLabel),
-      service: resolveServiceValue(serviceSlug, serviceLabel),
+      service:
+        resolveServiceValue(serviceSlug, serviceLabel) || defaultService || "",
       message: buildSolutionPrefill(industryLabel, serviceLabel),
     };
-  }, [queryString]);
+  }, [queryString, defaultService]);
 
   useEffect(() => {
     const handleHashNavigation = () => {
@@ -193,6 +200,7 @@ export function EnquirySection() {
             defaultIndustry={prefill.industry}
             defaultService={prefill.service}
             defaultMessage={prefill.message}
+            projectAreas={projectAreas}
           />
         </motion.div>
       </motion.div>

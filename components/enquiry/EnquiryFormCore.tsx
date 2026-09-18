@@ -155,7 +155,10 @@ export function EnquiryFormCore({
     }
 
     const industry = String(formData.get("industry") ?? "").trim();
-    const service = String(formData.get("service") ?? "").trim();
+    const service =
+      String(formData.get("service") ?? "").trim() ||
+      serviceType.trim() ||
+      defaultService.trim();
     const details = String(formData.get("message") ?? "").trim();
     const resolvedSourcePage =
       sourcePage?.trim() || getEnquirySource() || "";
@@ -313,14 +316,23 @@ export function EnquiryFormCore({
 
               <div className={styles.formRow}>
                 <FormField label="Service">
-                  <SelectField
-                    id={`${fieldIdPrefix}-service`}
-                    name="service"
-                    value={serviceType}
-                    onChange={setServiceType}
-                    options={SERVICE_TYPES}
-                    disabled={lockService && Boolean(defaultService)}
-                  />
+                  <>
+                    {lockService && (serviceType || defaultService) ? (
+                      <input
+                        type="hidden"
+                        name="service"
+                        value={serviceType || defaultService}
+                      />
+                    ) : null}
+                    <SelectField
+                      id={`${fieldIdPrefix}-service`}
+                      name="service"
+                      value={serviceType}
+                      onChange={setServiceType}
+                      options={SERVICE_TYPES}
+                      disabled={lockService && Boolean(defaultService)}
+                    />
+                  </>
                 </FormField>
                 <FormField label="Project Area" required>
                   <SelectField

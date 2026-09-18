@@ -8,6 +8,7 @@ type ServiceFooterCtaProps = {
   id?: string;
   quoteLabel?: string;
   quoteHref?: string;
+  onQuoteClick?: () => void;
   callLabel?: string;
   compactCopy?: boolean;
   /** Fixed 1920px Figma sizes — use inside DesignScale (PEB). */
@@ -22,11 +23,28 @@ export function ServiceFooterCta({
   id,
   quoteLabel = "Get a Free Quote",
   quoteHref = "/#enquiry",
+  onQuoteClick,
   callLabel = "Call us",
   compactCopy = false,
   scaledCanvas = false,
   subtitleSingleLine = false,
 }: ServiceFooterCtaProps) {
+  const quoteContent = (
+    <>
+      <b className={styles.getAFree}>{quoteLabel}</b>
+      <div className={styles.component4}>
+        <Image
+          className={styles.vectorIcon2}
+          width={12}
+          height={9}
+          sizes="100vw"
+          src="/images/services/solar/footer/Component 4.svg"
+          alt="Arrow icon"
+        />
+      </div>
+    </>
+  );
+
   return (
     <section
       id={id}
@@ -67,19 +85,15 @@ export function ServiceFooterCta({
           </p>
         </div>
         <div className={styles.ctaParent}>
-          <a href={quoteHref} className={styles.cta}>
-            <b className={styles.getAFree}>{quoteLabel}</b>
-            <div className={styles.component4}>
-              <Image
-                className={styles.vectorIcon2}
-                width={12}
-                height={9}
-                sizes="100vw"
-                src="/images/services/solar/footer/Component 4.svg"
-                alt="Arrow icon"
-              />
-            </div>
-          </a>
+          {onQuoteClick ? (
+            <button type="button" onClick={onQuoteClick} className={styles.cta}>
+              {quoteContent}
+            </button>
+          ) : (
+            <a href={quoteHref} className={styles.cta}>
+              {quoteContent}
+            </a>
+          )}
           <a href={PHONE_HREF} className={styles.cta2}>
             <b className={styles.getAFree}>{callLabel}</b>
             <div className={styles.component12}>

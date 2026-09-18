@@ -4,6 +4,7 @@ import type { NextPage } from 'next';
 import Image from "next/image";
 import { ServiceMidCtaTitle } from "@/components/services/ServiceMidCtaTitle";
 import { ServiceMidCtaLine } from "@/components/services/ServiceMidCtaLine";
+import { TensileEnquiryTrigger } from "@/components/services/tensile/TensileEnquiryProvider";
 import styles from './index.module.css';
 
 const Frame191: NextPage = () => {
@@ -27,7 +28,7 @@ const Frame191: NextPage = () => {
 						Get a free consultation and project estimate from Mekark&apos;s tensile structure engineering team.
 					</p>
 
-					<a href="#enquiry" className={styles.cta}>
+					<TensileEnquiryTrigger className={styles.cta}>
 						<span className={styles.ctaLabel}>Request a Free Quote	</span>
 						<span className={styles.ctaIcon} aria-hidden>
 							<Image
@@ -38,7 +39,7 @@ const Frame191: NextPage = () => {
 								sizes="19px"
 							/>
 						</span>
-					</a>
+					</TensileEnquiryTrigger>
 				</div>
 
 				<div className={styles.media}>

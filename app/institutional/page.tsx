@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { InstitutionHeroSection } from "@/components/institution/InstitutionHeroSection";
 import { InstitutionMapSection } from "@/components/institution/InstitutionMapSection";
 import { InstitutionTypesSection } from "@/components/institution/InstitutionTypesSection";
+import { InstitutionalEnquiryProvider } from "@/components/institution/InstitutionalEnquiryProvider";
 import { FooterSection } from "@/components/footer/FooterSection";
 
 import { createPageMetadata } from "@/lib/page-metadata";
@@ -15,11 +16,13 @@ export const metadata: Metadata = createPageMetadata({
 
 export default function InstitutionalRoute() {
   return (
-    <div className="flex flex-1 flex-col bg-white">
-      <InstitutionHeroSection />
-      <InstitutionMapSection />
-      <InstitutionTypesSection />
-      <FooterSection />
-    </div>
+    <InstitutionalEnquiryProvider>
+      <div className="flex flex-1 flex-col bg-white">
+        <InstitutionHeroSection />
+        <InstitutionMapSection />
+        <InstitutionTypesSection />
+        <FooterSection />
+      </div>
+    </InstitutionalEnquiryProvider>
   );
 }

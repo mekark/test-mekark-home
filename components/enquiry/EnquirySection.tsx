@@ -40,11 +40,9 @@ function scrollToEnquirySection() {
 export function EnquirySection({
   projectAreas,
   defaultService,
-  defaultIndustry,
 }: {
   projectAreas?: readonly string[];
   defaultService?: string;
-  defaultIndustry?: string;
 } = {}) {
   const router = useRouter();
   const pathname = usePathname();
@@ -59,15 +57,12 @@ export function EnquirySection({
     const serviceLabel = params.get("serviceLabel");
 
     return {
-      industry:
-        resolveIndustryValue(industrySlug, industryLabel) ||
-        defaultIndustry ||
-        "",
+      industry: resolveIndustryValue(industrySlug, industryLabel),
       service:
         resolveServiceValue(serviceSlug, serviceLabel) || defaultService || "",
       message: buildSolutionPrefill(industryLabel, serviceLabel),
     };
-  }, [queryString, defaultService, defaultIndustry]);
+  }, [queryString, defaultService]);
 
   useEffect(() => {
     const handleHashNavigation = () => {

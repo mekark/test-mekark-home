@@ -12,23 +12,27 @@ function createIndustryEnquiryConfig({
   label,
   title,
   description,
+  pagePath,
 }: {
   slug: string;
   label: string;
   title: string;
   description: string;
+  pagePath?: string;
 }): ServiceEnquiryConfig {
+  const resolvedPath = pagePath ?? `/industries/${slug}`;
+
   return {
     serviceSlug: slug,
     serviceLabel: label,
-    pagePath: `/industries/${slug}`,
-    formSourcePage: `/industries/${slug}/form`,
+    pagePath: resolvedPath,
+    formSourcePage: `${resolvedPath}/form`,
     title,
     description,
     projectAreas: PROJECT_AREAS,
     highlights: INDUSTRY_HIGHLIGHTS,
     defaultIndustry: label,
-    lockIndustry: true,
+    lockIndustry: false,
     lockService: false,
   };
 }
@@ -95,4 +99,13 @@ export const DATA_CENTER_ENQUIRY_CONFIG = createIndustryEnquiryConfig({
   title: "Get a Free Data Center Quote",
   description:
     "Share your data center facility details and our team will get back to you with a tailored proposal.",
+});
+
+export const INSTITUTIONAL_ENQUIRY_CONFIG = createIndustryEnquiryConfig({
+  slug: "institutional",
+  label: "Institutional",
+  pagePath: "/institutional",
+  title: "Get a Free Institutional Construction Quote",
+  description:
+    "Share your auditorium, stadium, or institutional project details and our team will get back to you with a tailored proposal.",
 });

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { fadeUp, slideFromLeft, slideFromRight, staggerContainer } from "@/lib/motion-variants";
+import { useServiceEnquiry } from "@/components/services/ServiceEnquiryProvider";
 
 const VIEWPORT = { once: true, margin: "-90px" as const };
 
@@ -113,6 +114,8 @@ function Eyebrow({ children, light = false }: { children: React.ReactNode; light
 }
 
 export function InstitutionalPage() {
+  const { openEnquiry } = useServiceEnquiry();
+
   return (
     <main className="overflow-hidden bg-white text-[#151515]">
       <section className="relative isolate min-h-[760px] overflow-hidden bg-black pt-[60px] lg:min-h-[820px]">
@@ -150,9 +153,13 @@ export function InstitutionalPage() {
             Engineering spaces built for crowds, performance, and decades of use across South India.
           </motion.p>
           <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-3">
-            <Link href="/#enquiry" className="group inline-flex min-h-12 items-center gap-3 rounded-sm bg-[#ed1c24] px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-[#c81017]">
+            <button
+              type="button"
+              onClick={openEnquiry}
+              className="group inline-flex min-h-12 cursor-pointer items-center gap-3 rounded-sm border-0 bg-[#ed1c24] px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-[#c81017]"
+            >
               Discuss your project <ArrowIcon />
-            </Link>
+            </button>
             <Link href="#engineering" className="inline-flex min-h-12 items-center gap-3 rounded-sm border border-white/30 px-6 py-3 text-sm font-bold text-white backdrop-blur-sm transition-colors hover:border-white hover:bg-white/10">
               Explore our approach
             </Link>
@@ -249,9 +256,13 @@ export function InstitutionalPage() {
               Precision engineering for spaces that bring communities together.
             </motion.h2>
             <motion.div variants={fadeUp} className="lg:pb-2">
-              <Link href="/#enquiry" className="inline-flex min-h-14 items-center gap-3 bg-white px-7 py-4 text-sm font-extrabold text-[#171717] transition-transform hover:-translate-y-0.5">
+              <button
+                type="button"
+                onClick={openEnquiry}
+                className="inline-flex min-h-14 cursor-pointer items-center gap-3 border-0 bg-white px-7 py-4 text-sm font-extrabold text-[#171717] transition-transform hover:-translate-y-0.5"
+              >
                 Start a conversation <ArrowIcon />
-              </Link>
+              </button>
             </motion.div>
           </div>
           <motion.p variants={fadeUp} className="mt-10 max-w-[940px] text-base leading-8 text-white/82 sm:text-lg">

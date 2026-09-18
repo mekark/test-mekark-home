@@ -148,9 +148,12 @@ export function ServiceEnquiryProvider({
         submitLabel={config.submitLabel ?? "Request Project Proposal"}
         projectAreas={config.projectAreas}
         highlights={config.highlights}
-        defaultService={config.defaultService}
+        defaultService={
+          config.defaultService ??
+          (config.defaultIndustry ? "" : config.serviceLabel)
+        }
         defaultIndustry={config.defaultIndustry}
-        lockService={config.lockService ?? true}
+        lockService={config.lockService ?? false}
         lockIndustry={config.lockIndustry ?? false}
         onSubmit={() =>
           trackServiceFormSubmit(config.serviceSlug, config.formSourcePage)

@@ -57,7 +57,7 @@ export function ServiceEnquiryModal({
   projectAreas,
   defaultService,
   defaultIndustry,
-  lockService = true,
+  lockService = false,
   lockIndustry = false,
   onSubmit,
 }: ServiceEnquiryModalProps) {
@@ -210,7 +210,7 @@ export function ServiceEnquiryModal({
               <div className={modalStyles.formScroll}>
                 <EnquiryFormCore
                   formId={`${serviceSlug}-enquiry-form`}
-                  defaultService={defaultService ?? (lockService ? serviceLabel : "")}
+                  defaultService={defaultService ?? ""}
                   defaultIndustry={defaultIndustry}
                   sourcePage={sourcePage}
                   lockService={lockService}

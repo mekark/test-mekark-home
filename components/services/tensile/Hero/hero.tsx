@@ -7,6 +7,10 @@ import {
   civilMobileHeroImageDefaults,
   civilMobileHeroLayout,
 } from "@/components/services/serviceMobileHeroCivilLayout";
+import {
+  TensileEnquiryTrigger,
+  useTensileEnquiry,
+} from "@/components/services/tensile/TensileEnquiryProvider";
 import styles from "./index.module.css";
 
 const heroDescription =
@@ -43,6 +47,8 @@ const mobileStats = [
 ] as const;
 
 function MobileHero() {
+  const { openEnquiry } = useTensileEnquiry();
+
   return (
     <ServiceMobileHero
       {...civilMobileHeroLayout}
@@ -67,6 +73,7 @@ function MobileHero() {
         translateY: "-32px",
       }}
       arrowIcon="/images/services/tensile/hero/arrow.svg"
+      onEnquiryClick={openEnquiry}
       stats={mobileStats.map((stat) => ({
         key: stat.key,
         value: stat.value,
@@ -125,9 +132,9 @@ export default function Hero() {
               India&apos;s climate.
             </p>
             <div className={styles.cta}>
-              <a href="/#enquiry" className={styles.component5}>
+              <TensileEnquiryTrigger className={styles.component5}>
                 <span className={styles.text2}>Get a Free Quote</span>
-              </a>
+              </TensileEnquiryTrigger>
               <Link href="/projects/completed-projects" className={styles.exploreSolutions}>
                 <span className={styles.viewOurProjects}>View Our Projects</span>
                 <span className={styles.component42}>

@@ -259,13 +259,11 @@ export const aboutStatsStagger: Variants = {
 };
 
 export const aboutStatReveal: Variants = {
-  hidden: { opacity: 0, x: 48, y: 20, filter: "blur(10px)" },
+  hidden: { opacity: 0, y: 16 },
   visible: {
     opacity: 1,
-    x: 0,
     y: 0,
-    filter: "blur(0px)",
-    transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
   },
 };
 
@@ -797,11 +795,10 @@ export const partnerLockRuleDraw: Variants = {
 };
 
 export const partnerLockSubtitle: Variants = {
-  hidden: { opacity: 0, y: 28, filter: "blur(8px)" },
+  hidden: { opacity: 0, y: 28 },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
   },
 };
@@ -821,18 +818,13 @@ export function partnerLockCardAssemble(index: number): Variants {
       opacity: 0,
       y: 72,
       x: fromCenter * 18,
-      scale: 0.9,
-      rotateX: 12,
-      filter: "blur(6px)",
-      transformPerspective: 900,
+      scale: 0.96,
     },
     visible: {
       opacity: 1,
       y: 0,
       x: 0,
       scale: 1,
-      rotateX: 0,
-      filter: "blur(0px)",
       transition: {
         duration: 0.85,
         ease: [0.16, 1, 0.3, 1],
@@ -1606,6 +1598,12 @@ export const navbarReveal: Variants = {
   },
 };
 
+/** No enter animation — used on mobile navbar. */
+export const navbarRevealInstant: Variants = {
+  hidden: { opacity: 1, y: 0 },
+  visible: { opacity: 1, y: 0 },
+};
+
 export const navbarLogoReveal: Variants = {
   hidden: { opacity: 0, x: -20, scale: 0.92 },
   visible: {
@@ -1614,6 +1612,12 @@ export const navbarLogoReveal: Variants = {
     scale: 1,
     transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.08 },
   },
+};
+
+/** No enter animation — used on mobile navbar logo. */
+export const navbarLogoRevealInstant: Variants = {
+  hidden: { opacity: 1, x: 0, scale: 1 },
+  visible: { opacity: 1, x: 0, scale: 1 },
 };
 
 export const navbarItemsStagger: Variants = {

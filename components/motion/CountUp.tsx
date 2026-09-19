@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { animate } from "framer-motion";
 
 type CountUpProps = {
@@ -25,12 +25,10 @@ export function CountUp({
   useGrouping = false,
 }: CountUpProps) {
   const [count, setCount] = useState(0);
-  const hasAnimated = useRef(false);
 
   useEffect(() => {
-    if (!start || hasAnimated.current) return;
+    if (!start) return;
 
-    hasAnimated.current = true;
     setCount(0);
     const controls = animate(0, value, {
       duration,

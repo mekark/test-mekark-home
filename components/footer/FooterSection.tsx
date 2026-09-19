@@ -1,8 +1,10 @@
 "use client";
 
+import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { CookieSettingsButton } from "@/components/cookie-consent/CookieSettingsButton";
 import { NAV_ITEMS, type NavItem } from "@/components/navbar/nav-data";
 import { fadeUp, staggerContainer } from "@/lib/motion-variants";
 import { SECTION_CONTAINER_CLASS } from "@/lib/sectionLayout";
@@ -23,9 +25,9 @@ const MENU_LINKS = NAV_ITEMS.map((item) => ({
 }));
 
 const LEGAL_LINKS = [
-  { label: "Privacy Policy", href: "#" },
-  { label: "Terms Of Service", href: "#" },
-  { label: "Cookie Policy", href: "#" },
+  { label: "Privacy Policy", href: "/resources/privacy-policy" },
+  { label: "Terms Of Service", href: "/resources/terms-of-service" },
+  { label: "Cookie Policy", href: "/resources/cookie-policy" },
 ] as const;
 
 const SOCIAL_LINKS = [
@@ -195,9 +197,11 @@ function WhatsAppIcon() {
 function FooterLinkColumn({
   title,
   links,
+  children,
 }: {
   title: string;
   links: readonly { label: string; href: string }[];
+  children?: ReactNode;
 }) {
   return (
     <div className="flex flex-col gap-4">
@@ -229,6 +233,7 @@ function FooterLinkColumn({
             </li>
           );
         })}
+        {children}
       </ul>
     </div>
   );
@@ -357,7 +362,9 @@ export function FooterSection() {
               className="flex flex-col gap-8 sm:flex-row sm:gap-16 lg:gap-26 lg:pt-1 xl:gap-20 2xl:gap-26"
             >
               <FooterLinkColumn title="Menu" links={MENU_LINKS} />
-              <FooterLinkColumn title="Legal" links={LEGAL_LINKS} />
+              <FooterLinkColumn title="Legal" links={LEGAL_LINKS}>
+                <CookieSettingsButton />
+              </FooterLinkColumn>
             </motion.div>
           </div>
 

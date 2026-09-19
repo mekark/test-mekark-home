@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, type MouseEvent } from "react";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
 import Image from "next/image";
 import {
   motion,
@@ -29,6 +29,21 @@ import {
 } from "@/lib/motion-variants";
 
 const VIEWPORT = { once: true, margin: "-80px" as const };
+
+function useMinWidth(query: string) {
+  const [matches, setMatches] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(query);
+    const update = () => setMatches(mediaQuery.matches);
+
+    update();
+    mediaQuery.addEventListener("change", update);
+    return () => mediaQuery.removeEventListener("change", update);
+  }, [query]);
+
+  return matches;
+}
 
 const CARD_SHADOW = "0px 30.312px 53.047px 0px rgba(0,0,0,0.08)";
 
@@ -146,10 +161,12 @@ function BenefitCard({
   benefit,
   index,
   scrollYProgress,
+  enableRichMotion,
 }: {
   benefit: Benefit;
   index: number;
   scrollYProgress: MotionValue<number>;
+  enableRichMotion: boolean;
 }) {
   const cardRef = useRef<HTMLElement>(null);
   const [hovered, setHovered] = useState(false);
@@ -212,18 +229,18 @@ function BenefitCard({
         resetTilt();
       }}
       style={{
-        y: combinedY,
-        rotateX,
-        rotateY,
-        transformPerspective: 900,
-        transformStyle: "preserve-3d",
+        y: enableRichMotion ? combinedY : 0,
+        rotateX: enableRichMotion ? rotateX : 0,
+        rotateY: enableRichMotion ? rotateY : 0,
+        transformPerspective: enableRichMotion ? 900 : undefined,
+        transformStyle: enableRichMotion ? "preserve-3d" : undefined,
         boxShadow: hovered
           ? "0px 32px 56px rgba(0,0,0,0.12), 0px 0px 0px 1px rgba(237,32,36,0.22)"
           : CARD_SHADOW,
       }}
-      animate={{ scale: hovered ? 1.03 : 1 }}
+      animate={{ scale: enableRichMotion && hovered ? 1.03 : 1 }}
       transition={{ type: "spring", stiffness: 360, damping: 24 }}
-      className="group relative flex w-[242px] shrink-0 snap-start flex-col overflow-hidden rounded-[18px] border border-[#dedede] bg-white/90 sm:w-[260px] md:w-[280px] xl:min-h-[339px] xl:w-full xl:min-w-0 xl:flex-1 xl:rounded-[18px] 2xl:min-h-[452px] 2xl:rounded-[24px]"
+      className="group relative flex w-[242px] shrink-0 snap-start flex-col overflow-hidden rounded-[18px] border border-[#dedede] bg-white sm:w-[260px] md:w-[280px] xl:min-h-[339px] xl:w-full xl:min-w-0 xl:flex-1 xl:rounded-[18px] 2xl:min-h-[452px] 2xl:rounded-[24px]"
     >
       <motion.div
         className="pointer-events-none absolute inset-0 z-[2] rounded-[18px] xl:rounded-[18px] 2xl:rounded-[24px]"
@@ -243,7 +260,7 @@ function BenefitCard({
 
         <motion.div
           variants={partnerLockContentStack}
-          className="relative z-10 flex flex-1 flex-col px-6 pb-6 pt-5 backdrop-blur-[2px] xl:px-3.5 xl:pb-5 xl:pt-4 2xl:px-[42px] 2xl:pb-[68px] 2xl:pt-[35px]"
+          className="relative z-10 flex flex-1 flex-col px-6 pb-6 pt-5 xl:px-3.5 xl:pb-5 xl:pt-4 2xl:px-[42px] 2xl:pb-[68px] 2xl:pt-[35px]"
         >
         <motion.div
           variants={partnerLockIconPop}
@@ -340,6 +357,7 @@ function BenefitCard({
 
 export function OnePartnerSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const enableRichMotion = useMinWidth("(min-width: 1536px)");
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -361,7 +379,11 @@ export function OnePartnerSection() {
     >
       <motion.div
         className="pointer-events-none absolute inset-0 opacity-50 will-change-transform"
-        style={{ y: bgYSpring, scale: bgScaleSpring }}
+        style={
+          enableRichMotion
+            ? { y: bgYSpring, scale: bgScaleSpring }
+            : undefined
+        }
       >
         <Image
           src="/images/one-partner/bg.webp"
@@ -376,7 +398,7 @@ export function OnePartnerSection() {
 
       <div className={`${SECTION_CONTAINER_CLASS} flex min-h-0 flex-col py-14 lg:min-h-[1081px] lg:justify-center lg:py-[59px] xl:min-h-[811px] xl:py-[44px] 2xl:min-h-[1081px] 2xl:py-[59px]`}>
         <motion.div
-          style={{ y: headlineYSpring }}
+          style={enableRichMotion ? { y: headlineYSpring } : undefined}
           className="flex w-full flex-col gap-6 lg:gap-8"
         >
           <motion.div
@@ -435,6 +457,7 @@ export function OnePartnerSection() {
                   benefit={benefit}
                   index={index}
                   scrollYProgress={scrollYProgress}
+                  enableRichMotion={enableRichMotion}
                 />
               ))}
             </motion.div>

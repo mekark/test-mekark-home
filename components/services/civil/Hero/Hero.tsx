@@ -1,6 +1,7 @@
 "use client";
 
 import CountUp from "@/components/services/civil/CountUp";
+import { useCivilEnquiry } from "@/components/services/civil/CivilEnquiryProvider";
 import ServiceMobileHero from "@/components/services/ServiceMobileHero";
 import {
   civilMobileHeroImageDefaults,
@@ -106,6 +107,7 @@ function MobileHero() {
   return (
     <ServiceMobileHero
       {...civilMobileHeroLayout}
+      onEnquiryClick={onEnquiryClick}
       title={
         <>
           <span className="block">South India&apos;s Leading</span>
@@ -280,10 +282,12 @@ function DesktopHero() {
 }
 
 export default function Hero() {
+  const { openEnquiry } = useCivilEnquiry();
+
   return (
     <>
-      <MobileHero />
-      <DesktopHero />
+      <MobileHero onEnquiryClick={openEnquiry} />
+      <DesktopHero onEnquiryClick={openEnquiry} />
     </>
   );
 }

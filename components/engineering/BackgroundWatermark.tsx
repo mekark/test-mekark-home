@@ -1,36 +1,21 @@
-"use client";
-
-import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
 import { engineeringNumbers } from "@/data/engineering";
-import { defaultViewport } from "@/lib/motion/viewport";
 
+/**
+ * Decorative section background — CSS background (not <img>) so it cannot
+ * become LCP. No client JS or scroll animation on the critical path.
+ */
 export function BackgroundWatermark() {
-  const reduceMotion = useReducedMotion();
-
   return (
-    <>
+    <div
+      className="pointer-events-none absolute inset-0 overflow-hidden bg-mekark-white"
+      aria-hidden
+    >
       <div
-        className="pointer-events-none absolute inset-0 overflow-hidden bg-mekark-white"
-        aria-hidden
+        className="absolute inset-0 bg-cover bg-[position:5.58%_top] opacity-40"
+        style={{
+          backgroundImage: `url(${engineeringNumbers.watermarkSrc})`,
+        }}
       />
-      <motion.div
-        className="pointer-events-none absolute inset-0 overflow-hidden opacity-40"
-        initial={reduceMotion ? false : { opacity: 0, scale: 1.04 }}
-        whileInView={reduceMotion ? undefined : { opacity: 0.4, scale: 1 }}
-        viewport={defaultViewport}
-        transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
-        aria-hidden
-      >
-        <Image
-          src={engineeringNumbers.watermarkSrc}
-          alt="Engineering section background watermark"
-          fill
-          className="object-cover object-[5.58%_top]"
-          sizes="100vw"
-          priority={false}
-        />
-      </motion.div>
-    </>
+    </div>
   );
 }

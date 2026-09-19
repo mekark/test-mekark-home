@@ -18,7 +18,7 @@ import {
 } from "@/lib/analytics";
 
 /** Set to true to re-enable the civil page popup enquiry form. */
-const CIVIL_ENQUIRY_POPUP_ENABLED = false;
+const CIVIL_ENQUIRY_POPUP_ENABLED = true;
 
 const CIVIL_SERVICE_SLUG = "civil";
 const CIVIL_SERVICE_LABEL = "Civil";

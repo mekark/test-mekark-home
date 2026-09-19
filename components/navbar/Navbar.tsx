@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { useNavigationLoading } from "@/components/ui/NavigationLoadingProvider";
 import { AnimatePresence, motion } from "framer-motion";
@@ -19,10 +19,9 @@ import {
   navbarItemReveal,
   navbarItemsStagger,
   navbarLogoReveal,
-  navbarMobileItemReveal,
-  navbarMobileItemsStagger,
-  navbarMobileMenuReveal,
+  navbarLogoRevealInstant,
   navbarReveal,
+  navbarRevealInstant,
 } from "@/lib/motion-variants";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -174,16 +173,12 @@ function ChevronDownIcon({ open }: { open?: boolean }) {
 
 function MenuIcon() {
   return (
-    <motion.svg
+    <svg
       width="22"
       height="22"
       viewBox="0 0 22 22"
       fill="none"
       aria-hidden
-      initial={{ rotate: -90, opacity: 0 }}
-      animate={{ rotate: 0, opacity: 1 }}
-      exit={{ rotate: 90, opacity: 0 }}
-      transition={{ duration: 0.22, ease: EASE }}
     >
       <path
         d="M3 6H19M3 11H19M3 16H19"
@@ -191,22 +186,18 @@ function MenuIcon() {
         strokeWidth="1.75"
         strokeLinecap="round"
       />
-    </motion.svg>
+    </svg>
   );
 }
 
 function CloseIcon() {
   return (
-    <motion.svg
+    <svg
       width="22"
       height="22"
       viewBox="0 0 22 22"
       fill="none"
       aria-hidden
-      initial={{ rotate: -90, opacity: 0 }}
-      animate={{ rotate: 0, opacity: 1 }}
-      exit={{ rotate: 90, opacity: 0 }}
-      transition={{ duration: 0.22, ease: EASE }}
     >
       <path
         d="M5 5L17 17M17 5L5 17"
@@ -214,7 +205,7 @@ function CloseIcon() {
         strokeWidth="1.75"
         strokeLinecap="round"
       />
-    </motion.svg>
+    </svg>
   );
 }
 
@@ -489,7 +480,7 @@ function MobileDropdownLink({
   const className = dropdownLinkClassName(description, false, active);
 
   return (
-    <motion.li variants={navbarDropdownItemReveal}>
+    <li>
       {external ? (
         <a
           href={href}
@@ -517,7 +508,7 @@ function MobileDropdownLink({
           />
         </Link>
       )}
-    </motion.li>
+    </li>
   );
 }
 
@@ -630,7 +621,7 @@ function MobileNavItem({
     }`;
 
     return (
-      <motion.div variants={navbarMobileItemReveal}>
+      <div>
         {external ? (
           <a
             href={item.href}
@@ -650,13 +641,13 @@ function MobileNavItem({
             {item.label}
           </Link>
         )}
-      </motion.div>
+      </div>
     );
   }
 
   return (
-    <motion.div variants={navbarMobileItemReveal} className="border-b border-white/8">
-      <motion.button
+    <div className="border-b border-white/8">
+      <button
         type="button"
         onClick={() => onToggle(item.label)}
         className={`flex w-full items-center justify-between px-5 py-4 text-left text-[15px] font-medium transition-colors ${
@@ -664,82 +655,68 @@ function MobileNavItem({
         }`}
         aria-expanded={isOpen}
         aria-current={sectionActive ? "true" : undefined}
-        whileTap={{ scale: 0.985 }}
       >
         {item.label}
         <ChevronDownIcon open={isOpen} />
-      </motion.button>
+      </button>
 
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2, ease: EASE }}
-            className="bg-white/[0.03]"
-          >
-            <motion.div
-              className="space-y-2 px-3 pb-3 pt-1"
-              variants={navbarDropdownItemsStagger}
-              initial="hidden"
-              animate="visible"
-            >
-              {item.children && item.children.length > 0 && (
-                <ul className="space-y-1">
-                  {item.children.map((child) => (
+      {isOpen ? (
+        <div className="bg-white/[0.03]">
+          <div className="space-y-2 px-3 pb-3 pt-1">
+            {item.children && item.children.length > 0 && (
+              <ul className="space-y-1">
+                {item.children.map((child) => (
+                  <MobileDropdownLink
+                    key={child.href}
+                    href={child.href}
+                    label={child.label}
+                    description={child.description}
+                    onNavigate={onNavigate}
+                  />
+                ))}
+              </ul>
+            )}
+            {item.sections?.map((section) => (
+              <div
+                key={section.label}
+                className="mt-2 border-t border-white/8 pt-2"
+              >
+                {section.href && section.children.length === 0 ? (
+                  <ul className="space-y-1">
                     <MobileDropdownLink
-                      key={child.href}
-                      href={child.href}
-                      label={child.label}
-                      description={child.description}
+                      href={section.href}
+                      label={section.label}
+                      description={section.description}
                       onNavigate={onNavigate}
                     />
-                  ))}
-                </ul>
-              )}
-              {item.sections?.map((section) => (
-                <div
-                  key={section.label}
-                  className="mt-2 border-t border-white/8 pt-2"
-                >
-                  {section.href && section.children.length === 0 ? (
+                  </ul>
+                ) : (
+                  <>
+                    <div className="mb-1.5 flex items-center gap-2 px-3">
+                      <span aria-hidden className="h-px w-4 bg-mekark-red" />
+                      <p className="font-[family-name:var(--font-manrope)] text-[10px] font-semibold tracking-[0.18em] text-mekark-red/80 uppercase">
+                        {section.label}
+                      </p>
+                    </div>
                     <ul className="space-y-1">
-                      <MobileDropdownLink
-                        href={section.href}
-                        label={section.label}
-                        description={section.description}
-                        onNavigate={onNavigate}
-                      />
+                      {section.children.map((child) => (
+                        <MobileDropdownLink
+                          key={child.href}
+                          href={child.href}
+                          label={child.label}
+                          description={child.description}
+                          onNavigate={onNavigate}
+                        />
+                      ))}
                     </ul>
-                  ) : (
-                    <>
-                      <div className="mb-1.5 flex items-center gap-2 px-3">
-                        <span aria-hidden className="h-px w-4 bg-mekark-red" />
-                        <p className="font-[family-name:var(--font-manrope)] text-[10px] font-semibold tracking-[0.18em] text-mekark-red/80 uppercase">
-                          {section.label}
-                        </p>
-                      </div>
-                      <ul className="space-y-1">
-                        {section.children.map((child) => (
-                          <MobileDropdownLink
-                            key={child.href}
-                            href={child.href}
-                            label={child.label}
-                            description={child.description}
-                            onNavigate={onNavigate}
-                          />
-                        ))}
-                      </ul>
-                    </>
-                  )}
-                </div>
-              ))}
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
+                  </>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      ) : null}
+    </div>
   );
 }
 
@@ -754,12 +731,21 @@ export function Navbar() {
   const [findStep, setFindStep] = useState<1 | 2>(1);
   const [industry, setIndustry] = useState<SolutionOption | null>(null);
   const [service, setService] = useState<SolutionOption | null>(null);
+  const [isMobileViewport, setIsMobileViewport] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useLayoutEffect(() => {
+    const mobileNav = window.matchMedia("(max-width: 1023px)");
+    const syncViewport = () => setIsMobileViewport(mobileNav.matches);
+    syncViewport();
+    mobileNav.addEventListener("change", syncViewport);
+    return () => mobileNav.removeEventListener("change", syncViewport);
   }, []);
 
   useEffect(() => {
@@ -798,7 +784,9 @@ export function Navbar() {
       style.right = "";
       style.width = "";
       style.overflow = "";
-      window.scrollTo(0, scrollY);
+      requestAnimationFrame(() => {
+        window.scrollTo(0, scrollY);
+      });
     };
   }, [mobileOpen, findOpen]);
 
@@ -847,33 +835,62 @@ export function Navbar() {
   };
 
   const barActive = scrolled || mobileOpen || findOpen || pathname !== "/";
+  const homeMobileLightNav =
+    pathname === "/" && isMobileViewport && !scrolled && !mobileOpen && !findOpen;
+  const disableNavEnterAnimation = isMobileViewport;
 
   return (
     <motion.header
-      initial="hidden"
+      initial={disableNavEnterAnimation ? "visible" : "hidden"}
       animate="visible"
-      variants={navbarReveal}
+      variants={disableNavEnterAnimation ? navbarRevealInstant : navbarReveal}
       className="fixed inset-x-0 top-0 z-50"
     >
       <motion.div
         animate={{
-          backgroundColor: barActive ? "rgba(0,0,0,0.72)" : "rgba(0,0,0,0)",
-          backdropFilter: barActive ? "blur(16px)" : "blur(0px)",
-          boxShadow: barActive
-            ? "0 1px 0 rgba(255,255,255,0.06)"
-            : "0 0px 0px rgba(0,0,0,0)",
-          borderBottomColor: barActive
-            ? "rgba(255,255,255,0.08)"
-            : "rgba(255,255,255,0)",
+          backgroundColor: homeMobileLightNav
+            ? "rgba(255,255,255,1)"
+            : barActive
+              ? "rgba(0,0,0,0.72)"
+              : "rgba(0,0,0,0)",
+          backdropFilter: homeMobileLightNav
+            ? "blur(0px)"
+            : barActive
+              ? "blur(16px)"
+              : "blur(0px)",
+          boxShadow: homeMobileLightNav
+            ? "0 1px 0 rgba(0,0,0,0.08)"
+            : barActive
+              ? "0 1px 0 rgba(255,255,255,0.06)"
+              : "0 0px 0px rgba(0,0,0,0)",
+          borderBottomColor: homeMobileLightNav
+            ? "rgba(0,0,0,0.08)"
+            : barActive
+              ? "rgba(255,255,255,0.08)"
+              : "rgba(255,255,255,0)",
         }}
-        transition={{ duration: 0.35, ease: EASE }}
+        transition={{
+          duration: disableNavEnterAnimation ? 0.15 : 0.35,
+          ease: EASE,
+        }}
         className="border-b"
       >
         <div className="flex h-[60px] w-full items-center justify-between gap-8 px-5 sm:px-8 lg:px-10 xl:px-14">
-          <motion.div variants={navbarLogoReveal} initial="hidden" animate="visible" className="shrink-0">
+          <motion.div
+            variants={
+              disableNavEnterAnimation ? navbarLogoRevealInstant : navbarLogoReveal
+            }
+            initial={disableNavEnterAnimation ? "visible" : "hidden"}
+            animate="visible"
+            className="shrink-0"
+          >
             <Link
               href="/"
-              className="relative flex shrink-0 items-center drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)]"
+              className={`relative flex shrink-0 items-center ${
+                homeMobileLightNav
+                  ? ""
+                  : "drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)]"
+              }`}
               aria-label="Mekark home"
               onClick={closeMobile}
             >
@@ -939,7 +956,11 @@ export function Navbar() {
             </div>
             <motion.button
               type="button"
-              className="flex size-11 min-h-11 min-w-11 items-center justify-center rounded-md text-mekark-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
+              className={`flex size-11 min-h-11 min-w-11 items-center justify-center rounded-md ${
+                homeMobileLightNav
+                  ? "text-black"
+                  : "text-mekark-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
+              }`}
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
               whileHover={{ backgroundColor: "rgba(255,255,255,0.08)" }}
@@ -950,54 +971,37 @@ export function Navbar() {
                 setMobileExpanded(null);
               }}
             >
-              <AnimatePresence mode="wait" initial={false}>
-                {mobileOpen ? (
-                  <CloseIcon key="close" />
-                ) : (
-                  <MenuIcon key="menu" />
-                )}
-              </AnimatePresence>
+              {mobileOpen ? <CloseIcon /> : <MenuIcon />}
             </motion.button>
           </div>
         </div>
       </motion.div>
 
-      <AnimatePresence initial={false}>
-        {mobileOpen && (
-          <motion.nav
-            variants={navbarMobileMenuReveal}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            className="fixed inset-x-0 top-[60px] bottom-0 z-50 overflow-y-auto overscroll-contain border-t border-white/10 bg-[#0a0a0a]/96 backdrop-blur-xl lg:hidden"
-            aria-label="Mobile navigation"
-          >
-            <motion.div
-              className="pb-[max(1rem,env(safe-area-inset-bottom))]"
-              variants={navbarMobileItemsStagger}
-              initial="hidden"
-              animate="visible"
-            >
-              <motion.div variants={navbarMobileItemReveal} className="border-b border-white/8 px-5 py-4 sm:hidden">
-                <FindSolutionButton open={findOpen} onClick={openFind} fullWidth />
-              </motion.div>
-              {NAV_ITEMS.map((item) => (
-                <MobileNavItem
-                  key={item.label}
-                  item={item}
-                  openLabel={mobileExpanded}
-                  onToggle={(label) =>
-                    setMobileExpanded((current) =>
-                      current === label ? null : label,
-                    )
-                  }
-                  onNavigate={closeMobile}
-                />
-              ))}
-            </motion.div>
-          </motion.nav>
-        )}
-      </AnimatePresence>
+      {mobileOpen ? (
+        <nav
+          className="fixed inset-x-0 top-[60px] bottom-0 z-50 overflow-y-auto overscroll-contain border-t border-white/10 bg-[#0a0a0a] lg:hidden"
+          aria-label="Mobile navigation"
+        >
+          <div className="pb-[max(1rem,env(safe-area-inset-bottom))]">
+            <div className="border-b border-white/8 px-5 py-4 sm:hidden">
+              <FindSolutionButton open={findOpen} onClick={openFind} fullWidth />
+            </div>
+            {NAV_ITEMS.map((item) => (
+              <MobileNavItem
+                key={item.label}
+                item={item}
+                openLabel={mobileExpanded}
+                onToggle={(label) =>
+                  setMobileExpanded((current) =>
+                    current === label ? null : label,
+                  )
+                }
+                onNavigate={closeMobile}
+              />
+            ))}
+          </div>
+        </nav>
+      ) : null}
 
       <div className="absolute inset-x-0 top-full">
         <AnimatePresence>

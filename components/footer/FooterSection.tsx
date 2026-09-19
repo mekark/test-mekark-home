@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { CookieSettingsButton } from "@/components/cookie-consent/CookieSettingsButton";
 import { NAV_ITEMS, type NavItem } from "@/components/navbar/nav-data";
+import { LEGAL_AND_COOKIE_CONSENT_ENABLED } from "@/lib/feature-flags";
 import { fadeUp, staggerContainer } from "@/lib/motion-variants";
 import { SECTION_CONTAINER_CLASS } from "@/lib/sectionLayout";
 
@@ -197,10 +198,12 @@ function WhatsAppIcon() {
 function FooterLinkColumn({
   title,
   links,
+  linksDisabled = false,
   children,
 }: {
   title: string;
   links: readonly { label: string; href: string }[];
+  linksDisabled?: boolean;
   children?: ReactNode;
 }) {
   return (
@@ -210,13 +213,22 @@ function FooterLinkColumn({
       </p>
       <ul className="flex flex-col gap-3">
         {links.map((link) => {
-          const className =
-            "text-sm text-white/55 transition-colors hover:text-white/85";
+          const className = linksDisabled
+            ? "cursor-not-allowed text-sm text-white/45 opacity-80"
+            : "text-sm text-white/55 transition-colors hover:text-white/85";
           const external = isExternalHref(link.href);
 
           return (
             <li key={link.label}>
-              {external ? (
+              {linksDisabled ? (
+                <span
+                  aria-disabled="true"
+                  className={className}
+                  title="Under review"
+                >
+                  {link.label}
+                </span>
+              ) : external ? (
                 <a
                   href={link.href}
                   target="_blank"
@@ -362,7 +374,11 @@ export function FooterSection() {
               className="flex flex-col gap-8 sm:flex-row sm:gap-16 lg:gap-26 lg:pt-1 xl:gap-20 2xl:gap-26"
             >
               <FooterLinkColumn title="Menu" links={MENU_LINKS} />
-              <FooterLinkColumn title="Legal" links={LEGAL_LINKS}>
+              <FooterLinkColumn
+                title="Legal"
+                links={LEGAL_LINKS}
+                linksDisabled={!LEGAL_AND_COOKIE_CONSENT_ENABLED}
+              >
                 <CookieSettingsButton />
               </FooterLinkColumn>
             </motion.div>

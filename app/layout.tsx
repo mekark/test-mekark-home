@@ -6,12 +6,13 @@ import {
   Montserrat,
   Montserrat_Alternates,
 } from "next/font/google";
-import { ConsentAwareScripts } from "@/components/cookie-consent/ConsentAwareScripts";
+import { ConsentAwareScripts, DirectSiteScripts } from "@/components/cookie-consent/ConsentAwareScripts";
 import { CookieConsentBanner } from "@/components/cookie-consent/CookieConsentBanner";
 import { CookieConsentProvider } from "@/components/cookie-consent/CookieConsentProvider";
 import { ArrowTop } from "@/components/ui/ArrowTop";
 import { NavigationLoadingProvider } from "@/components/ui/NavigationLoadingProvider";
 import { Navbar } from "@/components/navbar/Navbar";
+import { LEGAL_AND_COOKIE_CONSENT_ENABLED } from "@/lib/feature-flags";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -72,13 +73,17 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <CookieConsentProvider>
-          <ConsentAwareScripts />
+          {LEGAL_AND_COOKIE_CONSENT_ENABLED ? (
+            <ConsentAwareScripts />
+          ) : (
+            <DirectSiteScripts />
+          )}
           <NavigationLoadingProvider>
             <Navbar />
             {children}
             <ArrowTop />
           </NavigationLoadingProvider>
-          <CookieConsentBanner />
+          {LEGAL_AND_COOKIE_CONSENT_ENABLED ? <CookieConsentBanner /> : null}
         </CookieConsentProvider>
       </body>
     </html>

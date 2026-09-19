@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { CivilEnquiryTrigger } from "@/components/services/civil/CivilEnquiryProvider";
 import { SERVICE_MID_CTA_TITLE_SIZE_CLASS_SCALED } from "@/components/services/serviceTypography";
 import {
   ServiceMidCtaCopy,

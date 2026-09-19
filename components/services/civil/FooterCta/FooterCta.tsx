@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { CivilEnquiryTrigger } from "@/components/services/civil/CivilEnquiryProvider";
 import { PHONE_HREF } from "@/lib/contact";
 import { useServiceEnquiry } from "@/components/services/ServiceEnquiryProvider";
 

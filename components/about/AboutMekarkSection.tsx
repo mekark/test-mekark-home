@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { CountUp } from "@/components/motion/CountUp";
+import { LEGAL_AND_COOKIE_CONSENT_ENABLED } from "@/lib/feature-flags";
 import { FOOTNOTE_150_DAYS_TERMS_PATH } from "@/lib/legal-disclaimers";
 import { SECTION_CONTAINER_CLASS } from "@/lib/sectionLayout";
 import {
@@ -369,15 +370,25 @@ function AboutStatItem({
             duration={1.7}
           />
           {"footnote" in stat && stat.footnote ? (
-            <sup className="ml-0.5 align-super text-[0.36em] font-normal">
-              <Link
-                href={FOOTNOTE_150_DAYS_TERMS_PATH}
-                className="text-[#ed2024] hover:underline"
-                aria-label="150 Days terms and conditions apply"
-                title="Terms and conditions apply"
-              >
-                *
-              </Link>
+            <sup className="ml-0.5 align-super text-[0.36em] font-normal text-[#ed2024]">
+              {LEGAL_AND_COOKIE_CONSENT_ENABLED ? (
+                <Link
+                  href={FOOTNOTE_150_DAYS_TERMS_PATH}
+                  className="hover:underline"
+                  aria-label="150 Days terms and conditions apply"
+                  title="Terms and conditions apply"
+                >
+                  *
+                </Link>
+              ) : (
+                <span
+                  className="cursor-not-allowed opacity-80"
+                  aria-label="150 Days terms and conditions apply"
+                  title="Under review"
+                >
+                  *
+                </span>
+              )}
             </sup>
           ) : null}
         </p>

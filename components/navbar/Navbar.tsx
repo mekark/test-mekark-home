@@ -171,41 +171,71 @@ function ChevronDownIcon({ open }: { open?: boolean }) {
   );
 }
 
-function MenuIcon() {
+function MobileNavExpandIcon({
+  open,
+  active,
+}: {
+  open?: boolean;
+  active?: boolean;
+}) {
   return (
-    <svg
-      width="22"
-      height="22"
-      viewBox="0 0 22 22"
-      fill="none"
-      aria-hidden
+    <motion.span
+      className={`inline-flex size-8 shrink-0 items-center justify-center rounded-full transition-colors duration-200 ${
+        open
+          ? "bg-mekark-red/12 text-mekark-red"
+          : active
+            ? "bg-mekark-red/8 text-mekark-red"
+            : "bg-white/[0.05] text-white/50"
+      }`}
+      animate={{ scale: open ? 1.02 : 1 }}
+      transition={{ duration: 0.22, ease: EASE }}
     >
-      <path
-        d="M3 6H19M3 11H19M3 16H19"
-        stroke="currentColor"
-        strokeWidth="1.75"
-        strokeLinecap="round"
-      />
-    </svg>
+      <ChevronDownIcon open={open} />
+    </motion.span>
   );
 }
 
-function CloseIcon() {
+function AnimatedMenuIcon({ open }: { open: boolean }) {
+  const line =
+    "absolute left-0 h-[2px] w-full origin-center rounded-full bg-current";
+  const transition = { duration: 0.28, ease: EASE };
+
   return (
-    <svg
-      width="22"
-      height="22"
-      viewBox="0 0 22 22"
-      fill="none"
+    <span
       aria-hidden
+      className="relative block h-[15px] w-[22px] shrink-0"
     >
-      <path
-        d="M5 5L17 17M17 5L5 17"
-        stroke="currentColor"
-        strokeWidth="1.75"
-        strokeLinecap="round"
+      <motion.span
+        className={line}
+        initial={false}
+        animate={
+          open
+            ? { top: "50%", rotate: 45, y: "-50%" }
+            : { top: 0, rotate: 0, y: 0 }
+        }
+        transition={transition}
       />
-    </svg>
+      <motion.span
+        className={line}
+        initial={false}
+        animate={
+          open
+            ? { opacity: 0, scaleX: 0.35 }
+            : { top: "50%", y: "-50%", opacity: 1, scaleX: 1 }
+        }
+        transition={{ duration: 0.2, ease: EASE, delay: open ? 0 : 0.03 }}
+      />
+      <motion.span
+        className={line}
+        initial={false}
+        animate={
+          open
+            ? { top: "50%", rotate: -45, y: "-50%" }
+            : { top: "100%", rotate: 0, y: "-100%" }
+        }
+        transition={{ ...transition, delay: open ? 0.02 : 0 }}
+      />
+    </span>
   );
 }
 
@@ -650,18 +680,22 @@ function MobileNavItem({
       <button
         type="button"
         onClick={() => onToggle(item.label)}
-        className={`flex w-full items-center justify-between px-5 py-4 text-left text-[15px] font-medium transition-colors ${
-          sectionActive ? "text-mekark-red" : "text-mekark-white"
+        className={`flex w-full items-center justify-between border-l-2 py-4 pr-5 pl-[18px] text-left text-[15px] font-medium transition-all duration-200 ${
+          isOpen
+            ? "border-mekark-red bg-white/[0.025] text-mekark-white"
+            : sectionActive
+              ? "border-transparent text-mekark-red"
+              : "border-transparent text-mekark-white"
         }`}
         aria-expanded={isOpen}
         aria-current={sectionActive ? "true" : undefined}
       >
-        {item.label}
-        <ChevronDownIcon open={isOpen} />
+        <span className="pr-3 tracking-[-0.01em]">{item.label}</span>
+        <MobileNavExpandIcon open={isOpen} active={sectionActive} />
       </button>
 
       {isOpen ? (
-        <div className="bg-white/[0.03]">
+        <div className="border-l-2 border-mekark-red/35 bg-white/[0.03]">
           <div className="space-y-2 px-3 pb-3 pt-1">
             {item.children && item.children.length > 0 && (
               <ul className="space-y-1">
@@ -905,7 +939,7 @@ export function Navbar() {
                   width={220}
                   height={60}
                   priority
-                  className="h-10 w-auto sm:h-10 lg:h-11"
+                  className="h-8 w-auto sm:h-9 lg:h-11"
                 />
               </motion.div>
             </Link>
@@ -956,22 +990,23 @@ export function Navbar() {
             </div>
             <motion.button
               type="button"
-              className={`flex size-11 min-h-11 min-w-11 items-center justify-center rounded-md ${
-                homeMobileLightNav
-                  ? "text-black"
-                  : "text-mekark-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
+              className={`flex size-10 min-h-10 min-w-10 items-center justify-center rounded-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mekark-red/40 ${
+                mobileOpen
+                  ? "bg-mekark-red/10 text-mekark-red ring-1 ring-mekark-red/20"
+                  : homeMobileLightNav
+                    ? "text-[#111] hover:bg-black/[0.05] hover:text-mekark-red active:bg-black/[0.08]"
+                    : "text-white hover:bg-white/10 hover:text-mekark-red active:bg-white/[0.14]"
               }`}
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
-              whileHover={{ backgroundColor: "rgba(255,255,255,0.08)" }}
-              whileTap={{ scale: 0.92 }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => {
                 setFindOpen(false);
                 setMobileOpen((open) => !open);
                 setMobileExpanded(null);
               }}
             >
-              {mobileOpen ? <CloseIcon /> : <MenuIcon />}
+              <AnimatedMenuIcon open={mobileOpen} />
             </motion.button>
           </div>
         </div>

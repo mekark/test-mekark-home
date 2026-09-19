@@ -39,11 +39,6 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/blog",
-        destination: "https://blog.mekark.com/",
-        permanent: true,
-      },
-      {
         source: "/gallery",
         destination: "/about/life-at-mekark",
         permanent: true,

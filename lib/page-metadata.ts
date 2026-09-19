@@ -6,16 +6,19 @@ export function createPageMetadata({
   title,
   description,
   pathname,
+  canonicalUrl,
 }: {
   title: string;
   description: string;
-  pathname: string;
+  pathname?: string;
+  canonicalUrl?: string;
 }): Metadata {
+  const canonical =
+    canonicalUrl ?? (pathname ? `${SITE_URL}${pathname}` : undefined);
+
   return {
-    title,
+    title: { absolute: title },
     description,
-    alternates: {
-      canonical: pathname,
-    },
+    ...(canonical ? { alternates: { canonical } } : {}),
   };
 }

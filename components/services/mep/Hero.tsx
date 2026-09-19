@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
+import CountUp from "@/components/services/civil/CountUp";
 import ServiceMobileHero from "@/components/services/ServiceMobileHero";
 import {
   civilMobileHeroImageDefaults,
@@ -10,44 +12,68 @@ import {
 } from "@/components/services/serviceMobileHeroCivilLayout";
 import { useServiceEnquiry } from "@/components/services/ServiceEnquiryProvider";
 
-const mobileStats = [
+const formatWithCommas = (value: number) => value.toLocaleString("en-US");
+
+const heroStats: {
+  key: string;
+  value: ReactNode;
+  mobileLabel: string;
+}[] = [
   {
     key: "years",
     value: (
-      <>
-        18<span className="text-[#ed2024]">+</span>
-      </>
+      <CountUp end={18} delay={0.65}>
+        {(n) => (
+          <>
+            {n}
+            <span className="text-[#ed2024]">+</span>
+          </>
+        )}
+      </CountUp>
     ),
     mobileLabel: "Years Experience",
   },
   {
     key: "capacity",
     value: (
-      <>
-        40,000 <span className="text-[#ed2024]">Tons</span>
-      </>
+      <CountUp end={40000} delay={0.75} format={formatWithCommas}>
+        {(n) => (
+          <>
+            {n} <span className="text-[#ed2024]">Tons</span>
+          </>
+        )}
+      </CountUp>
     ),
     mobileLabel: "Prod. Capacity",
   },
   {
     key: "campus",
     value: (
-      <>
-        70 lakh <span className="text-[#ed2024]">+ Sq.ft.</span>
-      </>
+      <CountUp end={70} delay={0.85}>
+        {(n) => (
+          <>
+            {n} lakh <span className="text-[#ed2024]">+ Sq.ft.</span>
+          </>
+        )}
+      </CountUp>
     ),
     mobileLabel: "Projects Completed",
   },
   {
     key: "engineers",
     value: (
-      <>
-        175<span className="text-[#ed2024]">+ In-House</span>
-      </>
+      <CountUp end={175} delay={0.95}>
+        {(n) => (
+          <>
+            {n}
+            <span className="text-[#ed2024]">+ In-House</span>
+          </>
+        )}
+      </CountUp>
     ),
     mobileLabel: "Engineers",
   },
-] as const;
+];
 
 const heroDescription =
   "Mekark delivers turnkey MEP design-build for factories, warehouses, and manufacturing plants: HVAC, electrical, plumbing, firefighting, and mechanical utilities, backed by 18+ years of experience and 200+ completed industrial MEP projects across Tamil Nadu, India.";
@@ -84,7 +110,7 @@ function MobileHero() {
       }}
       arrowIcon="/images/services/mep/hero/arrow.svg"
       onEnquiryClick={openEnquiry}
-      stats={mobileStats.map((stat) => ({
+      stats={heroStats.map((stat) => ({
         key: stat.key,
         value: stat.value,
         mobileLabel: stat.mobileLabel,
@@ -149,8 +175,14 @@ export default function Hero() {
           <div className="absolute bottom-[66.7px] left-1/2 flex -translate-x-1/2 items-center gap-[66.7px] shrink-0">
             <div className="flex h-[65.3px] w-[137.3px] shrink-0 flex-col items-start justify-center gap-[4.1px] px-num-13_3 pt-[18px] pb-[18.6px] box-border">
               <div className="relative whitespace-nowrap tracking-[-1.11px] leading-num-25_62 font-extrabold">
-                <span className="leading-num-25_62">18</span>
-                <span className="leading-num-25_62 text-red-200">+</span>
+                <CountUp end={18} delay={0.65}>
+                  {(n) => (
+                    <>
+                      <span className="leading-num-25_62">{n}</span>
+                      <span className="leading-num-25_62 text-red-200">+</span>
+                    </>
+                  )}
+                </CountUp>
               </div>
               <div className="text-[10.67px] text-gray-400">
                 <div className="relative tracking-[1.61px] leading-[11.89px] font-semibold capitalize">
@@ -161,8 +193,14 @@ export default function Hero() {
 
             <div className="flex h-16 shrink-0 flex-col items-start justify-center gap-[4.1px] px-num-13_3 pt-[18px] pb-[18.6px] box-border text-whitesmoke">
               <div className="relative whitespace-nowrap tracking-[-1.11px] leading-num-25_62 font-extrabold">
-                <span className="leading-num-25_62">40,000 </span>
-                <span className="leading-num-25_62 text-red-200">Tons</span>
+                <CountUp end={40000} delay={0.75} format={formatWithCommas}>
+                  {(n) => (
+                    <>
+                      <span className="leading-num-25_62">{n} </span>
+                      <span className="leading-num-25_62 text-red-200">Tons</span>
+                    </>
+                  )}
+                </CountUp>
               </div>
               <div className="text-[10.67px] text-gray-400">
                 <div className="relative tracking-[1.61px] leading-[11.89px] font-semibold capitalize">
@@ -173,8 +211,14 @@ export default function Hero() {
 
             <div className="flex h-16 shrink-0 flex-col items-start justify-center gap-[4.3px] px-num-13_3 py-[18.5px] box-border">
               <div className="relative whitespace-nowrap tracking-[-1.11px] leading-num-25_62 font-extrabold">
-                <span className="leading-num-25_62">70 lakh </span>
-                <span className="leading-num-25_62 text-red-300">+ Sq.ft.</span>
+                <CountUp end={70} delay={0.85}>
+                  {(n) => (
+                    <>
+                      <span className="leading-num-25_62">{n} lakh </span>
+                      <span className="leading-num-25_62 text-red-300">+ Sq.ft.</span>
+                    </>
+                  )}
+                </CountUp>
               </div>
               <div className="text-[10.67px] text-gray-400">
                 <div className="relative tracking-[1.6px] leading-[9.57px] font-semibold capitalize">
@@ -185,8 +229,14 @@ export default function Hero() {
 
             <div className="flex h-16 shrink-0 flex-col items-start justify-center gap-[4.3px] px-num-13_3 py-[18.5px] box-border">
               <div className="relative whitespace-nowrap tracking-[-1.11px] leading-num-25_62 font-extrabold">
-                <span className="leading-num-25_62">175</span>
-                <span className="leading-num-25_62 text-red-300">+ In-House</span>
+                <CountUp end={175} delay={0.95}>
+                  {(n) => (
+                    <>
+                      <span className="leading-num-25_62">{n}</span>
+                      <span className="leading-num-25_62 text-red-300">+ In-House</span>
+                    </>
+                  )}
+                </CountUp>
               </div>
               <div className="text-[10.67px] text-gray-400">
                 <div className="relative tracking-[1.6px] leading-[9.57px] font-semibold capitalize">

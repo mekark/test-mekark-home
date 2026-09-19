@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
+import CountUp from "@/components/services/civil/CountUp";
 import ServiceMobileHero from "@/components/services/ServiceMobileHero";
 import {
   civilMobileHeroImageDefaults,
@@ -16,22 +18,36 @@ import styles from "./index.module.css";
 const heroDescription =
   "Mekark designs, fabricates, and installs high-strength PTFE and ETFE tensile fabric structures for stadiums, car parks, industrial sheds, and commercial spaces across Tamil Nadu, Karnataka, Telangana, Andhra Pradesh, and Kerala, engineered for durability and built to withstand South India's climate.";
 
-const mobileStats = [
+const heroStats: {
+  key: string;
+  value: ReactNode;
+  mobileLabel: string;
+}[] = [
   {
     key: "years",
     value: (
-      <>
-        18<span className="text-[#ed2024]">+</span>
-      </>
+      <CountUp end={18} delay={0.65}>
+        {(n) => (
+          <>
+            {n}
+            <span className="text-[#ed2024]">+</span>
+          </>
+        )}
+      </CountUp>
     ),
     mobileLabel: "Years Experience",
   },
   {
     key: "projects",
     value: (
-      <>
-        200<span className="text-[#ed2024]">+</span>
-      </>
+      <CountUp end={200} delay={0.75}>
+        {(n) => (
+          <>
+            {n}
+            <span className="text-[#ed2024]">+</span>
+          </>
+        )}
+      </CountUp>
     ),
     mobileLabel: "Tensile Projects",
   },
@@ -44,7 +60,7 @@ const mobileStats = [
     ),
     mobileLabel: "Fabric Suppliers",
   },
-] as const;
+];
 
 function MobileHero() {
   const { openEnquiry } = useTensileEnquiry();
@@ -74,7 +90,7 @@ function MobileHero() {
       }}
       arrowIcon="/images/services/tensile/hero/arrow.svg"
       onEnquiryClick={openEnquiry}
-      stats={mobileStats.map((stat) => ({
+      stats={heroStats.map((stat) => ({
         key: stat.key,
         value: stat.value,
         mobileLabel: stat.mobileLabel,
@@ -153,15 +169,27 @@ export default function Hero() {
           <div className={styles.container}>
             <div className={styles.stat}>
               <div className={styles.div}>
-                <span className={styles.span}>18</span>
-                <span className={styles.span2}>+</span>
+                <CountUp end={18} delay={0.65}>
+                  {(n) => (
+                    <>
+                      <span className={styles.span}>{n}</span>
+                      <span className={styles.span2}>+</span>
+                    </>
+                  )}
+                </CountUp>
               </div>
               <div className={styles.statLabel}>Years of Tensile Structure Experience</div>
             </div>
             <div className={styles.stat}>
               <div className={styles.div}>
-                <span className={styles.span}>200</span>
-                <span className={styles.span2}>+</span>
+                <CountUp end={200} delay={0.75}>
+                  {(n) => (
+                    <>
+                      <span className={styles.span}>{n}</span>
+                      <span className={styles.span2}>+</span>
+                    </>
+                  )}
+                </CountUp>
               </div>
               <div className={styles.statLabel}>
                 Tensile Projects Delivered Across South India

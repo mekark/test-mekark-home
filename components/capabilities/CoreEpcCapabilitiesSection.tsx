@@ -175,7 +175,7 @@ export function CoreEpcCapabilitiesSection() {
             className="-ml-10 overflow-hidden sm:-ml-12"
             ref={emblaRef}
           >
-            <div className="flex touch-pan-x gap-0">
+            <div className="flex touch-pan-y gap-0">
               {CAPABILITIES.map((capability) => (
                 <motion.div
                   key={capability.title}

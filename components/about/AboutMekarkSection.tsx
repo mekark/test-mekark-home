@@ -361,36 +361,38 @@ function AboutStatItem({
     >
       <StatIcon src={stat.icon} alt={stat.iconAlt} />
       <div className="z-[1] flex min-w-0 flex-col items-start gap-1.5 2xl:gap-[4.6px]">
-        <p className="whitespace-nowrap font-manrope text-[clamp(1.25rem,1.9vw,2.79rem)] font-bold leading-none tracking-[-1.01px] text-white tabular-nums">
-          <CountUp
-            value={stat.countTo}
-            suffix={stat.suffix}
-            start={itemInView}
-            delay={0.15}
-            duration={1.7}
-          />
-          {"footnote" in stat && stat.footnote ? (
-            <sup className="ml-0.5 align-super text-[0.36em] font-normal text-[#ed2024]">
-              {LEGAL_AND_COOKIE_CONSENT_ENABLED ? (
-                <Link
-                  href={FOOTNOTE_150_DAYS_TERMS_PATH}
-                  className="hover:underline"
-                  aria-label="150 Days terms and conditions apply"
-                  title="Terms and conditions apply"
-                >
-                  *
-                </Link>
-              ) : (
-                <span
-                  className="cursor-not-allowed opacity-80"
-                  aria-label="150 Days terms and conditions apply"
-                  title="Under review"
-                >
-                  *
-                </span>
-              )}
-            </sup>
-          ) : null}
+        <p className="font-manrope text-[clamp(1.25rem,1.9vw,2.79rem)] font-bold leading-none tracking-[-1.01px] text-white tabular-nums">
+          <span className="inline-flex max-w-full items-start overflow-visible">
+            <CountUp
+              value={stat.countTo}
+              suffix={stat.suffix}
+              start={itemInView}
+              delay={0.15}
+              duration={1.7}
+            />
+            {"footnote" in stat && stat.footnote ? (
+              <span className="mt-0.5 shrink-0 pl-0.5 text-[13px] font-normal leading-none text-[#ed2024] sm:mt-1 sm:text-[15px] 2xl:mt-1.5 2xl:text-[18px]">
+                {LEGAL_AND_COOKIE_CONSENT_ENABLED ? (
+                  <Link
+                    href={FOOTNOTE_150_DAYS_TERMS_PATH}
+                    className="hover:underline"
+                    aria-label="150 Days terms and conditions apply"
+                    title="Terms and conditions apply"
+                  >
+                    *
+                  </Link>
+                ) : (
+                  <span
+                    className="cursor-not-allowed"
+                    aria-label="150 Days terms and conditions apply"
+                    title="Under review"
+                  >
+                    *
+                  </span>
+                )}
+              </span>
+            ) : null}
+          </span>
         </p>
         <motion.div
           initial="hidden"
@@ -435,7 +437,7 @@ function StatIcon({ src, alt }: { src: string; alt: string }) {
 
 export function AboutMekarkSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-white font-[family-name:var(--font-manrope)] text-[#555]">
+    <section className="relative w-full overflow-x-clip bg-white font-[family-name:var(--font-manrope)] text-[#555]">
       <div
         className={`${SECTION_CONTAINER_CLASS} flex flex-col items-center gap-10 py-12 sm:gap-12 sm:py-16 lg:gap-14 lg:py-[85px] xl:gap-12 xl:py-[73px] 2xl:gap-14 2xl:py-[85px]`}
       >

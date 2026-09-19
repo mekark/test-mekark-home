@@ -19,6 +19,7 @@ export function HeroPoster({ src, alt, priority = false }: HeroPosterProps) {
       alt={alt}
       fill
       priority={priority}
+      fetchPriority={priority ? "high" : "auto"}
       sizes={HERO_MEDIA_SIZES}
       className={`${MOBILE_HERO_MEDIA_CLASS} origin-center ${DESKTOP_HERO_MEDIA_CLASS}`}
     />

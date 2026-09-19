@@ -135,7 +135,7 @@ export default function CivilSolutions() {
                 />
               </div>
               <div>
-                <h3 className="font-montserrat text-[17px] font-bold leading-[22px] text-darkslategray sm:text-[18.67px]">
+                <h3 className="font-manrope text-[17px] font-bold leading-[22px] text-darkslategray sm:text-[18.67px]">
                   {item.title}
                 </h3>
                 <p className={`mt-2 ${SERVICE_CARD_BODY_CLASS_SCALED}`}>
@@ -163,7 +163,7 @@ export default function CivilSolutions() {
         </motion.div>
 
         <motion.div
-          className="relative h-[409.3px] w-full self-stretch font-montserrat text-num-18_67 text-darkslategray"
+          className="relative h-[409.3px] w-full self-stretch font-manrope text-num-18_67 text-darkslategray"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}

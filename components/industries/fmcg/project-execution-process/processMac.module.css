@@ -49,7 +49,7 @@
   .stepNumber {
     font-size: clamp(28px, 2.08333vw, 40px) !important;
     line-height: 1 !important;
-    font-family: Montserrat, sans-serif !important;
+    font-family: var(--font-manrope), Manrope, sans-serif !important;
     font-weight: 500 !important;
   }
 

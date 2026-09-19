@@ -131,7 +131,7 @@ export function CtaSection() {
             <br />
             with <span className="text-[#e31b23]">Mekark?</span>
           </h2>
-          <p className="mt-2.5 max-w-[337px] border-l-[3px] border-[#e31b23] pl-4 font-inter text-[14px] leading-[22px] text-[#d1d5db] sm:text-[15px] sm:leading-[24px]">
+          <p className="mt-2.5 max-w-[337px] border-l-[3px] border-[#e31b23] pl-4 font-manrope text-[14px] leading-[22px] text-[#d1d5db] sm:text-[15px] sm:leading-[24px]">
             Join a team that believes in engineering quality, project
             accountability, and industrial progress.
           </p>

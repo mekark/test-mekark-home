@@ -76,7 +76,7 @@ export default function ServiceSolutionsMobileGrid({
               />
             </div>
             <div>
-              <h3 className="font-montserrat text-[17px] font-bold leading-[22px] text-darkslategray sm:text-[18.67px]">
+              <h3 className="font-manrope text-[17px] font-bold leading-[22px] text-darkslategray sm:text-[18.67px]">
                 {item.title}
               </h3>
               <p className={`mt-2 ${SERVICE_CARD_BODY_CLASS}`}>

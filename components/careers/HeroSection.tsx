@@ -20,7 +20,7 @@ export function HeroSection() {
               <br />
               Industrial Infrastructure.
             </h1>
-            <p className="w-full max-w-[42rem] font-inter text-[clamp(0.9375rem,1.35vw,1.25rem)] font-normal leading-[1.5] text-black/80">
+            <p className="w-full max-w-[42rem] font-manrope text-[clamp(0.9375rem,1.35vw,1.25rem)] font-normal leading-[1.5] text-black/80">
               Join a team that designs, engineers, manufactures, and delivers
               industrial spaces built for performance, safety, and long-term
               growth across Tamil Nadu, Karnataka, Andhra Pradesh, Telangana,
@@ -28,7 +28,7 @@ export function HeroSection() {
             </p>
           </div>
 
-          <div className="flex w-full max-w-[36rem] flex-col items-center font-inter text-[clamp(0.8125rem,1.15vw,1.0625rem)] text-white">
+          <div className="flex w-full max-w-[36rem] flex-col items-center font-manrope text-[clamp(0.8125rem,1.15vw,1.0625rem)] text-white">
             <div className="flex w-full max-w-full items-center justify-center bg-[linear-gradient(90deg,rgba(227,27,35,0),#e31b23_52.4%,rgba(227,27,35,0))] px-3 py-2 sm:w-fit sm:px-6">
               <p className="text-center font-semibold leading-snug sm:leading-[1.6]">
                 Ready to build your career with us? Reach out at

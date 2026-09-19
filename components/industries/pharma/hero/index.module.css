@@ -139,7 +139,7 @@
   justify-content: center;
   padding: 1.25vw 2.5vw;
   gap: 0.692708vw;
-  font-family: var(--font-inter), Inter, sans-serif;
+  font-family: var(--font-manrope), Manrope, sans-serif;
   color: #fff;
   text-decoration: none;
   border: 0;
@@ -148,7 +148,7 @@
 }
 .text {
   position: relative;
-  font-family: var(--font-inter), Inter, sans-serif;
+  font-family: var(--font-manrope), Manrope, sans-serif;
   font-weight: 500;
   font-size: 21.33px;
   line-height: 32px;
@@ -237,10 +237,10 @@
     gap: 10px;
     border-radius: 8px;
     box-shadow: 0 6px 20px rgba(196, 22, 28, 0.3);
-    font-family: var(--font-inter), Inter, sans-serif;
+    font-family: var(--font-manrope), Manrope, sans-serif;
   }
   .text {
-    font-family: var(--font-inter), Inter, sans-serif;
+    font-family: var(--font-manrope), Manrope, sans-serif;
     font-size: 16px;
     line-height: 24px;
     font-weight: 500;
@@ -366,7 +366,7 @@
     box-sizing: border-box;
     padding: 10px 20px;
     gap: 7.1px;
-    font-family: var(--font-inter), Inter, sans-serif;
+    font-family: var(--font-manrope), Manrope, sans-serif;
     font-weight: 500;
     border-radius: 5.65px;
     box-shadow: 0px 5.652px 22.61px rgba(196, 22, 28, 0.3);
@@ -378,7 +378,7 @@
     font-size: 14px;
     line-height: 16.96px;
     font-weight: 500;
-    font-family: var(--font-inter), Inter, sans-serif;
+    font-family: var(--font-manrope), Manrope, sans-serif;
     letter-spacing: 0;
     color: #fff;
     white-space: nowrap;

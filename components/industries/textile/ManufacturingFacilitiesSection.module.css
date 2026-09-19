@@ -138,7 +138,7 @@
 	position: relative;
 	line-height: 1.11111vw;
 	font-weight: 700;
-	font-family: Montserrat, var(--font-montserrat), sans-serif;
+	font-family: var(--font-manrope), Manrope, sans-serif;
 	font-size: 0.9724vw;
 	color: #3c3938;
 }
@@ -151,7 +151,7 @@
 	color: #555;
 	display: flex;
 	align-items: center;
-	font-family: Montserrat, var(--font-montserrat), sans-serif;
+	font-family: var(--font-manrope), Manrope, sans-serif;
 }
 
 .overlayborder {

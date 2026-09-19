@@ -122,7 +122,7 @@
 	width: 100%;
 	max-width: 300px;
 	padding-top: clamp(2px, 0.2vw, 4px);
-	font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+	font-family: var(--font-manrope), Manrope, sans-serif;
 }
 
 .featureTitle {
@@ -137,7 +137,7 @@
 .featureBody {
 	margin: 0;
 	max-width: 300px;
-	font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+	font-family: var(--font-manrope), Manrope, sans-serif;
 	font-size: 16px;
 	line-height: 25.33px;
 	font-weight: 400;

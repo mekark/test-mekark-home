@@ -265,7 +265,7 @@
 	flex-shrink: 0;
 	font-size: 18px;
 	color: #3c3938;
-	font-family: Montserrat, sans-serif;
+	font-family: var(--font-manrope), Manrope, sans-serif;
 }
 .frameParent2 {
 	display: flex;
@@ -440,7 +440,7 @@
 	flex-shrink: 0;
 	font-size: 39.999px;
 	color: #f01d23;
-	font-family: Montserrat, sans-serif;
+	font-family: var(--font-manrope), Manrope, sans-serif;
 }
 .parent {
 	display: flex;

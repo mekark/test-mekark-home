@@ -78,7 +78,7 @@ function Feature({
           aria-hidden
         />
         <div className="min-w-0 flex-1 pt-0.5">
-          <b className="block font-montserrat text-[15px] font-bold leading-[22px] text-darkslategray sm:text-[17px] sm:leading-6">
+          <b className="block font-manrope text-[15px] font-bold leading-[22px] text-darkslategray sm:text-[17px] sm:leading-6">
             {title}
           </b>
           <p className={`mt-1.5 ${SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS_SCALED}`}>
@@ -105,7 +105,7 @@ function Feature({
       </div>
       <div className="relative min-w-0 flex-1 shrink-0 text-num-18_67 text-darkslategray">
         <div className="absolute top-[-1.3px] right-0 left-0 flex flex-col items-start">
-          <b className={`relative font-montserrat font-bold ${titleClassName}`}>
+          <b className={`relative font-manrope font-bold ${titleClassName}`}>
             {title}
           </b>
         </div>

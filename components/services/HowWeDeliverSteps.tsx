@@ -32,6 +32,10 @@ type HowWeDeliverStepsProps = {
    * (Civil DesignScale) so typography stays at the 1920 Figma size.
    */
   scaledCanvas?: boolean;
+  /** Font for step titles (defaults to Manrope). */
+  accentFontClass?: string;
+  /** Font for step numbers (defaults to Montserrat). */
+  numberFontClass?: string;
 };
 
 function breakpointClasses(desktopFrom: "sm" | "lg" | "xl") {
@@ -63,6 +67,8 @@ export default function HowWeDeliverSteps({
   desktopCols = 5,
   iconBoxClassName = "bg-lavenderblush",
   scaledCanvas = false,
+  accentFontClass = "font-manrope",
+  numberFontClass = "font-montserrat",
 }: HowWeDeliverStepsProps) {
   const { mobile, desktop } = breakpointClasses(desktopFrom);
   const bodyClass = scaledCanvas
@@ -84,15 +90,15 @@ export default function HowWeDeliverSteps({
     ? "absolute top-1/2 left-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2"
     : "absolute top-1/2 left-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2 xl:h-8 xl:w-8 2xl:h-10 2xl:w-10";
   const stepTitleClass = scaledCanvas
-    ? "font-montserrat text-[17px] leading-[21.33px] font-bold text-darkslategray sm:text-[18.67px]"
-    : "font-montserrat text-[17px] leading-[21.33px] font-bold text-darkslategray sm:text-[18.67px] xl:text-[15px] xl:leading-[20px] 2xl:text-[18.67px] 2xl:leading-[21.33px]";
+    ? `${accentFontClass} text-[17px] leading-[21.33px] font-bold text-darkslategray sm:text-[18.67px]`
+    : `${accentFontClass} text-[17px] leading-[21.33px] font-bold text-darkslategray sm:text-[18.67px] xl:text-[15px] xl:leading-[20px] 2xl:text-[18.67px] 2xl:leading-[21.33px]`;
   const stepBodySpacing = scaledCanvas ? "mt-3" : "mt-3 xl:mt-2 2xl:mt-3";
   const arrowClass = scaledCanvas
     ? "absolute top-[60px] left-[145px] hidden h-5 w-[67px] lg:block"
     : "absolute top-10 left-[88px] hidden h-4 w-12 xl:block 2xl:top-[60px] 2xl:left-[145px] 2xl:h-5 2xl:w-[67px]";
   const fallbackNumClass = scaledCanvas
-    ? "flex h-full w-full items-center justify-center font-montserrat text-[15px] font-bold text-red"
-    : "flex h-full w-full items-center justify-center font-montserrat text-[15px] font-bold text-red xl:text-[13px] 2xl:text-[15px]";
+    ? `flex h-full w-full items-center justify-center ${numberFontClass} text-[15px] font-bold text-red`
+    : `flex h-full w-full items-center justify-center ${numberFontClass} text-[15px] font-bold text-red xl:text-[13px] 2xl:text-[15px]`;
 
   return (
     <>
@@ -142,7 +148,7 @@ export default function HowWeDeliverSteps({
                       />
                     </div>
                   ) : (
-                    <span className="font-montserrat text-[13px] font-bold text-red">
+                    <span className={`${numberFontClass} text-[13px] font-bold text-red`}>
                       {num}
                     </span>
                   )}
@@ -150,10 +156,10 @@ export default function HowWeDeliverSteps({
               </div>
 
               <div className="min-w-0 pt-1">
-                <span className="mb-1.5 block font-montserrat text-[12px] font-bold tracking-[1.5px] text-red">
+                <span className={`mb-1.5 block ${numberFontClass} text-[12px] font-bold tracking-[1.5px] text-red`}>
                   STEP {num}
                 </span>
-                <h3 className="font-montserrat text-[16px] leading-[21px] font-bold text-darkslategray">
+                <h3 className={`${accentFontClass} text-[16px] leading-[21px] font-bold text-darkslategray`}>
                   {step.title}
                 </h3>
                 <p className={`mt-1.5 ${bodyClass}`}>{step.body}</p>

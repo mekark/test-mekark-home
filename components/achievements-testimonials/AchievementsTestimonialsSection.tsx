@@ -332,7 +332,7 @@ export function AchievementsTestimonialsSection() {
                     className="size-[7px] rounded-full bg-red-200"
                     aria-hidden
                   />
-                  <span className="font-inter text-xs font-medium tracking-[0.53px] text-red-100">
+                  <span className="font-manrope text-xs font-medium tracking-[0.53px] text-red-100">
                     Testimonials
                   </span>
                 </motion.div>

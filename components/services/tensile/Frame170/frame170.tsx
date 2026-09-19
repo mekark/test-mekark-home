@@ -87,7 +87,7 @@ export default function Frame170() {
                 sizes="257px"
                 alt={item.title}
               />
-              <div className="flex flex-col gap-3 font-montserrat">
+              <div className="flex flex-col gap-3 font-manrope">
                 <h3 className="text-[18.67px] font-bold leading-[1.25] text-[#3c3938]">
                   {item.title}
                 </h3>

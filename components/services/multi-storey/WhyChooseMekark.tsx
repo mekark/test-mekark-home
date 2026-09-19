@@ -71,7 +71,7 @@ function FeatureItem({
         <div className="min-h-[80px] w-[1.33px] flex-1 bg-[rgba(204,16,32,0.4)]" />
       </div>
       <div className="min-w-0 flex-1 pt-0 lg:max-w-[328px]">
-        <b className="block font-montserrat text-[18.67px] leading-[24px] font-bold text-darkslategray">
+        <b className="block font-manrope text-[18.67px] leading-[24px] font-bold text-darkslategray">
           {title}
         </b>
         <p className={`mt-[10px] ${SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS_SCALED}`}>
@@ -113,7 +113,7 @@ function MobileFeature({
         ) : null}
       </div>
       <div className="min-w-0 pb-1">
-        <h3 className="font-montserrat text-[16px] leading-[22px] font-bold text-darkslategray">
+        <h3 className="font-manrope text-[16px] leading-[22px] font-bold text-darkslategray">
           {title.replace(/:$/, "")}
         </h3>
         <p className={`mt-1.5 ${SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS_SCALED}`}>

@@ -15,29 +15,32 @@ export const SERVICE_BODY_TEXT_CLASS = `${SERVICE_BODY_TEXT_SIZES} text-black`;
 /** Body copy inside DesignScale — large-desktop sizes only. */
 export const SERVICE_BODY_TEXT_CLASS_SCALED = `${SERVICE_BODY_TEXT_SIZES_SCALED} text-black`;
 
-/** Why Choose Mekark feature descriptions — Montserrat 16px / 25.33px / grey #555 (Figma grey/33). */
+/** Accent numbers on service pages (FAQ index, feature steps, etc.). */
+export const SERVICE_NUMBER_FONT_CLASS = "font-montserrat";
+
+/** Why Choose Mekark feature descriptions — Manrope 16px / 25.33px / grey #555 (Figma grey/33). */
 export const SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS =
-  "font-montserrat text-base font-normal leading-num-25_33 text-[#555] text-left xl:text-[14px] xl:leading-[20px] 2xl:text-base 2xl:leading-num-25_33";
+  "font-manrope text-base font-normal leading-num-25_33 text-[#555] text-left xl:text-[14px] xl:leading-[20px] 2xl:text-base 2xl:leading-num-25_33";
 
 /** Feature body inside DesignScale — no xl shrink. */
 export const SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS_SCALED =
-  "font-montserrat text-base font-normal leading-num-25_33 text-[#555] text-left";
+  "font-manrope text-base font-normal leading-num-25_33 text-[#555] text-left";
 
 /** Card / grid item titles on service pages — iMac Figma 6728:2619. */
 export const SERVICE_CARD_TITLE_CLASS =
-  "font-montserrat text-[clamp(0.9375rem,0.972vw,1.167rem)] font-bold leading-[1.44] text-[#3C3938] xl:text-[14px] xl:leading-[20px] 2xl:text-[18.67px] 2xl:leading-[27px]";
+  "font-manrope text-[clamp(0.9375rem,0.972vw,1.167rem)] font-bold leading-[1.44] text-[#3C3938] xl:text-[14px] xl:leading-[20px] 2xl:text-[18.67px] 2xl:leading-[27px]";
 
 /** Card titles inside DesignScale — large-desktop size only. */
 export const SERVICE_CARD_TITLE_CLASS_SCALED =
-  "font-montserrat text-[clamp(0.9375rem,0.972vw,1.167rem)] font-bold leading-[1.44] text-[#3C3938]";
+  "font-manrope text-[clamp(0.9375rem,0.972vw,1.167rem)] font-bold leading-[1.44] text-[#3C3938]";
 
 /** Card / grid item body on service pages. */
 export const SERVICE_CARD_BODY_CLASS =
-  "font-montserrat text-[16px] leading-[22px] text-[#555] lg:text-num-18_67 lg:leading-[26px] xl:text-[13px] xl:leading-[18px] 2xl:text-num-18_67 2xl:leading-[26px]";
+  "font-manrope text-[16px] leading-[22px] text-[#555] lg:text-num-18_67 lg:leading-[26px] xl:text-[13px] xl:leading-[18px] 2xl:text-num-18_67 2xl:leading-[26px]";
 
 /** Card body inside DesignScale — large-desktop size only. */
 export const SERVICE_CARD_BODY_CLASS_SCALED =
-  "font-montserrat text-[16px] leading-[22px] text-[#555] lg:text-num-18_67 lg:leading-[26px]";
+  "font-manrope text-[16px] leading-[22px] text-[#555] lg:text-num-18_67 lg:leading-[26px]";
 /** @deprecated Use SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS */
 export const SERVICE_PEB_BENEFIT_DESCRIPTION_CLASS =
   SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS;

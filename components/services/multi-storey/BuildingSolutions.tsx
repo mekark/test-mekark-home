@@ -149,7 +149,7 @@ export default function BuildingSolutions() {
                   className="object-cover"
                 />
               </div>
-              <h3 className="min-h-[42.66px] font-montserrat text-[18.67px] leading-[21.33px] font-bold text-darkslategray">
+              <h3 className="min-h-[42.66px] font-manrope text-[18.67px] leading-[21.33px] font-bold text-darkslategray">
                 {item.desktopTitle}
               </h3>
               <p className={`mt-3 min-h-[63.99px] text-left ${SERVICE_CARD_BODY_CLASS_SCALED}`}>

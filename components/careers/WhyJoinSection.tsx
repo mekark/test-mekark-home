@@ -75,7 +75,7 @@ export function WhyJoinSection() {
           {reasons.map((reason) => (
             <article
               key={reason.icon}
-              className="box-border flex min-h-[240px] w-full flex-col items-center gap-3 rounded-[12px] border-[0.9px] border-solid border-whitesmoke bg-white px-5 pt-7 pb-6 text-center font-inter text-gray shadow-[0px_3.72px_14.89px_rgba(0,0,0,0.03)] sm:min-h-[280px]"
+              className="box-border flex min-h-[240px] w-full flex-col items-center gap-3 rounded-[12px] border-[0.9px] border-solid border-whitesmoke bg-white px-5 pt-7 pb-6 text-center font-manrope text-gray shadow-[0px_3.72px_14.89px_rgba(0,0,0,0.03)] sm:min-h-[280px]"
             >
               <AssetIcon src={reason.icon} alt={`${reason.title.join(" ")} icon`} size={52} />
               <div className="flex w-full flex-col items-center pt-1">

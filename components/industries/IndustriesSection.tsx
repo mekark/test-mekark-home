@@ -107,7 +107,7 @@ function SectionBadge() {
   return (
     <motion.div
       variants={aboutBadgeReveal}
-      className="relative box-border flex w-fit items-center gap-1.5 rounded-full border border-solid border-[1.175px] border-[rgba(219,28,34,0.2)] bg-[rgba(219,28,34,0.05)] px-2.5 py-1.5 text-left font-inter text-[#e9000e] sm:gap-[9.4px] sm:px-[15.3px] sm:py-[8.2px]"
+      className="relative box-border flex w-fit items-center gap-1.5 rounded-full border border-solid border-[1.175px] border-[rgba(219,28,34,0.2)] bg-[rgba(219,28,34,0.05)] px-2.5 py-1.5 text-left font-manrope text-[#e9000e] sm:gap-[9.4px] sm:px-[15.3px] sm:py-[8.2px]"
     >
       <motion.div
         variants={aboutBadgeDot}

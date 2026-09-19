@@ -165,7 +165,7 @@ export function TestimonialsPage() {
                 className="size-[7px] rounded-full bg-red-200"
                 aria-hidden
               />
-              <span className="font-inter text-xs font-medium tracking-[0.53px] text-red-100">
+              <span className="font-manrope text-xs font-medium tracking-[0.53px] text-red-100">
                 Client testimonials
               </span>
             </motion.div>

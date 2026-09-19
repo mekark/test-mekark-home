@@ -49,7 +49,7 @@
 	gap: 2.08333vw;
 	font-size: clamp(13px, 0.83333vw, 16px);
 	color: #e60f1a;
-	font-family: var(--font-montserrat), Montserrat, sans-serif;
+	font-family: var(--font-manrope), Manrope, sans-serif;
 }
 
 .divrevealParent {
@@ -112,6 +112,7 @@
 }
 
 .b {
+	font-family: var(--font-montserrat), Montserrat, sans-serif;
 	position: relative;
 	letter-spacing: -0.02448vw;
 	line-height: clamp(16px, 0.86563vw, 16.624px);

@@ -361,7 +361,7 @@ function AboutStatItem({
     >
       <StatIcon src={stat.icon} alt={stat.iconAlt} />
       <div className="z-[1] flex min-w-0 flex-col items-start gap-1.5 2xl:gap-[4.6px]">
-        <p className="whitespace-nowrap font-[family-name:var(--font-montserrat-alternates)] text-[clamp(1.25rem,1.9vw,2.79rem)] font-bold leading-none tracking-[-1.01px] text-white tabular-nums">
+        <p className="whitespace-nowrap font-manrope text-[clamp(1.25rem,1.9vw,2.79rem)] font-bold leading-none tracking-[-1.01px] text-white tabular-nums">
           <CountUp
             value={stat.countTo}
             suffix={stat.suffix}

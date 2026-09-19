@@ -146,7 +146,7 @@
   padding: 1.25vw 2.5vw;
   gap: 0.692708vw;
   font-size: 1.110938vw;
-  font-family: var(--font-inter), Inter, sans-serif;
+  font-family: var(--font-manrope), Manrope, sans-serif;
   cursor: pointer;
 }
 .text {

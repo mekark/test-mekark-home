@@ -108,7 +108,7 @@ export default function IndustrialMepSolutions() {
               )}
 
               <div>
-                <b className="block text-num-18_67 leading-[26px] text-darkslategray font-montserrat">
+                <b className="block text-num-18_67 leading-[26px] text-darkslategray font-manrope">
                   {item.title}
                 </b>
                 <p className={`mt-2 ${SERVICE_CARD_BODY_CLASS_SCALED}`}>

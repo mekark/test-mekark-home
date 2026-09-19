@@ -145,7 +145,7 @@ function BenefitItem({
       </div>
 
       <div className="min-w-0 flex-1 pt-0">
-        <h3 className="font-[family-name:var(--font-montserrat)] text-[clamp(0.9375rem,0.972vw,1.167rem)] font-bold leading-[1.35] text-[#3C3938] sm:leading-[1.44]">
+        <h3 className="font-manrope text-[clamp(0.9375rem,0.972vw,1.167rem)] font-bold leading-[1.35] text-[#3C3938] sm:leading-[1.44]">
           {benefit.title}
         </h3>
         <p className={`mt-1.5 sm:mt-2 lg:mt-3 ${SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS_SCALED}`}>

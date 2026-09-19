@@ -141,7 +141,7 @@
   justify-content: center;
   padding: 1.25vw 2.5vw;
   gap: 0.692708vw;
-  font-family: var(--font-inter), Inter, sans-serif;
+  font-family: var(--font-manrope), Manrope, sans-serif;
   color: #fff;
   text-decoration: none;
   border: 0;
@@ -151,7 +151,7 @@
 
 .text {
   position: relative;
-  font-family: var(--font-inter), Inter, sans-serif;
+  font-family: var(--font-manrope), Manrope, sans-serif;
   font-weight: 500;
   font-size: 1.111458vw;
   line-height: 1.5;

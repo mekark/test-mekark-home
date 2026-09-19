@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { Roboto_Slab } from "next/font/google";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { CountUp } from "@/components/motion/CountUp";
@@ -16,11 +15,6 @@ import {
 import mdPortraitPhoto from "@/public/images/about/history/md-portrait-photo.webp";
 
 const VIEWPORT = { once: true, margin: "-90px" as const };
-
-const robotoSlab = Roboto_Slab({
-  subsets: ["latin"],
-  weight: ["300"],
-});
 
 const STAT_COLUMNS = [
   [
@@ -297,9 +291,7 @@ export function OurHistoryPage() {
                 />
               </motion.div>
               <div className="relative w-full bg-[#fff3e4] p-4 sm:min-h-[8.5rem] sm:p-5 sm:pl-4">
-                <p
-                  className={`${robotoSlab.className} w-full text-left text-lg font-light leading-[1.5] text-black sm:text-xl sm:leading-[1.5]`}
-                >
+                <p className="w-full text-left font-manrope text-lg font-normal leading-[1.5] text-black sm:text-xl sm:leading-[1.5]">
                   We didn&apos;t just inherit a business - we inherited a
                   responsibility to build better.
                 </p>

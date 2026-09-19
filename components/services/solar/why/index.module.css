@@ -167,18 +167,17 @@
 	color: #3c3938;
 }
 .turnkeySolarEpc {
-	font: Montserrat;
 	align-self: stretch;
 	position: relative;
 	line-height: 26.87px;
 	font-weight: 750;
 	letter-spacing: 0.392px;
-	font-family: Montserrat, sans-serif;
+	font-family: var(--font-manrope), Manrope, sans-serif;
 }
 .weHandleDesign {
 	align-self: stretch;
 	position: relative;
-	font-family: var(--font-montserrat), Montserrat, sans-serif;
+	font-family: var(--font-manrope), Manrope, sans-serif;
 	font-size: 16px;
 	line-height: 25.33px;
 	font-weight: 400;
@@ -329,7 +328,7 @@
 	position: relative;
 	display: flex;
 	align-items: center;
-	font-family: var(--font-montserrat), Montserrat, sans-serif;
+	font-family: var(--font-manrope), Manrope, sans-serif;
 	font-size: 16px;
 	line-height: 25.33px;
 	font-weight: 400;

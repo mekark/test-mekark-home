@@ -66,8 +66,8 @@
   --color-faq-title: #111;
   --color-faq-border: #e3e4e7;
   --font-sans: var(--font-manrope);
-  --font-mono: var(--font-geist-mono);
-  --font-inter: var(--font-inter-family), system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
   --font-manrope: var(--font-manrope), "Manrope", ui-sans-serif, system-ui,
     sans-serif;
   --font-montserrat: var(--font-montserrat), "Montserrat", ui-sans-serif,

@@ -145,7 +145,7 @@ export default function FaqSection() {
           Frequently Asked Questions About Industrial MEP Contracting
         </b>
 
-        <div className="flex w-full max-w-[1706px] flex-col items-stretch gap-3 text-num-16 text-faq-red font-montserrat lg:flex-row lg:items-start lg:justify-center lg:gap-10">
+        <div className="flex w-full max-w-[1706px] flex-col items-stretch gap-3 text-num-16 text-faq-red font-manrope lg:flex-row lg:items-start lg:justify-center lg:gap-10">
           <div className="flex w-full flex-col items-start gap-[13.3px] lg:w-1/2">
             {leftColumn.map((item, index) => (
               <FaqItem

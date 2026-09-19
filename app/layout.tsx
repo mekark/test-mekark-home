@@ -11,6 +11,7 @@ import { ArrowTop } from "@/components/ui/ArrowTop";
 import { NavigationLoadingProvider } from "@/components/ui/NavigationLoadingProvider";
 
 import { Navbar } from "@/components/navbar/Navbar";
+import { PageTitleSync } from "@/components/seo/PageTitleSync";
 
 import { LEGAL_AND_COOKIE_CONSENT_ENABLED } from "@/lib/feature-flags";
 
@@ -92,6 +93,8 @@ export default function RootLayout({
           )}
 
           <NavigationLoadingProvider>
+
+            <PageTitleSync />
 
             <Navbar />
 

@@ -238,7 +238,7 @@ function FooterLinkColumn({
                   {link.label}
                 </a>
               ) : (
-                <Link href={link.href} className={className}>
+                <Link href={link.href} prefetch={false} className={className}>
                   {link.label}
                 </Link>
               )}

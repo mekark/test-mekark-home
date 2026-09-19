@@ -272,6 +272,7 @@ function NavLinkMotion({
       ) : (
         <Link
           href={href}
+          prefetch={false}
           className={className}
           aria-current={active ? "page" : undefined}
         >
@@ -320,6 +321,7 @@ function DropdownLink({
       ) : (
         <Link
           href={href}
+          prefetch={false}
           className={className}
           aria-current={active ? "page" : undefined}
         >
@@ -527,6 +529,7 @@ function MobileDropdownLink({
       ) : (
         <Link
           href={href}
+          prefetch={false}
           onClick={onNavigate}
           className={className}
           aria-current={active ? "page" : undefined}
@@ -664,6 +667,7 @@ function MobileNavItem({
         ) : (
           <Link
             href={item.href}
+            prefetch={false}
             onClick={onNavigate}
             className={className}
             aria-current={active ? "page" : undefined}

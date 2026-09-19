@@ -89,7 +89,7 @@ const rightBenefits: Benefit[] = [
     number: "02",
     title: "Highest-Capacity Manufacturing in Tamil Nadu:",
     description:
-      "40,000-MT production capability across an 70 lakh sq. ft. P means faster turnaround without compromising quality.",
+      "40,000-MT production capability across an 70 lakh sq. ft. projects completed means faster turnaround without compromising quality.",
   },
   {
     number: "04",

@@ -14,7 +14,7 @@ import { useServiceEnquiry } from "@/components/services/ServiceEnquiryProvider"
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
 const heroDescription =
-  "Mekark designs and constructs multi-storey steel buildings for factories, offices, warehouses, and commercial complexes, backed by 18+ years of experience and 200+ completed projects across Tamil Nadu and India.";
+  "Mekark designs and constructs multi-storey steel buildings for factories, offices, warehouses, and commercial complexes, backed by 18+ years of experience and 15 completed projects across Tamil Nadu and India.";
 
 type CountUpProps = {
   value: number;

@@ -8,7 +8,10 @@ export function FmcgCtaBanner() {
       <div className={styles.section}>
         <div className={styles.planningAWarehouseOrLogistParent}>
           <p className={styles.planningAWarehouse}>
-            Planning an FMCG Manufacturing Facility in South India?
+            <span className={styles.ctaTitleLine}>
+              Planning an FMCG Manufacturing{" "}
+            </span>
+            <span className={styles.ctaTitleLine}>Facility in South India?</span>
           </p>
           <p className={styles.mekarksProjectCalendar}>
             Every week your production line isn&apos;t running is lost market share

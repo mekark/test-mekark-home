@@ -3,21 +3,14 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { backgroundZoom } from "./motion";
-import {
-  industryHeroMobileBgWrapperClass,
-  industryHeroMobileGradientStyle,
-  industryHeroMobileImageClass,
-} from "@/components/industries/shared/industryHeroMobile";
 import macStyles from "./logisticsHeroMac.module.css";
 
 export function HeroBackground() {
   return (
     <>
-      <div
-        className={`absolute inset-0 z-0 overflow-hidden ${industryHeroMobileBgWrapperClass}`}
-      >
+      <div className={macStyles.heroBgWrapper}>
         <motion.div
-          className={`absolute inset-0 md:left-auto md:right-[-9%] md:w-[100%] ${macStyles.heroBgMotion}`}
+          className={macStyles.heroBgMotion}
           variants={backgroundZoom}
           initial="hidden"
           animate="visible"
@@ -27,24 +20,13 @@ export function HeroBackground() {
             alt="FMCG manufacturing facility at dusk"
             fill
             priority
-            className={`object-cover object-right ${industryHeroMobileImageClass}`}
+            className={macStyles.heroBgImage}
             sizes="100vw"
           />
         </motion.div>
       </div>
-      <div
-        className="absolute inset-0 z-[1] md:hidden"
-        style={industryHeroMobileGradientStyle}
-        aria-hidden
-      />
-      <div
-        className="absolute inset-0 z-[1] hidden md:block"
-        style={{
-          backgroundImage:
-            "linear-gradient(105.99deg, rgb(6, 6, 6) 8.58%, rgba(6, 6, 6, 0.8) 44.21%, rgba(6, 6, 6, 0) 76.38%)",
-        }}
-        aria-hidden
-      />
+      <div className={macStyles.heroGradientMobile} aria-hidden />
+      <div className={macStyles.heroGradientDesktop} aria-hidden />
     </>
   );
 }

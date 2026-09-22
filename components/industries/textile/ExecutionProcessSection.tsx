@@ -7,6 +7,11 @@ const STEPS = [
     title: "Free Consultation & Site Study",
     description:
       "Our textile construction expert reviews your machinery layout and statutory requirements before any drawing is made.",
+    descriptionLines: [
+      "Our textile construction expert reviews",
+      "your machinery layout and statutory",
+      "requirements before any drawing is made.",
+    ],
     descClass: styles.geotechnicalAssessmentRegul,
   },
   {
@@ -14,6 +19,11 @@ const STEPS = [
     title: "Design & Engineering",
     description:
       "Structural design, architectural drawings, MEP layouts, and detailed BOQ tailored to your operation.",
+    descriptionLines: [
+      "Structural design, architectural drawings,",
+      "MEP layouts, and detailed BOQ tailored",
+      "to your operation.",
+    ],
     descClass: styles.structuralDesignLoad,
   },
   {
@@ -21,6 +31,11 @@ const STEPS = [
     title: "Approvals & Permits",
     description:
       "Precision manufacturing at our plant - columns, rafters, purlins, and secondary components fabricated to exact specs.",
+    descriptionLines: [
+      "Precision manufacturing at our plant -",
+      "columns, rafters, purlins, and secondary",
+      "components fabricated to exact specs.",
+    ],
     descClass: styles.precisionManufacturingAt,
   },
   {
@@ -28,6 +43,11 @@ const STEPS = [
     title: "Construction & Erection",
     description:
       "Foundation, steel erection, roofing, flooring, and finishing executed by parallel teams for speed.",
+    descriptionLines: [
+      "Foundation, steel erection, roofing,",
+      "flooring, and finishing executed by",
+      "parallel teams for speed.",
+    ],
     descClass: styles.geotechnicalAssessmentRegul2,
   },
   {
@@ -35,6 +55,11 @@ const STEPS = [
     title: "Handover & Commissioning",
     description:
       "Testing, punch-list closure, as-built drawings, and warranty documents, ready for machine installation.",
+    descriptionLines: [
+      "Testing, punch-list closure, as-built",
+      "drawings, and warranty documents,",
+      "ready for machine installation.",
+    ],
     descClass: styles.snagListClearance,
   },
 ] as const;
@@ -54,7 +79,8 @@ export default function ExecutionProcessSection() {
       </div>
       <div className={styles.ourWarehouseProjectExecutioWrapper}>
         <b className={styles.ourWarehouseProjectExecutio}>
-          Our Textile Factory Execution Process
+          <span className={styles.processTitleLine}>Our Textile Factory </span>
+          <span className={styles.processTitleLine}>Execution Process</span>
         </b>
       </div>
 
@@ -86,17 +112,45 @@ export default function ExecutionProcessSection() {
 
       <ol className={styles.mobileProcess}>
         {STEPS.map((step, index) => (
-          <li
-            key={step.number}
-            className={`${styles.mobileStep} ${index < STEPS.length - 1 ? styles.mobileStepWithGap : ""}`}
-          >
-            <div className={styles.mobileStepBadge}>
-              <span className={styles.mobileStepNumber}>{step.number}</span>
+          <li key={step.number} className={styles.mobileStepItem}>
+            <div className={styles.mobileStep}>
+              <div className={styles.mobileStepNumber}>{step.number}</div>
+              <div className={styles.mobileStepContent}>
+                <h3 className={styles.mobileStepTitle}>{step.title}</h3>
+                <p className={styles.mobileStepDescription}>
+                  {step.descriptionLines.map((line) => (
+                    <span key={line} className={styles.mobileDescLine}>
+                      {line}
+                    </span>
+                  ))}
+                </p>
+              </div>
             </div>
-            <article className={styles.mobileStepCard}>
-              <h3 className={styles.mobileStepTitle}>{step.title}</h3>
-              <p className={styles.mobileStepDescription}>{step.description}</p>
-            </article>
+            {index < STEPS.length - 1 ? (
+              <div className={styles.mobileStepArrow} aria-hidden="true">
+                <svg
+                  width="24"
+                  height="36"
+                  viewBox="0 0 24 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 2V26"
+                    stroke="#8E8E8E"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M5 20L12 29L19 20"
+                    stroke="#8E8E8E"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+            ) : null}
           </li>
         ))}
       </ol>

@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Image from "next/image";
-import { CTA_PHONE_ICON, PHONE_HREF } from "@/lib/contact";
+import { PHONE_HREF } from "@/lib/contact";
 import styles from "./index.module.css";
 
 type Feature = {
@@ -18,23 +18,10 @@ const FEATURES: Feature[] = [
       "Every pre-engineered warehouse structure is precision-engineered by our in-house structural engineers, architects, and MEP teams under one roof.",
   },
   {
-    icon: "/images/industries/logistics/CTA/clock-icon.svg",
-    title: "On-Time, On-Budget Delivery",
-    description:
-      "Factory-controlled fabrication means predictable timelines and no cost surprises, making Mekark a reliable distribution centre builder.",
-    descriptionClass: styles.factoryControlledFabrication,
-  },
-  {
     icon: "/images/industries/logistics/CTA/factory-icon.svg",
     title: "Large-Scale Manufacturing Capacity",
     description:
       "As a leading PEB warehouse producer in South India, Mekark manufactures up to 3,000 MT per month at a 6,00,000 sq.ft. fully automatic facility, with no third-party intervention.",
-  },
-  {
-    icon: "/images/industries/logistics/CTA/badge-check-icon.svg",
-    title: "Regulatory Compliant Engineering",
-    description:
-      "All structures meet IS 800:2007, IS 875 (wind loads), and IS 1893 (seismic zones II-V), with fire ratings per NBC or client requirement.",
   },
   {
     icon: "/images/industries/logistics/CTA/map-pinned-icon.svg",
@@ -42,6 +29,19 @@ const FEATURES: Feature[] = [
     description:
       "As a trusted warehouse shed manufacturer that South India businesses rely on, our teams deliver industrial warehouse construction across Tamil Nadu, Karnataka, Andhra Pradesh, Telangana, and Kerala, backed by an integrated design-to-erection process.",
     descriptionClass: styles.asATrusted,
+  },
+  {
+    icon: "/images/industries/logistics/CTA/clock-icon.svg",
+    title: "On-Time, On-Budget Delivery",
+    description:
+      "Factory-controlled fabrication means predictable timelines and no cost surprises, making Mekark a reliable distribution centre builder.",
+    descriptionClass: styles.factoryControlledFabrication,
+  },
+  {
+    icon: "/images/industries/logistics/CTA/badge-check-icon.svg",
+    title: "Regulatory Compliant Engineering",
+    description:
+      "All structures meet IS 800:2007, IS 875 (wind loads), and IS 1893 (seismic zones II-V), with fire ratings per NBC or client requirement.",
   },
   {
     icon: "/images/industries/logistics/CTA/shield-check-icon.svg",
@@ -58,21 +58,24 @@ const CTA: NextPage = () => {
       <div className={styles.section}>
         <div className={styles.planningAWarehouseOrLogistParent}>
           <div className={styles.planningAWarehouse}>
-            Planning a Warehouse or Logistics Facility in South India?
-            <br />
+            <span className={styles.ctaTitleDesktop}>
+              <span className={styles.ctaTitleLine}>
+                Planning a Warehouse or Logistics{" "}
+              </span>
+              <span className={styles.ctaTitleLine}>Facility in South India?</span>
+            </span>
+            <span className={styles.ctaTitleMobile}>
+              <span className={styles.ctaTitleLine}>Planning a Warehouse </span>
+              <span className={styles.ctaTitleLine}>
+                or Logistics Facility in{" "}
+              </span>
+              <span className={styles.ctaTitleLine}>South India?</span>
+            </span>
           </div>
           <div className={styles.mekarksProjectCalendar}>
-            <span className={styles.subtitleLine}>
-              Slots fill up fast. Get a free site assessment, the right
-            </span>
-            <span className={styles.subtitleLine}>
-              {" "}
-              PEB recommendation, and a transparent estimate
-            </span>
-            <span className={styles.subtitleLine}>
-              {" "}
-              within 48 hours, no obligation.
-            </span>
+            Slots fill up fast. Get a free site assessment, the right PEB
+            recommendation, and a transparent estimate within 48 hours, no
+            obligation.
           </div>
         </div>
         <div className={styles.sectionChild} />
@@ -81,10 +84,10 @@ const CTA: NextPage = () => {
           <div className={styles.component4}>
             <Image
               className={styles.vectorIcon}
-              src={CTA_PHONE_ICON}
-              width={27}
-              height={27}
-              sizes="27px"
+              src="/images/industries/logistics/CTA/phone-icon.svg"
+              width={20}
+              height={20}
+              sizes="20px"
               alt="Phone icon"
             />
           </div>
@@ -158,7 +161,9 @@ const CTA: NextPage = () => {
       <div className={styles.frameParent3}>
         <div className={styles.whyWarehousesFromMekarkAreWrapper}>
           <b className={styles.whyWarehousesFrom}>
-            Why Warehouses from Mekark Are the Better Choice
+            <span className={styles.whyTitleLine}>Why Warehouses from</span>
+            <span className={styles.whyTitleLine}>Mekark Are the Better</span>
+            <span className={styles.whyTitleLine}>Choice</span>
           </b>
         </div>
         <div className={styles.mekarkIsOne}>

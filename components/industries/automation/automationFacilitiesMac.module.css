@@ -1,5 +1,151 @@
-/* Automation Facilities — Mac fluid vw (1201–1919), mirrors FMCG's
-   manufacturingSolutionsMac.module.css. XL (>=1920) / mobile unchanged. */
+/* Automation Facilities — Mac fluid vw (1201–1919) + FMCG-style mobile stack. */
+
+.titleLineFirst,
+.titleLineSecond {
+  display: block;
+}
+
+.mobileStack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 353px;
+  margin: 0 auto;
+}
+
+.mobileCard {
+  width: 100%;
+  max-width: 353px;
+  min-height: 279px;
+  height: auto;
+  padding: 8px;
+  gap: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: -2px 2px 6px rgba(30, 30, 30, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.mobileCardImage {
+  position: relative;
+  width: 100%;
+  max-width: 337px;
+  height: 178px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.mobileCardBody {
+  width: 100%;
+  gap: 8px;
+  padding: 0 4px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.mobileCardTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: #000;
+  text-align: left;
+}
+
+.mobileCardDesc {
+  margin: 0;
+  width: 100%;
+  max-width: 329px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 136%;
+  letter-spacing: 0;
+  color: #4c4c4c;
+  text-align: left;
+}
+
+@media (min-width: 769px) {
+  .mobileStack {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 28px 20px 40px !important;
+    background-color: #ffefef;
+  }
+
+  .sectionInner {
+    gap: 12px !important;
+  }
+
+  .headerBlock {
+    width: 100%;
+    max-width: 353px;
+    margin-bottom: 0;
+    gap: 12px !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .title {
+    width: 100%;
+    max-width: 353px;
+    min-height: 0;
+    font-size: 28px !important;
+    font-weight: 700;
+    line-height: 32px !important;
+    letter-spacing: -1px !important;
+    color: #000;
+    text-align: center;
+  }
+
+  .titleLineFirst,
+  .titleLineSecond {
+    display: block;
+    white-space: normal;
+  }
+
+  .subtitle {
+    width: 100%;
+    max-width: 353px;
+    margin-bottom: 0;
+    font-size: 14px !important;
+    font-weight: 400;
+    line-height: 150% !important;
+    letter-spacing: 0;
+    text-align: center;
+    color: #4c4c4c;
+  }
+
+  .mobileStack {
+    margin-top: 0;
+  }
+
+  .footer {
+    width: 100%;
+    max-width: 353px;
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 16px;
+    background-color: #fff;
+    border: 0.5px solid rgba(228, 0, 21, 0.5);
+    box-sizing: border-box;
+    font-size: 14px !important;
+    line-height: 150% !important;
+    text-align: center;
+    color: #4c4c4c;
+  }
+}
 
 @media (min-width: 1201px) and (max-width: 1919px) {
   .section {
@@ -86,9 +232,36 @@
 
   .footer {
     width: 100% !important;
-    max-width: 88.5417vw !important;
+    max-width: 91.6667vw !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    background-color: #fff !important;
+    border: 0.02604vw solid rgba(228, 0, 21, 0.5) !important;
+    border-radius: 4.63542vw !important;
+    padding: 1.25vw 1.66667vw !important;
+    box-sizing: border-box !important;
     font-size: clamp(13px, 0.9375vw, 18px) !important;
     line-height: 1.35 !important;
     text-align: center !important;
+    color: #6e6e6e !important;
+  }
+}
+
+/* XL desktop — hubs callout card like data centre */
+@media (min-width: 1920px) {
+  .footer {
+    width: 100%;
+    max-width: 1760px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    border: 0.5px solid rgba(228, 0, 21, 0.5);
+    border-radius: 89px;
+    padding: 24px 32px;
+    box-sizing: border-box;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    color: #6e6e6e;
   }
 }

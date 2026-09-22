@@ -89,14 +89,16 @@ export default function FacilityConstructionSection() {
         <div className={styles.frameContainer}>
           {FACILITIES.map((facility) => (
             <div key={facility.title} className={styles.card}>
-              <Image
-                className={styles.frameChild}
-                src={facility.image}
-                width={262}
-                height={262}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 45vw, 14vw"
-                alt={facility.imageAlt}
-              />
+              <div className={styles.frameChildWrap}>
+                <Image
+                  className={styles.frameChild}
+                  src={facility.image}
+                  width={262}
+                  height={262}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 45vw, 14vw"
+                  alt={facility.imageAlt}
+                />
+              </div>
               <div className={styles.cardBody}>
                 <b className={styles.cardTitle}>{facility.title}</b>
                 <div className={styles.cardDesc}>{facility.description}</div>
@@ -105,20 +107,30 @@ export default function FacilityConstructionSection() {
           ))}
         </div>
 
-        <div className={styles.whereverYoureLocatedContainer}>
-          <span className={styles.footerLine}>
-            <span className={styles.whereverYoureLocated}>
-              Irrespective of where you&apos;re located in South India—{" "}
+        <div className={styles.overlayborder}>
+          <div className={styles.strongEveryContainer}>
+            <span className={styles.strongEveryContainer2}>
+              <span className={styles.bannerLine}>
+                <span className={styles.whereverYoureLocated}>
+                  Irrespective of where you&apos;re located in South India—{" "}
+                </span>
+                <b className={styles.mekarkEngineersEot}>
+                  Chennai, Sriperumbudur, Oragadam, Hosur, Coimbatore, Bengaluru,
+                  or Hyderabad
+                </b>
+                <span className={styles.whereverYoureLocated}>
+                  {" "}
+                  —Mekark&apos;s
+                </span>
+              </span>
+              <span className={styles.bannerLine}>
+                <span className={styles.whereverYoureLocated}>
+                  electronics facility engineering is customised to your
+                  production process and compliance requirements.
+                </span>
+              </span>
             </span>
-            <b className={styles.mekarkEngineersEot}>
-              Chennai, Sriperumbudur, Oragadam, Hosur, Coimbatore, Bengaluru, or
-              Hyderabad
-            </b>
-            <span className={styles.whereverYoureLocated}>
-              —Mekark&apos;s electronics facility engineering is customised to
-              your production process and compliance requirements.
-            </span>
-          </span>
+          </div>
         </div>
       </div>
     </div>

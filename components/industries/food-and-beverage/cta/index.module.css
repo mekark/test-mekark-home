@@ -37,9 +37,7 @@
   line-height: 1.2;
   font-weight: 700;
   letter-spacing: 0.05vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: block;
   font-size: 2.1vw;
 }
 .mekarksProjectCalendar {
@@ -332,6 +330,27 @@
 .line {
   display: block;
   white-space: nowrap;
+}
+.ctaTitleDesktop {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.ctaTitleMobile {
+  display: none;
+}
+.ctaTitleLine {
+  display: block;
+  white-space: nowrap;
+}
+.whyTitleLine {
+  display: inline;
+}
+.whyTitleLineMobile {
+  display: none;
+}
+.whyTitleLineDesktop {
+  display: inline;
 }
 .bottomBanner {
   position: absolute;
@@ -779,3 +798,330 @@
 }
 
 @import "../../shared/industryCtaMobileSection.patch.css";
+
+/* Food & Beverage mobile CTA / Why — textile Figma overrides (after shared patch) */
+@media (max-width: 768px) {
+  .cta {
+    padding: 28px 20px 40px;
+    background-color: #f6f6f6;
+    overflow: visible;
+  }
+  .section {
+    order: 1;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    min-height: 495px;
+    max-height: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 24px 18px 0;
+    border-radius: 16px;
+    gap: 16px;
+    box-sizing: border-box;
+  }
+  .planningAWarehouseOrLogistParent {
+    width: 100%;
+    max-width: 314px;
+    margin-top: 0;
+    gap: 12px;
+    align-items: center;
+    text-align: center;
+  }
+  .planningAWarehouse {
+    width: 100%;
+    max-width: 314px;
+    min-height: 96px;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0;
+    text-align: center;
+    justify-content: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .ctaTitleDesktop {
+    display: none;
+  }
+  .ctaTitleMobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .ctaTitleLine {
+    display: block;
+    white-space: nowrap;
+  }
+  .mekarksProjectCalendar {
+    width: 100%;
+    max-width: 314px;
+    min-height: 72px;
+    margin-top: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    color: #ccc6c6;
+    display: block;
+  }
+  .workerVisual {
+    margin-top: auto;
+    height: 210px;
+    max-width: 100%;
+    width: 100%;
+  }
+  .eotCta1 {
+    height: 210px;
+    max-width: none;
+    transform: translateX(-50%) scale(1.03);
+    transform-origin: center bottom;
+  }
+  .sectionItem {
+    width: 125px;
+    height: 125px;
+    top: 9%;
+    transform: translateX(-40%);
+  }
+  .sectionInner {
+    max-height: 72%;
+  }
+  .cta2 {
+    width: 204px;
+    min-width: 204px;
+    max-width: 204px;
+    height: 44px;
+    min-height: 44px;
+    max-height: 44px;
+    padding: 10px 24px;
+    gap: 12px;
+    border-radius: 999px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    transform: none;
+    font-size: 14px;
+    color: #0e0e0e;
+  }
+  .talkToOur {
+    width: auto;
+    max-width: 120px;
+    height: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0;
+    color: #0e0e0e;
+    white-space: nowrap;
+  }
+  .component4 {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+  .vectorIcon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+  }
+
+  .frameParent3 {
+    order: 2;
+    width: 100%;
+    max-width: 350px;
+    margin: 32px auto 4px;
+    padding: 0 0 10px;
+    text-align: left;
+    font-size: 28px;
+    position: relative;
+    z-index: 3;
+    background-color: transparent;
+  }
+  .whyWarehousesFromMekarkAreWrapper {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+  }
+  .whyWarehousesFrom {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: 350px;
+    min-height: 108px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: -1px;
+    color: #000;
+    white-space: normal;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+  }
+  .whyTitleLine {
+    display: block;
+    white-space: nowrap;
+  }
+  .whyTitleLineDesktop {
+    display: none !important;
+  }
+  .whyTitleLineMobile {
+    display: block !important;
+    white-space: nowrap;
+  }
+  .mekarkIsOne {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: 350px;
+    min-height: 0;
+    height: auto;
+    margin-top: 12px;
+    padding-bottom: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0;
+    color: #4c4c4c;
+    justify-content: flex-start;
+    text-align: left;
+    overflow: visible;
+    z-index: 3;
+  }
+  .frameParent {
+    order: 3;
+    width: calc(100% + 40px);
+    max-width: none;
+    height: 220px;
+    margin: -28px -20px 20px;
+    overflow: hidden;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    outline: none;
+    background-color: #f6f6f6;
+    position: relative;
+    z-index: 1;
+  }
+  .imageWrapper {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    outline: none;
+    background-color: #f6f6f6;
+  }
+  .imageIcon {
+    width: 100%;
+    height: calc(100% + 2px);
+    margin-top: -1px;
+    object-fit: cover;
+    object-position: center 35%;
+    border: 0;
+    border-radius: 0;
+    outline: none;
+    box-shadow: none;
+    transform: translateZ(0);
+    -webkit-mask-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.45) 10%,
+      #000 32%
+    );
+    mask-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.45) 10%,
+      #000 32%
+    );
+  }
+  .frameChild {
+    display: block;
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 100%;
+    height: 42%;
+    border: 0;
+    background: linear-gradient(
+      180deg,
+      #f6f6f6 0%,
+      #f6f6f6 8%,
+      rgba(246, 246, 246, 0.65) 28%,
+      rgba(246, 246, 246, 0) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+  .frameGroup {
+    order: 4;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+    font-size: 18px;
+  }
+  .divsvcIconParent {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 14px;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 14px;
+    padding: 14px;
+    box-sizing: border-box;
+  }
+  .divsvcIcon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+  .lucidedraftingCompassIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .inHouseDesignEngineeringParent {
+    flex: 1;
+    min-width: 0;
+    gap: 6px;
+  }
+  .inHouseDesign {
+    width: 100%;
+    max-width: 265px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0;
+    color: #000;
+    text-align: left;
+  }
+  .cardDesc,
+  .everyPreEngineeredWarehouse {
+    width: 100%;
+    max-width: 269px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0;
+    color: #4c4c4c;
+    text-align: left;
+    display: block;
+  }
+  .bottomBanner {
+    order: 5;
+    width: 100%;
+    max-width: 350px;
+    margin: 28px auto 0;
+    border-radius: 16px;
+    padding: 16px;
+  }
+}

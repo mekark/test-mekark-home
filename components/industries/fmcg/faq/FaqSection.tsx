@@ -63,7 +63,8 @@ export function FaqSection() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          Frequently Asked Questions
+          <span className={macStyles.faqTitleLine}>Frequently Asked </span>
+          <span className={macStyles.faqTitleLine}>Questions</span>
         </motion.h2>
 
         <div className={`flex flex-col gap-10 lg:flex-row lg:gap-10 ${macStyles.columns}`}>

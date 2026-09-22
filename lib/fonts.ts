@@ -10,5 +10,5 @@ export const manrope = Manrope({
 export const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
-  weight: ["700", "900"],
+  weight: ["500", "600", "700", "900"],
 });

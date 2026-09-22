@@ -200,30 +200,120 @@
 
 @media (max-width: 768px) {
   	.industriesWeServe {
-    		padding: 32px 16px 40px;
+    		width: 100%;
+    		background-color: #fff0f1;
+    		padding: 28px 20px 40px;
+    		box-sizing: border-box;
   	}
   	.industrialWarehouseConstructParent {
-    		font-size: 26px;
-    		margin-bottom: 24px;
+    		width: 100%;
+    		max-width: 353px;
+    		font-size: 28px;
+    		margin-bottom: 20px;
+    		gap: 12px;
+    		align-items: center;
+    		text-align: center;
   	}
   	.industrialWarehouseConstruct {
-    		line-height: 34px;
+    		width: 100%;
+    		max-width: 353px;
+    		min-height: 96px;
+    		font-size: 28px;
+    		font-weight: 700;
+    		line-height: 32px;
+    		letter-spacing: -1px;
+    		color: #000;
+    		text-align: center;
   	}
   	.ourPreEngineeredWarehouse {
+    		width: 100%;
+    		max-width: 353px;
+    		min-height: 63px;
     		font-size: 14px;
+    		font-weight: 400;
+    		line-height: 150%;
+    		letter-spacing: 0;
+    		text-align: center;
+    		color: #4c4c4c;
+  	}
+  	.frameParent {
+    		width: 100%;
+    		max-width: 353px;
+    		gap: 16px;
+    		margin-bottom: 20px;
   	}
   	.frameGroup {
     		grid-template-columns: 1fr;
+    		gap: 16px;
+  	}
+  	.rectangleParent,
+  	.rectangleContainer {
+    		width: 100%;
+    		max-width: 353px;
+    		min-height: 279px;
+    		height: auto;
+    		padding: 8px;
+    		gap: 10px;
+    		border-radius: 10px;
+    		box-shadow: -2px 2px 6px rgba(30, 30, 30, 0.1);
+    		align-items: flex-start;
+    		box-sizing: border-box;
   	}
   	.frameChild {
-    		height: 180px;
+    		width: 100%;
+    		max-width: 337px;
+    		height: 178px;
+    		border-radius: 7px;
+    		object-fit: cover;
+  	}
+  	.fmcgRetailParent {
+    		width: 100%;
+    		gap: 8px;
+    		padding: 0 4px 6px;
+    		align-items: flex-start;
+    		text-align: left;
+  	}
+  	.fmcgRetail {
+    		width: auto;
+    		max-width: 100%;
+    		min-height: 25px;
+    		font-size: 18px;
+    		font-weight: 700;
+    		line-height: 100%;
+    		letter-spacing: 0;
+    		color: #000;
+    		text-align: left;
+  	}
+  	.distributionWarehouseBuildin,
+  	.multiTenantLogisticsFacilit {
+    		width: 100%;
+    		max-width: 329px;
+    		min-height: 38px;
+    		font-size: 14px;
+    		font-weight: 400;
+    		line-height: 136%;
+    		letter-spacing: 0;
+    		color: #4c4c4c;
+    		text-align: left;
+    		white-space: normal;
   	}
   	.overlayborder {
+    		width: 100%;
+    		max-width: 353px;
     		padding: 16px;
     		border-radius: 16px;
   	}
   	.strongEveryContainer {
-    		font-size: 13px;
-    		line-height: 20px;
+    		font-family: Inter, var(--font-inter), Manrope, sans-serif;
+    		font-size: 14px;
+    		font-weight: 400;
+    		line-height: 150%;
+    		letter-spacing: 0;
+    		text-align: center;
+    		color: #4c4c4c;
+    		white-space: normal;
+  	}
+  	.span {
+    		color: #4c4c4c;
   	}
 }

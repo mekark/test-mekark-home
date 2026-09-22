@@ -44,6 +44,16 @@
   text-align: center;
   white-space: nowrap;
 }
+.processTitleLine {
+  display: inline;
+}
+.desktopProcess {
+  width: 100%;
+  z-index: 1;
+}
+.desktopStepGroup {
+  display: contents;
+}
 .frameParent {
   width: 100%;
   display: flex;
@@ -97,19 +107,6 @@
   margin-top: 4.5vw;
   align-self: flex-start;
 }
-.designEngineeringParent {
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.52083vw;
-  font-size: 0.9375vw;
-  color: #3c3938;
-}
-.designEngineering {
-  position: relative;
-  font-weight: 700;
-}
 .structuralDesignLoad {
   width: 12.7083vw;
   position: relative;
@@ -128,22 +125,6 @@
   display: flex;
   align-items: center;
 }
-.frameDiv {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 0.52083vw;
-  min-width: 0;
-}
-.onSiteErectionParent {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.72917vw;
-  font-size: 0.9375vw;
-  color: #3c3938;
-}
 .geotechnicalAssessmentRegul2 {
   width: 12.9688vw;
   position: relative;
@@ -153,12 +134,6 @@
   display: flex;
   align-items: center;
 }
-.vectorParent {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.35417vw;
-  min-width: 0;
-}
 .snagListClearance {
   width: 12.7604vw;
   position: relative;
@@ -167,6 +142,88 @@
   color: #555;
   display: flex;
   align-items: center;
+}
+
+.mobileProcess {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 640px;
+  position: relative;
+  z-index: 1;
+}
+
+.mobileStepItem {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.mobileStep {
+  display: flex;
+  gap: 16px;
+  position: relative;
+  align-items: flex-start;
+}
+
+.mobileStepNumber {
+  flex-shrink: 0;
+  width: 36px;
+  font-family: var(--font-montserrat), Montserrat, sans-serif;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1;
+  color: #f01d23;
+}
+
+.mobileStepContent {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mobileStepTitle {
+  margin: 0;
+  font-family: var(--font-montserrat), Montserrat, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 128%;
+  color: #111;
+}
+
+.mobileStepDescription {
+  margin: 0;
+  font-family: Manrope, var(--font-manrope), sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 136%;
+  letter-spacing: 0;
+  color: #4c4c4c;
+}
+
+.mobileDescLine {
+  display: block;
+}
+
+.mobileStepArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px 0 16px;
+  box-sizing: border-box;
+}
+
+.mobileStepArrow svg {
+  display: block;
+  width: 24px;
+  height: 36px;
+  flex-shrink: 0;
+  transform: translateY(-8px);
 }
 
 @media (max-width: 1200px) {
@@ -191,23 +248,16 @@
     gap: 24px 20px;
     font-size: 32px;
   }
-  .parent,
-  .frameDiv,
-  .vectorParent {
+  .parent {
     flex: 1 1 220px;
     max-width: 280px;
-  }
-  .vectorParent {
-    gap: 16px;
   }
   .frameChild {
     width: 40px;
     height: 12px;
     margin-top: 24px;
   }
-  .siteEvaluationFeasibilityParent,
-  .designEngineeringParent,
-  .onSiteErectionParent {
+  .siteEvaluationFeasibilityParent {
     font-size: 16px;
     gap: 8px;
   }
@@ -226,106 +276,100 @@
   .grid1Parent {
     width: 100%;
     max-width: 100%;
-    padding: 40px 20px 40px;
-    font-size: 24px;
+    min-height: 885px;
+    padding: 28px 20px 40px;
+    font-size: 28px;
     overflow: hidden;
     box-sizing: border-box;
+    background-color: #fafafa;
   }
   .grid1IconWrap {
-    height: 50%;
+    display: none;
   }
   .ourWarehouseProjectExecutioWrapper {
-    margin-bottom: 28px;
-    padding: 0 4px;
+    width: 100%;
+    max-width: 350px;
+    min-height: 64px;
+    margin: 0 auto 24px;
+    padding: 0;
   }
   .ourWarehouseProjectExecutio {
-    line-height: 32px;
-    white-space: normal;
     width: 100%;
-  }
-  .frameParent {
-    position: relative;
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
+    max-width: 350px;
     font-size: 28px;
-    gap: 28px;
-    padding-left: 28px;
-    box-sizing: border-box;
-  }
-  .frameParent::before {
-    content: "";
-    position: absolute;
-    left: 5px;
-    top: 12px;
-    bottom: 12px;
-    width: 2px;
-    background: #e3e4e7;
-    z-index: 0;
-  }
-  .parent,
-  .frameDiv {
-    position: relative;
-    flex: none;
-    max-width: none;
-    width: 100%;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 14px;
-  }
-  .parent::before,
-  .frameDiv::before {
-    content: "";
-    position: absolute;
-    left: -27px;
-    top: 8px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #f01d23;
-    border: 2px solid #fff;
-    box-shadow: 0 0 0 2px rgba(240, 29, 35, 0.25);
-    box-sizing: border-box;
-    z-index: 1;
-  }
-  .vectorParent {
-    flex: none;
-    max-width: none;
-    width: 100%;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -1px;
+    white-space: normal;
+    text-align: center;
+    display: flex;
     flex-direction: column;
-    align-items: stretch;
-    gap: 28px;
+    align-items: center;
+    color: #000;
   }
-  .div {
-    flex-shrink: 0;
-    min-width: 42px;
-    line-height: 1;
-    padding-top: 2px;
+  .processTitleLine {
+    display: block;
+    white-space: nowrap;
   }
-  .siteEvaluationFeasibilityParent,
-  .designEngineeringParent,
-  .onSiteErectionParent {
-    width: auto;
-    flex: 1;
-    min-width: 0;
-    font-size: 15px;
-    gap: 6px;
-  }
-  .siteEvaluation,
-  .designEngineering {
-    width: 100%;
-  }
-  .geotechnicalAssessmentRegul,
-  .structuralDesignLoad,
-  .precisionManufacturingAt,
-  .geotechnicalAssessmentRegul2,
-  .snagListClearance {
-    width: 100%;
-    max-width: 100%;
-    font-size: 13px;
-    line-height: 20px;
-  }
-  .frameChild {
+  .desktopProcess {
     display: none;
+  }
+  .mobileProcess {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    gap: 0;
+  }
+  .mobileStep {
+    width: 100%;
+    max-width: 350px;
+    min-height: 112px;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .mobileStepNumber {
+    width: 36px;
+    min-height: 34px;
+    font-family: var(--font-montserrat), Montserrat, sans-serif;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 100%;
+    color: #f01d23;
+  }
+  .mobileStepContent {
+    width: 100%;
+    max-width: 298px;
+    gap: 4px;
+  }
+  .mobileStepTitle {
+    width: 100%;
+    max-width: 298px;
+    min-height: 0;
+    font-family: var(--font-montserrat), Montserrat, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 128%;
+    color: #111;
+  }
+  .mobileStepDescription {
+    width: 100%;
+    max-width: 298px;
+    min-height: 0;
+    font-family: Manrope, var(--font-manrope), sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 136%;
+    letter-spacing: 0;
+    color: #4c4c4c;
+  }
+  .mobileStepArrow {
+    padding: 12px 0 16px;
+  }
+  .mobileStepArrow svg {
+    width: 24px;
+    height: 36px;
+    transform: translateY(-8px);
   }
 }

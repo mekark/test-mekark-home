@@ -3,11 +3,12 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeSlideUp } from "./motion";
+import whyMac from "./fmcgCtaWhyMac.module.css";
 
 export function WhyMekarkMobileImage() {
   return (
     <motion.div
-      className="relative h-[200px] w-full overflow-hidden rounded-2xl sm:h-[280px] lg:hidden"
+      className={`${whyMac.mobileImage} relative h-[200px] w-full overflow-hidden sm:h-[280px] lg:hidden`}
       custom={0.15}
       variants={fadeSlideUp}
       initial="hidden"
@@ -18,9 +19,10 @@ export function WhyMekarkMobileImage() {
         src="/images/industries/fmcg/fmcg-facility-cta/factory-floor.webp"
         alt="FMCG manufacturing facility interior with production equipment"
         fill
-        className="object-cover object-center"
+        className={`object-cover object-center ${whyMac.mobileImageImg}`}
         sizes="100vw"
       />
+      <div className={whyMac.mobileImageFade} aria-hidden />
     </motion.div>
   );
 }

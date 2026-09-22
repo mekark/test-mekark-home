@@ -9,9 +9,9 @@ const CompleteEOTCraneSolutionsEngineeredEndToEnd: NextPage = () => {
         <div className={styles.leftStickyOuter}>
           <div className={styles.leftSticky}>
             <b className={styles.completeWarehousing}>
-              <span className={styles.titleLine}>Complete Warehousing &</span>
-              <span className={styles.titleLine}>Logistics Solutions, Engineered</span>
-              <span className={styles.titleLine}>End-to-End</span>
+              <span className={styles.titleLine}>Complete Warehousing &amp; </span>
+              <span className={styles.titleLine}>Logistics Solutions, </span>
+              <span className={styles.titleLine}>Engineered End-to-End</span>
             </b>
             <div className={styles.asAFullService}>
               As a full-service, turnkey EPC warehouse solution provider in
@@ -30,6 +30,15 @@ const CompleteEOTCraneSolutionsEngineeredEndToEnd: NextPage = () => {
               height={1153}
               sizes="100vw"
               alt="Logistics project delivery timeline illustration"
+            />
+            <Image
+              className={styles.mobileSkeleton}
+              src="/images/mobile/mobile-skeleton.png"
+              width={48}
+              height={1028}
+              alt=""
+              aria-hidden="true"
+              unoptimized
             />
             <div className={styles.frameContainer}>
               <Image
@@ -123,21 +132,14 @@ const CompleteEOTCraneSolutionsEngineeredEndToEnd: NextPage = () => {
       </div>
       <div className={styles.overlayborder}>
         <div className={styles.strongEveryContainer}>
-          <span className={styles.bannerLine}>
-            <b className={styles.everyEotCrane}>
-              Every warehouse is custom-engineered
-            </b>
-            <span className={styles.aroundYourLoadRequirements}>
-              {" "}
-              around your storage volume, throughput needs, and operational
-              flow, ensuring
-            </span>
-          </span>
-          <span className={styles.bannerLine}>
-            <span className={styles.aroundYourLoadRequirements}>
-              maximum space efficiency and long-term structural reliability
-              for logistics operations across South India.
-            </span>
+          <b className={styles.everyEotCrane}>
+            Every warehouse is custom-engineered
+          </b>
+          <span className={styles.aroundYourLoadRequirements}>
+            {" "}
+            around your storage volume, throughput needs, and operational
+            flow, ensuring maximum space efficiency and long-term structural
+            reliability for logistics operations across South India.
           </span>
         </div>
       </div>

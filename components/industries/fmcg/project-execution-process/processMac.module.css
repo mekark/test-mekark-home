@@ -1,5 +1,181 @@
 /* Process — Mac fluid vw (1201–1919). XL/mobile unchanged. */
 
+.processTitleLine {
+  display: inline;
+}
+
+.mobileProcess {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 640px;
+  position: relative;
+  z-index: 1;
+}
+
+.mobileStepItem {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.mobileStep {
+  display: flex;
+  gap: 16px;
+  position: relative;
+  align-items: flex-start;
+}
+
+.mobileStepNumber {
+  flex-shrink: 0;
+  width: 36px;
+  font-family: var(--font-montserrat), Montserrat, sans-serif;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1;
+  color: #f01d23;
+}
+
+.mobileStepContent {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mobileStepTitle {
+  margin: 0;
+  font-family: var(--font-montserrat), Montserrat, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 128%;
+  color: #111;
+}
+
+.mobileStepDescription {
+  margin: 0;
+  font-family: Manrope, var(--font-manrope), sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 136%;
+  letter-spacing: 0;
+  color: #4c4c4c;
+}
+
+.mobileDescLine {
+  display: block;
+}
+
+.mobileStepArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px 0 16px;
+  box-sizing: border-box;
+}
+
+.mobileStepArrow svg {
+  display: block;
+  width: 24px;
+  height: 36px;
+  flex-shrink: 0;
+  transform: translateY(-8px);
+}
+
+@media (max-width: 1200px) {
+  .mobileProcess {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    gap: 0;
+  }
+
+  .title {
+    width: 100%;
+    max-width: 350px;
+    font-size: 28px !important;
+    font-weight: 700;
+    line-height: 32px !important;
+    letter-spacing: -1px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #000;
+  }
+
+  .processTitleLine {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .section {
+    background-color: #fafafa;
+    padding: 28px 20px 40px !important;
+  }
+
+  .headerBlock {
+    margin: 0 auto 24px;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .mobileStep {
+    width: 100%;
+    max-width: 350px;
+    min-height: 112px;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .mobileStepNumber {
+    width: 36px;
+    min-height: 34px;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 100%;
+    color: #f01d23;
+  }
+
+  .mobileStepContent {
+    width: 100%;
+    max-width: 298px;
+    gap: 4px;
+  }
+
+  .mobileStepTitle {
+    width: 100%;
+    max-width: 298px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 128%;
+    color: #111;
+  }
+
+  .mobileStepDescription {
+    width: 100%;
+    max-width: 298px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 136%;
+    color: #4c4c4c;
+  }
+
+  .mobileStepArrow {
+    padding: 12px 0 16px;
+  }
+
+  .gridBg {
+    display: none;
+  }
+}
+
 @media (min-width: 1201px) and (max-width: 1919px) {
   .section {
     padding-left: clamp(48px, 4.16667vw, 80px) !important;

@@ -7,16 +7,6 @@ import macStyles from "./ourSolutionsMac.module.css";
 export function SolutionsHeader() {
   return (
     <div className="flex flex-col gap-2.5">
-      <motion.p
-        className="text-xs font-semibold uppercase tracking-[0.14em] text-[#e50818] lg:hidden"
-        custom={0}
-        variants={fadeSlideUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        End-to-end EPC
-      </motion.p>
       <motion.h2
         className={`text-[28px] font-bold leading-tight text-black sm:text-[40px] lg:text-[46px] ${macStyles.headerTitle}`}
         custom={0}

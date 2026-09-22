@@ -343,6 +343,10 @@
   color: #f01d23;
 }
 
+.mobileImageFade {
+  display: none;
+}
+
 @media (max-width: 1200px) {
   .cta {
     aspect-ratio: auto;
@@ -549,64 +553,199 @@
   }
 }
 
+@import "../shared/industryCtaMobileSection.patch.css";
+
 @media (max-width: 768px) {
   .cta {
-    padding: 16px 16px 40px;
+    padding: 28px 20px 40px;
+    background-color: #f6f6f6;
+    overflow: visible;
     font-size: 24px;
+    display: flex;
+    flex-direction: column;
   }
 
-  .section {
-    padding: 20px 16px 24px;
-    border-radius: 16px;
-    gap: 16px;
-  }
-
-  .planningAWarehouse {
-    font-size: 22px;
-    line-height: 30px;
-  }
-
-  .mekarksProjectCalendar {
-    font-size: 14px;
-    line-height: 22px;
-  }
-
-  .cta2 {
-    justify-content: center;
-    padding: 14px 16px;
-    font-size: 15px;
-    gap: 10px;
+  .desktopCtaBanner {
+    display: none !important;
   }
 
   .frameParent3 {
-    margin: 32px 0 20px;
-    font-size: 24px;
+    order: 2;
+    width: 100%;
+    max-width: 350px;
+    margin: 24px auto 0;
+    padding: 0 0 4px;
+    text-align: left;
+    font-size: 28px;
+    position: relative;
+    z-index: 3;
+  }
+
+  .whyWarehousesFromMekarkAreWrapper {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
   }
 
   .whyWarehousesFrom {
-    line-height: 32px;
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: 350px;
+    min-height: 0;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: -1px;
+    color: #000;
+    white-space: normal;
+    text-align: left;
   }
 
   .mekarkIsOne {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: 350px;
+    margin-top: 2px;
+    padding-bottom: 2px;
     font-size: 14px;
-    line-height: 22px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0;
+    color: #4c4c4c;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .featuresArea {
+    order: 3;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
 
   .frameParent {
-    height: 200px;
-    margin: 0 0 28px;
+    order: 1;
+    width: calc(100% + 40px);
+    max-width: none;
+    height: 220px;
+    margin: -40px -20px 20px;
+    overflow: hidden;
+    border-radius: 0;
+    background-color: #f6f6f6;
+    position: relative;
+    z-index: 1;
+  }
+
+  .imageWrapper {
+    width: 100%;
+    height: calc(100% + 2px);
+    margin-top: -1px;
+    border-radius: 0;
+    background-position: center 35%;
+    -webkit-mask-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.45) 10%,
+      #000 32%
+    );
+    mask-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.45) 10%,
+      #000 32%
+    );
+  }
+
+  .mobileImageFade {
+    display: block;
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 100%;
+    height: 42%;
+    background: linear-gradient(
+      180deg,
+      #f6f6f6 0%,
+      #f6f6f6 8%,
+      rgba(246, 246, 246, 0.65) 28%,
+      rgba(246, 246, 246, 0) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .frameChild {
+    display: none;
+  }
+
+  .frameGroup {
+    order: 2;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+    font-size: 16px;
+  }
+
+  .divsvcIconParent {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 14px;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 14px;
+    padding: 14px;
+    box-sizing: border-box;
+  }
+
+  .divsvcIcon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  .lucidedraftingCompassIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .inHouseDesignEngineeringParent {
+    flex: 1;
+    min-width: 0;
+    gap: 6px;
+  }
+
+  .inHouseDesign {
+    line-height: 22px;
+    text-align: left;
+  }
+
+  .everyPreEngineeredWarehouse {
+    font-size: 14px;
+    line-height: 18px;
+    color: #4c4c4c;
+    text-align: left;
   }
 
   .overlay {
-    margin-top: 28px;
+    order: 5;
+    width: 100%;
+    max-width: 350px;
+    margin: 20px auto 0;
     padding: 16px;
     border-radius: 16px;
+    box-sizing: border-box;
   }
 
   .overlayText {
     font-size: 14px;
-    line-height: 22px;
+    line-height: 20px;
   }
 }
-
-@import "../shared/industryCtaMobileSection.patch.css";

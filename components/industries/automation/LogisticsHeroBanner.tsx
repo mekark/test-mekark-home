@@ -18,6 +18,15 @@ export default function LogisticsHeroBanner() {
         alt="Automation manufacturing facility with robotic assembly line"
         priority
       />
+      <Image
+        className={styles.mobileHeroImage}
+        src="/images/mobile/automation-mv.png"
+        width={941}
+        height={1672}
+        sizes="100vw"
+        alt="Automation manufacturing facility with robotic assembly line"
+        priority
+      />
       <div className={styles.divabsolute} />
       <div className={styles.div}>
         <h1 className={styles.leadingTitle}>
@@ -45,10 +54,19 @@ export default function LogisticsHeroBanner() {
           <div className={styles.ctaIcon}>
             <Image
               src="/images/industries/automation/arrow-right.svg"
-              alt="Arrow icon"
+              alt=""
               fill
               className={styles.ctaIconImg}
               sizes="20px"
+              aria-hidden="true"
+            />
+            <Image
+              className={styles.mobileArrowIcon}
+              src="/images/mobile/component-4.png"
+              width={24}
+              height={24}
+              alt=""
+              aria-hidden="true"
             />
           </div>
         </button>

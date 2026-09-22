@@ -75,7 +75,7 @@ const faqs = [
     answer:
       "Yes. Every facility is designed using STAAD Pro, TEKLA, and Autodesk, and delivered to ISO-certified quality and safety standards.",
   },
-];
+] as const;
 
 const leftFaqs = faqs.slice(0, 5);
 const rightFaqs = faqs.slice(5);
@@ -88,40 +88,42 @@ type FaqItemProps = {
   onToggle: () => void;
 };
 
-const FaqItem = ({ num, question, answer, isOpen, onToggle }: FaqItemProps) => (
-  <div className={`${styles.divreveal} ${isOpen ? styles.divrevealOpen : ""}`}>
-    <button
-      type="button"
-      className={`${styles.buttonradix} ${isOpen ? styles.buttonradixOpen : ""}`}
-      aria-expanded={isOpen}
-      onClick={onToggle}
-    >
-      <div className={styles.spanflex}>
-        <b className={styles.b}>{num}</b>
-        <div className={styles.question}>{question}</div>
-      </div>
-      <div
-        className={`${styles.component1} ${isOpen ? styles.component1Open : ""}`}
+function FaqItem({ num, question, answer, isOpen, onToggle }: FaqItemProps) {
+  return (
+    <div className={`${styles.divreveal} ${isOpen ? styles.divrevealOpen : ""}`}>
+      <button
+        type="button"
+        className={`${styles.buttonradix} ${isOpen ? styles.buttonradixOpen : ""}`}
+        aria-expanded={isOpen}
+        onClick={onToggle}
       >
-        <Image
-          className={styles.vectorIcon}
-          src="/images/industries/electronics/faq/chevron.svg"
-          width={17}
-          height={17}
-          sizes="100vw"
-          alt="Expand section"
-        />
-      </div>
-    </button>
-    <div
-      className={`${styles.answerWrap} ${isOpen ? styles.answerWrapOpen : ""}`}
-    >
-      <div className={styles.answerInner}>
-        <p className={styles.answer}>{answer}</p>
+        <div className={styles.spanflex}>
+          <b className={styles.b}>{num}</b>
+          <div className={styles.question}>{question}</div>
+        </div>
+        <div
+          className={`${styles.component1} ${isOpen ? styles.component1Open : ""}`}
+        >
+          <Image
+            className={styles.vectorIcon}
+            src="/images/industries/logistics/faq/faq-chevron.svg"
+            width={17}
+            height={17}
+            sizes="100vw"
+            alt="Expand section"
+          />
+        </div>
+      </button>
+      <div
+        className={`${styles.answerWrap} ${isOpen ? styles.answerWrapOpen : ""}`}
+      >
+        <div className={styles.answerInner}>
+          <p className={styles.answer}>{answer}</p>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+}
 
 export default function Faq() {
   const [openNum, setOpenNum] = useState<string | null>("01");
@@ -131,11 +133,12 @@ export default function Faq() {
   };
 
   return (
-    <div className={styles.faq}>
+    <section id="faq" className={styles.faq}>
       <div className={styles.frameParent}>
         <div className={styles.frequentlyAskedQuestionsWrapper}>
           <b className={styles.frequentlyAskedQuestions}>
-            Frequently Asked Questions
+            <span className={styles.faqTitleLine}>Frequently Asked </span>
+            <span className={styles.faqTitleLine}>Questions</span>
           </b>
         </div>
         <div className={styles.divspaceY3Parent}>
@@ -165,6 +168,6 @@ export default function Faq() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -33,6 +33,15 @@ const OurSolutions = () => {
                 sizes="100vw"
                 alt="Process timeline illustration"
               />
+              <Image
+                className={styles.mobileSkeleton}
+                src="/images/mobile/6CARD-SKELETON.png"
+                width={48}
+                height={1435}
+                alt=""
+                aria-hidden="true"
+                unoptimized
+              />
               <div className={styles.frameContainer}>
                 <Image
                   className={styles.rectangleIcon}

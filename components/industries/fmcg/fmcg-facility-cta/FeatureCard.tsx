@@ -70,11 +70,16 @@ export function FeatureCard({ feature, index }: FeatureCardProps) {
           className={`${industryMobileFeatureDescriptionClass} ${feature.descriptionWidth ?? feature.descriptionMaxWidth ?? ""}`}
         >
           {feature.descriptionLines ? (
-            feature.descriptionLines.map((line, lineIndex) => (
-              <span key={lineIndex} className="block lg:whitespace-nowrap">
-                {line}
+            <>
+              <span className="lg:hidden">{feature.description}</span>
+              <span className="hidden lg:contents">
+                {feature.descriptionLines.map((line, lineIndex) => (
+                  <span key={lineIndex} className="block whitespace-nowrap">
+                    {line}
+                  </span>
+                ))}
               </span>
-            ))
+            </>
           ) : (
             feature.description
           )}

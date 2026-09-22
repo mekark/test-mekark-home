@@ -34,11 +34,25 @@ export default function WhyMekarkSection() {
     <div id="why-mekark" className={styles.cta}>
       <div className={styles.section}>
         <div className={styles.planningAWarehouseOrLogistParent}>
-          <p className={styles.planningAWarehouse}>
-            Planning a Spinning Mill or Garment Factory?
-            <br />
-            Your Project Slot Won&apos;t Stay Open Long.
-          </p>
+          <div className={styles.planningAWarehouse}>
+            <span className={styles.ctaTitleDesktop}>
+              <span className={styles.ctaTitleLine}>
+                Planning a Spinning Mill or Garment Factory?{" "}
+              </span>
+              <span className={styles.ctaTitleLine}>
+                Your Project Slot Won&apos;t Stay Open Long.
+              </span>
+            </span>
+            <span className={styles.ctaTitleMobile}>
+              <span className={styles.ctaTitleLine}>Planning a Spinning </span>
+              <span className={styles.ctaTitleLine}>Mill or Garment </span>
+              <span className={styles.ctaTitleLine}>Factory? Your Project </span>
+              <span className={styles.ctaTitleLine}>
+                Slot Won&apos;t Stay Open{" "}
+              </span>
+              <span className={styles.ctaTitleLine}>Long.</span>
+            </span>
+          </div>
           <p className={styles.mekarksProjectCalendar}>
             Mekark&apos;s project calendar fills up fast. Textile manufacturers who
             book a site consultation now lock in priority scheduling, current steel
@@ -128,7 +142,9 @@ export default function WhyMekarkSection() {
       <div className={styles.frameParent3}>
         <div className={styles.whyWarehousesFromMekarkAreWrapper}>
           <b className={styles.whyWarehousesFrom}>
-            Why Textile Factories from Mekark Are the Better Choice
+            <span className={styles.whyTitleLine}>Why Textile Factories from </span>
+            <span className={styles.whyTitleLine}>Mekark Are the Better </span>
+            <span className={styles.whyTitleLine}>Choice</span>
           </b>
         </div>
         <div className={styles.mekarkIsOne}>

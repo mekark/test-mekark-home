@@ -159,6 +159,15 @@
   	overflow: hidden;
   	max-height: 100%;
 }
+.titleLine {
+  	display: inline;
+}
+.mobileHeroImage {
+  	display: none;
+}
+.mobileArrowIcon {
+  	display: none;
+}
 
 @media (max-width: 1200px) {
   	.logisticsHeroBanner {
@@ -229,137 +238,179 @@
     		height: 694px;
     		min-height: 694px;
     		max-height: 694px;
-    		padding-left: 24px;
-    		padding-right: 24px;
+    		padding-left: 20px;
+    		padding-right: 20px;
     		display: flex;
     		flex-direction: column;
     		justify-content: flex-start;
     		align-items: stretch;
     		box-sizing: border-box;
+    		background-color: #060606;
   	}
-  	.warehouseWithManRedHatIsIcon {
+  	.warehouseWithManRedHatIsIcon,
+  	.wrapperAerialViewOfAModer {
     		display: none;
   	}
-  	.wrapperAerialViewOfAModer {
-    		top: 36%;
-    		bottom: 0;
-    		left: 0;
-    		right: 0;
-    		width: 100%;
-    		height: auto;
-  	}
-  	.aerialViewOfAModernPreEn {
-    		object-fit: cover;
-    		object-position: center 62%;
-    		transform: scale(1);
-    		transform-origin: center bottom;
+  	.mobileHeroImage {
+    		display: block !important;
+    		position: absolute !important;
+    		top: 135px !important;
+    		left: 0 !important;
+    		right: 0 !important;
+    		bottom: 0 !important;
+    		width: 100% !important;
+    		height: auto !important;
+    		max-width: none !important;
+    		object-fit: cover !important;
+    		object-position: center 35% !important;
+    		transform: none;
+    		z-index: 0;
   	}
   	.divabsolute {
     		background: linear-gradient(
     			180deg,
     			#060606 0%,
-    			#060606 26%,
-    			rgba(6, 6, 6, 0.94) 40%,
-    			rgba(6, 6, 6, 0.62) 54%,
-    			rgba(6, 6, 6, 0.22) 68%,
-    			transparent 84%
+    			#060606 28%,
+    			rgba(6, 6, 6, 0.92) 42%,
+    			rgba(6, 6, 6, 0.55) 55%,
+    			rgba(6, 6, 6, 0.18) 68%,
+    			transparent 80%
     		);
     		pointer-events: none;
+    		z-index: 1;
   	}
   	.div {
     		position: relative;
     		z-index: 2;
     		width: 100%;
-    		max-width: none;
-    		padding: 88px 0 16px;
+    		max-width: 350px;
+    		margin: 0 auto;
+    		padding: 88px 0 0; /* nav 60px + 28px gap */
     		gap: 12px;
     		flex: 0 0 auto;
     		align-items: flex-start;
     		box-sizing: border-box;
   	}
   	.leadingPreEngineeredWarehou {
-    		font-size: 25px;
+    		width: 100%;
+    		max-width: 350px;
+    		min-height: 0;
+    		height: auto;
+    		font-size: 30px;
     		font-weight: 700;
-    		line-height: 100%;
-    		max-width: 342px;
+    		font-style: normal;
+    		line-height: 36px;
+    		letter-spacing: 0;
+    		color: #fff;
+    		display: flex;
+    		flex-direction: column;
+    		align-items: flex-start;
+    		justify-content: flex-start;
+  	}
+  	.titleLine {
+    		display: block;
+    		white-space: nowrap;
   	}
   	.logisticsIndustrialStructuWrapper {
-    		font-size: 15px;
-    		height: auto;
     		width: 100%;
+    		max-width: 322px;
+    		height: 50px;
+    		font-size: 18px;
+    		background-color: #fff;
+    		color: #c4161c;
+    		overflow: hidden;
+    		flex-shrink: 0;
   	}
   	.logisticsIndustrialStructuWrapper::before {
     		width: 4px;
+    		background-color: #c4161c;
   	}
   	.logisticsIndustrial {
     		position: relative;
-    		top: auto;
-    		left: auto;
-    		width: auto;
-    		padding: 8px 12px 8px 16px;
-    		line-height: 1.35;
-  	}
-  	.mekarkIsATrustedPreEngineWrapper {
-    		width: 342px;
-    		max-width: 342px;
-    		font-family: Manrope, var(--font-manrope), sans-serif;
-    		font-size: 11px;
-    		font-weight: 400;
-    		line-height: normal;
-    		color: #f3f3f3;
-    		height: auto;
-  	}
-  	.mekarkIsA {
-    		font-family: inherit;
-    		font-size: 11px;
-    		font-weight: 400;
-    		line-height: normal;
-    		color: inherit;
+    		top: 3px;
+    		left: 10px;
+    		width: calc(100% - 10px);
+    		padding: 0;
+    		font-size: 18px;
+    		font-weight: 700;
+    		line-height: 1;
+    		letter-spacing: 0;
+    		color: #c4161c;
     		display: flex;
     		align-items: center;
+    		height: calc(100% - 6px);
+  	}
+  	.mekarkIsATrustedPreEngineWrapper {
+    		width: 100%;
+    		max-width: 350px;
+    		min-height: 0;
+    		height: auto;
+    		font-family: Manrope, var(--font-manrope), sans-serif;
+    		font-size: 14px;
+    		font-weight: 300;
+    		line-height: 1.35;
+    		letter-spacing: 0;
+    		color: #f3f3f3;
+  	}
+  	.mekarkIsA {
     		position: relative;
-    		width: 342px;
-    		max-width: 342px;
+    		width: 100%;
+    		max-width: 350px;
+    		font-family: inherit;
+    		font-size: 14px;
+    		font-weight: 300;
+    		line-height: 1.35;
+    		letter-spacing: 0;
+    		color: inherit;
+    		display: block;
   	}
   	.component5 {
-    		width: auto;
-    		max-width: 300px;
+    		width: fit-content;
+    		min-width: unset;
+    		max-width: 230px;
+    		height: 44px;
+    		min-height: 44px;
+    		max-height: 44px;
+    		flex: 0 0 auto;
     		align-self: flex-start;
-    		margin-top: 4px;
+    		margin-top: 2px;
     		margin-left: 0;
-    		margin-right: auto;
+    		margin-right: 0;
     		box-sizing: border-box;
     		padding: 10px 20px;
-    		gap: 7.1px;
+    		gap: 8px;
     		font-size: 14px;
     		font-family: var(--font-manrope), Manrope, sans-serif;
-    		font-weight: 500;
+    		font-weight: 600;
     		border-radius: 5.65px;
     		box-shadow: 0px 5.652px 22.61px rgba(196, 22, 28, 0.3);
-    		min-height: auto;
     		justify-content: center;
   	}
   	.text {
     		position: relative;
     		font-size: 14px;
     		line-height: 16.96px;
-    		font-weight: 500;
+    		font-weight: 600;
     		font-family: var(--font-manrope), Manrope, sans-serif;
     		color: #fff;
     		white-space: nowrap;
     		text-align: left;
+    		vertical-align: middle;
   	}
   	.component4 {
-    		width: 18px;
-    		height: 18px;
+    		position: relative;
+    		width: 24px;
+    		height: 24px;
+    		margin-left: 0;
+    		overflow: visible;
   	}
   	.vectorIcon {
-    		position: relative;
-    		top: auto;
-    		right: auto;
-    		bottom: auto;
-    		left: auto;
-    		width: 100%;
-    		height: 100%;
+    		display: none;
+  	}
+  	.mobileArrowIcon {
+    		display: block;
+    		width: 24px;
+    		height: 24px;
+    		object-fit: contain;
   	}
 }

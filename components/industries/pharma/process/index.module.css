@@ -1,331 +1,354 @@
 .grid1Parent {
-  width: 100%;
-  position: relative;
-  background-color: #fff;
-  overflow: hidden;
-  padding: 3.4vw 4.16667vw 2.5vw;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-shrink: 0;
-  text-align: left;
-  font-size: 2.7776vw;
-  color: #111;
-  font-family: var(--font-manrope), Manrope, sans-serif;
+	width: 100%;
+	position: relative;
+	background-color: #fff;
+	overflow: hidden;
+	padding: 3.4vw 4.16667vw 2.5vw;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-shrink: 0;
+	text-align: left;
+	font-size: 2.7776vw;
+	color: #111;
+	font-family: var(--font-manrope), Manrope, sans-serif;
 }
 .grid1IconWrap {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 18.1771vw;
-  z-index: 0;
-  pointer-events: none;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 18.1771vw;
+	z-index: 0;
+	pointer-events: none;
 }
 .grid1Icon {
-  object-fit: cover;
-  object-position: bottom center;
-  opacity: 0.08;
+	object-fit: cover;
+	object-position: bottom center;
+	opacity: 0.08;
 }
 .ourWarehouseProjectExecutioWrapper {
-  width: 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 3.3177vw;
-  z-index: 1;
+	width: 100%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 3.3177vw;
+	z-index: 1;
 }
 .ourWarehouseProjectExecutio {
-  position: relative;
-  letter-spacing: -0.06927vw;
-  line-height: 3.4026vw;
-  text-align: center;
-  white-space: nowrap;
+	position: relative;
+	letter-spacing: -0.06927vw;
+	line-height: 3.4026vw;
+	text-align: center;
+	white-space: nowrap;
+}
+.processTitleLine {
+	display: inline;
 }
 .frameParent {
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  gap: 1.45833vw;
-  flex-shrink: 0;
-  font-size: 2.05vw;
-  color: #f01d23;
-  font-family: var(--font-manrope), Manrope, sans-serif;
-  z-index: 1;
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+	gap: 1.45833vw;
+	flex-shrink: 0;
+	font-size: 2.05vw;
+	color: #f01d23;
+	font-family: var(--font-manrope), Manrope, sans-serif;
+	z-index: 1;
 }
 .parent {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 0.72917vw;
-  min-width: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 0.72917vw;
+	min-width: 0;
 }
 .div {
-  position: relative;
-  font-weight: 700;
+	position: relative;
+	font-weight: 700;
 }
 .siteEvaluationFeasibilityParent {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.52083vw;
-  font-size: 0.9375vw;
-  color: #3c3938;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.52083vw;
+	font-size: 0.9375vw;
+	color: #3c3938;
 }
 .siteEvaluation {
-  align-self: stretch;
-  position: relative;
-  font-weight: 700;
+	align-self: stretch;
+	position: relative;
+	font-weight: 700;
 }
 .geotechnicalAssessmentRegul {
-  width: 14.2708vw;
-  position: relative;
-  font-size: 0.83333vw;
-  line-height: 1.11094vw;
-  color: #555;
-  display: flex;
-  align-items: center;
+	width: 14.2708vw;
+	position: relative;
+	font-size: 0.83333vw;
+	line-height: 1.11094vw;
+	color: #555;
+	display: flex;
+	align-items: center;
 }
 .frameChild {
-  height: 1.02083vw;
-  width: 3.47396vw;
-  position: relative;
-  flex-shrink: 0;
-  margin-top: 4.5vw;
-  align-self: flex-start;
+	height: 1.02083vw;
+	width: 3.47396vw;
+	position: relative;
+	flex-shrink: 0;
+	margin-top: 4.5vw;
+	align-self: flex-start;
 }
-.designEngineeringParent {
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.52083vw;
-  font-size: 0.9375vw;
-  color: #3c3938;
+
+.desktopProcess {
+	width: 100%;
+	z-index: 1;
 }
-.designEngineering {
-  position: relative;
-  font-weight: 700;
+
+.desktopStepGroup {
+	display: contents;
 }
-.structuralDesignLoad {
-  width: 12.7083vw;
-  position: relative;
-  font-size: 0.83333vw;
-  line-height: 1.11094vw;
-  color: #555;
-  display: flex;
-  align-items: center;
+
+.mobileProcess {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	max-width: 640px;
+	position: relative;
+	z-index: 1;
 }
-.precisionManufacturingAt {
-  width: 13.3854vw;
-  position: relative;
-  font-size: 0.83333vw;
-  line-height: 1.11094vw;
-  color: #555;
-  display: flex;
-  align-items: center;
+
+.mobileStepItem {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
 }
-.frameDiv {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 0.52083vw;
-  min-width: 0;
+
+.mobileStep {
+	display: flex;
+	gap: 16px;
+	position: relative;
+	align-items: flex-start;
 }
-.onSiteErectionParent {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.72917vw;
-  font-size: 0.9375vw;
-  color: #3c3938;
+
+.mobileStepNumber {
+	flex-shrink: 0;
+	width: 36px;
+	font-family: var(--font-montserrat), Montserrat, sans-serif;
+	font-size: 34px;
+	font-weight: 500;
+	line-height: 1;
+	color: #f01d23;
 }
-.geotechnicalAssessmentRegul2 {
-  width: 12.9688vw;
-  position: relative;
-  font-size: 0.83333vw;
-  line-height: 1.11094vw;
-  color: #555;
-  display: flex;
-  align-items: center;
+
+.mobileStepContent {
+	flex: 1;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
 }
-.vectorParent {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.35417vw;
-  min-width: 0;
+
+.mobileStepTitle {
+	margin: 0;
+	font-family: var(--font-montserrat), Montserrat, sans-serif;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 128%;
+	color: #111;
 }
-.snagListClearance {
-  width: 12.7604vw;
-  position: relative;
-  font-size: 0.83333vw;
-  line-height: 1.11094vw;
-  color: #555;
-  display: flex;
-  align-items: center;
+
+.mobileStepDescription {
+	margin: 0;
+	font-family: Manrope, var(--font-manrope), sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 136%;
+	letter-spacing: 0;
+	color: #4c4c4c;
+}
+
+.mobileDescLine {
+	display: block;
+	white-space: normal;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+.mobileStepArrow {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	padding: 14px 0 16px;
+	box-sizing: border-box;
+}
+
+.mobileStepArrow svg {
+	display: block;
+	width: 24px;
+	height: 36px;
+	flex-shrink: 0;
+	transform: translateY(-8px);
 }
 
 @media (max-width: 1200px) {
-  .grid1Parent {
-    padding: 48px 24px 32px;
-    font-size: 32px;
-  }
-  .grid1IconWrap {
-    height: 220px;
-  }
-  .ourWarehouseProjectExecutioWrapper {
-    margin-bottom: 32px;
-  }
-  .ourWarehouseProjectExecutio {
-    letter-spacing: -1px;
-    line-height: 40px;
-    white-space: normal;
-  }
-  .frameParent {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 24px 20px;
-    font-size: 32px;
-  }
-  .parent,
-  .frameDiv,
-  .vectorParent {
-    flex: 1 1 220px;
-    max-width: 280px;
-  }
-  .vectorParent {
-    gap: 16px;
-  }
-  .frameChild {
-    width: 40px;
-    height: 12px;
-    margin-top: 24px;
-  }
-  .siteEvaluationFeasibilityParent,
-  .designEngineeringParent,
-  .onSiteErectionParent {
-    font-size: 16px;
-    gap: 8px;
-  }
-  .geotechnicalAssessmentRegul,
-  .structuralDesignLoad,
-  .precisionManufacturingAt,
-  .geotechnicalAssessmentRegul2,
-  .snagListClearance {
-    width: 100%;
-    font-size: 14px;
-    line-height: 20px;
-  }
+	.grid1Parent {
+		padding: 40px 24px 48px;
+		font-size: 32px;
+	}
+	.grid1IconWrap {
+		height: 220px;
+	}
+	.ourWarehouseProjectExecutioWrapper {
+		margin-bottom: 32px;
+	}
+	.ourWarehouseProjectExecutio {
+		letter-spacing: -1px;
+		line-height: 40px;
+		white-space: normal;
+	}
+	.frameParent {
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 24px 20px;
+		font-size: 32px;
+	}
+	.parent {
+		flex: 1 1 220px;
+		max-width: 280px;
+	}
+	.frameChild {
+		width: 40px;
+		height: 12px;
+		margin-top: 0;
+	}
+	.siteEvaluationFeasibilityParent {
+		font-size: 16px;
+		gap: 8px;
+	}
+	.geotechnicalAssessmentRegul {
+		width: 100%;
+		font-size: 14px;
+		line-height: 20px;
+	}
 }
 
 @media (max-width: 768px) {
-  .grid1Parent {
-    width: 100%;
-    max-width: 100%;
-    padding: 40px 20px 28px;
-    font-size: 24px;
-    overflow: hidden;
-    box-sizing: border-box;
-  }
-  .grid1IconWrap {
-    height: 50%;
-  }
-  .ourWarehouseProjectExecutioWrapper {
-    margin-bottom: 28px;
-    padding: 0 4px;
-  }
-  .ourWarehouseProjectExecutio {
-    line-height: 32px;
-    white-space: normal;
-    width: 100%;
-  }
-  .frameParent {
-    position: relative;
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-    font-size: 28px;
-    gap: 28px;
-    padding-left: 28px;
-    box-sizing: border-box;
-  }
-  .frameParent::before {
-    content: "";
-    position: absolute;
-    left: 5px;
-    top: 12px;
-    bottom: 12px;
-    width: 2px;
-    background: #e3e4e7;
-    z-index: 0;
-  }
-  .parent,
-  .frameDiv {
-    position: relative;
-    flex: none;
-    max-width: none;
-    width: 100%;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 14px;
-  }
-  .parent::before,
-  .frameDiv::before {
-    content: "";
-    position: absolute;
-    left: -27px;
-    top: 8px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #f01d23;
-    border: 2px solid #fff;
-    box-shadow: 0 0 0 2px rgba(240, 29, 35, 0.25);
-    box-sizing: border-box;
-    z-index: 1;
-  }
-  .vectorParent {
-    flex: none;
-    max-width: none;
-    width: 100%;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 28px;
-  }
-  .div {
-    flex-shrink: 0;
-    min-width: 42px;
-    line-height: 1;
-    padding-top: 2px;
-  }
-  .siteEvaluationFeasibilityParent,
-  .designEngineeringParent,
-  .onSiteErectionParent {
-    width: auto;
-    flex: 1;
-    min-width: 0;
-    font-size: 15px;
-    gap: 6px;
-  }
-  .siteEvaluation,
-  .designEngineering {
-    width: 100%;
-  }
-  .geotechnicalAssessmentRegul,
-  .structuralDesignLoad,
-  .precisionManufacturingAt,
-  .geotechnicalAssessmentRegul2,
-  .snagListClearance {
-    width: 100%;
-    max-width: 100%;
-    font-size: 13px;
-    line-height: 20px;
-  }
-  .frameChild {
-    display: none;
-  }
+	.grid1Parent {
+		width: 100%;
+		max-width: 100%;
+		min-height: 885px;
+		padding: 28px 20px 40px;
+		font-size: 28px;
+		overflow: hidden;
+		box-sizing: border-box;
+		background-color: #fafafa;
+	}
+	.grid1IconWrap {
+		display: none;
+	}
+	.ourWarehouseProjectExecutioWrapper {
+		width: 100%;
+		max-width: 350px;
+		min-height: 64px;
+		margin: 0 auto 24px;
+		padding: 0;
+	}
+	.ourWarehouseProjectExecutio {
+		width: 100%;
+		max-width: 350px;
+		font-size: 28px;
+		font-weight: 700;
+		line-height: 32px;
+		letter-spacing: -1px;
+		white-space: normal;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		color: #000;
+	}
+	.processTitleLine {
+		display: block;
+		white-space: nowrap;
+	}
+	.desktopProcess {
+		display: none;
+	}
+	.mobileProcess {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		max-width: 350px;
+		margin: 0 auto;
+		gap: 0;
+	}
+	.mobileStep {
+		width: 100%;
+		max-width: 350px;
+		min-height: 112px;
+		gap: 16px;
+		align-items: flex-start;
+	}
+	.mobileStepNumber {
+		width: 36px;
+		min-height: 34px;
+		font-family: var(--font-montserrat), Montserrat, sans-serif;
+		font-size: 34px;
+		font-weight: 500;
+		line-height: 100%;
+		color: #f01d23;
+	}
+	.mobileStepContent {
+		width: 100%;
+		max-width: 298px;
+		gap: 4px;
+	}
+	.mobileStepTitle {
+		width: 100%;
+		max-width: 298px;
+		min-height: 0;
+		font-family: var(--font-montserrat), Montserrat, sans-serif;
+		font-size: 18px;
+		font-weight: 600;
+		line-height: 128%;
+		color: #111;
+	}
+	.mobileStepDescription {
+		width: 100%;
+		max-width: 298px;
+		min-height: 0;
+		font-family: Manrope, var(--font-manrope), sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 136%;
+		letter-spacing: 0;
+		color: #4c4c4c;
+		white-space: normal;
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+	}
+	.mobileStepDescriptionWrap {
+		white-space: normal;
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+	}
+	.mobileDescLine {
+		display: block;
+		white-space: normal;
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+	}
+	.mobileStepArrow {
+		padding: 12px 0 16px;
+	}
+	.mobileStepArrow svg {
+		width: 24px;
+		height: 36px;
+		transform: translateY(-8px);
+	}
 }

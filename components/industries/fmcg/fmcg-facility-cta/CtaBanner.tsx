@@ -9,14 +9,26 @@ export function CtaBanner() {
     <>
       <div className="min-[1201px]:hidden">
         <IndustryMobileCtaBanner
-          title="Planning an FMCG Manufacturing Facility in South India?"
+          title={
+            <>
+              <span style={{ display: "block", whiteSpace: "nowrap" }}>
+                Planning an FMCG
+              </span>
+              <span style={{ display: "block", whiteSpace: "nowrap" }}>
+                Manufacturing Facility
+              </span>
+              <span style={{ display: "block", whiteSpace: "nowrap" }}>
+                in South India?
+              </span>
+            </>
+          }
           subtitle={
             <>
               Every week your production line isn&apos;t running is lost market
               share and a delayed product launch. Mekark&apos;s team will assess
               your process requirements, hygiene class, warehousing needs, and
-              utility load, and deliver a transparent budgetary estimate within 24
-              hours. No obligation, just honest expert advice.
+              utility load, and deliver a transparent budgetary estimate within
+              24 hours. No obligation, just honest expert advice.
             </>
           }
           buttonText="Talk to Our Expert"

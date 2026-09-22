@@ -21,13 +21,24 @@ export default function FooterCta() {
         <div className={styles.frameGroup}>
           <div className={styles.frameContainer}>
             <div className={styles.readyToStartYourLogisticsWrapper}>
-              <b className={styles.readyToStart}>
+              <b className={`${styles.readyToStart} ${styles.footerDesktop}`}>
                 Ready to Start Your Electronics Manufacturing Facility
                 Construction?
               </b>
+              <b className={`${styles.readyToStart} ${styles.footerMobile}`}>
+                <span className={styles.footerTitleLine}>
+                  Ready to Start Your{" "}
+                </span>
+                <span className={styles.footerTitleLine}>
+                  Electronics Manufacturing{" "}
+                </span>
+                <span className={styles.footerTitleLine}>
+                  Facility Construction?
+                </span>
+              </b>
             </div>
             <div className={styles.tellUsYourRequirementsSpaWrapper}>
-              <div className={styles.tellUsYour}>
+              <div className={`${styles.tellUsYour} ${styles.footerDesktop}`}>
                 <span className={styles.descLine}>
                   Tell us your process requirements: cleanroom class, production
                   size, location, and timeline. As a leading electronics
@@ -38,6 +49,13 @@ export default function FooterCta() {
                   India, Mekark will have a preliminary design and estimate
                   ready within 24 hours.
                 </span>
+              </div>
+              <div className={`${styles.tellUsYour} ${styles.footerMobile}`}>
+                Tell us your process requirements: cleanroom class, production
+                size, location, and timeline. As a leading electronics
+                manufacturing facility construction company and trusted cleanroom
+                builder in South India, Mekark will have a preliminary design and
+                estimate ready within 24 hours.
               </div>
             </div>
           </div>

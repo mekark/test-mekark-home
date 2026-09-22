@@ -25,13 +25,13 @@
   position: absolute;
   top: 50%;
   left: 25.25%;
-  transform: translateY(-50%);
+  transform: translateY(calc(-50% - 0.75vw));
   width: 47.23%;
   max-width: 836px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.625vw;
+  gap: 0.45vw;
   flex-shrink: 0;
   z-index: 2;
 }
@@ -43,7 +43,14 @@
   line-height: 1.271;
   font-weight: 700;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ctaTitleLine {
   display: block;
+  white-space: nowrap;
 }
 
 .mekarksProjectCalendar {

@@ -23,8 +23,16 @@ export default function HeroSection() {
       <div className={styles.heroGradient} aria-hidden />
       <div className={styles.content}>
         <h1 className={styles.title}>
-          Leading Textile Mill &amp; Factory Building Contractor in South India
+          <span className={styles.titleLine}>Leading Textile Mill &amp; </span>
+          <span className={styles.titleLine}>Factory Building </span>
+          <span className={styles.titleLine}>Contractor in South </span>
+          <span className={styles.titleLine}>India</span>
         </h1>
+        <div className={styles.highlight}>
+          <h2 className={styles.highlightText}>
+            Textile Mill &amp; Factory Structures by Mekark
+          </h2>
+        </div>
         <div className={styles.description}>
           Mekark is South India&apos;s trusted textile factory building
           contractor, constructing spinning mills, weaving sheds, garment
@@ -40,7 +48,16 @@ export default function HeroSection() {
               src="/images/industries/textile/hero/arrow.svg"
               width={18}
               height={18}
-              alt="Arrow icon"
+              alt=""
+              aria-hidden="true"
+            />
+            <Image
+              className={styles.mobileArrowIcon}
+              src="/images/mobile/component-4.png"
+              width={24}
+              height={24}
+              alt=""
+              aria-hidden="true"
             />
           </div>
         </button>

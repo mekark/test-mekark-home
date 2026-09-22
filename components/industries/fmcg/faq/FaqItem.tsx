@@ -46,7 +46,7 @@ export function FaqItem({
           aria-hidden
         >
           <Image
-            src="/images/industries/fmcg/faq/chevron-down.svg"
+          src="/images/industries/logistics/faq/faq-chevron.svg"
             alt="Expand section"
             fill
             className="object-contain"

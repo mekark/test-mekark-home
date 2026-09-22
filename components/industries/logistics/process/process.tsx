@@ -1,3 +1,5 @@
+"use client";
+
 import type { NextPage } from "next";
 import Image from "next/image";
 import styles from "./index.module.css";
@@ -8,30 +10,55 @@ const STEPS = [
     title: "Site Evaluation & Feasibility Study",
     description:
       "Geotechnical assessment, regulatory review, and budget feasibility for your logistics facility.",
+    descriptionLines: [
+      "Geotechnical assessment, regulatory",
+      "review, and budget feasibility for your",
+      "logistics facility.",
+    ],
   },
   {
     number: "02",
     title: "Design & Engineering",
     description:
       "Structural design, load calculations, layout planning, and MEP coordination, all handled in-house.",
+    descriptionLines: [
+      "Structural design, load calculations,",
+      "layout planning, and MEP coordination,",
+      "all handled in-house.",
+    ],
   },
   {
     number: "03",
     title: "Factory Fabrication",
     description:
       "Precision manufacturing at our plant - columns, rafters, purlins, and secondary components fabricated to exact specs.",
+    descriptionLines: [
+      "Precision manufacturing at our plant -",
+      "columns, rafters, purlins, and secondary",
+      "components fabricated to exact specs.",
+    ],
   },
   {
     number: "04",
     title: "On-Site Erection",
     description:
       "Geotechnical assessment, regulatory review, and budget feasibility for your logistics facility.",
+    descriptionLines: [
+      "Geotechnical assessment, regulatory",
+      "review, and budget feasibility for your",
+      "logistics facility.",
+    ],
   },
   {
     number: "05",
     title: "Handover & After-Sales",
     description:
       "Snag list clearance, documentation handover, and post-handover support for your warehouse.",
+    descriptionLines: [
+      "Snag list clearance, documentation",
+      "handover, and post-handover support",
+      "for your warehouse.",
+    ],
   },
 ] as const;
 
@@ -50,7 +77,8 @@ const Process: NextPage = () => {
       </div>
       <div className={styles.ourWarehouseProjectExecutioWrapper}>
         <b className={styles.ourWarehouseProjectExecutio}>
-          Our Warehouse Project Execution Process
+          <span className={styles.processTitleLine}>Our Warehouse Project </span>
+          <span className={styles.processTitleLine}>Execution Process</span>
         </b>
       </div>
 
@@ -74,7 +102,8 @@ const Process: NextPage = () => {
                   width={66.7}
                   height={19.6}
                   sizes="100vw"
-                  alt="Arrow icon"
+                  alt=""
+                  aria-hidden="true"
                 />
               ) : null}
             </div>
@@ -84,17 +113,45 @@ const Process: NextPage = () => {
 
       <ol className={styles.mobileProcess}>
         {STEPS.map((step, index) => (
-          <li
-            key={step.number}
-            className={`${styles.mobileStep} ${index < STEPS.length - 1 ? styles.mobileStepWithGap : ""}`}
-          >
-            <div className={styles.mobileStepBadge}>
-              <span className={styles.mobileStepNumber}>{step.number}</span>
+          <li key={step.number} className={styles.mobileStepItem}>
+            <div className={styles.mobileStep}>
+              <div className={styles.mobileStepNumber}>{step.number}</div>
+              <div className={styles.mobileStepContent}>
+                <h3 className={styles.mobileStepTitle}>{step.title}</h3>
+                <p className={styles.mobileStepDescription}>
+                  {step.descriptionLines.map((line) => (
+                    <span key={line} className={styles.mobileDescLine}>
+                      {line}
+                    </span>
+                  ))}
+                </p>
+              </div>
             </div>
-            <article className={styles.mobileStepCard}>
-              <h3 className={styles.mobileStepTitle}>{step.title}</h3>
-              <p className={styles.mobileStepDescription}>{step.description}</p>
-            </article>
+            {index < STEPS.length - 1 ? (
+              <div className={styles.mobileStepArrow} aria-hidden="true">
+                <svg
+                  width="24"
+                  height="36"
+                  viewBox="0 0 24 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 2V26"
+                    stroke="#8E8E8E"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M5 20L12 29L19 20"
+                    stroke="#8E8E8E"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+            ) : null}
           </li>
         ))}
       </ol>

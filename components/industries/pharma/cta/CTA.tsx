@@ -8,28 +8,26 @@ const CTA = () => {
       <div className={styles.section}>
         <div className={styles.planningAWarehouseOrLogistParent}>
           <div className={styles.planningAWarehouse}>
-            <span className={styles.line}>
-              Planning a Pharmaceutical Manufacturing
+            <span className={styles.ctaTitleDesktop}>
+              <span className={styles.ctaTitleLine}>
+                Planning a Pharmaceutical Manufacturing{" "}
+              </span>
+              <span className={styles.ctaTitleLine}>Facility in South India?</span>
             </span>
-            <span className={styles.line}>Facility in South India?</span>
-          </div>
-          <div className={styles.mekarksProjectCalendar}>
-            <span className={styles.line}>
-              Every week your production line isn&apos;t running is lost revenue
-              and regulatory risk. Mekark&apos;s
-            </span>
-            <span className={styles.line}>
-              team will assess your process requirements, cleanroom
-              classification, cold chain needs,
-            </span>
-            <span className={styles.line}>
-              and utility load, and deliver a transparent budgetary estimate
-              within 24 hours. No
-            </span>
-            <span className={styles.line}>
-              obligation, just honest expert advice.
+            <span className={styles.ctaTitleMobile}>
+              <span className={styles.ctaTitleLine}>Planning a </span>
+              <span className={styles.ctaTitleLine}>Pharmaceutical </span>
+              <span className={styles.ctaTitleLine}>Manufacturing Facility </span>
+              <span className={styles.ctaTitleLine}>in South India?</span>
             </span>
           </div>
+          <p className={styles.mekarksProjectCalendar}>
+            Every week your production line isn&apos;t running is lost revenue
+            and regulatory risk. Mekark&apos;s team will assess your process
+            requirements, cleanroom classification, cold chain needs, and
+            utility load, and deliver a transparent budgetary estimate within 24
+            hours. No obligation, just honest expert advice.
+          </p>
         </div>
         <div className={styles.sectionChild} />
         <a href={PHONE_HREF} className={styles.cta2}>
@@ -278,19 +276,16 @@ const CTA = () => {
       <div className={styles.frameParent3}>
         <div className={styles.whyWarehousesFromMekarkAreWrapper}>
           <b className={styles.whyWarehousesFrom}>
-            Why Pharma Facilities from Mekark Are the Better Choice
+            <span className={styles.whyTitleLine}>Why Pharma Facilities </span>
+            <span className={styles.whyTitleLine}>from Mekark Are the </span>
+            <span className={styles.whyTitleLine}>Better Choice</span>
           </b>
         </div>
         <div className={styles.mekarkIsOne}>
-          <span className={styles.line}>
-            Mekark is one of South India&apos;s most trusted pharmaceutical
-            manufacturing facility construction companies, offering in-house
-            design,
-          </span>
-          <span className={styles.line}>
-            fabrication, and MEP integration under one roof, not a general
-            contractor treating your plant like a generic industrial shed.
-          </span>
+          Mekark is one of South India&apos;s most trusted pharmaceutical
+          manufacturing facility construction companies, offering in-house
+          design, fabrication, and MEP integration under one roof, not a general
+          contractor treating your plant like a generic industrial shed.
         </div>
       </div>
 

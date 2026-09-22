@@ -1,74 +1,608 @@
-/* Mac fluid range only (1201–1919). xl at 1920+ unchanged. */
+/* FMCG hero — desktop fluid + textile-matched mobile. Image crop preserved. */
 
-@media (min-width: 1201px) and (max-width: 1919px) {
+.heroSection {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 640px;
+  align-items: flex-start;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.heroBgWrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.heroBgMotion {
+  position: absolute;
+  inset: 0;
+}
+
+.heroBgImage {
+  object-fit: cover;
+  object-position: right center;
+}
+
+.heroGradientMobile {
+  display: none;
+}
+
+.heroGradientDesktop {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: linear-gradient(
+    105.99deg,
+    rgb(6, 6, 6) 8.58%,
+    rgba(6, 6, 6, 0.8) 44.21%,
+    rgba(6, 6, 6, 0) 76.38%
+  );
+  pointer-events: none;
+}
+
+.contentWrap {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 16px;
+  padding: 112px 20px 48px;
+}
+
+.contentStack {
+  display: flex;
+  width: 100%;
+  max-width: 56rem;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.heroTitle {
+  max-width: 342px;
+  margin: 0;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+}
+
+.titleLine {
+  display: inline;
+}
+
+.heroDesktop {
+  display: block;
+}
+
+.heroMobile {
+  display: none !important;
+}
+
+.titleBreak {
+  display: none;
+}
+
+.highlightBreak {
+  display: none;
+}
+
+.descBreak {
+  display: none;
+}
+
+.highlightBox {
+  display: flex;
+  width: 100%;
+  max-width: 1090px;
+  align-items: center;
+  border-left: 4px solid #c4161c;
+  background-color: #fff;
+  padding: 10px 12px;
+  box-sizing: border-box;
+}
+
+.highlightBox.heroDesktop {
+  display: flex;
+}
+
+.highlightBox.heroMobile {
+  display: none !important;
+}
+
+.heroTitle.heroDesktop {
+  display: block;
+}
+
+.heroTitle.heroMobile {
+  display: none !important;
+}
+
+.heroDesc.heroDesktop {
+  display: block;
+}
+
+.heroDesc.heroMobile {
+  display: none !important;
+}
+
+.highlightTitle {
+  margin: 0;
+  font-family: var(--font-manrope), Manrope, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #c4161c;
+}
+
+.heroDesc {
+  width: 100%;
+  max-width: 1015px;
+  margin: 0;
+  font-family: var(--font-manrope), Manrope, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #f3f3f3;
+  text-align: left;
+}
+
+.heroBtn {
+  display: inline-flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  gap: 7.1px;
+  border: 0;
+  border-radius: 5.65px;
+  background-color: #c4161c;
+  padding: 10px 20px;
+  box-shadow: 0px 5.652px 22.61px rgba(196, 22, 28, 0.3);
+  color: #fff;
+}
+
+.heroBtnText {
+  font-family: var(--font-manrope), Manrope, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16.96px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.heroBtnIcon {
+  position: relative;
+  display: block;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.ctaIcon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.mobileArrowIcon {
+  display: none;
+}
+
+@media (min-width: 640px) {
   .heroSection {
-    min-height: clamp(700px, 46.875vw, 900px) !important;
+    min-height: 700px;
+    align-items: center;
   }
 
   .contentWrap {
-    padding-left: clamp(48px, 5.208vw, 100px) !important;
-    padding-right: clamp(48px, 5.208vw, 100px) !important;
-    padding-top: clamp(48px, 3.333vw, 64px) !important;
-    gap: clamp(16px, 1.25vw, 24px) !important;
+    gap: 24px;
+    padding: 112px 48px 80px;
   }
 
   .contentStack {
-    gap: clamp(12px, 0.9375vw, 18px) !important;
+    gap: 18px;
   }
 
   .heroTitle {
-    max-width: none !important;
-    font-size: clamp(40px, 3.125vw, 56px) !important;
-    line-height: 1.15 !important;
+    max-width: 1258px;
+    font-size: 40px;
+    line-height: 1.25;
   }
 
   .highlightBox {
-    width: fit-content !important;
-    max-width: 100% !important;
-    min-height: clamp(88px, 6.927vw, 133px) !important;
-    height: auto !important;
-    padding-left: clamp(16px, 1.04vw, 20px) !important;
-    padding-right: clamp(16px, 1.04vw, 20px) !important;
-    border-left-width: clamp(6px, 0.52vw, 10px) !important;
+    border-left-width: 6px;
+    padding: 12px 16px;
+    min-height: 88px;
   }
 
   .highlightTitle {
-    font-size: clamp(28px, 2.395vw, 46px) !important;
-    line-height: 1.2 !important;
+    font-size: 22px;
+    line-height: normal;
   }
 
   .heroDesc {
-    font-size: clamp(16px, 1.25vw, 24px) !important;
-    line-height: 1.388 !important;
-    max-width: min(60%, 660px) !important;
+    font-size: 16px;
+    line-height: 1.625;
   }
 
   .heroBtn {
-    padding: clamp(16px, 1.25vw, 20px) clamp(24px, 2.083vw, 40px) !important;
-    border-radius: clamp(6px, 0.416vw, 8px) !important;
-    gap: clamp(6px, 0.462vw, 7.1px) !important;
+    width: fit-content;
+    border-radius: 8px;
+    padding: 20px 32px;
+    box-shadow: 0 10.667px 21.333px rgba(196, 22, 28, 0.3);
   }
 
   .heroBtnText {
-    font-size: clamp(14px, 1.111vw, 21.33px) !important;
+    font-size: 18px;
+    line-height: 32px;
   }
 
   .heroBtnIcon {
-    width: clamp(16px, 1.111vw, 21px) !important;
-    height: clamp(16px, 1.111vw, 21px) !important;
-  }
-
-  .heroBgMotion {
-    right: -9% !important;
-    width: 100% !important;
+    width: 21px;
+    height: 21px;
   }
 }
 
-/* Wide "normal" desktop that still falls inside the Mac fluid range
-   (e.g. a 1920px monitor whose viewport is ~1903px after the scrollbar).
-   Give the hero paragraph room for the forced 3-line break. */
+@media (min-width: 1024px) {
+  .highlightBreak {
+    display: inline;
+  }
+
+  .heroSection {
+    min-height: 900px;
+  }
+
+  .heroBgMotion {
+    left: auto;
+    right: -9%;
+    width: 100%;
+  }
+
+  .contentWrap {
+    gap: 24px;
+    padding: 64px 100px 0;
+  }
+
+  .contentStack {
+    max-width: none;
+    gap: 18px;
+  }
+
+  .heroTitle {
+    font-size: 56px;
+  }
+
+  .highlightBox {
+    border-left-width: 10px;
+    height: 133px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .highlightTitle {
+    font-size: 46px;
+  }
+
+  .heroDesc {
+    font-size: 24px;
+    line-height: 33.33px;
+  }
+
+  .heroBtnText {
+    font-size: 21px;
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1919px) {
+  .titleBreak {
+    display: inline;
+  }
+
+  .heroSection {
+    min-height: clamp(700px, 46.875vw, 900px);
+  }
+
+  .contentWrap {
+    padding-left: clamp(48px, 5.208vw, 100px);
+    padding-right: clamp(48px, 5.208vw, 100px);
+    padding-top: clamp(48px, 3.333vw, 64px);
+    gap: clamp(16px, 1.25vw, 24px);
+  }
+
+  .contentStack {
+    gap: clamp(12px, 0.9375vw, 18px);
+  }
+
+  .heroTitle {
+    max-width: none;
+    font-size: clamp(40px, 3.125vw, 56px);
+    line-height: 1.15;
+  }
+
+  .highlightBox {
+    width: fit-content;
+    max-width: 100%;
+    min-height: clamp(88px, 6.927vw, 133px);
+    height: auto;
+    padding-left: clamp(16px, 1.04vw, 20px);
+    padding-right: clamp(16px, 1.04vw, 20px);
+    border-left-width: clamp(6px, 0.52vw, 10px);
+  }
+
+  .highlightTitle {
+    font-size: clamp(28px, 2.395vw, 46px);
+    line-height: 1.2;
+  }
+
+  .heroDesc {
+    font-size: clamp(16px, 1.25vw, 24px);
+    line-height: 1.388;
+    max-width: min(60%, 660px);
+  }
+
+  .heroBtn {
+    padding: clamp(16px, 1.25vw, 20px) clamp(24px, 2.083vw, 40px);
+    border-radius: clamp(6px, 0.416vw, 8px);
+    gap: clamp(6px, 0.462vw, 7.1px);
+  }
+
+  .heroBtnText {
+    font-size: clamp(14px, 1.111vw, 21.33px);
+  }
+
+  .heroBtnIcon {
+    width: clamp(16px, 1.111vw, 21px);
+    height: clamp(16px, 1.111vw, 21px);
+  }
+
+  .heroBgMotion {
+    right: -9%;
+    width: 100%;
+  }
+}
+
 @media (min-width: 1700px) and (max-width: 1919px) {
   .heroDesc {
-    max-width: min(80%, 1015px) !important;
+    max-width: min(80%, 1015px);
+  }
+}
+
+/* Textile mobile hero pattern — do not change image crop/object-position */
+@media (min-width: 1700px) {
+  .descBreak {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroDesktop,
+  .highlightBox.heroDesktop,
+  .heroTitle.heroDesktop,
+  .heroDesc.heroDesktop {
+    display: none !important;
+  }
+
+  .heroMobile {
+    display: block !important;
+  }
+
+  .highlightBox.heroMobile {
+    display: flex !important;
+  }
+
+  .heroTitle.heroMobile {
+    display: flex !important;
+  }
+
+  .heroDesc.heroMobile {
+    display: block !important;
+  }
+
+  .heroSection {
+    width: 100%;
+    height: 694px;
+    min-height: 694px;
+    max-height: 694px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    box-sizing: border-box;
+    background-color: #060606;
+  }
+
+  .heroBgWrapper {
+    top: 36%;
+    bottom: 0;
+    height: auto;
+  }
+
+  .heroBgMotion {
+    inset: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  .heroBgImage {
+    /* Preserve existing FMCG mobile crop from prior shared util */
+    object-fit: cover;
+    object-position: center 62%;
+    transform-origin: center bottom;
+  }
+
+  .heroGradientDesktop {
+    display: none;
+  }
+
+  .heroGradientMobile {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-image: linear-gradient(
+      180deg,
+      #060606 0%,
+      #060606 28%,
+      rgba(6, 6, 6, 0.92) 42%,
+      rgba(6, 6, 6, 0.55) 55%,
+      rgba(6, 6, 6, 0.18) 68%,
+      transparent 80%
+    );
+    pointer-events: none;
+  }
+
+  .contentWrap {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    /* Match warehouse hero: no side padding so content sits further left */
+    padding: 88px 0 0;
+    gap: 12px;
+    flex: 0 0 auto;
+    align-items: flex-start;
+    box-sizing: border-box;
+  }
+
+  .contentStack {
+    width: 100%;
+    max-width: 350px;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .heroTitle {
+    width: 100%;
+    max-width: 350px;
+    min-height: 0;
+    height: auto;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: 0;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .titleLine {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .highlightBox {
+    width: 100%;
+    max-width: 322px;
+    height: auto;
+    min-height: 50px;
+    padding: 0;
+    border-left: none;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .highlightBox::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #c4161c;
+  }
+
+  .highlightTitle {
+    position: relative;
+    top: 3px;
+    left: 10px;
+    width: calc(100% - 10px);
+    padding: 6px 8px 6px 0;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+    color: #c4161c;
+    display: flex;
+    align-items: center;
+    min-height: calc(100% - 6px);
+  }
+
+  .heroDesc {
+    width: 100%;
+    max-width: 350px;
+    min-height: 0;
+    height: auto;
+    font-family: Manrope, var(--font-manrope), sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.35;
+    letter-spacing: 0;
+    color: #f3f3f3;
+    display: block;
+  }
+
+  .heroBtn {
+    width: fit-content;
+    min-width: unset;
+    max-width: 230px;
+    height: 44px;
+    min-height: 44px;
+    max-height: 44px;
+    flex: 0 0 auto;
+    align-self: flex-start;
+    margin-top: 2px;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    gap: 8px;
+    font-size: 14px;
+    font-family: var(--font-manrope), Manrope, sans-serif;
+    font-weight: 600;
+    border-radius: 5.65px;
+    box-shadow: 0px 5.652px 22.61px rgba(196, 22, 28, 0.3);
+    justify-content: center;
+  }
+
+  .heroBtnText {
+    position: relative;
+    font-size: 14px;
+    line-height: 16.96px;
+    font-weight: 600;
+    font-family: var(--font-manrope), Manrope, sans-serif;
+    color: #fff;
+    white-space: nowrap;
+    text-align: left;
+  }
+
+  .heroBtnIcon {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    margin-left: 0;
+    overflow: visible;
+  }
+
+  .ctaIcon {
+    display: none;
+  }
+
+  .mobileArrowIcon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
   }
 }

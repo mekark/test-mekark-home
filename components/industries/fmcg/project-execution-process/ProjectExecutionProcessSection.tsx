@@ -8,6 +8,34 @@ import { ProcessConnector } from "./ProcessConnector";
 import { ProcessStep } from "./ProcessStep";
 import macStyles from "./processMac.module.css";
 
+const MOBILE_DESC_LINES: Record<string, string[]> = {
+  "01": [
+    "Understanding your production line layout,",
+    "hygiene classification, warehousing",
+    "requirements, and expansion plans before design begins.",
+  ],
+  "02": [
+    "Structural layout, electrical zoning, HVAC,",
+    "and MEP coordination planned into a",
+    "build-ready engineering package.",
+  ],
+  "03": [
+    "Precision manufacturing at our Tamil Nadu plants,",
+    "with structural steel, cladding, and cold",
+    "storage panels fabricated to exact specs.",
+  ],
+  "04": [
+    "Hygienic flooring, steel framing, HVAC,",
+    "warehousing, and utility integration",
+    "executed for a compliant, production-ready base.",
+  ],
+  "05": [
+    "Testing, hygiene checks, and final",
+    "commissioning completed; your facility",
+    "handed over production-ready.",
+  ],
+};
+
 export function ProjectExecutionProcessSection() {
   return (
     <section
@@ -27,18 +55,12 @@ export function ProjectExecutionProcessSection() {
         />
       </div>
 
-      <div className={`relative mx-auto flex w-full max-w-[1720px] flex-col gap-8 sm:gap-12 lg:gap-16 ${macStyles.sectionInner}`}>
-        <div className={`mx-auto flex w-full max-w-[1086px] flex-col items-start gap-3 text-left sm:items-center sm:gap-4 sm:text-center ${macStyles.headerBlock}`}>
-          <motion.p
-            className="text-xs font-semibold uppercase tracking-[0.14em] text-[#f01d23] sm:hidden"
-            custom={0}
-            variants={fadeSlideUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            How we deliver
-          </motion.p>
+      <div
+        className={`relative mx-auto flex w-full max-w-[1720px] flex-col gap-8 sm:gap-12 lg:gap-16 ${macStyles.sectionInner}`}
+      >
+        <div
+          className={`mx-auto flex w-full max-w-[1086px] flex-col items-start gap-3 text-left sm:items-center sm:gap-4 sm:text-center ${macStyles.headerBlock}`}
+        >
           <motion.h2
             className={`max-w-[1086px] text-[26px] font-bold leading-tight tracking-[-0.8px] text-[#111] sm:text-[40px] sm:tracking-[-1.33px] lg:text-[53px] lg:leading-[65px] ${macStyles.title}`}
             custom={0}
@@ -47,36 +69,65 @@ export function ProjectExecutionProcessSection() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            Our FMCG Facility Project Execution Process
+            <span className={macStyles.processTitleLine}>
+              Our FMCG Facility Project{" "}
+            </span>
+            <span className={macStyles.processTitleLine}>
+              Execution Process
+            </span>
           </motion.h2>
         </div>
 
-        <div className="relative flex flex-col min-[1201px]:hidden">
-          <div
-            aria-hidden
-            className="pointer-events-none absolute bottom-6 left-[15px] top-6 w-px bg-gradient-to-b from-[#f01d23] via-[#f01d23]/35 to-[#f01d23]/10"
-          />
-
+        <ol className={macStyles.mobileProcess}>
           {processSteps.map((step, index) => (
-            <div
-              key={step.number}
-              className={`relative pl-11 ${index < processSteps.length - 1 ? "pb-7" : ""}`}
-            >
-              <div
-                aria-hidden
-                className="absolute left-0 top-5 flex size-[30px] items-center justify-center rounded-full border-2 border-[#f01d23] bg-white shadow-[0_2px_8px_rgba(240,29,35,0.15)]"
-              >
-                <span className="text-[11px] font-bold tabular-nums text-[#f01d23]">
-                  {step.number}
-                </span>
+            <li key={step.number} className={macStyles.mobileStepItem}>
+              <div className={macStyles.mobileStep}>
+                <div className={macStyles.mobileStepNumber}>{step.number}</div>
+                <div className={macStyles.mobileStepContent}>
+                  <h3 className={macStyles.mobileStepTitle}>{step.title}</h3>
+                  <p className={macStyles.mobileStepDescription}>
+                    {(MOBILE_DESC_LINES[step.number] ?? [step.description]).map(
+                      (line) => (
+                        <span key={line} className={macStyles.mobileDescLine}>
+                          {line}
+                        </span>
+                      ),
+                    )}
+                  </p>
+                </div>
               </div>
-
-              <ProcessStep step={step} index={index} mobile />
-            </div>
+              {index < processSteps.length - 1 ? (
+                <div className={macStyles.mobileStepArrow} aria-hidden="true">
+                  <svg
+                    width="24"
+                    height="36"
+                    viewBox="0 0 24 36"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 2V26"
+                      stroke="#8E8E8E"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M5 20L12 29L19 20"
+                      stroke="#8E8E8E"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+              ) : null}
+            </li>
           ))}
-        </div>
+        </ol>
 
-        <div className={`hidden min-w-0 items-stretch gap-3 min-[1201px]:flex 2xl:gap-4 ${macStyles.stepsRow}`}>
+        <div
+          className={`hidden min-w-0 items-stretch gap-3 min-[1201px]:flex 2xl:gap-4 ${macStyles.stepsRow}`}
+        >
           {processSteps.map((step, index) => (
             <div
               key={step.number}

@@ -37,6 +37,10 @@
   white-space: nowrap;
 }
 
+.whyTitleLine {
+  display: inline;
+}
+
 .mekarkIsOne {
   margin: clamp(12px, 1.042vw, 16px) auto 0;
   max-width: 55.5208vw;

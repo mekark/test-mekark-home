@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useDesignScale } from "@/lib/hooks/useDesignScale";
-import carouselStyles from "@/components/industries/shared/industryMobileFacilityCarousel.module.css";
 import styles from "./index.module.css";
 
 const DESIGN_HEIGHT = 780;
@@ -90,10 +89,21 @@ const SolutionsIcons = () => {
           <div className={styles.frameGroup}>
             <div className={styles.eotCraneSolutionsAcrossSouWrapper}>
               <b className={styles.eotCraneSolutions}>
-                <span className={styles.titleLine}>
-                  Data Center Construction Across South India&apos;s Digital
+                <span className={`${styles.titleLine} ${styles.titleLineDesktop}`}>
+                  Data Center Construction Across South India&apos;s Digital{" "}
                 </span>
-                <span className={styles.titleLine}>Infrastructure Hubs</span>
+                <span className={`${styles.titleLine} ${styles.titleLineDesktop}`}>
+                  Infrastructure Hubs
+                </span>
+                <span className={`${styles.titleLine} ${styles.titleLineMobile}`}>
+                  Data Center Construction
+                </span>
+                <span className={`${styles.titleLine} ${styles.titleLineMobile}`}>
+                  Across South India&apos;s Digital
+                </span>
+                <span className={`${styles.titleLine} ${styles.titleLineMobile}`}>
+                  Infrastructure Hubs
+                </span>
               </b>
             </div>
             <div className={styles.ourEotCranesServeDiverseIWrapper}>
@@ -104,11 +114,11 @@ const SolutionsIcons = () => {
               </div>
             </div>
           </div>
-          <div className={`${styles.frameContainer} ${carouselStyles.track}`}>
+          <div className={styles.frameContainer}>
             {solutionCards.map((card, index) => (
               <div
                 key={card.title}
-                className={`${styles.cardItem} ${carouselStyles.item}`}
+                className={styles.cardItem}
                 style={{ left: `${index * 286}px` }}
               >
                 <div className={styles.iconWrapper}>
@@ -127,7 +137,6 @@ const SolutionsIcons = () => {
               </div>
             ))}
           </div>
-          <p className={carouselStyles.hint}>Swipe to explore all 6 facilities</p>
         </div>
       </div>
     </div>

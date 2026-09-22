@@ -5,11 +5,6 @@ import { motion } from "framer-motion";
 import { ManufacturingSolutionCard } from "./ManufacturingSolutionCard";
 import { manufacturingSolutions } from "./data";
 import { fadeSlideUp } from "./motion";
-import {
-  MOBILE_FACILITY_CAROUSEL_HINT,
-  MOBILE_FACILITY_CAROUSEL_ITEM,
-  MOBILE_FACILITY_CAROUSEL_TRACK,
-} from "@/components/industries/shared/industryMobileFacilityCarousel";
 import macStyles from "./manufacturingSolutionsMac.module.css";
 
 export function ManufacturingSolutionsSection() {
@@ -31,18 +26,12 @@ export function ManufacturingSolutionsSection() {
         />
       </div>
 
-      <div className={`relative mx-auto flex w-full max-w-[1720px] flex-col gap-8 sm:gap-12 lg:gap-16 ${macStyles.sectionInner}`}>
-        <div className={`mx-auto flex w-full max-w-[1452px] flex-col items-start gap-3 text-left sm:items-center sm:gap-4 sm:text-center ${macStyles.headerBlock}`}>
-          <motion.p
-            className="text-xs font-semibold uppercase tracking-[0.14em] text-[#e50818] sm:hidden"
-            custom={0}
-            variants={fadeSlideUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            South India coverage
-          </motion.p>
+      <div
+        className={`relative mx-auto flex w-full max-w-[1720px] flex-col gap-8 sm:gap-12 lg:gap-16 ${macStyles.sectionInner}`}
+      >
+        <div
+          className={`mx-auto flex w-full max-w-[1452px] flex-col items-start gap-3 text-left sm:items-center sm:gap-4 sm:text-center ${macStyles.headerBlock}`}
+        >
           <motion.h2
             className={`max-w-[1356px] text-[26px] font-bold leading-tight tracking-[-0.8px] text-[#111] sm:text-[40px] sm:tracking-[-1.33px] lg:text-[50px] lg:leading-[60px] ${macStyles.title}`}
             custom={0}
@@ -72,24 +61,18 @@ export function ManufacturingSolutionsSection() {
           </motion.p>
         </div>
 
-        <div className="sm:hidden">
-          <div className={MOBILE_FACILITY_CAROUSEL_TRACK}>
-            {manufacturingSolutions.map((solution, index) => (
-              <div key={solution.title} className={MOBILE_FACILITY_CAROUSEL_ITEM}>
-                <ManufacturingSolutionCard
-                  solution={solution}
-                  index={index}
-                  mobile
-                />
-              </div>
-            ))}
-          </div>
-          <p className={`${MOBILE_FACILITY_CAROUSEL_HINT} sm:!hidden`}>
-            Swipe to explore all {manufacturingSolutions.length} solutions
-          </p>
+        <div className={macStyles.mobileStack}>
+          {manufacturingSolutions.map((solution, index) => (
+            <ManufacturingSolutionCard
+              key={solution.title}
+              solution={solution}
+              index={index}
+              mobile
+            />
+          ))}
         </div>
 
-        <div className={`hidden grid-cols-2 gap-x-8 gap-y-12 sm:grid lg:grid-cols-3 2xl:grid-cols-6 ${macStyles.grid}`}>
+        <div className={`hidden grid-cols-2 gap-x-8 gap-y-12 min-[769px]:grid lg:grid-cols-3 2xl:grid-cols-6 ${macStyles.grid}`}>
           {manufacturingSolutions.map((solution, index) => (
             <ManufacturingSolutionCard
               key={solution.title}

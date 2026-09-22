@@ -8,11 +8,17 @@ const CTA = () => {
       <div className={styles.section}>
         <div className={styles.planningAWarehouseOrLogistParent}>
           <div className={styles.planningAWarehouse}>
-            <span className={styles.line}>
-              Planning a Data Center in South India?
+            <span className={styles.ctaTitleDesktop}>
+              <span className={styles.line}>
+                Planning a Data Center in South India?
+              </span>
+            </span>
+            <span className={styles.ctaTitleMobile}>
+              <span className={styles.ctaTitleLine}>Planning a Data Center </span>
+              <span className={styles.ctaTitleLine}>in South India?</span>
             </span>
           </div>
-          <div className={styles.mekarksProjectCalendar}>
+          <div className={`${styles.mekarksProjectCalendar} ${styles.ctaSubtitleDesktop}`}>
             <span className={styles.line}>
               Every week your data center isn&apos;t live is lost SLA commitments
               and delayed revenue.
@@ -29,6 +35,13 @@ const CTA = () => {
               obligation, just honest expert advice.
             </span>
           </div>
+          <p className={`${styles.mekarksProjectCalendar} ${styles.ctaSubtitleMobile}`}>
+            Every week your data center isn&apos;t live is lost SLA commitments
+            and delayed revenue. Mekark&apos;s team will assess your uptime tier,
+            power density, cooling architecture, and redundancy needs, and
+            deliver a transparent budgetary estimate within 24 hours. No
+            obligation, just honest expert advice.
+          </p>
         </div>
         <div className={styles.sectionChild} />
         <a href={PHONE_HREF} className={styles.cta2}>
@@ -279,7 +292,9 @@ const CTA = () => {
       <div className={styles.frameParent3}>
         <div className={styles.whyWarehousesFromMekarkAreWrapper}>
           <b className={styles.whyWarehousesFrom}>
-            Why Data Centers from Mekark Are the Better Choice
+            <span className={styles.whyTitleLine}>Why Data Centers </span>
+            <span className={styles.whyTitleLine}>from Mekark Are the </span>
+            <span className={styles.whyTitleLine}>Better Choice</span>
           </b>
         </div>
         <div className={styles.mekarkIsOne}>

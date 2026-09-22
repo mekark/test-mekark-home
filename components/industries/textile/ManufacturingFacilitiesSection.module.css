@@ -2,7 +2,7 @@
 .industriesWeServe {
 	width: 100%;
 	position: relative;
-	background-color: #fff;
+	background-color: #ffefef;
 	overflow: hidden;
 	padding: 4.53125vw 4.16667vw 4.16667vw;
 	box-sizing: border-box;
@@ -17,13 +17,7 @@
 }
 
 .gridBg {
-	pointer-events: none;
-	position: absolute;
-	inset: 0 auto auto 0;
-	width: 100%;
-	height: 20.3646vw;
-	overflow: hidden;
-	opacity: 0.15;
+	display: none;
 }
 
 .gridBgImg {
@@ -49,6 +43,10 @@
 	letter-spacing: -0.06927vw;
 	line-height: 3.4026vw;
 	font-weight: 700;
+}
+
+.titleLine {
+	display: inline;
 }
 
 .ourPreEngineeredWarehouse {
@@ -155,16 +153,16 @@
 }
 
 .overlayborder {
-	border-radius: 2.08333vw;
-	background-color: rgba(228, 0, 21, 0.05);
-	border: 0.05208vw solid rgba(228, 0, 21, 0.5);
+	border-radius: 4.63542vw;
+	background-color: #fff;
+	border: 0.02604vw solid rgba(228, 0, 21, 0.5);
 	box-sizing: border-box;
 	width: 100%;
 	max-width: 91.6667vw;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 1.27604vw 1.66667vw;
+	padding: 1.25vw 1.66667vw;
 	color: #6e6e6e;
 	font-size: 0.9375vw;
 	position: relative;
@@ -186,6 +184,10 @@
 	width: 100%;
 }
 
+.bannerLine {
+	display: block;
+}
+
 .southIndia {
 	color: #e50818;
 	font-weight: 500;
@@ -198,7 +200,7 @@
 	}
 
 	.gridBg {
-		height: 280px;
+		display: none;
 	}
 
 	.industrialWarehouseConstructParent {
@@ -263,34 +265,156 @@
 
 @media (max-width: 768px) {
 	.industriesWeServe {
-		padding: 32px 16px 40px;
+		width: 100%;
+		background-color: #ffefef;
+		padding: 28px 20px 40px;
+		box-sizing: border-box;
 	}
 
 	.industrialWarehouseConstructParent {
-		font-size: 26px;
-		margin-bottom: 24px;
+		width: 100%;
+		max-width: 353px;
+		font-size: 28px;
+		margin-bottom: 20px;
+		gap: 12px;
+		align-items: center;
+		text-align: center;
 	}
 
 	.industrialWarehouseConstruct {
-		line-height: 34px;
+		width: 100%;
+		max-width: 353px;
+		min-height: 128px;
+		font-size: 28px;
+		font-weight: 700;
+		line-height: 32px;
+		letter-spacing: -1px;
+		color: #000;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.titleLine {
+		display: block;
+		white-space: nowrap;
 	}
 
 	.ourPreEngineeredWarehouse {
+		width: 100%;
+		max-width: 353px;
 		font-size: 14px;
+		font-weight: 400;
+		line-height: 150%;
+		letter-spacing: 0;
+		text-align: center;
+		color: #4c4c4c;
+	}
+
+	.frameParent {
+		width: 100%;
+		max-width: 353px;
+		gap: 16px;
+		margin-bottom: 20px;
 	}
 
 	.frameGroup {
 		grid-template-columns: 1fr;
+		gap: 16px;
+	}
+
+	.rectangleParent,
+	.rectangleContainer {
+		width: 100%;
+		max-width: 353px;
+		min-height: 279px;
+		height: auto;
+		padding: 8px;
+		gap: 10px;
+		border-radius: 10px;
+		background-color: #fff;
+		box-shadow: -2px 2px 6px rgba(30, 30, 30, 0.1);
+		align-items: flex-start;
+		box-sizing: border-box;
+	}
+
+	.frameChildWrap {
+		width: 100%;
+		max-width: 337px;
+		height: 178px;
+		aspect-ratio: auto;
+		border-radius: 8px;
+		flex-shrink: 0;
+	}
+
+	.frameChild {
+		border-radius: 8px;
+	}
+
+	.frameChildSynthetic,
+	.frameChildKnitting {
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		border-radius: 8px;
+		object-fit: cover;
+	}
+
+	.fmcgRetailParent {
+		width: 100%;
+		gap: 8px;
+		padding: 0 4px 6px;
+		align-items: flex-start;
+		text-align: left;
+	}
+
+	.fmcgRetail {
+		width: auto;
+		max-width: 100%;
+		min-height: 25px;
+		font-size: 18px;
+		font-weight: 700;
+		line-height: 100%;
+		letter-spacing: 0;
+		color: #000;
+		text-align: left;
+	}
+
+	.distributionWarehouseBuildin {
+		width: 100%;
+		max-width: 329px;
+		min-height: 38px;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 136%;
+		letter-spacing: 0;
+		color: #4c4c4c;
+		text-align: left;
+		white-space: normal;
 	}
 
 	.overlayborder {
+		width: 100%;
+		max-width: 353px;
 		padding: 16px;
 		border-radius: 16px;
-		font-size: 13px;
+		font-size: 14px;
+		background-color: #fff;
 	}
 
 	.strongEveryContainer {
-		font-size: 13px;
-		line-height: 20px;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 150%;
+		letter-spacing: 0;
+		text-align: center;
+		color: #4c4c4c;
+		white-space: normal;
+	}
+
+	.bannerLine {
+		display: inline;
 	}
 }

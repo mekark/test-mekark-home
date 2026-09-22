@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
+import macStyles from "./ourSolutionsMac.module.css";
 
 /** Desktop timeline + card positions — vw units against the 1920px design canvas,
  * matching Pharma's "complete-pharma" single-SVG-skeleton approach (Automation's own
@@ -70,6 +71,26 @@ const solutions: Solution[] = [
 ];
 
 function MobileSolutionCard({ title, description, image }: Solution) {
+  return (
+    <article className={macStyles.mobileCard}>
+      <div className={macStyles.mobileCardImage}>
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className="object-cover"
+          sizes="303px"
+        />
+      </div>
+      <div className={macStyles.mobileCardBody}>
+        <h3 className={macStyles.mobileCardTitle}>{title}</h3>
+        <div className={macStyles.mobileCardDesc}>{description}</div>
+      </div>
+    </article>
+  );
+}
+
+function TabletSolutionCard({ title, description, image }: Solution) {
   return (
     <article className="flex w-full flex-col overflow-hidden rounded-[16px] border border-solid border-[#e3e4e7] bg-white shadow-[0_2px_12px_rgba(17,17,17,0.04)]">
       <div className="relative h-[180px] w-full shrink-0 sm:h-[200px]">
@@ -145,13 +166,19 @@ function DesktopSolutionCard({
 function SectionHeading() {
   return (
     <div className="flex flex-col gap-2.5">
-      <h2 className="font-[family-name:var(--font-manrope)] text-[28px] font-bold leading-tight text-black sm:text-[36px] lg:text-[2.39583vw] lg:leading-normal">
+      <h2
+        className={`font-[family-name:var(--font-manrope)] text-[28px] font-bold leading-tight text-black sm:text-[36px] lg:text-[2.39583vw] lg:leading-normal ${macStyles.headerTitle}`}
+      >
         Our Solutions
       </h2>
-      <p className="max-w-[654px] font-[family-name:var(--font-manrope)] text-xl font-semibold leading-snug text-black sm:text-2xl lg:max-w-[34.0625vw] lg:text-[1.45833vw] lg:leading-normal">
+      <p
+        className={`max-w-[654px] font-[family-name:var(--font-manrope)] text-xl font-semibold leading-snug text-black sm:text-2xl lg:max-w-[34.0625vw] lg:text-[1.45833vw] lg:leading-normal ${macStyles.headerSubtitle}`}
+      >
         Complete Automation Facility Solutions, Engineered End-to-End
       </p>
-      <p className="max-w-[654px] font-[family-name:var(--font-manrope)] text-base leading-relaxed text-[#6e6e6e] lg:max-w-[34.0625vw] lg:text-[0.9375vw] lg:leading-normal">
+      <p
+        className={`max-w-[654px] font-[family-name:var(--font-manrope)] text-base leading-relaxed text-[#6e6e6e] lg:max-w-[34.0625vw] lg:text-[0.9375vw] lg:leading-normal ${macStyles.headerBody}`}
+      >
         As a full-service, turnkey EPC automation facility construction company
         in South India, Mekark designs, fabricates, and builds precision
         manufacturing, assembly, and testing environments engineered around
@@ -163,17 +190,35 @@ function SectionHeading() {
 
 export default function OurSolutionsSection() {
   return (
-    <section className="bg-[#f6f6f6] px-5 py-12 sm:px-10 sm:py-16 lg:px-[4.16667vw] lg:py-[5vw]">
+    <section
+      className={`bg-[#f6f6f6] px-5 py-12 sm:px-10 sm:py-16 lg:px-[4.16667vw] lg:py-[5vw] ${macStyles.section}`}
+    >
       <div className="mx-auto max-w-[1920px]">
         <div className="flex flex-col gap-8 sm:gap-12 lg:flex-row lg:items-start lg:gap-[2.08333vw]">
           <aside className="lg:sticky lg:top-24 lg:w-[34.0625vw] lg:max-w-[42%] lg:shrink-0 lg:self-start">
             <SectionHeading />
           </aside>
 
-          {/* Mobile / tablet — plain stacked cards */}
-          <div className="flex flex-col gap-8 sm:gap-12 lg:hidden">
+          {/* Mobile ≤768 — FMCG-style timeline cards */}
+          <div className={macStyles.mobileTimeline}>
+            <Image
+              className={macStyles.mobileSkeleton}
+              src="/images/mobile/6CARD-SKELETON.png"
+              width={48}
+              height={1435}
+              alt=""
+              aria-hidden="true"
+              unoptimized
+            />
             {solutions.map((solution) => (
               <MobileSolutionCard key={solution.title} {...solution} />
+            ))}
+          </div>
+
+          {/* Tablet 769–1023 — previous stacked cards (desktop-safe) */}
+          <div className={macStyles.tabletStack}>
+            {solutions.map((solution) => (
+              <TabletSolutionCard key={solution.title} {...solution} />
             ))}
           </div>
 
@@ -204,8 +249,12 @@ export default function OurSolutionsSection() {
           </div>
         </div>
 
-        <div className="mx-auto mt-10 max-w-[1385px] rounded-[24px] border border-[rgba(228,0,21,0.5)] bg-[rgba(228,0,21,0.05)] px-5 py-5 text-center sm:mt-16 sm:rounded-[40px] sm:px-8 sm:py-8">
-          <p className="font-[family-name:var(--font-manrope)] text-base font-semibold leading-relaxed text-[#4c4c4c] sm:text-lg sm:leading-normal">
+        <div
+          className={`mx-auto mt-10 max-w-[1385px] rounded-[24px] border border-[rgba(228,0,21,0.5)] bg-[rgba(228,0,21,0.05)] px-5 py-5 text-center sm:mt-16 sm:rounded-[40px] sm:px-8 sm:py-8 ${macStyles.callout}`}
+        >
+          <p
+            className={`font-[family-name:var(--font-manrope)] text-base font-semibold leading-relaxed text-[#4c4c4c] sm:text-lg sm:leading-normal ${macStyles.calloutText}`}
+          >
             Every automation manufacturing facility is custom-engineered around
             your production line, equipment tolerances, and automation roadmap,
             ensuring precision output and long-term scalability for{" "}

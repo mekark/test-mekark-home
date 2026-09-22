@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { IndustryMobileCtaBanner } from "@/components/industries/shared/IndustryMobileCtaBanner";
+import { logisticsCtaWorkerAssets } from "@/components/industries/shared/logisticsCtaWorkerAssets";
 import { CTA_PHONE_ICON, PHONE_HREF } from "@/lib/contact";
 import styles from "./WhyMekarkSection.module.css";
 
@@ -50,7 +52,37 @@ const features: Feature[] = [
 export default function WhyMekarkSection() {
   return (
     <section id="why-mekark" className={styles.cta}>
-      <div className={styles.section}>
+      <div className="min-[769px]:hidden">
+        <IndustryMobileCtaBanner
+          title={
+            <>
+              <span style={{ display: "block", whiteSpace: "nowrap" }}>
+                Planning an Automation
+              </span>
+              <span style={{ display: "block", whiteSpace: "nowrap" }}>
+                Manufacturing Facility
+              </span>
+              <span style={{ display: "block", whiteSpace: "nowrap" }}>
+                in South India?
+              </span>
+            </>
+          }
+          subtitle={
+            <>
+              Every week your production line isn&apos;t running is lost
+              throughput and delayed client commitments. Mekark&apos;s team will
+              assess your process requirements, ESD and vibration control needs,
+              and utility load, and deliver a transparent budgetary estimate
+              within 24 hours. No obligation, just honest expert advice.
+            </>
+          }
+          buttonText="Talk to Our Expert"
+          workerAlt="Mekark engineer reviewing automation facility plans"
+          assets={logisticsCtaWorkerAssets}
+        />
+      </div>
+
+      <div className={`${styles.section} ${styles.desktopCtaBanner}`}>
         <div className={styles.planningAWarehouseOrLogistParent}>
           <div className={styles.planningAWarehouse}>
             <span>
@@ -150,6 +182,7 @@ export default function WhyMekarkSection() {
         <div className={styles.frameParent}>
           <div className={styles.imageWrapper} />
           <div className={styles.frameChild} aria-hidden />
+          <div className={styles.mobileImageFade} aria-hidden />
         </div>
       </div>
 

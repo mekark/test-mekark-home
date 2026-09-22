@@ -2,11 +2,6 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import {
-  MOBILE_FACILITY_CAROUSEL_HINT,
-  MOBILE_FACILITY_CAROUSEL_ITEM,
-  MOBILE_FACILITY_CAROUSEL_TRACK,
-} from "@/components/industries/shared/industryMobileFacilityCarousel";
 import macStyles from "./automationFacilitiesMac.module.css";
 
 const fadeSlideUp = {
@@ -78,37 +73,25 @@ function FacilityCard({
   if (mobile) {
     return (
       <motion.article
-        className="flex h-full flex-col overflow-hidden rounded-2xl border border-[#f0d4d4] bg-white shadow-[0_4px_24px_rgba(229,8,24,0.08)]"
+        className={macStyles.mobileCard}
         custom={index * 0.06}
         variants={fadeSlideUp}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        <div className="relative aspect-[4/3] w-full overflow-hidden">
+        <div className={macStyles.mobileCardImage}>
           <Image
             src={solution.image}
             alt={solution.title}
             fill
             className="object-cover"
-            sizes="300px"
+            sizes="337px"
           />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-black/30 to-transparent"
-          />
-          <div className="absolute left-3 top-3 flex size-7 items-center justify-center rounded-full bg-white/95 text-[11px] font-bold tabular-nums text-[#e50818] shadow-sm">
-            {String(index + 1).padStart(2, "0")}
-          </div>
         </div>
-
-        <div className="flex flex-1 flex-col gap-2 px-4 py-4">
-          <h3 className="text-base font-bold leading-snug text-[#3c3938]">
-            {solution.title}
-          </h3>
-          <p className="text-sm leading-relaxed text-[#555]">
-            {solution.description}
-          </p>
+        <div className={macStyles.mobileCardBody}>
+          <h3 className={macStyles.mobileCardTitle}>{solution.title}</h3>
+          <p className={macStyles.mobileCardDesc}>{solution.description}</p>
         </div>
       </motion.article>
     );
@@ -177,7 +160,7 @@ export default function AutomationFacilitiesSection() {
           className={`mx-auto flex w-full max-w-[1452px] flex-col items-start gap-3 text-left sm:items-center sm:gap-4 sm:text-center ${macStyles.headerBlock}`}
         >
           <motion.p
-            className="text-xs font-semibold uppercase tracking-[0.14em] text-[#e50818] sm:hidden"
+            className="hidden text-xs font-semibold uppercase tracking-[0.14em] text-[#e50818]"
             custom={0}
             variants={fadeSlideUp}
             initial="hidden"
@@ -215,21 +198,19 @@ export default function AutomationFacilitiesSection() {
           </motion.p>
         </div>
 
-        <div className="sm:hidden">
-          <div className={MOBILE_FACILITY_CAROUSEL_TRACK}>
-            {facilities.map((facility, index) => (
-              <div key={facility.title} className={MOBILE_FACILITY_CAROUSEL_ITEM}>
-                <FacilityCard solution={facility} index={index} mobile />
-              </div>
-            ))}
-          </div>
-          <p className={`${MOBILE_FACILITY_CAROUSEL_HINT} sm:!hidden`}>
-            Swipe to explore all {facilities.length} facilities
-          </p>
+        <div className={macStyles.mobileStack}>
+          {facilities.map((facility, index) => (
+            <FacilityCard
+              key={facility.title}
+              solution={facility}
+              index={index}
+              mobile
+            />
+          ))}
         </div>
 
         <div
-          className={`hidden grid-cols-2 gap-x-8 gap-y-12 sm:grid lg:grid-cols-3 2xl:grid-cols-6 ${macStyles.grid}`}
+          className={`hidden grid-cols-2 gap-x-8 gap-y-12 min-[769px]:grid lg:grid-cols-3 2xl:grid-cols-6 ${macStyles.grid}`}
         >
           {facilities.map((facility, index) => (
             <FacilityCard key={facility.title} solution={facility} index={index} />
@@ -244,8 +225,8 @@ export default function AutomationFacilitiesSection() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          Wherever you&apos;re located in South India{" "}
-          <span className="font-semibold text-[#e50818]">
+          Wherever you&apos;re located in South India –{" "}
+          <span className="font-semibold text-[#e40015]">
             Chennai, Coimbatore, Hosur, Bengaluru, Hyderabad, or Kochi
           </span>{" "}
           – Mekark&apos;s automation facility engineering

@@ -105,11 +105,7 @@
   font-weight: 700;
   box-sizing: border-box;
   width: fit-content;
-}
-
-.subLine {
-  display: block;
-  white-space: nowrap;
+  margin: 0;
 }
 
 .mekarkIsATrustedPreEngineWrapper {
@@ -127,9 +123,30 @@
   font-weight: 400;
 }
 
+.titleLine {
+  display: inline;
+}
+
+.subLine {
+  display: block;
+  white-space: nowrap;
+}
+
 .descLine {
   display: block;
   white-space: nowrap;
+}
+
+.heroDesktop {
+  display: contents;
+}
+
+.heroMobile {
+  display: none;
+}
+
+.mobileArrowIcon {
+  display: none;
 }
 
 .component5 {
@@ -181,7 +198,7 @@
   }
 
   .logisticsIndustrialStructuWrapper {
-    min-height: clamp(88px, 6.927083vw, 133px);
+    min-height: auto;
   }
 
   .logisticsIndustrial {
@@ -269,15 +286,6 @@
     line-height: 1.3;
   }
 
-  .subLine {
-    white-space: normal;
-  }
-
-  .descLine {
-    display: inline;
-    white-space: normal;
-  }
-
   .mekarkIsATrustedPreEngineWrapper {
     font-size: 16px;
   }
@@ -305,18 +313,25 @@
 }
 
 @media (max-width: 768px) {
+  .heroDesktop {
+    display: none;
+  }
+  .heroMobile {
+    display: contents;
+  }
   .logisticsHeroBanner {
     width: 100%;
     height: 694px;
     min-height: 694px;
     max-height: 694px;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
     box-sizing: border-box;
+    background-color: #060606;
   }
 
   .heroBgWrapper {
@@ -340,20 +355,22 @@
     background: linear-gradient(
       180deg,
       #060606 0%,
-      #060606 26%,
-      rgba(6, 6, 6, 0.94) 40%,
-      rgba(6, 6, 6, 0.62) 54%,
-      rgba(6, 6, 6, 0.22) 68%,
-      transparent 84%
+      #060606 28%,
+      rgba(6, 6, 6, 0.92) 42%,
+      rgba(6, 6, 6, 0.55) 55%,
+      rgba(6, 6, 6, 0.18) 68%,
+      transparent 80%
     );
+    pointer-events: none;
   }
 
   .div {
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: none;
-    padding: 88px 0 16px;
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 88px 0 0; /* nav 60px + 28px gap */
     gap: 12px;
     flex: 0 0 auto;
     align-items: flex-start;
@@ -361,68 +378,138 @@
   }
 
   .leadingPreEngineeredWarehou {
-    font-size: 25px;
+    width: 100%;
+    max-width: 350px;
+    min-height: 0;
+    height: auto;
+    font-size: 30px;
     font-weight: 700;
-    line-height: 100%;
-    max-width: 342px;
+    font-style: normal;
+    line-height: 36px;
+    letter-spacing: 0;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .titleLine {
+    display: block;
+    white-space: nowrap;
   }
 
   .logisticsIndustrialStructuWrapper {
     width: 100%;
+    max-width: 322px;
+    height: 50px;
+    min-height: 50px;
+    font-size: 18px;
+    background-color: #fff;
+    color: #c4161c;
+    overflow: hidden;
+    flex-shrink: 0;
   }
 
   .logisticsIndustrialStructuWrapper::before {
     width: 4px;
+    background-color: #c4161c;
   }
 
   .logisticsIndustrial {
-    font-size: clamp(10px, 3.7vw, 15px);
-    padding: 8px 16px 8px 16px;
-    line-height: 1.35;
-  }
-
-  .subLine {
-    white-space: normal;
-  }
-
-  .descLine {
-    display: inline;
-    white-space: normal;
+    position: relative;
+    top: 3px;
+    left: 10px;
+    width: calc(100% - 10px);
+    padding: 0;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0;
+    color: #c4161c;
+    display: flex;
+    align-items: center;
+    height: calc(100% - 6px);
+    gap: 0;
   }
 
   .mekarkIsATrustedPreEngineWrapper {
-    width: 342px;
-    max-width: 342px;
-    font-size: 11px;
-    line-height: normal;
+    width: 100%;
+    max-width: 350px;
+    min-height: 0;
+    height: auto;
+    font-family: Manrope, var(--font-manrope), sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.35;
+    letter-spacing: 0;
+    color: #f3f3f3;
   }
 
   .mekarkIsA {
-    font-size: 11px;
-    line-height: normal;
-    width: 342px;
-    max-width: 342px;
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.35;
+    letter-spacing: 0;
+    color: inherit;
+    display: block;
   }
 
   .component5 {
-    width: auto;
-    max-width: 300px;
+    width: fit-content;
+    min-width: unset;
+    max-width: 230px;
+    height: 44px;
+    min-height: 44px;
+    max-height: 44px;
+    flex: 0 0 auto;
     align-self: flex-start;
-    margin-top: 4px;
+    margin-top: 2px;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
     padding: 10px 20px;
-    gap: 7.1px;
+    gap: 8px;
+    font-size: 14px;
+    font-family: var(--font-manrope), Manrope, sans-serif;
+    font-weight: 600;
     border-radius: 5.65px;
     box-shadow: 0px 5.652px 22.61px rgba(196, 22, 28, 0.3);
+    justify-content: center;
   }
 
   .text {
+    position: relative;
     font-size: 14px;
     line-height: 16.96px;
+    font-weight: 600;
+    font-family: var(--font-manrope), Manrope, sans-serif;
+    color: #fff;
     white-space: nowrap;
+    text-align: left;
+    vertical-align: middle;
   }
 
   .component4 {
-    width: 18px;
-    height: 18px;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    margin-left: 0;
+    overflow: visible;
+  }
+
+  .vectorIcon {
+    display: none;
+  }
+
+  .mobileArrowIcon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
   }
 }

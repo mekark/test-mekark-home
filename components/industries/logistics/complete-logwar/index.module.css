@@ -69,6 +69,9 @@
   	width: 20.6771vw;
   	height: 60.0521vw;
 }
+.mobileSkeleton {
+  	display: none;
+}
 .frameContainer {
   	position: absolute;
   	top: 0px;
@@ -178,17 +181,14 @@
   	width: 100%;
   	position: relative;
   	line-height: 24px;
-  	display: flex;
-  	flex-direction: column;
-  	align-items: center;
-  	justify-content: center;
+  	display: block;
   	font-size: 16px;
   	text-align: center;
   	color: #4c4c4c;
 }
 .bannerLine {
-  	display: block;
-  	white-space: nowrap;
+  	display: inline;
+  	white-space: normal;
 }
 .everyEotCrane {
   	line-height: 24px;
@@ -273,9 +273,6 @@
     		font-size: 14px;
     		line-height: 20px;
   	}
-  	.bannerLine {
-    		white-space: normal;
-  	}
   	.everyEotCrane,
   	.aroundYourLoadRequirements {
     		line-height: 20px;
@@ -284,32 +281,132 @@
 
 @media (max-width: 768px) {
   	.completeEotCraneSolutionsWrapper {
-    		padding: 32px 16px;
+    		padding: 28px 20px 32px;
+    		color: #4c4c4c;
+  	}
+  	.completeEotCraneSolutions {
+    		gap: 24px;
   	}
   	.completeWarehousing {
-    		font-size: 22px;
-    		line-height: 30px;
+    		width: 100%;
+    		max-width: 350px;
+    		font-size: 28px;
+    		font-weight: 700;
+    		line-height: 36px;
+    		letter-spacing: -1px;
+    		color: #000;
+  	}
+  	.titleLine {
+    		display: block;
+    		white-space: nowrap;
   	}
   	.asAFullService {
+    		width: 100%;
+    		max-width: 350px;
     		font-size: 14px;
-    		line-height: 22px;
+    		font-weight: 400;
+    		line-height: 20px;
+    		letter-spacing: 0;
+    		color: #4c4c4c;
+  	}
+  	.leftSticky {
+    		gap: 16px;
   	}
   	.frameParent {
-    		grid-template-columns: 1fr;
+    		position: relative;
+    		display: flex;
+    		flex-direction: column;
+    		gap: 12px;
+    		padding-left: 44px;
+    		box-sizing: border-box;
+    		overflow: visible;
+    		/* skeleton 1028 + top offset so full graphic stays visible */
+    		min-height: 1060px;
   	}
-  	.overlayborder {
-    		padding: 16px;
+  	.timelineGraphic {
+    		display: none;
   	}
-  	.strongEveryContainer {
-    		white-space: normal;
-    		font-size: 13px;
+  	.mobileSkeleton {
+    		display: block;
+    		position: absolute;
+    		top: 28px;
+    		left: 0;
+    		width: 48px !important;
+    		height: 1028px !important;
+    		max-width: 48px;
+    		max-height: none;
+    		border-radius: 0;
+    		object-fit: contain;
+    		object-position: left top;
+    		pointer-events: none;
+    		overflow: visible;
+  	}
+  	.frameContainer,
+  	.frameDiv,
+  	.frameParent2,
+  	.frameParent3,
+  	.frameParent4 {
+    		position: relative;
+    		width: 100%;
+    		max-width: 303px;
+    		height: 239px;
+    		min-height: 239px;
+    		max-height: 239px;
+    		overflow: hidden;
+    		border-radius: 10px;
+    		border-width: 0.5px;
+    		gap: 0;
+    		padding-bottom: 10px;
+    		box-sizing: border-box;
+  	}
+  	.rectangleIcon {
+    		width: 100%;
+    		height: 154px;
+    		flex-shrink: 0;
+    		border-radius: 10px 10px 0 0;
+    		object-fit: cover;
+  	}
+  	.cardBody {
+    		width: 100%;
+    		padding: 8px 10px 0;
+    		gap: 4px;
+    		flex: 1;
   	}
   	.cardTitle {
-    		font-size: 16px;
-    		line-height: 24px;
+    		width: 100%;
+    		max-width: 188px;
+    		font-size: 14px;
+    		font-weight: 600;
+    		line-height: 1;
+    		letter-spacing: 0;
+    		color: #000;
   	}
   	.cardDesc {
-    		font-size: 14px;
-    		line-height: 20px;
+    		width: 100%;
+    		max-width: 282px;
+    		font-size: 12px;
+    		font-weight: 400;
+    		line-height: 18px;
+    		letter-spacing: 0;
+    		color: #4c4c4c;
+  	}
+  	.overlayborder {
+    		margin-top: 24px;
+    		padding: 16px;
+    		border-radius: 12px;
+  	}
+  	.strongEveryContainer {
+    		display: block;
+    		white-space: normal;
+    		font-size: 12px;
+    		line-height: 18px;
+  	}
+  	.bannerLine {
+    		display: inline;
+    		white-space: normal;
+  	}
+  	.everyEotCrane,
+  	.aroundYourLoadRequirements {
+    		line-height: 18px;
   	}
 }

@@ -4,19 +4,49 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { getCardLayout, type SolutionItem } from "./data";
 import { fadeSlideRight, fadeSlideUp } from "./motion";
+import macStyles from "./ourSolutionsMac.module.css";
 
 type SolutionCardProps = {
   solution: SolutionItem;
   index: number;
   positioned?: boolean;
+  mobile?: boolean;
 };
 
 export function SolutionCard({
   solution,
   index,
   positioned = false,
+  mobile = false,
 }: SolutionCardProps) {
   const layout = positioned ? getCardLayout(solution) : undefined;
+
+  if (mobile) {
+    return (
+      <motion.article
+        className={macStyles.mobileCard}
+        custom={index * 0.1}
+        variants={fadeSlideUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <div className={macStyles.mobileCardImage}>
+          <Image
+            src={solution.image}
+            alt={solution.title}
+            fill
+            className="object-cover"
+            sizes="303px"
+          />
+        </div>
+        <div className={macStyles.mobileCardBody}>
+          <h4 className={macStyles.mobileCardTitle}>{solution.title}</h4>
+          <p className={macStyles.mobileCardDesc}>{solution.description}</p>
+        </div>
+      </motion.article>
+    );
+  }
 
   return (
     <motion.article

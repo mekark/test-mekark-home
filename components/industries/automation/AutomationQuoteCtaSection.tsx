@@ -22,7 +22,14 @@ export default function AutomationQuoteCtaSection() {
       <div className={styles.content}>
         <div className={styles.copy}>
           <h2 id="automation-quote-title" className={styles.heading}>
-            Ready to Start Your Automation Manufacturing Facility Construction?
+            <span className={styles.headingDesktop}>
+              Ready to Start Your Automation Manufacturing Facility Construction?
+            </span>
+            <span className={styles.headingMobile}>
+              <span className={styles.headingLine}>Ready to Start Your</span>
+              <span className={styles.headingLine}>Automation Manufacturing</span>
+              <span className={styles.headingLine}>Facility Construction?</span>
+            </span>
           </h2>
           <p className={styles.description}>
             Tell us your process requirements: precision tolerances, production
@@ -34,10 +41,11 @@ export default function AutomationQuoteCtaSection() {
         </div>
 
         <button type="button" onClick={openEnquiry} className={styles.button}>
-          <span>Get a Free Quote</span>
+          <span className={styles.buttonText}>Get a Free Quote</span>
           <Image
+            className={styles.buttonIcon}
             src="/images/industries/automation/automation-quote-cta/arrow-right.svg"
-            alt="Arrow icon"
+            alt=""
             width={25}
             height={25}
             aria-hidden

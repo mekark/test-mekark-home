@@ -1,0 +1,51 @@
+/* Automation FAQ — mobile pad/type (≤768). Desktop unchanged. */
+
+@media (max-width: 768px) {
+  .section {
+    padding: 32px 16px !important;
+  }
+
+  .title {
+    width: 100%;
+    max-width: 358px;
+    min-height: 72px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 28px !important;
+    font-weight: 700;
+    line-height: 36px !important;
+    letter-spacing: 0 !important;
+    text-align: center;
+    color: #111111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .faqTitleLine {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .columns {
+    gap: 12px !important;
+  }
+
+  .itemQuestion {
+    font-size: 16px !important;
+    font-weight: 500;
+    line-height: 128% !important;
+    letter-spacing: 0 !important;
+    color: #101116;
+  }
+
+  .itemAnswer {
+    font-size: 14px !important;
+    line-height: 20px !important;
+    color: #555;
+    /* Align with question text: number col 22px + gap 12px */
+    padding-left: 34px !important;
+    padding-right: 28px !important;
+  }
+}

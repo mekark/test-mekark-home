@@ -106,6 +106,7 @@
 }
 .logisticsIndustrial {
   position: relative;
+  margin: 0;
   padding: 0.52083vw 1.5625vw 0.52083vw 1.5625vw;
   line-height: 1.22;
   display: flex;
@@ -136,6 +137,15 @@
 .descLine {
   display: block;
   white-space: nowrap;
+}
+.heroDesktop {
+  display: contents;
+}
+.heroMobile {
+  display: none;
+}
+.mobileArrowIcon {
+  display: none;
 }
 .component5 {
   box-shadow: 0px 0.555556vw 2.222396vw rgba(196, 22, 28, 0.3);
@@ -210,14 +220,6 @@
     font-size: 34px;
     line-height: 1.2;
   }
-  .titleLine,
-  .subLine {
-    white-space: nowrap;
-  }
-  .descLine {
-    display: inline;
-    white-space: normal;
-  }
   .logisticsIndustrialStructuWrapper {
     height: auto;
     font-size: 17px;
@@ -259,18 +261,25 @@
 }
 
 @media (max-width: 768px) {
+  .heroDesktop {
+    display: none;
+  }
+  .heroMobile {
+    display: contents;
+  }
   .logisticsHeroBanner {
     width: 100%;
     height: 694px;
     min-height: 694px;
     max-height: 694px;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
     box-sizing: border-box;
+    background-color: #060606;
   }
   .heroLogo {
     top: 16px;
@@ -288,18 +297,18 @@
     height: 100%;
     object-fit: cover;
     object-position: 65% 45%;
-    transform: scale(1);
-    transform-origin: center bottom;
+    transform: scaleX(-1);
+    transform-origin: center center;
   }
   .divabsolute {
     background: linear-gradient(
       180deg,
       #060606 0%,
-      #060606 26%,
-      rgba(6, 6, 6, 0.94) 40%,
-      rgba(6, 6, 6, 0.62) 54%,
-      rgba(6, 6, 6, 0.22) 68%,
-      transparent 84%
+      #060606 28%,
+      rgba(6, 6, 6, 0.92) 42%,
+      rgba(6, 6, 6, 0.55) 55%,
+      rgba(6, 6, 6, 0.18) 68%,
+      transparent 80%
     );
     pointer-events: none;
   }
@@ -307,82 +316,109 @@
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: none;
-    padding: 88px 0 16px;
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 88px 0 0;
     gap: 12px;
     flex: 0 0 auto;
     align-items: flex-start;
     box-sizing: border-box;
   }
   .leadingPreEngineeredWarehou {
-    font-size: 25px;
+    width: 100%;
+    max-width: 350px;
+    min-height: 0;
+    height: auto;
+    font-size: 30px;
     font-weight: 700;
-    line-height: 100%;
-    max-width: 342px;
+    font-style: normal;
+    line-height: 36px;
+    letter-spacing: 0;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
-  .titleLine,
-  .subLine {
-    white-space: normal;
-    line-height: 100%;
-  }
-  .descLine {
-    display: inline;
-    white-space: normal;
-    line-height: 1.5;
+  .titleLine {
+    display: block;
+    white-space: nowrap;
   }
   .logisticsIndustrialStructuWrapper {
-    font-size: 15px;
-    height: auto;
     width: 100%;
+    max-width: 322px;
+    height: auto;
+    min-height: 50px;
+    font-size: 16px;
+    background-color: #fff;
+    color: #c4161c;
+    overflow: hidden;
+    flex-shrink: 0;
   }
   .logisticsIndustrialStructuWrapper::before {
     width: 4px;
+    background-color: #c4161c;
   }
   .logisticsIndustrial {
     position: relative;
-    top: auto;
-    left: auto;
-    width: auto;
-    padding: 8px 12px 8px 16px;
-    line-height: 1.35;
+    top: 3px;
+    left: 10px;
+    width: calc(100% - 10px);
+    padding: 6px 8px 6px 0;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+    color: #c4161c;
+    display: flex;
+    align-items: center;
+    min-height: calc(100% - 6px);
   }
   .mekarkIsATrustedPreEngineWrapper {
-    width: 342px;
-    max-width: 342px;
-    font-family: Manrope, var(--font-manrope), sans-serif;
-    font-size: 11px;
-    font-weight: 400;
-    line-height: normal;
-    color: #f3f3f3;
+    width: 100%;
+    max-width: 350px;
+    min-height: 0;
     height: auto;
+    font-family: Manrope, var(--font-manrope), sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.35;
+    letter-spacing: 0;
+    color: #f3f3f3;
   }
   .mekarkIsA {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
     font-family: inherit;
-    font-size: 11px;
-    font-weight: 400;
-    line-height: normal;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.35;
+    letter-spacing: 0;
     color: inherit;
     display: block;
-    position: relative;
-    width: 342px;
-    max-width: 342px;
   }
   .component5 {
-    width: auto;
-    max-width: 300px;
+    width: fit-content;
+    min-width: unset;
+    max-width: 230px;
+    height: 44px;
+    min-height: 44px;
+    max-height: 44px;
+    flex: 0 0 auto;
     align-self: flex-start;
-    margin-top: 4px;
+    margin-top: 2px;
     margin-left: 0;
-    margin-right: auto;
+    margin-right: 0;
     box-sizing: border-box;
     padding: 10px 20px;
-    gap: 7.1px;
+    gap: 8px;
     font-size: 14px;
-    font-family: Manrope, var(--font-manrope), sans-serif;
+    font-family: var(--font-manrope), Manrope, sans-serif;
     font-weight: 600;
     border-radius: 5.65px;
     box-shadow: 0px 5.652px 22.61px rgba(196, 22, 28, 0.3);
-    min-height: auto;
     justify-content: center;
   }
   .text {
@@ -390,22 +426,26 @@
     font-size: 14px;
     line-height: 16.96px;
     font-weight: 600;
-    font-family: Manrope, var(--font-manrope), sans-serif;
+    font-family: var(--font-manrope), Manrope, sans-serif;
     color: #fff;
     white-space: nowrap;
     text-align: left;
+    vertical-align: middle;
   }
   .component4 {
-    width: 18px;
-    height: 18px;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    margin-left: 0;
+    overflow: visible;
   }
   .vectorIcon {
-    position: relative;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
-    width: 100%;
-    height: 100%;
+    display: none;
+  }
+  .mobileArrowIcon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
   }
 }

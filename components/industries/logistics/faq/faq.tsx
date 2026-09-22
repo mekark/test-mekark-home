@@ -104,7 +104,10 @@ const FAQ: NextPage = () => {
     		<div className={styles.faq}>
       			<div className={styles.frameParent}>
         				<div className={styles.frequentlyAskedQuestionsWrapper}>
-          					<b className={styles.frequentlyAskedQuestions}>Frequently Asked Questions</b>
+          					<b className={styles.frequentlyAskedQuestions}>
+            						<span className={styles.faqTitleLine}>Frequently Asked </span>
+            						<span className={styles.faqTitleLine}>Questions</span>
+          					</b>
         				</div>
         				<div className={styles.divspaceY3Parent}>
           					<div className={styles.divrevealParent}>

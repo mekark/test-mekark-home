@@ -6,16 +6,10 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useState,
   type ButtonHTMLAttributes,
   type ReactNode,
 } from "react";
-import { usePathname } from "next/navigation";
-import { ServiceEnquiryModal } from "@/components/enquiry/ServiceEnquiryModal";
-import {
-  trackServiceFormSubmit,
-  trackServiceFormView,
-} from "@/lib/analytics";
+import { usePathname, useRouter } from "next/navigation";
 
 export type ServiceEnquiryConfig = {
   serviceSlug: string;
@@ -61,24 +55,6 @@ export function useServiceEnquiry() {
   return useServiceEnquiryContext();
 }
 
-function setFormHash() {
-  if (typeof window === "undefined") {
-    return;
-  }
-
-  const nextUrl = `${window.location.pathname}${window.location.search}#${FORM_HASH}`;
-  window.history.replaceState(null, "", nextUrl);
-}
-
-function clearFormHash() {
-  if (typeof window === "undefined") {
-    return;
-  }
-
-  const nextUrl = `${window.location.pathname}${window.location.search}`;
-  window.history.replaceState(null, "", nextUrl);
-}
-
 export function ServiceEnquiryProvider({
   config,
   children,
@@ -87,78 +63,43 @@ export function ServiceEnquiryProvider({
   children: ReactNode;
 }) {
   const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   const openEnquiry = useCallback(() => {
-    setIsOpen(true);
-    setFormHash();
-    trackServiceFormView(config.serviceSlug, config.formSourcePage);
-  }, [config.formSourcePage, config.serviceSlug]);
+    router.push(config.formSourcePage);
+  }, [config.formSourcePage, router]);
 
   const closeEnquiry = useCallback(() => {
-    setIsOpen(false);
-    clearFormHash();
-  }, []);
+    router.push(config.pagePath);
+  }, [config.pagePath, router]);
 
+  // Migrate legacy `#form` hash links to the dedicated form route.
   useEffect(() => {
     if (pathname !== config.pagePath) {
-      setIsOpen(false);
+      return;
     }
-  }, [config.pagePath, pathname]);
 
-  useEffect(() => {
-    const handleHashChange = () => {
-      if (window.location.pathname !== config.pagePath) {
-        return;
-      }
+    if (typeof window === "undefined") {
+      return;
+    }
 
-      if (window.location.hash === `#${FORM_HASH}`) {
-        setIsOpen(true);
-        trackServiceFormView(config.serviceSlug, config.formSourcePage);
-        return;
-      }
-
-      setIsOpen(false);
-    };
-
-    window.addEventListener("hashchange", handleHashChange);
-    return () => window.removeEventListener("hashchange", handleHashChange);
-  }, [config.formSourcePage, config.pagePath, config.serviceSlug]);
+    if (window.location.hash === `#${FORM_HASH}`) {
+      router.replace(config.formSourcePage);
+    }
+  }, [config.formSourcePage, config.pagePath, pathname, router]);
 
   const value = useMemo(
     () => ({
       openEnquiry,
       closeEnquiry,
-      isOpen,
+      isOpen: false,
     }),
-    [closeEnquiry, isOpen, openEnquiry],
+    [closeEnquiry, openEnquiry],
   );
 
   return (
     <ServiceEnquiryContext.Provider value={value}>
       {children}
-      <ServiceEnquiryModal
-        isOpen={isOpen}
-        onClose={closeEnquiry}
-        title={config.title}
-        serviceLabel={config.serviceLabel}
-        serviceSlug={config.serviceSlug}
-        sourcePage={config.formSourcePage}
-        description={config.description}
-        submitLabel={config.submitLabel ?? "Request Project Proposal"}
-        projectAreas={config.projectAreas}
-        highlights={config.highlights}
-        defaultService={
-          config.defaultService ??
-          (config.defaultIndustry ? "" : config.serviceLabel)
-        }
-        defaultIndustry={config.defaultIndustry}
-        lockService={config.lockService ?? false}
-        lockIndustry={config.lockIndustry ?? false}
-        onSubmit={() =>
-          trackServiceFormSubmit(config.serviceSlug, config.formSourcePage)
-        }
-      />
     </ServiceEnquiryContext.Provider>
   );
 }

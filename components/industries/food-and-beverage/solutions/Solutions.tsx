@@ -63,7 +63,7 @@ export default function Solutions() {
         <div className={styles.headerBlock}>
           <b className={styles.eotCraneSolutions}>
             <span className={styles.titleLine}>
-              Food &amp; Beverage Manufacturing Facility Construction
+              Food &amp; Beverage Manufacturing Facility Construction{" "}
             </span>
             <span className={styles.titleLine}>
               Across South India&apos;s Growth Hubs

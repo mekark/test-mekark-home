@@ -8,26 +8,25 @@ const CTA = () => {
       <div className={styles.section}>
         <div className={styles.planningAWarehouseOrLogistParent}>
           <div className={styles.planningAWarehouse}>
-            <span className={styles.line}>Planning a Food or Beverage</span>
-            <span className={styles.line}>
-              Manufacturing Facility in South India?
+            <span className={styles.ctaTitleDesktop}>
+              <span className={styles.ctaTitleLine}>
+                Planning a Food or Beverage Manufacturing{" "}
+              </span>
+              <span className={styles.ctaTitleLine}>Facility in South India?</span>
+            </span>
+            <span className={styles.ctaTitleMobile}>
+              <span className={styles.ctaTitleLine}>Planning a Food or </span>
+              <span className={styles.ctaTitleLine}>Beverage Manufacturing </span>
+              <span className={styles.ctaTitleLine}>Facility in South India?</span>
             </span>
           </div>
-          <div className={styles.mekarksProjectCalendar}>
-            <span className={styles.line}>
-              Every week your production line isn&apos;t running is lost revenue
-              and perishable inventory at risk.
-            </span>
-            <span className={styles.line}>
-              Mekark&apos;s team will assess your process requirements, hygiene
-              class, cold chain needs,
-            </span>
-            <span className={styles.line}>
-              and utility load, and deliver a transparent budgetary estimate
-              within 24 hours. No obligation,
-            </span>
-            <span className={styles.line}>just honest expert advice.</span>
-          </div>
+          <p className={styles.mekarksProjectCalendar}>
+            Every week your production line isn&apos;t running is lost revenue
+            and perishable inventory at risk. Mekark&apos;s team will assess
+            your process requirements, hygiene class, cold chain needs, and
+            utility load, and deliver a transparent budgetary estimate within 24
+            hours. No obligation, just honest expert advice.
+          </p>
         </div>
         <div className={styles.sectionChild} />
         <a href={PHONE_HREF} className={styles.cta2}>
@@ -282,19 +281,31 @@ const CTA = () => {
       <div className={styles.frameParent3}>
         <div className={styles.whyWarehousesFromMekarkAreWrapper}>
           <b className={styles.whyWarehousesFrom}>
-            Why Food &amp; Beverage Facilities from Mekark Are the Better Choice
+            <span className={`${styles.whyTitleLine} ${styles.whyTitleLineDesktop}`}>
+              Why Food &amp; Beverage Facilities{" "}
+            </span>
+            <span className={`${styles.whyTitleLine} ${styles.whyTitleLineDesktop}`}>
+              from Mekark Are the{" "}
+            </span>
+            <span className={`${styles.whyTitleLine} ${styles.whyTitleLineDesktop}`}>
+              Better Choice
+            </span>
+            <span className={`${styles.whyTitleLine} ${styles.whyTitleLineMobile}`}>
+              Why Food &amp; Beverage
+            </span>
+            <span className={`${styles.whyTitleLine} ${styles.whyTitleLineMobile}`}>
+              Facilities from Mekark Are
+            </span>
+            <span className={`${styles.whyTitleLine} ${styles.whyTitleLineMobile}`}>
+              the Better Choice
+            </span>
           </b>
         </div>
         <div className={styles.mekarkIsOne}>
-          <span className={styles.line}>
-            Mekark is one of South India&apos;s most trusted food &amp; beverage
-            manufacturing facility construction companies, offering in-house
-            design,
-          </span>
-          <span className={styles.line}>
-            fabrication, and MEP integration under one roof, not a general
-            contractor treating your plant like a generic industrial shed.
-          </span>
+          Mekark is one of South India&apos;s most trusted food &amp; beverage
+          manufacturing facility construction companies, offering in-house
+          design, fabrication, and MEP integration under one roof, not a general
+          contractor treating your plant like a generic industrial shed.
         </div>
       </div>
 

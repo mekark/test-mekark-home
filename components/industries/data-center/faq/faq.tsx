@@ -99,7 +99,7 @@ const FaqItem = ({ num, question, answer, isOpen, onToggle }: FaqItemProps) => (
       >
         <Image
           className={styles.vectorIcon}
-          src="/images/industries/data-center/faq/faq-chevron.svg"
+          src="/images/industries/logistics/faq/faq-chevron.svg"
           width={17}
           height={17}
           sizes="100vw"
@@ -129,7 +129,8 @@ const FAQ = () => {
       <div className={styles.frameParent}>
         <div className={styles.frequentlyAskedQuestionsWrapper}>
           <b className={styles.frequentlyAskedQuestions}>
-            Frequently Asked Questions
+            <span className={styles.faqTitleLine}>Frequently Asked </span>
+            <span className={styles.faqTitleLine}>Questions</span>
           </b>
         </div>
         <div className={styles.divspaceY3Parent}>

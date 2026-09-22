@@ -1,4 +1,5 @@
 import Image from "next/image";
+import macStyles from "./faqMac.module.css";
 
 type FaqItem = {
   question: string;
@@ -90,7 +91,9 @@ function FaqCard({
           <span className="pt-0.5 font-[family-name:var(--font-montserrat)] text-base font-bold leading-[16.624px] text-[#e60f1a] sm:pt-[5px]">
             {number}
           </span>
-          <span className="font-[family-name:var(--font-manrope)] text-base font-semibold leading-snug text-[#101116] sm:text-[18.667px] sm:leading-[26.667px]">
+          <span
+            className={`font-[family-name:var(--font-manrope)] text-base font-semibold leading-snug text-[#101116] sm:text-[18.667px] sm:leading-[26.667px] ${macStyles.itemQuestion}`}
+          >
             {item.question}
           </span>
         </span>
@@ -107,7 +110,9 @@ function FaqCard({
       </summary>
 
       <div className="px-4 pb-4 sm:px-[25.975px] sm:pb-[25.975px]">
-        <p className="font-[family-name:var(--font-manrope)] text-sm leading-relaxed text-[#53555b] sm:pl-[38.44px] sm:pr-[36px] sm:text-base sm:leading-[26px]">
+        <p
+          className={`font-[family-name:var(--font-manrope)] text-sm leading-relaxed text-[#53555b] sm:pl-[38.44px] sm:pr-[36px] sm:text-base sm:leading-[26px] ${macStyles.itemAnswer}`}
+        >
           {item.answer}
         </p>
       </div>
@@ -117,15 +122,22 @@ function FaqCard({
 
 export default function AutomationFaqSection() {
   return (
-    <section className="bg-white px-[clamp(24px,5.556vw,106.667px)] py-16 lg:py-[93.333px]">
+    <section
+      className={`bg-white px-[clamp(24px,5.556vw,106.667px)] py-16 lg:py-[93.333px] ${macStyles.section}`}
+    >
       <div className="mx-auto flex w-full max-w-[1706.667px] flex-col items-center gap-10 lg:gap-[66.667px]">
         <div className="flex min-h-[66px] w-full max-w-[1480px] items-center justify-center">
-          <h2 className="text-center font-[family-name:var(--font-manrope)] text-[clamp(2rem,3vw,53.333px)] font-bold leading-[1.225] tracking-[-1.3333px] text-[#111]">
-            Frequently Asked Questions
+          <h2
+            className={`text-center font-[family-name:var(--font-manrope)] text-[clamp(2rem,3vw,53.333px)] font-bold leading-[1.225] tracking-[-1.3333px] text-[#111] ${macStyles.title}`}
+          >
+            <span className={macStyles.faqTitleLine}>Frequently Asked </span>
+            <span className={macStyles.faqTitleLine}>Questions</span>
           </h2>
         </div>
 
-        <div className="grid w-full grid-cols-1 items-start gap-8 min-[1024px]:grid-cols-2 min-[1024px]:gap-10 min-[1900px]:w-[1706.667px] min-[1900px]:grid-cols-[repeat(2,790.667px)] min-[1900px]:justify-center min-[1900px]:self-start">
+        <div
+          className={`grid w-full grid-cols-1 items-start gap-8 min-[1024px]:grid-cols-2 min-[1024px]:gap-10 min-[1900px]:w-[1706.667px] min-[1900px]:grid-cols-[repeat(2,790.667px)] min-[1900px]:justify-center min-[1900px]:self-start ${macStyles.columns}`}
+        >
           {faqColumns.map((column, columnIndex) => (
             <div
               key={columnIndex}

@@ -28,10 +28,23 @@ export default function LogisticsHero() {
           alt="Aerial view of a modern pre-engineered warehouse facility"
         />
       </div>
+      <Image
+        className={styles.mobileHeroImage}
+        src="/images/mobile/mobile-hero.png"
+        width={941}
+        height={1672}
+        sizes="100vw"
+        alt="Aerial view of a modern warehouse facility at sunset"
+        priority
+        style={{ objectFit: "cover", objectPosition: "center 35%" }}
+      />
       <div className={styles.divabsolute} />
       <div className={styles.div}>
         <h1 className={styles.leadingPreEngineeredWarehou}>
-          Leading Pre-Engineered Warehouse Building Manufacturer in South India
+          <span className={styles.titleLine}>Leading Pre-Engineered </span>
+          <span className={styles.titleLine}>Warehouse Building </span>
+          <span className={styles.titleLine}>Manufacturer in South </span>
+          <span className={styles.titleLine}>India</span>
         </h1>
         <div className={styles.logisticsIndustrialStructuWrapper}>
           <h2 className={styles.logisticsIndustrial}>
@@ -56,7 +69,16 @@ export default function LogisticsHero() {
               src="/images/industries/logistics/hero/arrow-icon.svg"
               width={20}
               height={16}
-              alt="Arrow icon"
+              alt=""
+              aria-hidden="true"
+            />
+            <Image
+              className={styles.mobileArrowIcon}
+              src="/images/mobile/component-4.png"
+              width={24}
+              height={24}
+              alt=""
+              aria-hidden="true"
             />
           </div>
         </button>

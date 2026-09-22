@@ -165,8 +165,10 @@ export default function ManufacturingFacilitiesSection() {
 
       <div className={styles.industrialWarehouseConstructParent}>
         <b className={styles.industrialWarehouseConstruct}>
-          Textile &amp; Garment Manufacturing Facilities We Build Across South
-          India
+          <span className={styles.titleLine}>Textile &amp; Garment </span>
+          <span className={styles.titleLine}>Manufacturing Facilities </span>
+          <span className={styles.titleLine}>We Build Across </span>
+          <span className={styles.titleLine}>South India</span>
         </b>
         <div className={styles.ourPreEngineeredWarehouse}>
           Our textile factory construction expertise covers every segment of the
@@ -214,15 +216,17 @@ export default function ManufacturingFacilitiesSection() {
       <div className={styles.overlayborder}>
         <div className={styles.strongEveryContainer}>
           <span className={styles.strongEveryContainer2}>
-            <span>
+            <span className={styles.bannerLine}>
               Irrespective of your textile segment — spinning, weaving, garment,
               or processing — Mekark&apos;s factory construction expertise is
-              tailored to your operations, delivered across{" "}
+              tailored to your operations, delivered across
             </span>
-            <b className={styles.southIndia}>
-              Tamil Nadu, Karnataka, Andhra Pradesh, Telangana, and Kerala
-            </b>
-            <span>.</span>
+            <span className={styles.bannerLine}>
+              <b className={styles.southIndia}>
+                Tamil Nadu, Karnataka, Andhra Pradesh, Telangana, and Kerala
+              </b>
+              <span>.</span>
+            </span>
           </span>
         </div>
       </div>

@@ -44,15 +44,12 @@
   line-height: 1.271;
   font-weight: 700;
   color: #fff;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.titleLineFirst {
-  display: block;
-  white-space: nowrap;
-}
-
-.titleLineSecond {
+.ctaTitleLine {
   display: block;
   white-space: nowrap;
 }
@@ -201,11 +198,6 @@
     font-size: clamp(28px, 2.291667vw, 44px);
   }
 
-  .titleLineFirst {
-    font-size: clamp(24px, 2.083vw, 44px);
-    letter-spacing: -0.015em;
-  }
-
   .mekarksProjectCalendar {
     font-size: clamp(14px, 0.9375vw, 18px);
   }
@@ -228,11 +220,6 @@
 @media (min-width: 1920px) {
   .root {
     padding-top: 0.52083vw;
-  }
-
-  .titleLineFirst {
-    white-space: nowrap;
-    letter-spacing: -0.01em;
   }
 
   .cta2 {

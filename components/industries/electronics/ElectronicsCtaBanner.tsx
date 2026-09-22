@@ -8,10 +8,12 @@ export default function ElectronicsCtaBanner() {
       <div className={styles.section}>
         <div className={styles.planningAWarehouseOrLogistParent}>
           <p className={styles.planningAWarehouse}>
-            <span className={styles.titleLineFirst}>
-              Planning an Electronics Manufacturing
+            <span className={styles.ctaTitleLine}>
+              Planning an Electronics Manufacturing{" "}
             </span>
-            <span className={styles.titleLineSecond}>Facility in South India?</span>
+            <span className={styles.ctaTitleLine}>
+              Facility in South India?
+            </span>
           </p>
           <p className={styles.mekarksProjectCalendar}>
             Every week your production line isn&apos;t running is lost revenue.

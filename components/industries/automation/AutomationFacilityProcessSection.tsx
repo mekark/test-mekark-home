@@ -81,17 +81,39 @@ export default function AutomationFacilityProcessSection() {
 
       <ol className={styles.mobileProcess}>
         {STEPS.map((step, index) => (
-          <li
-            key={step.number}
-            className={`${styles.mobileStep} ${index < STEPS.length - 1 ? styles.mobileStepWithGap : ""}`}
-          >
-            <div className={styles.mobileStepBadge}>
-              <span className={styles.mobileStepNumber}>{step.number}</span>
+          <li key={step.number} className={styles.mobileStepItem}>
+            <div className={styles.mobileStep}>
+              <div className={styles.mobileStepNumber}>{step.number}</div>
+              <div className={styles.mobileStepContent}>
+                <h3 className={styles.mobileStepTitle}>{step.title}</h3>
+                <p className={styles.mobileStepDescription}>{step.description}</p>
+              </div>
             </div>
-            <article className={styles.mobileStepCard}>
-              <h3 className={styles.mobileStepTitle}>{step.title}</h3>
-              <p className={styles.mobileStepDescription}>{step.description}</p>
-            </article>
+            {index < STEPS.length - 1 ? (
+              <div className={styles.mobileStepArrow} aria-hidden="true">
+                <svg
+                  width="24"
+                  height="36"
+                  viewBox="0 0 24 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 2V26"
+                    stroke="#8E8E8E"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M5 20L12 29L19 20"
+                    stroke="#8E8E8E"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+            ) : null}
           </li>
         ))}
       </ol>

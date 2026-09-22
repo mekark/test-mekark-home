@@ -10,6 +10,7 @@ import {
 } from "./data";
 import { timelineGrow } from "./motion";
 import { SolutionCard } from "./SolutionCard";
+import macStyles from "./ourSolutionsMac.module.css";
 
 export function SolutionsTimeline() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -21,7 +22,6 @@ export function SolutionsTimeline() {
 
     const updateScale = () => {
       const nextScale = node.offsetWidth / TIMELINE_DESIGN_WIDTH;
-      // Never upscale past design size; use full 1:1 when column is wide enough
       setScale(Math.min(nextScale, 1));
     };
 
@@ -35,7 +35,7 @@ export function SolutionsTimeline() {
     <>
       <div
         ref={containerRef}
-        className="relative hidden w-full min-w-0 overflow-x-clip lg:block"
+        className={`relative hidden w-full min-w-0 overflow-x-clip lg:block ${macStyles.desktopTimeline}`}
         style={{ height: TIMELINE_HEIGHT * scale }}
       >
         <div
@@ -74,9 +74,23 @@ export function SolutionsTimeline() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-7 lg:hidden">
+      <div className={macStyles.mobileTimeline}>
+        <Image
+          className={macStyles.mobileSkeleton}
+          src="/images/mobile/6CARD-SKELETON.png"
+          width={48}
+          height={1435}
+          alt=""
+          aria-hidden="true"
+          unoptimized
+        />
         {solutions.map((solution, index) => (
-          <SolutionCard key={solution.title} solution={solution} index={index} />
+          <SolutionCard
+            key={solution.title}
+            solution={solution}
+            index={index}
+            mobile
+          />
         ))}
       </div>
     </>

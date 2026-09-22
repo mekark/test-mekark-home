@@ -8,7 +8,7 @@ const IndustriesWeServe: NextPage = () => {
     		<div className={styles.industriesWeServe}>
       			<div className={styles.industrialWarehouseConstructParent}>
         				<b className={styles.industrialWarehouseConstruct}>{`Industrial Warehouse Construction Across South India's Sectors `}</b>
-        				<div className={styles.ourPreEngineeredWarehouse}>Our pre-engineered warehouse building structures serve sectors across Tamil Nadu, <br />Karnataka, Andhra Pradesh, Telangana, and Kerala</div>
+        				<div className={styles.ourPreEngineeredWarehouse}>Our pre-engineered warehouse building structures serve sectors across Tamil Nadu, Karnataka, Andhra Pradesh, Telangana, and Kerala</div>
       			</div>
       			<div className={styles.frameParent}>
         				<div className={styles.frameGroup}>

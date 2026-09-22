@@ -93,8 +93,8 @@ export function InternshipSection() {
               </h2>
               <p className="mt-3 max-w-[476px] text-[13px] leading-[21px] text-[#4b5563]">
                 Are you a student or fresher looking to begin your career? We
-                offer internships where you can learn, grow, and gain real-world
-                experience.
+                offer internship opportunities to learn, grow, and gain
+                real-world experience.
               </p>
               <ul className="mt-5 grid grid-cols-1 gap-2 lg:hidden">
                 {mobileHighlights.map((item) => (

@@ -321,9 +321,9 @@
     max-width: 100% !important;
   }
 
-  .featureCard :global(p span) {
+  .featureCard :global(p .descDesktopLine) {
     white-space: normal !important;
-    display: inline !important;
+    display: block !important;
   }
 
   .featuresImage {

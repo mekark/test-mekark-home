@@ -170,6 +170,7 @@
 	/* Logistics xl proportions — 1920 canvas */
 	width: 40.2604vw;
 	flex-shrink: 0;
+	align-self: stretch;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -180,6 +181,7 @@
 .leftSticky {
 	position: sticky;
 	top: 5.20833vw;
+	z-index: 2;
 	display: flex;
 	flex-direction: column;
 	gap: 1.25vw;

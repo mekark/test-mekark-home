@@ -20,6 +20,7 @@
 .leftStickyOuter {
   	width: 40.2604vw;
   	flex-shrink: 0;
+  	align-self: stretch;
   	display: flex;
   	flex-direction: column;
   	padding-top: 9.89583vw;
@@ -28,6 +29,7 @@
 .leftSticky {
   	position: sticky;
   	top: 5.20833vw;
+  	z-index: 2;
   	display: flex;
   	flex-direction: column;
   	gap: 1.25vw;

@@ -15,19 +15,22 @@ const CompleteDC = () => {
               <span className={styles.subtitleLine}>Engineered End-to-End</span>
             </h3>
             <p className={styles.asALeading}>
-              <span className={styles.descLine}>
+              <span className={styles.descLineMobile}>
                 As a full-service, turnkey EPC data center construction company
-                in South
+                in South India, Mekark designs, fabricates, and builds
+                white-space, MEP, and shell infrastructure engineered around
+                your uptime tier, power density, and redundancy requirements.
               </span>
-              <span className={styles.descLine}>
-                India, Mekark designs, fabricates, and builds white-space, MEP,
-                and shell
-              </span>
-              <span className={styles.descLine}>
+              <span className={styles.descLineDesktop}>
+                As a full-service, turnkey EPC data center construction company
+                in South India,
+                <br />
+                Mekark designs, fabricates, and builds white-space, MEP, and
+                shell
+                <br />
                 infrastructure engineered around your uptime tier, power
                 density, and
-              </span>
-              <span className={styles.descLine}>
+                <br />
                 redundancy requirements.
               </span>
             </p>

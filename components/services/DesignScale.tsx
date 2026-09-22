@@ -98,8 +98,11 @@ export default function DesignScale({
 
   return (
     <div
-      className={`relative w-full overflow-x-hidden ${useScaling ? "bg-white" : "bg-transparent"}`}
-    >      {useScaling ? (
+      className={`relative w-full ${
+        useScaling ? "overflow-x-hidden bg-white" : "bg-transparent"
+      }`}
+    >
+      {useScaling ? (
         <div
           className="relative"
           style={{

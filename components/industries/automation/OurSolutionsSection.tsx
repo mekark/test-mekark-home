@@ -179,10 +179,29 @@ function SectionHeading() {
       <p
         className={`max-w-[654px] font-[family-name:var(--font-manrope)] text-base leading-relaxed text-[#6e6e6e] lg:max-w-[34.0625vw] lg:text-[0.9375vw] lg:leading-normal ${macStyles.headerBody}`}
       >
-        As a full-service, turnkey EPC automation facility construction company
-        in South India, Mekark designs, fabricates, and builds precision
-        manufacturing, assembly, and testing environments engineered around
-        vibration control, ESD protection, and utility density.
+        <span className="min-[1201px]:hidden">
+          As a full-service, turnkey EPC automation facility construction company
+          in South India, Mekark designs, fabricates, and builds precision
+          manufacturing, assembly, and testing environments engineered around
+          vibration control, ESD protection, and utility density.
+        </span>
+        <span className="hidden min-[1201px]:block">
+          <span className="block whitespace-nowrap">
+            As a full-service, turnkey EPC automation facility construction
+            company in
+          </span>
+          <span className="block whitespace-nowrap">
+            South India, Mekark designs, fabricates, and builds precision
+            manufacturing,
+          </span>
+          <span className="block whitespace-nowrap">
+            assembly, and testing environments engineered around vibration
+            control, ESD
+          </span>
+          <span className="block whitespace-nowrap">
+            protection, and utility density.
+          </span>
+        </span>
       </p>
     </div>
   );

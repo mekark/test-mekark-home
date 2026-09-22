@@ -15,20 +15,24 @@ const CompletePharma = () => {
               <span className={styles.subtitleLine}>Engineered End-to-End</span>
             </h3>
             <p className={styles.asALeading}>
-              <span className={styles.descLine}>
+              <span className={styles.descLineMobile}>
                 As a full-service, turnkey EPC pharma facility construction
-                company in South
+                company in South India, Mekark designs, fabricates, and builds
+                cleanroom-classified, compliance-ready production environments
+                tailored to your process, contamination control standards, and
+                utility requirements.
               </span>
-              <span className={styles.descLine}>
-                India, Mekark designs, fabricates, and builds
-                cleanroom-classified, compliance-
-              </span>
-              <span className={styles.descLine}>
-                ready production environments tailored to your process,
-                contamination control
-              </span>
-              <span className={styles.descLine}>
-                standards, and utility requirements.
+              <span className={styles.descLineDesktop}>
+                As a full-service, turnkey EPC pharma facility construction
+                company in
+                <br />
+                South India, Mekark designs, fabricates, and builds
+                cleanroom-classified,
+                <br />
+                compliance-ready production environments tailored to your
+                process,
+                <br />
+                contamination control standards, and utility requirements.
               </span>
             </p>
           </div>

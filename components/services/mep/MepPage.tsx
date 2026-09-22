@@ -16,7 +16,7 @@ import { MEP_ENQUIRY_CONFIG } from "@/components/services/serviceEnquiryConfigs"
 export function MepPage() {
   return (
     <ServiceEnquiryProvider config={MEP_ENQUIRY_CONFIG}>
-      <main className="mep-service-page flex flex-1 flex-col overflow-x-hidden bg-white">
+      <main className="mep-service-page flex flex-1 flex-col overflow-x-clip bg-white">
         <DesignScale>
           <Hero />
           <EndToEnd />

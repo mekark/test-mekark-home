@@ -16,7 +16,7 @@ import { SOLAR_ENQUIRY_CONFIG } from "@/components/services/serviceEnquiryConfig
 export function SolarPage() {
   return (
     <ServiceEnquiryProvider config={SOLAR_ENQUIRY_CONFIG}>
-      <main className="solar-service-page flex flex-1 flex-col overflow-x-hidden bg-white">
+      <main className="solar-service-page flex flex-1 flex-col overflow-x-clip bg-white">
         <DesignScale>
           <Hero />
           <EndToEnd />

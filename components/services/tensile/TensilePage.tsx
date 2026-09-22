@@ -15,7 +15,7 @@ import { TensileEnquiryProvider } from "@/components/services/tensile/TensileEnq
 export function TensilePage() {
   return (
     <TensileEnquiryProvider>
-      <main className="tensile-service-page flex flex-1 flex-col overflow-x-hidden bg-white">
+      <main className="tensile-service-page flex flex-1 flex-col overflow-x-clip bg-white">
         <DesignScale>
           <Hero />
           <Frame169 />

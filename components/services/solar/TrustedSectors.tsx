@@ -7,7 +7,7 @@ import { fadeUp, scaleIn, staggerContainer } from "@/lib/motion-variants";
 
 const VIEWPORT = { once: true, margin: "-80px" as const };
 
-/** Figma 7385:1180 — 3×3 + 1 centered logo grid */
+/** Figma 7454:8082 — 3×2 + 1 centered logo grid */
 const MOBILE_LOGOS = [
   {
     name: "Tata",
@@ -82,8 +82,8 @@ function MobileLogoCard({
   );
 }
 
-/** Figma 7385:1174 — civil services mobile trusted sectors */
-function CivilTrustedSectorsMobile() {
+/** Figma 7454:8082 — solar services mobile trusted sectors */
+function SolarTrustedSectorsMobile() {
   return (
     <section className="relative w-full bg-[#fdebeb] lg:hidden">
       <div className="px-4 py-8">
@@ -92,31 +92,33 @@ function CivilTrustedSectorsMobile() {
           whileInView="visible"
           viewport={VIEWPORT}
           variants={staggerContainer}
-          className="mx-auto flex w-full max-w-[358px] flex-col items-center gap-6 rounded-[28px] bg-[#fcfcfc] px-[14px] py-6 shadow-[0px_0px_20px_rgba(0,0,0,0.1)]"
+          className="mx-auto flex w-full max-w-[358px] flex-col items-center gap-4 rounded-[28px] bg-[#fcfcfc] px-[14px] py-6 shadow-[0px_0px_20px_rgba(0,0,0,0.1)]"
         >
           <motion.div
             variants={fadeUp}
-            className="flex w-full flex-col items-center gap-[14px] text-center"
+            className="flex w-full flex-col items-center gap-6"
           >
-            <h2 className="font-manrope text-[28px] font-bold leading-[32px] text-[#111]">
-              <span className="block">Trusted Across</span>
-              <span className="block text-[#e50818]">
-                Industrial &amp; Commercial Sectors
-              </span>
-            </h2>
-            <p className="max-w-[289px] font-manrope text-sm font-medium leading-normal text-black">
-              As a civil infrastructure development company, our project mix
-              spans core RCC structures to full sites.
-            </p>
-          </motion.div>
+            <div className="flex w-full flex-col items-center gap-[14px] text-center">
+              <h2 className="font-manrope text-[28px] font-bold leading-[32px] text-[#111]">
+                <span className="block">Trusted Across</span>
+                <span className="block text-[#e50818]">
+                  Industrial &amp; Commercial Sectors
+                </span>
+              </h2>
+              <p className="max-w-[289px] font-manrope text-sm font-normal leading-normal text-black">
+                Our project mix spans single-floor sheds to multi-level
+                commercial and industrial structures.
+              </p>
+            </div>
 
-          <motion.div
-            variants={staggerContainer}
-            className="grid w-full grid-cols-3 justify-items-center gap-x-[14px] gap-y-[14px]"
-          >
-            {MOBILE_LOGOS.map((logo) => (
-              <MobileLogoCard key={logo.name} logo={logo} />
-            ))}
+            <motion.div
+              variants={staggerContainer}
+              className="grid w-full grid-cols-3 justify-items-center gap-x-[14px] gap-y-[14px]"
+            >
+              {MOBILE_LOGOS.map((logo) => (
+                <MobileLogoCard key={logo.name} logo={logo} />
+              ))}
+            </motion.div>
           </motion.div>
 
           <motion.div
@@ -126,23 +128,17 @@ function CivilTrustedSectorsMobile() {
             <Image
               src="/images/trusted-sectors/shield-tick.svg"
               alt=""
-              width={20}
-              height={24}
-              className="h-6 w-5 shrink-0 object-contain"
+              width={12}
+              height={15}
+              className="h-[14.571px] w-3 shrink-0 object-contain"
               aria-hidden
             />
             <div className="flex w-full items-center justify-center gap-3 px-[25px]">
-              <div
-                className="h-px w-7 shrink-0 bg-[#cfcfcf]"
-                aria-hidden
-              />
+              <div className="h-px w-7 shrink-0 bg-[#cfcfcf]" aria-hidden />
               <p className="max-w-[246px] text-center font-manrope text-xs font-normal leading-5 tracking-[1px] text-[#101116]">
                 Built on Trust. Delivering Excellence.
               </p>
-              <div
-                className="h-px w-7 shrink-0 bg-[#cfcfcf]"
-                aria-hidden
-              />
+              <div className="h-px w-7 shrink-0 bg-[#cfcfcf]" aria-hidden />
             </div>
           </motion.div>
         </motion.div>
@@ -154,7 +150,7 @@ function CivilTrustedSectorsMobile() {
 export default function TrustedSectors() {
   return (
     <>
-      <CivilTrustedSectorsMobile />
+      <SolarTrustedSectorsMobile />
       <TrustedSectorsSection variant="services" desktopOnly />
     </>
   );

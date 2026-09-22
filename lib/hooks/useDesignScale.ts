@@ -9,10 +9,11 @@ export function useDesignScale() {
 
   useEffect(() => {
     const updateScale = () => {
-      if (window.innerWidth < 1200) {
+      const vw = window.innerWidth;
+      if (vw <= DESIGN_WIDTH) {
         setScale(1);
       } else {
-        setScale(window.innerWidth / DESIGN_WIDTH);
+        setScale(vw / DESIGN_WIDTH);
       }
     };
     updateScale();

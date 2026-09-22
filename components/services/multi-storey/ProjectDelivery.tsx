@@ -3,10 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ServiceMidCtaTitle } from "@/components/services/ServiceMidCtaTitle";
-import {
-  ServiceMidCtaCopy,
-  ServiceMidCtaLine,
-} from "@/components/services/ServiceMidCtaLine";
+import { ServiceMidCtaLine } from "@/components/services/ServiceMidCtaLine";
 import { useServiceEnquiry } from "@/components/services/ServiceEnquiryProvider";
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
@@ -17,7 +14,7 @@ export default function ProjectDelivery() {
   return (
     <section
       id="quote"
-      className="relative overflow-visible bg-white px-5 py-8 text-gray-100 sm:px-8 sm:py-10 lg:px-[clamp(40px,5.5vw,107px)] lg:pt-[calc(4rem+68px)] lg:pb-16"
+      className="relative mx-auto w-full max-w-[1920px] overflow-visible bg-white text-gray-100 lg:px-[clamp(40px,5.5vw,107px)] lg:pt-[calc(4rem+68px)] lg:pb-16"
     >
       <motion.div
         className="relative mx-auto w-full max-w-[1707px] overflow-visible"
@@ -26,47 +23,60 @@ export default function ProjectDelivery() {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6, ease: easeOut }}
       >
-        {/* Mobile — matches Civil PlanningCta (image in flow at bottom) */}
-        <div className="relative mx-auto flex w-full flex-col overflow-hidden rounded-[28px] bg-[linear-gradient(118.73deg,#8B0C11_6.54%,#ED1D23_108.89%)] sm:rounded-[32px] lg:hidden">
-          <div className="relative z-10 flex flex-col px-5 pt-8 pb-6 sm:px-8 sm:pt-10 sm:pb-8">
-            <ServiceMidCtaCopy>
-              <ServiceMidCtaTitle
-                line1="Planning a Multi-Storey Factory, Office,"
-                line2="or Commercial Building?"
-                size="long"
-                scaledCanvas
-              />
-              <p className="mt-3 max-w-[28rem] text-[13px] font-medium leading-[18px] tracking-[1.1px] text-[#CCC6C6] sm:text-[14px] sm:leading-[20px]">
+        {/* Mobile — MEP/Tensile CtaBanner pattern: 358×530, r=20 */}
+        <motion.div
+          className="box-border w-full px-[16px] py-[32px] lg:hidden"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.6, ease: easeOut }}
+        >
+          <div className="relative mx-auto flex h-[530px] w-full max-w-[358px] flex-col overflow-hidden rounded-[20px] bg-[linear-gradient(94.66deg,#8B0C11_6.54%,#ED1D23_108.89%)]">
+            <div className="relative z-10 flex flex-col items-start gap-[18px] px-6 pt-6 text-left">
+              <h2 className="w-full font-manrope text-[28px] font-extrabold leading-[0] text-white [word-break:break-word]">
+                <span className="leading-[32px]">
+                  Planning a Multi-Storey Factory, Office, or{" "}
+                </span>
+                <span className="leading-[32px] text-black">
+                  Commercial Building?
+                </span>
+              </h2>
+
+              <p className="w-full font-manrope text-sm font-medium leading-normal text-[#ccc6c6] [word-break:break-word]">
                 Get a free consultation and project blueprint from Mekark&apos;s
                 structural engineering team.
               </p>
-            </ServiceMidCtaCopy>
 
-            <button
-              type="button"
-              onClick={openEnquiry}
-              className="relative z-10 mt-6 inline-flex min-h-[48px] w-full cursor-pointer items-center justify-center gap-2.5 rounded-full border-0 bg-white px-5 py-3.5 text-[14px] font-bold text-[#E5091F] transition-transform active:scale-[0.98] sm:mt-7 sm:w-fit sm:px-6"
-            >
-              Request a Free Quote
-              <Image
-                src="/images/services/multi-storey/frame212/icons/quote-arrow.svg"
-                alt="Arrow icon"
-                width={16}
-                height={12}
-                className="h-3 w-4"
+              <button
+                type="button"
+                onClick={openEnquiry}
+                className="flex w-full cursor-pointer items-center justify-center gap-[9.623px] rounded-full border-0 bg-white px-[24px] py-[14.435px] text-sm font-bold leading-5 text-[#E5091F] transition-transform active:scale-[0.98]"
+              >
+                Request a Free Quote
+                <span className="relative size-[18.758px] shrink-0">
+                  <Image
+                    src="/images/services/multi-storey/frame212/icons/quote-arrow.svg"
+                    alt="Arrow icon"
+                    fill
+                    className="object-contain"
+                    sizes="19px"
+                  />
+                </span>
+              </button>
+            </div>
+
+            <div aria-hidden className="min-h-5 flex-1" />
+
+            <div className="pointer-events-none relative z-[1] h-[300px] shrink-0 overflow-hidden rounded-bl-[20px] rounded-br-[20px]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/services/multi-storey/frame212/cta/building-mobile.webp"
+                alt="Multi-storey building under construction"
+                className="absolute bottom-0 left-[-25%] h-[108%] w-[130%] max-w-none object-cover object-[center_35%]"
               />
-            </button>
+            </div>
           </div>
-
-          <div className="relative mt-auto h-[200px] w-full shrink-0 overflow-hidden sm:h-[260px]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/services/multi-storey/frame212/cta/building-mobile.webp"
-              alt="Multi-storey building under construction"
-              className="absolute left-1/2 bottom-0 h-[115%] w-[150%] max-w-none -translate-x-1/2 object-cover object-bottom sm:w-[135%]"
-            />
-          </div>
-        </div>
+        </motion.div>
 
         {/* Desktop */}
         <div className="relative hidden overflow-visible lg:block">

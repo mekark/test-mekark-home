@@ -5,6 +5,17 @@ import { motion } from "framer-motion";
 import HowWeDeliverSteps from "@/components/services/HowWeDeliverSteps";
 import ServiceSolutionsMobileGrid from "@/components/services/ServiceSolutionsMobileGrid";
 import {
+  MOBILE_CARD_BODY_CLASS,
+  MOBILE_CARD_CLASS,
+  MOBILE_CARD_TITLE_CLASS,
+  MOBILE_MID_CTA,
+  MOBILE_PROCESS_TYPOGRAPHY,
+  MOBILE_SECTION_TITLE_LEFT_CLASS,
+  MOBILE_SOLUTIONS_CONTAINER_CLASS,
+  MOBILE_SOLUTIONS_GRID_CLASS,
+  MOBILE_SOLUTIONS_IMAGE_CLASS,
+} from "@/components/services/serviceMobileCivilTemplate";
+import {
   SERVICE_CARD_BODY_CLASS_SCALED,
   SERVICE_CARD_TITLE_CLASS_SCALED,
 } from "@/components/services/serviceTypography";
@@ -184,6 +195,13 @@ export default function OurPEBSolutions() {
 
         <ServiceSolutionsMobileGrid
           title="Our Pre-Engineered Building (PEB) Solutions"
+          className={MOBILE_SOLUTIONS_CONTAINER_CLASS}
+          titleClassName={`max-w-[350px] text-left ${MOBILE_SECTION_TITLE_LEFT_CLASS}`}
+          gridClassName={MOBILE_SOLUTIONS_GRID_CLASS}
+          cardClassName={MOBILE_CARD_CLASS}
+          cardTitleClassName={MOBILE_CARD_TITLE_CLASS}
+          cardBodyClassName={MOBILE_CARD_BODY_CLASS}
+          imageContainerClassName={MOBILE_SOLUTIONS_IMAGE_CLASS}
           solutions={solutions.map((solution) => ({
             title: solution.title,
             description: solution.description,
@@ -224,56 +242,54 @@ export default function OurPEBSolutions() {
       {/* Mid CTA — matches Civil PlanningCta mobile pattern */}
       <section
         id="quote"
-        className="relative mx-auto w-full max-w-[1920px] overflow-visible bg-white px-5 py-8 sm:px-8 sm:py-10 lg:px-[80px] lg:pt-[72px] lg:pb-12"
+        className="relative mx-auto w-full max-w-[1920px] overflow-visible bg-white px-4 py-8 sm:px-8 sm:py-10 lg:px-[80px] lg:pt-[72px] lg:pb-12"
         aria-labelledby="peb-quote-title"
       >
         <motion.div
-          className="relative mx-auto w-full overflow-hidden rounded-[28px] bg-[linear-gradient(118.73deg,#8B0C11_6.54%,#ED1D23_108.89%)] sm:rounded-[32px] lg:hidden"
+          className={MOBILE_MID_CTA.cardClass}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.6, ease: easeOut }}
         >
-          <div className="relative z-10 flex flex-col px-5 pt-8 pb-[215px] sm:px-8 sm:pt-10 sm:pb-[275px]">
-            <ServiceMidCtaCopy>
-              <ServiceMidCtaTitle
-                id="peb-quote-title"
-                line1="Planning a Factory, Warehouse,"
-                line2="or Industrial Building?"
-                size="short"
-                scaledCanvas
-              />
+          <div className={MOBILE_MID_CTA.contentClass}>
+            <h2 id="peb-quote-title" className={MOBILE_MID_CTA.titleClass}>
+              <span className="block">Planning a Factory, Warehouse,</span>
+              <span className="block">
+                <span>or </span>
+                <span className="text-black">Industrial Building?</span>
+              </span>
+            </h2>
 
-              <p className="mt-3 max-w-[28rem] text-[13px] font-medium leading-[18px] tracking-[1.1px] text-[#CCC6C6] sm:text-[14px] sm:leading-[20px]">
-                Get a free consultation and project estimate from Mekark&apos;s
-                PEB engineering team.
-              </p>
+            <p className={MOBILE_MID_CTA.descriptionClass}>
+              Get a free consultation and project estimate from Mekark&apos;s
+              PEB engineering team.
+            </p>
 
-              <button
-                type="button"
-                onClick={openEnquiry}
-                className="relative z-10 mt-6 inline-flex min-h-[48px] w-full cursor-pointer items-center justify-center gap-2.5 rounded-full border-0 bg-white px-5 py-3.5 text-[14px] font-bold text-[#E5091F] transition-transform active:scale-[0.98] sm:mt-7 sm:w-fit sm:px-6"
-              >
-                Request a Free Quote
-                <span className="relative size-[16px] shrink-0">
-                  <Image
-                    src="/images/services/peb/peb-solutions/cta-arrow.svg"
-                    alt="Arrow icon"
-                    fill
-                    className="object-contain"
-                    sizes="16px"
-                  />
-                </span>
-              </button>
-            </ServiceMidCtaCopy>
+            <button
+              type="button"
+              onClick={openEnquiry}
+              className={MOBILE_MID_CTA.buttonClass}
+            >
+              Request a Free Quote
+              <span className="relative size-[18.758px] shrink-0">
+                <Image
+                  src="/images/services/peb/peb-solutions/cta-arrow.svg"
+                  alt="Arrow icon"
+                  fill
+                  className="object-contain"
+                  sizes="19px"
+                />
+              </span>
+            </button>
           </div>
 
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[185px] sm:h-[235px]">
+          <div className="pointer-events-none absolute inset-x-0 top-[255px] z-[1] h-[225px] overflow-hidden rounded-bl-[20px] rounded-br-[20px]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/services/peb/peb-solutions/Mid CTA 1.webp"
               alt="Pre-engineered building under construction"
-              className="absolute left-1/2 bottom-[18px] h-[96%] w-[132%] max-w-none -translate-x-[46%] object-cover object-[center_28%] sm:bottom-[24px] sm:w-[110%] sm:-translate-x-[48%]"
+              className="absolute top-[8.98%] left-[-17.06%] h-[107.72%] w-[117.09%] max-w-none object-cover"
             />
           </div>
         </motion.div>
@@ -355,13 +371,15 @@ export default function OurPEBSolutions() {
           />
         </div>
 
-        <div className="relative mx-auto flex w-full max-w-[1920px] flex-col items-center overflow-visible px-5 py-12 sm:px-10 sm:py-14 lg:px-[5.556%] lg:py-[5.556%]">
+        <div className="relative mx-auto flex w-full max-w-[1920px] flex-col items-center overflow-visible px-5 py-8 sm:px-8 sm:py-10 lg:px-[5.556%] lg:py-[5.556%]">
           <HowWeDeliverSteps
             title="How We Deliver Your PEB Project"
             steps={processSteps}
             arrowSrc="/images/services/peb/peb-solutions/process-arrow.svg"
             iconBoxClassName="bg-[#FDEBEB]"
+            desktopFrom="lg"
             scaledCanvas
+            mobileTypography={MOBILE_PROCESS_TYPOGRAPHY}
           />
         </div>
       </section>

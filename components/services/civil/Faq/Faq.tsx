@@ -76,23 +76,23 @@ function FaqItem({
   const number = String(index + 1).padStart(2, "0");
 
   return (
-    <div className="flex w-full flex-col self-stretch overflow-hidden rounded-[20.78px] border border-solid border-[#E3E4E7] bg-white px-4 sm:px-[24.9px]">
+    <div className="flex w-full flex-col self-stretch overflow-hidden rounded-[12px] border border-solid border-[#E3E4E7] bg-white p-4 lg:rounded-[20.78px] lg:p-0 lg:px-[24.9px]">
       <button
         type="button"
         onClick={onToggle}
         aria-expanded={isOpen}
-        className="flex w-full items-start gap-3 py-4 text-left sm:items-center sm:gap-4 sm:py-[20.8px]"
+        className="flex w-full items-center gap-3 text-left lg:gap-4 lg:py-[20.8px]"
       >
-        <span className="flex min-w-0 flex-1 items-start gap-3 sm:items-center sm:gap-[16.6px]">
-          <span className="shrink-0 pt-0.5 font-montserrat text-num-16 font-bold leading-[16.62px] tracking-[-0.47px] text-[#E60F1A] sm:pt-0">
+        <span className="flex min-w-0 flex-1 items-center gap-3 lg:gap-[16.6px]">
+          <span className="w-6 shrink-0 font-montserrat text-sm font-bold leading-[16.624px] tracking-[-0.4675px] text-[#E60F1A] lg:w-auto lg:text-num-16 lg:leading-[16.62px] lg:tracking-[-0.47px]">
             {number}
           </span>
-          <span className="font-manrope text-[15px] font-semibold leading-[22px] tracking-[-0.47px] text-[#101116] sm:text-[18.67px] sm:leading-[26.67px]">
+          <span className="font-manrope text-base font-medium leading-normal text-[#101116] lg:text-[18.67px] lg:font-semibold lg:leading-[26.67px] lg:tracking-[-0.47px]">
             {question}
           </span>
         </span>
         <span
-          className={`relative size-[16.6px] shrink-0 overflow-hidden transition-transform duration-200 ${
+          className={`relative size-[16.624px] shrink-0 overflow-hidden transition-transform duration-200 lg:size-[16.6px] ${
             isOpen ? "rotate-180" : ""
           }`}
         >
@@ -115,7 +115,7 @@ function FaqItem({
             transition={{ duration: 0.25, ease: "easeOut" }}
             className="overflow-hidden"
           >
-            <p className="pb-4 pl-8 pr-1 font-manrope text-[14px] leading-[1.65] text-dimgray sm:pb-[20.8px] sm:pl-[calc(1em+16.6px)] sm:pr-2 sm:text-num-16">
+            <p className="pb-0 pl-9 pr-0 font-manrope text-sm font-normal leading-normal text-[#53555B] lg:pb-[20.8px] lg:pl-[calc(1em+16.6px)] lg:pr-2 lg:text-num-16 lg:leading-[1.65] lg:text-dimgray">
               {answer}
             </p>
           </motion.div>
@@ -131,23 +131,23 @@ export default function Faq() {
   return (
     <section
       id="faq"
-      className="relative box-border flex w-full flex-col items-start overflow-hidden bg-white px-5 py-16 text-left font-manrope text-[53.33px] text-[#111] sm:px-8 sm:py-20 lg:px-[106.7px] lg:py-[93.3px]"
+      className="relative box-border flex w-full flex-col items-start overflow-hidden bg-white px-4 py-8 text-left font-manrope text-[#111] lg:px-[106.7px] lg:py-[93.3px] lg:text-[53.33px]"
       aria-label="Frequently asked questions about civil and RCC construction"
     >
-      <div className="flex w-full flex-col items-center gap-10 self-stretch lg:gap-[66.7px]">
+      <div className="flex w-full flex-col items-center gap-6 self-stretch lg:gap-[66.7px]">
         <motion.h2
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.55 }}
-          className="relative w-full max-w-[1480px] text-center text-[26px] font-bold tracking-[-1.33px] leading-[1.2] text-[#111] sm:text-[36px] sm:leading-[44px] lg:h-[66px] lg:text-[53.33px] lg:leading-[65.33px]"
+          className="relative w-full max-w-[1480px] text-center font-manrope text-[28px] font-bold leading-[36px] text-[#111] lg:h-[66px] lg:text-[53.33px] lg:leading-[65.33px] lg:tracking-[-1.33px]"
         >
           Frequently Asked Questions About Civil &amp; RCC Construction
         </motion.h2>
 
-        {/* Left: 01–05 | Right: 06–10 — Figma 790.7px cols, gap-10 */}
+        {/* Mobile: single stack (Figma 7385:1204) | Desktop: 01–05 | 06–10 */}
         <div className="flex w-full max-w-[1706.7px] flex-col items-stretch justify-center gap-3 lg:flex-row lg:items-start lg:gap-10">
-          <div className="flex w-full flex-col items-start gap-[13.3px] lg:w-[790.7px]">
+          <div className="flex w-full flex-col items-start gap-3 lg:w-[790.7px] lg:gap-[13.3px]">
             {faqs.slice(0, 5).map((item, index) => (
               <FaqItem
                 key={item.question}
@@ -163,7 +163,7 @@ export default function Faq() {
               />
             ))}
           </div>
-          <div className="flex w-full flex-col items-start gap-[13.3px] lg:w-[790.7px]">
+          <div className="flex w-full flex-col items-start gap-3 lg:w-[790.7px] lg:gap-[13.3px]">
             {faqs.slice(5).map((item, i) => {
               const index = i + 5;
               return (

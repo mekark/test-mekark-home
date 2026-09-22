@@ -8,19 +8,22 @@ import TextileExecutionProcess from "@/components/industries/textile/ExecutionPr
 import TextileFaq from "@/components/industries/textile/Faq";
 import TextileFooterCta from "@/components/industries/textile/FooterCta";
 import { TEXTILE_ENQUIRY_CONFIG } from "@/components/industries/industryEnquiryConfigs";
+import DesignScale from "@/components/services/DesignScale";
 import { ServiceEnquiryProvider } from "@/components/services/ServiceEnquiryProvider";
 
 export function TextilePage() {
   return (
     <ServiceEnquiryProvider config={TEXTILE_ENQUIRY_CONFIG}>
       <main className="textile-industry-page flex flex-1 flex-col overflow-x-clip bg-white">
-        <TextileHero />
-        <TextileBuildSection />
-        <TextileWhyMekark />
-        <TextileManufacturingFacilities />
-        <TextileExecutionProcess />
-        <TextileFaq />
-        <TextileFooterCta />
+        <DesignScale mode="ultrawide">
+          <TextileHero />
+          <TextileBuildSection />
+          <TextileWhyMekark />
+          <TextileManufacturingFacilities />
+          <TextileExecutionProcess />
+          <TextileFaq />
+          <TextileFooterCta />
+        </DesignScale>
       </main>
     </ServiceEnquiryProvider>
   );

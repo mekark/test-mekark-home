@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ServiceIntroTitle } from "@/components/services/ServiceIntroTitle";
+import { MOBILE_END_TO_END_TITLE_CLASS } from "@/components/services/serviceMobileCivilTemplate";
 import {
   SERVICE_BODY_TEXT_CLASS_SCALED,
   SERVICE_INTRO_TITLE_FIGMA_CLASS_SCALED,
@@ -18,15 +19,7 @@ const easeOut = [0.22, 1, 0.36, 1] as const;
 
 export default function Solutions() {
   return (
-    <section className="relative w-full shrink-0 overflow-hidden bg-gainsboro text-left text-[18.67px] text-black">
-      <div
-        className="pointer-events-none absolute inset-0 shrink-0"
-        style={{
-          backgroundImage:
-            "linear-gradient(269.25deg, #fff, rgba(255, 255, 255, 0))",
-        }}
-      />
-
+    <section className="relative w-full shrink-0 overflow-hidden bg-[rgba(255,255,255,1)] text-left text-[18.67px] text-black">
       <div className="relative mx-auto flex min-h-[640px] max-w-[1920px] flex-col lg:min-h-[828px]">
         <motion.div
           className="relative z-10 order-1 mb-4 px-5 pt-10 sm:mb-6 sm:px-8 lg:mb-[34px] lg:w-[50%] lg:min-w-[977px] lg:max-w-[980px] lg:px-0 lg:pt-[56px] lg:pl-[clamp(48px,11.7vw,224px)] lg:pr-4"
@@ -36,9 +29,9 @@ export default function Solutions() {
           transition={{ duration: 0.55, ease: easeOut }}
         >
           <ServiceIntroTitle
-            className={SERVICE_INTRO_TITLE_FIGMA_CLASS_SCALED}
-            beforeRed="End-to-End Multi-Storey Steel Building"
-            line2Prefix="Solutions, "
+            id="end-to-end-multi-storey-title"
+            className={`${SERVICE_INTRO_TITLE_FIGMA_CLASS_SCALED} ${MOBILE_END_TO_END_TITLE_CLASS}`}
+            beforeRed="End-to-End Multi-Storey Steel Building Solutions,"
             redPart="Under One Roof"
             scaledCanvas
           />

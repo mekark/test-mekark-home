@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import HowWeDeliverSteps from "@/components/services/HowWeDeliverSteps";
+import { MOBILE_PROCESS_TYPOGRAPHY } from "@/components/services/serviceMobileCivilTemplate";
 
 const steps = [
   {
@@ -33,24 +34,28 @@ const steps = [
 
 export default function Frame171() {
   return (
-    <section className="relative w-full overflow-hidden bg-white px-5 py-12 font-manrope text-[#111] sm:px-8 sm:py-16 lg:px-[107px] lg:py-[107px]">
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[200px] sm:h-[280px] lg:h-[390px]">
-        <Image
-          className="h-full w-full object-cover object-bottom opacity-95"
-          src="/images/services/tensile/frame171/grid-bg.webp"
-          width={1918}
-          height={391}
-          sizes="100vw"
-          alt="Decorative grid background"
-        />
+    <section className="relative w-full shrink-0 overflow-hidden bg-white text-left font-manrope text-[#111]">
+      <div className="absolute bottom-0 left-0 flex h-[280px] w-full items-center justify-center sm:h-[390px]">
+        <div className="-scale-y-100 flex-none">
+          <Image
+            className="h-[280px] w-[1917.8px] max-w-none object-cover opacity-[0.15] sm:h-[390.7px]"
+            src="/images/services/tensile/frame171/grid-bg.webp"
+            width={1918}
+            height={391}
+            sizes="100vw"
+            alt="Decorative grid background"
+          />
+        </div>
       </div>
 
-      <div className="relative z-10 mx-auto max-w-[1413px]">
+      <div className="relative z-[1] mx-auto flex max-w-[1920px] flex-col items-center overflow-visible px-5 py-14 sm:px-8 md:px-16 lg:px-[107px] lg:py-[107px]">
         <HowWeDeliverSteps
           title="How We Deliver Your Tensile Structure Project"
           steps={steps}
           arrowSrc="/images/services/tensile/frame171/connector-line.svg"
+          desktopFrom="lg"
           scaledCanvas
+          mobileTypography={MOBILE_PROCESS_TYPOGRAPHY}
         />
       </div>
     </section>

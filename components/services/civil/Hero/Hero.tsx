@@ -109,10 +109,13 @@ function MobileHero() {
       title={
         <>
           <span className="block">South India&apos;s Leading</span>
-          <span className="block whitespace-nowrap">Civil Construction Company</span>
-          <span className="block">&amp; RCC Contractor</span>
+          <span className="block">Civil Construction</span>
+          <span className="block whitespace-nowrap">Company &amp; RCC</span>
+          <span className="block">Contractor</span>
         </>
       }
+      titleClassName="mx-auto max-w-[358px] text-[30px] leading-[35px]"
+      descriptionClassName="max-w-[358px] text-[#4a4644]"
       description={heroDescription}
       heroImage={{
         ...civilMobileHeroImageDefaults,
@@ -191,7 +194,8 @@ function DesktopHero() {
         >
           South India&apos;s Leading
           <br />
-          Civil Construction Company &amp; RCC Contractor
+          Civil Construction{" "}
+          <span className="whitespace-nowrap">Company &amp; RCC Contractor</span>
         </motion.h1>
 
         <motion.p

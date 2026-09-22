@@ -8,7 +8,12 @@ import ServiceMobileHero from "@/components/services/ServiceMobileHero";
 import {
   civilMobileHeroImageDefaults,
   civilMobileHeroLayout,
+  greyMobileHeroBottomGradient,
 } from "@/components/services/serviceMobileHeroCivilLayout";
+import {
+  MOBILE_HERO_DESCRIPTION_CLASS,
+  SERVICE_MOBILE_HERO_TITLE_FIGMA_CLASS,
+} from "@/components/services/serviceMobileCivilTemplate";
 import {
   TensileEnquiryTrigger,
   useTensileEnquiry,
@@ -70,15 +75,14 @@ function MobileHero() {
       {...civilMobileHeroLayout}
       title={
         <>
-          <span className="block">South India&apos;s Trusted</span>
-          <span className="block min-[395px]:whitespace-nowrap">
-            Tensile Structure Contractor
+          <span className="block">
+            South India&apos;s Trusted Tensile Structure Contractor &amp;
           </span>
-          <span className="block min-[395px]:whitespace-nowrap">
-            &amp; Fabric Roofing Manufacturer
-          </span>
+          <span className="block">Fabric Roofing Manufacturer</span>
         </>
       }
+      titleClassName={SERVICE_MOBILE_HERO_TITLE_FIGMA_CLASS}
+      descriptionClassName={MOBILE_HERO_DESCRIPTION_CLASS}
       description={heroDescription}
       heroImage={{
         ...civilMobileHeroImageDefaults,
@@ -86,7 +90,11 @@ function MobileHero() {
         alt: "Mekark tensile structure project",
         objectPosition: "center bottom",
         scale: 1.2,
-        translateY: "-32px",
+        translateX: "-10px",
+        translateY: "-8px",
+        bottomGradient: greyMobileHeroBottomGradient,
+        bottomGradientOverlayHeight: "98%",
+        bottomColor: "#252525",
       }}
       arrowIcon="/images/services/tensile/hero/arrow.svg"
       onEnquiryClick={openEnquiry}
@@ -104,6 +112,7 @@ function MobileHero() {
           <span className="text-[#ed2024]">Certified</span>
         </>
       }
+      certificationInline
       hideFrom="lg"
     />
   );

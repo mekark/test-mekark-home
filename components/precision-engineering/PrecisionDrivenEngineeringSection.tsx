@@ -118,30 +118,30 @@ function WorkflowStep({
   return (
     <motion.div
       variants={precEngStepReveal}
-      className={`relative flex h-full min-h-[140px] flex-col border border-[#f2d4d4] bg-[#fff9f9] p-3 sm:min-h-[168px] sm:p-4 lg:p-4 2xl:min-h-[186px] 2xl:p-[21px] ${
+      className={`relative flex min-h-0 flex-row items-center gap-[15px] rounded-2xl border border-[#f2d4d4] bg-[#fff9f9] p-3.5 lg:h-full lg:min-h-[140px] lg:flex-col lg:items-stretch lg:gap-0 lg:p-4 2xl:min-h-[186px] 2xl:p-[21px] ${
         step.number === "01"
-          ? "rounded-2xl sm:rounded-none sm:rounded-l-2xl sm:border-r-0"
+          ? "lg:rounded-none lg:rounded-l-2xl lg:border-r-0"
           : step.isLast
-            ? "rounded-2xl sm:rounded-none sm:rounded-r-2xl"
-            : "rounded-2xl sm:rounded-none sm:border-r-0"
+            ? "lg:rounded-none lg:rounded-r-2xl"
+            : "lg:rounded-none lg:border-r-0"
       }`}
     >
       {!step.isLast && (
-        <div className="hidden sm:block">
+        <div className="hidden lg:block">
           <StepConnector />
         </div>
       )}
 
       <motion.span
         variants={precEngStepNumber}
-        className="shrink-0 text-xs font-extrabold leading-[18px] text-[#ed1c24] sm:text-[clamp(0.75rem,1.1vw,0.96rem)] 2xl:text-[15.33px] 2xl:leading-[23px]"
+        className="hidden shrink-0 text-xs font-extrabold leading-[18px] text-[#ed1c24] lg:block lg:text-[clamp(0.75rem,1.1vw,0.96rem)] 2xl:text-[15.33px] 2xl:leading-[23px]"
       >
         {step.number}
       </motion.span>
 
       <motion.div
         variants={precEngStepIcon}
-        className="mt-2 flex flex-1 items-center justify-start"
+        className="flex shrink-0 items-center justify-start lg:mt-2 lg:flex-1"
         style={{ transformPerspective: 600 }}
       >
         <Image
@@ -149,15 +149,14 @@ function WorkflowStep({
           alt={`${step.title} icon`}
           width={69}
           height={69}
-          className="size-10 object-contain sm:size-[clamp(2.75rem,4vw,4rem)] 2xl:size-[69px]"
+          className="size-10 object-contain lg:size-[clamp(2.75rem,4vw,4rem)] 2xl:size-[69px]"
           aria-hidden
         />
       </motion.div>
 
-      {/* Fixed title slot so Analyse / Model / Shop Drawings share one top baseline */}
       <motion.h3
         variants={precEngStepTitle}
-        className="mt-2 flex min-h-[2.6em] items-start text-base font-extrabold leading-[1.25] text-[#111] sm:min-h-[2.75em] sm:text-[clamp(0.95rem,1.45vw,1.5rem)] 2xl:min-h-[76px] 2xl:text-[25.6px] 2xl:leading-[38.4px]"
+        className="text-lg font-extrabold leading-5 text-[#111] lg:mt-2 lg:flex lg:min-h-[2.75em] lg:items-start lg:text-[clamp(0.95rem,1.45vw,1.5rem)] lg:leading-[1.25] 2xl:min-h-[76px] 2xl:text-[25.6px] 2xl:leading-[38.4px]"
       >
         {step.title}
       </motion.h3>
@@ -180,18 +179,18 @@ function SoftwareCard({
         boxShadow: "0px 14px 28px rgba(237,28,36,0.12)",
         transition: { type: "spring", stiffness: 340, damping: 22 },
       }}
-      className="relative overflow-hidden rounded-2xl bg-white px-4 py-5 pl-5 shadow-[0px_10.667px_17.333px_rgba(237,28,36,0.07)] sm:px-6 sm:py-6 sm:pl-8 lg:min-h-0 2xl:min-h-[221px] 2xl:px-9 2xl:py-8 2xl:pl-[35px] 2xl:pr-12"
+      className="relative overflow-hidden rounded-2xl border-l-4 border-[#ed2024] bg-white py-5 pl-5 pr-4 shadow-[0px_10.667px_8.667px_rgba(237,28,36,0.07)] lg:border-l-0 lg:px-6 lg:py-6 lg:pl-8 lg:shadow-[0px_10.667px_17.333px_rgba(237,28,36,0.07)] lg:min-h-0 2xl:min-h-[221px] 2xl:px-9 2xl:py-8 2xl:pl-[35px] 2xl:pr-12"
     >
       <motion.span
         variants={precEngBorderAccent}
-        className="absolute bottom-0 left-0 top-0 w-1 origin-top bg-[#ed2024] sm:w-[5px] 2xl:w-[6.667px]"
+        className="absolute bottom-0 left-0 top-0 hidden w-1 origin-top bg-[#ed2024] lg:block lg:w-[5px] 2xl:w-[6.667px]"
         aria-hidden
       />
 
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-4 2xl:gap-0 2xl:py-0">
+      <div className="flex flex-row items-start gap-4 lg:gap-4 2xl:gap-0 2xl:py-0">
         <motion.div
           variants={precEngLogoReveal}
-          className="relative mx-auto size-14 shrink-0 overflow-hidden rounded-full sm:mx-0 sm:size-[clamp(4rem,6vw,5.5rem)] 2xl:mr-8 2xl:size-[107px]"
+          className="relative size-14 h-[58px] shrink-0 overflow-hidden rounded-full lg:mx-0 lg:size-[clamp(4rem,6vw,5.5rem)] lg:h-auto 2xl:mr-8 2xl:size-[107px]"
         >
           <Image
             src={card.logo}
@@ -203,16 +202,16 @@ function SoftwareCard({
         </motion.div>
 
         <div className="min-w-0 flex-1">
-          <div className="flex flex-wrap items-start justify-between gap-x-3 gap-y-2">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 lg:items-start lg:justify-between lg:gap-y-2">
             <motion.h3
               variants={precEngStepTitle}
-              className="text-lg font-bold leading-6 text-[#111] sm:text-[clamp(1.05rem,1.4vw,1.47rem)] 2xl:text-[23.47px] 2xl:leading-[29.33px]"
+              className="text-lg font-bold leading-6 text-[#111] lg:text-[clamp(1.05rem,1.4vw,1.47rem)] 2xl:text-[23.47px] 2xl:leading-[29.33px]"
             >
               {card.name}
             </motion.h3>
             <motion.span
               variants={precEngTagPop}
-              className="rounded-full border border-[#ffd5d5] bg-[#ffe8e8] px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.5px] text-[#ed1c24] sm:px-3 sm:text-[clamp(0.65rem,0.9vw,0.9rem)] 2xl:px-[15px] 2xl:py-[5px] 2xl:text-[14.53px] 2xl:tracking-[0.73px]"
+              className="rounded-full border border-[#ffd5d5] bg-[#ffe8e8] px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.32px] text-[#ed1c24] lg:px-3 lg:py-1 lg:tracking-[0.5px] lg:text-[clamp(0.65rem,0.9vw,0.9rem)] 2xl:px-[15px] 2xl:py-[5px] 2xl:text-[14.53px] 2xl:tracking-[0.73px]"
             >
               {card.badge}
             </motion.span>
@@ -220,20 +219,20 @@ function SoftwareCard({
 
           <motion.p
             variants={precEngStepTitle}
-            className="mt-1.5 max-w-[40rem] text-sm leading-relaxed text-[#666] sm:mt-2 sm:text-[clamp(0.875rem,1.15vw,1.175rem)] sm:leading-[1.55] 2xl:text-[18.8px] 2xl:leading-[30.5px]"
+            className="mt-1 max-w-[40rem] text-sm leading-[22px] text-[#666] lg:mt-2 lg:leading-relaxed lg:text-[clamp(0.875rem,1.15vw,1.175rem)] lg:leading-[1.55] 2xl:text-[18.8px] 2xl:leading-[30.5px]"
           >
             {card.description}
           </motion.p>
 
           <motion.div
             variants={precEngBenefitRow}
-            className="mt-3 flex flex-wrap gap-2 sm:mt-3 sm:gap-2 2xl:mt-4 2xl:gap-[11px]"
+            className="mt-2 flex flex-wrap gap-2 py-1.5 lg:mt-3 lg:gap-2 lg:py-0 2xl:mt-4 2xl:gap-[11px]"
           >
             {card.tags.map((tag) => (
               <motion.span
                 key={tag}
                 variants={precEngTagPop}
-                className="rounded-full bg-[#f5f5f5] px-2.5 py-1 text-xs font-semibold leading-[18px] text-[#555] sm:px-3 sm:text-[clamp(0.7rem,0.95vw,0.96rem)] 2xl:px-4 2xl:py-[5px] 2xl:text-[15.33px] 2xl:leading-[23px]"
+                className="inline-flex h-[26px] items-center rounded-full bg-[#f5f5f5] px-2.5 py-1 text-[10px] font-semibold leading-[18px] text-[#555] lg:h-auto lg:px-3 lg:text-xs lg:text-[clamp(0.7rem,0.95vw,0.96rem)] 2xl:px-4 2xl:py-[5px] 2xl:text-[15.33px] 2xl:leading-[23px]"
               >
                 {tag}
               </motion.span>
@@ -249,35 +248,39 @@ export function PrecisionDrivenEngineeringSection() {
   return (
     <section className="relative w-full overflow-x-clip bg-[#fef4f4] font-[family-name:var(--font-manrope)] text-[#111]">
       <div
-        className={`${SECTION_CONTAINER_CLASS} py-10 sm:py-14 lg:py-[clamp(3.5rem,5vw,5.8rem)]`}
+        className={`${SECTION_CONTAINER_CLASS} max-lg:py-8 py-10 sm:py-14 lg:py-[clamp(3.5rem,5vw,5.8rem)]`}
       >
         <motion.div
-          className="mx-auto flex w-full max-w-none flex-col gap-8 lg:gap-8"
+          className="mx-auto flex w-full max-w-none flex-col gap-8 max-lg:gap-8 lg:gap-8"
           variants={precEngSectionStagger}
           initial="hidden"
           whileInView="visible"
           viewport={VIEWPORT}
         >
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-8 xl:gap-10">
-            <div className="max-w-[56rem] lg:flex lg:min-w-0 lg:flex-1 lg:flex-col lg:gap-5">
-              <motion.div variants={precEngHeadlineGroup} className="overflow-visible">
+          <div className="flex flex-col gap-6 max-lg:gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-8 xl:gap-10">
+            <div className="flex max-w-[56rem] flex-col gap-3 max-lg:max-w-none lg:min-w-0 lg:flex-1 lg:gap-5">
+              <motion.div
+                variants={precEngHeadlineGroup}
+                className="flex flex-col gap-3 overflow-visible max-lg:gap-3"
+              >
                 <motion.h2
                   variants={precEngHeadlineWord}
-                  className="overflow-visible pb-0.5 text-[clamp(1.5rem,3.2vw,3.33rem)] font-bold leading-[1.2] tracking-[-0.8px] sm:tracking-[-1.33px]"
+                  className="overflow-visible pb-0.5 text-[clamp(1.5rem,3.2vw,3.33rem)] font-bold leading-[1.2] tracking-[-0.8px] max-lg:text-[28px] max-lg:leading-[28.8px] max-lg:tracking-normal lg:tracking-[-1.33px]"
                 >
-                  <span>Precision-</span>
-                  <span className="text-[#ed2024]">Driven Engineering</span>
+                  <span className="max-lg:block lg:inline">Precision</span>
+                  <span className="hidden lg:inline">-</span>
+                  <span className="text-[#ed2024] max-lg:block">Driven Engineering</span>
                 </motion.h2>
                 <motion.div
                   variants={precEngRuleDraw}
-                  className="mt-0 h-0.5 w-12 origin-left rounded-[2.67px] bg-[#ed2024] sm:h-1 sm:w-[clamp(3rem,5vw,4.7rem)]"
+                  className="h-0.5 w-12 origin-left rounded-[2.67px] bg-[#ed2024] max-lg:h-0.5 max-lg:w-12 lg:h-1 lg:w-[clamp(3rem,5vw,4.7rem)]"
                   aria-hidden
                 />
               </motion.div>
 
               <motion.p
                 variants={precEngSubtitleReveal}
-                className="mt-3 max-w-[52rem] text-[clamp(0.9375rem,1.35vw,1.4375rem)] leading-[1.65] text-[#666] lg:mt-0"
+                className="max-w-[52rem] text-sm leading-[22px] text-[#666] max-lg:max-w-none lg:mt-0 lg:text-[clamp(0.9375rem,1.35vw,1.4375rem)] lg:leading-[1.65]"
               >
                 Tekla Structures and STAAD.Pro connect design intent, structural
                 validation, detailing, and CNC-ready output before site execution
@@ -287,7 +290,7 @@ export function PrecisionDrivenEngineeringSection() {
 
             <motion.div
               variants={precEngPillRow}
-              className="flex flex-wrap gap-3 lg:shrink-0 lg:justify-end lg:gap-3 2xl:gap-4"
+              className="flex flex-wrap gap-3 max-lg:gap-3 lg:shrink-0 lg:justify-end lg:gap-3 2xl:gap-4"
             >
               {VALUE_PILLS.map((pill) => (
                 <motion.div
@@ -297,7 +300,7 @@ export function PrecisionDrivenEngineeringSection() {
                     y: -3,
                     transition: { type: "spring", stiffness: 400, damping: 20 },
                   }}
-                  className="flex h-11 items-center gap-2 rounded-md border-l border-[rgba(237,28,36,0.25)] bg-white/55 px-3 py-2.5 sm:h-12 sm:gap-2.5 sm:px-4 lg:h-[clamp(2.75rem,4vw,4rem)] lg:px-[clamp(0.85rem,1.2vw,1.3rem)] 2xl:h-16 2xl:gap-3 2xl:rounded-lg 2xl:border-l-[1.33px] 2xl:px-[21px] 2xl:py-4"
+                  className="flex h-11 items-center gap-2 rounded-md border-l border-[rgba(237,28,36,0.25)] bg-white/55 px-3 py-2.5 max-lg:h-11 max-lg:gap-2 max-lg:px-3 max-lg:py-2.5 lg:h-[clamp(2.75rem,4vw,4rem)] lg:gap-2.5 lg:px-[clamp(0.85rem,1.2vw,1.3rem)] 2xl:h-16 2xl:gap-3 2xl:rounded-lg 2xl:border-l-[1.33px] 2xl:px-[21px] 2xl:py-4"
                 >
                   <motion.div variants={precEngPillIcon}>
                     <Image
@@ -305,11 +308,11 @@ export function PrecisionDrivenEngineeringSection() {
                       alt={`${pill.label} icon`}
                       width={32}
                       height={32}
-                      className="size-5 sm:size-6 lg:size-[clamp(1.25rem,1.8vw,2rem)] 2xl:size-8"
+                      className="size-5 max-lg:size-5 lg:size-[clamp(1.25rem,1.8vw,2rem)] 2xl:size-8"
                       aria-hidden
                     />
                   </motion.div>
-                  <span className="text-[10px] font-extrabold uppercase tracking-[1.2px] text-[#ed1c24] sm:text-[clamp(0.7rem,0.95vw,0.96rem)] sm:tracking-[1.6px] 2xl:text-[15.33px] 2xl:tracking-[2.46px]">
+                  <span className="text-[10px] font-extrabold uppercase tracking-[1.2px] leading-[15px] text-[#ed1c24] lg:text-[clamp(0.7rem,0.95vw,0.96rem)] lg:tracking-[1.6px] 2xl:text-[15.33px] 2xl:tracking-[2.46px]">
                     {pill.label}
                   </span>
                 </motion.div>
@@ -317,22 +320,21 @@ export function PrecisionDrivenEngineeringSection() {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 items-start gap-8 pt-0 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-8 lg:pt-4 xl:gap-10 2xl:gap-[43px] 2xl:pt-8">
-            <div className="flex w-full min-w-0 flex-col gap-4">
+          <div className="grid grid-cols-1 items-start gap-10 pt-0 max-lg:gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-8 lg:pt-4 xl:gap-10 2xl:gap-[43px] 2xl:pt-8">
+            <div className="flex w-full min-w-0 flex-col gap-4 max-lg:gap-4">
               <motion.div
                 variants={precEngWorkflowPanel}
                 whileHover={{
                   boxShadow: "0px 16px 32px rgba(237,28,36,0.1)",
                   transition: { duration: 0.35 },
                 }}
-                className="w-full self-start rounded-2xl border border-[#ffd5d5] bg-white px-3 py-4 shadow-[0px_13.333px_22.667px_rgba(237,28,36,0.07)] sm:px-5 sm:py-5 lg:px-6 lg:py-6 2xl:px-9 2xl:pt-9 2xl:pb-6"
+                className="w-full self-start rounded-2xl border border-[#ffd5d5] bg-white px-3 py-4 shadow-[0px_13.333px_11.333px_rgba(237,28,36,0.07)] max-lg:px-3 max-lg:py-4 lg:px-6 lg:py-6 lg:shadow-[0px_13.333px_22.667px_rgba(237,28,36,0.07)] 2xl:px-9 2xl:pt-9 2xl:pb-6"
               >
-                {/* Card + its benefit stay paired (mobile stack & desktop columns) */}
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:items-stretch sm:gap-0">
+                <div className="grid grid-cols-1 gap-4 max-lg:gap-4 lg:grid-cols-3 lg:items-stretch lg:gap-0">
                   {WORKFLOW_STEPS.map((step) => (
                     <div
                       key={step.number}
-                      className="flex min-w-0 flex-col sm:h-full"
+                      className="flex min-w-0 flex-col lg:h-full"
                     >
                       <div className="min-h-0 flex-1">
                         <WorkflowStep step={step} />
@@ -340,18 +342,18 @@ export function PrecisionDrivenEngineeringSection() {
 
                       <motion.div
                         variants={precEngBenefitItem}
-                        className="mt-2.5 flex items-center gap-2 px-1 sm:mt-4 sm:items-start sm:justify-center sm:gap-3 sm:px-3"
+                        className="mt-2.5 flex items-center gap-2 px-1 max-lg:mt-2.5 max-lg:gap-2 max-lg:px-1 lg:mt-4 lg:items-start lg:justify-center lg:gap-3 lg:px-3"
                       >
                         <motion.span
                           variants={precEngBenefitDot}
-                          className="size-1.5 shrink-0 rounded-full bg-[#ed1c24] sm:mt-[0.45em] sm:size-2"
+                          className="size-1.5 shrink-0 rounded-full bg-[#ed1c24] lg:mt-[0.45em] lg:size-2"
                           aria-hidden
                         />
-                        <p className="min-w-0 whitespace-nowrap text-[clamp(0.7rem,3.1vw,0.8125rem)] font-semibold leading-none text-[#555] sm:min-h-[2.6em] sm:whitespace-normal sm:text-left sm:text-[clamp(0.75rem,1.05vw,1.15rem)] sm:leading-snug sm:max-w-[14ch]">
-                          <span className="sm:hidden">
+                        <p className="min-w-0 text-sm font-semibold leading-none text-[#555] lg:min-h-[2.6em] lg:max-w-[14ch] lg:text-left lg:text-[clamp(0.75rem,1.05vw,1.15rem)] lg:leading-snug">
+                          <span className="lg:hidden">
                             {step.benefit[0]} {step.benefit[1]}
                           </span>
-                          <span className="hidden sm:inline">
+                          <span className="hidden lg:inline">
                             {step.benefit[0]}
                             <br />
                             {step.benefit[1]}
@@ -365,16 +367,16 @@ export function PrecisionDrivenEngineeringSection() {
 
               <motion.blockquote
                 variants={precEngQuoteReveal}
-                className="relative pl-4 sm:pl-5"
+                className="relative pl-4 max-lg:pl-4 lg:pl-5"
               >
                 <motion.span
                   variants={precEngQuoteBorder}
-                  className="absolute bottom-0 left-0 top-0 w-0.5 origin-top bg-[#ed1c24] sm:w-[2.67px]"
+                  className="absolute bottom-0 left-0 top-0 w-0.5 origin-top bg-[#ed1c24] max-lg:w-0.5 lg:w-[2.67px]"
                   aria-hidden
                 />
                 <motion.p
                   variants={precEngQuoteText}
-                  className="max-w-[52rem] text-[clamp(0.9375rem,1.25vw,1.27rem)] font-semibold leading-[1.5] text-[#555]"
+                  className="max-w-[52rem] text-sm font-semibold leading-[22px] text-[#555] lg:text-[clamp(0.9375rem,1.25vw,1.27rem)] lg:leading-[1.5]"
                 >
                   The result is fewer coordination gaps between engineering
                   office, fabrication shop, and site team.
@@ -382,7 +384,7 @@ export function PrecisionDrivenEngineeringSection() {
               </motion.blockquote>
             </div>
 
-            <div className="flex min-w-0 flex-col gap-4 lg:gap-5 2xl:gap-[21px]">
+            <div className="flex min-w-0 flex-col gap-4 max-lg:gap-4 lg:gap-5 2xl:gap-[21px]">
               {SOFTWARE_CARDS.map((card, index) => (
                 <SoftwareCard key={card.name} card={card} index={index} />
               ))}

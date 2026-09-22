@@ -1,7 +1,6 @@
 .wrap {
 	width: 100%;
-	background-color: #fff;
-	padding: 40px var(--section-padding-x-right) 40px var(--section-padding-x);
+	padding: 0;
 	box-sizing: border-box;
 }
 

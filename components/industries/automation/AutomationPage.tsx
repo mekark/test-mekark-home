@@ -8,19 +8,22 @@ import AutomationFacilityProcessSection from "@/components/industries/automation
 import AutomationFaqSection from "@/components/industries/automation/AutomationFaqSection";
 import AutomationQuoteCtaSection from "@/components/industries/automation/AutomationQuoteCtaSection";
 import { AUTOMATION_ENQUIRY_CONFIG } from "@/components/industries/industryEnquiryConfigs";
+import DesignScale from "@/components/services/DesignScale";
 import { ServiceEnquiryProvider } from "@/components/services/ServiceEnquiryProvider";
 
 export function AutomationPage() {
   return (
     <ServiceEnquiryProvider config={AUTOMATION_ENQUIRY_CONFIG}>
       <main className="automation-industry-page flex flex-1 flex-col overflow-x-clip bg-white">
-        <LogisticsHeroBanner />
-        <OurSolutionsSection />
-        <WhyMekarkSection />
-        <AutomationFacilitiesSection />
-        <AutomationFacilityProcessSection />
-        <AutomationFaqSection />
-        <AutomationQuoteCtaSection />
+        <DesignScale mode="ultrawide">
+          <LogisticsHeroBanner />
+          <OurSolutionsSection />
+          <WhyMekarkSection />
+          <AutomationFacilitiesSection />
+          <AutomationFacilityProcessSection />
+          <AutomationFaqSection />
+          <AutomationQuoteCtaSection />
+        </DesignScale>
       </main>
     </ServiceEnquiryProvider>
   );

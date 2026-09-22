@@ -46,9 +46,12 @@ export type ServiceMobileHeroProps = {
   statsOverlapMargin?: string;
   statsTranslateY?: string;
   titleClassName?: string;
+  descriptionClassName?: string;
   imageSectionOverlap?: string;
   /** Breakpoint at which the mobile hero is hidden (default md). Use lg when desktop hero starts at lg. */
   hideFrom?: "md" | "lg";
+  /** Place ISO/certification in the grid beside the last stat (solar hero). */
+  certificationInline?: boolean;
 };
 
 const DEFAULT_ARROW = "/images/services/civil/hero/arrow.svg";
@@ -83,8 +86,10 @@ export default function ServiceMobileHero({
   statsOverlapMargin = "-108px",
   statsTranslateY = "14px",
   titleClassName = "leading-[1.2]",
+  descriptionClassName,
   imageSectionOverlap = "0",
   hideFrom = "md",
+  certificationInline = false,
 }: ServiceMobileHeroProps) {
   const imageBottomColor = heroImage.bottomColor ?? "#252525";
   const transparentTopBackgroundStyle: CSSProperties = heroImage.bottomGradient
@@ -97,10 +102,76 @@ export default function ServiceMobileHero({
 
   const hideFromClass = hideFrom === "lg" ? "lg:hidden" : "md:hidden";
 
+  const inlineCertification =
+    certificationInline && certification != null && stats.length % 2 === 1;
+  const topStats = inlineCertification ? stats.slice(0, -1) : stats;
+  const bottomStat = inlineCertification ? stats[stats.length - 1] : null;
+
+  const renderStatCell = (
+    stat: ServiceMobileHeroStat,
+    showBorder: boolean,
+  ) => (
+    <div
+      key={stat.key}
+      className={`flex min-w-0 flex-col gap-[1.93px] py-[14.12px] ${
+        showBorder ? "border-b border-white/14" : ""
+      }`}
+    >
+      <div className="w-full text-[14.12px] font-extrabold leading-[16.95px] tracking-[-0.28px] text-white [&_span]:leading-[inherit]">
+        {stat.value}
+      </div>
+      <div className="w-full break-words text-[8.35px] font-normal leading-[11.27px] text-white/72">
+        {stat.mobileLabel}
+      </div>
+    </div>
+  );
+
+  const renderCertificationCell = () => (
+    <div className="flex min-w-0 items-center gap-[10.27px] py-[14.12px]">
+      <span className="relative inline-block h-[29.53px] w-[26.96px] shrink-0 overflow-hidden">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={CERT_BADGE}
+          alt="ISO certification badge"
+          className="absolute inset-0 size-full"
+        />
+      </span>
+      <p className="min-w-0 flex-1 text-left text-[10.91px] font-bold leading-[14.73px]">
+        {certification}
+      </p>
+    </div>
+  );
+
+  const renderStatsGrid = () => (
+    <div className={inlineCertification ? "pb-[16.69px]" : undefined}>
+      <div className="grid grid-cols-2 gap-x-[15.41px]">
+        {topStats.map((stat) => renderStatCell(stat, true))}
+        {bottomStat ? renderStatCell(bottomStat, false) : null}
+        {inlineCertification ? renderCertificationCell() : null}
+      </div>
+
+      {!inlineCertification && certification ? (
+        <div className="flex min-w-0 items-center gap-[10.27px] pt-[14.12px] pb-[16.69px]">
+          <span className="relative inline-block h-[29.53px] w-[26.96px] shrink-0 overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={CERT_BADGE}
+              alt="ISO certification badge"
+              className="absolute inset-0 size-full"
+            />
+          </span>
+          <p className="min-w-0 max-w-[189px] text-left text-[10.91px] font-bold leading-[14.73px]">
+            {certification}
+          </p>
+        </div>
+      ) : null}
+    </div>
+  );
+
   return (
     <section className={`relative w-full overflow-x-hidden font-manrope ${hideFromClass}`}>
       <div
-        className="relative px-6 pt-[calc(60px+38.81px)] text-center"
+        className="relative px-6 pt-[calc(60px+24px)] text-center"
         style={mobileHeroBackgroundStyle}
       >
         <div className="mx-auto flex w-full max-w-[1240px] flex-col items-center gap-[19.2px]">
@@ -110,7 +181,13 @@ export default function ServiceMobileHero({
             {title}
           </h1>
 
-          <p className="w-full max-w-[429px] text-pretty text-[14px] font-normal leading-normal text-[#4a4644]">
+          <p
+            className={
+              descriptionClassName
+                ? `relative inline-block w-full text-center text-sm font-normal leading-normal font-manrope ${descriptionClassName}`
+                : "w-full max-w-[429px] text-pretty text-[14px] font-normal leading-normal text-[#4a4644]"
+            }
+          >
             {description}
           </p>
 
@@ -213,35 +290,7 @@ export default function ServiceMobileHero({
                   : undefined,
               }}
             >
-              <div className="grid grid-cols-2 gap-x-[15.41px]">
-                {stats.map((stat) => (
-                  <div
-                    key={stat.key}
-                    className="flex min-w-0 flex-col gap-[1.93px] border-b border-white/14 py-[14.12px]"
-                  >
-                    <div className="w-full text-[14.12px] font-extrabold leading-[16.95px] tracking-[-0.28px] text-white [&_span]:leading-[inherit]">
-                      {stat.value}
-                    </div>
-                    <div className="w-full break-words text-[8.35px] font-normal leading-[11.27px] text-white/72">
-                      {stat.mobileLabel}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex min-w-0 items-center gap-[10.27px] pt-[14.12px] pb-[16.69px]">
-                <span className="relative inline-block h-[29.53px] w-[26.96px] shrink-0 overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={CERT_BADGE}
-                    alt="ISO certification badge"
-                    className="absolute inset-0 size-full"
-                  />
-                </span>
-                <p className="min-w-0 max-w-[189px] text-left text-[10.91px] font-bold leading-[14.73px]">
-                  {certification}
-                </p>
-              </div>
+              {renderStatsGrid()}
             </div>
           </div>
         </div>
@@ -355,35 +404,7 @@ export default function ServiceMobileHero({
                   : undefined,
               }}
             >
-            <div className="grid grid-cols-2 gap-x-[15.41px]">
-              {stats.map((stat) => (
-                <div
-                  key={stat.key}
-                  className="flex min-w-0 flex-col gap-[1.93px] border-b border-white/14 py-[14.12px]"
-                >
-                  <div className="w-full text-[14.12px] font-extrabold leading-[16.95px] tracking-[-0.28px] text-white [&_span]:leading-[inherit]">
-                    {stat.value}
-                  </div>
-                  <div className="w-full break-words text-[8.35px] font-normal leading-[11.27px] text-white/72">
-                    {stat.mobileLabel}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="flex min-w-0 items-center gap-[10.27px] pt-[14.12px] pb-[16.69px]">
-              <span className="relative inline-block h-[29.53px] w-[26.96px] shrink-0 overflow-hidden">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={CERT_BADGE}
-                  alt="ISO certification badge"
-                  className="absolute inset-0 size-full"
-                />
-              </span>
-              <p className="min-w-0 max-w-[189px] text-left text-[10.91px] font-bold leading-[14.73px]">
-                {certification}
-              </p>
-            </div>
+            {renderStatsGrid()}
             </div>
           </div>
         </div>

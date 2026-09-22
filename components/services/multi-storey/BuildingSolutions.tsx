@@ -1,10 +1,18 @@
 "use client";
 
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import GridBackground from "@/components/services/multi-storey/GridBackground";
 import ServiceSolutionsMobileGrid from "@/components/services/ServiceSolutionsMobileGrid";
+import {
+  MOBILE_CARD_BODY_CLASS,
+  MOBILE_CARD_CLASS,
+  MOBILE_CARD_TITLE_CLASS,
+  MOBILE_SOLUTIONS_CONTAINER_CLASS,
+  MOBILE_SOLUTIONS_GRID_CLASS,
+  MOBILE_SOLUTIONS_IMAGE_CLASS,
+} from "@/components/services/serviceMobileCivilTemplate";
 import { SERVICE_CARD_BODY_CLASS_SCALED } from "@/components/services/serviceTypography";
 
 type Solution = {
@@ -12,6 +20,7 @@ type Solution = {
   body: string;
   image: string;
   desktopTitle: ReactNode;
+  mobileImageStyle?: CSSProperties;
 };
 
 function Line({ children }: { children: ReactNode }) {
@@ -34,6 +43,10 @@ const solutions: Solution[] = [
     title: "Pre-Engineered Building (PEB) Structures",
     body: "Faster, more cost-efficient than conventional construction.",
     image: "/images/services/multi-storey/frame212/solutions/peb.webp",
+    mobileImageStyle: {
+      objectPosition: "32% 18%",
+      transform: "scale(1.54)",
+    },
     desktopTitle: (
       <>
         <Line>Pre-Engineered Building</Line>
@@ -78,6 +91,10 @@ const solutions: Solution[] = [
     title: "Warehouse Construction",
     body: "Multi-level logistics and storage structures on steel framing.",
     image: "/images/services/multi-storey/frame212/solutions/warehouse.webp",
+    mobileImageStyle: {
+      objectPosition: "32% 65%",
+      transform: "scale(1.65)",
+    },
     desktopTitle: <Line>Warehouse Construction</Line>,
   },
   {
@@ -108,10 +125,18 @@ export default function BuildingSolutions() {
 
       <ServiceSolutionsMobileGrid
         title="Our Multi-Storey Building Solutions"
+        className={MOBILE_SOLUTIONS_CONTAINER_CLASS}
+        titleClassName="max-w-[350px] text-left font-manrope text-[28px] font-bold leading-[35px] text-[#111]"
+        gridClassName={MOBILE_SOLUTIONS_GRID_CLASS}
+        cardClassName={MOBILE_CARD_CLASS}
+        cardTitleClassName={MOBILE_CARD_TITLE_CLASS}
+        cardBodyClassName={MOBILE_CARD_BODY_CLASS}
+        imageContainerClassName={MOBILE_SOLUTIONS_IMAGE_CLASS}
         solutions={solutions.map((item) => ({
           title: item.title,
           description: item.body,
           image: item.image,
+          imageStyle: item.mobileImageStyle,
         }))}
       />
 

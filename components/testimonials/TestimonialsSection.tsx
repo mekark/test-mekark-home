@@ -74,13 +74,13 @@ function TestimonialCard({
         y: -4,
         transition: { type: "spring", stiffness: 340, damping: 22 },
       }}
-      className={`flex h-full flex-col rounded-[24px] border p-8 ${
+      className={`flex h-full flex-col rounded-[24px] border p-8 font-[family-name:var(--font-manrope)] max-lg:rounded-[20px] max-lg:p-4 ${
         featured
           ? "border-transparent bg-[#0d0808] text-white"
           : "border-[#e5e0e0] bg-[#fcf9f9] text-[#111]"
       }`}
     >
-      <div className="flex h-10 items-center">
+      <div className="flex h-10 items-center max-lg:h-8">
         <Image
           src={testimonial.logo.src}
           alt={`${testimonial.company} logo`}
@@ -91,22 +91,24 @@ function TestimonialCard({
       </div>
 
       <blockquote
-        className={`mt-5 flex-1 text-base leading-[26px] ${
-          featured ? "text-[#9e9c9c]" : "text-[#333]"
+        className={`mt-5 flex-1 text-base leading-[26px] max-lg:mt-4 max-lg:text-sm max-lg:leading-[22px] ${
+          featured ? "text-[#9e9c9c]" : "text-[#333] max-lg:text-[#666]"
         }`}
       >
         &ldquo;{testimonial.quote}&rdquo;
       </blockquote>
 
       <figcaption
-        className={`mt-6 border-t pt-6 ${
+        className={`mt-6 border-t pt-6 max-lg:mt-4 max-lg:pt-4 ${
           featured ? "border-white/15" : "border-[#e5e0e0]"
         }`}
       >
-        <p className="text-base font-bold leading-6">{testimonial.name}</p>
+        <p className="text-base font-bold leading-6 max-lg:text-lg max-lg:leading-[30px]">
+          {testimonial.name}
+        </p>
         <p
-          className={`mt-0.5 text-sm leading-5 ${
-            featured ? "text-white/60" : "text-[#383131]"
+          className={`mt-0.5 text-sm leading-5 max-lg:text-sm max-lg:leading-[22px] ${
+            featured ? "text-white/60" : "text-[#383131] max-lg:text-[#666]"
           }`}
         >
           {testimonial.role}
@@ -118,8 +120,10 @@ function TestimonialCard({
 
 export function TestimonialsSection() {
   return (
-    <section className="relative w-full border-b border-[rgba(107,13,17,0.1)] bg-[#f8f6f6]">
-      <div className={`${SECTION_CONTAINER_CLASS} py-14 lg:py-[70px] xl:py-[53px] 2xl:py-[70px]`}>
+    <section className="relative w-full border-b border-[rgba(107,13,17,0.1)] bg-[#f8f6f6] font-[family-name:var(--font-manrope)]">
+      <div
+        className={`${SECTION_CONTAINER_CLASS} max-lg:py-8 py-14 lg:py-[70px] xl:py-[53px] 2xl:py-[70px]`}
+      >
         <motion.div
           variants={testGridStagger}
           initial="hidden"
@@ -127,24 +131,24 @@ export function TestimonialsSection() {
           viewport={VIEWPORT}
           className="mx-auto flex w-full max-w-[1280px] flex-col items-center"
         >
-          <div className="flex max-w-[672px] flex-col items-center text-center">
+          <div className="flex max-w-[672px] flex-col items-center gap-3 text-center max-lg:max-w-none">
             <motion.div
               variants={testBadgeReveal}
-              className="flex items-center gap-[7px] rounded-full border border-crimson-100 bg-crimson-200 px-[11.5px] py-[6px]"
+              className="flex items-center gap-1.5 rounded-full border border-crimson-100 bg-crimson-200 px-2.5 py-1.5 sm:gap-[7px] sm:px-[11.5px] sm:py-[6px]"
             >
               <motion.div
                 variants={aboutBadgeDot}
-                className="size-[7px] rounded-full bg-red-200"
+                className="size-1.5 rounded-full bg-red-200 sm:size-[7px]"
                 aria-hidden
               />
-              <span className="font-manrope text-xs font-medium tracking-[0.53px] text-red-100">
+              <span className="text-[10px] font-medium tracking-[0.5px] text-red-100 sm:text-xs sm:tracking-[0.53px]">
                 Testimonials
               </span>
             </motion.div>
 
             <motion.h2
               variants={testHeadlineReveal}
-              className="mt-3.5 text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold leading-[1.2] tracking-[-0.84px] text-[#0d0808] lg:text-[40px] lg:leading-[48px] xl:text-[36px] xl:leading-[44px] 2xl:text-[40px] 2xl:leading-[48px]"
+              className="text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold leading-[1.2] tracking-[-0.84px] text-[#0d0808] max-lg:text-[28px] max-lg:leading-[30px] max-lg:tracking-normal lg:mt-3.5 lg:text-[40px] lg:leading-[48px] xl:text-[36px] xl:leading-[44px] 2xl:text-[40px] 2xl:leading-[48px]"
             >
               What Clients Say After Handover
             </motion.h2>
@@ -152,7 +156,7 @@ export function TestimonialsSection() {
 
           <motion.div
             variants={testGridStagger}
-            className="mt-12 grid w-full grid-cols-1 gap-5 lg:grid-cols-3 lg:gap-5"
+            className="mt-12 grid w-full grid-cols-1 gap-5 max-lg:mt-6 max-lg:gap-6 lg:grid-cols-3 lg:gap-5"
           >
             {TESTIMONIALS.map((testimonial, index) => (
               <TestimonialCard

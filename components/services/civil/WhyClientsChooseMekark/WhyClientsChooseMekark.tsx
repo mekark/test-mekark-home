@@ -8,38 +8,47 @@ const fadeUp = {
   visible: { opacity: 1, y: 0 },
 };
 
+const MOBILE_SECTION_DESCRIPTION_CLASS =
+  "relative inline-block w-full text-center font-manrope text-sm font-normal leading-normal text-[#111]";
+
+const MOBILE_FEATURE_TITLE_CLASS =
+  "block font-manrope text-[18px] font-bold leading-[20px] text-[#3c3938]";
+
+const MOBILE_FEATURE_BODY_CLASS =
+  "font-manrope text-sm font-normal leading-normal text-[#555]";
+
 const features = [
   {
     number: "01",
-    title: "Turnkey Project Implementation:",
+    title: "Turnkey Project Implementation",
     description: "Single point of responsibility from start to finish.",
   },
   {
     number: "02",
-    title: "Established Credentials:",
+    title: "Established Credentials",
     description:
       "Over 200 industrial and commercial RCC construction projects completed, with a 4.7 out of 5 customer rating.",
   },
   {
     number: "03",
-    title: "Structural Engineers In-House:",
+    title: "Structural Engineers In-House",
     description:
       "BIM-based structural analysis ensures that your building is precisely designed and ready for construction.",
   },
   {
     number: "04",
-    title: "Exceptional Quality:",
+    title: "Exceptional Quality",
     description:
       "Independent QA, certification testing, and multi-layer waterproofing.",
   },
   {
     number: "05",
-    title: "Safe Construction:",
+    title: "Safe Construction",
     description: "Modular formwork, safety checks, and clear pricing.",
   },
   {
     number: "06",
-    title: "18+ Years of Experience:",
+    title: "18+ Years of Experience",
     description:
       "From factories and warehouse construction to multi-storey commercial building construction projects.",
   },
@@ -68,22 +77,18 @@ function Feature({
       <motion.div
         variants={fadeUp}
         transition={{ duration: 0.45, ease: "easeOut" }}
-        className="flex w-full items-start gap-0 text-left"
+        className="flex w-full items-start gap-4 py-4 pr-4 text-left drop-shadow-[0px_8px_12px_rgba(0,0,0,0.06)]"
       >
-        <span className="shrink-0 font-montserrat text-[32px] font-black tracking-[-2px] leading-none text-[#cc1020] sm:text-[40px]">
+        <span className="w-[50px] shrink-0 pt-1 font-montserrat text-[40px] font-extrabold tabular-nums leading-[48px] tracking-[-2px] text-[#e50818]">
           {number}
         </span>
         <span
-          className="ml-1.5 mr-3 mt-1 w-[2px] shrink-0 self-stretch rounded-full bg-[rgba(204,16,32,0.4)] sm:ml-2 sm:mr-4"
+          className="min-h-[92px] w-px shrink-0 self-stretch bg-[rgba(204,16,32,0.4)]"
           aria-hidden
         />
-        <div className="min-w-0 flex-1 pt-0.5">
-          <b className="block font-manrope text-[15px] font-bold leading-[22px] text-darkslategray sm:text-[17px] sm:leading-6">
-            {title}
-          </b>
-          <p className={`mt-1.5 ${SERVICE_WHY_CHOOSE_FEATURE_BODY_CLASS_SCALED}`}>
-            {description}
-          </p>
+        <div className="flex min-w-0 flex-1 flex-col gap-2 pt-1">
+          <b className={MOBILE_FEATURE_TITLE_CLASS}>{title}</b>
+          <p className={MOBILE_FEATURE_BODY_CLASS}>{description}</p>
         </div>
       </motion.div>
     );
@@ -124,107 +129,144 @@ function Feature({
 export default function WhyClientsChooseMekark() {
   return (
     <section className="relative isolate flex h-auto w-full shrink-0 flex-col items-start overflow-hidden text-center font-manrope text-[53.33px] text-gray-100 [background:linear-gradient(269.25deg,#fff,rgba(255,255,255,0)),linear-gradient(#e6e6e6,#e6e6e6)] lg:h-[1014.7px] lg:gap-[13.3px]">
-      {/* Mobile / tablet — clean split: copy left of engineer feel */}
+      {/* Mobile — Figma 7385:1067 */}
       <div className="relative z-10 w-full lg:hidden">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.22]"
-          src="/images/services/civil/why-clients/bg.webp"
-          alt="Civil construction site at Mekark project"
-        />
-
-        <div className="relative mx-auto w-full max-w-[925px] px-5 pt-12 pb-14 sm:px-8 sm:pt-16 sm:pb-16">
-          {/* Title block */}
-          <motion.div
-            className="text-center"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{
-              hidden: {},
-              visible: { transition: { staggerChildren: 0.1 } },
-            }}
-          >
-            <motion.h2
-              variants={fadeUp}
-              transition={{ duration: 0.55, ease: "easeOut" }}
-              className="text-[26px] font-bold tracking-[-1px] leading-[1.2] sm:text-[34px] sm:leading-[40px]"
+        <div className="relative mx-auto w-full max-w-[390px] px-5 pt-[26px]">
+          <div className="mx-auto flex w-full max-w-[350px] flex-col gap-[14px]">
+            {/* Frame 194 — title + description */}
+            <motion.div
+              className="text-center"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.1 } },
+              }}
             >
+              <motion.h2
+                variants={fadeUp}
+                transition={{ duration: 0.55, ease: "easeOut" }}
+                className="relative inline-block w-full text-center font-manrope text-[28px] font-bold leading-[35px] text-gray"
+              >
+                <span className="block leading-[35px]">Why Industrial &amp;</span>
+                <span className="block leading-[35px]">Commercial Clients</span>
+                <span className="block leading-[35px] text-red">Choose Mekark</span>
+              </motion.h2>
+              <motion.p
+                variants={fadeUp}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className={`${MOBILE_SECTION_DESCRIPTION_CLASS} mt-[14px]`}
+              >
+                <span>
+                  As a reliable civil construction contractor, building contractor,
+                  and RCC construction company,
+                </span>
+                <span>
+                  Mekark offers structural engineering expertise that many generic
+                  contractors lack.
+                </span>
+              </motion.p>
+            </motion.div>
 
-              
-              Why Industrial &amp; Commercial Clients{" "}
-              <span className="text-red">Choose Mekark</span>
-            </motion.h2>
-            <motion.p
-              variants={fadeUp}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="service-section-description sm:mt-4"
+            {/* Frame 192 — engineer portrait with bottom blend */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              className="relative -mb-[88px] h-[356px] w-full overflow-hidden rounded-[24px] shadow-[0px_12px_16px_rgba(0,0,0,0.08)]"
+              style={{
+                WebkitMaskImage:
+                  "linear-gradient(180deg, #000 0%, #000 52%, rgba(0,0,0,0.65) 72%, transparent 92%)",
+                maskImage:
+                  "linear-gradient(180deg, #000 0%, #000 52%, rgba(0,0,0,0.65) 72%, transparent 92%)",
+              }}
             >
-              <span>
-                As a reliable civil construction contractor, building contractor,
-                and RCC construction company,
-              </span>
-              <span>
-                Mekark offers structural engineering expertise that many generic
-                contractors lack.
-              </span>
-            </motion.p>
-          </motion.div>
-
-          {/* Engineer + site blur — desktop-inspired center portrait */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="relative mx-auto mt-8 h-[300px] w-full max-w-[280px] sm:mt-10 sm:h-[380px] sm:max-w-[320px]"
-          >
-            <div
-              className="pointer-events-none absolute top-[8%] left-1/2 h-[70%] w-[95%] -translate-x-1/2 overflow-hidden opacity-45 blur-[2px]"
-              aria-hidden
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/services/civil/why-clients/site-blur.webp"
-                alt="Civil construction site behind Mekark engineer"
-                className="h-full w-full object-cover"
+              <div
+                className="pointer-events-none absolute top-[-13px] left-[25px] h-[199px] w-[289px] overflow-hidden blur-[1.5px] opacity-80"
+                aria-hidden
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/services/civil/why-clients/site-blur.webp"
+                  alt=""
+                  className="absolute top-[7.38%] left-[2.99%] h-[92.66%] w-[95.87%] max-w-none object-cover"
+                />
+              </div>
+              <div
+                className="pointer-events-none absolute top-1/2 left-1/2 h-[314px] w-[350px] -translate-x-1/2 -translate-y-[calc(50%+19px)] overflow-hidden drop-shadow-[0_10px_24px_rgba(0,0,0,0.12)]"
+                style={{
+                  WebkitMaskImage:
+                    "linear-gradient(180deg, #000 0%, #000 62%, rgba(0,0,0,0.4) 82%, transparent 100%)",
+                  maskImage:
+                    "linear-gradient(180deg, #000 0%, #000 62%, rgba(0,0,0,0.4) 82%, transparent 100%)",
+                }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/services/civil/why-clients/engineer.webp"
+                  alt="Mekark civil engineer with hard hat and clipboard"
+                  className="absolute top-[-12.96%] left-[-26.66%] h-[112.96%] w-[152%] max-w-none object-cover"
+                />
+              </div>
+              <div
+                className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[55%]"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(180deg, rgba(248,248,248,0) 0%, rgba(248,248,248,0.55) 38%, #f8f8f8 100%)",
+                }}
+                aria-hidden
               />
-            </div>
-            <div className="absolute inset-0 overflow-hidden">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                className="pointer-events-none absolute top-[-8%] left-[-28%] h-[118%] w-[160%] max-w-none object-cover"
-                src="/images/services/civil/why-clients/engineer.webp"
-                alt="Mekark civil engineer with hard hat and clipboard"
-              />
-            </div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Frame 573 gradient + Frame 195 features on BG white */}
+        <div className="relative z-20">
+          <div className="relative overflow-hidden bg-[#f8f8f8] px-5 pb-16 pt-2">
             <div
-              className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#e6e6e6] via-[#e6e6e6]/80 to-transparent"
+              className="pointer-events-none absolute inset-x-0 top-0 h-[100px] -translate-y-[58px]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(180deg, rgba(230,230,230,0) 0.54%, rgba(240,240,240,0.762) 50%, rgb(248,248,248) 84%)",
+              }}
               aria-hidden
             />
-          </motion.div>
-
-          {/* Features — classic number | bar | copy, matching desktop */}
-          <motion.div
-            className="mt-8 flex w-full flex-col gap-7 sm:mt-10 sm:gap-8"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.12 }}
-            variants={{
-              hidden: {},
-              visible: { transition: { staggerChildren: 0.07 } },
-            }}
-          >
-            {features.map((f) => (
-              <Feature
-                key={f.number}
-                number={f.number}
-                title={f.title}
-                description={f.description}
-                mobile
+            {/* Figma 7385:1126 — construction fade behind features */}
+            <div
+              className="pointer-events-none absolute bottom-0 left-[-56px] h-[270px] w-[503px] max-w-none"
+              aria-hidden
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/services/civil/why-clients/mobile-features-bg.webp"
+                alt=""
+                className="size-full object-cover object-bottom"
               />
-            ))}
-          </motion.div>
+            </div>
+
+            <motion.div
+              className="relative z-10 mx-auto flex w-full max-w-[350px] flex-col"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.12 }}
+              variants={{
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.07 } },
+              }}
+            >
+              {features.map((f) => (
+                <Feature
+                  key={f.number}
+                  number={f.number}
+                  title={f.title}
+                  description={f.description}
+                  mobile
+                />
+              ))}
+            </motion.div>
+          </div>
         </div>
       </div>
 

@@ -8,19 +8,22 @@ import FoodBeverageProcess from "@/components/industries/food-and-beverage/proce
 import FoodBeverageFaq from "@/components/industries/food-and-beverage/faq/faq";
 import FoodBeverageFooterCta from "@/components/industries/food-and-beverage/footer/footer";
 import { FOOD_AND_BEVERAGE_ENQUIRY_CONFIG } from "@/components/industries/industryEnquiryConfigs";
+import DesignScale from "@/components/services/DesignScale";
 import { ServiceEnquiryProvider } from "@/components/services/ServiceEnquiryProvider";
 
 export function FoodAndBeveragePage() {
   return (
     <ServiceEnquiryProvider config={FOOD_AND_BEVERAGE_ENQUIRY_CONFIG}>
       <main className="food-and-beverage-industry-page flex flex-1 flex-col overflow-x-clip bg-white">
-        <FoodBeverageHero />
-        <FoodBeverageSolutions />
-        <FoodBeverageCta />
-        <FoodBeverageFacilities />
-        <FoodBeverageProcess />
-        <FoodBeverageFaq />
-        <FoodBeverageFooterCta />
+        <DesignScale mode="ultrawide">
+          <FoodBeverageHero />
+          <FoodBeverageSolutions />
+          <FoodBeverageCta />
+          <FoodBeverageFacilities />
+          <FoodBeverageProcess />
+          <FoodBeverageFaq />
+          <FoodBeverageFooterCta />
+        </DesignScale>
       </main>
     </ServiceEnquiryProvider>
   );

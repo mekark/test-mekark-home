@@ -3,6 +3,7 @@ import { InstitutionHeroSection } from "@/components/institution/InstitutionHero
 import { InstitutionMapSection } from "@/components/institution/InstitutionMapSection";
 import { InstitutionTypesSection } from "@/components/institution/InstitutionTypesSection";
 import { InstitutionalEnquiryProvider } from "@/components/institution/InstitutionalEnquiryProvider";
+import DesignScale from "@/components/services/DesignScale";
 import { FooterSection } from "@/components/footer/FooterSection";
 
 import { createPageMetadata } from "@/lib/page-metadata";
@@ -19,8 +20,10 @@ export default function InstitutionalRoute() {
     <InstitutionalEnquiryProvider>
       <div className="flex flex-1 flex-col bg-white">
         <InstitutionHeroSection />
-        <InstitutionMapSection />
-        <InstitutionTypesSection />
+        <DesignScale mode="ultrawide">
+          <InstitutionMapSection />
+          <InstitutionTypesSection />
+        </DesignScale>
         <FooterSection />
       </div>
     </InstitutionalEnquiryProvider>

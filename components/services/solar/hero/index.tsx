@@ -8,6 +8,10 @@ import {
   civilMobileHeroLayout,
 } from "@/components/services/serviceMobileHeroCivilLayout";
 import {
+  MOBILE_HERO_DESCRIPTION_CLASS,
+  SERVICE_MOBILE_HERO_TITLE_FIGMA_CLASS,
+} from "@/components/services/serviceMobileCivilTemplate";
+import {
   SERVICE_BODY_TEXT_SIZES,
   SERVICE_BODY_TEXT_SIZES_SCALED,
 } from "@/components/services/serviceTypography";
@@ -53,7 +57,15 @@ function MobileHero() {
   return (
     <ServiceMobileHero
       {...civilMobileHeroLayout}
-      title="South India's Trusted Commercial Solar Installation Contractor"
+      title={
+        <>
+          <span className="block">South India&apos;s Trusted</span>
+          <span className="block">Commercial Solar</span>
+          <span className="block">Installation Contractor</span>
+        </>
+      }
+      titleClassName={SERVICE_MOBILE_HERO_TITLE_FIGMA_CLASS}
+      descriptionClassName={MOBILE_HERO_DESCRIPTION_CLASS}
       description={heroDescription}
       heroImage={{
         ...civilMobileHeroImageDefaults,
@@ -77,6 +89,7 @@ function MobileHero() {
           <span className="text-[#ed2024]">Certified</span>
         </>
       }
+      certificationInline
       hideFrom="lg"
     />
   );

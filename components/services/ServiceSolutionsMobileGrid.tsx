@@ -23,8 +23,11 @@ type ServiceSolutionsMobileGridProps = {
   solutions: ServiceSolutionItem[];
   desktopFrom?: "lg" | "xl";
   className?: string;
+  titleClassName?: string;
   gridClassName?: string;
   cardClassName?: string;
+  cardTitleClassName?: string;
+  cardBodyClassName?: string;
   imageContainerClassName?: string;
 };
 
@@ -33,8 +36,11 @@ export default function ServiceSolutionsMobileGrid({
   solutions,
   desktopFrom = "lg",
   className = "",
+  titleClassName = "",
   gridClassName = "",
   cardClassName = "",
+  cardTitleClassName = "",
+  cardBodyClassName = "",
   imageContainerClassName = "",
 }: ServiceSolutionsMobileGridProps) {
   const hideFromDesktop = desktopFrom === "xl" ? "xl:hidden" : "lg:hidden";
@@ -43,7 +49,12 @@ export default function ServiceSolutionsMobileGrid({
     <div
       className={`relative z-10 mx-auto flex w-full max-w-[1100px] flex-col items-center gap-10 px-5 py-14 sm:px-8 sm:py-16 ${hideFromDesktop} ${className}`}
     >
-      <h2 className="max-w-[900px] text-center font-manrope text-[26px] font-bold tracking-[-1.33px] leading-[1.2] text-gray sm:text-[36px] sm:leading-[44px]">
+      <h2
+        className={
+          titleClassName ||
+          "max-w-[900px] text-center font-manrope text-[26px] font-bold tracking-[-1.33px] leading-[1.2] text-gray sm:text-[36px] sm:leading-[44px]"
+        }
+      >
         {title}
       </h2>
       <motion.div
@@ -61,10 +72,15 @@ export default function ServiceSolutionsMobileGrid({
             key={item.title}
             variants={fadeUp}
             transition={{ duration: 0.45, ease: "easeOut" }}
-            className={`flex flex-col gap-4 ${cardClassName}`}
+            className={
+              cardClassName || "flex flex-col gap-4"
+            }
           >
             <div
-              className={`relative h-[200px] w-full overflow-hidden rounded-[21.33px] sm:h-[240px] ${imageContainerClassName}`}
+              className={
+                imageContainerClassName ||
+                "relative h-[200px] w-full overflow-hidden rounded-[21.33px] sm:h-[240px]"
+              }
             >
               <Image
                 className={`object-cover ${item.imageClassName ?? ""}`}
@@ -75,11 +91,21 @@ export default function ServiceSolutionsMobileGrid({
                 sizes="(max-width: 640px) 100vw, 50vw"
               />
             </div>
-            <div>
-              <h3 className="font-manrope text-[17px] font-bold leading-[22px] text-darkslategray sm:text-[18.67px]">
+            <div className={cardClassName ? "flex w-full flex-col gap-2" : undefined}>
+              <h3
+                className={
+                  cardTitleClassName ||
+                  "font-manrope text-[17px] font-bold leading-[22px] text-darkslategray sm:text-[18.67px]"
+                }
+              >
                 {item.title}
               </h3>
-              <p className={`mt-2 ${SERVICE_CARD_BODY_CLASS}`}>
+              <p
+                className={
+                  cardBodyClassName ||
+                  `mt-2 ${SERVICE_CARD_BODY_CLASS}`
+                }
+              >
                 {item.description}
               </p>
             </div>

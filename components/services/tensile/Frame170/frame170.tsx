@@ -3,6 +3,14 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import ServiceSolutionsMobileGrid from "@/components/services/ServiceSolutionsMobileGrid";
+import {
+  MOBILE_CARD_BODY_CLASS,
+  MOBILE_CARD_CLASS,
+  MOBILE_CARD_TITLE_CLASS,
+  MOBILE_SOLUTIONS_CONTAINER_CLASS,
+  MOBILE_SOLUTIONS_GRID_CLASS,
+  MOBILE_SOLUTIONS_IMAGE_CLASS,
+} from "@/components/services/serviceMobileCivilTemplate";
 import { SERVICE_CARD_BODY_CLASS_SCALED } from "@/components/services/serviceTypography";
 
 const solutions = [
@@ -42,29 +50,33 @@ const easeOut = [0.22, 1, 0.36, 1] as const;
 
 export default function Frame170() {
   return (
-    <section className="relative w-full overflow-hidden bg-white px-5 py-14 font-manrope text-[#111] sm:px-8 sm:py-16 lg:px-[107px] lg:py-[107px]">
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[200px] sm:h-[280px] lg:h-[390px]">
-        <Image
-          className="h-full w-full object-cover object-top opacity-95"
-          src="/images/services/tensile/frame170/grid-bg.webp"
-          width={1918}
-          height={391}
-          sizes="100vw"
-          alt="Decorative grid background"
-        />
-      </div>
+    <section className="relative w-full shrink-0 overflow-hidden bg-white text-left font-manrope text-[#111]">
+      <Image
+        className="pointer-events-none absolute top-0 left-0 hidden h-[390px] w-full object-cover opacity-[0.15] lg:block"
+        src="/images/services/tensile/frame170/grid-bg.webp"
+        width={1918}
+        height={391}
+        sizes="100vw"
+        alt="Decorative grid background"
+      />
 
       <ServiceSolutionsMobileGrid
         title="Our Tensile Fabric Structure Solutions"
+        className={MOBILE_SOLUTIONS_CONTAINER_CLASS}
+        titleClassName="w-full text-left font-manrope text-[28px] font-bold leading-[35px] text-[#111]"
+        gridClassName={MOBILE_SOLUTIONS_GRID_CLASS}
+        cardClassName={MOBILE_CARD_CLASS}
+        cardTitleClassName={`${MOBILE_CARD_TITLE_CLASS} leading-[23px]`}
+        cardBodyClassName={MOBILE_CARD_BODY_CLASS}
+        imageContainerClassName={MOBILE_SOLUTIONS_IMAGE_CLASS}
         solutions={solutions.map((item) => ({
           title: item.title,
           description: item.body,
           image: item.src,
         }))}
-        className="!px-0 !py-0"
       />
 
-      <div className="relative z-10 mx-auto hidden max-w-[1706px] flex-col items-center gap-[67px] lg:flex">
+      <div className="relative z-10 mx-auto hidden max-w-[1706px] flex-col items-center gap-[67px] px-5 py-14 sm:px-8 lg:flex lg:px-[107px] lg:py-[107px]">
         <h2 className="max-w-[940px] text-center text-[53.33px] font-extrabold tracking-[-0.04em] leading-[1.2]">
           Our Tensile Fabric Structure Solutions
         </h2>

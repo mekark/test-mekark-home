@@ -6,6 +6,10 @@ import {
   civilMobileHeroImageDefaults,
   civilMobileHeroLayout,
 } from "@/components/services/serviceMobileHeroCivilLayout";
+import {
+  PEB_MOBILE_HERO_DESCRIPTION_CLASS,
+  PEB_MOBILE_HERO_TITLE_CLASS,
+} from "@/components/services/serviceMobileCivilTemplate";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -95,13 +99,15 @@ function MobileHero() {
       {...civilMobileHeroLayout}
       title={
         <>
-          South India&apos;s Leading Pre-
-          <br />
-          Engineered Building (PEB)
-          <br />
-          Contractor &amp; Manufacturer
+          <span className="block">South India&apos;s Leading</span>
+          <span className="block">
+            <span className="whitespace-nowrap">Pre-Engineered Building</span>{" "}
+            (PEB) Contractor &amp; Manufacturer
+          </span>
         </>
       }
+      titleClassName={PEB_MOBILE_HERO_TITLE_CLASS}
+      descriptionClassName={PEB_MOBILE_HERO_DESCRIPTION_CLASS}
       description={heroDescription}
       heroImage={{
         ...civilMobileHeroImageDefaults,

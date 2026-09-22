@@ -10,6 +10,9 @@ const fadeUp = {
   visible: { opacity: 1, y: 0 },
 };
 
+const MOBILE_BODY_TEXT_CLASS =
+  "relative inline-block w-full text-left font-manrope text-sm font-normal leading-normal text-black";
+
 const mobileParagraphs = [
   "Mekark is among the premier civil construction companies and RCC contractors based out of Chennai, offering you resilient, code-compliant structures for all your industrial, commercial and institutional projects across Tamil Nadu and India.",
   "As a turnkey civil construction contractor, we manage the full project lifecycle: site assessment, structural design, RCC construction, MEP integration, and handover, giving you one accountable partner instead of multiple vendors. All our projects are designed by our in-house architects and structural designers, who use BIM-based structural analysis and formwork with an ISO-certified, safety-conscious approach.",
@@ -20,20 +23,7 @@ export default function WhyChooseMekark() {
   return (
     <section className="relative h-auto w-full shrink-0 overflow-hidden text-left font-manrope text-num-18_67 font-normal text-black [background:linear-gradient(269.25deg,#fff,rgba(255,255,255,0)),linear-gradient(#e6e6e6,#e6e6e6)] lg:h-[820px]">
       {/* Mobile / tablet — styles only; same content as desktop */}
-      <div className="relative z-10 lg:hidden">
-        {/* Blueprint atmosphere */}
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.07]"
-          aria-hidden
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/services/civil/why-choose/blueprint.webp"
-            alt="Structural blueprint for civil construction"
-            className="h-full w-full object-cover object-center"
-          />
-        </div>
-
+      <div className="relative z-10 overflow-x-hidden bg-white lg:hidden">
         <div className="relative mx-auto max-w-[720px]">
           <div className="px-5 pt-12 sm:px-8 sm:pt-16">
             <motion.div
@@ -42,48 +32,55 @@ export default function WhyChooseMekark() {
               viewport={{ once: true }}
               transition={{ duration: 0.55 }}
             >
-              <ServiceIntroTitle
-                beforeRed="End-to-End Civil & RCC Construction, "
-                redPart="Under One Roof"
-                scaledCanvas
-              />
+              <h2 className="relative inline-block w-full max-w-[342px] text-left font-manrope text-[28px] leading-8 font-bold tracking-normal text-[#111] sm:max-w-none sm:text-[36px]">
+                <span className="block">End-to-End Civil &amp; RCC</span>
+                <span className="block">Construction,</span>
+                <span className="block text-red">Under One Roof</span>
+              </h2>
             </motion.div>
           </div>
 
-          {/* Asymmetric visual stage */}
+          {/* Figma Frame 567 — full-bleed mobile image composition */}
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-            className="relative mt-8 h-[260px] sm:mt-10 sm:h-[340px]"
+            className="relative mt-6 aspect-[390/312] w-full overflow-hidden sm:mt-8"
           >
+            {/* Blueprint base — Figma 7385:1059 */}
             <div
-              className="pointer-events-none absolute top-6 right-0 h-[78%] w-[72%] overflow-hidden rounded-l-[4px] opacity-40 sm:top-8 sm:h-[80%] sm:w-[68%]"
+              className="pointer-events-none absolute top-[56.41%] left-[-16.41%] h-[50%] w-[149%] overflow-hidden"
               aria-hidden
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/services/civil/why-choose/blueprint.webp"
-                alt="Structural blueprint for civil construction"
-                className="h-full w-full scale-125 object-cover object-left -rotate-[3deg]"
+                src="/images/services/civil/why-choose/mobile-blueprint-layer.webp"
+                alt=""
+                className="absolute top-[-148.44%] left-[-6.66%] h-[290.08%] w-[129.51%] max-w-none"
               />
             </div>
 
-            <div className="absolute inset-y-0 left-0 right-5 overflow-hidden rounded-r-[28px] shadow-[0_18px_40px_rgba(17,17,17,0.18)] sm:right-8 sm:rounded-r-[36px]">
+            {/* Blueprint grid — Figma 7385:1060 */}
+            <div
+              className="pointer-events-none absolute top-0 left-[25%] h-[79.81%] w-[80.77%] overflow-hidden"
+              aria-hidden
+            >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/services/civil/why-choose/building-mask.webp"
+                src="/images/services/civil/why-choose/mobile-building-layer.webp"
+                alt=""
+                className="size-full max-w-none object-cover"
+              />
+            </div>
+
+            {/* Main building — Figma 7385:1061 */}
+            <div className="absolute top-[3%] left-[-24%] h-[84%] w-[124%] overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/services/civil/why-choose/mobile-building-main.webp"
                 alt="Mekark RCC construction project with tower crane"
-                className="absolute inset-0 h-full w-full object-cover object-[center_38%]"
-              />
-              <div
-                className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent"
-                aria-hidden
-              />
-              <span
-                className="absolute bottom-5 right-5 h-10 w-[3px] rounded-full bg-red sm:bottom-6 sm:right-6 sm:h-12"
-                aria-hidden
+                className="size-full max-w-none object-cover object-[center_40%]"
               />
             </div>
           </motion.div>
@@ -103,7 +100,7 @@ export default function WhyChooseMekark() {
                 key={index}
                 variants={fadeUp}
                 transition={{ duration: 0.45, ease: "easeOut" }}
-                className={`${SERVICE_BODY_TEXT_CLASS_SCALED} ${
+                className={`${MOBILE_BODY_TEXT_CLASS} ${
                   index < mobileParagraphs.length - 1 ? "mb-5 sm:mb-6" : ""
                 }`}
               >

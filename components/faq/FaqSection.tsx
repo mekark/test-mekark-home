@@ -105,7 +105,7 @@ function FaqItem({
   return (
     <motion.div variants={faqItemReveal(index)}>
       <div
-        className={`relative overflow-hidden rounded-[18px] border border-[#ffd5d5] bg-white shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_-1px_rgba(0,0,0,0.1)] transition-shadow duration-300 sm:rounded-[23px] ${
+        className={`relative overflow-hidden rounded-[18px] border border-[#ffd5d5] bg-white font-[family-name:var(--font-manrope)] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_-1px_rgba(0,0,0,0.1)] transition-shadow duration-300 max-lg:rounded-[20px] sm:rounded-[23px] ${
           open ? "shadow-[0px_4px_16px_0px_rgba(0,0,0,0.06)]" : ""
         }`}
       >
@@ -115,12 +115,12 @@ function FaqItem({
           aria-expanded={open}
           aria-controls={panelId}
           onClick={onToggle}
-          className="flex w-full items-center justify-between gap-3 px-5 py-4 text-left sm:gap-4 sm:px-[35px] sm:py-6"
+          className="flex w-full items-center justify-between gap-3 px-5 py-4 text-left max-lg:px-4 max-lg:py-3.5 sm:gap-4 sm:px-[35px] sm:py-6"
         >
-          <span className="text-[15px] font-semibold leading-[22px] text-[#111] sm:text-lg sm:leading-[28px]">
+          <span className="text-[15px] font-semibold leading-[22px] text-[#111] max-lg:text-lg max-lg:font-bold max-lg:leading-[30px] sm:text-lg sm:font-semibold sm:leading-[28px]">
             {item.question}
           </span>
-          <span className="flex size-8 shrink-0 items-center justify-center rounded-full border border-[#ffd5d5] bg-white sm:size-9">
+          <span className="flex size-8 shrink-0 items-center justify-center rounded-full border border-[#ffd5d5] bg-white max-lg:size-7 sm:size-9">
             <FaqToggleIcon open={open} />
           </span>
         </button>
@@ -137,7 +137,7 @@ function FaqItem({
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
               className="overflow-hidden"
             >
-              <p className="px-5 pb-5 pt-0 text-sm leading-[22px] text-[#888] sm:px-[35px] sm:pb-[35px] sm:text-base sm:leading-[29px]">
+              <p className="px-5 pb-5 pt-0 text-sm leading-[22px] text-[#888] max-lg:px-4 max-lg:pb-4 max-lg:text-sm max-lg:leading-[22px] max-lg:text-[#666] sm:px-[35px] sm:pb-[35px] sm:text-base sm:leading-[29px]">
                 {item.answer}
               </p>
             </motion.div>
@@ -152,43 +152,43 @@ export function FaqSection() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="w-full bg-[#fef4f4]">
+    <section className="w-full bg-[#fef4f4] font-[family-name:var(--font-manrope)]">
       <motion.div
         variants={faqSectionStagger}
         initial="hidden"
         whileInView="visible"
         viewport={VIEWPORT}
-        className={`${SECTION_CONTAINER_CLASS} py-14 lg:py-[70px] xl:py-[53px] 2xl:py-[70px]`}
+        className={`${SECTION_CONTAINER_CLASS} max-lg:py-8 py-14 lg:py-[70px] xl:py-[53px] 2xl:py-[70px]`}
       >
-        <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,480px)_1fr] lg:gap-x-[85px] lg:gap-y-12 xl:grid-cols-[minmax(0,400px)_1fr] xl:gap-x-[60px] 2xl:grid-cols-[minmax(0,480px)_1fr] 2xl:gap-x-[85px]">
+        <div className="grid items-start gap-8 max-lg:gap-6 lg:grid-cols-[minmax(0,480px)_1fr] lg:gap-x-[85px] lg:gap-y-12 xl:grid-cols-[minmax(0,400px)_1fr] xl:gap-x-[60px] 2xl:grid-cols-[minmax(0,480px)_1fr] 2xl:gap-x-[85px]">
           <motion.aside
             variants={faqAsideReveal}
-            className="relative lg:sticky lg:top-24"
+            className="relative flex flex-col items-center text-center max-lg:gap-3 lg:sticky lg:top-24 lg:items-start lg:text-left"
           >
             <motion.div
               variants={aboutBadgeReveal}
-              className="inline-flex items-center gap-[7px] rounded-full border border-crimson-100 bg-crimson-200 px-[11.5px] py-[6px]"
+              className="inline-flex items-center gap-1.5 rounded-full border border-crimson-100 bg-crimson-200 px-2.5 py-1.5 sm:gap-[7px] sm:px-[11.5px] sm:py-[6px]"
             >
               <motion.div
                 variants={aboutBadgeDot}
-                className="size-[7px] rounded-full bg-red-200"
+                className="size-1.5 rounded-full bg-red-200 sm:size-[7px]"
                 aria-hidden
               />
-              <span className="font-manrope text-xs font-medium capitalize tracking-[0.53px] text-red-100">
+              <span className="text-[10px] font-medium capitalize tracking-[0.5px] text-red-100 sm:text-xs sm:tracking-[0.53px]">
                 FAQ
               </span>
             </motion.div>
 
-            <div className="mt-[10px]">
+            <div className="mt-[10px] max-lg:mt-0">
               <motion.h2
                 variants={faqHeadlineLine}
-                className="bg-gradient-to-b from-[#fe7278] to-[#ed1c24] bg-clip-text text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold leading-[1.2] tracking-[-0.84px] text-transparent lg:text-[40px] lg:leading-[48px] xl:text-[36px] xl:leading-[44px] 2xl:text-[40px] 2xl:leading-[48px]"
+                className="bg-gradient-to-b from-[#fe7278] to-[#ed1c24] bg-clip-text text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold leading-[1.2] tracking-[-0.84px] text-transparent max-lg:text-[28px] max-lg:leading-[30px] max-lg:tracking-normal lg:text-[40px] lg:leading-[48px] xl:text-[36px] xl:leading-[44px] 2xl:text-[40px] 2xl:leading-[48px]"
               >
                 More Doubts?
               </motion.h2>
               <motion.h2
                 variants={faqHeadlineLine}
-                className="bg-gradient-to-b from-[#222] to-[#666] bg-clip-text text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold leading-[1.2] tracking-[-0.84px] text-transparent lg:text-[40px] lg:leading-[48px] xl:text-[36px] xl:leading-[44px] 2xl:text-[40px] 2xl:leading-[48px]"
+                className="bg-gradient-to-b from-[#222] to-[#666] bg-clip-text text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold leading-[1.2] tracking-[-0.84px] text-transparent max-lg:text-[28px] max-lg:leading-[30px] max-lg:tracking-normal lg:text-[40px] lg:leading-[48px] xl:text-[36px] xl:leading-[44px] 2xl:text-[40px] 2xl:leading-[48px]"
               >
                 We&apos;ve Got You.
               </motion.h2>
@@ -196,7 +196,7 @@ export function FaqSection() {
 
             <motion.p
               variants={faqHeadlineLine}
-              className="mt-3 max-w-[380px] text-sm leading-5 text-[#777] sm:mt-4 sm:text-base sm:leading-6"
+              className="mt-3 max-w-[380px] text-sm leading-5 text-[#777] max-lg:mt-0 max-lg:max-w-none max-lg:text-sm max-lg:leading-[22px] max-lg:text-[#666] sm:mt-4 sm:text-base sm:leading-6"
             >
               Get connected so we could
               <br />
@@ -220,7 +220,7 @@ export function FaqSection() {
 
           <motion.div
             variants={faqListStagger}
-            className="flex flex-col gap-3 sm:gap-4 lg:pt-[46px]"
+            className="flex flex-col gap-3 max-lg:gap-4 sm:gap-4 lg:pt-[46px]"
           >
             {FAQ_ITEMS.map((item, index) => (
               <FaqItem

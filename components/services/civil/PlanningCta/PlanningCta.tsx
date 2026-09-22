@@ -42,52 +42,58 @@ export default function PlanningCta() {
   return (
     <section
       id="quote"
-      className="relative mx-auto w-full max-w-[1920px] overflow-visible bg-white px-5 py-8 sm:px-8 sm:py-10 lg:px-[80px] lg:pt-[72px] lg:pb-12"
+      className="relative mx-auto w-full max-w-[1920px] overflow-visible bg-white px-4 py-8 sm:px-8 sm:py-10 lg:px-[80px] lg:pt-[72px] lg:pb-12"
       aria-labelledby="civil-quote-title"
     >
-      {/* Mobile — continuous red gradient; building blended at bottom */}
+      {/* Mobile — Figma 7385:1162 */}
       <motion.div
-        className="relative mx-auto w-full overflow-hidden rounded-[28px] bg-[linear-gradient(118.73deg,#8B0C11_6.54%,#ED1D23_108.89%)] sm:rounded-[32px] lg:hidden"
+        className="relative mx-auto h-[478px] w-full max-w-[358px] overflow-hidden rounded-[20px] bg-[linear-gradient(94.75deg,#8B0C11_6.54%,#ED1D23_108.89%)] lg:hidden"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.25 }}
         transition={{ duration: 0.6, ease: easeOut }}
       >
-        <div className="relative z-10 flex flex-col px-5 pt-8 pb-[200px] sm:px-8 sm:pt-10 sm:pb-[260px]">
-          <ServiceMidCtaCopy className="min-w-0 w-full">
-            <PlanningCtaTitle id="civil-quote-title" />
+        <div className="absolute inset-x-6 top-6 z-10 flex flex-col gap-[18px]">
+          <h2
+            id="civil-quote-title"
+            className="w-full max-w-[320px] font-manrope text-[28px] font-extrabold leading-[32px] text-white"
+          >
+            <span className="block">Planning a Factory, Commercial Building,</span>
+            <span className="block">
+              <span>or </span>
+              <span className="text-black">Industrial Building?</span>
+            </span>
+          </h2>
 
-            <p className="mt-3 max-w-[28rem] text-[13px] font-medium leading-[18px] tracking-[1.1px] text-[#CCC6C6] sm:text-[14px] sm:leading-[20px]">
-              Get a free consultation and project blueprint from Mekark&apos;s
-              civil construction and structural engineering team.
-            </p>
+          <p className="font-manrope text-sm font-medium leading-normal text-[#ccc6c6]">
+            Get a free consultation and project blueprint from Mekark&apos;s
+            civil construction and structural engineering team.
+          </p>
 
-            <button
-              type="button"
-              onClick={openEnquiry}
-              className="mt-6 inline-flex min-h-[40px] w-fit max-w-full cursor-pointer items-center justify-center gap-2 rounded-full border-0 bg-white px-4 py-2.5 text-[13px] font-bold leading-[18px] text-[#E5091F] transition-transform active:scale-[0.98] sm:mt-7 sm:min-h-[44px] sm:px-5 sm:py-3 sm:text-[14px]"
-            >
-              Request a Free Quote
-              <span className="relative size-[14px] shrink-0 sm:size-[16px]">
-                <Image
-                  src="/images/services/civil/cta/arrow.svg"
-                  alt="Arrow icon"
-                  fill
-                  className="object-contain"
-                  sizes="18px"
-                />
-              </span>
-            </button>
-          </ServiceMidCtaCopy>
+          <button
+            type="button"
+            onClick={openEnquiry}
+            className="flex w-full cursor-pointer items-center justify-center gap-[9.623px] rounded-full border-0 bg-white px-6 py-[14.435px] text-sm font-bold leading-5 text-[#E5091F] transition-transform active:scale-[0.98]"
+          >
+            Request a Free Quote
+            <span className="relative size-[18.758px] shrink-0">
+              <Image
+                src="/images/services/civil/cta/arrow.svg"
+                alt="Arrow icon"
+                fill
+                className="object-contain"
+                sizes="19px"
+              />
+            </span>
+          </button>
         </div>
 
-        {/* Building on same gradient — no separate red layer */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[200px] sm:h-[260px]">
+        <div className="pointer-events-none absolute inset-x-0 top-[255px] z-[1] h-[225px] overflow-hidden rounded-bl-[20px] rounded-br-[20px]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/services/civil/cta/MidCTA.webp"
             alt="Modern commercial building under construction"
-            className="absolute left-1/2 bottom-0 h-[115%] w-[170%] max-w-none -translate-x-[46%] object-cover object-[center_30%] sm:w-[145%] sm:-translate-x-[48%]"
+            className="absolute top-[8.98%] left-[-17.06%] h-[107.72%] w-[117.09%] max-w-none object-cover"
           />
         </div>
       </motion.div>

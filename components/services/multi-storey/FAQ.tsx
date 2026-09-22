@@ -1,8 +1,32 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
+import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import {
+  MOBILE_FAQ_ANSWER_CLASS,
+  MOBILE_FAQ_CARD_CLASS,
+  MOBILE_FAQ_NUMBER_CLASS,
+  MOBILE_FAQ_QUESTION_CLASS,
+  MOBILE_FAQ_SECTION_CLASS,
+  MOBILE_FAQ_TITLE_CLASS,
+} from "@/components/services/serviceMobileCivilTemplate";
+
+const easeOut = [0.22, 1, 0.36, 1] as const;
+
+const stagger = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.06, delayChildren: 0.1 } },
+};
+
+const cardReveal = {
+  hidden: { opacity: 0, y: 18 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: easeOut },
+  },
+};
 
 const faqs = [
   {
@@ -59,18 +83,6 @@ const faqs = [
   },
 ] as const;
 
-const easeOut = [0.22, 1, 0.36, 1] as const;
-
-const panelTransition = {
-  height: { duration: 0.4, ease: easeOut },
-  opacity: { duration: 0.28, ease: easeOut },
-};
-
-const answerTransition = {
-  duration: 0.35,
-  ease: easeOut,
-};
-
 function FaqItem({
   index,
   question,
@@ -84,85 +96,64 @@ function FaqItem({
   open: boolean;
   onToggle: () => void;
 }) {
-  const number = String(index + 1).padStart(2, "0");
   const panelId = `faq-panel-${index}`;
   const buttonId = `faq-button-${index}`;
 
   return (
-    <motion.div
-      layout
-      className="w-full overflow-hidden rounded-[20.78px] border-[1.039px] bg-white"
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{
-        layout: { duration: 0.35, ease: easeOut },
-        opacity: { duration: 0.45, ease: easeOut, delay: 0.04 * (index % 5) },
-        y: { duration: 0.45, ease: easeOut, delay: 0.04 * (index % 5) },
-      }}
-      animate={{
-        borderColor: open ? "rgba(230, 15, 26, 0.35)" : "#e3e4e7",
-        boxShadow: open
-          ? "0 8px 28px rgba(17, 17, 17, 0.06)"
-          : "0 0 0 rgba(0,0,0,0)",
-      }}
-    >
-      <motion.button
+    <motion.div className={MOBILE_FAQ_CARD_CLASS} variants={cardReveal}>
+      <button
         id={buttonId}
         type="button"
+        className="flex w-full cursor-pointer items-center gap-3 text-left lg:min-h-[clamp(4.5rem,5.208vw,6.25rem)] lg:items-start lg:gap-4 lg:px-[26px] lg:py-[21px]"
         aria-expanded={open}
         aria-controls={panelId}
         onClick={onToggle}
-        className="flex w-full items-start gap-3 px-4 py-[18px] text-left sm:gap-4 sm:px-[26px] sm:py-[21px]"
-        whileTap={{ scale: 0.995 }}
-        transition={{ duration: 0.15 }}
       >
-        <span className="font-montserrat shrink-0 pt-[5px] text-[16px] leading-[16.624px] font-bold tracking-[-0.47px] text-[#e60f1a]">
-          {number}
+        <span className={MOBILE_FAQ_NUMBER_CLASS}>
+          {String(index + 1).padStart(2, "0")}
+        </span>
+        <span className={`min-w-0 flex-1 ${MOBILE_FAQ_QUESTION_CLASS}`}>
+          {question}
         </span>
         <motion.span
-          className="min-w-0 flex-1 text-[17px] leading-[26.67px] font-semibold tracking-[-0.47px] sm:text-[18.67px]"
-          animate={{ color: open ? "#111111" : "#101116" }}
-          transition={{ duration: 0.25, ease: easeOut }}
-        >
-          {question}
-        </motion.span>
-        <motion.span
-          className="mt-2 flex size-[16.624px] shrink-0 items-center justify-center overflow-clip"
+          className="relative size-[16.624px] shrink-0 lg:mt-2"
           animate={{ rotate: open ? 180 : 0 }}
           transition={{ duration: 0.35, ease: easeOut }}
         >
           <Image
             src="/images/services/multi-storey/frame212/icons/faq-chevron.svg"
             alt="Expand section"
-            width={10}
-            height={6}
-            className="h-[5.5px] w-[9.7px]"
+            fill
+            className="object-contain"
+            sizes="17px"
           />
         </motion.span>
-      </motion.button>
+      </button>
 
       <AnimatePresence initial={false}>
         {open ? (
           <motion.div
             id={panelId}
-            key="content"
             role="region"
             aria-labelledby={buttonId}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={panelTransition}
+            transition={{ duration: 0.4, ease: easeOut }}
             className="overflow-hidden"
           >
             <motion.p
-              className="px-4 pb-[18px] pl-[calc(1rem+2ch+0.75rem)] text-[15px] leading-[24px] font-medium text-[#53555B] sm:px-[26px] sm:pb-[21px] sm:pl-[calc(26px+2ch+1rem)] sm:text-base"
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -6 }}
-              transition={{
-                ...answerTransition,
-                delay: 0.06,
+              className={`${MOBILE_FAQ_ANSWER_CLASS} lg:border-t lg:border-[#E3E4E7] lg:px-[26px] lg:pb-[21px] lg:pl-[calc(26px+2ch+1rem)] lg:pt-0 lg:text-base lg:leading-[1.65] lg:text-[#53555B]`}
+              initial={{ opacity: 0, y: -6 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.3, ease: easeOut, delay: 0.05 },
+              }}
+              exit={{
+                opacity: 0,
+                y: -4,
+                transition: { duration: 0.2, ease: easeOut },
               }}
             >
               {answer}
@@ -181,20 +172,30 @@ export default function FAQ() {
   const rightColumn = faqs.slice(5);
 
   return (
-    <section className="bg-white px-5 py-12 text-gray-100 sm:px-8 sm:py-16 lg:px-[clamp(40px,5.5vw,107px)] lg:py-[93px]">
-      <div className="mx-auto flex w-full max-w-[1707px] flex-col items-center gap-8 sm:gap-12 lg:gap-[67px]">
+    <section
+      className={`${MOBILE_FAQ_SECTION_CLASS} max-lg:px-5`}
+      aria-labelledby="multi-storey-faq-title"
+    >
+      <div className="mx-auto flex w-full max-w-[1707px] flex-col items-center gap-6 lg:gap-[67px]">
         <motion.h2
-          className="max-w-[1304px] text-center text-[26px] leading-[1.2] font-bold tracking-[-1px] text-[#111] sm:text-[42px] sm:tracking-[-1.33px] lg:text-[53.33px] lg:leading-[65.33px]"
+          id="multi-storey-faq-title"
+          className={MOBILE_FAQ_TITLE_CLASS}
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.55, ease: easeOut }}
         >
-          Frequently Asked Questions About Multi-Storey 
+          Frequently Asked Questions About Multi-Storey{" "}
         </motion.h2>
 
-        <div className="grid w-full grid-cols-1 gap-[13px] lg:grid-cols-2 lg:gap-10">
-          <div className="flex flex-col gap-[13px]">
+        <div className="grid w-full grid-cols-1 gap-3 lg:grid-cols-2 lg:gap-10">
+          <motion.div
+            className="flex flex-col gap-3 lg:gap-[13px]"
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+          >
             {leftColumn.map((faq, i) => (
               <FaqItem
                 key={faq.question}
@@ -207,8 +208,15 @@ export default function FAQ() {
                 }
               />
             ))}
-          </div>
-          <div className="flex flex-col gap-[13px]">
+          </motion.div>
+
+          <motion.div
+            className="flex flex-col gap-3 lg:gap-[13px]"
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+          >
             {rightColumn.map((faq, i) => {
               const index = i + 5;
               return (
@@ -226,7 +234,7 @@ export default function FAQ() {
                 />
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,7 +1,6 @@
 .frame {
   	width: 100%;
   	position: relative;
-  	display: grid;
   	grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.15fr);
   	grid-template-rows: auto 1fr;
   	align-items: start;
@@ -66,66 +65,3 @@
   	transform-origin: center center;
 }
 
-/* Mobile: title → image → body */
-@media (max-width: 1023px) {
-  	.frame {
-  		grid-template-columns: 1fr;
-  		grid-template-rows: auto;
-  		padding: 40px var(--section-padding-x-right) 48px var(--section-padding-x);
-  		gap: 20px;
-  	}
-
-  	.title {
-  		grid-column: 1;
-  		grid-row: 1;
-  		max-width: none;
-  		font-size: 24px;
-  		letter-spacing: -0.8px;
-  		line-height: 1.2;
-  	}
-
-  	.titleLine {
-  		white-space: normal;
-  	}
-
-  	.media {
-  		grid-column: 1;
-  		grid-row: 2;
-  		align-self: stretch;
-  		justify-content: center;
-  	}
-
-  	.body {
-  		grid-column: 1;
-  		grid-row: 3;
-  		max-width: none;
-  		gap: 14px;
-  	}
-
-  	.paragraph {
-  		font-size: 17px;
-  		line-height: 26px;
-  	}
-
-  	.heroPhoto {
-  		width: 100%;
-  		max-width: 100%;
-  		transform: none;
-  	}
-}
-
-@media (max-width: 480px) {
-  	.frame {
-  		padding: 32px var(--section-padding-x-right) 40px var(--section-padding-x);
-  		gap: 16px;
-  	}
-
-  	.title {
-  		font-size: 24px;
-  	}
-
-  	.paragraph {
-  		font-size: 14px;
-  		line-height: 22px;
-  	}
-}

@@ -161,10 +161,10 @@ function IndustryCard({
       </div>
 
       <div className="flex flex-col px-3 pb-4 pt-3 sm:px-[35px] sm:pb-[37px] sm:pt-[35px]">
-        <h3 className="text-sm font-extrabold leading-[1.25] tracking-[-0.3px] text-[#111] sm:text-2xl sm:tracking-[-0.4px] xl:text-xl xl:tracking-[-0.3px] 2xl:text-2xl 2xl:tracking-[-0.4px]">
+        <h3 className="text-sm font-extrabold leading-[1.25] tracking-[-0.3px] text-[#111] max-lg:text-lg max-lg:font-bold max-lg:leading-[30px] max-lg:tracking-normal sm:text-2xl sm:tracking-[-0.4px] xl:text-xl xl:tracking-[-0.3px] 2xl:text-2xl 2xl:tracking-[-0.4px]">
           {card.title}
         </h3>
-        <p className="mt-2 text-[11px] leading-[16px] text-[#4f4f4f] sm:mt-4 sm:text-base sm:leading-[25px] xl:mt-3 xl:text-sm xl:leading-[19px] 2xl:mt-4 2xl:text-base 2xl:leading-[25px]">
+        <p className="mt-2 text-[11px] leading-[16px] text-[#4f4f4f] max-lg:text-sm max-lg:font-normal max-lg:leading-[22px] sm:mt-4 sm:text-base sm:leading-[25px] xl:mt-3 xl:text-sm xl:leading-[19px] 2xl:mt-4 2xl:text-base 2xl:leading-[25px]">
           {card.description}
         </p>
       </div>
@@ -175,7 +175,7 @@ function IndustryCard({
 export function IndustriesSection() {
   return (
     <section className="relative w-full border-b border-black/10 bg-white font-[family-name:var(--font-manrope)] text-[#111]">
-      <div className={`${SECTION_CONTAINER_CLASS} py-14 lg:py-[107px] xl:py-20 2xl:py-[107px]`}>
+      <div className={`${SECTION_CONTAINER_CLASS} py-14 max-lg:py-8 lg:py-[107px] xl:py-20 2xl:py-[107px]`}>
         <motion.div
           className="mb-12 lg:mb-[67px] xl:mb-12 2xl:mb-[67px]"
           variants={staggerContainer}
@@ -190,10 +190,17 @@ export function IndustriesSection() {
 
             <motion.h2
               variants={aboutHeadlineStagger}
-              className="max-w-none overflow-visible whitespace-nowrap text-[clamp(1.375rem,5.8vw,1.875rem)] font-extrabold leading-[1.15] tracking-[-0.6px] text-[#111] sm:text-[clamp(1.75rem,4vw,2.5rem)] sm:tracking-[-1px] lg:col-start-1 lg:row-start-2 lg:-mt-5 lg:text-[clamp(2rem,3.5vw,3.33rem)] lg:leading-[1.05] lg:tracking-[-1.12px] xl:text-[43px] xl:leading-[43px] 2xl:text-[53.33px] 2xl:leading-[56px]"
+              className="max-w-none overflow-visible whitespace-nowrap text-[clamp(1.375rem,5.8vw,1.875rem)] font-extrabold leading-[1.15] tracking-[-0.6px] text-[#111] max-lg:whitespace-normal max-lg:text-[28px] max-lg:leading-[30px] max-lg:tracking-normal sm:text-[clamp(1.75rem,4vw,2.5rem)] sm:tracking-[-1px] lg:col-start-1 lg:row-start-2 lg:-mt-5 lg:text-[clamp(2rem,3.5vw,3.33rem)] lg:leading-[1.05] lg:tracking-[-1.12px] xl:text-[43px] xl:leading-[43px] 2xl:text-[53.33px] 2xl:leading-[56px]"
             >
-              <motion.span variants={aboutHeadlineChunk} className="inline whitespace-nowrap">
-                Engineered For Every Sector
+              <motion.span
+                variants={aboutHeadlineChunk}
+                className="inline max-lg:block lg:whitespace-nowrap"
+              >
+                <span className="max-lg:block lg:inline">Engineered For Every</span>
+                <span className="max-lg:block lg:inline">
+                  <span className="hidden lg:inline"> </span>
+                  Sector
+                </span>
               </motion.span>
             </motion.h2>
 
@@ -206,7 +213,7 @@ export function IndustriesSection() {
               />
               <motion.p
                 variants={fadeUp}
-                className="min-w-0 w-full max-w-[938.7px] pt-0 text-left text-[clamp(0.875rem,3.6vw,1rem)] leading-[1.55] text-[#4f4f4f] sm:text-[clamp(1rem,2vw,1.125rem)] sm:leading-[1.6] lg:pt-[calc(186.7px/2-62.68px)] lg:text-[clamp(1.05rem,1.6vw,1.5rem)] lg:leading-[1.65] xl:max-w-[704px] xl:pt-[calc(140px/2-47px)] xl:text-xl xl:leading-[170%] 2xl:max-w-[938.7px] 2xl:pt-[calc(186.7px/2-62.68px)] 2xl:text-2xl"
+                className="min-w-0 w-full max-w-[938.7px] pt-0 text-left text-[clamp(0.875rem,3.6vw,1rem)] leading-[1.55] text-[#4f4f4f] max-lg:text-sm max-lg:leading-[22px] sm:text-[clamp(1rem,2vw,1.125rem)] sm:leading-[1.6] lg:pt-[calc(186.7px/2-62.68px)] lg:text-[clamp(1.05rem,1.6vw,1.5rem)] lg:leading-[1.65] xl:max-w-[704px] xl:pt-[calc(140px/2-47px)] xl:text-xl xl:leading-[170%] 2xl:max-w-[938.7px] 2xl:pt-[calc(186.7px/2-62.68px)] 2xl:text-2xl"
               >
                 From heavy industrial plants to high-precision manufacturing
                 facilities, Mekark delivers engineering-led EPC solutions across

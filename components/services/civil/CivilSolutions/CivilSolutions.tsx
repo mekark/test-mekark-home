@@ -8,6 +8,18 @@ const fadeUp = {
   visible: { opacity: 1, y: 0 },
 };
 
+const MOBILE_SECTION_TITLE_CLASS =
+  "w-full font-manrope text-[28px] font-bold leading-normal text-[#111]";
+
+const MOBILE_CARD_TITLE_BASE_CLASS =
+  "font-manrope text-[18px] font-bold text-[#3c3938]";
+
+const MOBILE_CARD_BODY_CLASS =
+  "font-manrope text-sm font-normal leading-normal text-[#555]";
+
+const MOBILE_CARD_CLASS =
+  "flex w-full flex-col items-start gap-4 rounded-[20px] border border-solid border-[#e7e3e1] bg-white p-4 drop-shadow-[0px_6px_9px_rgba(0,0,0,0.03)]";
+
 const solutions: {
   image: string;
   imageClassName: string;
@@ -105,12 +117,12 @@ export default function CivilSolutions() {
       />
 
       {/* Mobile / tablet grid */}
-      <div className="relative z-10 mx-auto flex w-full max-w-[1100px] flex-col items-center gap-10 px-5 py-14 sm:px-8 sm:py-16 lg:hidden">
-        <h2 className="max-w-[900px] text-center text-[26px] font-bold tracking-[-1.33px] leading-[1.2] sm:text-[36px] sm:leading-[44px]">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1100px] flex-col items-start gap-6 px-5 py-8 sm:px-8 lg:hidden">
+        <h2 className={`max-w-[350px] ${MOBILE_SECTION_TITLE_CLASS}`}>
           Our Civil Construction &amp; RCC Solutions
         </h2>
         <motion.div
-          className="grid w-full grid-cols-1 gap-10 sm:grid-cols-2"
+          className="flex w-full flex-col gap-[14px]"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
@@ -124,23 +136,23 @@ export default function CivilSolutions() {
               key={item.title}
               variants={fadeUp}
               transition={{ duration: 0.45, ease: "easeOut" }}
-              className="flex flex-col gap-4"
+              className={MOBILE_CARD_CLASS}
             >
-              <div className="relative h-[200px] w-full overflow-hidden rounded-[21.33px] sm:h-[240px]">
+              <div className="relative h-[180px] w-full shrink-0 overflow-hidden rounded-[16px]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  className="absolute inset-0 h-full w-full object-cover"
+                  className="pointer-events-none absolute inset-0 h-full w-full rounded-[16px] object-cover"
                   src={item.image}
                   alt={item.title}
                 />
               </div>
-              <div>
-                <h3 className="font-manrope text-[17px] font-bold leading-[22px] text-darkslategray sm:text-[18.67px]">
+              <div className="flex w-full flex-col gap-2">
+                <h3
+                  className={`${MOBILE_CARD_TITLE_BASE_CLASS} ${item.titleClassName.replace(" lg:whitespace-nowrap", "")}`}
+                >
                   {item.title}
                 </h3>
-                <p className={`mt-2 ${SERVICE_CARD_BODY_CLASS_SCALED}`}>
-                  {item.description}
-                </p>
+                <p className={MOBILE_CARD_BODY_CLASS}>{item.description}</p>
               </div>
             </motion.div>
           ))}

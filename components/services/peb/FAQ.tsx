@@ -3,6 +3,14 @@
 import Image from "next/image";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import {
+  MOBILE_FAQ_ANSWER_CLASS,
+  MOBILE_FAQ_CARD_CLASS,
+  MOBILE_FAQ_NUMBER_CLASS,
+  MOBILE_FAQ_QUESTION_CLASS,
+  MOBILE_FAQ_SECTION_CLASS,
+  MOBILE_FAQ_TITLE_CLASS,
+} from "@/components/services/serviceMobileCivilTemplate";
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
@@ -107,25 +115,25 @@ function FAQCard({
 
   return (
     <motion.div
-      className="overflow-hidden rounded-[clamp(0.875rem,1.082vw,1.299rem)] border border-[#E3E4E7] bg-white"
+      className={MOBILE_FAQ_CARD_CLASS}
       variants={cardReveal}
     >
       <button
         id={buttonId}
         type="button"
-        className="flex min-h-[clamp(4.5rem,5.208vw,6.25rem)] w-full cursor-pointer items-center gap-[clamp(0.75rem,0.865vw,1.039rem)] px-[clamp(1rem,1.299vw,1.559rem)] py-[clamp(1rem,1.082vw,1.299rem)] text-left"
+        className="flex w-full cursor-pointer items-center gap-3 text-left lg:min-h-[clamp(4.5rem,5.208vw,6.25rem)] lg:gap-[clamp(0.75rem,0.865vw,1.039rem)] lg:px-[clamp(1rem,1.299vw,1.559rem)] lg:py-[clamp(1rem,1.082vw,1.299rem)]"
         aria-expanded={isOpen}
         aria-controls={panelId}
         onClick={onToggle}
       >
-        <span className="shrink-0 font-[family-name:var(--font-montserrat)] text-[clamp(0.875rem,0.833vw,1rem)] font-bold leading-[1.039rem] text-[#E60F1A]">
+        <span className={MOBILE_FAQ_NUMBER_CLASS}>
           {String(index + 1).padStart(2, "0")}
         </span>
-        <span className="flex-1 font-[family-name:var(--font-manrope)] text-[clamp(0.9375rem,0.972vw,1.167rem)] font-semibold leading-[clamp(1.375rem,1.389vw,1.667rem)] text-[#101116]">
+        <span className={`flex-1 ${MOBILE_FAQ_QUESTION_CLASS}`}>
           {item.question}
         </span>
         <motion.span
-          className="relative size-[clamp(0.875rem,0.865vw,1.039rem)] shrink-0"
+          className="relative size-[16.624px] shrink-0 lg:size-[clamp(0.875rem,0.865vw,1.039rem)]"
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.35, ease: easeOut }}
         >
@@ -152,7 +160,7 @@ function FAQCard({
             className="overflow-hidden"
           >
             <motion.p
-              className="border-t border-[#E3E4E7] px-[clamp(1rem,1.299vw,1.559rem)] py-[clamp(0.875rem,1.042vw,1.25rem)] pl-[clamp(1rem,1.299vw,1.559rem)] font-[family-name:var(--font-manrope)] text-[clamp(0.875rem,0.938vw,1.125rem)] leading-[clamp(1.375rem,1.458vw,1.75rem)] text-[#53555B] sm:pl-[clamp(2.75rem,3.472vw,4.167rem)]"
+              className={`${MOBILE_FAQ_ANSWER_CLASS} lg:border-t lg:border-[#E3E4E7] lg:px-[clamp(1rem,1.299vw,1.559rem)] lg:py-[clamp(0.875rem,1.042vw,1.25rem)] lg:pl-[clamp(2.75rem,3.472vw,4.167rem)] lg:font-[family-name:var(--font-manrope)] lg:text-[clamp(0.875rem,0.938vw,1.125rem)] lg:leading-[clamp(1.375rem,1.458vw,1.75rem)]`}
               initial={{ opacity: 0, y: -6 }}
               animate={{
                 opacity: 1,
@@ -180,13 +188,13 @@ export default function FAQ() {
 
   return (
     <section
-      className="w-full bg-white px-4 py-10 text-[#111111] sm:px-10 sm:py-14 lg:px-[5.556%] lg:py-[4.861%]"
+      className={MOBILE_FAQ_SECTION_CLASS}
       aria-labelledby="faq-title"
     >
-      <div className="mx-auto flex w-full max-w-[1706.67px] flex-col items-center gap-[clamp(2.5rem,3.472vw,4.167rem)]">
+      <div className="mx-auto flex w-full max-w-[1706.67px] flex-col items-center gap-6 lg:gap-[clamp(2.5rem,3.472vw,4.167rem)]">
         <motion.h2
           id="faq-title"
-          className="max-w-[16ch] text-balance text-center font-[family-name:var(--font-manrope)] text-[clamp(1.75rem,6vw,3.333rem)] font-bold leading-[1.2] text-[#111111] sm:max-w-[22ch] md:max-w-none md:text-[clamp(2rem,2.778vw,3.333rem)] md:leading-[clamp(2.5rem,3.403vw,4.083rem)]"
+          className={`max-w-[16ch] text-balance sm:max-w-[22ch] lg:max-w-none ${MOBILE_FAQ_TITLE_CLASS}`}
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
@@ -195,11 +203,11 @@ export default function FAQ() {
           Frequently Asked Questions About PEB Construction
         </motion.h2>
 
-        <div className="grid w-full gap-[clamp(0.75rem,0.694vw,0.833rem)] lg:grid-cols-2 lg:gap-[clamp(1.5rem,2.083vw,2.5rem)]">
+        <div className="grid w-full gap-3 lg:grid-cols-2 lg:gap-[clamp(1.5rem,2.083vw,2.5rem)]">
           {columns.map((column, columnIndex) => (
             <motion.div
               key={columnIndex === 0 ? "first-column" : "second-column"}
-              className="flex flex-col gap-[clamp(0.75rem,0.694vw,0.833rem)]"
+              className="flex flex-col gap-3 lg:gap-[clamp(0.75rem,0.694vw,0.833rem)]"
               variants={stagger}
               initial="hidden"
               whileInView="visible"

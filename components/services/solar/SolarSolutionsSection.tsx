@@ -2,6 +2,14 @@
 
 import Image from "next/image";
 import ServiceSolutionsMobileGrid from "@/components/services/ServiceSolutionsMobileGrid";
+import {
+  MOBILE_CARD_BODY_CLASS,
+  MOBILE_CARD_CLASS,
+  MOBILE_CARD_TITLE_CLASS,
+  MOBILE_SOLUTIONS_CONTAINER_CLASS,
+  MOBILE_SOLUTIONS_GRID_CLASS,
+  MOBILE_SOLUTIONS_IMAGE_CLASS,
+} from "@/components/services/serviceMobileCivilTemplate";
 import { SERVICE_CARD_BODY_CLASS_SCALED } from "@/components/services/serviceTypography";
 import styles from "./cta/index.module.css";
 
@@ -13,6 +21,17 @@ export const solarSolutions = [
     image: "/images/services/solar/CTA/rectangle-15.webp",
   },
   {
+    title: "Ground-Mounted Solar Power Plants",
+    description: "Optimized for businesses with available open land",
+    image: "/images/services/solar/CTA/rectangle-16-1.webp",
+  },
+  {
+    title: "Solar and Battery Storage Systems",
+    description:
+      "Uninterrupted power supply for manufacturing and cold storage units",
+    image: "/images/services/solar/CTA/rectangle-16-2.webp",
+  },
+  {
     title: "Off-Grid Solar Systems",
     description:
       "Fully independent power supply for remote industrial facilities",
@@ -20,21 +39,10 @@ export const solarSolutions = [
     imageClassName: "object-cover scale-[1.327] object-top",
   },
   {
-    title: "Ground-Mounted Solar Power Plants",
-    description: "Optimized for businesses with available open land",
-    image: "/images/services/solar/CTA/rectangle-16-1.webp",
-  },
-  {
     title: "Commercial Solar Energy Audit",
     description:
       "Detailed assessment of your current consumption and savings potential",
     image: "/images/services/solar/CTA/commercial-solar-energy-audit.webp",
-  },
-  {
-    title: "Solar and Battery Storage Systems",
-    description:
-      "Uninterrupted power supply for manufacturing and cold storage units",
-    image: "/images/services/solar/CTA/rectangle-16-2.webp",
   },
   {
     title: "On-Grid Solar with Net Metering",
@@ -46,34 +54,26 @@ export const solarSolutions = [
 
 export default function SolarSolutionsSection() {
   return (
-    <>
-      <section className="relative w-full shrink-0 overflow-hidden bg-white text-left font-manrope text-gray lg:hidden">
-        <Image
-          className="pointer-events-none absolute top-0 left-0 h-[200px] w-full object-cover object-bottom opacity-[0.15] sm:h-[280px]"
-          src="/images/services/solar/CTA/grid-1-1.webp"
-          width={1918}
-          height={391}
-          sizes="100vw"
-          alt="Decorative grid background"
-        />
+    <section className="relative w-full shrink-0 overflow-hidden bg-white text-left font-manrope text-[#111]">
+      <ServiceSolutionsMobileGrid
+        title="Our Commercial Solar Solutions"
+        className={`${MOBILE_SOLUTIONS_CONTAINER_CLASS} !gap-6 !py-8`}
+        titleClassName="w-full text-left font-manrope text-[28px] font-bold leading-[35px] text-[#111]"
+        gridClassName={MOBILE_SOLUTIONS_GRID_CLASS}
+        cardClassName={MOBILE_CARD_CLASS}
+        cardTitleClassName={`${MOBILE_CARD_TITLE_CLASS} leading-[23px]`}
+        cardBodyClassName={MOBILE_CARD_BODY_CLASS}
+        imageContainerClassName={MOBILE_SOLUTIONS_IMAGE_CLASS}
+        solutions={solarSolutions.map((item) => ({
+          title: item.title,
+          description: item.description,
+          image: item.image,
+          imageClassName:
+            "imageClassName" in item ? item.imageClassName : undefined,
+        }))}
+      />
 
-        <ServiceSolutionsMobileGrid
-          title="Our Commercial Solar Solutions"
-          solutions={solarSolutions.map((item) => ({
-            title: item.title,
-            description: item.description,
-            image: item.image,
-            imageClassName:
-              "imageClassName" in item ? item.imageClassName : undefined,
-          }))}
-          className="relative z-10 !gap-8 !py-10 sm:!py-12"
-          gridClassName="!gap-6 sm:!gap-8"
-          cardClassName="!gap-3"
-          imageContainerClassName="!h-[180px] sm:!h-[210px]"
-        />
-      </section>
-
-      <div className={`${styles.grid1Parent} hidden lg:block`}>
+      <div className={`${styles.grid1Parent} !hidden lg:!block`}>
         <Image
           className={styles.grid1Icon}
           width={1918}
@@ -104,7 +104,9 @@ export default function SolarSolutionsSection() {
                   <div className={styles.rooftopSolarFor}>
                     Rooftop Solar for Factories and Warehouses
                   </div>
-                  <div className={`${styles.highCapacitySystemsEngineer} ${SERVICE_CARD_BODY_CLASS_SCALED}`}>
+                  <div
+                    className={`${styles.highCapacitySystemsEngineer} ${SERVICE_CARD_BODY_CLASS_SCALED}`}
+                  >
                     High-capacity systems engineered for industrial roof
                     structures
                   </div>
@@ -125,7 +127,9 @@ export default function SolarSolutionsSection() {
                   <div className={styles.rooftopSolarFor}>
                     Off-Grid Solar Systems
                   </div>
-                  <div className={`${styles.fullyIndependentPower} ${SERVICE_CARD_BODY_CLASS_SCALED}`}>
+                  <div
+                    className={`${styles.fullyIndependentPower} ${SERVICE_CARD_BODY_CLASS_SCALED}`}
+                  >
                     Fully independent power supply for remote industrial
                     facilities
                   </div>
@@ -146,7 +150,9 @@ export default function SolarSolutionsSection() {
                   <div className={styles.rooftopSolarFor}>
                     Ground-Mounted Solar Power Plants
                   </div>
-                  <div className={`${styles.optimizedForBusinesses} ${SERVICE_CARD_BODY_CLASS_SCALED}`}>
+                  <div
+                    className={`${styles.optimizedForBusinesses} ${SERVICE_CARD_BODY_CLASS_SCALED}`}
+                  >
                     Optimized for businesses with available open land
                   </div>
                 </div>
@@ -164,7 +170,9 @@ export default function SolarSolutionsSection() {
                   <div className={styles.rooftopSolarFor}>
                     Commercial Solar Energy Audit
                   </div>
-                  <div className={`${styles.detailedAssessmentOf} ${SERVICE_CARD_BODY_CLASS_SCALED}`}>
+                  <div
+                    className={`${styles.detailedAssessmentOf} ${SERVICE_CARD_BODY_CLASS_SCALED}`}
+                  >
                     Detailed assessment of your current consumption and savings
                     potential
                   </div>
@@ -185,7 +193,9 @@ export default function SolarSolutionsSection() {
                   <div className={styles.rooftopSolarFor}>
                     Solar and Battery Storage Systems
                   </div>
-                  <div className={`${styles.uninterruptedPowerSupply} ${SERVICE_CARD_BODY_CLASS_SCALED}`}>
+                  <div
+                    className={`${styles.uninterruptedPowerSupply} ${SERVICE_CARD_BODY_CLASS_SCALED}`}
+                  >
                     Uninterrupted power supply for manufacturing and cold
                     storage units
                   </div>
@@ -206,7 +216,9 @@ export default function SolarSolutionsSection() {
                   <div className={styles.rooftopSolarFor}>
                     On-Grid Solar with Net Metering
                   </div>
-                  <div className={`${styles.fullyIndependentPower} ${SERVICE_CARD_BODY_CLASS_SCALED}`}>
+                  <div
+                    className={`${styles.fullyIndependentPower} ${SERVICE_CARD_BODY_CLASS_SCALED}`}
+                  >
                     Stay connected to the grid and reduce your electricity bill
                   </div>
                 </div>
@@ -215,6 +227,6 @@ export default function SolarSolutionsSection() {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 }

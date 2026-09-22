@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ServiceIntroTitle } from "@/components/services/ServiceIntroTitle";
-import { SERVICE_BODY_TEXT_CLASS_SCALED } from "@/components/services/serviceTypography";
 import { SERVICE_END_TO_END_ASPECT_CLASS_SCALED } from "@/lib/sectionLayout";
 
 const fadeUp = {
@@ -46,7 +45,7 @@ export default function EndToEndPEB() {
         aria-hidden="true"
       />
 
-      <div className={`relative z-10 mx-auto flex w-full max-w-[1920px] flex-col px-5 py-10 sm:px-10 sm:py-14 lg:block lg:px-0 lg:py-0 ${SERVICE_END_TO_END_ASPECT_CLASS_SCALED}`}>
+      <div className={`relative z-10 mx-auto flex w-full max-w-[1920px] flex-col px-5 py-8 sm:px-8 sm:py-10 lg:block lg:px-0 lg:py-0 ${SERVICE_END_TO_END_ASPECT_CLASS_SCALED}`}>
         {/* Copy — Figma: left 224, title top 85.33 */}
         <div className="contents lg:block lg:absolute lg:left-[11.67%] lg:top-[9.18%] lg:z-10 lg:w-[43.54%] lg:max-w-none">
           <motion.div
@@ -61,23 +60,31 @@ export default function EndToEndPEB() {
               beforeRed="End-to-End PEB Construction, "
               redPart="Under One Roof"
               scaledCanvas
+              className="max-lg:!text-[28px] max-lg:!leading-8 max-lg:!font-bold max-lg:!tracking-normal"
             />
           </motion.div>
 
           <motion.div
-            className={`order-3 mt-6 flex max-w-[672px] flex-col gap-5 sm:mt-[clamp(2rem,2.7vw,3.25rem)] sm:gap-[1.667rem] lg:order-none lg:max-w-none ${SERVICE_BODY_TEXT_CLASS_SCALED}`}
+            className="order-3 mt-6 flex max-w-[672px] flex-col gap-4 sm:mt-[clamp(2rem,2.7vw,3.25rem)] sm:gap-[1.667rem] lg:order-none lg:max-w-none"
             variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
             {paragraphs.map(({ text, maxWidth }) => (
-              <motion.p key={text} variants={fadeUp} className={maxWidth}>
+              <motion.p
+                key={text}
+                variants={fadeUp}
+                className={`${maxWidth} font-manrope text-sm font-normal leading-normal text-[#111] text-left lg:text-num-18_67 lg:leading-[26px] lg:text-black`}
+              >
                 {text}
               </motion.p>
             ))}
 
-            <motion.p variants={fadeUp} className="max-w-[668px]">
+            <motion.p
+              variants={fadeUp}
+              className={`max-w-[668px] font-manrope text-sm font-normal leading-normal text-[#111] text-left lg:text-num-18_67 lg:leading-[26px] lg:text-black`}
+            >
               Whether you need a factory construction company, a warehouse
               construction company, or a structural steel fabrication company,
               Mekark combines manufacturing scale with engineering precision to

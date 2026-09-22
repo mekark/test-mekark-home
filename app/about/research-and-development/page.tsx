@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { RdPage } from "@/components/about/r-and-d/RdPage";
+import DesignScale from "@/components/services/DesignScale";
 import { FooterSection } from "@/components/footer/FooterSection";
 
 export const metadata: Metadata = {
@@ -11,7 +12,9 @@ export const metadata: Metadata = {
 export default function ResearchAndDevelopmentRoute() {
   return (
     <div className="flex flex-1 flex-col bg-white">
-      <RdPage />
+      <DesignScale mode="ultrawide">
+        <RdPage />
+      </DesignScale>
       <FooterSection />
     </div>
   );

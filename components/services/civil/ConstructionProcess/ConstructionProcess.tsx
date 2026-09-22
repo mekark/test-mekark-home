@@ -31,6 +31,18 @@ const steps = [
   },
 ] as const;
 
+/** Figma 7385:1173 — mobile section + step typography */
+const MOBILE_PROCESS_TYPOGRAPHY = {
+  headlineClass:
+    "font-manrope text-[28px] font-bold leading-[36px] text-[#111] text-center",
+  stepLabelClass:
+    "font-montserrat text-xs font-bold tracking-[1.5px] text-[#e50818]",
+  stepTitleClass:
+    "font-manrope text-[18px] font-bold leading-[21px] text-[#3c3938]",
+  stepBodyClass:
+    "font-manrope text-sm font-normal leading-normal text-[#555]",
+} as const;
+
 export default function ConstructionProcess() {
   return (
     <section
@@ -60,6 +72,7 @@ export default function ConstructionProcess() {
           arrowSrc="/images/services/civil/process/arrow.svg"
           desktopFrom="lg"
           scaledCanvas
+          mobileTypography={MOBILE_PROCESS_TYPOGRAPHY}
         />
       </div>
     </section>

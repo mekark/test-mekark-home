@@ -8,6 +8,7 @@ import {
   civilMobileHeroImageDefaults,
   civilMobileHeroLayout,
 } from "@/components/services/serviceMobileHeroCivilLayout";
+import { MULTI_STOREY_MOBILE_HERO_TITLE_CLASS } from "@/components/services/serviceMobileCivilTemplate";
 import { animate, motion, useInView, useReducedMotion } from "framer-motion";
 import { useServiceEnquiry } from "@/components/services/ServiceEnquiryProvider";
 
@@ -115,6 +116,7 @@ function MobileHero() {
     <ServiceMobileHero
       {...civilMobileHeroLayout}
       title="South India's Leading Multi-Storey Steel Building Manufacturer"
+      titleClassName={MULTI_STOREY_MOBILE_HERO_TITLE_CLASS}
       description={heroDescription}
       heroImage={{
         ...civilMobileHeroImageDefaults,

@@ -5,10 +5,10 @@ import { engineeringNumbers } from "@/data/engineering";
 import { drawVertical, fadeUp, pulseDot, staggerContainer } from "@/lib/motion-variants";
 
 const rowClassName =
-  "flex h-full w-full min-w-0 max-w-full items-stretch gap-4 sm:gap-[22px] xl:gap-5 2xl:gap-[22px]";
+  "flex w-full min-w-0 max-w-full flex-col items-center justify-end max-lg:min-h-[91px] lg:h-full lg:flex-row lg:items-stretch lg:gap-4 xl:gap-5 2xl:gap-[22px]";
 
 const dividerClassName =
-  "relative w-[1.3px] shrink-0 self-stretch min-h-[120px] sm:min-h-[150px] xl:min-h-0";
+  "relative w-px shrink-0 max-lg:h-[49px] lg:w-[1.3px] lg:self-stretch lg:min-h-[150px] xl:min-h-0";
 
 const dividerStyle = {
   background:
@@ -16,22 +16,26 @@ const dividerStyle = {
 } as const;
 
 const dotOuterClassName =
-  "absolute left-1/2 top-1/2 z-10 flex size-[18.7px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-[1.3px] border-solid border-[#d6d6d6] bg-white xl:size-[14px] 2xl:size-[18.7px]";
+  "absolute left-1/2 z-10 flex size-[18.667px] -translate-x-1/2 items-center justify-center rounded-[9.333px] border-[1.333px] border-solid border-[#d6d6d6] bg-white max-lg:top-[calc(50%-25.19px)] max-lg:-translate-y-1/2 lg:top-1/2 lg:size-[18.7px] lg:-translate-y-1/2 lg:rounded-full lg:border-[1.3px] xl:size-[14px] 2xl:size-[18.7px]";
 
 const dotInnerClassName =
-  "size-2 rounded bg-mekark-red shadow-[0_0_16px_rgba(237,32,36,0.7)] xl:size-[6px] xl:shadow-[0_0_12px_rgba(237,32,36,0.7)] 2xl:size-2 2xl:shadow-[0_0_16px_rgba(237,32,36,0.7)]";
+  "size-2 rounded bg-mekark-red shadow-[0_0_16px_rgba(237,32,36,0.7)] max-lg:size-2 max-lg:rounded-[4px] xl:size-[6px] xl:shadow-[0_0_12px_rgba(237,32,36,0.7)] 2xl:size-2 2xl:shadow-[0_0_16px_rgba(237,32,36,0.7)]";
 
 const textClassName =
-  "text-left text-[clamp(0.8125rem,3.2vw,0.9375rem)] leading-[1.45] text-[#2a2a2a] sm:text-[clamp(0.875rem,1.8vw,1.0625rem)] sm:leading-[1.45] lg:text-[clamp(0.9375rem,1.5vw,1.125rem)] lg:leading-[1.4] xl:text-[clamp(1.05rem,1.45vw,1.35rem)] xl:leading-[1.4] 2xl:max-w-none 2xl:text-[28px] 2xl:leading-[34px]";
+  "text-center text-sm font-normal leading-[22px] text-[#2a2a2a] lg:text-left lg:text-[clamp(0.8125rem,3.2vw,0.9375rem)] lg:leading-[1.45] xl:text-[clamp(1.05rem,1.45vw,1.35rem)] xl:leading-[1.4] 2xl:max-w-none 2xl:text-[28px] 2xl:leading-[34px]";
 
 function DescriptionCopy() {
   const { description } = engineeringNumbers;
 
   return (
     <p className={textClassName}>
-      <span className="2xl:block 2xl:whitespace-nowrap">{description.line1}</span>
-      <span className="2xl:hidden"> </span>
-      <span className="2xl:block 2xl:whitespace-nowrap">{description.line2}</span>
+      <span className="block lg:inline 2xl:block 2xl:whitespace-nowrap">
+        {description.line1}
+      </span>
+      <span className="hidden lg:inline 2xl:hidden"> </span>
+      <span className="block lg:inline 2xl:block 2xl:whitespace-nowrap">
+        {description.line2}
+      </span>
     </p>
   );
 }
@@ -44,7 +48,7 @@ function ProductionDescriptionContent() {
           <span className={dotInnerClassName} />
         </span>
       </div>
-      <div className="flex min-w-0 flex-1 items-center">
+      <div className="flex w-full min-w-0 flex-1 items-center max-lg:justify-center lg:w-auto">
         <DescriptionCopy />
       </div>
     </>
@@ -79,7 +83,10 @@ function ProductionDescriptionAnimated() {
           <span className={dotInnerClassName} />
         </motion.span>
       </motion.div>
-      <motion.div variants={fadeUp} className="flex min-w-0 flex-1 items-center">
+      <motion.div
+        variants={fadeUp}
+        className="flex w-full min-w-0 flex-1 items-center max-lg:justify-center lg:w-auto"
+      >
         <DescriptionCopy />
       </motion.div>
     </motion.div>

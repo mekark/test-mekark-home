@@ -2,6 +2,14 @@
 
 import Image from "next/image";
 import ServiceSolutionsMobileGrid from "@/components/services/ServiceSolutionsMobileGrid";
+import {
+  MOBILE_CARD_BODY_CLASS,
+  MOBILE_CARD_CLASS,
+  MOBILE_CARD_TITLE_CLASS,
+  MOBILE_SOLUTIONS_CONTAINER_CLASS,
+  MOBILE_SOLUTIONS_GRID_CLASS,
+  MOBILE_SOLUTIONS_IMAGE_CLASS,
+} from "@/components/services/serviceMobileCivilTemplate";
 import { SERVICE_CARD_BODY_CLASS_SCALED } from "@/components/services/serviceTypography";
 
 const solutions = [
@@ -56,7 +64,7 @@ export default function IndustrialMepSolutions() {
   return (
     <section className="relative w-full shrink-0 overflow-hidden bg-white text-left font-manrope text-gray">
       <Image
-        className="absolute top-0 left-0 h-[280px] w-full object-cover opacity-[0.15] sm:h-[390px]"
+        className="pointer-events-none absolute top-0 left-0 hidden h-[390px] w-full object-cover opacity-[0.15] lg:block"
         src="/images/services/mep/industrial-solutions/grid.webp"
         width={1918}
         height={391}
@@ -64,8 +72,16 @@ export default function IndustrialMepSolutions() {
         alt="Decorative grid background"
       />
 
+      {/* Mobile — Figma 7396:5915 */}
       <ServiceSolutionsMobileGrid
         title="Our Industrial MEP Solutions"
+        className={MOBILE_SOLUTIONS_CONTAINER_CLASS}
+        titleClassName="w-full text-left font-manrope text-[28px] font-bold leading-[35px] text-[#111]"
+        gridClassName={MOBILE_SOLUTIONS_GRID_CLASS}
+        cardClassName={MOBILE_CARD_CLASS}
+        cardTitleClassName={`${MOBILE_CARD_TITLE_CLASS} leading-[23px]`}
+        cardBodyClassName={MOBILE_CARD_BODY_CLASS}
+        imageContainerClassName={MOBILE_SOLUTIONS_IMAGE_CLASS}
         solutions={solutions.map((item) => ({
           title: item.title,
           description: item.body,

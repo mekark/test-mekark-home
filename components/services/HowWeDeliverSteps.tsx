@@ -20,6 +20,13 @@ export type HowWeDeliverStep = {
   icon?: string;
 };
 
+export type HowWeDeliverMobileTypography = {
+  headlineClass?: string;
+  stepLabelClass?: string;
+  stepTitleClass?: string;
+  stepBodyClass?: string;
+};
+
 type HowWeDeliverStepsProps = {
   title: string;
   steps: readonly HowWeDeliverStep[];
@@ -36,6 +43,8 @@ type HowWeDeliverStepsProps = {
   accentFontClass?: string;
   /** Font for step numbers (defaults to Montserrat). */
   numberFontClass?: string;
+  /** Optional mobile-only typography overrides (below `desktopFrom` breakpoint). */
+  mobileTypography?: HowWeDeliverMobileTypography;
 };
 
 function breakpointClasses(desktopFrom: "sm" | "lg" | "xl") {
@@ -46,6 +55,12 @@ function breakpointClasses(desktopFrom: "sm" | "lg" | "xl") {
     return { mobile: "lg:hidden", desktop: "hidden lg:grid" };
   }
   return { mobile: "sm:hidden", desktop: "hidden sm:grid" };
+}
+
+function desktopHeadlineVisibility(desktopFrom: "sm" | "lg" | "xl") {
+  if (desktopFrom === "xl") return "hidden xl:block";
+  if (desktopFrom === "lg") return "hidden lg:block";
+  return "hidden sm:block";
 }
 
 function desktopColClass(cols: 5 | 6, scaledCanvas: boolean) {
@@ -69,6 +84,7 @@ export default function HowWeDeliverSteps({
   scaledCanvas = false,
   accentFontClass = "font-manrope",
   numberFontClass = "font-montserrat",
+  mobileTypography,
 }: HowWeDeliverStepsProps) {
   const { mobile, desktop } = breakpointClasses(desktopFrom);
   const bodyClass = scaledCanvas
@@ -99,18 +115,48 @@ export default function HowWeDeliverSteps({
   const fallbackNumClass = scaledCanvas
     ? `flex h-full w-full items-center justify-center ${numberFontClass} text-[15px] font-bold text-red`
     : `flex h-full w-full items-center justify-center ${numberFontClass} text-[15px] font-bold text-red xl:text-[13px] 2xl:text-[15px]`;
+  const mobileStepLabelClass =
+    mobileTypography?.stepLabelClass ??
+    `${numberFontClass} text-[12px] font-bold tracking-[1.5px] text-red`;
+  const mobileStepTitleClass =
+    mobileTypography?.stepTitleClass ??
+    `${accentFontClass} text-[16px] leading-[21px] font-bold text-darkslategray`;
+  const mobileStepBodyClass = mobileTypography?.stepBodyClass ?? bodyClass;
 
   return (
     <>
-      <motion.h2
-        className={`${headlineSpacing} ${headlineClass}`}
-        initial={{ opacity: 0, y: 18 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.55, ease: easeOut }}
-      >
-        {title}
-      </motion.h2>
+      {mobileTypography?.headlineClass ? (
+        <>
+          <motion.h2
+            className={`${headlineSpacing} ${mobileTypography.headlineClass} ${mobile}`}
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55, ease: easeOut }}
+          >
+            {title}
+          </motion.h2>
+          <motion.h2
+            className={`${headlineSpacing} ${headlineClass} ${desktopHeadlineVisibility(desktopFrom)}`}
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55, ease: easeOut }}
+          >
+            {title}
+          </motion.h2>
+        </>
+      ) : (
+        <motion.h2
+          className={`${headlineSpacing} ${headlineClass}`}
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.55, ease: easeOut }}
+        >
+          {title}
+        </motion.h2>
+      )}
 
       <ol className={`relative mx-auto max-w-[420px] list-none ${mobile}`}>
         <span
@@ -156,13 +202,11 @@ export default function HowWeDeliverSteps({
               </div>
 
               <div className="min-w-0 pt-1">
-                <span className={`mb-1.5 block ${numberFontClass} text-[12px] font-bold tracking-[1.5px] text-red`}>
+                <span className={`mb-1.5 block ${mobileStepLabelClass}`}>
                   STEP {num}
                 </span>
-                <h3 className={`${accentFontClass} text-[16px] leading-[21px] font-bold text-darkslategray`}>
-                  {step.title}
-                </h3>
-                <p className={`mt-1.5 ${bodyClass}`}>{step.body}</p>
+                <h3 className={mobileStepTitleClass}>{step.title}</h3>
+                <p className={`mt-1.5 ${mobileStepBodyClass}`}>{step.body}</p>
               </div>
             </motion.li>
           );

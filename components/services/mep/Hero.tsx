@@ -10,6 +10,10 @@ import {
   civilMobileHeroLayout,
   greyMobileHeroBottomGradient,
 } from "@/components/services/serviceMobileHeroCivilLayout";
+import {
+  MOBILE_HERO_DESCRIPTION_CLASS,
+  SERVICE_MOBILE_HERO_TITLE_FIGMA_CLASS,
+} from "@/components/services/serviceMobileCivilTemplate";
 import { useServiceEnquiry } from "@/components/services/ServiceEnquiryProvider";
 
 const formatWithCommas = (value: number) => value.toLocaleString("en-US");
@@ -86,15 +90,15 @@ function MobileHero() {
       {...civilMobileHeroLayout}
       title={
         <>
-          South India&apos;s Leading
-          <br />
-          Industrial MEP Contractor
-          <br />
-          &amp; Turnkey MEP Contracting
-          <br />
-          Company
+          <span className="block">South India&apos;s</span>
+          <span className="block">Leading Industrial MEP</span>
+          <span className="block">Contractor &amp; Turnkey</span>
+          <span className="block">MEP Contracting</span>
+          <span className="block">Company</span>
         </>
       }
+      titleClassName={SERVICE_MOBILE_HERO_TITLE_FIGMA_CLASS}
+      descriptionClassName={MOBILE_HERO_DESCRIPTION_CLASS}
       description={heroDescription}
       heroImage={{
         ...civilMobileHeroImageDefaults,

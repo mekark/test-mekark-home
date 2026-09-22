@@ -79,7 +79,7 @@ const BENEFITS = [
   },
   {
     category: "Simplicity",
-    title: ["Reduced Coordination", "Complexity"],
+    title: ["Reduced\u00a0Coordination", "Complexity"],
     description:
       "One partner eliminates multi-vendor friction and misaligned project handoffs.",
     icon: "/images/one-partner/icon-handshake.svg",
@@ -311,7 +311,7 @@ function BenefitCard({
             className="text-lg font-bold leading-6 tracking-[-0.5px] text-[#111] max-lg:text-lg max-lg:font-bold max-lg:leading-[30px] max-lg:tracking-normal xl:text-[clamp(0.8125rem,1.05vw,1rem)] xl:leading-[1.25] xl:tracking-[-0.4px] 2xl:text-2xl 2xl:leading-8 2xl:tracking-[-0.76px]"
           >
             {titleLines.map((line) => (
-              <span key={line} className="block [overflow-wrap:anywhere]">
+              <span key={line} className="block">
                 {line}
               </span>
             ))}

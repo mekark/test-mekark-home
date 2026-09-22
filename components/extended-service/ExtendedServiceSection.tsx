@@ -466,18 +466,22 @@ function FaqItem({
           </span>
         </span>
         <span
-          className={`relative shrink-0 overflow-clip ${
+          className={`relative shrink-0 ${
             mobile ? "size-[16.624px]" : "size-[17px]"
           }`}
         >
           <img
-            src="/images/extended-service/faq-chevron.svg"
-            alt="Expand section"
-            width={17}
-            height={17}
-            className={`absolute inset-0 m-auto size-full object-contain transition-transform duration-200 ${
-              open ? "rotate-180" : ""
-            }`}
+            src={
+              mobile
+                ? "/images/extended-service/faq-chevron-mobile.svg"
+                : "/images/extended-service/faq-chevron.svg"
+            }
+            alt=""
+            width={mobile ? 16.624 : 17}
+            height={mobile ? 16.624 : 17}
+            className={`${
+              mobile ? "size-full object-contain" : "absolute inset-0 m-auto size-full object-contain"
+            } transition-transform duration-200 ${open ? "rotate-180" : ""}`}
           />
         </span>
       </button>

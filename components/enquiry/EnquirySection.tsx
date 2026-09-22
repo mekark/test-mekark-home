@@ -200,6 +200,8 @@ export function EnquirySection({
             defaultIndustry={prefill.industry}
             defaultService={prefill.service}
             defaultMessage={prefill.message}
+            lockIndustry={Boolean(prefill.industry)}
+            lockService={Boolean(prefill.service)}
             projectAreas={projectAreas}
           />
         </motion.div>

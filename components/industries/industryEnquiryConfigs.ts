@@ -32,7 +32,7 @@ function createIndustryEnquiryConfig({
     projectAreas: PROJECT_AREAS,
     highlights: INDUSTRY_HIGHLIGHTS,
     defaultIndustry: label,
-    lockIndustry: false,
+    lockIndustry: true,
     lockService: false,
   };
 }

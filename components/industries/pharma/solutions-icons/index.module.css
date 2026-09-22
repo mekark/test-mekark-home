@@ -545,3 +545,181 @@
     white-space: normal;
   }
 }
+
+/*
+ * Desktop fluid hubs (1201–1919): avoid 1920px canvas clipping the right edge.
+ * Placed last so it wins over base absolute Figma styles.
+ */
+@media (min-width: 1201px) and (max-width: 1919px) {
+  .solutionsWrapper {
+    height: auto !important;
+    overflow: visible;
+  }
+
+  .solutions {
+    width: 100% !important;
+    max-width: 100%;
+    height: auto !important;
+    min-height: 0;
+    transform: none !important;
+    overflow: visible;
+    padding: 72px 80px 48px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .grid1Icon {
+    width: 100% !important;
+    max-width: 100%;
+    height: auto !important;
+    max-height: 280px;
+  }
+
+  .frameParent {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    max-width: 100%;
+    height: auto !important;
+    gap: 52px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .frameGroup {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100%;
+    height: auto !important;
+    margin-bottom: 0;
+  }
+
+  .eotCraneSolutionsAcrossSouWrapper {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .eotCraneSolutions {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100%;
+    font-size: clamp(28px, 2.4vw, 44px) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.8px;
+  }
+
+  .ourEotCranesServeDiverseIWrapper {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100%;
+    margin-top: 12px;
+    padding-bottom: 0 !important;
+  }
+
+  .ourEotCranes {
+    width: 100%;
+    white-space: normal !important;
+    font-size: clamp(14px, 1vw, 17px) !important;
+    line-height: 1.5;
+  }
+
+  .frameContainer {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100%;
+    height: auto !important;
+    margin: 12px 0 24px !important;
+    display: flex !important;
+    flex-wrap: nowrap;
+    gap: clamp(12px, 1.2vw, 20px);
+    align-items: flex-start;
+  }
+
+  .cardItem {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: auto !important;
+    flex: 1 1 0;
+    min-width: 0;
+    height: auto !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    gap: 0;
+  }
+
+  .iconWrapper {
+    width: 42px !important;
+    height: 42px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .solutionIcon {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .cardTitle {
+    font-size: clamp(14px, 0.95vw, 17px) !important;
+    line-height: 1.3 !important;
+    word-break: break-word;
+  }
+
+  .cardDesc {
+    font-size: clamp(12px, 0.85vw, 15px) !important;
+    line-height: 1.4 !important;
+    word-break: break-word;
+  }
+
+  .whereverYoureLocatedContainer {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 48px 0 0 !important;
+    padding: 20px 28px !important;
+    border-radius: clamp(32px, 4vw, 72px) !important;
+    box-sizing: border-box;
+  }
+
+  .footerLine {
+    white-space: normal !important;
+  }
+}
+
+/* XL desktop — keep Figma absolute + full pill */
+@media (min-width: 1920px) {
+  .whereverYoureLocatedContainer {
+    width: 1760px;
+    max-width: 1760px;
+    background-color: #fff;
+    border: 0.5px solid rgba(228, 0, 21, 0.5);
+    border-radius: 89px;
+    padding: 24px 32px;
+    box-sizing: border-box;
+    color: #6e6e6e;
+  }
+
+  .whereverYoureLocated {
+    color: #6e6e6e;
+  }
+}
+

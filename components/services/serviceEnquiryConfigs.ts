@@ -17,6 +17,8 @@ export const CIVIL_ENQUIRY_CONFIG: ServiceEnquiryConfig = {
   description:
     "Share your project details and our civil construction team will get back to you with a tailored proposal.",
   projectAreas: CIVIL_PROJECT_AREAS,
+  defaultService: "Civil",
+  lockService: true,
   highlights: [
     "200+ commercial & industrial projects delivered",
     "18+ years of civil & RCC expertise",
@@ -33,6 +35,8 @@ export const PEB_ENQUIRY_CONFIG: ServiceEnquiryConfig = {
   description:
     "Share your project details and our PEB engineering team will get back to you with a tailored proposal.",
   projectAreas: PEB_PROJECT_AREAS,
+  defaultService: "PEB",
+  lockService: true,
   highlights: [
     "200+ PEB projects delivered across South India",
     "18+ years of pre-engineered building expertise",
@@ -49,6 +53,8 @@ export const MULTI_STOREY_ENQUIRY_CONFIG: ServiceEnquiryConfig = {
   description:
     "Share your project details and our multi-storey construction team will get back to you with a tailored proposal.",
   projectAreas: MULTI_STOREY_PROJECT_AREAS,
+  defaultService: "Multi Storey",
+  lockService: true,
   highlights: [
     "200+ multi-storey projects delivered",
     "18+ years of structural engineering expertise",
@@ -65,6 +71,8 @@ export const MEP_ENQUIRY_CONFIG: ServiceEnquiryConfig = {
   description:
     "Share your project details and our MEP contracting team will get back to you with a tailored proposal.",
   projectAreas: MEP_PROJECT_AREAS,
+  defaultService: "MEP",
+  lockService: true,
   highlights: [
     "200+ industrial MEP projects delivered",
     "18+ years of turnkey MEP expertise",
@@ -81,6 +89,8 @@ export const SOLAR_ENQUIRY_CONFIG: ServiceEnquiryConfig = {
   description:
     "Share your project details and our solar installation team will get back to you with a tailored proposal.",
   projectAreas: SOLAR_PROJECT_AREAS,
+  defaultService: "Solar",
+  lockService: true,
   highlights: [
     "200+ commercial solar projects delivered",
     "18+ years of solar EPC expertise",
@@ -97,6 +107,8 @@ export const TENSILE_ENQUIRY_CONFIG: ServiceEnquiryConfig = {
   description:
     "Share your project details and our tensile structure team will get back to you with a tailored proposal.",
   projectAreas: TENSILE_PROJECT_AREAS,
+  defaultService: "Tensile",
+  lockService: true,
   highlights: [
     "200+ tensile projects delivered across South India",
     "18+ years of PTFE & ETFE fabric expertise",

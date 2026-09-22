@@ -166,6 +166,8 @@
     		height: 332px;
     		min-height: 332px;
     		font-size: 28px;
+    		background-color: #020202;
+    		margin-bottom: -1px;
   	}
   	.backgroundImage {
     		display: none;

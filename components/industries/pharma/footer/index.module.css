@@ -178,6 +178,8 @@
     height: 370px;
     min-height: 370px;
     font-size: 28px;
+    background-color: #020202;
+    margin-bottom: -1px;
   }
   .backgroundImage {
     display: block !important;

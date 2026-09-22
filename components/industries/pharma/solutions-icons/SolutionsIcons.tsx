@@ -47,36 +47,17 @@ const solutionCards = [
 
 const SolutionsIcons = () => {
   const scale = useDesignScale();
+  const isScaled = scale !== 1;
 
   return (
     <div
       className={styles.solutionsWrapper}
-      style={{ height: DESIGN_HEIGHT * scale }}
+      style={isScaled ? { height: DESIGN_HEIGHT * scale } : undefined}
     >
       <div
         className={styles.solutions}
-        style={{ transform: `scale(${scale})` }}
+        style={isScaled ? { transform: `scale(${scale})` } : undefined}
       >
-        <div className={styles.whereverYoureLocatedContainer}>
-          <span className={styles.footerLine}>
-            <span className={styles.whereverYoureLocated}>
-              Wherever you&apos;re located in South India -{" "}
-            </span>
-            <b className={styles.mekarkEngineersEot}>
-              Chennai, Coimbatore, Hosur, Bengaluru, Hyderabad, or Kochi
-            </b>
-            <span className={styles.whereverYoureLocated}>
-              {" "}
-              - Mekark&apos;s pharmaceutical facility
-            </span>
-          </span>
-          <span
-            className={`${styles.footerLine} ${styles.whereverYoureLocated}`}
-          >
-            engineering is customised to your production process and regulatory
-            requirements.
-          </span>
-        </div>
         <Image
           className={styles.grid1Icon}
           src="/images/industries/pharma/solutions/grid-1.webp"
@@ -122,7 +103,7 @@ const SolutionsIcons = () => {
               <div
                 key={card.title}
                 className={styles.cardItem}
-                style={{ left: `${index * 286}px` }}
+                style={isScaled ? { left: `${index * 286}px` } : undefined}
               >
                 <div className={styles.iconWrapper}>
                   <Image
@@ -140,6 +121,26 @@ const SolutionsIcons = () => {
               </div>
             ))}
           </div>
+        </div>
+        <div className={styles.whereverYoureLocatedContainer}>
+          <span className={styles.footerLine}>
+            <span className={styles.whereverYoureLocated}>
+              Wherever you&apos;re located in South India -{" "}
+            </span>
+            <b className={styles.mekarkEngineersEot}>
+              Chennai, Coimbatore, Hosur, Bengaluru, Hyderabad, or Kochi
+            </b>
+            <span className={styles.whereverYoureLocated}>
+              {" "}
+              - Mekark&apos;s pharmaceutical facility
+            </span>
+          </span>
+          <span
+            className={`${styles.footerLine} ${styles.whereverYoureLocated}`}
+          >
+            engineering is customised to your production process and regulatory
+            requirements.
+          </span>
         </div>
       </div>
     </div>

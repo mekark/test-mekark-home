@@ -97,8 +97,9 @@ export default function DesignScale({
   const scaledWidth = useScaling ? DESIGN_WIDTH * scale : undefined;
 
   return (
-    <div className="relative w-full overflow-x-hidden bg-white">
-      {useScaling ? (
+    <div
+      className={`relative w-full overflow-x-hidden ${useScaling ? "bg-white" : "bg-transparent"}`}
+    >      {useScaling ? (
         <div
           className="relative"
           style={{

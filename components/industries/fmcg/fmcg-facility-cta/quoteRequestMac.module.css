@@ -153,6 +153,8 @@
     aspect-ratio: auto;
     height: 332px;
     min-height: 332px;
+    background-color: #020202;
+    margin-bottom: -1px;
   }
 
   .bgImage {

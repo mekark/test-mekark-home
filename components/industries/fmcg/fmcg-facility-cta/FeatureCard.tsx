@@ -71,8 +71,8 @@ export function FeatureCard({ feature, index }: FeatureCardProps) {
         >
           {feature.descriptionLines ? (
             <>
-              <span className="lg:hidden">{feature.description}</span>
-              <span className="hidden lg:contents">
+              <span className="min-[1201px]:hidden">{feature.description}</span>
+              <span className="hidden min-[1201px]:block">
                 {feature.descriptionLines.map((line, lineIndex) => (
                   <span key={lineIndex} className="block whitespace-nowrap">
                     {line}

@@ -62,7 +62,7 @@ function SelectField({
   id,
   disabled,
 }: {
-  name: string;
+  name?: string;
   value: string;
   onChange: (value: string) => void;
   options: readonly string[];
@@ -73,15 +73,18 @@ function SelectField({
   const placeholder = options[0];
 
   return (
-    <div className={styles.buttonListbox}>
+    <div
+      className={`${styles.buttonListbox}${disabled ? ` ${styles.buttonListboxLocked}` : ""}`}
+    >
       <select
         id={id}
         name={name}
-        required={required}
+        required={required && !disabled}
         disabled={disabled}
         value={value}
         onChange={(event) => onChange(event.target.value)}
         className={styles.selectArea}
+        aria-readonly={disabled || undefined}
       >
         {options.map((option) => (
           <option
@@ -331,14 +334,24 @@ export function EnquiryFormCore({
                   />
                 </FormField>
                 <FormField label="Industry Type" required>
-                  <>
-                    {lockIndustry && (industryType || defaultIndustry) ? (
+                  {lockIndustry && (industryType || defaultIndustry) ? (
+                    <>
                       <input
                         type="hidden"
                         name="industry"
                         value={industryType || defaultIndustry}
                       />
-                    ) : null}
+                      <input
+                        type="text"
+                        className={`${styles.input} ${styles.inputLocked}`}
+                        value={industryType || defaultIndustry}
+                        readOnly
+                        tabIndex={-1}
+                        aria-readonly="true"
+                        title="This field is fixed for this page"
+                      />
+                    </>
+                  ) : (
                     <SelectField
                       id={`${fieldIdPrefix}-industry`}
                       name="industry"
@@ -346,31 +359,39 @@ export function EnquiryFormCore({
                       value={industryType}
                       onChange={setIndustryType}
                       options={INDUSTRY_TYPES}
-                      disabled={lockIndustry && Boolean(defaultIndustry)}
                     />
-                  </>
+                  )}
                 </FormField>
               </div>
 
               <div className={styles.formRow}>
                 <FormField label="Service">
-                  <>
-                    {lockService && (serviceType || defaultService) ? (
+                  {lockService && (serviceType || defaultService) ? (
+                    <>
                       <input
                         type="hidden"
                         name="service"
                         value={serviceType || defaultService}
                       />
-                    ) : null}
+                      <input
+                        type="text"
+                        className={`${styles.input} ${styles.inputLocked}`}
+                        value={serviceType || defaultService}
+                        readOnly
+                        tabIndex={-1}
+                        aria-readonly="true"
+                        title="This field is fixed for this page"
+                      />
+                    </>
+                  ) : (
                     <SelectField
                       id={`${fieldIdPrefix}-service`}
                       name="service"
                       value={serviceType}
                       onChange={handleServiceChange}
                       options={SERVICE_TYPES}
-                      disabled={lockService && Boolean(defaultService)}
                     />
-                  </>
+                  )}
                 </FormField>
                 <FormField label="Project Sq.ft" required>
                   <SelectField

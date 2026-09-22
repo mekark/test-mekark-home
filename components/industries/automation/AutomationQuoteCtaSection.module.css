@@ -9,6 +9,7 @@
   padding: 36px 24px;
   color: #fff;
   font-family: var(--font-manrope), Manrope, sans-serif;
+  background-color: #020202;
 }
 
 .backgroundImage {
@@ -130,6 +131,11 @@
     height: 332px;
     min-height: 332px;
     padding: 0;
+    background-color: #020202;
+    /* Seal iOS hairline gap before site footer (avoids white line) */
+    margin-bottom: -1px;
+    padding-bottom: 1px;
+    box-sizing: border-box;
   }
 
   .backgroundImage {

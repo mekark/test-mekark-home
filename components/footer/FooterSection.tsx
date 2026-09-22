@@ -277,7 +277,7 @@ function FloatingActions() {
 export function FooterSection() {
   return (
     <>
-      <footer className="relative w-full overflow-hidden bg-black text-white">
+      <footer className="relative -mt-px w-full overflow-hidden bg-black text-white">
         <div
           className="pointer-events-none absolute inset-0 opacity-60"
           aria-hidden

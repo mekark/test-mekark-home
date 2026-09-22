@@ -131,7 +131,7 @@ export function CtaSection() {
         className={`${styles.mobileCta} relative overflow-hidden`}
       >
         <Image
-          src="/images/mobile/career-mv/3.jpg"
+          src="/images/mobile/career-mv/3.webp"
           alt=""
           fill
           className="object-cover object-center"

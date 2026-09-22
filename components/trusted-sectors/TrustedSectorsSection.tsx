@@ -374,6 +374,15 @@ export function TrustedSectorsSection({
               </span>
             </motion.h2>
 
+            {description ? (
+              <motion.p
+                variants={fadeUp}
+                className="max-w-[289px] text-center font-[family-name:var(--font-manrope)] text-sm font-normal leading-normal text-black"
+              >
+                {description}
+              </motion.p>
+            ) : null}
+
             <MobileLogoGrid logos={mobileLogos} />
 
             <motion.div
@@ -429,7 +438,7 @@ export function TrustedSectorsSection({
           {description ? (
             <motion.p
               variants={fadeUp}
-              className="mt-4 max-w-none whitespace-nowrap text-center font-manrope text-[16px] font-medium leading-[24.06px] tracking-normal text-black lg:mt-5"
+              className="mt-4 whitespace-nowrap text-center font-manrope text-[16px] font-medium leading-[24.06px] tracking-normal text-black lg:mt-5"
             >
               {description}
             </motion.p>

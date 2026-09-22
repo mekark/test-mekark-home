@@ -42,11 +42,11 @@ export function InternshipSection() {
           </p>
           <div className="relative mx-auto h-[225px] w-full max-w-[358px] overflow-hidden rounded-2xl">
             <Image
-              src="/images/mobile/career-mv/2.png"
+              src="/images/mobile/career-mv/2.webp"
               alt="Mekark interns collaborating around laptops"
               width={1280}
               height={629}
-              className="absolute top-1/2 left-[-62%] h-[112%] w-auto max-w-none -translate-y-1/2"
+              className="absolute top-1/2 left-[-58%] h-[112%] w-auto max-w-none -translate-y-1/2"
               sizes="600px"
             />
           </div>

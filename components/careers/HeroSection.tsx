@@ -10,7 +10,7 @@ export function HeroSection() {
       >
         <div className="relative aspect-[390/692] w-full">
           <Image
-            src="/images/mobile/career-mv/1.png"
+            src="/images/mobile/career-mv/1.webp"
             alt="Mekark teams on site and in the office"
             fill
             priority

@@ -104,19 +104,21 @@ function FaqItem({
       <button
         id={buttonId}
         type="button"
-        className="flex w-full cursor-pointer items-center gap-3 text-left lg:min-h-[clamp(4.5rem,5.208vw,6.25rem)] lg:items-start lg:gap-4 lg:px-[26px] lg:py-[21px]"
+        className="flex w-full cursor-pointer items-center gap-3 text-left lg:min-h-[clamp(4.5rem,5.208vw,6.25rem)] lg:items-start lg:gap-4 lg:px-[26px] lg:pt-[21px] lg:pb-1"
         aria-expanded={open}
         aria-controls={panelId}
         onClick={onToggle}
       >
-        <span className={MOBILE_FAQ_NUMBER_CLASS}>
+        <span
+          className={`${MOBILE_FAQ_NUMBER_CLASS} lg:leading-[26.67px]`}
+        >
           {String(index + 1).padStart(2, "0")}
         </span>
         <span className={`min-w-0 flex-1 ${MOBILE_FAQ_QUESTION_CLASS}`}>
           {question}
         </span>
         <motion.span
-          className="relative size-[16.624px] shrink-0 lg:mt-2"
+          className="relative size-[16.624px] shrink-0 lg:mt-[5px]"
           animate={{ rotate: open ? 180 : 0 }}
           transition={{ duration: 0.35, ease: easeOut }}
         >
@@ -140,10 +142,10 @@ function FaqItem({
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.4, ease: easeOut }}
-            className="overflow-hidden"
+            className="overflow-hidden lg:-mt-4"
           >
             <motion.p
-              className={`${MOBILE_FAQ_ANSWER_CLASS} lg:border-t lg:border-[#E3E4E7] lg:px-[26px] lg:pb-[21px] lg:pl-[calc(26px+2ch+1rem)] lg:pt-0 lg:text-base lg:leading-[1.65] lg:text-[#53555B]`}
+              className={`${MOBILE_FAQ_ANSWER_CLASS} lg:border-t lg:border-[#E3E4E7] lg:px-[26px] lg:pb-[21px] lg:pl-[calc(26px+2ch+1rem)] lg:pt-2.5 lg:text-base lg:leading-[1.65] lg:text-[#53555B]`}
               initial={{ opacity: 0, y: -6 }}
               animate={{
                 opacity: 1,

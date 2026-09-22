@@ -59,32 +59,32 @@ function MobilePortrait() {
 const features = [
 	{
 		num: "01",
-		title: "Turnkey Execution:",
+		title: "Turnkey Execution",
 		body: "From membrane design to fabrication to installation, a single point of accountability for your entire tensile structure project.",
 	},
 	{
 		num: "02",
-		title: "Premium Fabric Sourcing:",
+		title: "Premium Fabric Sourcing",
 		body: "PTFE and ETFE membranes selected for UV resistance, fire retardancy, and long-term weatherproofing.",
 	},
 	{
 		num: "03",
-		title: "In-House Engineering Team:",
+		title: "In-House Engineering Team",
 		body: "175+ engineers using ETABS, AutoCAD, and STAAD.Pro for wind-load and tension analysis on every tensile canopy and dome design.",
 	},
 	{
 		num: "04",
-		title: "ISO & Green Certified:",
+		title: "ISO & Green Certified",
 		body: "Consistent quality, safety, and sustainability compliance across every tensile fabric project.",
 	},
 	{
 		num: "05",
-		title: "18+ Years of Industry Experience:",
+		title: "18+ Years of Industry Experience",
 		body: "A proven track record across tensile car parking sheds, event canopies, sports facility roofing, and architectural entrance structures.",
 	},
 	{
 		num: "06",
-		title: "Faster, Lightweight Builds:",
+		title: "Faster, Lightweight Builds",
 		body: "Tensile structures typically install faster than conventional roofing, with less structural steel and lower foundation loads.",
 	},
 ] as const;

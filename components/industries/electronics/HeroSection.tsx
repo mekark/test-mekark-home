@@ -63,7 +63,8 @@ export default function HeroSection() {
           </h1>
           <div className={styles.logisticsIndustrialStructuWrapper}>
             <h2 className={styles.logisticsIndustrial}>
-              Electronics Facility Structures by Mekark
+              Clean Rooms, ESD-Safe Plants &amp; Precision Infrastructure by
+              Mekark
             </h2>
           </div>
           <div className={styles.mekarkIsATrustedPreEngineWrapper}>

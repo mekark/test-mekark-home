@@ -40,7 +40,7 @@ export function InstitutionTypesSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          className="font-[family-name:var(--font-manrope)] text-[34px] font-bold leading-none tracking-normal text-[#e50818]"
+          className="font-[family-name:var(--font-manrope)] text-[28px] font-bold leading-none tracking-normal text-[#e50818] sm:text-[34px]"
         >
           What We Build
         </motion.h2>

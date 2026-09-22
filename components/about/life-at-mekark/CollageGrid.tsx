@@ -52,12 +52,11 @@ const COLLAGE: CollageItem[] = [
   },
   {
     src: `${IMG}/collage-4.webp`,
-    alt: "Mekark team celebrating in the office corridor",
+    alt: "Mekark office decorated with red balloons for Diwali",
     x: 1161.13,
     y: 391,
     w: 191,
     h: 286.5,
-    imgClassName: "absolute top-[-8%] left-[-25%] h-[116%] w-[150%] max-w-none object-cover",
   },
   {
     src: `${IMG}/collage-5.webp`,

@@ -74,7 +74,7 @@ function SectionHeading({
       <h2 className="font-[family-name:var(--font-manrope)] text-[clamp(1.75rem,3.5vw,40px)] font-bold leading-[1.4] text-[#1a1a1a]">
         {title}
       </h2>
-      <p className="font-[family-name:var(--font-manrope)] text-[clamp(1rem,1.4vw,18px)] leading-normal text-[#191919]">
+      <p className="font-[family-name:var(--font-manrope)] text-sm leading-normal text-[#191919] sm:text-[clamp(1rem,1.4vw,18px)]">
         {children}
       </p>
     </div>
@@ -216,11 +216,11 @@ export function LifeAtMekarkPage() {
           >
             <motion.h1
               variants={fadeUp}
-              className="font-[family-name:var(--font-manrope)] text-[clamp(1.85rem,4vw,40px)] font-bold leading-[1.4] text-[#1a1a1a]"
+              className="font-[family-name:var(--font-manrope)] text-[28px] font-bold leading-[1.4] text-[#1a1a1a] sm:text-[clamp(1.85rem,4vw,40px)]"
             >
               Life At Mekark
             </motion.h1>
-            <motion.p variants={fadeUp} className="font-[family-name:var(--font-manrope)] text-[clamp(1rem,1.4vw,18px)] leading-normal text-[#191919]">
+            <motion.p variants={fadeUp} className="font-[family-name:var(--font-manrope)] text-sm leading-normal text-[#191919] sm:text-[clamp(1rem,1.4vw,18px)]">
               Behind every project, a team that believes in it.
               <br className="hidden sm:inline" />
               <span className="sm:ml-1">
@@ -236,14 +236,14 @@ export function LifeAtMekarkPage() {
           initial="hidden"
           whileInView="visible"
           viewport={VIEWPORT}
-          className="mx-auto px-5 pb-16 sm:px-8 lg:px-10 lg:pb-24"
+          className="mx-auto px-5 pb-8 sm:px-8 sm:pb-16 lg:px-10 lg:pb-24"
         >
           <CollageGrid />
         </motion.div>
       </section>
 
       {/* @Mekark */}
-      <section className="bg-white px-5 pb-5 pt-16 sm:px-8 sm:pb-6 sm:pt-20 lg:px-10 lg:pb-8 lg:pt-24">
+      <section className="bg-white px-5 pb-5 pt-8 sm:px-8 sm:pb-6 sm:pt-20 lg:px-10 lg:pb-8 lg:pt-24">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -317,7 +317,7 @@ export function LifeAtMekarkPage() {
                   <h3 className="font-[family-name:var(--font-manrope)] text-lg font-semibold text-[#3c3938]">
                     {value.title}
                   </h3>
-                  <p className="font-[family-name:var(--font-manrope)] text-base leading-normal text-[#555]">
+                  <p className="font-[family-name:var(--font-manrope)] text-sm leading-normal text-[#555] sm:text-base">
                     {value.copy}
                   </p>
                 </div>

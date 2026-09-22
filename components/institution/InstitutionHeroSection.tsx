@@ -66,14 +66,14 @@ export function InstitutionHeroSection() {
         </motion.div>
         <motion.h1
           variants={fadeUp}
-          className="mt-7 max-w-[560px] text-[clamp(2.2rem,5vw,4.75rem)] font-extrabold leading-[1.05] tracking-[-0.03em] text-white sm:max-w-none"
+          className="mt-7 max-w-[560px] text-[28px] font-extrabold leading-[1.05] tracking-[-0.03em] text-white sm:max-w-none sm:text-[clamp(2.2rem,5vw,4.75rem)]"
         >
           <span className="sm:whitespace-nowrap">Institutional Construction</span>
           <span className="block text-[#ed1c24]">Auditoriums &amp; Stadiums</span>
         </motion.h1>
         <motion.p
           variants={fadeUp}
-          className="mt-7 max-w-[720px] text-[clamp(1.05rem,1.7vw,1.4rem)] leading-[1.55] text-white/78"
+          className="mt-7 max-w-[720px] text-sm leading-[1.55] text-white/78 sm:text-[clamp(1.05rem,1.7vw,1.4rem)]"
         >
           Engineering spaces built for crowds, performance, and decades of use across South India.
         </motion.p>

@@ -190,13 +190,13 @@ export default function ContactUsContent() {
             </motion.p>
             <motion.h1
               variants={fadeUp}
-              className="mt-3 text-[clamp(2rem,5vw,3.5rem)] font-extrabold leading-[1.08] tracking-[-1.2px]"
+              className="mt-3 text-[28px] font-extrabold leading-[1.08] tracking-[-1.2px] sm:text-[clamp(2rem,5vw,3.5rem)]"
             >
               Let&apos;s plan your next industrial project.
             </motion.h1>
             <motion.p
               variants={fadeUp}
-              className="mt-4 max-w-[540px] text-[16px] leading-7 text-white/75 md:text-[17px]"
+              className="mt-4 max-w-[540px] text-sm leading-7 text-white/75 md:text-[17px]"
             >
               Share a brief, call the team, or visit our Chennai office. We
               respond within one business day with a clear next step.
@@ -266,7 +266,7 @@ export default function ContactUsContent() {
             </motion.h2>
             <motion.p
               variants={fadeUp}
-              className="mt-4 max-w-[480px] text-[15px] leading-7 text-black/65"
+              className="mt-4 max-w-[480px] text-sm leading-7 text-black/65"
             >
               Use the form for PEB, factory, warehouse, or specialised
               infrastructure projects. The more context you share, the faster we

@@ -51,24 +51,41 @@ function JourneyStat({
   stat,
   start,
   delay,
+  compact = false,
 }: {
   stat: StatItem;
   start: boolean;
   delay: number;
+  compact?: boolean;
 }) {
   const labelClassName =
     "labelCase" in stat && stat.labelCase === "normal"
-      ? "font-[family-name:var(--font-manrope)] text-xs font-medium tracking-[0.2px] text-white sm:text-sm"
-      : "font-[family-name:var(--font-manrope)] text-xs font-medium uppercase tracking-[0.2px] text-white sm:text-sm";
+      ? "font-[family-name:var(--font-manrope)] font-medium tracking-[0.2px] text-white"
+      : "font-[family-name:var(--font-manrope)] font-medium uppercase tracking-[0.2px] text-white";
 
   return (
-    <div className="flex flex-col gap-[5px]">
-      <p className="font-[family-name:var(--font-manrope)] text-[clamp(1.75rem,6vw,36px)] font-semibold leading-none text-white tabular-nums">
+    <div
+      className={`flex flex-col overflow-visible ${compact ? "gap-0.5" : "gap-[5px]"}`}
+    >
+      <p
+        className={`font-[family-name:var(--font-manrope)] leading-none text-white tabular-nums ${
+          compact
+            ? "text" in stat
+              ? "text-sm font-semibold whitespace-nowrap"
+              : "text-sm font-semibold"
+            : "text-[clamp(1.75rem,6vw,36px)] font-semibold"
+        }`}
+      >
         {"text" in stat ? (
           <motion.span
             initial={{ opacity: 0 }}
             animate={start ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.4, delay }}
+            className={
+              compact
+                ? "whitespace-nowrap text-sm font-semibold leading-tight"
+                : "whitespace-nowrap"
+            }
           >
             {stat.text}
           </motion.span>
@@ -83,14 +100,24 @@ function JourneyStat({
               duration={1.7}
             />
             {"unit" in stat && stat.unit ? (
-              <span className="ml-1.5 text-lg font-medium sm:ml-2 sm:text-xl lg:text-2xl">
+              <span
+                className={
+                  compact
+                    ? "ml-1 text-[8px] font-normal"
+                    : "ml-1.5 text-lg font-medium sm:ml-2 sm:text-xl lg:text-2xl"
+                }
+              >
                 {stat.unit}
               </span>
             ) : null}
           </>
         )}
       </p>
-      <p className={labelClassName}>{stat.label}</p>
+      <p
+        className={`${labelClassName} ${compact ? "text-[8px]" : "text-xs sm:text-sm"}`}
+      >
+        {stat.label}
+      </p>
     </div>
   );
 }
@@ -112,10 +139,19 @@ export function OurHistoryPage() {
           >
             <motion.h1
               variants={aboutHeadlineStagger}
-              className="max-w-[980px] font-[family-name:var(--font-manrope)] text-[clamp(0.9rem,4.5vw,1.85rem)] font-bold leading-[1.15] tracking-[-0.5px] text-[#111] max-sm:whitespace-nowrap sm:text-[clamp(1.85rem,4.2vw,48px)] sm:tracking-[-1px]"
+              className="max-w-[980px] font-[family-name:var(--font-manrope)] text-[28px] font-bold leading-9 tracking-[-0.5px] text-[#111] sm:text-[clamp(1.85rem,4.2vw,48px)] sm:leading-[1.15] sm:tracking-[-1px]"
             >
-              <motion.span variants={aboutHeadlineChunk} className="inline">
-                We are Mekark. This is our story.
+              <motion.span
+                variants={aboutHeadlineChunk}
+                className="inline max-sm:block"
+              >
+                We are Mekark.
+              </motion.span>{" "}
+              <motion.span
+                variants={aboutHeadlineChunk}
+                className="inline max-sm:block"
+              >
+                This is our story.
               </motion.span>
             </motion.h1>
             <motion.span
@@ -125,7 +161,7 @@ export function OurHistoryPage() {
             />
             <motion.p
               variants={fadeUp}
-              className="max-w-[1240px] font-[family-name:var(--font-manrope)] text-[clamp(1rem,1.6vw,22px)] font-medium leading-[1.65] text-[#515151]"
+              className="max-w-[1240px] font-[family-name:var(--font-manrope)] text-sm font-medium leading-[1.65] text-[#515151] sm:text-[clamp(1rem,1.6vw,22px)]"
             >
               What began in 1998 as a small fabrication and roofing venture has
               grown, through hard work, trust, and strong engineering, into one
@@ -265,9 +301,10 @@ export function OurHistoryPage() {
               initial="hidden"
               whileInView="visible"
               viewport={VIEWPORT}
-              className="font-[family-name:var(--font-manrope)] text-[clamp(1.65rem,3vw,40px)] font-semibold leading-tight tracking-[-1px] text-black"
+              className="font-[family-name:var(--font-manrope)] text-[28px] font-semibold leading-tight tracking-[-1px] text-black sm:text-[clamp(1.65rem,3vw,40px)]"
             >
-              Two generations. One promise.
+              <span className="block sm:inline">Two generations.</span>{" "}
+              <span className="block sm:inline">One promise.</span>
             </motion.h2>
 
             <motion.blockquote
@@ -279,7 +316,7 @@ export function OurHistoryPage() {
             >
               <motion.div
                 variants={aboutQuoteIcon}
-                className="relative mb-3 h-[26px] w-[29px] sm:absolute sm:mb-0 sm:left-0 sm:top-4"
+                className="relative mb-2 h-[18px] w-5 sm:absolute sm:mb-0 sm:left-0 sm:top-4 sm:h-[26px] sm:w-[29px]"
                 aria-hidden
               >
                 <Image
@@ -287,17 +324,17 @@ export function OurHistoryPage() {
                   alt="Opening quotation mark"
                   fill
                   className="object-contain"
-                  sizes="36px"
+                  sizes="(max-width: 640px) 20px, 36px"
                 />
               </motion.div>
-              <div className="relative w-full bg-[#fff3e4] p-4 sm:min-h-[8.5rem] sm:p-5 sm:pl-4">
-                <p className="w-full text-left font-manrope text-lg font-normal leading-[1.5] text-black sm:text-xl sm:leading-[1.5]">
+              <div className="relative w-full bg-[#fff3e4] p-3 sm:min-h-[8.5rem] sm:p-5 sm:pl-4">
+                <p className="w-full text-left font-manrope text-sm font-normal leading-[1.5] text-black sm:text-xl sm:leading-[1.5]">
                   We didn&apos;t just inherit a business - we inherited a
                   responsibility to build better.
                 </p>
                 <motion.div
                   variants={aboutQuoteIcon}
-                  className="absolute -bottom-9 right-1 h-[26px] w-[29px] rotate-180 sm:bottom-0 sm:right-0 sm:translate-x-[140%]"
+                  className="absolute -bottom-6 right-1 h-[18px] w-5 rotate-180 sm:bottom-0 sm:right-0 sm:h-[26px] sm:w-[29px] sm:translate-x-[140%]"
                   aria-hidden
                 >
                   <Image
@@ -305,7 +342,7 @@ export function OurHistoryPage() {
                     alt="Opening quotation mark"
                     fill
                     className="object-contain"
-                    sizes="36px"
+                    sizes="(max-width: 640px) 20px, 36px"
                   />
                 </motion.div>
               </div>
@@ -318,7 +355,7 @@ export function OurHistoryPage() {
               viewport={VIEWPORT}
               className="mt-4 pb-2 sm:mt-0 sm:pb-4 lg:pb-0"
             >
-              <p className="max-w-[62ch] font-[family-name:var(--font-manrope)] text-base leading-[1.65] text-black sm:text-[clamp(1rem,1.15vw,1.125rem)] sm:leading-[1.65]">
+              <p className="max-w-[62ch] font-[family-name:var(--font-manrope)] text-sm leading-[1.65] text-black sm:text-[clamp(1rem,1.15vw,1.125rem)] sm:leading-[1.65]">
                 Mekark exists because two generations refused to stop building.
                 My father started with nothing but a workshop and a belief that
                 quality work speaks for itself. I grew up watching that belief
@@ -336,7 +373,7 @@ export function OurHistoryPage() {
       </section>
 
       {/* Journey stats */}
-      <section className="relative overflow-hidden bg-white">
+      <section className="relative bg-white">
         <div className="pointer-events-none absolute inset-x-0 top-6 bottom-0 sm:top-[39px]">
           <div className="relative mx-auto h-full max-w-[1911px]">
             <div className="absolute inset-x-0 bottom-0 h-[min(32vw,130px)] sm:h-[min(52vw,619px)]">
@@ -360,7 +397,7 @@ export function OurHistoryPage() {
           </div>
         </div>
 
-        <div className="relative z-10 mx-auto max-w-[1230px] px-5 pt-8 pb-[min(36vw,150px)] sm:px-8 sm:pt-[38px] sm:pb-[min(42vw,340px)] lg:px-10 lg:pb-[280px]">
+        <div className="relative z-10 mx-auto max-w-[1230px] px-3 pt-8 pb-[min(36vw,150px)] sm:px-8 sm:pt-[38px] sm:pb-[min(42vw,340px)] lg:px-10 lg:pb-[280px]">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -371,13 +408,13 @@ export function OurHistoryPage() {
             <div className="flex flex-col items-center gap-5 text-center sm:gap-[29px]">
               <motion.h2
                 variants={fadeUp}
-                className="max-w-[922px] font-[family-name:var(--font-manrope)] text-[clamp(1.85rem,4vw,49px)] font-normal leading-[1.22] tracking-[-1.5px] text-black"
+                className="max-w-[922px] font-[family-name:var(--font-manrope)] text-[28px] font-normal leading-9 tracking-[-1.5px] text-black max-sm:whitespace-nowrap sm:text-[clamp(1.85rem,4vw,49px)] sm:leading-[1.22]"
               >
                 Our journey through the years
               </motion.h2>
               <motion.p
                 variants={fadeUp}
-                className="max-w-[800px] font-[family-name:var(--font-manrope)] text-base font-medium leading-[1.78] text-[#515151] opacity-80 sm:text-[16.3px]"
+                className="max-w-[800px] font-[family-name:var(--font-manrope)] text-sm font-medium leading-[1.78] text-[#515151] opacity-80 sm:text-[16.3px]"
               >
                 From a small PEB beginning to a full-scale construction partner,
                 <br className="hidden sm:inline" /> Mekark has grown through
@@ -389,54 +426,94 @@ export function OurHistoryPage() {
             <motion.div
               ref={statsRef}
               variants={fadeUp}
-              className="relative w-full rounded-[20px] bg-[#e50818] p-5 sm:rounded-[30px] sm:p-8 lg:p-10"
+              className="relative w-full overflow-visible rounded-[10px] bg-[#e50818] px-2 py-5 sm:overflow-hidden sm:rounded-[30px] sm:p-8 lg:p-10"
             >
-              <div className="absolute inset-x-5 top-1/2 hidden h-px -translate-y-1/2 bg-white/25 sm:inset-x-8 lg:inset-x-10 lg:block" />
+              {/* Mobile — Figma 7634:4218: 3×2 grid with dividers */}
+              <div className="relative overflow-visible sm:hidden">
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-white/25"
+                />
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-y-0 left-[31%] w-px -translate-x-1/2 bg-white/25"
+                />
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-y-0 left-[64%] w-px -translate-x-1/2 bg-white/25"
+                />
 
-              <div className="max-[519px]:flex max-[519px]:flex-col min-[520px]:grid min-[520px]:gap-8 min-[520px]:grid-cols-2 lg:flex lg:items-stretch lg:gap-[41px]">
-                {STAT_COLUMNS.map((column, columnIndex) => (
-                  <div
-                    key={columnIndex}
-                    className={`max-[519px]:contents min-[520px]:flex min-[520px]:flex-col min-[520px]:gap-8 sm:min-[520px]:gap-10 lg:flex-1 lg:gap-[50px] ${
-                      columnIndex < STAT_COLUMNS.length - 1
-                        ? "lg:border-r lg:border-white/25 lg:border-b-0 lg:pb-0 lg:pr-[41px]"
-                        : ""
-                    } ${
-                      columnIndex === 2
-                        ? "min-[520px]:col-span-2 min-[520px]:mx-auto min-[520px]:w-full min-[520px]:max-w-[520px] lg:col-span-1 lg:mx-0 lg:max-w-none"
-                        : ""
-                    }`}
-                  >
-                    {column.map((stat, statIndex) => {
-                      const flatIndex =
-                        STAT_COLUMNS.slice(0, columnIndex).reduce(
-                          (total, col) => total + col.length,
-                          0,
-                        ) + statIndex;
-                      const totalStats = STAT_COLUMNS.reduce(
-                        (total, col) => total + col.length,
-                        0,
-                      );
+                <div className="grid grid-cols-[0.95fr_0.95fr_1.15fr] gap-x-0">
+                  {STAT_COLUMNS.map((column, columnIndex) => (
+                    <div
+                      key={columnIndex}
+                      className={`flex min-w-0 flex-col gap-[30px] overflow-visible py-1 ${
+                        columnIndex === 0
+                          ? "pr-2"
+                          : columnIndex === 1
+                            ? "px-3"
+                            : "pl-3 pr-2"
+                      }`}
+                    >
+                      {column.map((stat, statIndex) => {
+                        const flatIndex =
+                          STAT_COLUMNS.slice(0, columnIndex).reduce(
+                            (total, col) => total + col.length,
+                            0,
+                          ) + statIndex;
 
-                      return (
-                        <div
-                          key={stat.label}
-                          className={
-                            flatIndex < totalStats - 1
-                              ? "max-[519px]:border-b max-[519px]:border-white/25 max-[519px]:py-8"
-                              : "max-[519px]:py-8"
-                          }
-                        >
+                        return (
                           <JourneyStat
+                            key={stat.label}
+                            stat={stat}
+                            start={statsInView}
+                            delay={0.2 + flatIndex * 0.12}
+                            compact
+                          />
+                        );
+                      })}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Tablet / desktop */}
+              <div className="hidden sm:block">
+                <div className="absolute inset-x-8 top-1/2 hidden h-px -translate-y-1/2 bg-white/25 lg:inset-x-10 lg:block" />
+
+                <div className="grid min-[520px]:grid-cols-2 min-[520px]:gap-8 sm:min-[520px]:gap-10 lg:flex lg:items-stretch lg:gap-[41px]">
+                  {STAT_COLUMNS.map((column, columnIndex) => (
+                    <div
+                      key={columnIndex}
+                      className={`flex flex-col gap-8 sm:gap-10 lg:flex-1 lg:gap-[50px] ${
+                        columnIndex < STAT_COLUMNS.length - 1
+                          ? "lg:border-r lg:border-white/25 lg:border-b-0 lg:pb-0 lg:pr-[41px]"
+                          : ""
+                      } ${
+                        columnIndex === 2
+                          ? "min-[520px]:col-span-2 min-[520px]:mx-auto min-[520px]:w-full min-[520px]:max-w-[520px] lg:col-span-1 lg:mx-0 lg:max-w-none"
+                          : ""
+                      }`}
+                    >
+                      {column.map((stat, statIndex) => {
+                        const flatIndex =
+                          STAT_COLUMNS.slice(0, columnIndex).reduce(
+                            (total, col) => total + col.length,
+                            0,
+                          ) + statIndex;
+
+                        return (
+                          <JourneyStat
+                            key={stat.label}
                             stat={stat}
                             start={statsInView}
                             delay={0.2 + flatIndex * 0.12}
                           />
-                        </div>
-                      );
-                    })}
-                  </div>
-                ))}
+                        );
+                      })}
+                    </div>
+                  ))}
+                </div>
               </div>
             </motion.div>
           </motion.div>

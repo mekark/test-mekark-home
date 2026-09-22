@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "@/lib/motion-variants";
 
 const CARD_CLASS =
-  "rounded-[12px] bg-[#272727] px-6 py-5 font-[family-name:var(--font-manrope)] text-[16px] font-normal leading-[25.6px] text-white/92 [box-shadow:0_1px_0_0_#ed1c24,0_8px_24px_rgba(237,28,36,0.16)]";
+  "rounded-[12px] bg-[#272727] px-6 py-5 font-[family-name:var(--font-manrope)] text-sm font-normal leading-[1.6] text-white/92 sm:text-[16px] sm:leading-[25.6px] [box-shadow:0_1px_0_0_#ed1c24,0_8px_24px_rgba(237,28,36,0.16)]";
 
 type Callout = {
   name: string;
@@ -81,7 +81,7 @@ export function InstitutionMapSection() {
         >
           <motion.h2
             variants={fadeUp}
-            className="mb-5 font-[family-name:var(--font-manrope)] text-[34px] font-bold capitalize leading-none tracking-normal text-white lg:mt-[-3.958vw]"
+            className="mb-5 font-[family-name:var(--font-manrope)] text-[28px] font-bold capitalize leading-none tracking-normal text-white sm:text-[34px] lg:mt-[-3.958vw]"
           >
             Built For Crowds.
             <span className="mt-2 block text-mekark-red max-[430px]:leading-[1.35]">Engineered For Safety</span>

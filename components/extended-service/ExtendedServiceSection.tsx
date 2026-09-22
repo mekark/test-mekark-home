@@ -327,60 +327,45 @@ function isServiceId(value: string): value is ServiceId {
   return SERVICES.some((service) => service.id === value);
 }
 
-function ServiceSwitcher({
+function MobilePillSwitcher({
   activeId,
   onSelect,
-  compact = false,
 }: {
   activeId: ServiceId;
   onSelect: (id: ServiceId) => void;
-  compact?: boolean;
 }) {
-  if (compact) {
-    return (
-      <div className="flex w-full rounded-[18px] bg-[#d91a20] px-1 py-2.5">
-        {SERVICES.map((service) => {
-          const active = service.id === activeId;
+  return (
+    <div className="flex w-full flex-wrap gap-2 px-5 py-4">
+      {SERVICES.map((service) => {
+        const active = service.id === activeId;
 
-          return (
-            <button
-              key={service.id}
-              type="button"
-              onClick={() => onSelect(service.id)}
-              aria-pressed={active}
-              className="group relative flex min-w-0 flex-1 flex-col items-center gap-1 px-1 py-2"
-            >
-              {active ? (
-                <span
-                  aria-hidden
-                  className="absolute bottom-1 left-1/2 h-[2px] w-8 -translate-x-1/2 bg-white"
-                />
-              ) : null}
-              <span
-                className={`font-[family-name:var(--font-manrope)] text-[11px] leading-none ${
-                  active
-                    ? "font-medium text-white"
-                    : "font-normal text-[#ee7c7c] group-hover:text-white"
-                }`}
-              >
-                {service.index}
-              </span>
-              <span
-                className={`max-w-full truncate font-[family-name:var(--font-manrope)] leading-none ${
-                  active
-                    ? "text-[13px] font-medium text-white sm:text-[16px]"
-                    : "text-[12px] font-normal text-[#ee7c7c] group-hover:text-white sm:text-[15px]"
-                }`}
-              >
-                {service.name}
-              </span>
-            </button>
-          );
-        })}
-      </div>
-    );
-  }
+        return (
+          <button
+            key={service.id}
+            type="button"
+            onClick={() => onSelect(service.id)}
+            aria-pressed={active}
+            className={`rounded-full px-[14px] py-2 font-[family-name:var(--font-manrope)] text-sm leading-5 ${
+              active
+                ? "bg-[#d91a20] font-bold text-white"
+                : "border border-[#e3e4e7] bg-white font-medium text-[#53555b]"
+            }`}
+          >
+            {service.name}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
 
+function ServiceSwitcher({
+  activeId,
+  onSelect,
+}: {
+  activeId: ServiceId;
+  onSelect: (id: ServiceId) => void;
+}) {
   return (
     <div className="flex w-full flex-col rounded-[24px] bg-[#d91a20] py-10 sm:py-[60px] lg:w-[376px] lg:shrink-0">
       <div className="flex w-full flex-col gap-8 sm:gap-[40px]">
@@ -432,11 +417,13 @@ function FaqItem({
   index,
   open,
   onToggle,
+  mobile = false,
 }: {
   item: FaqEntry;
   index: number;
   open: boolean;
   onToggle: () => void;
+  mobile?: boolean;
 }) {
   const number = String(index + 1).padStart(2, "0");
   const panelId = `extended-faq-panel-${index}`;
@@ -450,17 +437,39 @@ function FaqItem({
         aria-expanded={open}
         aria-controls={panelId}
         onClick={onToggle}
-        className="flex min-h-[58px] w-full items-center justify-between gap-4 px-[26px] py-[18px] text-left"
+        className={`flex min-h-[58px] w-full items-center justify-between gap-3 text-left ${
+          mobile ? "px-[15px] py-px" : "gap-4 px-[26px] py-[18px]"
+        }`}
       >
-        <span className="flex min-w-0 items-center gap-[17px]">
-          <span className="w-[22px] shrink-0 font-[family-name:var(--font-manrope)] text-[16px] font-bold leading-[17px] tracking-[-0.47px] text-[#e60f1a]">
+        <span
+          className={`flex min-w-0 items-center ${
+            mobile ? "gap-[14px]" : "gap-[17px]"
+          }`}
+        >
+          <span
+            className={`shrink-0 font-montserrat font-bold tracking-[-0.4675px] text-[#e60f1a] ${
+              mobile
+                ? "text-sm leading-[16.624px]"
+                : "w-[22px] font-[family-name:var(--font-manrope)] text-[16px] leading-[17px] tracking-[-0.47px]"
+            }`}
+          >
             {number}
           </span>
-          <span className="font-[family-name:var(--font-manrope)] text-[16px] font-medium leading-[27px] text-[#1e1e1e] sm:text-[18px]">
+          <span
+            className={`font-[family-name:var(--font-manrope)] font-medium text-[#1e1e1e] ${
+              mobile
+                ? "text-sm leading-normal tracking-[0.056px]"
+                : "text-[16px] leading-[27px] sm:text-[18px]"
+            }`}
+          >
             {item.question}
           </span>
         </span>
-        <span className="relative size-[17px] shrink-0 overflow-clip">
+        <span
+          className={`relative shrink-0 overflow-clip ${
+            mobile ? "size-[16.624px]" : "size-[17px]"
+          }`}
+        >
           <img
             src="/images/extended-service/faq-chevron.svg"
             alt="Expand section"
@@ -485,7 +494,13 @@ function FaqItem({
             transition={{ duration: 0.28, ease: EASE }}
             className="overflow-hidden"
           >
-            <p className="px-[26px] pb-6 pl-[65px] font-[family-name:var(--font-manrope)] text-[15px] leading-[26px] text-[#555]">
+            <p
+              className={`font-[family-name:var(--font-manrope)] text-[#555] ${
+                mobile
+                  ? "px-[15px] pb-5 pl-[43px] text-sm leading-[22px]"
+                  : "px-[26px] pb-6 pl-[65px] text-[15px] leading-[26px]"
+              }`}
+            >
               {item.answer}
             </p>
           </motion.div>
@@ -498,7 +513,7 @@ function FaqItem({
 export function ExtendedServiceSection() {
   const [activeId, setActiveId] = useState<ServiceId>("eot");
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const contentRef = useRef<HTMLDivElement>(null);
+  const mobileContentRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const isFirstRender = useRef(true);
 
@@ -522,7 +537,10 @@ export function ExtendedServiceSection() {
     scrollContainerRef.current?.scrollTo({ top: 0 });
 
     if (window.matchMedia("(max-width: 1023px)").matches) {
-      contentRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      mobileContentRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
   }, [activeId]);
 
@@ -538,9 +556,120 @@ export function ExtendedServiceSection() {
 
   return (
     <div className="bg-white font-[family-name:var(--font-manrope)] text-[#17171b]">
-      {/* Fixed 1920 desktop sizes — DesignScale shrinks for iMac/laptop; no xl shrinks. */}
-      <section className="relative flex flex-col bg-[#f6f6f6] pt-[108px] sm:pt-[128px] lg:h-[980px] lg:overflow-hidden">
-        <div className="relative z-10 mx-auto w-full max-w-[1740px] shrink-0 px-5 sm:px-8 lg:px-[80px]">
+      {/* Mobile — Figma extended-service-mobile (7629:1525) */}
+      <section className="flex flex-col bg-[#f6f6f6] pt-[60px] lg:hidden">
+        <header className="flex flex-col gap-3 border-b border-[#e3e4e7] bg-white px-5 pb-6">
+          <h1 className="text-[28px] font-bold leading-9 tracking-[-0.5px] text-[#111]">
+            Extended Service
+          </h1>
+          <p className="text-sm font-normal leading-[22px] text-[#555]">
+            {PAGE_INTRO}
+          </p>
+        </header>
+
+        <div className="sticky top-[60px] z-20 bg-[#f6f6f6]">
+          <MobilePillSwitcher activeId={activeId} onSelect={selectService} />
+        </div>
+
+        <div ref={mobileContentRef} className="scroll-mt-[168px]">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={active.id}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.28, ease: EASE }}
+              className="flex flex-col gap-6 px-5 pb-8"
+            >
+              <div className="relative h-[227px] w-full overflow-hidden rounded-tr-[15px]">
+                <Image
+                  src={active.image}
+                  alt={active.imageAlt}
+                  fill
+                  className="object-cover object-[70%_center]"
+                  sizes="100vw"
+                />
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-y-0 left-0 w-[60%]"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(269.87deg, rgba(246, 246, 246, 0) 0.12%, rgb(246, 246, 246) 84.67%)",
+                  }}
+                />
+              </div>
+
+              <div className="flex flex-col gap-3 text-left">
+                <p className="text-xs font-bold uppercase leading-normal tracking-[1px] text-[#d91a20]">
+                  {active.eyebrow}
+                </p>
+                <h2 className="text-[28px] font-bold leading-9 tracking-[-0.5px] text-[#111]">
+                  {active.title}
+                </h2>
+                {active.paragraphs.map((paragraph) => (
+                  <p
+                    key={paragraph}
+                    className="text-sm font-normal leading-[22px] text-[#555]"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+
+              <Link
+                href="/#enquiry"
+                className="inline-flex h-11 w-full items-center justify-center gap-2.5 rounded-full border-2 border-[#e50818] bg-white px-5 text-sm font-bold text-[#e50818] transition-colors hover:bg-[#fff5f5]"
+              >
+                Enquire Now
+                <span className="relative size-[18px] shrink-0 overflow-clip">
+                  <img
+                    src="/images/extended-service/cta-arrow.svg"
+                    alt="Arrow icon"
+                    width={18}
+                    height={18}
+                    className="size-full object-contain"
+                  />
+                </span>
+              </Link>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        <section className="flex flex-col gap-5 border-t border-[#e3e4e7] bg-white px-5 pb-12 pt-8">
+          <h2 className="text-[22px] font-bold leading-7 text-[#111]">
+            Frequently Asked Questions
+          </h2>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={`${active.id}-faq-mobile`}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.28, ease: EASE }}
+              className="flex w-full flex-col gap-3"
+            >
+              {active.faqs.map((item, index) => (
+                <FaqItem
+                  key={item.question}
+                  item={item}
+                  index={index}
+                  mobile
+                  open={openFaq === index}
+                  onToggle={() =>
+                    setOpenFaq((current) =>
+                      current === index ? null : index,
+                    )
+                  }
+                />
+              ))}
+            </motion.div>
+          </AnimatePresence>
+        </section>
+      </section>
+
+      {/* Desktop — fixed 1920 canvas; DesignScale shrinks for iMac/laptop. */}
+      <section className="relative hidden flex-col bg-[#f6f6f6] pt-[128px] lg:flex lg:h-[980px] lg:overflow-hidden">
+        <div className="relative z-10 mx-auto w-full max-w-[1740px] shrink-0 px-[80px]">
           <motion.header
             variants={staggerContainer}
             initial="hidden"
@@ -549,32 +678,22 @@ export function ExtendedServiceSection() {
           >
             <motion.h1
               variants={fadeUp}
-              className="text-[clamp(2rem,4vw,50px)] font-medium tracking-[-0.95px] text-[#17171b] lg:text-[50px]"
+              className="text-[50px] font-medium tracking-[-0.95px] text-[#17171b]"
             >
               Extended Service
             </motion.h1>
             <motion.p
               variants={fadeUp}
-              className="max-w-[1757px] text-[15px] font-light leading-normal text-[#17171b] sm:text-[18px] lg:text-[22px]"
+              className="max-w-[1757px] text-[22px] font-light leading-normal text-[#17171b]"
             >
               {PAGE_INTRO}
             </motion.p>
           </motion.header>
-
-          <div className="sticky top-[60px] z-20 -mx-5 mt-6 bg-[#f6f6f6] px-5 py-2 sm:-mx-8 sm:px-8 lg:hidden">
-            <ServiceSwitcher
-              compact
-              activeId={activeId}
-              onSelect={selectService}
-            />
-          </div>
         </div>
 
-        {/* Full-width content row so the side image can pin to the canvas right edge
-            without overlapping the page intro above. */}
-        <div className="relative mt-6 flex min-h-0 flex-1 lg:mt-[40px]">
+        <div className="relative mt-[40px] flex min-h-0 flex-1">
           <div
-            className={`pointer-events-none absolute inset-y-0 right-0 z-0 hidden overflow-hidden lg:block ${
+            className={`pointer-events-none absolute inset-y-0 right-0 z-0 overflow-hidden ${
               hasBakedFade ? "w-[min(52vw,900px)]" : "w-[860px]"
             }`}
           >
@@ -614,11 +733,9 @@ export function ExtendedServiceSection() {
             </AnimatePresence>
           </div>
 
-          <div className="relative z-10 mx-auto flex min-h-0 w-full max-w-[1740px] flex-1 flex-col px-5 pb-10 sm:px-8 lg:flex-row lg:items-stretch lg:gap-[70px] lg:px-[80px] lg:pb-8">
-            <div className="flex w-full shrink-0 flex-col gap-5 lg:w-[376px]">
-              <div className="hidden lg:block">
-                <ServiceSwitcher activeId={activeId} onSelect={selectService} />
-              </div>
+          <div className="relative z-10 mx-auto flex min-h-0 w-full max-w-[1740px] flex-1 flex-row items-stretch gap-[70px] px-[80px] pb-8">
+            <div className="flex w-[376px] shrink-0 flex-col gap-5">
+              <ServiceSwitcher activeId={activeId} onSelect={selectService} />
 
               <Link
                 href="/#enquiry"
@@ -637,13 +754,10 @@ export function ExtendedServiceSection() {
               </Link>
             </div>
 
-            <div
-              ref={contentRef}
-              className="relative z-10 min-h-0 min-w-0 flex-1 scroll-mt-[168px] sm:scroll-mt-[188px] lg:scroll-mt-0"
-            >
+            <div className="relative z-10 min-h-0 min-w-0 flex-1">
               <div
                 ref={scrollContainerRef}
-                className="relative z-10 h-auto overflow-visible lg:h-full lg:overflow-y-auto lg:overscroll-contain [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+                className="relative z-10 h-full overflow-y-auto overscroll-contain [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
               >
                 <div className="flex min-h-full flex-col justify-between">
                   <AnimatePresence mode="wait">
@@ -653,39 +767,21 @@ export function ExtendedServiceSection() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -12 }}
                       transition={{ duration: 0.28, ease: EASE }}
-                      className="mx-auto flex w-full max-w-[625px] flex-col items-center gap-4 text-center sm:gap-5 lg:mx-0 lg:items-start lg:text-left"
+                      className="flex w-full max-w-[625px] flex-col items-start gap-5 text-left"
                     >
-                      <p className="w-full text-[12px] font-bold uppercase leading-normal tracking-[0.04em] text-[#e50818] sm:text-[14px] sm:tracking-normal">
+                      <p className="w-full text-[14px] font-bold uppercase leading-normal tracking-normal text-[#e50818]">
                         {active.eyebrow}
                       </p>
-                      <h2 className="w-full whitespace-nowrap text-[clamp(1.15rem,5.2vw,40px)] font-medium leading-normal text-[#17171b] lg:text-[40px]">
+                      <h2 className="w-full whitespace-nowrap text-[40px] font-medium leading-normal text-[#17171b]">
                         {active.title}
                       </h2>
-                      <p className="w-full text-[16px] font-normal leading-normal whitespace-pre-wrap text-[#555] sm:text-[18px] lg:text-[22px]">
+                      <p className="w-full whitespace-pre-wrap text-[22px] font-normal leading-normal text-[#555]">
                         {active.paragraphs.join("\n\n")}
                       </p>
                     </motion.div>
                   </AnimatePresence>
 
-                  <div className="relative mt-8 h-[260px] w-full sm:h-[380px] lg:hidden">
-                    <Image
-                      src={active.image}
-                      alt={active.imageAlt}
-                      fill
-                      className="object-cover object-[70%_center]"
-                      sizes="100vw"
-                    />
-                    <div
-                      aria-hidden
-                      className="pointer-events-none absolute inset-0"
-                      style={{
-                        backgroundImage:
-                          "linear-gradient(90deg, #f6f6f6 0%, rgba(246,246,246,0.96) 16%, rgba(246,246,246,0.45) 38%, rgba(246,246,246,0) 58%), linear-gradient(180deg, rgba(246,246,246,0) 62%, rgba(246,246,246,0.7) 82%, #f6f6f6 100%)",
-                      }}
-                    />
-                  </div>
-
-                  <h2 className="mt-16 text-[clamp(1.75rem,3vw,40px)] font-bold tracking-[-1.33px] text-[#111] lg:mt-auto lg:pt-16 lg:text-[40px] lg:leading-[65px]">
+                  <h2 className="mt-auto pt-16 text-[40px] font-bold leading-[65px] tracking-[-1.33px] text-[#111]">
                     Frequently Asked Questions
                   </h2>
                 </div>

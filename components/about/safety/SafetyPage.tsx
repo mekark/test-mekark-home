@@ -82,14 +82,14 @@ function FiveSPointCard({ point }: { point: FiveSPoint }) {
       <p className="font-[family-name:var(--font-manrope)] text-[clamp(1.5rem,2.4vw,3rem)] font-bold leading-none tracking-[0.24px] text-[#e50818]">
         {point.number}
       </p>
-      <h3 className="mt-1.5 font-[family-name:var(--font-manrope)] text-[clamp(1rem,1.45vw,2rem)] font-bold leading-tight tracking-[-0.26px] text-[#141719] sm:mt-2">
+      <h3 className="mt-1.5 font-[family-name:var(--font-manrope)] text-lg font-bold leading-tight tracking-[-0.26px] text-[#141719] sm:mt-2 sm:text-[clamp(1rem,1.45vw,2rem)]">
         {point.title}
       </h3>
       <div
         aria-hidden
         className="mt-2 h-[3px] w-7 rounded-[2px] bg-[#e50818] sm:mt-2.5 lg:w-8 2xl:mt-4 2xl:h-[3.5px] 2xl:w-[34px]"
       />
-      <p className="mt-2 max-w-[15rem] font-[family-name:var(--font-manrope)] text-[clamp(0.75rem,1.05vw,1.25rem)] font-medium leading-[1.4] tracking-[0.04px] text-[#5f6161] sm:mt-2.5 sm:leading-[1.45] 2xl:mt-4 2xl:max-w-[232px]">
+      <p className="mt-2 max-w-[15rem] font-[family-name:var(--font-manrope)] text-sm font-medium leading-[1.4] tracking-[0.04px] text-[#5f6161] sm:mt-2.5 sm:text-[clamp(0.75rem,1.05vw,1.25rem)] sm:leading-[1.45] 2xl:mt-4 2xl:max-w-[232px]">
         {point.description}
       </p>
     </article>
@@ -506,13 +506,13 @@ function SafetyFiveSPointsSection() {
           />
           <motion.h2
             variants={fadeUp}
-            className="font-[family-name:var(--font-manrope)] text-[1.65rem] font-bold leading-[1.12] tracking-[-0.5px] text-black sm:text-[clamp(1.35rem,3.2vw,60px)] sm:leading-[1.1] sm:tracking-[-1px]"
+            className="font-[family-name:var(--font-manrope)] text-[28px] font-bold leading-[1.12] tracking-[-0.5px] text-black sm:text-[clamp(1.35rem,3.2vw,60px)] sm:leading-[1.1] sm:tracking-[-1px]"
           >
             5S Safety Points
           </motion.h2>
           <motion.p
             variants={fadeUp}
-            className="max-w-[677px] font-[family-name:var(--font-manrope)] text-[0.92rem] font-medium leading-[1.45] text-[#515151] sm:text-[clamp(0.95rem,1.25vw,22px)] sm:leading-[1.36]"
+            className="max-w-[677px] font-[family-name:var(--font-manrope)] text-sm font-medium leading-[1.45] text-[#515151] sm:text-[clamp(0.95rem,1.25vw,22px)] sm:leading-[1.36]"
           >
             Applying 5S every day helps us maintain safe, efficient, and
             organized project environments.
@@ -580,10 +580,10 @@ function SafetyAssociatePartnersSection() {
               <p className="font-[family-name:var(--font-manrope)] text-[11px] font-semibold uppercase tracking-[0.24em] text-[#7a828c]">
                 In collaboration with
               </p>
-              <h2 className="font-[family-name:var(--font-manrope)] text-[1.65rem] font-bold leading-[1.12] tracking-[-0.5px] text-black sm:text-[clamp(1.35rem,3.2vw,60px)] sm:leading-[1.1] sm:tracking-[-1px]">
+              <h2 className="font-[family-name:var(--font-manrope)] text-[28px] font-bold leading-[1.12] tracking-[-0.5px] text-black sm:text-[clamp(1.35rem,3.2vw,60px)] sm:leading-[1.1] sm:tracking-[-1px]">
                 Associate Partners
               </h2>
-              <p className="font-[family-name:var(--font-manrope)] text-[0.92rem] font-medium leading-[1.45] text-[#515151] sm:text-[clamp(0.95rem,1.25vw,22px)] sm:leading-[1.36]">
+              <p className="font-[family-name:var(--font-manrope)] text-sm font-medium leading-[1.45] text-[#515151] sm:text-[clamp(0.95rem,1.25vw,22px)] sm:leading-[1.36]">
                 {ASSOCIATE_PARTNERS.length} institutional chambers and industry
                 bodies across India.
               </p>
@@ -607,10 +607,10 @@ function SafetyAssociatePartnersSection() {
               <p className="font-[family-name:var(--font-manrope)] text-[11px] font-semibold uppercase tracking-[0.24em] text-[#7a828c] sm:text-[12.5px] sm:tracking-[0.28em]">
                 In collaboration with
               </p>
-              <h2 className="font-[family-name:var(--font-manrope)] text-[1.65rem] font-bold leading-[1.12] tracking-[-0.5px] text-black sm:text-[clamp(1.35rem,3.2vw,60px)] sm:leading-[1.1] sm:tracking-[-1px]">
+              <h2 className="font-[family-name:var(--font-manrope)] text-[28px] font-bold leading-[1.12] tracking-[-0.5px] text-black sm:text-[clamp(1.35rem,3.2vw,60px)] sm:leading-[1.1] sm:tracking-[-1px]">
                 Associate Partners
               </h2>
-              <p className="font-[family-name:var(--font-manrope)] text-[0.92rem] font-medium leading-[1.45] text-[#515151] sm:text-[clamp(0.95rem,1.25vw,22px)] sm:leading-[1.36]">
+              <p className="font-[family-name:var(--font-manrope)] text-sm font-medium leading-[1.45] text-[#515151] sm:text-[clamp(0.95rem,1.25vw,22px)] sm:leading-[1.36]">
                 Institutional chambers and industry bodies across India.
               </p>
             </motion.div>
@@ -914,7 +914,7 @@ function SafetyCertificationsSection() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: reduceMotion ? 0.15 : 0.3 }}
-                className="mx-auto max-w-[20ch] text-balance font-[family-name:var(--font-manrope)] text-[clamp(1.35rem,6.2vw,1.65rem)] font-bold leading-[1.15] tracking-[-0.5px] text-black sm:mx-0 sm:max-w-none sm:w-max sm:text-pretty sm:text-[clamp(1.35rem,3.2vw,60px)] sm:leading-[1.1] sm:tracking-[-1px] sm:whitespace-nowrap"
+                className="mx-auto max-w-[20ch] text-balance font-[family-name:var(--font-manrope)] text-[28px] font-bold leading-[1.15] tracking-[-0.5px] text-black sm:mx-0 sm:max-w-none sm:w-max sm:text-pretty sm:text-[clamp(1.35rem,3.2vw,60px)] sm:leading-[1.1] sm:tracking-[-1px] sm:whitespace-nowrap"
               >
                 {activeHeading}
               </motion.h1>
@@ -926,7 +926,7 @@ function SafetyCertificationsSection() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: reduceMotion ? 0.15 : 0.3 }}
-                className="mx-auto mt-3 max-w-[677px] font-[family-name:var(--font-manrope)] text-[0.92rem] font-medium leading-[1.45] text-[#515151] sm:mx-0 sm:mt-4 sm:text-[clamp(0.95rem,1.25vw,22px)] sm:leading-[1.36] lg:mt-5"
+                className="mx-auto mt-3 max-w-[677px] font-[family-name:var(--font-manrope)] text-sm font-medium leading-[1.45] text-[#515151] sm:mx-0 sm:mt-4 sm:text-[clamp(0.95rem,1.25vw,22px)] sm:leading-[1.36] lg:mt-5"
               >
                 {activeDescription}
               </motion.p>

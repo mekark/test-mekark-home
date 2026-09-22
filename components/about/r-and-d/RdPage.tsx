@@ -53,7 +53,7 @@ export function RdPage() {
           >
             <motion.h1
               variants={fadeUp}
-              className="text-[clamp(1.5rem,2.7vw,34px)] font-bold leading-none tracking-normal"
+              className="text-[28px] font-bold leading-none tracking-normal sm:text-[clamp(1.5rem,2.7vw,34px)]"
             >
               Innovating for Speed, Designing for Fit
             </motion.h1>
@@ -106,7 +106,7 @@ export function RdPage() {
             </motion.p>
             <motion.h2
               variants={fadeUp}
-              className="mt-3 text-[clamp(1.35rem,2.8vw,34px)] font-bold leading-none tracking-normal sm:mt-4"
+              className="mt-3 text-[28px] font-bold leading-none tracking-normal sm:mt-4 sm:text-[clamp(1.35rem,2.8vw,34px)]"
             >
               Our R&amp;D efforts run on two tracks.
             </motion.h2>
@@ -176,10 +176,10 @@ export function RdPage() {
                       }`}
                     />
                     <div className="flex min-w-0 flex-col gap-3 sm:gap-4">
-                      <h3 className="text-[clamp(1.2rem,2.1vw,28px)] font-semibold leading-none tracking-normal">
+                      <h3 className="text-lg font-semibold leading-none tracking-normal sm:text-[clamp(1.2rem,2.1vw,28px)]">
                         {track.title}
                       </h3>
-                      <p className="text-[clamp(1rem,1.5vw,22px)] font-normal leading-snug tracking-normal text-[#4a4a4a] sm:leading-[1.35]">
+                      <p className="text-sm font-normal leading-snug tracking-normal text-[#4a4a4a] sm:text-[clamp(1rem,1.5vw,22px)] sm:leading-[1.35]">
                         {track.description}
                       </p>
                     </div>
@@ -206,9 +206,14 @@ export function RdPage() {
             initial="hidden"
             whileInView="visible"
             viewport={VIEWPORT}
-            className="w-full max-w-none text-center text-[clamp(0.8rem,2.15vw,39px)] font-extrabold leading-none tracking-normal text-white max-[479px]:text-balance sm:whitespace-nowrap"
+            className="flex w-full max-w-none flex-col gap-2.5 text-center text-lg font-extrabold leading-none tracking-normal text-white sm:block sm:gap-0 sm:whitespace-nowrap sm:text-[clamp(0.8rem,2.15vw,39px)]"
           >
-            Together, these efforts help us build not just faster, but smarter.
+            <span className="block sm:inline">
+              Together, these efforts help us build
+            </span>{" "}
+            <span className="block sm:inline">
+              not just faster, but smarter.
+            </span>
           </motion.p>
         </div>
       </section>

@@ -172,7 +172,7 @@ export function TestimonialsPage() {
 
             <motion.h1
               variants={testHeadlineReveal}
-              className="mt-5 text-[clamp(2.15rem,5vw,4.5rem)] font-extrabold leading-[1.06] tracking-[-2.5px] text-[#0d0808]"
+              className="mt-5 text-[28px] font-extrabold leading-[1.06] tracking-[-2.5px] text-[#0d0808] sm:text-[clamp(2.15rem,5vw,4.5rem)]"
             >
               Strong builds.
               <br />
@@ -181,7 +181,7 @@ export function TestimonialsPage() {
 
             <motion.p
               variants={fadeUp}
-              className="mt-6 max-w-[680px] text-[15px] font-medium leading-[1.75] text-[#626060] sm:text-lg"
+              className="mt-6 max-w-[680px] text-sm font-medium leading-[1.75] text-[#626060] sm:text-lg"
             >
               Real experiences from the people who built with Mekark—from
               planning and coordination through successful delivery.

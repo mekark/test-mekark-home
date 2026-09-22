@@ -99,7 +99,8 @@ export default function DesignScale({
   return (
     <div
       className={`relative w-full ${
-        useScaling ? "overflow-x-hidden bg-white" : "bg-transparent"
+        /* clip (not hidden): hides x overflow without creating a nested scrollport */
+        useScaling ? "overflow-x-clip bg-white" : "bg-transparent"
       }`}
     >
       {useScaling ? (

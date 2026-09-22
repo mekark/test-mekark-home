@@ -30,7 +30,17 @@ export default function FooterCta() {
               </b>
             </div>
             <div className={styles.tellUsYourRequirementsSpaWrapper}>
-              <div className={styles.tellUsYour}>
+              <div className={`${styles.tellUsYour} ${styles.footerDesktop}`}>
+                <span className={styles.descLine}>
+                  Only a limited number of new textile construction projects are
+                  onboarded each quarter. Tell
+                </span>
+                <span className={styles.descLine}>
+                  us your requirements and our specialist will prepare a project
+                  estimate.
+                </span>
+              </div>
+              <div className={`${styles.tellUsYour} ${styles.footerMobile}`}>
                 Only a limited number of new textile construction projects are
                 onboarded each quarter. Tell us your requirements and our
                 specialist will prepare a project estimate.

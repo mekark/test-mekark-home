@@ -13,10 +13,11 @@ const fadeUp = {
 const MOBILE_BODY_TEXT_CLASS =
   "relative inline-block w-full text-left font-manrope text-sm font-normal leading-normal text-black";
 
-const mobileParagraphs = [
-  "Mekark is among the premier civil construction companies and RCC contractors based out of Chennai, offering you resilient, code-compliant structures for all your industrial, commercial and institutional projects across Tamil Nadu and India.",
-  "As a turnkey civil construction contractor, we manage the full project lifecycle: site assessment, structural design, RCC construction, MEP integration, and handover, giving you one accountable partner instead of multiple vendors. All our projects are designed by our in-house architects and structural designers, who use BIM-based structural analysis and formwork with an ISO-certified, safety-conscious approach.",
-  "For your requirements of a civil construction company for commercial RCC construction, factory civil contractor or structural civil contractor for warehouses or shopping complexes, Mekark integrates engineering skills with project management skills for robust, safe and cost-efficient construction works. At Mekark, we also cater to site infrastructure works, roads, drainage works and utilities, making your land into a ready-to-use facility.",
+/** Same copy for mobile and desktop */
+const paragraphs = [
+  "Mekark is among the premier civil construction companies and RCC contractor in Chennai, offering resilient, code-compliant structures for industrial, commercial, and institutional projects across Tamil Nadu, Andhra Pradesh, Karnataka, Kerala, Telangana, and pan-India.",
+  "As a trusted RCC contractor in South India, we deliver structurally sound, IS-code compliant civil works, from foundations to complete building structures, for clients in Chennai, Coimbatore, Bangalore, Hyderabad, Vizag, and Kochi.",
+  "Whether you need a civil construction company in Tamil Nadu, an RCC contractor in Chennai, or reliable industrial civil works across South India, Mekark brings engineering rigor and on-ground execution experience to every project, ensuring durable, code-compliant structures built to last.",
 ] as const;
 
 export default function WhyChooseMekark() {
@@ -95,13 +96,13 @@ export default function WhyChooseMekark() {
               visible: { transition: { staggerChildren: 0.1 } },
             }}
           >
-            {mobileParagraphs.map((paragraph, index) => (
+            {paragraphs.map((paragraph, index) => (
               <motion.p
                 key={index}
                 variants={fadeUp}
                 transition={{ duration: 0.45, ease: "easeOut" }}
                 className={`${MOBILE_BODY_TEXT_CLASS} ${
-                  index < mobileParagraphs.length - 1 ? "mb-5 sm:mb-6" : ""
+                  index < paragraphs.length - 1 ? "mb-5 sm:mb-6" : ""
                 }`}
               >
                 {paragraph}
@@ -140,26 +141,9 @@ export default function WhyChooseMekark() {
             transition={{ duration: 0.55, ease: "easeOut" }}
             className={`absolute top-[172px] left-[2.67px] flex w-[699px] flex-col gap-[26px] [word-break:break-word] ${SERVICE_BODY_TEXT_CLASS_SCALED}`}
           >
-            <p className="w-[686px]">
-              Mekark is among the premier civil construction companies and RCC
-              contractor in Chennai, offering resilient, code-compliant
-              structures for industrial, commercial, and institutional projects
-              across Tamil Nadu, Andhra Pradesh, Karnataka, Kerala, Telangana,
-              and pan-India.
-            </p>
-            <p>
-              As a trusted RCC contractor in South India, we deliver structurally
-              sound, IS-code compliant civil works, from foundations to complete
-              building structures, for clients in Chennai, Coimbatore, Bangalore,
-              Hyderabad, Vizag, and Kochi.
-            </p>
-            <p>
-              Whether you need a civil construction company in Tamil Nadu, an RCC
-              contractor in Chennai, or reliable industrial civil works across
-              South India, Mekark brings engineering rigor and on-ground execution
-              experience to every project, ensuring durable, code-compliant
-              structures built to last.
-            </p>
+            <p className="w-[686px]">{paragraphs[0]}</p>
+            <p>{paragraphs[1]}</p>
+            <p>{paragraphs[2]}</p>
           </motion.div>
         </motion.div>
 

@@ -243,6 +243,8 @@ type TrustedSectorsSectionProps = {
   variant?: "home" | "services";
   /** When true, render desktop layout only (mobile handled elsewhere). */
   desktopOnly?: boolean;
+  /** Optional subtitle under the heading (e.g. civil services). */
+  description?: string;
 };
 
 function getMobileLogoCellClass(index: number, total: number) {
@@ -339,6 +341,7 @@ function HomeLogoCard({ logo }: { logo: HomeLogo }) {
 export function TrustedSectorsSection({
   variant = "home",
   desktopOnly = false,
+  description,
 }: TrustedSectorsSectionProps) {
   const isServices = variant === "services";
   const logos = isServices ? HOME_LOGOS.slice(0, 7) : HOME_LOGOS;
@@ -422,6 +425,15 @@ export function TrustedSectorsSection({
               <span className="block sm:inline">Sectors</span>
             </span>
           </motion.h2>
+
+          {description ? (
+            <motion.p
+              variants={fadeUp}
+              className="mt-4 max-w-none whitespace-nowrap text-center font-manrope text-[16px] font-medium leading-[24.06px] tracking-normal text-black lg:mt-5"
+            >
+              {description}
+            </motion.p>
+          ) : null}
 
           <motion.div
             variants={DESKTOP_LOGO_STAGGER}

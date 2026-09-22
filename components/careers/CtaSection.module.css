@@ -1,0 +1,30 @@
+/* CTA / form mobile only on real phone viewports.
+   Desktop/laptop device-width keeps the normal CTA even when browser zoom shrinks CSS width. */
+
+.mobileCta {
+  display: none;
+}
+
+.desktopCta {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .mobileCta {
+    display: block;
+  }
+
+  .desktopCta {
+    display: none;
+  }
+}
+
+@media (min-device-width: 768px) {
+  .mobileCta {
+    display: none !important;
+  }
+
+  .desktopCta {
+    display: block !important;
+  }
+}

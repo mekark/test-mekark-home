@@ -1,0 +1,30 @@
+/* Why join mobile only on real phone viewports.
+   Desktop/laptop device-width keeps the normal why-join even when browser zoom shrinks CSS width. */
+
+.mobileWhyJoin {
+  display: none;
+}
+
+.desktopWhyJoin {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .mobileWhyJoin {
+    display: block;
+  }
+
+  .desktopWhyJoin {
+    display: none;
+  }
+}
+
+@media (min-device-width: 768px) {
+  .mobileWhyJoin {
+    display: none !important;
+  }
+
+  .desktopWhyJoin {
+    display: block !important;
+  }
+}

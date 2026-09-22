@@ -82,6 +82,10 @@ function MobileLogoCard({
   );
 }
 
+/** Shared subtitle — mobile + desktop */
+const TRUSTED_SECTORS_DESCRIPTION =
+  "As a civil infrastructure development company, our project mix spans core RCC structures to full sites.";
+
 /** Figma 7385:1174 — civil services mobile trusted sectors */
 function CivilTrustedSectorsMobile() {
   return (
@@ -105,8 +109,7 @@ function CivilTrustedSectorsMobile() {
               </span>
             </h2>
             <p className="max-w-[289px] font-manrope text-sm font-medium leading-normal text-black">
-              As a civil infrastructure development company, our project mix
-              spans core RCC structures to full sites.
+              {TRUSTED_SECTORS_DESCRIPTION}
             </p>
           </motion.div>
 
@@ -155,7 +158,11 @@ export default function TrustedSectors() {
   return (
     <>
       <CivilTrustedSectorsMobile />
-      <TrustedSectorsSection variant="services" desktopOnly />
+      <TrustedSectorsSection
+        variant="services"
+        desktopOnly
+        description={TRUSTED_SECTORS_DESCRIPTION}
+      />
     </>
   );
 }

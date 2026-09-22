@@ -45,32 +45,32 @@ const benefitReveal = {
 const features = [
   {
     num: "01",
-    title: "Turnkey Project Implementation:",
+    title: "Turnkey Project Implementation",
     body: "Single point of responsibility from design to commissioning, so you're never stuck mediating between separate HVAC, electrical, plumbing, or fire-fighting vendors when schedules slip or scopes overlap.",
   },
   {
     num: "02",
-    title: "Established Credentials:",
+    title: "Established Credentials",
     body: "Over 200+ industrial MEP projects completed, with a 4.7 out of 5 customer rating across factory, warehouse, and manufacturing plant clients.",
   },
   {
     num: "03",
-    title: "In-House MEP Engineers:",
+    title: "In-House MEP Engineers",
     body: "System designs built around real plant loads, not generic templates — every drawing reflects your actual equipment, layout, and process demands.",
   },
   {
     num: "04",
-    title: "Exceptional Quality:",
+    title: "Exceptional Quality",
     body: "Independent testing, commissioning checks, and system documentation handed over at project close, so there's a verifiable record of what was built and how it performs.",
   },
   {
     num: "05",
-    title: "Safe Execution:",
+    title: "Safe Execution",
     body: "Trained crews, documented safety checks, and clear scope-based pricing with no hidden variation orders mid-project.",
   },
   {
     num: "06",
-    title: "18+ Years of Experience:",
+    title: "18+ Years of Experience",
     body: "From standalone factory HVAC and electrical works to full manufacturing plant MEP contracts spanning multiple systems and phased handovers.",
   },
 ] as const;

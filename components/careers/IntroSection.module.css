@@ -1,0 +1,30 @@
+/* Intro mobile only on real phone viewports.
+   Desktop/laptop device-width keeps the normal intro even when browser zoom shrinks CSS width. */
+
+.mobileIntro {
+  display: none;
+}
+
+.desktopIntro {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .mobileIntro {
+    display: block;
+  }
+
+  .desktopIntro {
+    display: none;
+  }
+}
+
+@media (min-device-width: 768px) {
+  .mobileIntro {
+    display: none !important;
+  }
+
+  .desktopIntro {
+    display: block !important;
+  }
+}

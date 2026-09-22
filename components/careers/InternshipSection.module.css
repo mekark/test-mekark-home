@@ -1,0 +1,30 @@
+/* Internship mobile only on real phone viewports.
+   Desktop/laptop device-width keeps the normal internship even when browser zoom shrinks CSS width. */
+
+.mobileInternship {
+  display: none;
+}
+
+.desktopInternship {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .mobileInternship {
+    display: block;
+  }
+
+  .desktopInternship {
+    display: none;
+  }
+}
+
+@media (min-device-width: 768px) {
+  .mobileInternship {
+    display: none !important;
+  }
+
+  .desktopInternship {
+    display: block !important;
+  }
+}

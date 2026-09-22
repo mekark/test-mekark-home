@@ -1,0 +1,30 @@
+/* Openings mobile only on real phone viewports.
+   Desktop/laptop device-width keeps the normal openings even when browser zoom shrinks CSS width. */
+
+.mobileOpenings {
+  display: none;
+}
+
+.desktopOpenings {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .mobileOpenings {
+    display: block;
+  }
+
+  .desktopOpenings {
+    display: none;
+  }
+}
+
+@media (min-device-width: 768px) {
+  .mobileOpenings {
+    display: none !important;
+  }
+
+  .desktopOpenings {
+    display: block !important;
+  }
+}

@@ -1,0 +1,30 @@
+/* Mobile hero only on real phone viewports.
+   Desktop/laptop device-width keeps the normal hero even when browser zoom shrinks CSS width. */
+
+.mobileHero {
+  display: none;
+}
+
+.desktopHero {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .mobileHero {
+    display: block;
+  }
+
+  .desktopHero {
+    display: none;
+  }
+}
+
+@media (min-device-width: 768px) {
+  .mobileHero {
+    display: none !important;
+  }
+
+  .desktopHero {
+    display: block !important;
+  }
+}

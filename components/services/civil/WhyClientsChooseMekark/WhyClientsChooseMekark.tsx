@@ -333,20 +333,20 @@ export default function WhyClientsChooseMekark() {
           <div className="flex w-[456px] flex-col items-start justify-center gap-[60.7px]">
             <Feature
               number="01"
-              title="Turnkey Project Implementation:"
+              title="Turnkey Project Implementation"
               description="Single point of responsibility from start to finish."
               titleClassName="leading-[26.87px]"
               descriptionClassName="opacity-80"
             />
             <Feature
               number="03"
-              title="Structural Engineers In-House:"
+              title="Structural Engineers In-House"
               description="BIM-based structural analysis ensures that your building is precisely designed and ready for construction."
               descriptionWidth="w-[329.3px]"
             />
             <Feature
               number="05"
-              title="Safe Construction:"
+              title="Safe Construction"
               description="Modular formwork, safety checks, and clear pricing."
               descriptionWidth="w-[328px]"
             />
@@ -355,19 +355,19 @@ export default function WhyClientsChooseMekark() {
           <div className="flex w-[456px] flex-col items-start gap-[60.7px]">
             <Feature
               number="02"
-              title="Established Credentials:"
+              title="Established Credentials"
               description="Over 200 industrial and commercial RCC construction projects completed, with a 4.7 out of 5 customer rating."
             />
             <Feature
               number="04"
-              title="Exceptional Quality:"
+              title="Exceptional Quality"
               description="Independent QA, certification testing, and multi-layer waterproofing."
               titleClassName="leading-[26.87px]"
               descriptionWidth="w-80"
             />
             <Feature
               number="06"
-              title="18+ Years of Experience:"
+              title="18+ Years of Experience"
               description="From factories and warehouse construction to multi-storey commercial building construction projects."
               titleClassName="leading-[26.87px]"
               descriptionWidth="w-[344px]"

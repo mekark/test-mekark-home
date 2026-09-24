@@ -30,7 +30,7 @@ export default function LogisticsHero() {
       </div>
       <Image
         className={styles.mobileHeroImage}
-        src="/images/mobile/mobile-hero.png"
+        src="/images/mobile/mobile-hero.webp"
         width={941}
         height={1672}
         sizes="100vw"
@@ -74,7 +74,7 @@ export default function LogisticsHero() {
             />
             <Image
               className={styles.mobileArrowIcon}
-              src="/images/mobile/component-4.png"
+              src="/images/mobile/component-4.webp"
               width={24}
               height={24}
               alt=""

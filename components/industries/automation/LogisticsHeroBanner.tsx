@@ -20,7 +20,7 @@ export default function LogisticsHeroBanner() {
       />
       <Image
         className={styles.mobileHeroImage}
-        src="/images/mobile/automation-mv.png"
+        src="/images/mobile/automation-mv.webp"
         width={941}
         height={1672}
         sizes="100vw"
@@ -62,7 +62,7 @@ export default function LogisticsHeroBanner() {
             />
             <Image
               className={styles.mobileArrowIcon}
-              src="/images/mobile/component-4.png"
+              src="/images/mobile/component-4.webp"
               width={24}
               height={24}
               alt=""

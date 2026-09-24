@@ -50,7 +50,7 @@ const CompletePharma = () => {
               />
               <Image
                 className={styles.mobileSkeleton}
-                src="/images/mobile/6CARD-SKELETON.png"
+                src="/images/mobile/6CARD-SKELETON.webp"
                 width={48}
                 height={1435}
                 alt=""

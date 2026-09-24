@@ -87,7 +87,7 @@ const DataCenterHeroBanner = () => {
             />
             <Image
               className={styles.mobileArrowIcon}
-              src="/images/mobile/component-4.png"
+              src="/images/mobile/component-4.webp"
               width={24}
               height={24}
               alt=""

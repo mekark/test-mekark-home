@@ -77,7 +77,7 @@ export function SolutionsTimeline() {
       <div className={macStyles.mobileTimeline}>
         <Image
           className={macStyles.mobileSkeleton}
-          src="/images/mobile/6CARD-SKELETON.png"
+          src="/images/mobile/6CARD-SKELETON.webp"
           width={48}
           height={1435}
           alt=""

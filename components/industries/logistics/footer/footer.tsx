@@ -19,7 +19,7 @@ const Footer: NextPage = () => {
       />
       <Image
         className={styles.backgroundImageMobile}
-        src="/images/mobile/footer-image.png"
+        src="/images/mobile/footer-image.webp"
         fill
         sizes="100vw"
         alt="Aerial view of logistics warehouse facility at sunset"

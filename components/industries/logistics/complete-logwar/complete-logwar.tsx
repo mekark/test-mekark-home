@@ -33,7 +33,7 @@ const CompleteEOTCraneSolutionsEngineeredEndToEnd: NextPage = () => {
             />
             <Image
               className={styles.mobileSkeleton}
-              src="/images/mobile/mobile-skeleton.png"
+              src="/images/mobile/mobile-skeleton.webp"
               width={48}
               height={1028}
               alt=""

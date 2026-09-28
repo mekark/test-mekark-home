@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { markEnquirySubmitted } from "@/lib/enquiry-thank-you";
 
 const START_TIMELINES = [
   "Immediately",
@@ -194,6 +195,7 @@ export default function ContactForm() {
       }
 
       setFormData(initialFormData);
+      markEnquirySubmitted();
       window.location.assign("/thank-you");
     } catch (error) {
       const timedOut =

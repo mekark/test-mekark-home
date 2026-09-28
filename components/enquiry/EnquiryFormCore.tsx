@@ -4,6 +4,7 @@ import { type FormEvent, type ReactNode, useId, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useNavigationLoading } from "@/components/ui/NavigationLoadingProvider";
+import { markEnquirySubmitted } from "@/lib/enquiry-thank-you";
 import {
   INDUSTRY_TYPES,
   PROJECT_AREAS,
@@ -236,6 +237,7 @@ export function EnquiryFormCore({
       clearEnquirySource();
       onSubmitSuccess?.();
       onBeforeNavigate?.();
+      markEnquirySubmitted();
       startNavigation();
       router.push("/thank-you");
     } catch (error) {

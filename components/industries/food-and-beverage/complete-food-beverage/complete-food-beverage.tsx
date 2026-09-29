@@ -53,7 +53,7 @@ const OurSolutions = () => {
                 />
                 <div className={styles.frameDiv}>
                   <b className={styles.overheadSingleGirder}>
-                    Turnkey Food Processing Plant Construction:
+                    Turnkey Food Processing Plant Construction
                   </b>
                   <div className={styles.economicalOverheadCrane}>
                     Full-scope design, civil works, structural steel, and MEP
@@ -72,7 +72,7 @@ const OurSolutions = () => {
                 />
                 <div className={styles.frameDiv}>
                   <b className={styles.overheadSingleGirder}>
-                    Food-Grade Flooring &amp; Hygienic Interiors:
+                    Food-Grade Flooring &amp; Hygienic Interiors
                   </b>
                   <div className={styles.economicalOverheadCrane}>
                     FSSAI and HACCP-compliant epoxy and PU flooring, coved
@@ -92,7 +92,7 @@ const OurSolutions = () => {
                 />
                 <div className={styles.frameDiv}>
                   <b className={styles.overheadSingleGirder}>
-                    Cold Storage &amp; Cold Chain Infrastructure:
+                    Cold Storage &amp; Cold Chain Infrastructure
                   </b>
                   <div className={styles.economicalOverheadCrane}>
                     PUF-insulated cold rooms, blast freezers, and
@@ -112,7 +112,7 @@ const OurSolutions = () => {
                 />
                 <div className={styles.frameDiv}>
                   <b className={styles.overheadSingleGirder}>
-                    HVAC &amp; Air Handling Systems:
+                    HVAC &amp; Air Handling Systems
                   </b>
                   <div className={styles.economicalOverheadCrane}>
                     Temperature, humidity, and air quality control engineered
@@ -132,7 +132,7 @@ const OurSolutions = () => {
                 />
                 <div className={styles.frameDiv}>
                   <b className={styles.overheadSingleGirder}>
-                    MEP &amp; Utility Infrastructure:
+                    MEP &amp; Utility Infrastructure
                   </b>
                   <div className={styles.economicalOverheadCrane}>
                     Electrical, mechanical, plumbing, steam, and process utility
@@ -152,7 +152,7 @@ const OurSolutions = () => {
                 />
                 <div className={styles.frameDiv}>
                   <b className={styles.overheadSingleGirder}>
-                    EOT Crane &amp; Material Handling Systems:
+                    EOT Crane &amp; Material Handling Systems
                   </b>
                   <div className={styles.economicalOverheadCrane}>
                     Overhead crane and internal logistics infrastructure for

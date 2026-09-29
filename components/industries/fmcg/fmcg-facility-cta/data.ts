@@ -18,37 +18,37 @@ export type ManufacturingSolutionItem = {
 export const manufacturingSolutions: ManufacturingSolutionItem[] = [
   {
     image: "/images/industries/fmcg/fmcg-facility-cta/solution-packaged-food.webp",
-    title: "Packaged Food & Snacks Manufacturing:",
+    title: "Packaged Food & Snacks Manufacturing",
     description:
       "Hygienic, wash-down-ready facilities engineered for processing, packaging, and storage.",
   },
   {
     image: "/images/industries/fmcg/fmcg-facility-cta/solution-personal-care.webp",
-    title: "Personal Care & Cosmetics Manufacturing:",
+    title: "Personal Care & Cosmetics Manufacturing",
     description:
       "Clean, contamination-controlled plants designed for filling, blending, and packaging lines.",
   },
   {
     image: "/images/industries/fmcg/fmcg-facility-cta/solution-home-care.webp",
-    title: "Home Care & Cleaning Products Manufacturing:",
+    title: "Home Care & Cleaning Products Manufacturing",
     description:
       "Chemical-resistant flooring and process-ready layouts for liquid filling and packaging units.",
   },
   {
     image: "/images/industries/fmcg/fmcg-facility-cta/solution-beverage.webp",
-    title: "Beverage Bottling & Packaging Units:",
+    title: "Beverage Bottling & Packaging Units",
     description:
       "High-speed production plants designed for continuous, automation-ready bottling and canning lines.",
   },
   {
     image: "/images/industries/fmcg/fmcg-facility-cta/solution-nutraceutical.webp",
-    title: "Pharma-Adjacent & Nutraceutical Packaging:",
+    title: "Pharma-Adjacent & Nutraceutical Packaging",
     description:
       "Controlled environments built for consistent quality and regulatory compliance.",
   },
   {
     image: "/images/industries/fmcg/fmcg-facility-cta/solution-warehousing.webp",
-    title: "FMCG Warehousing & Distribution Centres:",
+    title: "FMCG Warehousing & Distribution Centres",
     description:
       "Multi-tenant-ready, high-bay warehouses with flexible bay design for scaling distribution.",
   },

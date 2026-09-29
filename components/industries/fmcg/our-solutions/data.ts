@@ -39,7 +39,7 @@ export const solutions: SolutionItem[] = [
     left: 73,
   },
   {
-    title: "HVAC & Air Handling Systems:",
+    title: "HVAC & Air Handling Systems",
     description:
       "Temperature, humidity, and air quality control engineered specifically for FMCG production, filling, and packaging environments.",
     image: "/images/industries/fmcg/our-solutions/hvac.webp",
@@ -47,7 +47,7 @@ export const solutions: SolutionItem[] = [
     left: 284,
   },
   {
-    title: "MEP & Utility Infrastructure:",
+    title: "MEP & Utility Infrastructure",
     description:
       "Electrical, mechanical, plumbing, compressed air, and process utility systems built for uninterrupted, high-speed FMCG plant operations.",
     image: "/images/industries/fmcg/our-solutions/mep.webp",
@@ -55,7 +55,7 @@ export const solutions: SolutionItem[] = [
     left: 73,
   },
   {
-    title: "EOT Crane & Material Handling Systems:",
+    title: "EOT Crane & Material Handling Systems",
     description:
       "Overhead crane, conveyor, and internal logistics infrastructure for bulk raw material handling and high-volume packaging lines.",
     image: "/images/industries/fmcg/our-solutions/eot-crane.webp",

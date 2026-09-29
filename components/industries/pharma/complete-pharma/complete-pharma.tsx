@@ -68,7 +68,7 @@ const CompletePharma = () => {
                 />
                 <div className={styles.frameDiv}>
                   <b className={styles.overheadSingleGirder}>
-                    Turnkey Pharmaceutical Plant Construction:
+                    Turnkey Pharmaceutical Plant Construction
                   </b>
                   <div className={styles.economicalOverheadCrane}>
                     Full-scope design, civil works, structural steel, and MEP
@@ -90,7 +90,7 @@ const CompletePharma = () => {
                     <span className={styles.cardTitleLine}>
                       Cleanroom Construction &amp; Contamination
                     </span>
-                    <span className={styles.cardTitleLine}>Control:</span>
+                    <span className={styles.cardTitleLine}>Control</span>
                   </b>
                   <div className={styles.economicalOverheadCrane}>
                     ISO-classified cleanrooms, modular wall panels, epoxy and PU
@@ -110,7 +110,7 @@ const CompletePharma = () => {
                 />
                 <div className={styles.frameDiv}>
                   <b className={styles.overheadSingleGirder}>
-                    Sterile Manufacturing &amp; API Production Facilities:
+                    Sterile Manufacturing &amp; API Production Facilities
                   </b>
                   <div className={styles.economicalOverheadCrane}>
                     Purpose-built environments for injectable, ophthalmic, and
@@ -130,7 +130,7 @@ const CompletePharma = () => {
                 />
                 <div className={styles.frameDiv}>
                   <b className={styles.overheadSingleGirder}>
-                    HVAC &amp; Air Handling Systems:
+                    HVAC &amp; Air Handling Systems
                   </b>
                   <div className={styles.economicalOverheadCrane}>
                     Temperature, humidity, differential pressure, and particulate
@@ -150,7 +150,7 @@ const CompletePharma = () => {
                 />
                 <div className={styles.frameDiv}>
                   <b className={styles.overheadSingleGirder}>
-                    MEP &amp; Utility Infrastructure:
+                    MEP &amp; Utility Infrastructure
                   </b>
                   <div className={styles.economicalOverheadCrane}>
                     Purified water systems, HVAC, electrical, mechanical,
@@ -170,7 +170,7 @@ const CompletePharma = () => {
                 />
                 <div className={styles.frameDiv}>
                   <b className={styles.overheadSingleGirder}>
-                    Cold Chain &amp; Vaccine Storage Infrastructure:
+                    Cold Chain &amp; Vaccine Storage Infrastructure
                   </b>
                   <div className={styles.economicalOverheadCrane}>
                     PUF-insulated cold rooms and multi-temperature storage for

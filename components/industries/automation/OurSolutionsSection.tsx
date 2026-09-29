@@ -33,37 +33,37 @@ type Solution = {
 
 const solutions: Solution[] = [
   {
-    title: "Turnkey Automation Plant Construction:",
+    title: "Turnkey Automation Plant Construction",
     description:
       "Full-scope design, civil works, structural steel, and MEP delivered under one contract for automation and robotics manufacturing units.",
     image: "/images/industries/automation/solutions/turnkey-automation.webp",
   },
   {
-    title: "ESD-Controlled & Precision Flooring Systems:",
+    title: "ESD-Controlled & Precision Flooring Systems",
     description:
       "Static-dissipative epoxy flooring, vibration-isolated slabs, and clean-process interiors engineered for robotics, PCB, and control panel assembly lines.",
     image: "/images/industries/automation/solutions/esd-flooring.webp",
   },
   {
-    title: "Smart Factory & Industry 4.0 Infrastructure:",
+    title: "Smart Factory & Industry 4.0 Infrastructure",
     description:
       "Structured cabling, IoT-ready conduit layouts, and automation-integrated building systems designed for connected manufacturing.",
     image: "/images/industries/automation/solutions/smart-factory.webp",
   },
   {
-    title: "HVAC & Precision Air Handling Systems:",
+    title: "HVAC & Precision Air Handling Systems",
     description:
       "Temperature and particulate control engineered specifically for automation testing labs, robotics assembly, and electronics-adjacent production.",
     image: "/images/industries/automation/solutions/hvac.webp",
   },
   {
-    title: "MEP & High-Density Utility Infrastructure:",
+    title: "MEP & High-Density Utility Infrastructure",
     description:
       "Electrical, mechanical, plumbing, and compressed air systems sized for robotics, CNC, and automated production line loads.",
     image: "/images/industries/automation/solutions/mep-infrastructure.webp",
   },
   {
-    title: "EOT Crane & Material Handling Systems:",
+    title: "EOT Crane & Material Handling Systems",
     description:
       "Overhead crane, conveyor, and AGV-ready internal logistics infrastructure for heavy automation equipment handling.",
     image: "/images/industries/automation/solutions/eot-crane.webp",

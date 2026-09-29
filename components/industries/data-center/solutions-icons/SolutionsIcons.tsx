@@ -9,37 +9,37 @@ const DESIGN_HEIGHT = 780;
 const solutionCards = [
   {
     icon: "/images/industries/data-center/solutions/icons/1.webp",
-    title: "Hyperscale Data Centers:",
+    title: "Hyperscale Data Centers",
     description:
       "Large-footprint facilities engineered for cloud providers and high-density compute deployments.",
   },
   {
     icon: "/images/industries/data-center/solutions/icons/2.webp",
-    title: "Colocation Data Centers:",
+    title: "Colocation Data Centers",
     description:
       "Multi-tenant-ready white space with flexible power and cooling allocation per client.",
   },
   {
     icon: "/images/industries/data-center/solutions/icons/3.webp",
-    title: "Edge & Modular Data Centers:",
+    title: "Edge & Modular Data Centers",
     description:
       "Prefabricated, rapidly deployable data halls for regional and edge-compute requirements.",
   },
   {
     icon: "/images/industries/data-center/solutions/icons/4.webp",
-    title: "Enterprise & Captive Data Centers:",
+    title: "Enterprise & Captive Data Centers",
     description:
       "Purpose-built facilities for BFSI, IT/ITES, and large enterprise in-house compute needs.",
   },
   {
     icon: "/images/industries/data-center/solutions/icons/5.webp",
-    title: "Disaster Recovery (DR) Sites:",
+    title: "Disaster Recovery (DR) Sites",
     description:
       "Redundant, geographically distributed facilities built for business continuity.",
   },
   {
     icon: "/images/industries/data-center/solutions/icons/6.webp",
-    title: "Data Center Retrofits & Capacity Expansion:",
+    title: "Data Center Retrofits & Capacity Expansion",
     description:
       "Upgrading existing facilities for higher power density, cooling capacity, or additional white space.",
   },
@@ -100,7 +100,7 @@ const SolutionsIcons = () => {
               <div
                 key={card.title}
                 className={styles.cardItem}
-                style={isScaled ? { left: `${index * 286}px` } : undefined}
+                style={{ left: `${index * 286}px` }}
               >
                 <div className={styles.iconWrapper}>
                   <Image

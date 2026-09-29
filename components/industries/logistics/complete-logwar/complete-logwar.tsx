@@ -50,7 +50,7 @@ const CompleteEOTCraneSolutionsEngineeredEndToEnd: NextPage = () => {
                 alt="Industrial Warehouse Sheds"
               />
               <div className={styles.cardBody}>
-                <b className={styles.cardTitle}>Industrial Warehouse Sheds:</b>
+                <b className={styles.cardTitle}>Industrial Warehouse Sheds</b>
                 <div className={styles.cardDesc}>
                   Column-free buildings built for manufacturing, trading and
                   distribution.
@@ -67,7 +67,7 @@ const CompleteEOTCraneSolutionsEngineeredEndToEnd: NextPage = () => {
                 alt="Distribution Centres"
               />
               <div className={styles.cardBody}>
-                <b className={styles.cardTitle}>Distribution Centres:</b>
+                <b className={styles.cardTitle}>Distribution Centres</b>
                 <div className={styles.cardDesc}>
                   High-volume centres with loading docks, truck parks and
                   mezzanine offices.
@@ -84,7 +84,7 @@ const CompleteEOTCraneSolutionsEngineeredEndToEnd: NextPage = () => {
                 alt="Cold Storage Structures"
               />
               <div className={styles.cardBody}>
-                <b className={styles.cardTitle}>Cold Storage Structures:</b>
+                <b className={styles.cardTitle}>Cold Storage Structures</b>
                 <div className={styles.cardDesc}>
                   Thermally efficient steel structures for food, pharma and
                   agri sectors.
@@ -102,7 +102,7 @@ const CompleteEOTCraneSolutionsEngineeredEndToEnd: NextPage = () => {
               />
               <div className={styles.cardBody}>
                 <b className={styles.cardTitle}>
-                  Logistics Parks and Multi-Bay Facilities:
+                  Logistics Parks and Multi-Bay Facilities
                 </b>
                 <div className={styles.cardDesc}>
                   End-to-end logistics park design covering warehouses,
@@ -120,7 +120,7 @@ const CompleteEOTCraneSolutionsEngineeredEndToEnd: NextPage = () => {
                 alt="Multi-Storey Warehouses"
               />
               <div className={styles.cardBody}>
-                <b className={styles.cardTitle}>Multi-Storey Warehouses:</b>
+                <b className={styles.cardTitle}>Multi-Storey Warehouses</b>
                 <div className={styles.cardDesc}>
                   Vertical PEB solutions maximising land use with heavy floor
                   loading.

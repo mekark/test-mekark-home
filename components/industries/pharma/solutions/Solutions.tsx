@@ -80,7 +80,7 @@ const Solutions = () => {
               <div className={styles.container}>
                 <div className={styles.container2}>
                   <b className={styles.steelMetal}>
-                    API &amp; Bulk Drug Manufacturing:
+                    API &amp; Bulk Drug Manufacturing
                   </b>
                 </div>
                 <div className={styles.container3}>
@@ -103,7 +103,7 @@ const Solutions = () => {
               <div className={styles.container4}>
                 <div className={styles.container2}>
                   <b className={styles.automotiveManufacturing}>
-                    Sterile Injectable &amp; Ophthalmic Manufacturing:
+                    Sterile Injectable &amp; Ophthalmic Manufacturing
                   </b>
                 </div>
                 <div className={styles.container3}>
@@ -126,7 +126,7 @@ const Solutions = () => {
               <div className={styles.container7}>
                 <div className={styles.container2}>
                   <b className={styles.powerPlants}>
-                    Oral Solid Dosage (OSD) Manufacturing:
+                    Oral Solid Dosage (OSD) Manufacturing
                   </b>
                 </div>
                 <div className={styles.container9}>
@@ -149,7 +149,7 @@ const Solutions = () => {
               <div className={styles.container}>
                 <div className={styles.container2}>
                   <b className={styles.steelMetal}>
-                    Biologics &amp; Vaccine Manufacturing:
+                    Biologics &amp; Vaccine Manufacturing
                   </b>
                 </div>
                 <div className={styles.container3}>
@@ -172,7 +172,7 @@ const Solutions = () => {
               <div className={styles.container13}>
                 <div className={styles.container14}>
                   <b className={styles.steelMetal}>
-                    Nutraceutical &amp; Herbal Formulation Manufacturing:
+                    Nutraceutical &amp; Herbal Formulation Manufacturing
                   </b>
                 </div>
                 <div className={styles.container15}>
@@ -195,7 +195,7 @@ const Solutions = () => {
               <div className={styles.container7}>
                 <div className={styles.container2}>
                   <b className={styles.powerPlants}>
-                    Contract Manufacturing (CDMO/CMO):
+                    Contract Manufacturing (CDMO/CMO)
                   </b>
                 </div>
                 <div className={styles.container9}>

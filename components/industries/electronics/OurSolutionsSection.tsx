@@ -53,7 +53,7 @@ export default function OurSolutionsSection() {
                 />
                 <div className={styles.frameDiv}>
                   <b className={styles.overheadSingleGirder}>
-                    Turnkey Electronics Factory Construction:
+                    Turnkey Electronics Factory Construction
                   </b>
                   <div className={styles.economicalOverheadCrane}>
                     Full-scope design, civil works, structural steel, and MEP
@@ -72,7 +72,7 @@ export default function OurSolutionsSection() {
                 />
                 <div className={styles.frameDiv}>
                   <b className={styles.overheadSingleGirder}>
-                    Clean Room Construction:
+                    Clean Room Construction
                   </b>
                   <div className={styles.economicalOverheadCrane}>
                     Controlled-environment build-outs for electronics assembly,
@@ -91,7 +91,7 @@ export default function OurSolutionsSection() {
                 />
                 <div className={styles.frameDiv}>
                   <b className={styles.overheadSingleGirder}>
-                    ESD-Safe Flooring &amp; Interiors:
+                    ESD-Safe Flooring &amp; Interiors
                   </b>
                   <div className={styles.economicalOverheadCrane}>
                     Anti-static flooring, partition systems, and controlled
@@ -110,7 +110,7 @@ export default function OurSolutionsSection() {
                 />
                 <div className={styles.frameDiv}>
                   <b className={styles.overheadSingleGirder}>
-                    HVAC &amp; Air Handling Systems:
+                    HVAC &amp; Air Handling Systems
                   </b>
                   <div className={styles.economicalOverheadCrane}>
                     Temperature and humidity control engineered specifically for
@@ -129,7 +129,7 @@ export default function OurSolutionsSection() {
                 />
                 <div className={styles.frameDiv}>
                   <b className={styles.overheadSingleGirder}>
-                    MEP &amp; Utility Infrastructure:
+                    MEP &amp; Utility Infrastructure
                   </b>
                   <div className={styles.economicalOverheadCrane}>
                     Electrical, mechanical, and plumbing systems built for
@@ -148,7 +148,7 @@ export default function OurSolutionsSection() {
                 />
                 <div className={styles.frameDiv}>
                   <b className={styles.overheadSingleGirder}>
-                    EOT Crane &amp; Material Handling Systems:
+                    EOT Crane &amp; Material Handling Systems
                   </b>
                   <div className={styles.economicalOverheadCrane}>
                     Overhead crane and internal logistics infrastructure for

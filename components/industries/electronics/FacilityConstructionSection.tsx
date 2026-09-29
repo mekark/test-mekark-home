@@ -3,7 +3,7 @@ import styles from "./FacilityConstructionSection.module.css";
 
 const FACILITIES = [
   {
-    title: "Electronics Component Manufacturing:",
+    title: "Electronics Component Manufacturing",
     description:
       "ESD-safe assembly plants engineered for precision component production and high-volume throughput.",
     image:
@@ -12,7 +12,7 @@ const FACILITIES = [
       "Green circuit board assembly line for electronics component manufacturing",
   },
   {
-    title: "Semiconductor & Precision Assembly:",
+    title: "Semiconductor & Precision Assembly",
     description:
       "Clean room facilities built to the required cleanliness classification for sensitive fabrication processes.",
     image:
@@ -21,7 +21,7 @@ const FACILITIES = [
       "Worker in a cleanroom suit at a semiconductor precision assembly facility",
   },
   {
-    title: "Consumer Electronics:",
+    title: "Consumer Electronics",
     description:
       "High-volume production plants designed for continuous, automation-ready operations.",
     image:
@@ -29,7 +29,7 @@ const FACILITIES = [
     imageAlt: "Workers at a consumer electronics production line",
   },
   {
-    title: "Automotive Electronics:",
+    title: "Automotive Electronics",
     description:
       "Controlled-environment facilities for auto-component and EV electronics manufacturers.",
     image:
@@ -38,7 +38,7 @@ const FACILITIES = [
       "Automotive electronics manufacturing on a vehicle production line",
   },
   {
-    title: "Telecom & Networking Equipment:",
+    title: "Telecom & Networking Equipment",
     description:
       "Precision production infrastructure with utility redundancy for uninterrupted manufacturing.",
     image:
@@ -46,7 +46,7 @@ const FACILITIES = [
     imageAlt: "Server racks and telecom networking equipment infrastructure",
   },
   {
-    title: "Contract Electronics Manufacturing (EMS/ODM):",
+    title: "Contract Electronics Manufacturing (EMS/ODM)",
     description:
       "Multi-tenant-ready facilities with flexible bay design for scaling production.",
     image:

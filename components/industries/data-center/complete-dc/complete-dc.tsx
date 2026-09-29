@@ -67,7 +67,7 @@ const CompleteDC = () => {
                 />
                 <div className={styles.frameDiv}>
                   <b className={styles.overheadSingleGirder}>
-                    Turnkey Data Center Shell &amp; Core Construction:
+                    Turnkey Data Center Shell &amp; Core Construction
                   </b>
                   <div className={styles.economicalOverheadCrane}>
                     Full-scope design, civil works, structural steel, and MEP
@@ -87,7 +87,7 @@ const CompleteDC = () => {
                 />
                 <div className={styles.frameDiv}>
                   <b className={styles.overheadSingleGirder}>
-                    Raised Floor &amp; White Space Fit-Out:
+                    Raised Floor &amp; White Space Fit-Out
                   </b>
                   <div className={styles.economicalOverheadCrane}>
                     Precision-engineered raised access flooring, containment
@@ -107,7 +107,7 @@ const CompleteDC = () => {
                 />
                 <div className={styles.frameDiv}>
                   <b className={styles.overheadSingleGirder}>
-                    Precision Cooling &amp; Thermal Infrastructure:
+                    Precision Cooling &amp; Thermal Infrastructure
                   </b>
                   <div className={styles.economicalOverheadCrane}>
                     CRAC/CRAH systems, hot-aisle/cold-aisle containment, and
@@ -127,7 +127,7 @@ const CompleteDC = () => {
                 />
                 <div className={styles.frameDiv}>
                   <b className={styles.overheadSingleGirder}>
-                    Power Infrastructure &amp; Redundancy Systems:
+                    Power Infrastructure &amp; Redundancy Systems
                   </b>
                   <div className={styles.economicalOverheadCrane}>
                     UPS rooms, DG yards, electrical switchgear, and N+1/2N
@@ -147,7 +147,7 @@ const CompleteDC = () => {
                 />
                 <div className={styles.frameDiv}>
                   <b className={styles.overheadSingleGirder}>
-                    MEP &amp; Fire Suppression Systems:
+                    MEP &amp; Fire Suppression Systems
                   </b>
                   <div className={styles.economicalOverheadCrane}>
                     Electrical, mechanical, plumbing, and clean-agent fire
@@ -167,7 +167,7 @@ const CompleteDC = () => {
                 />
                 <div className={styles.frameDiv}>
                   <b className={styles.overheadSingleGirder}>
-                    Modular &amp; Prefabricated Data Center Construction:
+                    Modular &amp; Prefabricated Data Center Construction
                   </b>
                   <div className={styles.economicalOverheadCrane}>
                     Factory-fabricated modular data hall units for faster

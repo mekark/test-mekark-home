@@ -9,37 +9,37 @@ const DESIGN_HEIGHT = 780;
 const solutionCards = [
   {
     icon: "/images/industries/pharma/solution-2-icons/1.webp",
-    title: "API & Bulk Drug Manufacturing:",
+    title: "API & Bulk Drug Manufacturing",
     description:
       "Solvent-handling, effluent-compliant facilities engineered for active pharmaceutical ingredient production.",
   },
   {
     icon: "/images/industries/pharma/solution-2-icons/2.webp",
-    title: "Sterile Injectable & Ophthalmic Manufacturing:",
+    title: "Sterile Injectable & Ophthalmic Manufacturing",
     description:
       "ISO-classified cleanrooms with validated air handling for aseptic filling and packaging lines.",
   },
   {
     icon: "/images/industries/pharma/solution-2-icons/3.webp",
-    title: "Oral Solid Dosage (OSD) Manufacturing:",
+    title: "Oral Solid Dosage (OSD) Manufacturing",
     description:
       "Contamination-controlled facilities designed for tabletting, capsule filling, and coating operations.",
   },
   {
     icon: "/images/industries/pharma/solution-2-icons/4.webp",
-    title: "Biologics & Vaccine Manufacturing:",
+    title: "Biologics & Vaccine Manufacturing",
     description:
       "Cold chain-integrated plants with validated storage and segregated process zones.",
   },
   {
     icon: "/images/industries/pharma/solution-2-icons/5.webp",
-    title: "Nutraceutical & Herbal Formulation Manufacturing:",
+    title: "Nutraceutical & Herbal Formulation Manufacturing",
     description:
       "Facilities designed for extraction, formulation, and hygienic packaging.",
   },
   {
     icon: "/images/industries/pharma/solution-2-icons/6.webp",
-    title: "Contract Manufacturing (CDMO/CMO):",
+    title: "Contract Manufacturing (CDMO/CMO)",
     description:
       "Multi-tenant-ready facilities with flexible bay design for scaling production.",
   },
@@ -103,7 +103,7 @@ const SolutionsIcons = () => {
               <div
                 key={card.title}
                 className={styles.cardItem}
-                style={isScaled ? { left: `${index * 286}px` } : undefined}
+                style={{ left: `${index * 286}px` }}
               >
                 <div className={styles.iconWrapper}>
                   <Image

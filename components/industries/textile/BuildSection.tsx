@@ -58,7 +58,7 @@ export default function BuildSection() {
 								/>
 								<div className={styles.frameDiv}>
 									<b className={styles.overheadSingleGirder}>
-										Spinning Mill Construction:
+										Spinning Mill Construction
 									</b>
 									<div className={styles.economicalOverheadCrane}>
 										Purpose-built buildings with high clear-height spans,
@@ -79,7 +79,7 @@ export default function BuildSection() {
 								/>
 								<div className={styles.frameDiv}>
 									<b className={styles.overheadSingleGirder}>
-										Weaving Factory &amp; Shed Construction:
+										Weaving Factory &amp; Shed Construction
 									</b>
 									<div className={styles.economicalOverheadCrane}>
 										Wide-span, column-free sheds for shuttle and shuttleless
@@ -99,7 +99,7 @@ export default function BuildSection() {
 								/>
 								<div className={styles.frameDiv}>
 									<b className={styles.overheadSingleGirder}>
-										Garment Factory &amp; Apparel Plant:
+										Garment Factory &amp; Apparel Plant
 									</b>
 									<div className={styles.economicalOverheadCrane}>
 										Single- and multi-floor garment units with fire suppression
@@ -119,7 +119,7 @@ export default function BuildSection() {
 								/>
 								<div className={styles.frameDiv}>
 									<b className={styles.overheadSingleGirder}>
-										Dyeing, Printing &amp; Processing Units:
+										Dyeing, Printing &amp; Processing Units
 									</b>
 									<div className={styles.economicalOverheadCrane}>
 										Robust wet-processing structures with corrosion-resistant
@@ -139,7 +139,7 @@ export default function BuildSection() {
 								/>
 								<div className={styles.frameDiv}>
 									<b className={styles.overheadSingleGirder}>
-										Composite Textile Mills:
+										Composite Textile Mills
 									</b>
 									<div className={styles.economicalOverheadCrane}>
 										Turnkey construction covering ginning, spinning, weaving,
@@ -159,7 +159,7 @@ export default function BuildSection() {
 								/>
 								<div className={styles.frameDiv}>
 									<b className={styles.overheadSingleGirder}>
-										Pre-Engineered Buildings (PEB):
+										Pre-Engineered Buildings (PEB)
 									</b>
 									<div className={styles.economicalOverheadCrane}>
 										Factory-fabricated steel structures erected 50% faster than

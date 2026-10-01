@@ -25,8 +25,8 @@ type DesignScaleMode = "full" | "ultrawide";
  * Use with large-desktop (`lg:`) styles only — do not also apply PEB iMac
  * `xl:` shrinks inside this wrapper (that double-shrinks the page).
  *
- * `transform: scale()` does not change layout space — marginBottom compensates
- * so there is no white gap (or footer overlap) after the scaled block.
+ * `transform: scale()` does not change layout space — the wrapper gets an
+ * explicit scaled height so there is no gap (or footer overlap) after the block.
  */
 export default function DesignScale({
   children,
@@ -90,10 +90,10 @@ export default function DesignScale({
   }, [measure]);
 
   const useScaling = isDesktop && (mode === "full" || scale !== 1);
-  const marginBottom =
+  const scaledHeight =
     useScaling && contentHeight > 0 && scale !== 1
-      ? contentHeight * (scale - 1)
-      : 0;
+      ? contentHeight * scale
+      : undefined;
   const scaledWidth = useScaling ? DESIGN_WIDTH * scale : undefined;
 
   return (
@@ -109,6 +109,7 @@ export default function DesignScale({
           style={{
             width: scaledWidth,
             maxWidth: "100%",
+            height: scaledHeight,
           }}
         >
           <div
@@ -118,7 +119,6 @@ export default function DesignScale({
               {
                 width: DESIGN_WIDTH,
                 transform: `scale(${scale})`,
-                marginBottom,
                 "--ds-scale": scale,
               } as CSSProperties
             }

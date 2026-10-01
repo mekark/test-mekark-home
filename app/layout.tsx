@@ -28,11 +28,11 @@ export const metadata: Metadata = {
   description:
     "Mekark is a turnkey industrial EPC solutions provider delivering end-to-end design, engineering, construction, PEB, MEP and industrial infrastructure solutions across India.",
   icons: {
-
     icon: "/images/LogoMekark.webp",
-
     apple: "/images/LogoMekark.webp",
-
+  },
+  verification: {
+    google: "rAR_zUhuNvAl7JlZMsxLNFSyu6LjvFxhoRmk9LWLOnI",
   },
 };
 

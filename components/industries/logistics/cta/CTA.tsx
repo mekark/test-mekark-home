@@ -162,7 +162,7 @@ const CTA: NextPage = () => {
         <div className={styles.whyWarehousesFromMekarkAreWrapper}>
           <b className={styles.whyWarehousesFrom}>
             <span className={styles.whyTitleLine}>Why Warehouses from</span>{" "}
-            <span className={styles.whyTitleLine}>Mekark Are The Better</span>{" "}
+            <span className={styles.whyTitleLine}>Mekark Are the Better</span>{" "}
             <span className={styles.whyTitleLine}>Choice</span>
           </b>
         </div>

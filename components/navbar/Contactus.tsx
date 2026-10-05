@@ -146,7 +146,7 @@ function ArrowIcon() {
 
 export default function ContactUsContent() {
   return (
-    <main>
+    <main className="contact-static">
       <section className="relative overflow-hidden bg-[#0a0a0a] pt-[60px] text-white">
         <div className="absolute inset-0">
           <Image

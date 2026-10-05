@@ -354,3 +354,13 @@ html {
     cursor: not-allowed;
   }
 }
+
+/* Contact page: no entrance animations on mobile (framer-motion sets inline opacity/transform) */
+@media (max-width: 639px) {
+  .contact-static [style*="opacity"] {
+    opacity: 1 !important;
+  }
+  .contact-static [style*="transform"] {
+    transform: none !important;
+  }
+}

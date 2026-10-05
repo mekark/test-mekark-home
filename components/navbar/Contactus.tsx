@@ -163,7 +163,7 @@ export default function ContactUsContent() {
           />
         </div>
 
-        <div className="relative mx-auto flex min-h-[420px] w-full max-w-[1440px] flex-col justify-end px-4 pb-12 pt-8 md:min-h-[460px] md:px-8 md:pb-16 lg:px-20">
+        <div className="relative mx-auto flex w-full max-w-[1440px] flex-col justify-end px-5 py-[33px] sm:min-h-[420px] sm:px-4 sm:pb-12 sm:pt-8 md:min-h-[460px] md:px-8 md:pb-16 lg:px-20">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -184,7 +184,7 @@ export default function ContactUsContent() {
 
             <motion.p
               variants={fadeUp}
-              className="mt-8 text-[13px] font-extrabold uppercase tracking-[3.2px] text-[#ed1c24]"
+              className="mt-8 hidden text-[13px] font-extrabold uppercase tracking-[3.2px] text-[#ed1c24] sm:block"
             >
               Contact
             </motion.p>
@@ -192,11 +192,12 @@ export default function ContactUsContent() {
               variants={fadeUp}
               className="mt-3 text-[28px] font-extrabold leading-[1.08] tracking-[-1.2px] sm:text-[clamp(2rem,5vw,3.5rem)]"
             >
-              Let&apos;s plan your next industrial project.
+              Let&apos;s plan your next <br className="sm:hidden" />
+              industrial project.
             </motion.h1>
             <motion.p
               variants={fadeUp}
-              className="mt-4 max-w-[540px] text-sm leading-7 text-white/75 md:text-[17px]"
+              className="mt-4 max-w-[540px] text-sm leading-[22px] text-white/75 sm:leading-7 md:text-[17px]"
             >
               Share a brief, call the team, or visit our Chennai office. We
               respond within one business day with a clear next step.
@@ -204,20 +205,21 @@ export default function ContactUsContent() {
 
             <motion.div
               variants={fadeUp}
-              className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap"
+              className="mt-5 flex flex-wrap gap-x-2.5 gap-y-[19px] sm:mt-8 sm:gap-3"
             >
               <a
                 href="tel:+919790924754"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-[12px] bg-[#ed1c24] px-5 text-sm font-extrabold text-white shadow-[0px_8px_16px_rgba(237,28,36,0.35)] transition-transform hover:scale-[1.02] active:scale-[0.98]"
+                className="inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-[12px] bg-[#ed1c24] text-sm font-extrabold text-white shadow-[0px_5px_12px_rgba(237,32,36,0.17)] transition-transform hover:scale-[1.02] active:scale-[0.98] sm:flex-none sm:px-5 sm:shadow-[0px_8px_16px_rgba(237,28,36,0.35)]"
               >
                 <PhoneIcon />
-                Call +91 97909 24754
+                <span className="sm:hidden">Call Mekark</span>
+                <span className="hidden sm:inline">Call +91 97909 24754</span>
               </a>
               <a
                 href={WHATSAPP_HREF}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-[12px] bg-[#25D366] px-5 text-sm font-extrabold text-white transition-transform hover:scale-[1.02] active:scale-[0.98]"
+                className="inline-flex h-12 w-[174px] items-center justify-center gap-2 rounded-[12px] bg-[#25D366] text-sm font-extrabold text-white transition-transform hover:scale-[1.02] active:scale-[0.98] sm:w-auto sm:px-5"
               >
                 <WhatsAppIcon />
                 WhatsApp
@@ -231,9 +233,12 @@ export default function ContactUsContent() {
                     block: "start",
                   });
                 }}
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-[12px] border border-white/20 bg-white/10 px-5 text-sm font-extrabold text-white backdrop-blur-sm transition hover:bg-white/16"
+                className="inline-flex basis-full items-center justify-center gap-2 text-[13px] font-extrabold text-white transition sm:h-12 sm:basis-auto sm:rounded-[12px] sm:border sm:border-white/20 sm:bg-white/10 sm:px-5 sm:text-sm sm:backdrop-blur-sm sm:hover:bg-white/16"
               >
-                Send an enquiry
+                <span className="underline sm:no-underline">
+                  <span className="sm:hidden">Send a project enquiry</span>
+                  <span className="hidden sm:inline">Send an enquiry</span>
+                </span>
                 <ArrowIcon />
               </a>
             </motion.div>
@@ -243,9 +248,9 @@ export default function ContactUsContent() {
 
       <section
         id="enquiry"
-        className="scroll-mt-28 bg-[#f8f6f6] py-16 text-[#111] md:py-20"
+        className="scroll-mt-28 bg-[#f8f6f6] py-[33px] text-[#111] sm:py-16 md:py-20"
       >
-        <div className="mx-auto grid w-full max-w-[1440px] gap-12 px-4 md:px-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start lg:gap-16 lg:px-20">
+        <div className="mx-auto grid w-full max-w-[1440px] gap-[25px] px-4 sm:gap-12 md:px-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start lg:gap-16 lg:px-20">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -254,26 +259,27 @@ export default function ContactUsContent() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-[13px] font-extrabold uppercase tracking-[2.8px] text-[#ed1c24]"
+              className="text-[10px] font-extrabold uppercase leading-[19.5px] tracking-[2.8px] text-[#ed1c24] sm:text-[13px] sm:leading-normal"
             >
               Project enquiry
             </motion.p>
             <motion.h2
               variants={fadeUp}
-              className="mt-3 text-[clamp(1.75rem,3vw,2.5rem)] font-extrabold leading-tight tracking-[-0.6px]"
+              className="mt-0.5 text-[clamp(1.75rem,3vw,2.5rem)] font-extrabold leading-[35px] tracking-[-0.6px] sm:mt-3 sm:leading-tight"
             >
-              Tell us what you want to build.
+              Tell us what you want to <br className="sm:hidden" />
+              build.
             </motion.h2>
             <motion.p
               variants={fadeUp}
-              className="mt-4 max-w-[480px] text-sm leading-7 text-black/65"
+              className="mt-3 max-w-[480px] text-sm leading-[22px] text-black/65 sm:mt-4 sm:leading-7"
             >
               Use the form for PEB, factory, warehouse, or specialised
               infrastructure projects. The more context you share, the faster we
               can come back with a practical recommendation.
             </motion.p>
 
-            <div className="mt-10 space-y-5">
+            <div className="mt-[25px] space-y-5 sm:mt-10">
               {NEXT_STEPS.map((item) => (
                 <motion.div
                   key={item.step}
@@ -295,7 +301,7 @@ export default function ContactUsContent() {
 
             <motion.div
               variants={fadeUp}
-              className="mt-10 grid gap-3 sm:grid-cols-3"
+              className="mt-10 hidden gap-3 sm:grid sm:grid-cols-3"
             >
               {CONTACT_CHANNELS.map((channel) => {
                 const Icon = channel.icon;
@@ -329,57 +335,60 @@ export default function ContactUsContent() {
         </div>
       </section>
 
-      <section className="border-t border-black/6 bg-white py-16 text-[#111] md:py-20">
-        <div className="mx-auto grid w-full max-w-[1440px] gap-8 px-4 md:px-8 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:items-stretch lg:gap-10 lg:px-20">
+      <section className="bg-[#f8f6f6] text-[#111] sm:border-t sm:border-black/6 sm:bg-white sm:py-16 md:py-20">
+        <div className="mx-auto grid w-full max-w-[1440px] gap-0 px-0 sm:gap-8 sm:px-4 md:px-8 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:items-stretch lg:gap-10 lg:px-20">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={VIEWPORT}
-            className="flex flex-col justify-between rounded-[24px] bg-[#111] p-7 text-white md:p-9"
+            className="flex flex-col justify-between bg-[#15191d] px-5 pb-[9px] pt-[33px] text-white sm:rounded-[24px] sm:bg-[#111] sm:p-7 md:p-9"
           >
             <div>
               <motion.p
                 variants={fadeUp}
-                className="text-[12px] font-extrabold uppercase tracking-[2.6px] text-[#ed1c24]"
+                className="text-[10px] font-extrabold uppercase tracking-[1.5px] text-[#e50818] sm:text-[12px] sm:tracking-[2.6px] sm:text-[#ed1c24]"
               >
                 Head office
               </motion.p>
               <motion.h2
                 variants={fadeUp}
-                className="mt-2 text-[28px] font-extrabold tracking-[-0.5px] md:text-[32px]"
+                className="mt-[7px] text-[18px] font-bold tracking-[-0.3px] sm:mt-2 sm:text-[28px] sm:font-extrabold sm:tracking-[-0.5px] md:text-[32px]"
               >
                 Visit us in Chennai
               </motion.h2>
               <motion.div
                 variants={fadeUp}
-                className="mt-6 flex items-start gap-3 text-[15px] leading-7 text-white/75"
+                className="mt-[7px] flex items-start gap-3 text-[13px] leading-[20.8px] text-[#c7cdd2] sm:mt-6 sm:text-[15px] sm:leading-7 sm:text-white/75"
               >
-                <span className="mt-1 text-[#ed1c24]">
+                <span className="mt-1 hidden text-[#ed1c24] sm:block">
                   <PinIcon />
                 </span>
                 <p>{OFFICE_ADDRESS}</p>
               </motion.div>
             </div>
 
-            <motion.div variants={fadeUp} className="mt-8 space-y-3">
+            <motion.div
+              variants={fadeUp}
+              className="mt-3.5 space-y-[9px] pb-[7px] sm:mt-8 sm:space-y-3 sm:pb-0"
+            >
               <a
                 href="tel:+919790924754"
-                className="flex items-center gap-3 text-sm font-semibold text-white/85 transition hover:text-white"
+                className="flex items-center gap-[9px] text-[13px] font-bold text-white transition hover:text-white sm:gap-3 sm:text-sm sm:font-semibold sm:text-white/85 [&>svg]:size-4 [&>svg]:text-[#e50818] sm:[&>svg]:size-[18px] sm:[&>svg]:text-current"
               >
                 <PhoneIcon />
                 +91 97909 24754
               </a>
               <a
                 href="tel:04447709518"
-                className="flex items-center gap-3 text-sm font-semibold text-white/85 transition hover:text-white"
+                className="hidden sm:flex items-center gap-[9px] text-[13px] font-bold text-white transition hover:text-white sm:gap-3 sm:text-sm sm:font-semibold sm:text-white/85 [&>svg]:size-4 [&>svg]:text-[#e50818] sm:[&>svg]:size-[18px] sm:[&>svg]:text-current"
               >
                 <PhoneIcon />
                 044 - 47709518
               </a>
               <a
                 href="mailto:admin@mekark.com"
-                className="flex items-center gap-3 text-sm font-semibold text-white/85 transition hover:text-white"
+                className="flex items-center gap-[9px] text-[13px] font-bold text-white transition hover:text-white sm:gap-3 sm:text-sm sm:font-semibold sm:text-white/85 [&>svg]:size-4 [&>svg]:text-[#e50818] sm:[&>svg]:size-[18px] sm:[&>svg]:text-current"
               >
                 <MailIcon />
                 admin@mekark.com
@@ -388,7 +397,7 @@ export default function ContactUsContent() {
                 href={MAP_SHARE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-flex h-12 items-center justify-center gap-2 rounded-[12px] bg-white px-5 text-sm font-extrabold text-[#111] transition hover:bg-white/90"
+                className="mt-4 hidden h-12 items-center justify-center gap-2 rounded-[12px] bg-white px-5 sm:inline-flex text-sm font-extrabold text-[#111] transition hover:bg-white/90"
               >
                 Open in Google Maps
                 <ArrowIcon />
@@ -401,12 +410,12 @@ export default function ContactUsContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={VIEWPORT}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="min-h-[360px] overflow-hidden rounded-[24px] border border-black/8 md:min-h-[460px]"
+            className="overflow-hidden bg-[#15191d] px-5 sm:min-h-[360px] sm:rounded-[24px] sm:border sm:border-black/8 sm:bg-transparent sm:px-0 md:min-h-[460px]"
           >
             <iframe
               title="Mekark Chennai office on Google Maps"
               src={MAP_EMBED_URL}
-              className="h-full min-h-[360px] w-full md:min-h-[460px]"
+              className="h-[157px] w-full rounded-[18px] sm:h-full sm:min-h-[360px] sm:rounded-none md:min-h-[460px]"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen

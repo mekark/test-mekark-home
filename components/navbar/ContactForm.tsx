@@ -65,16 +65,17 @@ const initialFormData: FormData = {
 };
 
 const inputClass =
-  "mt-1 w-full h-11 px-4 rounded-lg border border-gray-200 bg-white text-[#111] text-[14px] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ED2024]/30";
+  "mt-1.5 w-full h-11 px-3 rounded-[10px] border border-[#dce1e5] bg-white text-[#111] text-[14px] placeholder:text-[#929ba3] sm:mt-1 sm:px-4 sm:rounded-lg sm:border-gray-200 sm:placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ED2024]/30";
 const selectClass =
-  "mt-1 w-full h-11 appearance-none pl-4 pr-9 rounded-lg border border-gray-200 bg-white bg-no-repeat text-[#111] text-[14px] focus:outline-none focus:ring-2 focus:ring-[#ED2024]/30";
+  "mt-1.5 w-full h-11 appearance-none pl-4 pr-9 rounded-[10px] border border-[#dce1e5] bg-white bg-no-repeat sm:mt-1 sm:rounded-lg sm:border-gray-200 text-[#111] text-[14px] focus:outline-none focus:ring-2 focus:ring-[#ED2024]/30";
 const selectArrowStyle = {
   backgroundImage:
     "url(\"data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%236b7280' stroke-width='1.5'%3E%3Cpath d='M6 8l4 4 4-4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\")",
   backgroundPosition: "right 14px center",
   backgroundSize: "14px 14px",
 };
-const labelClass = "text-sm font-medium text-[#111]";
+const labelClass =
+  "text-xs font-bold text-[#333b42] sm:text-sm sm:font-medium sm:text-[#111]";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>(initialFormData);
@@ -217,18 +218,18 @@ export default function ContactForm() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="rounded-[24px] border border-black/8 bg-white p-6 shadow-[0px_18px_44px_rgba(0,0,0,0.08)] md:p-8"
+      className="rounded-2xl border border-[#e6e9ec] bg-white px-3.5 pb-[17px] pt-[29px] shadow-[0px_3px_12px_rgba(24,34,43,0.03)] sm:rounded-[24px] sm:border-black/8 sm:p-6 sm:shadow-[0px_18px_44px_rgba(0,0,0,0.08)] md:p-8"
     >
-      <div className="mb-6">
-        <p className="text-[11px] font-extrabold uppercase tracking-[2.2px] text-[#ed1c24]">
+      <div className="mb-[15px] sm:mb-6">
+        <p className="text-[10px] font-extrabold uppercase tracking-[2.2px] text-[#ed1c24] sm:text-[11px]">
           Enquiry form
         </p>
-        <h2 className="mt-1 text-[22px] font-extrabold tracking-[-0.4px] text-black">
+        <h2 className="mt-1 text-[16px] font-extrabold text-[#15191d] sm:text-[22px] sm:tracking-[-0.4px] sm:text-black">
           Request a consultation
         </h2>
       </div>
-      <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <form onSubmit={handleSubmit} className="space-y-[13px] sm:space-y-4" noValidate>
+        <div className="grid grid-cols-1 gap-[13px] sm:grid-cols-2 sm:gap-4">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -282,7 +283,7 @@ export default function ContactForm() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-[13px] sm:grid-cols-2 sm:gap-4">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -335,12 +336,13 @@ export default function ContactForm() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-x-2.5 gap-y-[13px] sm:grid-cols-2 sm:gap-4">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.2 }}
+            className="col-span-2 sm:col-span-1"
           >
             <label htmlFor="contact-service" className={labelClass}>
               Select Service <span className="text-[#ED2024]">*</span>
@@ -437,6 +439,7 @@ export default function ContactForm() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.24 }}
+            className="col-span-2 sm:col-span-1"
           >
             <label htmlFor="contact-budget" className={labelClass}>
               Project Budget <span className="text-[#ED2024]">*</span>
@@ -472,7 +475,7 @@ export default function ContactForm() {
           transition={{ duration: 0.4, delay: 0.25 }}
         >
           <label htmlFor="contact-message" className={labelClass}>
-            Message <span className="text-[#ED2024]">*</span>
+            Message <span className="hidden text-[#ED2024] sm:inline">*</span>
           </label>
           <textarea
             id="contact-message"
@@ -484,7 +487,7 @@ export default function ContactForm() {
               clearError("message");
             }}
             placeholder="Tell us about your project or enquiry"
-            className="mt-1 w-full px-4 py-3 rounded-lg border border-gray-200 bg-white text-[#111] text-[14px] placeholder:text-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-[#ED2024]/30"
+            className="mt-1.5 h-[94px] w-full px-3 py-3 rounded-[10px] border border-[#dce1e5] bg-white text-[#111] text-[14px] placeholder:text-[#929ba3] resize-none sm:mt-1 sm:h-auto sm:px-4 sm:rounded-lg sm:border-gray-200 sm:placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ED2024]/30"
           />
           {errors.message && (
             <p className="text-red-500 text-xs mt-1">{errors.message}</p>
@@ -512,10 +515,15 @@ export default function ContactForm() {
           disabled={isSubmitting}
           whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
           whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-          className="h-[52px] w-full rounded-[12px] bg-[#ed1c24] text-sm font-extrabold text-white shadow-[0px_8px_16px_rgba(237,28,36,0.28)] disabled:cursor-not-allowed disabled:opacity-70"
+          className="h-12 w-full rounded-[12px] bg-[#ed1c24] text-sm font-extrabold text-white shadow-[0px_5px_12px_rgba(237,32,36,0.17)] disabled:cursor-not-allowed disabled:opacity-70 sm:h-[52px] sm:shadow-[0px_8px_16px_rgba(237,28,36,0.28)]"
         >
           {isSubmitting ? "Sending..." : "Send project enquiry"}
+          {!isSubmitting && <span className="ml-2 sm:hidden">→</span>}
         </motion.button>
+        <p className="px-3 pt-[11px] text-center text-[11px] leading-[16.5px] text-[#7c858c] sm:hidden">
+          Your project details will be used to help our team respond to your
+          enquiry.
+        </p>
         </motion.div>
       </form>
     </motion.div>

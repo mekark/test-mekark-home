@@ -621,7 +621,7 @@ export function ExtendedServiceSection() {
               </div>
 
               <Link
-                href="/#enquiry"
+                href="/enquiry/form"
                 className="inline-flex h-11 w-full items-center justify-center gap-2.5 rounded-full border-2 border-[#e50818] bg-white px-5 text-sm font-bold text-[#e50818] transition-colors hover:bg-[#fff5f5]"
               >
                 Enquire Now
@@ -742,7 +742,7 @@ export function ExtendedServiceSection() {
               <ServiceSwitcher activeId={activeId} onSelect={selectService} />
 
               <Link
-                href="/#enquiry"
+                href="/enquiry/form"
                 className="inline-flex h-[62px] w-full items-center justify-center gap-3 rounded-full border-2 border-[#e50818] bg-white px-5 py-4 text-[20px] font-bold leading-[31px] text-[#e50818] transition-colors hover:bg-[#fff5f5]"
               >
                 Enquire Now

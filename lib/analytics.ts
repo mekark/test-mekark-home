@@ -99,8 +99,20 @@ export function trackEnquiryFormView(target: EnquiryFormTrackTarget) {
   trackServiceFormView(target.serviceSlug, target.formSourcePage);
 }
 
+/** Common success event for every lead form; one GTM trigger → GA4 generate_lead. */
+export function trackFormSubmission(service: string, sourcePage: string) {
+  pushAnalyticsEvent({
+    event: "form_submission",
+    form_name: "service_quote_form",
+    service,
+    page_path: sourcePage,
+  });
+}
+
 /** Fires the correct submit event for service / industry / institutional forms. */
 export function trackEnquiryFormSubmit(target: EnquiryFormTrackTarget) {
+  trackFormSubmission(target.serviceSlug, target.formSourcePage);
+
   const kind = resolveEnquiryFormKind(target.pagePath);
 
   if (kind === "institutional") {

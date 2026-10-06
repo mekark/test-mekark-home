@@ -253,7 +253,7 @@ function FooterLinkColumn({
 
 function FloatingActions() {
   return (
-    <div className="pointer-events-none fixed bottom-[108px] right-5 z-40 flex flex-col gap-3 sm:bottom-[116px] sm:right-8">
+    <div className="pointer-events-none fixed bottom-5 right-5 z-40 flex flex-col gap-3 sm:bottom-8 sm:right-8">
       <a
         href="tel:+919790924754"
         aria-label="Call Mekark"
@@ -377,7 +377,7 @@ export function FooterSection({
 
             <motion.div
               variants={fadeUp}
-              className="flex flex-col gap-8 sm:flex-row sm:gap-16 lg:gap-26 lg:pt-1 xl:gap-20 2xl:gap-26"
+              className="flex flex-row gap-14 sm:gap-16 lg:gap-26 lg:pt-1 xl:gap-20 2xl:gap-26"
             >
               <FooterLinkColumn title="Menu" links={MENU_LINKS} />
               <FooterLinkColumn

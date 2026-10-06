@@ -25,6 +25,7 @@ export type ServiceEnquiryConfig = {
   defaultIndustry?: string;
   lockService?: boolean;
   lockIndustry?: boolean;
+  prefillMessage?: string;
 };
 
 type ServiceEnquiryContextValue = {

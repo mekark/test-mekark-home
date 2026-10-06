@@ -80,7 +80,7 @@ const heroStats: {
 ];
 
 const heroDescription =
-  "Mekark delivers turnkey MEP design-build for factories, warehouses, and manufacturing plants: HVAC, electrical, plumbing, firefighting, and mechanical utilities, backed by 18+ years of experience and 200+ completed industrial MEP projects across Tamil Nadu, India.";
+  "Mekark delivers turnkey MEP design-build for factories, warehouses, and manufacturing plants: HVAC, electrical, plumbing, firefighting, and mechanical utilities, backed by 18+ years of experience and 300+ completed industrial MEP projects across Tamil Nadu, India.";
 
 function MobileHero() {
   const { openEnquiry } = useServiceEnquiry();

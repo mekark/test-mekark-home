@@ -28,7 +28,7 @@ function CloseIcon() {
 }
 
 const DEFAULT_HIGHLIGHTS = [
-  "200+ industrial projects delivered",
+  "300+ industrial projects delivered",
   "18+ years of structural expertise",
   "98% on-time project execution",
 ] as const;
@@ -173,6 +173,7 @@ export function ServiceEnquiryFormPage({
               formId={`${config.serviceSlug}-enquiry-form`}
               defaultService={defaultService}
               defaultIndustry={config.defaultIndustry}
+              defaultMessage={config.prefillMessage}
               sourcePage={config.formSourcePage}
               lockService={config.lockService ?? false}
               lockIndustry={config.lockIndustry ?? false}

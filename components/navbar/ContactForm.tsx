@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { trackFormSubmission } from "@/lib/analytics";
 import { markEnquirySubmitted } from "@/lib/enquiry-thank-you";
 
 const START_TIMELINES = [
@@ -195,6 +196,7 @@ export default function ContactForm() {
         return;
       }
 
+      trackFormSubmission(formData.service || "contact", "/resources/contact-us");
       setFormData(initialFormData);
       markEnquirySubmitted();
       window.location.assign("/thank-you");

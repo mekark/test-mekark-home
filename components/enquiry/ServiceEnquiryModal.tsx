@@ -7,7 +7,7 @@ import { EnquiryFormCore } from "@/components/enquiry/EnquiryFormCore";
 import modalStyles from "./service-enquiry-modal.module.css";
 
 const DEFAULT_HIGHLIGHTS = [
-  "200+ industrial projects delivered",
+  "300+ industrial projects delivered",
   "18+ years of structural expertise",
   "98% on-time project execution",
 ] as const;

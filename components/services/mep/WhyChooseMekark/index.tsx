@@ -51,7 +51,7 @@ const features = [
   {
     num: "02",
     title: "Established Credentials",
-    body: "Over 200+ industrial MEP projects completed, with a 4.7 out of 5 customer rating across factory, warehouse, and manufacturing plant clients.",
+    body: "Over 300+ industrial MEP projects completed, with a 4.7 out of 5 customer rating across factory, warehouse, and manufacturing plant clients.",
   },
   {
     num: "03",

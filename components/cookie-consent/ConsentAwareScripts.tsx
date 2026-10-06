@@ -1,15 +1,10 @@
 "use client";
 
 import { useEffect } from "react";
-import {
-  hasAnalyticsConsent,
-  hasFunctionalConsent,
-} from "@/lib/cookie-consent";
+import { hasAnalyticsConsent } from "@/lib/cookie-consent";
 import { useCookieConsent } from "@/components/cookie-consent/CookieConsentProvider";
 
 const GTM_ID = "GTM-5SBMM86H";
-const TAWK_SRC =
-  "https://embed.tawk.to/69fd7e65427c251c368c1e92/1jo33bfff";
 
 /** Fallback if the user never scrolls or interacts. */
 const THIRD_PARTY_DEFER_TIMEOUT_MS = 4000;
@@ -110,38 +105,6 @@ function loadGoogleTagManager() {
   w.__mekarkGtmLoaded = true;
 }
 
-function loadTawkTo() {
-  if (typeof window === "undefined" || (window as Window & { __mekarkTawkLoaded?: boolean }).__mekarkTawkLoaded) {
-    return;
-  }
-
-  const w = window as Window & {
-    Tawk_API?: Record<string, unknown>;
-    Tawk_LoadStart?: Date;
-    __mekarkTawkLoaded?: boolean;
-  };
-
-  w.Tawk_API = w.Tawk_API ?? {};
-  w.Tawk_LoadStart = new Date();
-  w.Tawk_API.customStyle = {
-    visibility: {
-      desktop: { position: "br", xOffset: 32, yOffset: 20 },
-      mobile: { position: "br", xOffset: 20, yOffset: 20 },
-    },
-  };
-
-  loadScript(
-    "mekark-tawk",
-    TAWK_SRC,
-    {
-      charset: "UTF-8",
-      crossorigin: "*",
-    },
-    document.body,
-  );
-  w.__mekarkTawkLoaded = true;
-}
-
 function GtmNoScript() {
   return (
     <noscript>
@@ -156,12 +119,11 @@ function GtmNoScript() {
   );
 }
 
-/** Loads GTM and Tawk without waiting for cookie consent (review / pre-launch). */
+/** Loads GTM without waiting for cookie consent (review / pre-launch). */
 export function DirectSiteScripts() {
   useEffect(() => {
     deferThirdPartyScripts(() => {
       loadGoogleTagManager();
-      loadTawkTo();
     });
   }, []);
 
@@ -179,10 +141,6 @@ export function ConsentAwareScripts() {
     deferThirdPartyScripts(() => {
       if (hasAnalyticsConsent(consent)) {
         loadGoogleTagManager();
-      }
-
-      if (hasFunctionalConsent(consent)) {
-        loadTawkTo();
       }
     });
   }, [consent, isReady]);

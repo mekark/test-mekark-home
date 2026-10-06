@@ -236,7 +236,7 @@ function AboutCopyColumn({
         ) : null}
 
         <p className={PARAGRAPH_CLASS}>
-          With 18+ years of engineering excellence and 200+ successfully
+          With 18+ years of engineering excellence and 300+ successfully
           delivered projects, Mekark is a trusted industrial EPC (Engineering,
           Procurement, and Construction) company specialising in facilities
           that demand engineered for long-term operational performance.
@@ -279,7 +279,7 @@ function AboutCopyColumn({
       ) : null}
 
       <motion.p variants={aboutParagraphReveal} className={PARAGRAPH_CLASS}>
-        With 18+ years of engineering excellence and 200+ successfully delivered
+        With 18+ years of engineering excellence and 300+ successfully delivered
         projects, Mekark is a trusted industrial EPC (Engineering, Procurement,
         and Construction) company specialising in facilities that demand
         engineered for long-term operational performance.
@@ -334,7 +334,7 @@ const STATS = [
     iconAlt: "Design-to-handover turnaround",
   },
   {
-    countTo: 200,
+   countTo: 300,
     suffix: "+",
     label: (
       <>

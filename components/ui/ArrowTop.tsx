@@ -51,7 +51,7 @@ export function ArrowTop() {
           exit={{ opacity: 0, y: 12, scale: 0.9 }}
           transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
           onClick={scrollToTop}
-          className="fixed bottom-[232px] right-5 z-50 flex size-11 items-center justify-center rounded-full bg-[#ed1c24] text-white shadow-[0px_8px_16px_rgba(237,28,36,0.35)] transition-transform hover:scale-105 active:scale-95 sm:bottom-[248px] sm:right-8 sm:size-12"
+          className="fixed bottom-[140px] right-5 z-50 flex size-12 items-center justify-center rounded-full bg-[#ed1c24] text-white shadow-[0px_8px_16px_rgba(237,28,36,0.35)] transition-transform hover:scale-105 active:scale-95 sm:bottom-[152px] sm:right-8"
         >
           <ArrowUpIcon />
         </motion.button>

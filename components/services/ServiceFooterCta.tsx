@@ -22,7 +22,7 @@ export function ServiceFooterCta({
   subtitle,
   id,
   quoteLabel = "Get a Free Quote",
-  quoteHref = "/#enquiry",
+  quoteHref = "/enquiry/form",
   onQuoteClick,
   callLabel = "Call us",
   compactCopy = false,

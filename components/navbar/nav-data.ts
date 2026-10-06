@@ -173,7 +173,7 @@ export function buildSolutionHref(
     industryLabel: industry.label,
     serviceLabel: service.label,
   });
-  return `/?${params.toString()}#enquiry`;
+  return `/enquiry/form?${params.toString()}`;
 }
 
 /** Map Find-your-solution industry slugs → enquiry form options */

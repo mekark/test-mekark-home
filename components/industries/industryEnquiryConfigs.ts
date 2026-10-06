@@ -2,7 +2,7 @@ import { PROJECT_AREAS } from "@/components/enquiry/enquiry-form-shared";
 import type { ServiceEnquiryConfig } from "@/components/services/ServiceEnquiryProvider";
 
 const INDUSTRY_HIGHLIGHTS = [
-  "200+ industrial projects delivered",
+  "300+ industrial projects delivered",
   "18+ years of EPC expertise",
   "ISO 9001:2015 certified contractor",
 ] as const;

@@ -20,7 +20,7 @@ const fadeUp = {
 const formatWithCommas = (value: number) => value.toLocaleString("en-US");
 
 const heroDescription =
-  "Mekark delivers turnkey civil construction and RCC building solutions for factories, warehouses, commercial complexes, and institutional projects — backed by 18+ years of experience and 200+ completed commercial and industrial projects across Tamil Nadu and India.";
+  "Mekark delivers turnkey civil construction and RCC building solutions for factories, warehouses, commercial complexes, and institutional projects — backed by 18+ years of experience and 300+ completed commercial and industrial projects across Tamil Nadu and India.";
 
 const mainStats: {
   value: ReactNode;

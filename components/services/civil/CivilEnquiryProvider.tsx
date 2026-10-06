@@ -148,7 +148,7 @@ export function CivilEnquiryProvider({ children }: { children: ReactNode }) {
           description="Share your project details and our civil construction team will get back to you with a tailored proposal."
           submitLabel="Get My Free Quote"
           highlights={[
-            "200+ commercial & industrial projects delivered",
+            "300+ commercial & industrial projects delivered",
             "18+ years of civil & RCC expertise",
             "ISO 9001:2015 certified contractor",
           ]}

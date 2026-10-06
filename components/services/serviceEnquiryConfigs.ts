@@ -20,7 +20,7 @@ export const CIVIL_ENQUIRY_CONFIG: ServiceEnquiryConfig = {
   defaultService: "Civil",
   lockService: true,
   highlights: [
-    "200+ commercial & industrial projects delivered",
+    "300+ commercial & industrial projects delivered",
     "18+ years of civil & RCC expertise",
     "ISO 9001:2015 certified contractor",
   ],
@@ -38,7 +38,7 @@ export const PEB_ENQUIRY_CONFIG: ServiceEnquiryConfig = {
   defaultService: "PEB",
   lockService: true,
   highlights: [
-    "200+ PEB projects delivered across South India",
+    "300+ PEB projects delivered across South India",
     "18+ years of pre-engineered building expertise",
     "ISO 9001:2015 certified manufacturer",
   ],
@@ -56,7 +56,7 @@ export const MULTI_STOREY_ENQUIRY_CONFIG: ServiceEnquiryConfig = {
   defaultService: "Multi Storey",
   lockService: true,
   highlights: [
-    "200+ multi-storey projects delivered",
+    "300+ multi-storey projects delivered",
     "18+ years of structural engineering expertise",
     "ISO 9001:2015 certified contractor",
   ],
@@ -74,7 +74,7 @@ export const MEP_ENQUIRY_CONFIG: ServiceEnquiryConfig = {
   defaultService: "MEP",
   lockService: true,
   highlights: [
-    "200+ industrial MEP projects delivered",
+    "300+ industrial MEP projects delivered",
     "18+ years of turnkey MEP expertise",
     "ISO 9001:2015 certified contractor",
   ],
@@ -92,7 +92,7 @@ export const SOLAR_ENQUIRY_CONFIG: ServiceEnquiryConfig = {
   defaultService: "Solar",
   lockService: true,
   highlights: [
-    "200+ commercial solar projects delivered",
+    "300+ commercial solar projects delivered",
     "18+ years of solar EPC expertise",
     "ISO 9001:2015 certified contractor",
   ],
@@ -110,7 +110,7 @@ export const TENSILE_ENQUIRY_CONFIG: ServiceEnquiryConfig = {
   defaultService: "Tensile",
   lockService: true,
   highlights: [
-    "200+ tensile projects delivered across South India",
+    "300+ tensile projects delivered across South India",
     "18+ years of PTFE & ETFE fabric expertise",
     "ISO 9001:2015 certified contractor",
   ],

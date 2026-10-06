@@ -37,7 +37,7 @@ export default function HeroSection() {
           Mekark is South India&apos;s trusted textile factory building
           contractor, constructing spinning mills, weaving sheds, garment
           factories, and dyeing &amp; processing plants with ISO-certified PEB
-          and civil construction, backed by 18+ years of experience and 200+
+          and civil construction, backed by 18+ years of experience and 300+
           delivered projects.
         </div>
         <button type="button" onClick={openEnquiry} className={styles.cta}>

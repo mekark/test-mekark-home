@@ -1,3 +1,4 @@
+import { PROJECT_AREAS } from "@/components/enquiry/enquiry-form-shared";
 import {
   AUTOMATION_ENQUIRY_CONFIG,
   DATA_CENTER_ENQUIRY_CONFIG,
@@ -124,5 +125,24 @@ export function getFormHeroBackdrop(
 ): FormHeroBackdrop | undefined {
   return FORM_HERO_BACKDROP_BY_SLUG[slug];
 }
+
+/** Generic enquiry form used by site-wide "get a quote" links. */
+export const GENERAL_ENQUIRY_CONFIG: ServiceEnquiryConfig = {
+  serviceSlug: "general",
+  serviceLabel: "Mekark",
+  pagePath: "/",
+  formSourcePage: "/enquiry/form",
+  title: "Start Your Industrial Project",
+  description:
+    "Partner with Mekark for high-quality, fast-track, and cost-efficient industrial construction solutions.",
+  projectAreas: PROJECT_AREAS,
+  highlights: [
+    "300+ industrial projects delivered",
+    "18+ years of structural expertise",
+    "98% on-time project execution",
+  ],
+  defaultService: "",
+  defaultIndustry: "",
+};
 
 export { INSTITUTIONAL_ENQUIRY_CONFIG };

@@ -23,7 +23,7 @@ import { SECTION_CONTAINER_CLASS } from "@/lib/sectionLayout";
 const VIEWPORT = { once: true, margin: "-80px" as const };
 
 const HIGHLIGHTS = [
-  "200+ industrial projects delivered",
+  "300+ industrial projects delivered",
   "18+ years of structural expertise",
   "98% on-time project execution",
 ] as const;

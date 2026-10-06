@@ -80,7 +80,7 @@ export default function ServiceMobileHero({
   arrowIcon = DEFAULT_ARROW,
   stats,
   certification,
-  enquiryHref = "/#enquiry",
+  enquiryHref = "/enquiry/form",
   onEnquiryClick,
   projectsHref = "/projects/completed-projects",
   statsOverlapMargin = "-108px",

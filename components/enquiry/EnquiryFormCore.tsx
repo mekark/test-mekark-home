@@ -4,6 +4,7 @@ import { type FormEvent, type ReactNode, useId, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useNavigationLoading } from "@/components/ui/NavigationLoadingProvider";
+import { trackFormSubmission } from "@/lib/analytics";
 import { markEnquirySubmitted } from "@/lib/enquiry-thank-you";
 import {
   INDUSTRY_TYPES,
@@ -233,7 +234,12 @@ export function EnquiryFormCore({
         return;
       }
 
-      onTrackSubmit?.();
+      if (onTrackSubmit) {
+        onTrackSubmit();
+      } else {
+        // Inline forms (e.g. homepage) have no tracker of their own.
+        trackFormSubmission(service || "general", resolvedSourcePage);
+      }
       clearEnquirySource();
       onSubmitSuccess?.();
       onBeforeNavigate?.();

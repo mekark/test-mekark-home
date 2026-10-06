@@ -580,27 +580,36 @@ function FindSolutionButton({
       <span className="relative flex items-center gap-2 px-4 py-2.5 pl-5">
         <span
           aria-hidden
-          className={`flex size-5 items-center justify-center rounded-full transition-colors ${
+          className={`flex size-7 items-center justify-center rounded-full transition-colors ${
             open ? "bg-white/20 text-white" : "bg-mekark-red/10 text-mekark-red"
           }`}
         >
-          <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
-            <circle
-              cx="5"
-              cy="5"
-              r="3.25"
+          <svg width="17" height="17" viewBox="0 0 16 16" fill="none">
+            <rect
+              x="2.75"
+              y="2.75"
+              width="10.5"
+              height="11.5"
+              rx="1.75"
               stroke="currentColor"
-              strokeWidth="1.4"
+              strokeWidth="1.5"
             />
             <path
-              d="M7.5 7.5L10 10"
+              d="M5.75 2.75V2a.75.75 0 0 1 .75-.75h3A.75.75 0 0 1 10.25 2v.75"
               stroke="currentColor"
-              strokeWidth="1.4"
+              strokeWidth="1.5"
               strokeLinecap="round"
+            />
+            <path
+              d="M5.5 8.5l1.75 1.75L10.75 6.75"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </span>
-        <span>{short ? "Find solution" : "Find your solution"}</span>
+        <span>{short ? "Get quote" : "Get free quote"}</span>
         <svg
           width="12"
           height="12"
@@ -858,12 +867,12 @@ export function Navbar() {
     setService(null);
   };
 
-  const openFind = () => {
+  // The solution-matcher panel is bypassed: the CTA goes straight to the form page.
+  const goToQuoteForm = () => {
     closeMobile();
-    setFindOpen(true);
-    setFindStep(1);
-    setIndustry(null);
-    setService(null);
+    closeFind();
+    startNavigation();
+    router.push("/enquiry/form");
   };
 
   const redirectToSolution = (href: string) => {
@@ -977,20 +986,13 @@ export function Navbar() {
             )}
 
             <motion.div variants={navbarItemReveal} className="ml-4">
-              <FindSolutionButton
-                open={findOpen}
-                onClick={() => (findOpen ? closeFind() : openFind())}
-              />
+              <FindSolutionButton open={findOpen} onClick={goToQuoteForm} />
             </motion.div>
           </motion.nav>
 
           <div className="ml-auto flex items-center gap-2 lg:hidden">
             <div className="hidden sm:block">
-              <FindSolutionButton
-                open={findOpen}
-                short
-                onClick={() => (findOpen ? closeFind() : openFind())}
-              />
+              <FindSolutionButton open={findOpen} short onClick={goToQuoteForm} />
             </div>
             <motion.button
               type="button"
@@ -1023,7 +1025,7 @@ export function Navbar() {
         >
           <div className="pb-[max(1rem,env(safe-area-inset-bottom))]">
             <div className="border-b border-white/8 px-5 py-4 sm:hidden">
-              <FindSolutionButton open={findOpen} onClick={openFind} fullWidth />
+              <FindSolutionButton open={findOpen} onClick={goToQuoteForm} fullWidth />
             </div>
             {NAV_ITEMS.map((item) => (
               <MobileNavItem

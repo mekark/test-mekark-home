@@ -251,24 +251,37 @@ function FooterLinkColumn({
   );
 }
 
+function FloatingTooltip({ children }: { children: ReactNode }) {
+  return (
+    <span
+      role="tooltip"
+      className="pointer-events-none absolute right-full mr-3 hidden whitespace-nowrap rounded-md bg-[#111] px-3 py-1.5 text-xs font-semibold text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100 group-focus-visible:opacity-100 sm:block"
+    >
+      {children}
+    </span>
+  );
+}
+
 function FloatingActions() {
   return (
     <div className="pointer-events-none fixed bottom-5 right-5 z-40 flex flex-col gap-3 sm:bottom-8 sm:right-8">
       <a
         href="tel:+919790924754"
         aria-label="Call Mekark"
-        className="pointer-events-auto flex size-12 items-center justify-center rounded-full bg-[#ed1c24] shadow-[0px_8px_16px_rgba(237,28,36,0.35)] transition-transform hover:scale-105 active:scale-95"
+        className="group pointer-events-auto relative flex size-12 items-center justify-center rounded-full bg-[#ed1c24] shadow-[0px_8px_16px_rgba(237,28,36,0.35)] transition-transform hover:scale-105 active:scale-95"
       >
         <PhoneHandsetIcon />
+        <FloatingTooltip>Call us</FloatingTooltip>
       </a>
       <a
         href="https://wa.me/919790924754"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="WhatsApp Mekark"
-        className="pointer-events-auto flex size-12 items-center justify-center rounded-full bg-[#25D366] shadow-[0px_8px_16px_rgba(37,211,102,0.35)] transition-transform hover:scale-105 active:scale-95"
+        className="group pointer-events-auto relative flex size-12 items-center justify-center rounded-full bg-[#25D366] shadow-[0px_8px_16px_rgba(37,211,102,0.35)] transition-transform hover:scale-105 active:scale-95"
       >
         <WhatsAppIcon />
+        <FloatingTooltip>Chat on WhatsApp</FloatingTooltip>
       </a>
     </div>
   );

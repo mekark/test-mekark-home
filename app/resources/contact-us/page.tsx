@@ -15,7 +15,7 @@ export default function ContactUsPage() {
   return (
     <div className="flex flex-1 flex-col bg-[#f8f6f6]">
       <ContactUsContent />
-      <FooterSection />
+      <FooterSection hideContactDetails />
     </div>
   );
 }

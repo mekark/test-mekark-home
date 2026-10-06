@@ -172,13 +172,13 @@ export function CompletedProjectsListingSection() {
 
           <motion.div
             variants={mfgSubtitleReveal}
-            className="flex w-full justify-center max-lg:hidden"
+            className="flex w-full justify-center"
           >
             <Link
               href={COMPLETED_PROJECTS_PATH}
               className="inline-flex min-h-11 items-center justify-center rounded-[9px] bg-[#ed1c24] px-6 py-3 text-sm font-bold text-white shadow-[0px_9px_13px_-3px_rgba(237,28,36,0.2),0px_3px_5px_-3px_rgba(237,28,36,0.2)] transition-transform hover:scale-[1.02] active:scale-[0.98]"
             >
-              Show More
+              View All
             </Link>
           </motion.div>
         </motion.div>

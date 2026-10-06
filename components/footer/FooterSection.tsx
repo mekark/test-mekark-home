@@ -274,7 +274,11 @@ function FloatingActions() {
   );
 }
 
-export function FooterSection() {
+export function FooterSection({
+  hideContactDetails = false,
+}: {
+  hideContactDetails?: boolean;
+}) {
   return (
     <>
       <footer className="relative -mt-px w-full overflow-hidden bg-black text-white">
@@ -339,34 +343,36 @@ export function FooterSection() {
                 scales with ambition.
               </p>
 
-              <div className="mt-2 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-x-10">
-                <div className="flex gap-3">
-                  <span className="mt-0.5 shrink-0">
-                    <LocationIcon />
-                  </span>
-                  <p className="text-sm leading-[22px] text-white/55">
-                    5th Floor, Polyhose Towers, Anna Salai, Little Mount,
-                    Guindy, Chennai, TN 600032
-                  </p>
-                </div>
+              {!hideContactDetails && (
+                <div className="mt-2 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-x-10">
+                  <div className="flex gap-3">
+                    <span className="mt-0.5 shrink-0">
+                      <LocationIcon />
+                    </span>
+                    <p className="text-sm leading-[22px] text-white/55">
+                      5th Floor, Polyhose Towers, Anna Salai, Little Mount,
+                      Guindy, Chennai, TN 600032
+                    </p>
+                  </div>
 
-                <div className="flex flex-col gap-4">
-                  <a
-                    href="tel:+919790924754"
-                    className="flex items-center gap-3 text-sm text-white/55 transition-colors hover:text-white/85"
-                  >
-                    <PhoneIcon />
-                    +91 97909 24754
-                  </a>
-                  <a
-                    href="mailto:admin@mekark.com"
-                    className="flex items-center gap-3 text-sm text-white/55 transition-colors hover:text-white/85"
-                  >
-                    <MailIcon />
-                    admin@mekark.com
-                  </a>
+                  <div className="flex flex-col gap-4">
+                    <a
+                      href="tel:+919790924754"
+                      className="flex items-center gap-3 text-sm text-white/55 transition-colors hover:text-white/85"
+                    >
+                      <PhoneIcon />
+                      +91 97909 24754
+                    </a>
+                    <a
+                      href="mailto:admin@mekark.com"
+                      className="flex items-center gap-3 text-sm text-white/55 transition-colors hover:text-white/85"
+                    >
+                      <MailIcon />
+                      admin@mekark.com
+                    </a>
+                  </div>
                 </div>
-              </div>
+              )}
             </motion.div>
 
             <motion.div

@@ -7,9 +7,9 @@ import ContactForm from "@/components/navbar/ContactForm";
 import { fadeUp, staggerContainer } from "@/lib/motion-variants";
 
 const MAP_SHARE_URL =
-  "https://www.google.com/maps/place/MEKARK/@13.0118788,80.2179685,18z/data=!3m1!1e3";
+  "https://www.google.com/maps/place/MEKARK/@13.0118788,80.2179685,18z";
 const MAP_EMBED_URL =
-  "https://maps.google.com/maps?q=MEKARK,+5th+Floor,+Polyhose+Towers,+Anna+Salai,+Guindy,+Chennai,+Tamil+Nadu+600032&ll=13.0118788,80.2179685&t=k&z=18&ie=UTF8&iwloc=&output=embed";
+  "https://maps.google.com/maps?q=MEKARK,+5th+Floor,+Polyhose+Towers,+Anna+Salai,+Guindy,+Chennai,+Tamil+Nadu+600032&ll=13.0118788,80.2179685&t=m&z=18&ie=UTF8&iwloc=&output=embed";
 const WHATSAPP_HREF = `https://wa.me/919790924754?text=${encodeURIComponent(
   "Hello Mekark, I would like to discuss an industrial building project.",
 )}`;

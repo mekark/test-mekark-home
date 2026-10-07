@@ -1,33 +1,7 @@
-"use client";
-
-import { useSyncExternalStore } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import {
-  aboutBadgeDot,
-  fadeUp,
-  testBadgeReveal,
-  testCardReveal,
-  testGridStagger,
-  testHeadlineReveal,
-} from "@/lib/motion-variants";
 
-const MOBILE_QUERY = "(max-width: 1023px)";
-
-function subscribeMobile(onChange: () => void) {
-  const mq = window.matchMedia(MOBILE_QUERY);
-  mq.addEventListener("change", onChange);
-  return () => mq.removeEventListener("change", onChange);
-}
-
-/** Mobile skips the headline's clip-path reveal (not GPU-composited). */
-function useIsMobile() {
-  return useSyncExternalStore(
-    subscribeMobile,
-    () => window.matchMedia(MOBILE_QUERY).matches,
-    () => false,
-  );
-}
+// Animations are pure CSS (see "Testimonials page" in app/globals.css) and only
+// run on desktop (1024px+). Mobile renders static HTML with no animation code.
 
 const TESTIMONIALS = [
   {
@@ -80,6 +54,8 @@ const TESTIMONIALS = [
   },
 ] as const;
 
+const CARD_ANIM = ["tm-card-0", "tm-card-1", "tm-card-2"] as const;
+
 function TestimonialCard({
   testimonial,
   index,
@@ -88,14 +64,8 @@ function TestimonialCard({
   index: number;
 }) {
   return (
-    <motion.figure
-      variants={testCardReveal(index)}
-      whileHover={{
-        y: -7,
-        rotate: index === 1 ? 0.4 : index === 2 ? -0.35 : 0.25,
-        transition: { type: "spring", stiffness: 330, damping: 22 },
-      }}
-      className={`m-static relative flex min-h-[470px] flex-col overflow-hidden rounded-[30px] border p-6 shadow-[0_18px_55px_rgba(56,24,25,0.06)] sm:p-8 ${testimonial.cardClassName} ${testimonial.offsetClassName}`}
+    <figure
+      className={`tm-card ${CARD_ANIM[index]} relative flex min-h-[470px] flex-col overflow-hidden rounded-[30px] border p-6 shadow-[0_18px_55px_rgba(56,24,25,0.06)] sm:p-8 ${testimonial.cardClassName} ${testimonial.offsetClassName}`}
     >
       <div
         className={`pointer-events-none absolute -right-16 -top-16 size-44 rounded-full ${testimonial.decorationClassName}`}
@@ -150,13 +120,11 @@ function TestimonialCard({
           </p>
         </div>
       </figcaption>
-    </motion.figure>
+    </figure>
   );
 }
 
 export function TestimonialsPage() {
-  const isMobile = useIsMobile();
-
   return (
     <main className="flex-1 overflow-hidden bg-[#fffdfd] text-[#111]">
       <section className="relative border-b border-[rgba(107,13,17,0.08)]">
@@ -169,49 +137,31 @@ export function TestimonialsPage() {
           aria-hidden
         />
 
-        <motion.div
-          variants={testGridStagger}
-          initial="hidden"
-          animate="visible"
-          className="m-static relative mx-auto w-full max-w-[1440px] px-5 pb-24 pt-[126px] sm:px-8 sm:pb-28 sm:pt-[146px] lg:px-20 lg:pb-[150px] lg:pt-[168px]"
-        >
+        <div className="relative mx-auto w-full max-w-[1440px] px-5 pb-24 pt-[126px] sm:px-8 sm:pb-28 sm:pt-[146px] lg:px-20 lg:pb-[150px] lg:pt-[168px]">
           <div className="mx-auto flex max-w-[820px] flex-col items-center text-center">
-            <motion.div
-              variants={testBadgeReveal}
-              className="m-static flex items-center gap-[7px] rounded-full border border-crimson-100 bg-crimson-200 px-3 py-1.5"
-            >
-              <motion.span
-                variants={aboutBadgeDot}
-                className="m-static size-[7px] rounded-full bg-red-200"
+            <div className="tm-badge flex items-center gap-[7px] rounded-full border border-crimson-100 bg-crimson-200 px-3 py-1.5">
+              <span
+                className="tm-badge-dot size-[7px] rounded-full bg-red-200"
                 aria-hidden
               />
               <span className="font-manrope text-xs font-medium tracking-[0.53px] text-red-100">
                 Client testimonials
               </span>
-            </motion.div>
+            </div>
 
-            <motion.h1
-              variants={isMobile ? undefined : testHeadlineReveal}
-              className="m-static max-lg:[clip-path:none]! mt-5 text-[28px] font-extrabold leading-[1.06] tracking-[-2.5px] text-[#0d0808] sm:text-[clamp(2.15rem,5vw,4.5rem)]"
-            >
+            <h1 className="tm-headline mt-5 text-[28px] font-extrabold leading-[1.06] tracking-[-2.5px] text-[#0d0808] sm:text-[clamp(2.15rem,5vw,4.5rem)]">
               Strong builds.
               <br />
               <span className="text-[#ed1c24]">Happy clients.</span>
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              variants={fadeUp}
-              className="m-static mt-6 max-w-[680px] text-sm font-medium leading-[1.75] text-[#626060] sm:text-lg"
-            >
+            <p className="tm-intro mt-6 max-w-[680px] text-sm font-medium leading-[1.75] text-[#626060] sm:text-lg">
               Real experiences from the people who built with Mekark—from
               planning and coordination through successful delivery.
-            </motion.p>
+            </p>
           </div>
 
-          <motion.div
-            variants={testGridStagger}
-            className="m-static mx-auto mt-12 grid w-full max-w-[1280px] grid-cols-1 gap-6 md:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:items-start"
-          >
+          <div className="mx-auto mt-12 grid w-full max-w-[1280px] grid-cols-1 gap-6 md:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:items-start">
             {TESTIMONIALS.map((testimonial, index) => (
               <TestimonialCard
                 key={testimonial.company}
@@ -219,8 +169,8 @@ export function TestimonialsPage() {
                 index={index}
               />
             ))}
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </section>
     </main>
   );

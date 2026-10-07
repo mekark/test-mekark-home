@@ -130,6 +130,7 @@ export default function ContactUsContent() {
             alt="Pre-engineered building construction showcase"
             fill
             priority
+            fetchPriority="high"
             className="object-cover object-center"
             sizes="100vw"
           />

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { m, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const SHOW_AFTER_PX = 400;
 
@@ -43,7 +43,7 @@ export function ArrowTop() {
   return (
     <AnimatePresence>
       {visible && (
-        <m.button
+        <motion.button
           type="button"
           aria-label="Scroll to top"
           initial={{ opacity: 0, y: 12, scale: 0.9 }}
@@ -54,7 +54,7 @@ export function ArrowTop() {
           className="fixed bottom-[140px] right-5 z-50 flex size-12 items-center justify-center rounded-full bg-[#ed1c24] text-white shadow-[0px_8px_16px_rgba(237,28,36,0.35)] transition-transform hover:scale-105 active:scale-95 sm:bottom-[152px] sm:right-8"
         >
           <ArrowUpIcon />
-        </m.button>
+        </motion.button>
       )}
     </AnimatePresence>
   );

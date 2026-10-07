@@ -226,7 +226,11 @@ export default function ContactUsContent() {
               aria-label="Breadcrumb"
               className="m-static flex items-center gap-2 text-sm text-white/55"
             >
-              <Link href="/" className="transition hover:text-white">
+              <Link
+                href="/"
+                prefetch={false}
+                className="transition hover:text-white"
+              >
                 Home
               </Link>
               <span>/</span>

@@ -981,6 +981,8 @@ export function Navbar() {
             >
               <Link
                 href="/"
+                // Prefetching "/" pulls in the whole home page bundle on load.
+                prefetch={isStaticMobilePage ? false : undefined}
                 className={`relative flex shrink-0 items-center ${
                   homeMobileLightNav
                     ? ""

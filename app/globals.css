@@ -364,3 +364,11 @@ html {
     transform: none !important;
   }
 }
+
+/* Motion elements that must render still on mobile (no reveal/hover motion). */
+@media (max-width: 1023px) {
+  .m-static {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

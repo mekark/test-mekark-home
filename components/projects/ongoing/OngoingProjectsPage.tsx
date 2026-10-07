@@ -88,14 +88,22 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         y: -6,
         transition: { type: "spring", stiffness: 340, damping: 22 },
       }}
-      className="group flex h-full flex-col overflow-hidden rounded-[20px] bg-white"
+      className="m-static group flex h-full flex-col overflow-hidden rounded-[20px] bg-white"
     >
       <div className="relative mx-[13px] mt-[13px] aspect-[398/307] overflow-hidden rounded-[20px]">
+        {/* Lighter copy for mobile; desktop keeps the original image. */}
+        <Image
+          src={project.image.replace(/([^/]+)$/, "mobile/$1")}
+          alt={project.title}
+          fill
+          className="object-cover object-bottom lg:hidden"
+          sizes="100vw"
+        />
         <Image
           src={project.image}
           alt={project.title}
           fill
-          className="object-cover object-bottom transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
+          className="hidden object-cover object-bottom transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105 lg:block"
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 420px"
         />
         <div className="absolute inset-0 bg-black/25" aria-hidden />
@@ -228,11 +236,11 @@ export function OngoingProjectsPage() {
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
-          className="relative z-10 flex flex-col items-center px-5 py-10 text-center"
+          className="m-static relative z-10 flex flex-col items-center px-5 py-10 text-center"
         >
           <motion.h1
             variants={fadeUp}
-            className="text-[clamp(1.75rem,4vw,50px)] font-semibold uppercase tracking-[0.05em] text-white"
+            className="m-static text-[clamp(1.75rem,4vw,50px)] font-semibold uppercase tracking-[0.05em] text-white"
           >
             Ongoing Projects
           </motion.h1>
@@ -252,7 +260,7 @@ export function OngoingProjectsPage() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={VIEWPORT}
-                className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5"
+                className="m-static grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5"
               >
                 {visible.map((project, index) => (
                   <ProjectCard

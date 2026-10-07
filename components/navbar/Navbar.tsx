@@ -2,7 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useLayoutEffect, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useState,
+} from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { useNavigationLoading } from "@/components/ui/NavigationLoadingProvider";
 import { AnimatePresence, motion } from "framer-motion";
@@ -56,7 +62,9 @@ function isNavItemActive(pathname: string, item: NavItem): boolean {
   return Boolean(
     item.sections?.some((section) => {
       if (section.href && isPathActive(pathname, section.href)) return true;
-      return section.children.some((child) => isPathActive(pathname, child.href));
+      return section.children.some((child) =>
+        isPathActive(pathname, child.href),
+      );
     }),
   );
 }
@@ -148,7 +156,18 @@ function dropdownLinkClassName(
   }`;
 }
 
+/** Pages whose mobile navbar/footer render without motion. */
+export const STATIC_MOBILE_PATHS = [
+  "/resources/contact-us",
+  "/projects/completed-projects",
+  "/projects/ongoing-projects",
+];
+
+/** True on these pages in mobile view: navbar renders without any motion. */
+const StaticNavContext = createContext(false);
+
 function ChevronDownIcon({ open }: { open?: boolean }) {
+  const isStatic = useContext(StaticNavContext);
   return (
     <motion.svg
       width="12"
@@ -157,7 +176,7 @@ function ChevronDownIcon({ open }: { open?: boolean }) {
       fill="none"
       aria-hidden
       animate={{ rotate: open ? 180 : 0 }}
-      transition={{ duration: 0.22, ease: EASE }}
+      transition={{ duration: isStatic ? 0 : 0.22, ease: EASE }}
       className="shrink-0"
     >
       <path
@@ -178,17 +197,20 @@ function MobileNavExpandIcon({
   open?: boolean;
   active?: boolean;
 }) {
+  const isStatic = useContext(StaticNavContext);
   return (
     <motion.span
       className={`inline-flex size-8 shrink-0 items-center justify-center rounded-full transition-colors duration-200 ${
+        isStatic ? "transition-none" : ""
+      } ${
         open
           ? "bg-mekark-red/12 text-mekark-red"
           : active
             ? "bg-mekark-red/8 text-mekark-red"
             : "bg-white/[0.05] text-white/50"
       }`}
-      animate={{ scale: open ? 1.02 : 1 }}
-      transition={{ duration: 0.22, ease: EASE }}
+      animate={{ scale: open && !isStatic ? 1.02 : 1 }}
+      transition={{ duration: isStatic ? 0 : 0.22, ease: EASE }}
     >
       <ChevronDownIcon open={open} />
     </motion.span>
@@ -196,15 +218,13 @@ function MobileNavExpandIcon({
 }
 
 function AnimatedMenuIcon({ open }: { open: boolean }) {
+  const isStatic = useContext(StaticNavContext);
   const line =
     "absolute left-0 h-[2px] w-full origin-center rounded-full bg-current";
-  const transition = { duration: 0.28, ease: EASE };
+  const transition = { duration: isStatic ? 0 : 0.28, ease: EASE };
 
   return (
-    <span
-      aria-hidden
-      className="relative block h-[15px] w-[22px] shrink-0"
-    >
+    <span aria-hidden className="relative block h-[15px] w-[22px] shrink-0">
       <motion.span
         className={line}
         initial={false}
@@ -223,7 +243,11 @@ function AnimatedMenuIcon({ open }: { open: boolean }) {
             ? { opacity: 0, scaleX: 0.35 }
             : { top: "50%", y: "-50%", opacity: 1, scaleX: 1 }
         }
-        transition={{ duration: 0.2, ease: EASE, delay: open ? 0 : 0.03 }}
+        transition={
+          isStatic
+            ? transition
+            : { duration: 0.2, ease: EASE, delay: open ? 0 : 0.03 }
+        }
       />
       <motion.span
         className={line}
@@ -233,7 +257,9 @@ function AnimatedMenuIcon({ open }: { open: boolean }) {
             ? { top: "50%", rotate: -45, y: "-50%" }
             : { top: "100%", rotate: 0, y: "-100%" }
         }
-        transition={{ ...transition, delay: open ? 0.02 : 0 }}
+        transition={
+          isStatic ? transition : { ...transition, delay: open ? 0.02 : 0 }
+        }
       />
     </span>
   );
@@ -556,16 +582,17 @@ function FindSolutionButton({
   short?: boolean;
   fullWidth?: boolean;
 }) {
+  const isStatic = useContext(StaticNavContext);
   return (
     <motion.button
       type="button"
       onClick={onClick}
       aria-expanded={open}
-      whileHover={{ scale: fullWidth ? 1.01 : 1.02 }}
-      whileTap={{ scale: 0.98 }}
+      whileHover={isStatic ? undefined : { scale: fullWidth ? 1.01 : 1.02 }}
+      whileTap={isStatic ? undefined : { scale: 0.98 }}
       className={`group relative overflow-hidden rounded-sm font-[family-name:var(--font-manrope)] text-[12px] font-semibold tracking-[0.04em] transition-shadow duration-300 ${
-        fullWidth ? "w-full" : ""
-      } ${
+        isStatic ? "transition-none" : ""
+      } ${fullWidth ? "w-full" : ""} ${
         open
           ? "bg-mekark-red text-white shadow-[0_8px_24px_rgba(237,28,36,0.45)]"
           : "bg-white text-[#0a0a0a] shadow-[0_4px_16px_rgba(0,0,0,0.25)] hover:shadow-[0_8px_28px_rgba(237,28,36,0.35)]"
@@ -617,8 +644,8 @@ function FindSolutionButton({
           fill="none"
           aria-hidden
           className={`transition-transform duration-300 ${
-            open ? "rotate-90" : "group-hover:translate-x-0.5"
-          }`}
+            isStatic ? "transition-none" : ""
+          } ${open ? "rotate-90" : "group-hover:translate-x-0.5"}`}
         >
           <path
             d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9"
@@ -654,11 +681,12 @@ function MobileNavItem({
   const sectionActive = isNavItemActive(pathname, item);
   const isOpen = openLabel === item.label;
   const hasChildren = Boolean(item.children?.length || item.sections?.length);
+  const noTransition = useContext(StaticNavContext) ? "transition-none" : "";
 
   if (!hasChildren && item.href) {
     const external = isExternalHref(item.href);
     const active = isPathActive(pathname, item.href);
-    const className = `block border-b border-white/8 px-5 py-4 text-[15px] font-medium transition-colors ${
+    const className = `block border-b border-white/8 px-5 py-4 text-[15px] font-medium transition-colors ${noTransition} ${
       active ? "text-mekark-red" : "text-mekark-white"
     }`;
 
@@ -693,7 +721,7 @@ function MobileNavItem({
       <button
         type="button"
         onClick={() => onToggle(item.label)}
-        className={`flex w-full items-center justify-between border-l-2 py-4 pr-5 pl-[18px] text-left text-[15px] font-medium transition-all duration-200 ${
+        className={`flex w-full items-center justify-between border-l-2 py-4 pr-5 pl-[18px] text-left text-[15px] font-medium transition-all duration-200 ${noTransition} ${
           isOpen
             ? "border-mekark-red bg-white/[0.025] text-mekark-white"
             : sectionActive
@@ -883,203 +911,234 @@ export function Navbar() {
 
   const barActive = scrolled || mobileOpen || findOpen || pathname !== "/";
   const homeMobileLightNav =
-    pathname === "/" && isMobileViewport && !scrolled && !mobileOpen && !findOpen;
+    pathname === "/" &&
+    isMobileViewport &&
+    !scrolled &&
+    !mobileOpen &&
+    !findOpen;
   const disableNavEnterAnimation = isMobileViewport;
+  const isContactPage = pathname === "/resources/contact-us";
+  const isStaticMobilePage = STATIC_MOBILE_PATHS.includes(pathname);
+  const staticNav = isStaticMobilePage && isMobileViewport;
+  const solidContactNav = isContactPage && staticNav && !homeMobileLightNav;
+  // Before the viewport is measured, force the contact navbar visible and still.
+  const contactStaticClass = isStaticMobilePage
+    ? "max-lg:!opacity-100 max-lg:![transform:none]"
+    : "";
 
   return (
-    <motion.header
-      initial={disableNavEnterAnimation ? "visible" : "hidden"}
-      animate="visible"
-      variants={disableNavEnterAnimation ? navbarRevealInstant : navbarReveal}
-      className="fixed inset-x-0 top-0 z-50"
-    >
-      <motion.div
-        animate={{
-          backgroundColor: homeMobileLightNav
-            ? "rgba(255,255,255,1)"
-            : barActive
-              ? "rgba(0,0,0,0.72)"
-              : "rgba(0,0,0,0)",
-          backdropFilter: homeMobileLightNav
-            ? "blur(0px)"
-            : barActive
-              ? "blur(16px)"
-              : "blur(0px)",
-          boxShadow: homeMobileLightNav
-            ? "0 1px 0 rgba(0,0,0,0.08)"
-            : barActive
-              ? "0 1px 0 rgba(255,255,255,0.06)"
-              : "0 0px 0px rgba(0,0,0,0)",
-          borderBottomColor: homeMobileLightNav
-            ? "rgba(0,0,0,0.08)"
-            : barActive
-              ? "rgba(255,255,255,0.08)"
-              : "rgba(255,255,255,0)",
-        }}
-        transition={{
-          duration: disableNavEnterAnimation ? 0.15 : 0.35,
-          ease: EASE,
-        }}
-        className="border-b"
+    <StaticNavContext.Provider value={staticNav}>
+      <motion.header
+        initial={disableNavEnterAnimation ? "visible" : "hidden"}
+        animate="visible"
+        variants={disableNavEnterAnimation ? navbarRevealInstant : navbarReveal}
+        className={`fixed inset-x-0 top-0 z-50 ${contactStaticClass}`}
       >
-        <div className="flex h-[60px] w-full items-center justify-between gap-8 px-5 sm:px-8 lg:px-10 xl:px-14">
-          <motion.div
-            variants={
-              disableNavEnterAnimation ? navbarLogoRevealInstant : navbarLogoReveal
-            }
-            initial={disableNavEnterAnimation ? "visible" : "hidden"}
-            animate="visible"
-            className="shrink-0"
-          >
-            <Link
-              href="/"
-              className={`relative flex shrink-0 items-center ${
-                homeMobileLightNav
-                  ? ""
-                  : "drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)]"
-              }`}
-              aria-label="Mekark home"
-              onClick={closeMobile}
+        <motion.div
+          initial={isStaticMobilePage ? false : undefined}
+          animate={{
+            backgroundColor: homeMobileLightNav
+              ? "rgba(255,255,255,1)"
+              : solidContactNav
+                ? "rgba(0,0,0,1)"
+                : barActive
+                  ? "rgba(0,0,0,0.72)"
+                  : "rgba(0,0,0,0)",
+            backdropFilter: homeMobileLightNav
+              ? "blur(0px)"
+              : solidContactNav
+                ? "blur(0px)"
+                : barActive
+                  ? "blur(16px)"
+                  : "blur(0px)",
+            boxShadow: homeMobileLightNav
+              ? "0 1px 0 rgba(0,0,0,0.08)"
+              : barActive
+                ? "0 1px 0 rgba(255,255,255,0.06)"
+                : "0 0px 0px rgba(0,0,0,0)",
+            borderBottomColor: homeMobileLightNav
+              ? "rgba(0,0,0,0.08)"
+              : barActive
+                ? "rgba(255,255,255,0.08)"
+                : "rgba(255,255,255,0)",
+          }}
+          transition={{
+            duration: staticNav ? 0 : disableNavEnterAnimation ? 0.15 : 0.35,
+            ease: EASE,
+          }}
+          className="border-b"
+        >
+          <div className="flex h-[60px] w-full items-center justify-between gap-8 px-5 sm:px-8 lg:px-10 xl:px-14">
+            <motion.div
+              variants={
+                disableNavEnterAnimation
+                  ? navbarLogoRevealInstant
+                  : navbarLogoReveal
+              }
+              initial={disableNavEnterAnimation ? "visible" : "hidden"}
+              animate="visible"
+              className={`shrink-0 ${contactStaticClass}`}
             >
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                transition={{ type: "spring", stiffness: 400, damping: 24 }}
+              <Link
+                href="/"
+                className={`relative flex shrink-0 items-center ${
+                  homeMobileLightNav
+                    ? ""
+                    : "drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)]"
+                }`}
+                aria-label="Mekark home"
+                onClick={closeMobile}
               >
-                <Image
-                  src="/images/LogoMekark.webp"
-                  alt="Mekark"
-                  width={220}
-                  height={60}
-                  priority
-                  className="h-8 w-auto sm:h-9 lg:h-11"
+                <motion.div
+                  whileHover={staticNav ? undefined : { scale: 1.03 }}
+                  whileTap={staticNav ? undefined : { scale: 0.97 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 24 }}
+                >
+                  <Image
+                    src="/images/LogoMekark.webp"
+                    alt="Mekark"
+                    width={220}
+                    height={60}
+                    priority
+                    className="h-8 w-auto sm:h-9 lg:h-11"
+                  />
+                </motion.div>
+              </Link>
+            </motion.div>
+
+            <motion.nav
+              className="ml-auto hidden items-center justify-end gap-0.5 lg:flex"
+              aria-label="Main navigation"
+              variants={navbarItemsStagger}
+              initial="hidden"
+              animate="visible"
+            >
+              {NAV_ITEMS.map((item) =>
+                item.children?.length || item.sections?.length ? (
+                  <DesktopDropdown key={item.label} item={item} />
+                ) : (
+                  <motion.div key={item.label} variants={navbarItemReveal}>
+                    <NavLinkMotion
+                      href={item.href ?? "/"}
+                      active={isPathActive(pathname, item.href ?? "/")}
+                      className={`block px-2.5 py-2 font-[family-name:var(--font-manrope)] text-[12.5px] font-medium tracking-[0.04em] transition-colors [text-shadow:0_1px_10px_rgba(0,0,0,0.55)] hover:text-mekark-red lg:px-3 ${
+                        isPathActive(pathname, item.href ?? "/")
+                          ? "text-mekark-red"
+                          : "text-white/92"
+                      }`}
+                    >
+                      {item.label}
+                    </NavLinkMotion>
+                  </motion.div>
+                ),
+              )}
+
+              <motion.div variants={navbarItemReveal} className="ml-4">
+                <FindSolutionButton open={findOpen} onClick={goToQuoteForm} />
+              </motion.div>
+            </motion.nav>
+
+            <div className="ml-auto flex items-center gap-2 lg:hidden">
+              <div className="hidden sm:block">
+                <FindSolutionButton
+                  open={findOpen}
+                  short
+                  onClick={goToQuoteForm}
+                />
+              </div>
+              <motion.button
+                type="button"
+                className={`flex size-10 min-h-10 min-w-10 items-center justify-center rounded-sm transition-all duration-200 ${
+                  staticNav ? "transition-none" : ""
+                } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mekark-red/40 ${
+                  mobileOpen
+                    ? "bg-mekark-red/10 text-mekark-red ring-1 ring-mekark-red/20"
+                    : homeMobileLightNav
+                      ? "text-[#111] hover:bg-black/[0.05] hover:text-mekark-red active:bg-black/[0.08]"
+                      : "text-white hover:bg-white/10 hover:text-mekark-red active:bg-white/[0.14]"
+                }`}
+                aria-label={mobileOpen ? "Close menu" : "Open menu"}
+                aria-expanded={mobileOpen}
+                whileTap={staticNav ? undefined : { scale: 0.95 }}
+                onClick={() => {
+                  setFindOpen(false);
+                  setMobileOpen((open) => !open);
+                  setMobileExpanded(null);
+                }}
+              >
+                <AnimatedMenuIcon open={mobileOpen} />
+              </motion.button>
+            </div>
+          </div>
+        </motion.div>
+
+        {mobileOpen ? (
+          <nav
+            className="fixed inset-x-0 top-[60px] bottom-0 z-50 overflow-y-auto overscroll-contain border-t border-white/10 bg-[#0a0a0a] lg:hidden"
+            aria-label="Mobile navigation"
+          >
+            <div className="pb-[max(1rem,env(safe-area-inset-bottom))]">
+              <div className="border-b border-white/8 px-5 py-4 sm:hidden">
+                <FindSolutionButton
+                  open={findOpen}
+                  onClick={goToQuoteForm}
+                  fullWidth
+                />
+              </div>
+              {NAV_ITEMS.map((item) => (
+                <MobileNavItem
+                  key={item.label}
+                  item={item}
+                  openLabel={mobileExpanded}
+                  onToggle={(label) =>
+                    setMobileExpanded((current) =>
+                      current === label ? null : label,
+                    )
+                  }
+                  onNavigate={closeMobile}
+                />
+              ))}
+            </div>
+          </nav>
+        ) : null}
+
+        <div className="absolute inset-x-0 top-full">
+          <AnimatePresence>
+            {findOpen && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.22, ease: EASE }}
+              >
+                <FindYourSolutionPanel
+                  step={findStep}
+                  industry={industry}
+                  service={service}
+                  onSelectIndustry={(option) => {
+                    setIndustry(option);
+                    setService(null);
+                    setFindStep(2);
+                  }}
+                  onSelectService={(option) => setService(option)}
+                  onBack={() => {
+                    setFindStep(1);
+                    setService(null);
+                  }}
+                  onClose={closeFind}
+                  onRedirect={redirectToSolution}
+                />
+                <button
+                  type="button"
+                  aria-label="Close find your solution"
+                  className="hidden h-[40vh] w-full cursor-default bg-gradient-to-b from-black/45 via-black/25 to-transparent lg:block"
+                  onClick={closeFind}
                 />
               </motion.div>
-            </Link>
-          </motion.div>
-
-          <motion.nav
-            className="ml-auto hidden items-center justify-end gap-0.5 lg:flex"
-            aria-label="Main navigation"
-            variants={navbarItemsStagger}
-            initial="hidden"
-            animate="visible"
-          >
-            {NAV_ITEMS.map((item) =>
-              item.children?.length || item.sections?.length ? (
-                <DesktopDropdown key={item.label} item={item} />
-              ) : (
-                <motion.div key={item.label} variants={navbarItemReveal}>
-                  <NavLinkMotion
-                    href={item.href ?? "/"}
-                    active={isPathActive(pathname, item.href ?? "/")}
-                    className={`block px-2.5 py-2 font-[family-name:var(--font-manrope)] text-[12.5px] font-medium tracking-[0.04em] transition-colors [text-shadow:0_1px_10px_rgba(0,0,0,0.55)] hover:text-mekark-red lg:px-3 ${
-                      isPathActive(pathname, item.href ?? "/")
-                        ? "text-mekark-red"
-                        : "text-white/92"
-                    }`}
-                  >
-                    {item.label}
-                  </NavLinkMotion>
-                </motion.div>
-              ),
             )}
-
-            <motion.div variants={navbarItemReveal} className="ml-4">
-              <FindSolutionButton open={findOpen} onClick={goToQuoteForm} />
-            </motion.div>
-          </motion.nav>
-
-          <div className="ml-auto flex items-center gap-2 lg:hidden">
-            <div className="hidden sm:block">
-              <FindSolutionButton open={findOpen} short onClick={goToQuoteForm} />
-            </div>
-            <motion.button
-              type="button"
-              className={`flex size-10 min-h-10 min-w-10 items-center justify-center rounded-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mekark-red/40 ${
-                mobileOpen
-                  ? "bg-mekark-red/10 text-mekark-red ring-1 ring-mekark-red/20"
-                  : homeMobileLightNav
-                    ? "text-[#111] hover:bg-black/[0.05] hover:text-mekark-red active:bg-black/[0.08]"
-                    : "text-white hover:bg-white/10 hover:text-mekark-red active:bg-white/[0.14]"
-              }`}
-              aria-label={mobileOpen ? "Close menu" : "Open menu"}
-              aria-expanded={mobileOpen}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => {
-                setFindOpen(false);
-                setMobileOpen((open) => !open);
-                setMobileExpanded(null);
-              }}
-            >
-              <AnimatedMenuIcon open={mobileOpen} />
-            </motion.button>
-          </div>
+          </AnimatePresence>
         </div>
-      </motion.div>
-
-      {mobileOpen ? (
-        <nav
-          className="fixed inset-x-0 top-[60px] bottom-0 z-50 overflow-y-auto overscroll-contain border-t border-white/10 bg-[#0a0a0a] lg:hidden"
-          aria-label="Mobile navigation"
-        >
-          <div className="pb-[max(1rem,env(safe-area-inset-bottom))]">
-            <div className="border-b border-white/8 px-5 py-4 sm:hidden">
-              <FindSolutionButton open={findOpen} onClick={goToQuoteForm} fullWidth />
-            </div>
-            {NAV_ITEMS.map((item) => (
-              <MobileNavItem
-                key={item.label}
-                item={item}
-                openLabel={mobileExpanded}
-                onToggle={(label) =>
-                  setMobileExpanded((current) =>
-                    current === label ? null : label,
-                  )
-                }
-                onNavigate={closeMobile}
-              />
-            ))}
-          </div>
-        </nav>
-      ) : null}
-
-      <div className="absolute inset-x-0 top-full">
-        <AnimatePresence>
-          {findOpen && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.22, ease: EASE }}
-            >
-              <FindYourSolutionPanel
-                step={findStep}
-                industry={industry}
-                service={service}
-                onSelectIndustry={(option) => {
-                  setIndustry(option);
-                  setService(null);
-                  setFindStep(2);
-                }}
-                onSelectService={(option) => setService(option)}
-                onBack={() => {
-                  setFindStep(1);
-                  setService(null);
-                }}
-                onClose={closeFind}
-                onRedirect={redirectToSolution}
-              />
-              <button
-                type="button"
-                aria-label="Close find your solution"
-                className="hidden h-[40vh] w-full cursor-default bg-gradient-to-b from-black/45 via-black/25 to-transparent lg:block"
-                onClick={closeFind}
-              />
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </motion.header>
+      </motion.header>
+    </StaticNavContext.Provider>
   );
 }

@@ -1,14 +1,21 @@
 "use client";
 
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
+import { motion, type Variants } from "framer-motion";
+import { STATIC_MOBILE_PATHS } from "@/components/navbar/Navbar";
 import { CookieSettingsButton } from "@/components/cookie-consent/CookieSettingsButton";
 import { NAV_ITEMS, type NavItem } from "@/components/navbar/nav-data";
 import { LEGAL_AND_COOKIE_CONSENT_ENABLED } from "@/lib/feature-flags";
 import { fadeUp, staggerContainer } from "@/lib/motion-variants";
 import { SECTION_CONTAINER_CLASS } from "@/lib/sectionLayout";
+
+const INSTANT_VARIANTS: Variants = {
+  hidden: { opacity: 1, y: 0 },
+  visible: { opacity: 1, y: 0 },
+};
 
 const VIEWPORT = { once: true, margin: "-80px" as const };
 
@@ -105,7 +112,13 @@ function MailIcon() {
 
 function LinkedInIcon() {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden
+    >
       <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124ZM7.119 20.452H3.555V9h3.564v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003Z" />
     </svg>
   );
@@ -131,7 +144,13 @@ function InstagramIcon() {
 
 function FacebookIcon() {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden
+    >
       <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047v-2.66c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.971h-1.513c-1.491 0-1.956.931-1.956 1.887v2.263h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073Z" />
     </svg>
   );
@@ -139,7 +158,13 @@ function FacebookIcon() {
 
 function XIcon() {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden
+    >
       <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.64 7.584H.47l8.6-9.835L0 1.154h7.594l5.243 6.932 6.064-6.933Zm-1.29 19.49h2.039L6.487 3.24H4.3l13.31 17.403Z" />
     </svg>
   );
@@ -147,7 +172,13 @@ function XIcon() {
 
 function YouTubeIcon() {
   return (
-    <svg width="20" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+    <svg
+      width="20"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden
+    >
       <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.121 2.136c1.872.505 9.377.505 9.377.505s7.505 0 9.376-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814ZM9.545 15.568V8.432L15.818 12l-6.273 3.568Z" />
     </svg>
   );
@@ -292,6 +323,23 @@ export function FooterSection({
 }: {
   hideContactDetails?: boolean;
 }) {
+  const pathname = usePathname();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 1023px)");
+    const sync = () => setIsMobile(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+
+  const staticPage = STATIC_MOBILE_PATHS.includes(pathname);
+  const stillClass = staticPage ? "m-static" : "";
+  const isStatic = isMobile && staticPage;
+  const container = isStatic ? INSTANT_VARIANTS : staggerContainer;
+  const item = isStatic ? INSTANT_VARIANTS : fadeUp;
+
   return (
     <>
       <footer className="relative -mt-px w-full overflow-hidden bg-black text-white">
@@ -306,16 +354,16 @@ export function FooterSection({
         />
 
         <motion.div
-          variants={staggerContainer}
+          variants={container}
           initial="hidden"
           whileInView="visible"
           viewport={VIEWPORT}
-          className={`${SECTION_CONTAINER_CLASS} py-14 sm:py-16 lg:py-20 xl:py-16 2xl:py-20`}
+          className={`${stillClass} ${SECTION_CONTAINER_CLASS} py-14 sm:py-16 lg:py-20 xl:py-16 2xl:py-20`}
         >
           <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between lg:gap-16 xl:gap-12 2xl:gap-16">
             <motion.div
-              variants={fadeUp}
-              className="flex max-w-[640px] flex-col gap-6"
+              variants={item}
+              className={`${stillClass} flex max-w-[640px] flex-col gap-6`}
             >
               <div className="flex flex-wrap items-center gap-4">
                 <Image
@@ -389,8 +437,8 @@ export function FooterSection({
             </motion.div>
 
             <motion.div
-              variants={fadeUp}
-              className="flex flex-row gap-14 sm:gap-16 lg:gap-26 lg:pt-1 xl:gap-20 2xl:gap-26"
+              variants={item}
+              className={`${stillClass} flex flex-row gap-14 sm:gap-16 lg:gap-26 lg:pt-1 xl:gap-20 2xl:gap-26`}
             >
               <FooterLinkColumn title="Menu" links={MENU_LINKS} />
               <FooterLinkColumn
@@ -404,8 +452,8 @@ export function FooterSection({
           </div>
 
           <motion.div
-            variants={fadeUp}
-            className="mt-12 border-t border-white/10 pt-6 sm:mt-16 lg:mt-20"
+            variants={item}
+            className={`${stillClass} mt-12 border-t border-white/10 pt-6 sm:mt-16 lg:mt-20`}
           >
             <p className="text-center text-xs leading-5 tracking-wide text-white/40 sm:text-sm">
               © {new Date().getFullYear()} Mekark Structure India Private

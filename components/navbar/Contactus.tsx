@@ -6,8 +6,6 @@ import { motion } from "framer-motion";
 import ContactForm from "@/components/navbar/ContactForm";
 import { fadeUp, staggerContainer } from "@/lib/motion-variants";
 
-const MAP_SHARE_URL =
-  "https://www.google.com/maps/place/MEKARK/@13.0118788,80.2179685,18z";
 const MAP_EMBED_URL =
   "https://maps.google.com/maps?q=MEKARK,+5th+Floor,+Polyhose+Towers,+Anna+Salai,+Guindy,+Chennai,+Tamil+Nadu+600032&ll=13.0118788,80.2179685&t=m&z=18&ie=UTF8&iwloc=&output=embed";
 const WHATSAPP_HREF = `https://wa.me/919790924754?text=${encodeURIComponent(
@@ -17,28 +15,6 @@ const OFFICE_ADDRESS =
   "5th Floor, Polyhose Towers, Anna Salai, Little Mount, Guindy, Chennai, Tamil Nadu 600032";
 
 const VIEWPORT = { once: true, margin: "-80px" as const };
-
-const CONTACT_CHANNELS = [
-  {
-    label: "Call",
-    value: "+91 97909 24754",
-    href: "tel:+919790924754",
-    icon: PhoneIcon,
-  },
-  {
-    label: "WhatsApp",
-    value: "Chat with an engineer",
-    href: WHATSAPP_HREF,
-    icon: WhatsAppIcon,
-    external: true,
-  },
-  {
-    label: "Email",
-    value: "admin@mekark.com",
-    href: "mailto:admin@mekark.com",
-    icon: MailIcon,
-  },
-] as const;
 
 const NEXT_STEPS = [
   {
@@ -298,35 +274,6 @@ export default function ContactUsContent() {
                 </motion.div>
               ))}
             </div>
-
-            <motion.div
-              variants={fadeUp}
-              className="mt-10 hidden gap-3 sm:grid sm:grid-cols-3"
-            >
-              {CONTACT_CHANNELS.map((channel) => {
-                const Icon = channel.icon;
-                return (
-                  <a
-                    key={channel.label}
-                    href={channel.href}
-                    {...("external" in channel && channel.external
-                      ? { target: "_blank", rel: "noopener noreferrer" }
-                      : {})}
-                    className="rounded-2xl border border-black/8 bg-white p-4 transition hover:border-[#ed1c24]/30 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)]"
-                  >
-                    <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#ed1c24]/10 text-[#ed1c24]">
-                      <Icon />
-                    </span>
-                    <p className="mt-3 text-[11px] font-extrabold uppercase tracking-[1.4px] text-black/45">
-                      {channel.label}
-                    </p>
-                    <p className="mt-1 text-[13px] font-semibold leading-5 text-[#111]">
-                      {channel.value}
-                    </p>
-                  </a>
-                );
-              })}
-            </motion.div>
           </motion.div>
 
           <div className="lg:sticky lg:top-28">
@@ -392,15 +339,6 @@ export default function ContactUsContent() {
               >
                 <MailIcon />
                 admin@mekark.com
-              </a>
-              <a
-                href={MAP_SHARE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 hidden h-12 items-center justify-center gap-2 rounded-[12px] bg-white px-5 sm:inline-flex text-sm font-extrabold text-[#111] transition hover:bg-white/90"
-              >
-                Open in Google Maps
-                <ArrowIcon />
               </a>
             </motion.div>
           </motion.div>

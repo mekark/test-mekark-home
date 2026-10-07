@@ -20,12 +20,15 @@ const { props: HERO_DESKTOP_PROPS } = getImageProps({
   loading: "eager",
   className: "object-cover object-center",
 });
-const { props: HERO_MOBILE_PROPS } = getImageProps({
-  src: "/images/projects/ongoing/mobile/hero.webp",
-  alt: "",
-  fill: true,
-  sizes: "100vw",
-});
+// Pre-sized, pre-compressed mobile files served as-is (no Next.js re-encode).
+const mobileSrcSet = (src: string, widths: number[]) =>
+  widths
+    .map((w) => `${src.replace(/([^/]+)\.webp$/, `mobile/$1-${w}.webp`)} ${w}w`)
+    .join(", ");
+const HERO_MOBILE_SRCSET = mobileSrcSet(
+  "/images/projects/ongoing/hero.webp",
+  [640, 750, 828, 1080],
+);
 
 const VIEWPORT = { once: true, margin: "-80px" as const };
 const PAGE_SIZE = 9;
@@ -105,12 +108,15 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     >
       <div className="relative mx-[13px] mt-[13px] aspect-[398/307] overflow-hidden rounded-[20px]">
         {/* Lighter copy for mobile; desktop keeps the original image. */}
-        <Image
-          src={project.image.replace(/([^/]+)$/, "mobile/$1")}
-          alt={project.title}
-          fill
-          className="object-cover object-bottom lg:hidden"
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={project.image.replace(/([^/]+)\.webp$/, "mobile/$1-828.webp")}
+          srcSet={mobileSrcSet(project.image, [640, 828, 1080])}
           sizes="100vw"
+          alt={project.title}
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover object-bottom lg:hidden"
         />
         <Image
           src={project.image}
@@ -234,7 +240,7 @@ export function OngoingProjectsPage() {
           <picture>
             <source
               media="(max-width: 1023px)"
-              srcSet={HERO_MOBILE_PROPS.srcSet}
+              srcSet={HERO_MOBILE_SRCSET}
               sizes="100vw"
             />
             {/* eslint-disable-next-line @next/next/no-img-element */}

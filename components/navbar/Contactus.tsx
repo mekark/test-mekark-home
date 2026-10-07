@@ -27,12 +27,10 @@ const { props: HERO_DESKTOP_PROPS } = getImageProps({
   loading: "eager",
   className: "object-cover object-center",
 });
-const { props: HERO_MOBILE_PROPS } = getImageProps({
-  src: "/images/hero/mobile/peb-poster.webp",
-  alt: "",
-  fill: true,
-  sizes: "100vw",
-});
+// Pre-sized, pre-compressed mobile files served as-is (no Next.js re-encode).
+const HERO_MOBILE_SRCSET = [640, 750, 828, 1080]
+  .map((w) => `/images/hero/mobile/peb-poster-${w}.webp ${w}w`)
+  .join(", ");
 
 const VIEWPORT = { once: true, margin: "-80px" as const };
 
@@ -201,7 +199,7 @@ export default function ContactUsContent() {
           <picture>
             <source
               media="(max-width: 1023px)"
-              srcSet={HERO_MOBILE_PROPS.srcSet}
+              srcSet={HERO_MOBILE_SRCSET}
               sizes="100vw"
             />
             {/* eslint-disable-next-line @next/next/no-img-element */}

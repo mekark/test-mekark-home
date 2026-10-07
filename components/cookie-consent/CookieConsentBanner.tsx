@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { useCookieConsent } from "@/components/cookie-consent/CookieConsentProvider";
 import { LEGAL_AND_COOKIE_CONSENT_ENABLED } from "@/lib/feature-flags";
 
@@ -155,8 +155,7 @@ const btnSecondary =
 const btnGhost =
   "rounded-full px-2 py-1.5 text-xs font-semibold text-[#666] transition-colors hover:text-[#111] lg:px-3 lg:py-2 lg:text-sm";
 
-const btnDisabled =
-  "cursor-not-allowed opacity-50 pointer-events-none";
+const btnDisabled = "cursor-not-allowed opacity-50 pointer-events-none";
 
 export function CookieConsentBanner() {
   const previewOnly = !LEGAL_AND_COOKIE_CONSENT_ENABLED;
@@ -188,7 +187,7 @@ export function CookieConsentBanner() {
 
   return (
     <AnimatePresence>
-      <motion.div
+      <m.div
         role="dialog"
         aria-labelledby="cookie-consent-title"
         aria-describedby="cookie-consent-description"
@@ -364,7 +363,7 @@ export function CookieConsentBanner() {
             </div>
           )}
         </div>
-      </motion.div>
+      </m.div>
     </AnimatePresence>
   );
 }

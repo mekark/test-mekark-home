@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import {
   FIND_INDUSTRIES,
   FIND_SERVICES,
@@ -23,13 +23,7 @@ type FindYourSolutionPanelProps = {
   onRedirect: (href: string) => void;
 };
 
-function StepTrack({
-  step,
-  hasService,
-}: {
-  step: Step;
-  hasService: boolean;
-}) {
+function StepTrack({ step, hasService }: { step: Step; hasService: boolean }) {
   const steps = [
     { index: 1, label: "Industry", active: step === 1, done: step > 1 },
     { index: 2, label: "Service", active: step === 2, done: hasService },
@@ -48,7 +42,13 @@ function StepTrack({
               }`}
             >
               {item.done ? (
-                <svg width="13" height="13" viewBox="0 0 12 12" fill="none" aria-hidden>
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  aria-hidden
+                >
                   <path
                     d="M2.5 6.2L4.8 8.5L9.5 3.5"
                     stroke="currentColor"
@@ -95,7 +95,7 @@ function ChoiceCard({
   onClick: () => void;
 }) {
   return (
-    <motion.button
+    <m.button
       type="button"
       onClick={onClick}
       whileHover={{ y: -2 }}
@@ -116,7 +116,9 @@ function ChoiceCard({
       </span>
       <span
         className={`pr-6 font-[family-name:var(--font-manrope)] text-[15px] leading-snug font-semibold tracking-[-0.01em] ${
-          selected ? "text-white" : "text-white/85 group-hover:text-mekark-white"
+          selected
+            ? "text-white"
+            : "text-white/85 group-hover:text-mekark-white"
         }`}
       >
         {label}
@@ -146,7 +148,7 @@ function ChoiceCard({
           className="pointer-events-none absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-mekark-red transition-transform duration-300 group-hover:scale-x-100"
         />
       )}
-    </motion.button>
+    </m.button>
   );
 }
 
@@ -208,7 +210,13 @@ export function FindYourSolutionPanel({
                 className="flex size-10 items-center justify-center border border-white/15 bg-white/[0.03] text-white/65 transition-colors hover:border-white/35 hover:bg-white/[0.06] hover:text-white"
                 aria-label="Close"
               >
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  aria-hidden
+                >
                   <path
                     d="M3 3L11 11M11 3L3 11"
                     stroke="currentColor"
@@ -252,7 +260,7 @@ export function FindYourSolutionPanel({
           </div>
 
           <AnimatePresence mode="wait">
-            <motion.div
+            <m.div
               key={step === 1 ? "industry" : "service"}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -278,12 +286,12 @@ export function FindYourSolutionPanel({
                   />
                 ))}
               </div>
-            </motion.div>
+            </m.div>
           </AnimatePresence>
         </div>
 
         {step === 2 && resultHref ? (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, ease: EASE }}
@@ -306,7 +314,13 @@ export function FindYourSolutionPanel({
                 className="inline-flex w-full items-center justify-center gap-2.5 bg-mekark-red px-6 py-3.5 font-[family-name:var(--font-manrope)] text-[13px] font-semibold tracking-wide text-white transition-colors hover:bg-[#c4161d] sm:w-auto"
               >
                 Continue to enquiry
-                <svg width="14" height="14" viewBox="0 0 12 12" fill="none" aria-hidden>
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  aria-hidden
+                >
                   <path
                     d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9"
                     stroke="currentColor"
@@ -317,7 +331,7 @@ export function FindYourSolutionPanel({
                 </svg>
               </button>
             </div>
-          </motion.div>
+          </m.div>
         ) : null}
       </div>
     </div>

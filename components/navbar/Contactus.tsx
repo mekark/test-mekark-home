@@ -16,7 +16,7 @@ const OFFICE_ADDRESS =
 
 const HERO_SRC = "/images/hero/peb-poster.webp";
 
-// Desktop keeps the default quality; mobile gets a lighter copy of the same image.
+// Desktop uses the original hero; mobile uses a separate, compressed copy.
 const { props: HERO_DESKTOP_PROPS } = getImageProps({
   src: HERO_SRC,
   alt: "",
@@ -27,11 +27,10 @@ const { props: HERO_DESKTOP_PROPS } = getImageProps({
   className: "object-cover object-center",
 });
 const { props: HERO_MOBILE_PROPS } = getImageProps({
-  src: HERO_SRC,
+  src: "/images/hero/mobile/peb-poster.webp",
   alt: "",
   fill: true,
   sizes: "100vw",
-  quality: 50,
 });
 
 const VIEWPORT = { once: true, margin: "-80px" as const };

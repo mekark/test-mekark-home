@@ -10,7 +10,7 @@ import {
   staggerContainer,
 } from "@/lib/motion-variants";
 
-// Desktop keeps the default quality; mobile gets a lighter copy of the same hero.
+// Desktop uses the original hero; mobile uses a separate, compressed copy.
 const { props: HERO_DESKTOP_PROPS } = getImageProps({
   src: "/images/projects/ongoing/hero.webp",
   alt: "Ongoing Mekark industrial construction at sunset",
@@ -21,11 +21,10 @@ const { props: HERO_DESKTOP_PROPS } = getImageProps({
   className: "object-cover object-center",
 });
 const { props: HERO_MOBILE_PROPS } = getImageProps({
-  src: "/images/projects/ongoing/hero.webp",
+  src: "/images/projects/ongoing/mobile/hero.webp",
   alt: "",
   fill: true,
   sizes: "100vw",
-  quality: 50,
 });
 
 const VIEWPORT = { once: true, margin: "-80px" as const };
@@ -111,7 +110,6 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           alt={project.title}
           fill
           className="object-cover object-bottom lg:hidden"
-          quality={60}
           sizes="100vw"
         />
         <Image

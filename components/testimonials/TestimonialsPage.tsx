@@ -1,5 +1,6 @@
 "use client";
 
+import { useSyncExternalStore } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
@@ -10,6 +11,23 @@ import {
   testGridStagger,
   testHeadlineReveal,
 } from "@/lib/motion-variants";
+
+const MOBILE_QUERY = "(max-width: 1023px)";
+
+function subscribeMobile(onChange: () => void) {
+  const mq = window.matchMedia(MOBILE_QUERY);
+  mq.addEventListener("change", onChange);
+  return () => mq.removeEventListener("change", onChange);
+}
+
+/** Mobile skips the headline's clip-path reveal (not GPU-composited). */
+function useIsMobile() {
+  return useSyncExternalStore(
+    subscribeMobile,
+    () => window.matchMedia(MOBILE_QUERY).matches,
+    () => false,
+  );
+}
 
 const TESTIMONIALS = [
   {
@@ -137,6 +155,8 @@ function TestimonialCard({
 }
 
 export function TestimonialsPage() {
+  const isMobile = useIsMobile();
+
   return (
     <main className="flex-1 overflow-hidden bg-[#fffdfd] text-[#111]">
       <section className="relative border-b border-[rgba(107,13,17,0.08)]">
@@ -171,7 +191,7 @@ export function TestimonialsPage() {
             </motion.div>
 
             <motion.h1
-              variants={testHeadlineReveal}
+              variants={isMobile ? undefined : testHeadlineReveal}
               className="m-static max-lg:[clip-path:none]! mt-5 text-[28px] font-extrabold leading-[1.06] tracking-[-2.5px] text-[#0d0808] sm:text-[clamp(2.15rem,5vw,4.5rem)]"
             >
               Strong builds.

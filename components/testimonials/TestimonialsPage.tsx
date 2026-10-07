@@ -65,7 +65,7 @@ function TestimonialCard({
 }) {
   return (
     <figure
-      className={`tm-card ${CARD_ANIM[index]} relative flex min-h-[470px] flex-col overflow-hidden rounded-[30px] border p-6 shadow-[0_4px_12px_rgba(56,24,25,0.05)] sm:p-8 lg:shadow-[0_18px_55px_rgba(56,24,25,0.06)] ${testimonial.cardClassName} ${testimonial.offsetClassName}`}
+      className={`tm-card ${CARD_ANIM[index]} relative flex min-h-[470px] flex-col overflow-hidden rounded-[30px] border p-6 shadow-[0_18px_55px_rgba(56,24,25,0.06)] sm:p-8 ${testimonial.cardClassName} ${testimonial.offsetClassName}`}
     >
       <div
         className={`pointer-events-none absolute -right-16 -top-16 size-44 rounded-full ${testimonial.decorationClassName}`}
@@ -77,7 +77,7 @@ function TestimonialCard({
       />
 
       <div className="relative flex items-start justify-between gap-5">
-        <div className="flex min-h-[62px] min-w-[160px] items-center justify-center rounded-[16px] bg-white px-5 py-3 shadow-[0_2px_8px_rgba(32,20,20,0.05)] lg:shadow-[0_8px_28px_rgba(32,20,20,0.06)]">
+        <div className="flex min-h-[62px] min-w-[160px] items-center justify-center rounded-[16px] bg-white px-5 py-3 shadow-[0_8px_28px_rgba(32,20,20,0.06)]">
           <Image
             src={testimonial.logo.src}
             alt={`${testimonial.company} logo`}
@@ -129,11 +129,11 @@ export function TestimonialsPage() {
     <main className="flex-1 overflow-hidden bg-[#fffdfd] text-[#111]">
       <section className="relative border-b border-[rgba(107,13,17,0.08)]">
         <div
-          className="pointer-events-none absolute left-[8%] top-[180px] size-24 hidden rounded-full bg-[#ffe7e8] blur-sm lg:block"
+          className="pointer-events-none absolute left-[8%] top-[180px] size-24 rounded-full bg-[#ffe7e8] blur-sm"
           aria-hidden
         />
         <div
-          className="pointer-events-none absolute right-[7%] top-[280px] size-16 hidden rounded-full bg-[#fff0cc] blur-sm lg:block"
+          className="pointer-events-none absolute right-[7%] top-[280px] size-16 rounded-full bg-[#fff0cc] blur-sm"
           aria-hidden
         />
 

@@ -4,7 +4,6 @@ import { ConsentAwareScripts, DirectSiteScripts } from "@/components/cookie-cons
 import { CookieConsentBanner } from "@/components/cookie-consent/CookieConsentBanner";
 import { CookieConsentProvider } from "@/components/cookie-consent/CookieConsentProvider";
 import { ArrowTop } from "@/components/ui/ArrowTop";
-import { MotionProvider } from "@/components/ui/MotionProvider";
 import { NavigationLoadingProvider } from "@/components/ui/NavigationLoadingProvider";
 import { Navbar } from "@/components/navbar/Navbar";
 import { PageTitleSync } from "@/components/seo/PageTitleSync";
@@ -52,22 +51,20 @@ export default function RootLayout({
       className={`${manrope.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <MotionProvider>
-          <CookieConsentProvider>
-            {LEGAL_AND_COOKIE_CONSENT_ENABLED ? (
-              <ConsentAwareScripts />
-            ) : (
-              <DirectSiteScripts />
-            )}
-            <NavigationLoadingProvider>
-              <PageTitleSync />
-              <Navbar />
-              {children}
-              <ArrowTop />
-            </NavigationLoadingProvider>
-            {LEGAL_AND_COOKIE_CONSENT_ENABLED ? <CookieConsentBanner /> : null}
-          </CookieConsentProvider>
-        </MotionProvider>
+        <CookieConsentProvider>
+          {LEGAL_AND_COOKIE_CONSENT_ENABLED ? (
+            <ConsentAwareScripts />
+          ) : (
+            <DirectSiteScripts />
+          )}
+          <NavigationLoadingProvider>
+            <PageTitleSync />
+            <Navbar />
+            {children}
+            <ArrowTop />
+          </NavigationLoadingProvider>
+          {LEGAL_AND_COOKIE_CONSENT_ENABLED ? <CookieConsentBanner /> : null}
+        </CookieConsentProvider>
       </body>
     </html>
   );

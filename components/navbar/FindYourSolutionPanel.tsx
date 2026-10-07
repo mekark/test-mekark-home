@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import {
   FIND_INDUSTRIES,
   FIND_SERVICES,
@@ -95,7 +95,7 @@ function ChoiceCard({
   onClick: () => void;
 }) {
   return (
-    <motion.button
+    <m.button
       type="button"
       onClick={onClick}
       whileHover={{ y: -2 }}
@@ -146,7 +146,7 @@ function ChoiceCard({
           className="pointer-events-none absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-mekark-red transition-transform duration-300 group-hover:scale-x-100"
         />
       )}
-    </motion.button>
+    </m.button>
   );
 }
 
@@ -252,7 +252,7 @@ export function FindYourSolutionPanel({
           </div>
 
           <AnimatePresence mode="wait">
-            <motion.div
+            <m.div
               key={step === 1 ? "industry" : "service"}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -278,12 +278,12 @@ export function FindYourSolutionPanel({
                   />
                 ))}
               </div>
-            </motion.div>
+            </m.div>
           </AnimatePresence>
         </div>
 
         {step === 2 && resultHref ? (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, ease: EASE }}
@@ -317,7 +317,7 @@ export function FindYourSolutionPanel({
                 </svg>
               </button>
             </div>
-          </motion.div>
+          </m.div>
         ) : null}
       </div>
     </div>

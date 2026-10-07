@@ -86,6 +86,8 @@ const nextConfig: NextConfig = {
     ];
   },
   images: {
+    // 75 is the default; 60 is used by the mobile-only project card images.
+    qualities: [60, 75],
     remotePatterns: [
       {
         protocol: "https",

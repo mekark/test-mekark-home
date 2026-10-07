@@ -14,11 +14,7 @@ const VIEWPORT = { once: true, margin: "-80px" as const };
 const PAGE_SIZE = 9;
 
 type ProjectCategory =
-  | "commercial"
-  | "residential"
-  | "infrastructure"
-  | "industrial"
-  | "peb";
+  "commercial" | "residential" | "infrastructure" | "industrial" | "peb";
 
 type Project = {
   title: string;
@@ -111,6 +107,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           alt={project.title}
           fill
           className="object-cover object-bottom lg:hidden"
+          quality={60}
           sizes="100vw"
         />
         <Image

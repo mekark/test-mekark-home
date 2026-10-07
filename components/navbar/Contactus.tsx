@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import { getImageProps } from "next/image";
 import { motion } from "framer-motion";
 import ContactForm from "@/components/navbar/ContactForm";
 import { fadeUp, staggerContainer } from "@/lib/motion-variants";
@@ -13,6 +13,26 @@ const WHATSAPP_HREF = `https://wa.me/919790924754?text=${encodeURIComponent(
 )}`;
 const OFFICE_ADDRESS =
   "5th Floor, Polyhose Towers, Anna Salai, Little Mount, Guindy, Chennai, Tamil Nadu 600032";
+
+const HERO_SRC = "/images/hero/peb-poster.webp";
+
+// Desktop keeps the default quality; mobile gets a lighter copy of the same image.
+const { props: HERO_DESKTOP_PROPS } = getImageProps({
+  src: HERO_SRC,
+  alt: "",
+  fill: true,
+  sizes: "100vw",
+  fetchPriority: "high",
+  loading: "eager",
+  className: "object-cover object-center",
+});
+const { props: HERO_MOBILE_PROPS } = getImageProps({
+  src: HERO_SRC,
+  alt: "",
+  fill: true,
+  sizes: "100vw",
+  quality: 50,
+});
 
 const VIEWPORT = { once: true, margin: "-80px" as const };
 
@@ -101,7 +121,13 @@ function PinIcon() {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <circle cx="12" cy="10" r="2.4" stroke="currentColor" strokeWidth="1.75" />
+      <circle
+        cx="12"
+        cy="10"
+        r="2.4"
+        stroke="currentColor"
+        strokeWidth="1.75"
+      />
     </svg>
   );
 }
@@ -125,15 +151,18 @@ export default function ContactUsContent() {
     <main className="contact-static">
       <section className="relative overflow-hidden bg-[#0a0a0a] pt-[60px] text-white">
         <div className="absolute inset-0">
-          <Image
-            src="/images/hero/peb-poster.webp"
-            alt="Pre-engineered building construction showcase"
-            fill
-            priority
-            fetchPriority="high"
-            className="object-cover object-center"
-            sizes="100vw"
-          />
+          <picture>
+            <source
+              media="(max-width: 1023px)"
+              srcSet={HERO_MOBILE_PROPS.srcSet}
+              sizes="100vw"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              {...HERO_DESKTOP_PROPS}
+              alt="Pre-engineered building construction showcase"
+            />
+          </picture>
           <div
             className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/35"
             aria-hidden

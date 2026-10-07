@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  experimental: {
+    // Inline the global CSS into the HTML so it no longer blocks first render.
+    inlineCss: true,
+  },
   async redirects() {
     return [
       {
@@ -86,8 +90,8 @@ const nextConfig: NextConfig = {
     ];
   },
   images: {
-    // 75 is the default; 60 is used by the mobile-only project card images.
-    qualities: [60, 75],
+    // 75 is the default; 50/60 are used by mobile-only images (contact hero, project cards).
+    qualities: [50, 60, 75],
     remotePatterns: [
       {
         protocol: "https",

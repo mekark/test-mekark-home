@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import { motion } from "framer-motion";
 import {
   fadeUp,
@@ -9,6 +9,24 @@ import {
   mfgGridStagger,
   staggerContainer,
 } from "@/lib/motion-variants";
+
+// Desktop keeps the default quality; mobile gets a lighter copy of the same hero.
+const { props: HERO_DESKTOP_PROPS } = getImageProps({
+  src: "/images/projects/ongoing/hero.webp",
+  alt: "Ongoing Mekark industrial construction at sunset",
+  fill: true,
+  sizes: "100vw",
+  fetchPriority: "high",
+  loading: "eager",
+  className: "object-cover object-center",
+});
+const { props: HERO_MOBILE_PROPS } = getImageProps({
+  src: "/images/projects/ongoing/hero.webp",
+  alt: "",
+  fill: true,
+  sizes: "100vw",
+  quality: 50,
+});
 
 const VIEWPORT = { once: true, margin: "-80px" as const };
 const PAGE_SIZE = 9;
@@ -215,14 +233,15 @@ export function OngoingProjectsPage() {
     <div className="bg-white font-[family-name:var(--font-manrope)] text-[#1e1e1e]">
       <section className="relative isolate flex min-h-[380px] items-center justify-center pt-[60px] lg:min-h-[480px]">
         <div className="absolute inset-0 overflow-hidden">
-          <Image
-            src="/images/projects/ongoing/hero.webp"
-            alt="Ongoing Mekark industrial construction at sunset"
-            fill
-            priority
-            className="object-cover object-center"
-            sizes="100vw"
-          />
+          <picture>
+            <source
+              media="(max-width: 1023px)"
+              srcSet={HERO_MOBILE_PROPS.srcSet}
+              sizes="100vw"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img {...HERO_DESKTOP_PROPS} />
+          </picture>
           <div
             className="absolute inset-0 bg-gradient-to-b from-transparent to-[rgba(0,0,0,0.8)]"
             aria-hidden

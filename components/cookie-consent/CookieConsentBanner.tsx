@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { useCookieConsent } from "@/components/cookie-consent/CookieConsentProvider";
 import { LEGAL_AND_COOKIE_CONSENT_ENABLED } from "@/lib/feature-flags";
 
@@ -188,7 +188,7 @@ export function CookieConsentBanner() {
 
   return (
     <AnimatePresence>
-      <motion.div
+      <m.div
         role="dialog"
         aria-labelledby="cookie-consent-title"
         aria-describedby="cookie-consent-description"
@@ -364,7 +364,7 @@ export function CookieConsentBanner() {
             </div>
           )}
         </div>
-      </motion.div>
+      </m.div>
     </AnimatePresence>
   );
 }

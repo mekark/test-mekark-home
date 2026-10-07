@@ -1,10 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  experimental: {
-    // Inline the global CSS into the HTML so it no longer blocks first render.
-    inlineCss: true,
-  },
   async redirects() {
     return [
       {

@@ -4,6 +4,7 @@ import { ConsentAwareScripts, DirectSiteScripts } from "@/components/cookie-cons
 import { CookieConsentBanner } from "@/components/cookie-consent/CookieConsentBanner";
 import { CookieConsentProvider } from "@/components/cookie-consent/CookieConsentProvider";
 import { ArrowTop } from "@/components/ui/ArrowTop";
+import { MotionProvider } from "@/components/ui/MotionProvider";
 import { NavigationLoadingProvider } from "@/components/ui/NavigationLoadingProvider";
 import { Navbar } from "@/components/navbar/Navbar";
 import { PageTitleSync } from "@/components/seo/PageTitleSync";
@@ -57,13 +58,15 @@ export default function RootLayout({
           ) : (
             <DirectSiteScripts />
           )}
-          <NavigationLoadingProvider>
-            <PageTitleSync />
-            <Navbar />
-            {children}
-            <ArrowTop />
-          </NavigationLoadingProvider>
-          {LEGAL_AND_COOKIE_CONSENT_ENABLED ? <CookieConsentBanner /> : null}
+          <MotionProvider>
+            <NavigationLoadingProvider>
+              <PageTitleSync />
+              <Navbar />
+              {children}
+              <ArrowTop />
+            </NavigationLoadingProvider>
+            {LEGAL_AND_COOKIE_CONSENT_ENABLED ? <CookieConsentBanner /> : null}
+          </MotionProvider>
         </CookieConsentProvider>
       </body>
     </html>

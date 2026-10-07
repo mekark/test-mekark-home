@@ -4,7 +4,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, type Variants } from "framer-motion";
+import { m, type Variants } from "framer-motion";
 import { STATIC_MOBILE_PATHS } from "@/components/navbar/Navbar";
 import { CookieSettingsButton } from "@/components/cookie-consent/CookieSettingsButton";
 import { NAV_ITEMS, type NavItem } from "@/components/navbar/nav-data";
@@ -353,7 +353,7 @@ export function FooterSection({
           }}
         />
 
-        <motion.div
+        <m.div
           variants={container}
           initial="hidden"
           whileInView="visible"
@@ -361,7 +361,7 @@ export function FooterSection({
           className={`${stillClass} ${SECTION_CONTAINER_CLASS} py-14 sm:py-16 lg:py-20 xl:py-16 2xl:py-20`}
         >
           <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between lg:gap-16 xl:gap-12 2xl:gap-16">
-            <motion.div
+            <m.div
               variants={item}
               className={`${stillClass} flex max-w-[640px] flex-col gap-6`}
             >
@@ -434,9 +434,9 @@ export function FooterSection({
                   </div>
                 </div>
               )}
-            </motion.div>
+            </m.div>
 
-            <motion.div
+            <m.div
               variants={item}
               className={`${stillClass} flex flex-row gap-14 sm:gap-16 lg:gap-26 lg:pt-1 xl:gap-20 2xl:gap-26`}
             >
@@ -448,10 +448,10 @@ export function FooterSection({
               >
                 <CookieSettingsButton />
               </FooterLinkColumn>
-            </motion.div>
+            </m.div>
           </div>
 
-          <motion.div
+          <m.div
             variants={item}
             className={`${stillClass} mt-12 border-t border-white/10 pt-6 sm:mt-16 lg:mt-20`}
           >
@@ -459,8 +459,8 @@ export function FooterSection({
               © {new Date().getFullYear()} Mekark Structure India Private
               Limited. All rights reserved.
             </p>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       </footer>
 
       <FloatingActions />

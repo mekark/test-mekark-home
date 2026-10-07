@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { getImageProps } from "next/image";
 import { motion } from "framer-motion";
@@ -145,6 +146,53 @@ function ArrowIcon() {
   );
 }
 
+const MAP_FRAME_CLASS =
+  "h-[157px] w-full rounded-[18px] sm:h-full sm:min-h-[360px] sm:rounded-none md:min-h-[460px]";
+
+/**
+ * Google Maps pulls in ~200 KB of scripts. On mobile, only mount the iframe
+ * once the user scrolls near it; desktop mounts it straight away as before.
+ */
+function MapFrame() {
+  const placeholderRef = useRef<HTMLDivElement>(null);
+  const [showMap, setShowMap] = useState(false);
+
+  useEffect(() => {
+    if (!window.matchMedia("(max-width: 1023px)").matches) {
+      setShowMap(true);
+      return;
+    }
+    const placeholder = placeholderRef.current;
+    if (!placeholder) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setShowMap(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" },
+    );
+    observer.observe(placeholder);
+    return () => observer.disconnect();
+  }, []);
+
+  if (!showMap) {
+    return <div ref={placeholderRef} className={MAP_FRAME_CLASS} aria-hidden />;
+  }
+
+  return (
+    <iframe
+      title="Mekark Chennai office on Google Maps"
+      src={MAP_EMBED_URL}
+      className={MAP_FRAME_CLASS}
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+      allowFullScreen
+    />
+  );
+}
+
 export default function ContactUsContent() {
   return (
     <main className="contact-static">
@@ -173,12 +221,12 @@ export default function ContactUsContent() {
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
-            className="max-w-[720px]"
+            className="m-static max-w-[720px]"
           >
             <motion.nav
               variants={fadeUp}
               aria-label="Breadcrumb"
-              className="flex items-center gap-2 text-sm text-white/55"
+              className="m-static flex items-center gap-2 text-sm text-white/55"
             >
               <Link href="/" className="transition hover:text-white">
                 Home
@@ -189,20 +237,20 @@ export default function ContactUsContent() {
 
             <motion.p
               variants={fadeUp}
-              className="mt-8 hidden text-[13px] font-extrabold uppercase tracking-[3.2px] text-[#ed1c24] sm:block"
+              className="m-static mt-8 hidden text-[13px] font-extrabold uppercase tracking-[3.2px] text-[#ed1c24] sm:block"
             >
               Contact
             </motion.p>
             <motion.h1
               variants={fadeUp}
-              className="mt-3 text-[28px] font-extrabold leading-[1.08] tracking-[-1.2px] sm:text-[clamp(2rem,5vw,3.5rem)]"
+              className="m-static mt-3 text-[28px] font-extrabold leading-[1.08] tracking-[-1.2px] sm:text-[clamp(2rem,5vw,3.5rem)]"
             >
               Let&apos;s plan your next <br className="sm:hidden" />
               industrial project.
             </motion.h1>
             <motion.p
               variants={fadeUp}
-              className="mt-4 max-w-[540px] text-sm leading-[22px] text-white/75 sm:leading-7 md:text-[17px]"
+              className="m-static mt-4 max-w-[540px] text-sm leading-[22px] text-white/75 sm:leading-7 md:text-[17px]"
             >
               Share a brief, call the team, or visit our Chennai office. We
               respond within one business day with a clear next step.
@@ -210,7 +258,7 @@ export default function ContactUsContent() {
 
             <motion.div
               variants={fadeUp}
-              className="mt-5 flex flex-wrap gap-x-2.5 gap-y-[19px] sm:mt-8 sm:gap-3"
+              className="m-static mt-5 flex flex-wrap gap-x-2.5 gap-y-[19px] sm:mt-8 sm:gap-3"
             >
               <a
                 href="tel:+919790924754"
@@ -379,14 +427,7 @@ export default function ContactUsContent() {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="overflow-hidden bg-[#15191d] px-5 sm:min-h-[360px] sm:rounded-[24px] sm:border sm:border-black/8 sm:bg-transparent sm:px-0 md:min-h-[460px]"
           >
-            <iframe
-              title="Mekark Chennai office on Google Maps"
-              src={MAP_EMBED_URL}
-              className="h-[157px] w-full rounded-[18px] sm:h-full sm:min-h-[360px] sm:rounded-none md:min-h-[460px]"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
+            <MapFrame />
           </motion.div>
         </div>
       </section>

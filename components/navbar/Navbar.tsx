@@ -161,6 +161,7 @@ export const STATIC_MOBILE_PATHS = [
   "/resources/contact-us",
   "/projects/completed-projects",
   "/projects/ongoing-projects",
+  "/resources/testimonials",
 ];
 
 /** True on these pages in mobile view: navbar renders without any motion. */

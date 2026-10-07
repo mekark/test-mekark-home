@@ -77,7 +77,7 @@ function TestimonialCard({
         rotate: index === 1 ? 0.4 : index === 2 ? -0.35 : 0.25,
         transition: { type: "spring", stiffness: 330, damping: 22 },
       }}
-      className={`relative flex min-h-[470px] flex-col overflow-hidden rounded-[30px] border p-6 shadow-[0_18px_55px_rgba(56,24,25,0.06)] sm:p-8 ${testimonial.cardClassName} ${testimonial.offsetClassName}`}
+      className={`m-static relative flex min-h-[470px] flex-col overflow-hidden rounded-[30px] border p-6 shadow-[0_18px_55px_rgba(56,24,25,0.06)] sm:p-8 ${testimonial.cardClassName} ${testimonial.offsetClassName}`}
     >
       <div
         className={`pointer-events-none absolute -right-16 -top-16 size-44 rounded-full ${testimonial.decorationClassName}`}
@@ -153,16 +153,16 @@ export function TestimonialsPage() {
           variants={testGridStagger}
           initial="hidden"
           animate="visible"
-          className="relative mx-auto w-full max-w-[1440px] px-5 pb-24 pt-[126px] sm:px-8 sm:pb-28 sm:pt-[146px] lg:px-20 lg:pb-[150px] lg:pt-[168px]"
+          className="m-static relative mx-auto w-full max-w-[1440px] px-5 pb-24 pt-[126px] sm:px-8 sm:pb-28 sm:pt-[146px] lg:px-20 lg:pb-[150px] lg:pt-[168px]"
         >
           <div className="mx-auto flex max-w-[820px] flex-col items-center text-center">
             <motion.div
               variants={testBadgeReveal}
-              className="flex items-center gap-[7px] rounded-full border border-crimson-100 bg-crimson-200 px-3 py-1.5"
+              className="m-static flex items-center gap-[7px] rounded-full border border-crimson-100 bg-crimson-200 px-3 py-1.5"
             >
               <motion.span
                 variants={aboutBadgeDot}
-                className="size-[7px] rounded-full bg-red-200"
+                className="m-static size-[7px] rounded-full bg-red-200"
                 aria-hidden
               />
               <span className="font-manrope text-xs font-medium tracking-[0.53px] text-red-100">
@@ -172,7 +172,7 @@ export function TestimonialsPage() {
 
             <motion.h1
               variants={testHeadlineReveal}
-              className="mt-5 text-[28px] font-extrabold leading-[1.06] tracking-[-2.5px] text-[#0d0808] sm:text-[clamp(2.15rem,5vw,4.5rem)]"
+              className="m-static max-lg:[clip-path:none]! mt-5 text-[28px] font-extrabold leading-[1.06] tracking-[-2.5px] text-[#0d0808] sm:text-[clamp(2.15rem,5vw,4.5rem)]"
             >
               Strong builds.
               <br />
@@ -181,7 +181,7 @@ export function TestimonialsPage() {
 
             <motion.p
               variants={fadeUp}
-              className="mt-6 max-w-[680px] text-sm font-medium leading-[1.75] text-[#626060] sm:text-lg"
+              className="m-static mt-6 max-w-[680px] text-sm font-medium leading-[1.75] text-[#626060] sm:text-lg"
             >
               Real experiences from the people who built with Mekark—from
               planning and coordination through successful delivery.
@@ -190,7 +190,7 @@ export function TestimonialsPage() {
 
           <motion.div
             variants={testGridStagger}
-            className="mx-auto mt-12 grid w-full max-w-[1280px] grid-cols-1 gap-6 md:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:items-start"
+            className="m-static mx-auto mt-12 grid w-full max-w-[1280px] grid-cols-1 gap-6 md:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:items-start"
           >
             {TESTIMONIALS.map((testimonial, index) => (
               <TestimonialCard

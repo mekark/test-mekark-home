@@ -14,6 +14,7 @@ export function HeroSection() {
             alt="Mekark teams on site and in the office"
             fill
             priority
+            fetchPriority="high"
             sizes="100vw"
             className="object-cover object-center"
           />
@@ -60,6 +61,7 @@ export function HeroSection() {
           alt="Mekark teams on site and in the office"
           fill
           priority
+          fetchPriority="high"
           sizes="100vw"
           className="object-cover object-[center_35%] lg:object-center"
         />

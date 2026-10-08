@@ -170,8 +170,12 @@ export const STATIC_MOBILE_PATHS = [
   "/resources/contact-us",
   "/projects/completed-projects",
   "/projects/ongoing-projects",
+  "/resources/careers",
   "/resources/testimonials",
 ];
+
+/** Pages whose navbar/footer render without motion on every viewport. */
+export const STATIC_ALL_PATHS = ["/resources/careers"];
 
 /** True on these pages in mobile view: navbar renders without any motion. */
 const StaticNavContext = createContext(false);
@@ -926,15 +930,19 @@ export function Navbar() {
     !scrolled &&
     !mobileOpen &&
     !findOpen;
-  const disableNavEnterAnimation = isMobileViewport;
+  const isStaticAllPage = STATIC_ALL_PATHS.includes(pathname);
+  const disableNavEnterAnimation = isMobileViewport || isStaticAllPage;
   const isContactPage = pathname === "/resources/contact-us";
   const isStaticMobilePage = STATIC_MOBILE_PATHS.includes(pathname);
-  const staticNav = isStaticMobilePage && isMobileViewport;
+  const staticNav =
+    (isStaticMobilePage && isMobileViewport) || isStaticAllPage;
   const solidContactNav = isContactPage && staticNav && !homeMobileLightNav;
   // Before the viewport is measured, force the contact navbar visible and still.
-  const contactStaticClass = isStaticMobilePage
-    ? "max-lg:!opacity-100 max-lg:![transform:none]"
-    : "";
+  const contactStaticClass = isStaticAllPage
+    ? "!opacity-100 ![transform:none]"
+    : isStaticMobilePage
+      ? "max-lg:!opacity-100 max-lg:![transform:none]"
+      : "";
 
   return (
     <StaticNavContext.Provider value={staticNav}>

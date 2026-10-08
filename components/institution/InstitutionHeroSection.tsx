@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { ResponsiveImage } from "@/components/institution/ResponsiveImage";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "@/lib/motion-variants";
@@ -36,12 +36,11 @@ export function InstitutionHeroSection() {
 
   return (
     <section className="relative isolate min-h-[760px] overflow-hidden bg-black pt-[60px] lg:min-h-[820px]">
-      <Image
+      <ResponsiveImage
         src="/images/institutional/home.webp"
+        mobileSrc="/images/mobile/institution/hero.webp"
         alt="Rows of seating in a modern auditorium"
-        fill
         priority
-        fetchPriority="high"
         quality={60}
         className="object-cover object-center"
         sizes="100vw"

@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { ResponsiveImage } from "@/components/institution/ResponsiveImage";
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "@/lib/motion-variants";
 
@@ -117,10 +117,10 @@ export function InstitutionMapSection() {
 
         <div className="relative flex-1 overflow-hidden lg:aspect-square">
           <div className="relative mx-auto aspect-square w-full max-w-[420px] lg:absolute lg:top-[-39%] lg:right-[-23%] lg:mx-0 lg:aspect-square lg:h-auto lg:w-[128%] lg:max-w-none lg:scale-110">
-            <Image
+            <ResponsiveImage
               src="/images/institution/map-section/map-india.webp"
+              mobileSrc="/images/mobile/institution/map-india.webp"
               alt="3D map of India with South India highlighted"
-              fill
               sizes="(max-width: 1024px) min(100vw, 420px), 55vw"
               quality={60}
               className="object-contain object-center"

@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { ResponsiveImage } from "@/components/institution/ResponsiveImage";
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "@/lib/motion-variants";
 
@@ -52,7 +52,7 @@ export function InstitutionTypesSection() {
           viewport={{ once: true, margin: "-80px" }}
           className="grid w-full grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 xl:grid-cols-4 xl:gap-[19px]"
         >
-          {CARDS.map((card) => (
+          {CARDS.map((card, index) => (
             <motion.article
               key={card.title}
               variants={fadeUp}
@@ -60,10 +60,10 @@ export function InstitutionTypesSection() {
             >
               <div className="flex w-full flex-col overflow-hidden rounded-[14px]">
                 <div className="relative aspect-[428/376] overflow-hidden rounded-t-[14px]">
-                  <Image
+                  <ResponsiveImage
                     src={encodeURI(card.src)}
+                    mobileSrc={`/images/mobile/institution/card-${index + 1}.webp`}
                     alt={card.alt}
-                    fill
                     sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 1280px) 50vw, 428px"
                     quality={60}
                     className="object-cover object-center"

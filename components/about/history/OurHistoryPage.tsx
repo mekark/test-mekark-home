@@ -1,7 +1,8 @@
 "use client";
 
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import { useRef } from "react";
+import { preload } from "react-dom";
 import { motion, useInView } from "framer-motion";
 import { CountUp } from "@/components/motion/CountUp";
 import {
@@ -122,7 +123,26 @@ function JourneyStat({
   );
 }
 
+const DESKTOP_HERO_SRC = "/images/about/history/18%20Years.webp";
+const DESKTOP_HERO_MEDIA = "(min-width: 640px)";
+
 export function OurHistoryPage() {
+  // The desktop hero is hidden on phones, so it must not be preloaded (or
+  // eagerly loaded) there. Preload it for desktop only, with high priority.
+  const { props: desktopHero } = getImageProps({
+    src: DESKTOP_HERO_SRC,
+    alt: "",
+    fill: true,
+    sizes: "100vw",
+  });
+  preload(desktopHero.src, {
+    as: "image",
+    fetchPriority: "high",
+    imageSrcSet: desktopHero.srcSet,
+    imageSizes: "100vw",
+    media: DESKTOP_HERO_MEDIA,
+  });
+
   const statsRef = useRef<HTMLDivElement>(null);
   const statsInView = useInView(statsRef, { once: true, amount: 0.35 });
 
@@ -184,6 +204,7 @@ export function OurHistoryPage() {
               className="object-cover object-center"
               sizes="100vw"
               priority
+              fetchPriority="high"
               aria-hidden
             />
             <div className="absolute inset-0 flex items-center justify-center">
@@ -195,6 +216,7 @@ export function OurHistoryPage() {
                   className="object-contain"
                   sizes="71px"
                   priority
+                  fetchPriority="high"
                 />
               </div>
             </div>
@@ -205,12 +227,12 @@ export function OurHistoryPage() {
         <div className="relative mx-auto hidden w-full max-w-[1916px] sm:block">
           <div className="relative w-full aspect-[802/160]">
             <Image
-              src="/images/about/history/18%20Years.webp"
+              src={DESKTOP_HERO_SRC}
               alt="18+ years of experience"
               fill
               className="object-contain object-bottom"
               sizes="100vw"
-              priority
+              fetchPriority="high"
             />
           </div>
         </div>

@@ -447,3 +447,16 @@ html {
   .tm-card-1:hover { translate: 0 -7px; rotate: 0.4deg; }
   .tm-card-2:hover { translate: 0 -7px; rotate: -0.35deg; }
 }
+
+/* Entrance for above-the-fold content: transform only, so the text is painted
+   (and counted for LCP) immediately instead of waiting on JS to un-hide it. */
+@keyframes history-rise {
+  from { transform: translateY(24px); }
+  to { transform: none; }
+}
+.history-rise {
+  animation: history-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .history-rise { animation: none; }
+}

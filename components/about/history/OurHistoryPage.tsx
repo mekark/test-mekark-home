@@ -6,8 +6,6 @@ import { preload } from "react-dom";
 import { motion, useInView } from "framer-motion";
 import { CountUp } from "@/components/motion/CountUp";
 import {
-  aboutHeadlineChunk,
-  aboutHeadlineStagger,
   aboutQuoteIcon,
   aboutQuoteReveal,
   fadeUp,
@@ -151,37 +149,22 @@ export function OurHistoryPage() {
       {/* Hero */}
       <section className="relative isolate overflow-hidden pt-[60px]">
         <div className="mx-auto max-w-[1240px] px-5 pb-10 pt-10 text-center sm:px-8 sm:pb-14 sm:pt-14 lg:px-10 lg:pt-16">
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-col items-center gap-4"
-          >
-            <motion.h1
-              variants={aboutHeadlineStagger}
-              className="max-w-[980px] font-[family-name:var(--font-manrope)] text-[28px] font-bold leading-9 tracking-[-0.5px] text-[#111] sm:text-[clamp(1.85rem,4.2vw,48px)] sm:leading-[1.15] sm:tracking-[-1px]"
+          {/* First screen: CSS-only entrance so the text is visible at first paint (no wait for JS hydration). */}
+          <div className="flex flex-col items-center gap-4">
+            <h1
+              className="history-rise max-w-[980px] font-[family-name:var(--font-manrope)] text-[28px] font-bold leading-9 tracking-[-0.5px] text-[#111] sm:text-[clamp(1.85rem,4.2vw,48px)] sm:leading-[1.15] sm:tracking-[-1px]"
             >
-              <motion.span
-                variants={aboutHeadlineChunk}
-                className="inline max-sm:block"
-              >
-                We are Mekark.
-              </motion.span>{" "}
-              <motion.span
-                variants={aboutHeadlineChunk}
-                className="inline max-sm:block"
-              >
-                This is our story.
-              </motion.span>
-            </motion.h1>
-            <motion.span
-              variants={fadeUp}
+              <span className="inline max-sm:block">We are Mekark.</span>{" "}
+              <span className="inline max-sm:block">This is our story.</span>
+            </h1>
+            <span
               aria-hidden
-              className="block h-0.5 w-[70px] bg-[#ed1c24]"
+              style={{ animationDelay: "0.12s" }}
+              className="history-rise block h-0.5 w-[70px] bg-[#ed1c24]"
             />
-            <motion.p
-              variants={fadeUp}
-              className="max-w-[1240px] font-[family-name:var(--font-manrope)] text-sm font-medium leading-[1.65] text-[#515151] sm:text-[clamp(1rem,1.6vw,22px)]"
+            <p
+              style={{ animationDelay: "0.24s" }}
+              className="history-rise max-w-[1240px] font-[family-name:var(--font-manrope)] text-sm font-medium leading-[1.65] text-[#515151] sm:text-[clamp(1rem,1.6vw,22px)]"
             >
               What began in 1998 as a small fabrication and roofing venture has
               grown, through hard work, trust, and strong engineering, into one
@@ -190,8 +173,8 @@ export function OurHistoryPage() {
               structural fabrication into civil construction, industrial
               buildings, warehouses, roofing systems, and complete turnkey
               construction, building one generation, one decision, at a time.
-            </motion.p>
-          </motion.div>
+            </p>
+          </div>
         </div>
 
         {/* Mobile hero — Figma: background + centered 18+ badge */}
@@ -292,12 +275,8 @@ export function OurHistoryPage() {
       <section className="border-t border-[#dedede] bg-[#f6f7f8] px-5 py-12 sm:px-8 sm:py-16 lg:px-[clamp(1.5rem,5vw,5rem)] lg:py-[clamp(3.5rem,7vw,7.5rem)]">
         <div className="mx-auto flex w-full max-w-[1230px] flex-col gap-8 sm:gap-10 lg:flex-row lg:items-start lg:gap-10 xl:gap-12 2xl:gap-16">
           <aside className="relative mx-auto w-full max-w-[440px] shrink-0 lg:mx-0 lg:w-[min(100%,36%)] lg:max-w-[400px] xl:sticky xl:top-24 xl:max-w-[420px] xl:self-start 2xl:static 2xl:max-w-[440px]">
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={VIEWPORT}
-            >
+            {/* Can be the LCP element on phones: CSS-only entrance, no JS-gated opacity. */}
+            <div className="history-rise">
               <div className="relative w-full overflow-hidden rounded-[20px]">
                 <Image
                   src={mdPortraitPhoto}
@@ -317,7 +296,7 @@ export function OurHistoryPage() {
                   Managing Director
                 </p>
               </div>
-            </motion.div>
+            </div>
           </aside>
 
           <div className="flex min-w-0 flex-1 flex-col gap-6 sm:gap-7 lg:gap-6 xl:gap-7">

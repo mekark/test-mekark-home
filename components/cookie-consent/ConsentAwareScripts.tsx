@@ -6,52 +6,31 @@ import { useCookieConsent } from "@/components/cookie-consent/CookieConsentProvi
 
 const GTM_ID = "GTM-5SBMM86H";
 
-/** Fallback if the user never scrolls or interacts. */
-const THIRD_PARTY_DEFER_TIMEOUT_MS = 4000;
+/** Events that count as the visitor interacting with the page. */
+const INTERACTION_EVENTS = [
+  "scroll",
+  "pointerdown",
+  "touchstart",
+  "keydown",
+  "mousemove",
+] as const;
 
-/** Delay after window load before loading scripts when load fires first. */
-const THIRD_PARTY_POST_LOAD_DELAY_MS = 1500;
-
+/** Runs the callback once, on the visitor's first interaction (no timer fallback). */
 function deferThirdPartyScripts(callback: () => void) {
   if (typeof window === "undefined") {
     return;
   }
 
-  let ran = false;
-  const timeouts: number[] = [];
-
-  const cleanup = () => {
-    window.removeEventListener("load", onLoad);
-    window.removeEventListener("scroll", run);
-    window.removeEventListener("pointerdown", run);
-    window.removeEventListener("keydown", run);
-    timeouts.forEach((timeoutId) => window.clearTimeout(timeoutId));
-  };
-
   const run = () => {
-    if (ran) {
-      return;
-    }
-    ran = true;
-    cleanup();
+    INTERACTION_EVENTS.forEach((event) =>
+      window.removeEventListener(event, run),
+    );
     callback();
   };
 
-  const onLoad = () => {
-    timeouts.push(window.setTimeout(run, THIRD_PARTY_POST_LOAD_DELAY_MS));
-  };
-
-  if (document.readyState === "complete") {
-    timeouts.push(window.setTimeout(run, THIRD_PARTY_POST_LOAD_DELAY_MS));
-  } else {
-    window.addEventListener("load", onLoad, { once: true, passive: true });
-  }
-
-  timeouts.push(window.setTimeout(run, THIRD_PARTY_DEFER_TIMEOUT_MS));
-
-  window.addEventListener("scroll", run, { once: true, passive: true });
-  window.addEventListener("pointerdown", run, { once: true, passive: true });
-  window.addEventListener("keydown", run, { once: true, passive: true });
+  INTERACTION_EVENTS.forEach((event) =>
+    window.addEventListener(event, run, { once: true, passive: true }),
+  );
 }
 
 function loadScript(

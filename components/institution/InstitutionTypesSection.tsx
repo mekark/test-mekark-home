@@ -64,7 +64,8 @@ export function InstitutionTypesSection() {
                     src={encodeURI(card.src)}
                     alt={card.alt}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 428px"
+                    sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 1280px) 50vw, 428px"
+                    quality={60}
                     className="object-cover object-center"
                   />
                 </div>

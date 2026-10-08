@@ -41,6 +41,8 @@ export function InstitutionHeroSection() {
         alt="Rows of seating in a modern auditorium"
         fill
         priority
+        fetchPriority="high"
+        quality={60}
         className="object-cover object-center"
         sizes="100vw"
       />

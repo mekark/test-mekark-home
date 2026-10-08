@@ -121,7 +121,8 @@ export function InstitutionMapSection() {
               src="/images/institution/map-section/map-india.webp"
               alt="3D map of India with South India highlighted"
               fill
-              sizes="(max-width: 1024px) 100vw, 55vw"
+              sizes="(max-width: 1024px) min(100vw, 420px), 55vw"
+              quality={60}
               className="object-contain object-center"
             />
             <div className="pointer-events-none absolute inset-0">

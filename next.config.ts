@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  experimental: {
+    // Inline CSS into the HTML so stylesheets don't block first render.
+    inlineCss: true,
+  },
   async redirects() {
     return [
       {
@@ -88,6 +92,8 @@ const nextConfig: NextConfig = {
   images: {
     // 75 is the default; 50/60 are used by mobile-only images (contact hero, project cards).
     qualities: [50, 60, 75],
+    // Defaults plus 414/480 so 1x phones (~412px wide) don't get the 640w variant.
+    deviceSizes: [414, 480, 640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     remotePatterns: [
       {
         protocol: "https",

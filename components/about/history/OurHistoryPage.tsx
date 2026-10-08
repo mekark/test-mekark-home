@@ -304,6 +304,9 @@ export function OurHistoryPage() {
                   alt="D. Aquin Janvel, Managing Director of Mekark Pvt Ltd"
                   className="h-auto w-full"
                   sizes="(max-width: 1024px) 100vw, min(440px, 36vw)"
+                  quality={60}
+                  priority
+                  fetchPriority="high"
                 />
               </div>
               <div className="mt-4 border-t border-black/15 pt-4 sm:mt-5 sm:pt-5">

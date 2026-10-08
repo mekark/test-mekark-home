@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
+import dynamic from "next/dynamic";
 
 import { ConsentAwareScripts, DirectSiteScripts } from "@/components/cookie-consent/ConsentAwareScripts";
-import { CookieConsentBanner } from "@/components/cookie-consent/CookieConsentBanner";
 import { CookieConsentProvider } from "@/components/cookie-consent/CookieConsentProvider";
 import { ArrowTop } from "@/components/ui/ArrowTop";
 import { MotionProvider } from "@/components/ui/MotionProvider";
@@ -11,6 +11,13 @@ import { PageTitleSync } from "@/components/seo/PageTitleSync";
 import { LEGAL_AND_COOKIE_CONSENT_ENABLED } from "@/lib/feature-flags";
 import { manrope } from "@/lib/fonts";
 import "./globals.css";
+
+// Kept out of the shared bundle while the consent feature flag is off.
+const CookieConsentBanner = dynamic(() =>
+  import("@/components/cookie-consent/CookieConsentBanner").then(
+    (mod) => mod.CookieConsentBanner,
+  ),
+);
 
 export const viewport: Viewport = {
 

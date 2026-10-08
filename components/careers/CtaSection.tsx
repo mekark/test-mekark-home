@@ -163,6 +163,7 @@ export function CtaSection() {
             <input
               name="name"
               required
+              aria-label="Full Name"
               placeholder="Full Name"
               className={mobileInputClass}
             />
@@ -170,23 +171,27 @@ export function CtaSection() {
               name="email"
               type="email"
               required
+              aria-label="Email Address"
               placeholder="Email Address"
               className={mobileInputClass}
             />
             <input
               name="role"
               required
+              aria-label="Current Role / Designation"
               placeholder="Current Role / Designation"
               className={mobileInputClass}
             />
             <input
               name="experience"
               required
+              aria-label="Years of Experience"
               placeholder="Years of Experience"
               className={mobileInputClass}
             />
             <select
               name="expertise"
+              aria-label="Area of Expertise"
               required
               defaultValue=""
               className={`${mobileInputClass} appearance-none`}
@@ -214,6 +219,7 @@ export function CtaSection() {
               </span>
               <input
                 name="resume"
+                aria-label="Upload Resume"
                 type="file"
                 required
                 accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
@@ -270,6 +276,7 @@ export function CtaSection() {
               <input
                 name="name"
                 required
+                aria-label="Full Name"
                 placeholder="Full Name"
                 className="h-[48px] w-full min-w-0 rounded-[10px] border border-[#e8e8e8] bg-white px-[18px] text-[16px] font-medium text-[#111111] outline-none placeholder:text-[#888888] sm:rounded-none sm:rounded-tl-[13px] sm:text-[14px]"
               />
@@ -277,18 +284,21 @@ export function CtaSection() {
                 name="email"
                 type="email"
                 required
+                aria-label="Email Address"
                 placeholder="Email Address"
                 className="h-[48px] w-full min-w-0 rounded-[10px] border border-[#e8e8e8] bg-white px-[18px] text-[16px] font-medium text-[#111111] outline-none placeholder:text-[#888888] sm:rounded-none sm:rounded-tr-[13px] sm:text-[14px]"
               />
               <input
                 name="role"
                 required
+                aria-label="Current Role / Designation"
                 placeholder="Current Role / Designation"
                 className="h-[48px] w-full min-w-0 rounded-[10px] border border-[#e8e8e8] bg-white px-[18px] text-[16px] font-medium text-[#111111] outline-none placeholder:text-[#888888] sm:rounded-none sm:text-[14px]"
               />
               <input
                 name="experience"
                 required
+                aria-label="Years of Experience"
                 placeholder="Years of Experience"
                 className="h-[48px] w-full min-w-0 rounded-[10px] border border-[#e8e8e8] bg-white px-[18px] text-[16px] font-medium text-[#111111] outline-none placeholder:text-[#888888] sm:rounded-none sm:text-[14px]"
               />
@@ -296,6 +306,7 @@ export function CtaSection() {
             <div className="grid grid-cols-1 gap-[12px] sm:grid-cols-2">
               <select
                 name="expertise"
+                aria-label="Area of Expertise"
                 required
                 defaultValue=""
                 className="h-[48px] w-full min-w-0 rounded-[10px] border border-[#e8e8e8] bg-white px-[18px] text-[16px] font-medium text-[#111111] outline-none sm:rounded-none sm:text-[14px]"
@@ -321,6 +332,7 @@ export function CtaSection() {
                 </span>
                 <input
                   name="resume"
+                  aria-label="Upload Resume"
                   type="file"
                   required
                   accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"

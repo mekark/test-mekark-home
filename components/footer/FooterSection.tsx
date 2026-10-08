@@ -342,7 +342,11 @@ export function FooterSection({
 
   return (
     <>
-      <footer className="relative -mt-px w-full overflow-hidden bg-black text-white">
+      <footer
+        className={`relative -mt-px w-full overflow-hidden bg-black text-white ${
+          staticPage ? "m-lazy-footer" : ""
+        }`}
+      >
         <div
           className="pointer-events-none absolute inset-0 opacity-60"
           aria-hidden

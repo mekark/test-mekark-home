@@ -65,7 +65,7 @@ function TestimonialCard({
 }) {
   return (
     <figure
-      className={`tm-card ${CARD_ANIM[index]} relative flex min-h-[470px] flex-col overflow-hidden rounded-[30px] border p-6 shadow-[0_18px_55px_rgba(56,24,25,0.06)] sm:p-8 ${testimonial.cardClassName} ${testimonial.offsetClassName}`}
+      className={`tm-card ${CARD_ANIM[index]} ${index > 0 ? "tm-card-lazy" : ""} relative flex min-h-[470px] flex-col overflow-hidden rounded-[30px] border p-6 shadow-[0_18px_55px_rgba(56,24,25,0.06)] sm:p-8 ${testimonial.cardClassName} ${testimonial.offsetClassName}`}
     >
       <div
         className={`pointer-events-none absolute -right-16 -top-16 size-44 rounded-full ${testimonial.decorationClassName}`}

@@ -373,6 +373,24 @@ html {
   }
 }
 
+/* Mobile static pages: skip style/layout/paint of the off-screen footer until
+   it nears the viewport. The reserved height keeps the scrollbar stable. */
+@media (max-width: 1023px) {
+  .m-lazy-footer {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 640px;
+  }
+}
+
+/* Testimonials page, single-column mobile: cards below the first are off-screen
+   at load, so skip their style/layout/paint until they near the viewport. */
+@media (max-width: 767px) {
+  .tm-card-lazy {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 560px;
+  }
+}
+
 /* Testimonials page: desktop-only CSS animations (mirrors the former
    framer-motion timings). Mobile gets no animation at all. */
 @media (min-width: 1024px) {

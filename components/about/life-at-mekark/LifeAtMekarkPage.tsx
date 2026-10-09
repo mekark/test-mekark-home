@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { VideoCard } from "@/components/about/life-at-mekark/VideoCard";
+import { Reveal, RevealGroup } from "@/components/about/life-at-mekark/Reveal";
 import { CollageGrid } from "@/components/about/life-at-mekark/CollageGrid";
 
 const IMG = "/images/about/life-at-mekark";
@@ -61,47 +62,43 @@ export function LifeAtMekarkPage() {
       {/* Hero */}
       <section className="relative isolate pt-[60px]">
         <div className="mx-auto max-w-[850px] px-5 pb-8 pt-10 text-center sm:px-8 sm:pb-10 sm:pt-14 lg:px-10">
-          <div
-            className="flex flex-col items-center gap-2.5"
-          >
-            <h1
+          <RevealGroup immediate className="flex flex-col items-center gap-2.5">
+            <Reveal as="h1" delay={0.1}
               className="font-[family-name:var(--font-manrope)] text-[28px] font-bold leading-[1.4] text-[#1a1a1a] sm:text-[clamp(1.85rem,4vw,40px)]"
             >
               Life At Mekark
-            </h1>
-            <p className="font-[family-name:var(--font-manrope)] text-sm leading-normal text-[#191919] sm:text-[clamp(1rem,1.4vw,18px)]">
+            </Reveal>
+            <Reveal as="p" delay={0.22} className="font-[family-name:var(--font-manrope)] text-sm leading-normal text-[#191919] sm:text-[clamp(1rem,1.4vw,18px)]">
               Behind every project, a team that believes in it.
               <br className="hidden sm:inline" />
               <span className="sm:ml-1">
                 A glimpse into the people, moments, and everyday hustle that make
                 Mekark what it is.
               </span>
-            </p>
-          </div>
+            </Reveal>
+          </RevealGroup>
         </div>
 
-        <div
-          className="mx-auto px-5 pb-8 sm:px-8 sm:pb-16 lg:px-10 lg:pb-24"
-        >
-          <CollageGrid />
-        </div>
+        <RevealGroup>
+          <Reveal className="mx-auto px-5 pb-8 sm:px-8 sm:pb-16 lg:px-10 lg:pb-24">
+            <CollageGrid />
+          </Reveal>
+        </RevealGroup>
       </section>
 
       {/* @Mekark */}
       <section className="max-md:[content-visibility:auto] max-md:[contain-intrinsic-size:auto_900px] bg-white px-5 pb-5 pt-8 sm:px-8 sm:pb-6 sm:pt-20 lg:px-10 lg:pb-8 lg:pt-24">
-        <div
-          className="mx-auto max-w-[1280px]"
-        >
-          <div className="mb-10 sm:mb-14">
+        <RevealGroup className="mx-auto max-w-[1280px]">
+          <Reveal delay={0.1} className="mb-10 sm:mb-14">
             <SectionHeading title="@Mekark">
               Follow our journey beyond the workplace, explore team moments,
               celebrations, milestones, and everyday life at Mekark across our
               social media channels.
             </SectionHeading>
-          </div>
+          </Reveal>
 
           <div className="grid gap-6 md:grid-cols-2 md:gap-8">
-            <VideoCard
+            <Reveal delay={0.22}><VideoCard
               priority
               src={`${IMG}/video-1.webp`}
               alt="Mekark office entrance with illuminated logo"
@@ -109,35 +106,33 @@ export function LifeAtMekarkPage() {
               href={MEKARK_REEL_URL}
               previewSrc={MEKARK_REEL_PREVIEW}
               imgClassName="absolute top-[-37.71%] left-[-0.08%] h-[160.73%] w-full max-w-none object-cover"
-            />
-            <VideoCard
+            /></Reveal>
+            <Reveal delay={0.34}><VideoCard
               src={`${IMG}/video-2-zoho-founder.webp`}
               alt="Zoho co-founder speaking about the rise of Mekark"
               label="Watch the Zoho co-founder reel on Instagram"
               href={ZOHO_FOUNDER_REEL_URL}
               imgClassName="absolute left-0 top-0 h-[160.73%] w-full max-w-none object-cover"
-            />
+            /></Reveal>
           </div>
-        </div>
+        </RevealGroup>
       </section>
 
       {/* Culture */}
       <section className="max-md:[content-visibility:auto] max-md:[contain-intrinsic-size:auto_900px] bg-white px-5 pb-16 pt-5 sm:px-8 sm:pb-20 sm:pt-6 lg:px-10 lg:pb-24 lg:pt-8">
-        <div
-          className="mx-auto max-w-[1370px]"
-        >
-          <div className="mb-10 sm:mb-14">
+        <RevealGroup className="mx-auto max-w-[1370px]">
+          <Reveal delay={0.1} className="mb-10 sm:mb-14">
             <SectionHeading title="What Makes Our Culture Special?">
               More than a workplace, Mekark is where people and ideas come
               together.
               <br className="hidden sm:inline" />
               We grow, create, and celebrate together.
             </SectionHeading>
-          </div>
+          </Reveal>
 
           <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4 xl:gap-[60px]">
-            {CULTURE_VALUES.map((value) => (
-              <article
+            {CULTURE_VALUES.map((value, index) => (
+              <Reveal as="article" delay={0.22 + index * 0.12}
                 key={value.title}
                 className={`flex flex-col gap-2.5 rounded-[25px] border-l-4 bg-[#f4f4f4] p-5 shadow-[-2px_2px_3px_rgba(30,30,30,0.15)] ${value.borderColor}`}
               >
@@ -158,13 +153,11 @@ export function LifeAtMekarkPage() {
                     {value.copy}
                   </p>
                 </div>
-              </article>
+              </Reveal>
             ))}
           </div>
 
-          <div
-            className="mt-14 flex justify-center sm:mt-16 lg:mt-20"
-          >
+          <Reveal delay={0.7} className="mt-14 flex justify-center sm:mt-16 lg:mt-20">
             <Link
               href="/resources/careers"
               className="group inline-flex items-center gap-2.5 rounded-[10px] bg-[#ed1c24] px-[50px] py-[15px] font-[family-name:var(--font-manrope)] text-[clamp(1.125rem,2vw,24px)] font-bold text-white shadow-[-2px_2px_3px_rgba(237,28,36,0.15)] transition-transform hover:-translate-y-0.5"
@@ -180,8 +173,8 @@ export function LifeAtMekarkPage() {
                 />
               </span>
             </Link>
-          </div>
-        </div>
+          </Reveal>
+        </RevealGroup>
       </section>
     </main>
   );

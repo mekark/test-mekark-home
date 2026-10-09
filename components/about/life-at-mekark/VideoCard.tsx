@@ -119,7 +119,7 @@ export function VideoCard({
             src={previewSrc}
             muted
             playsInline
-            preload="none"
+            preload="metadata"
             poster={src}
             aria-label={alt}
             onLoadedData={() => setIsVideoReady(true)}

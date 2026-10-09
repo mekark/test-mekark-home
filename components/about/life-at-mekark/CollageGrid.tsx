@@ -143,8 +143,8 @@ export function CollageGrid() {
                 alt={item.alt}
                 draggable={false}
                 decoding="async"
-                loading={index < 3 ? "eager" : "lazy"}
-                fetchPriority={index < 3 ? "high" : "auto"}
+                loading={index < 2 ? "eager" : "lazy"}
+                fetchPriority={index < 2 ? "high" : "auto"}
                 className={item.imgClassName ?? "absolute inset-0 size-full object-cover"}
               />
             </picture>

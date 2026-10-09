@@ -1,7 +1,3 @@
-"use client";
-
-import Image from "next/image";
-
 const IMG = "/images/about/life-at-mekark";
 
 /** Figma collage frame bounds: 1296×633 within the 1920px artboard */
@@ -136,23 +132,23 @@ export function CollageGrid() {
             height: pct(item.h, COLLAGE_HEIGHT),
           }}
         >
-          {item.src &&
-            (item.imgClassName ? (
+          {item.src && (
+            <picture>
+              <source
+                media="(max-width: 767px)"
+                srcSet={item.src.replace(".webp", "-mobile.webp")}
+              />
               <img
                 src={item.src}
                 alt={item.alt}
                 draggable={false}
-                className={item.imgClassName}
+                decoding="async"
+                loading={index < 3 ? "eager" : "lazy"}
+                fetchPriority={index < 3 ? "high" : "auto"}
+                className={item.imgClassName ?? "absolute inset-0 size-full object-cover"}
               />
-            ) : (
-              <Image
-                src={item.src}
-                alt={item.alt}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 50vw, 30vw"
-              />
-            ))}
+            </picture>
+          )}
         </div>
       ))}
     </div>

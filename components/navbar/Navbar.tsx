@@ -172,6 +172,7 @@ export const STATIC_MOBILE_PATHS = [
   "/projects/ongoing-projects",
   "/resources/careers",
   "/resources/testimonials",
+  "/about/life-at-mekark",
 ];
 
 /** Pages whose navbar/footer render without motion on every viewport. */

@@ -88,7 +88,7 @@ export function LifeAtMekarkPage() {
       </section>
 
       {/* @Mekark */}
-      <section className="bg-white px-5 pb-5 pt-8 sm:px-8 sm:pb-6 sm:pt-20 lg:px-10 lg:pb-8 lg:pt-24">
+      <section className="max-md:[content-visibility:auto] max-md:[contain-intrinsic-size:auto_900px] bg-white px-5 pb-5 pt-8 sm:px-8 sm:pb-6 sm:pt-20 lg:px-10 lg:pb-8 lg:pt-24">
         <div
           className="mx-auto max-w-[1280px]"
         >
@@ -122,7 +122,7 @@ export function LifeAtMekarkPage() {
       </section>
 
       {/* Culture */}
-      <section className="bg-white px-5 pb-16 pt-5 sm:px-8 sm:pb-20 sm:pt-6 lg:px-10 lg:pb-24 lg:pt-8">
+      <section className="max-md:[content-visibility:auto] max-md:[contain-intrinsic-size:auto_900px] bg-white px-5 pb-16 pt-5 sm:px-8 sm:pb-20 sm:pt-6 lg:px-10 lg:pb-24 lg:pt-8">
         <div
           className="mx-auto max-w-[1370px]"
         >

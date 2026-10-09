@@ -35,6 +35,7 @@ export function VideoCard({
   previewSrc,
   previewDuration = PREVIEW_DURATION_SEC,
   imgClassName,
+  priority = false,
 }: {
   src: string;
   alt: string;
@@ -43,6 +44,7 @@ export function VideoCard({
   previewSrc?: string;
   previewDuration?: number;
   imgClassName?: string;
+  priority?: boolean;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [canPreview, setCanPreview] = useState(false);
@@ -104,7 +106,8 @@ export function VideoCard({
             src={src}
             alt={alt}
             draggable={false}
-            loading="lazy"
+            loading={priority ? "eager" : "lazy"}
+            fetchPriority={priority ? "high" : "auto"}
             decoding="async"
             className={posterClassName}
           />

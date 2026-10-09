@@ -102,6 +102,7 @@ export function LifeAtMekarkPage() {
 
           <div className="grid gap-6 md:grid-cols-2 md:gap-8">
             <VideoCard
+              priority
               src={`${IMG}/video-1.webp`}
               alt="Mekark office entrance with illuminated logo"
               label="Play Mekark Instagram reel"

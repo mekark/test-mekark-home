@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { LifeAtMekarkPage } from "@/components/about/life-at-mekark/LifeAtMekarkPage";
-import { FooterSection } from "@/components/footer/FooterSection";
+import dynamic from "next/dynamic";
+import { RenderWhenNearViewport } from "@/components/ui/RenderWhenNearViewport";
+
+const FooterSection = dynamic(() =>
+  import("@/components/footer/FooterSection").then((mod) => mod.FooterSection),
+);
 
 export const metadata: Metadata = {
   title: "Life at Mekark — Mekark",
@@ -12,7 +17,9 @@ export default function LifeAtMekarkRoute() {
   return (
     <div className="flex flex-1 flex-col bg-white">
       <LifeAtMekarkPage />
-      <FooterSection />
+      <RenderWhenNearViewport>
+        <FooterSection />
+      </RenderWhenNearViewport>
     </div>
   );
 }
